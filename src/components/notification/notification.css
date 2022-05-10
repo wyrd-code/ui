@@ -1,0 +1,30 @@
+.wui-notification {
+  @apply flex z-99999 fixed;
+  @apply max-w-sm text-sm min-h-12 break-words;
+  @apply bg-white rounded shadow-popup text-black text-sm;
+  line-height: 1;
+  transition: all 0.4s;
+
+  &-left {
+    @apply flex min-w-12 justify-center items-center;
+    background-size: cover;
+  }
+
+  &-icon,
+  &-emoji {
+    @apply text-2xl align-middle !text-white;
+    user-select: none;
+  }
+
+  &-description-block {
+    @apply flex flex-col py-3 px-4 relative break-words;
+
+    &-title {
+      @apply font-bold mb-2;
+    }
+  }
+
+  &-close {
+    @apply bg-white border rounded-full p-1 -top-2 -right-2 absolute;
+  }
+}

@@ -1,0 +1,72 @@
+.wui-card {
+  @apply w-full relative flex flex-col;
+  @apply bg-white rounded shadow;
+
+  &-header {
+    @apply flex p-4 items-center justify-between;
+  }
+
+  &-body {
+    @apply p-4 overflow-x-auto w-full max-w-full;
+    @apply max-w-full overflow-x-auto;
+    will-change: height;
+  }
+
+  &-footer {
+    @apply bg-neutral-50;
+  }
+
+  &-header + &-body,
+  &-body + &-footer,
+  &-header + &-footer {
+    @apply border-t border-neutral-200;
+  }
+
+  &-header,
+  &-body,
+  &-footer {
+    &:first-child {
+      @apply rounded-t;
+    }
+    &:last-child {
+      @apply rounded-b;
+    }
+  }
+
+  &-title {
+    font-family: inherit;
+    padding: 14px 16px;
+    margin: 0;
+    font-size: 14px;
+    position: relative;
+    background-color: #fafbfd;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    outline: none;
+
+    &:focus {
+      box-shadow: 0 0 0 3px fade(#a6b0bb, 20%);
+      z-index: 100;
+    }
+
+    &-icon {
+      font-size: 17px !important;
+      user-select: none;
+    }
+  }
+
+  &:first-child > &-title {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  &:last-child:not(&--expanded) > &-title {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+}

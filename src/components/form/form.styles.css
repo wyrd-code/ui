@@ -1,0 +1,151 @@
+.btn {
+  @apply py-2 px-3 text-sm font-medium rounded border hover:(border-blue-500) border border-gray-400;
+}
+
+.btn.neutral {
+  @apply bg-gray-500 text-white border-gray-700 font-bold;
+}
+.btn.primary {
+  @apply bg-primary-500 text-white border-primary-700 font-bold;
+}
+.btn.success {
+  @apply bg-success-500 text-white border-success-700 font-bold;
+}
+.btn.warn {
+  @apply bg-warn-500 text-white border-warn-700 font-bold;
+}
+.btn.danger {
+  @apply bg-danger-500 text-white border-danger-700 font-bold;
+}
+
+.btn.neutral.simple {
+  @apply bg-white text-gray-600;
+}
+.btn.primary.simple {
+  @apply bg-white text-primary-600;
+}
+.btn.success.simple {
+  @apply bg-white text-success-600;
+}
+.btn.warn.simple {
+  @apply bg-white text-warn-600;
+}
+.btn.danger.simple {
+  @apply bg-white text-danger-600;
+}
+
+.btn.neutral.plain {
+  @apply bg-gray-100 text-gray-600;
+}
+.btn.primary.plain {
+  @apply bg-primary-100 text-primary-600;
+}
+.btn.success.plain {
+  @apply bg-success-100 text-success-600;
+}
+.btn.warn.plain {
+  @apply bg-warn-100 text-warn-600;
+}
+.btn.danger.plain {
+  @apply bg-danger-100 text-danger-600;
+}
+
+.btn.round {
+  @apply rounded-full;
+}
+
+.btn.disabled {
+  @apply opacity-50;
+}
+
+.btn.icon {
+  @apply p-2;
+}
+
+.btn-group {
+  @apply flex;
+}
+.btn-group  .btn {
+  @apply rounded-none;
+}
+
+.btn-group > .btn:first-child {
+  @apply rounded-tl rounded-bl bg-red-200;
+}
+.btn-group > .btn:last-child {
+  @apply rounded-tr rounded-br;
+}
+
+.btn-group.round > .btn:first-child {
+  @apply rounded-tl-full rounded-bl-full;
+}
+.btn-group.round > .btn:last-child {
+  @apply rounded-tr-full rounded-br-full;
+}
+
+.btn-group.inner .btn {
+  @apply border-r-0;
+}
+.btn-group.inner > div:first-child .btn {
+  @apply rounded-tl rounded-bl;
+}
+.btn-group.inner > div:last-child .btn {
+  @apply rounded-tr rounded-br border-r;
+}
+
+.btn-group.inner.round > div:first-child .btn {
+  @apply rounded-tl-full rounded-bl-full;
+}
+.btn-group.inner.round > div:last-child .btn {
+  @apply rounded-tr-full rounded-br-full;
+}
+
+.alert {
+  @apply text-sm py-1 px-2 rounded;
+}
+
+.alert .info {
+  @apply text-blue-500 bg-blue-100 border border-blue-300;
+}
+.alert .warn {
+  @apply text-yellow-500 bg-yellow-100 border border-yellow-300;
+}
+.alert .error {
+  @apply text-red-500 bg-red-100 border border-red-300;
+}
+.alert .success {
+  @apply text-green-500 bg-green-100 border border-green-300;
+}
+
+.form-field {
+  @apply mb-4;
+}
+
+.form-field select {
+  @apply rounded-md focus:(border-blue-500 outline-none);
+  @apply bg-white border-gray-200-2 border p-2;
+}
+
+.form-field select option {
+  @apply p-2;
+}
+
+.form-field .error .form-input-text .input {
+  @apply border-red-500 bg-red-50 text-red-900;
+}
+.form-field .label {
+  @apply block;
+}
+
+.input-text .input {
+  @apply rounded-md focus:(border-blue-500 outline-none);
+  @apply border-gray-200 border-2 p-2;
+}
+
+.form-message {
+  @apply mt-2;
+}
+
+.form-input-text .alert.form-message {
+  @apply text-xs;
+}

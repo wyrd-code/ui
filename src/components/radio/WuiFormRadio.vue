@@ -1,0 +1,51 @@
+<template>
+  <WuiFormFieldWrapper
+    v-bind="{
+      schema,
+      isValid,
+      messages,
+    }"
+    class="input-radios"
+  >
+    <WuiRadio
+      v-for="(option, idx) in schema.options"
+      :key="`radio-${idx}-${option.value}`"
+      :model-value="value"
+      v-bind="option"
+      :disabled="isDisabled || option.disabled"
+      :name="schema.name"
+      @update:modelValue="onChange"
+      @focus="onFocus"
+      @blur="onBlur"
+    />
+  </WuiFormFieldWrapper>
+</template>
+
+<script lang="ts">
+import { defineComponent, PropType } from 'vue'
+
+import type { FormFieldRadio } from '~/ui.types';
+
+import { wuiFormInputPropsBase } from '../form/field.props'
+
+
+
+
+
+
+export default defineComponent({
+  props: {
+    schema: {
+      type: Object as PropType<FormFieldRadio>,
+      required: true,
+    },
+    ...wuiFormInputPropsBase,
+  },
+})
+</script>
+
+<style lang="css">
+.input-radios {
+  @apply space-y-3;
+}
+</style>

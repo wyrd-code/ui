@@ -1,0 +1,56 @@
+<template>
+  <span
+    class="wui-avatar"
+    :class="rootClasses"
+    :style="rootStyles"
+  >
+    <img
+      v-if="src"
+      class="wui-avatar-img"
+      :src="src"
+      alt=""
+    >
+    <span
+      v-else-if="text"
+      class="wui-avatar-text"
+    >{{ avatarText }}</span>
+    <icon-ph-user
+      v-else
+      class="wui-avatar-icon"
+    />
+  </span>
+</template>
+
+<script lang="ts">
+import { defineComponent, computed } from 'vue'
+
+import { getUpperFirstLettersWords } from '../../helpers/getUpperFirstLettersWords'
+
+export default defineComponent({
+  name: 'WuiAvatar',
+  props: {
+    src: { type: String, default: null },
+    text: { type: String, default: null },
+    color: { type: String, default: null },
+    size: { type: String, default: '40px' },
+    square: { type: Boolean },
+    profile: { type: Object, default: null },
+  },
+  setup(props) {
+    const avatarText = computed(() => getUpperFirstLettersWords(props.text, 2))
+    const totalSize = computed(() => props.size)
+    const rootClasses = computed(() => ({
+      'wui-avatar--square': props.square,
+    }))
+
+    const rootStyles = computed(() => ({
+      'background-color': props.color || '',
+      'line-height': totalSize.value,
+      width: totalSize.value,
+      height: totalSize.value,
+    }))
+
+    return { rootClasses, rootStyles, avatarText }
+  },
+})
+</script>

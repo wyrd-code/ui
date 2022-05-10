@@ -1,0 +1,91 @@
+.wui-alert {
+  @apply rounded px-4 py-3 relative bg-white w-auto text-left flex;
+
+  &-body {
+  }
+
+  &-title {
+    font-weight: 600;
+    line-height: 1;
+    @apply text-black;
+  }
+
+  &-slot {
+    @apply text-black !m-0;
+    line-height: 1;
+  }
+
+  &-iconwrapper {
+    @apply mr-3;
+  }
+
+  &-icon {
+    user-select: none;
+    @apply text-4xl text-primary-600;
+  }
+
+  &-close {
+    user-select: none;
+    @apply fill-current absolute right-3 cursor-pointer;
+
+    &:hover {
+      @apply text-black;
+    }
+  }
+
+  &--small {
+    @apply items-center;
+
+    .wui-alert-icon {
+      @apply text-3xl s
+    }
+  }
+
+  &--primary {
+    @apply border border-primary-400 bg-primary-100 text-primary-600;
+
+    .wui-alert-icon {
+      @apply text-primary-600;
+    }
+  }
+
+  &--neutral {
+    @apply border border-neutral-400 bg-neutral-100 text-neutral-600;
+
+    .wui-alert-icon {
+      @apply text-neutral-600;
+    }
+  }
+
+  &--info {
+    @apply border border-info-400 bg-info-100 text-info-600;
+
+    .wui-alert-icon {
+      @apply text-info-600;
+    }
+  }
+
+  &--success {
+    @apply border border-success-400 bg-success-100 text-success-600;
+
+    .wui-alert-icon {
+      @apply text-success-600;
+    }
+  }
+
+  &--warning {
+    @apply border border-warning-400 bg-warning-100;
+
+    .wui-alert-icon {
+      @apply text-warning-600;
+    }
+  }
+
+  &--danger {
+    @apply border border-danger-400 bg-danger-100;
+
+    .wui-alert-icon {
+      @apply text-danger-600;
+    }
+  }
+}

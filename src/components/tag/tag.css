@@ -1,0 +1,67 @@
+.wui-tag {
+  @apply relative inline-flex items-center py-1 px-2 text-sm leading-5 box-border;
+  @apply bg-white text-black rounded border items-center;
+
+  &-close {
+    @apply items-center cursor-pointer ml-2 cursor-pointer;
+    user-select: none;
+    font-size: inherit;
+    color: inherit;
+  }
+
+  &--neutral {
+    @apply border-neutral-400;
+
+    &--filled {
+      @apply bg-neutral-800 text-white border-transparent;
+    }
+  }
+
+  &--primary {
+    @apply border-primary-400 text-primary-800;
+
+    &--filled {
+      @apply bg-primary-800 text-white border-transparent;
+    }
+  }
+
+  &--info {
+    @apply border-info-400 text-info-800;
+
+    &--filled {
+      @apply bg-info-600 text-white border-transparent;
+    }
+  }
+
+  &--success {
+    @apply border-success-400 text-success-800;
+
+    &--filled {
+      @apply bg-success-600 text-white border-transparent;
+    }
+  }
+
+  &--warning {
+    @apply border-warning-400 text-warning-800;
+
+    &--filled {
+      @apply bg-warning-600 text-white border-transparent;
+    }
+  }
+
+  &--danger {
+    @apply border-danger-400 text-danger-800;
+
+    &--filled {
+      @apply bg-danger-600 text-white border-transparent;
+    }
+  }
+
+  &--black {
+    @apply border-black;
+
+    &--filled {
+      @apply bg-black text-white border-transparent;
+    }
+  }
+}
