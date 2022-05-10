@@ -1,0 +1,43 @@
+{
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/*.ts",
+    "src/**/*.vue",
+    ".eslintrc.js",
+    "unocss.config.ts",
+    "vite.config.ts"
+  ],
+  "exclude": [ 
+    "node_modules",
+    "dist",
+    "**/*.spec.ts"
+  ],
+  "compilerOptions": {
+    "outDir": "./dist/js/",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"],
+    },
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "allowJs": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "types": [
+      "vite/client",
+      "node",
+      "unocss",
+    ],
+    "incremental": false,
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true
+  },
+}

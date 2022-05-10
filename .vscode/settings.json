@@ -1,0 +1,57 @@
+{
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": false,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "johnsoncodehk.volar"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.linkedEditing": true,
+  "html.autoClosingTags": true,
+  "eslint.format.enable": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.codeActionsOnSave.mode":"problems",
+  "eslint.validate": [
+    "vue",
+    "json",
+    "javascript",
+    "typescript"
+  ],
+  "eslint.options": {
+    "extensions": [
+      ".js",
+      ".vue",
+      ".json",
+      ".ts"
+    ]
+  },
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/tsconfig.tsbuildinfo": true,
+  },
+  "git.inputValidation": "off",
+  "typescript.suggest.completeFunctionCalls": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "./node_modules/typescript/lib",
+}
