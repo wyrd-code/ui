@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "johnsoncodehk.volar",
+    "antfu.iconify",
+    "antfu.unocss",
+    "dbaeumer.vscode-eslint",
+    "voorjaar.windicss-intellisense",
+    "csstools.postcss"
+  ]
+}
