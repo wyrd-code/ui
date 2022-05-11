@@ -8,37 +8,34 @@ module.exports = defineConfig({
   },
   extends: [
     'eslint:recommended',
-    'plugin:import/recommended',
-    'plugin:import/typescript',
+    'plugin:node/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-recommended',
-    'plugin:node/recommended',
-  ],
-  plugins: [
-    "@typescript-eslint",
-    "import",
-    "node",
+    'plugin:import/recommended',
+    'plugin:import/typescript',
+    'prettier',
   ],
   parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
     ecmaVersion: 2020,
-    project: "./tsconfig.json",
-    tsconfigRootDir: "./",
-    extraFileExtensions: ['.vue', '.json'],
   },
+  plugins: ['import', '@typescript-eslint', 'prettier'],
   settings: {
     'import/resolver': {
-      alias: {
-        map: [
-          ["~", "./src"],
-        ],
+      'eslint-import-resolver-custom-alias': {
+        alias: {
+          '~': './src',
+        },
         extensions: ['.ts', '.js', '.json', '.vue'],
+        // Note: if using lerna or yarn worskpaces, try this for failing imports
+        // packages: ['packages/*'],
       },
     },
   },
   rules: {
+    'prettier/prettier': 'error',
     eqeqeq: ['warn', 'always', { null: 'never' }],
     'no-debugger': ['error'],
     'no-empty': ['warn', { allowEmptyCatch: true }],
@@ -47,23 +44,33 @@ module.exports = defineConfig({
     'prefer-const': [
       'warn',
       {
-        destructuring: 'all'
-      }
+        destructuring: 'all',
+      },
     ],
-    'node/no-missing-import': 'off',
-    'node/no-missing-require': 'off',
+    'node/no-missing-import': ['off'],
+    'node/no-missing-require': [
+      'error',
+      {
+        // for try-catching yarn pnp
+        allowModules: ['pnpapi'],
+        tryExtensions: ['.ts', '.js', '.jsx', '.tsx', '.d.ts'],
+      },
+    ],
     'node/no-deprecated-api': 'off',
     'node/no-unpublished-import': 'off',
     'node/no-unpublished-require': 'off',
     'node/no-unsupported-features/es-syntax': 'off',
-    'node/no-unsupported-features/node-builtins': ['error', {
-      'version': '>=14.17.3',
-      'ignores': []
-    }],
+    'node/no-unsupported-features/node-builtins': [
+      'error',
+      {
+        version: '>=14.17.3',
+        ignores: [],
+      },
+    ],
     '@typescript-eslint/ban-types': 'off', // TODO: we should turn this on in a new PR
     '@typescript-eslint/no-empty-function': [
       'error',
-      { allow: ['arrowFunctions'] }
+      { allow: ['arrowFunctions'] },
     ],
     '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/no-explicit-any': 'off', // maybe we should turn this on in a new PR
@@ -84,29 +91,26 @@ module.exports = defineConfig({
         ],
         'newlines-between': 'always',
         alphabetize: {
-          /* sort in ascending order. Options: ['ignore', 'asc', 'desc'] */
+          /* sort in ascending order. Options: ["ignore", "asc", "desc"] */
           order: 'asc',
           /* ignore case. Options: [true, false] */
           caseInsensitive: true,
         },
       },
     ],
-    'import/no-named-as-default': ['off'],
-    'import/no-extraneous-dependencies': 'error',
-    'import/no-unresolved': 'error',
   },
   overrides: [
     {
       files: ['*.js'],
       rules: {
-        '@typescript-eslint/explicit-module-boundary-types': 'off'
-      }
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+      },
     },
     {
       files: ['*.d.ts'],
       rules: {
-        '@typescript-eslint/triple-slash-reference': 'off'
-      }
-    }
-  ]
+        '@typescript-eslint/triple-slash-reference': 'off',
+      },
+    },
+  ],
 })

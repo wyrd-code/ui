@@ -2,33 +2,26 @@
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "editor.formatOnSave": false,
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll.eslint": true
   },
   "[vue]": {
-    "editor.defaultFormatter": "johnsoncodehk.volar"
+    "editor.defaultFormatter": "Vue.volar",
   },
-  "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+  "[typescript, javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   },
   "editor.quickSuggestions": {
     "strings": true
   },
   "editor.linkedEditing": true,
+  "css.customData": [
+    "./.vscode/css-data.json"
+  ],
   "html.autoClosingTags": true,
   "eslint.format.enable": true,
   "eslint.alwaysShowStatus": true,
-  "eslint.codeActionsOnSave.mode":"problems",
+  "eslint.codeActionsOnSave.mode": "problems",
   "eslint.validate": [
     "vue",
     "json",
@@ -43,6 +36,9 @@
       ".ts"
     ]
   },
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
   "files.eol": "\n",
   "files.exclude": {
     "**/node_modules": true,

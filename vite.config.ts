@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { resolve } from 'path'
 
 import vue from '@vitejs/plugin-vue'
@@ -31,14 +32,8 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: [
-    ],
-    exclude: [
-      'vue',
-      'vue-router',
-      '@vueuse/core',
-      'vue-demi',
-    ],
+    include: [],
+    exclude: ['vue', 'vue-router', '@vueuse/core', 'vue-demi'],
   },
   resolve: {
     alias: {
@@ -72,7 +67,7 @@ export default defineConfig({
             `,
             placement: 'before',
             space: false,
-          })
+          }),
         })
         // md.use(require('markdown-it-toc-done-right'), {
         //   listType: 'ul',
@@ -101,11 +96,9 @@ export default defineConfig({
       plugins: [
         require('postcss-import'),
         require('postcss-nested')({
-          "bubble": [
-            "screen"
-          ]
+          bubble: ['screen'],
         }),
       ],
     },
   },
-});
+})
