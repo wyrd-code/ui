@@ -8,13 +8,13 @@
       :aria-expanded="active"
       @click="active = !active"
     >
-      <icon-ph-caret-down
+      <div
         v-if="active"
-        class="wui-collapse-item-header-icon"
+        class="wui-collapse-item-header-icon icon-ph-caret-down"
       />
-      <icon-ph-caret-right
+      <div
         v-else
-        class="wui-collapse-item-header-icon"
+        class="wui-collapse-item-header-icon icon-ph-caret-right"
       />
       <slot name="header">
         <span>{{ title }}</span>

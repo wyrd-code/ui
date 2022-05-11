@@ -26,11 +26,6 @@ import { FormFieldSelect } from '~/ui.types';
 
 import { wuiFormInputPropsBase } from '../form/field.props'
 
-
-
-
-
-
 export default defineComponent({
   props: {
     schema: {
@@ -38,6 +33,10 @@ export default defineComponent({
       required: true,
     },
     ...wuiFormInputPropsBase,
+    onChange: {
+      type: Function as PropType<((payload: Event) => void)>,
+      required: true,
+    },
   },
 })
 </script>

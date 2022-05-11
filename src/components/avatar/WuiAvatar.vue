@@ -14,9 +14,9 @@
       v-else-if="text"
       class="wui-avatar-text"
     >{{ avatarText }}</span>
-    <icon-ph-user
+    <span
       v-else
-      class="wui-avatar-icon"
+      class="wui-avatar-icon icon-ph-user"
     />
   </span>
 </template>

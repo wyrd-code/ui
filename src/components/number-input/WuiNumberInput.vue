@@ -10,7 +10,7 @@
         @click="decrease"
         @mousedown="press('minus')"
       >
-        <icon-ph-minus />
+        <span class="icon-ph-minus" />
       </WuiButton>
 
       <div
@@ -49,7 +49,7 @@
         @click="increase"
         @mousedown="press('plus')"
       >
-        <icon-ph-plus />
+        <span class="icon-ph-plus" />
       </WuiButton>
     </div>
   </div>

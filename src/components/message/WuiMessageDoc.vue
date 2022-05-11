@@ -7,7 +7,7 @@
     >
       <WuiButton
         type="primary"
-        @click="showMessage"
+        @click="showMessage('primary')"
       >
         Primary message
       </WuiButton>

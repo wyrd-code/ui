@@ -10,10 +10,10 @@ import WyrdUI from '../index'
 import routes from '../ui.routes'
 import App from './App.vue'
 
+import '@unocss/reset/tailwind.css'
+import '../styles/reset.css'
 import '../styles/prism-tomorrow-night.css'
-import '../styles/ui-styles'
-// eslint-disable-next-line import/no-unresolved
-import 'uno.css'
+import '../styles/markdown.styles.css'
 
 const history = import.meta.env.SSR === false
   ? createWebHistory()

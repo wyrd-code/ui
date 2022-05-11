@@ -23,9 +23,9 @@
           disabled && 'wui-checkbox--disabled',
         ]"
       >
-        <icon-ph-check-bold
+        <span
           v-if="modelValue"
-          class="wui-check-icon"
+          class="wui-check-icon icon-ph-check-bold"
         />
       </span>
     </span>

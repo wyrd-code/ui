@@ -54,8 +54,8 @@
           name="icon"
           :props="props"
         >
-          <icon-ph-caret-down
-            class="wui-select-arrow"
+          <span
+            class="wui-select-arrow icon-ph-caret-down"
             :class="show && 'wui-select-arrow--active'"
           />
         </slot>

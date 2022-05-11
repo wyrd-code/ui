@@ -17,7 +17,7 @@
 
   &-body {
     @apply mx-auto w-full transition-transform table break-all;
-    @apply bg-white border-none rounded cursor-default outline-none shadow-popup shadow-xl;
+    @apply bg-white border-none rounded cursor-default outline-none shadow-2xl;
 
     > img {
       @apply max-w-full block;
@@ -25,7 +25,7 @@
 
     &--has-image {
       @apply w-auto max-w-9/10;
-      // Test this fractional class works
+      /* Test this fractional class works */
       /* max-width: 90%; */
     }
   }

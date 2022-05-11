@@ -1,6 +1,6 @@
 <template>
-  <icon-ph-spinner-thin
-    class="spinner animate-spin animate-loop"
+  <span
+    class="spinner animate-spin animate-loop icon-ph-spinner-thin"
   />
 </template>
 

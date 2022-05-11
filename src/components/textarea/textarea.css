@@ -6,7 +6,7 @@
   font-size: 13px;
   color: #131313;
   -webkit-appearance: none;
-  // z-index: 2;
+  /* z-index: 2; */
   transition: all 0.2s;
 
   &:hover {

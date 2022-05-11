@@ -175,7 +175,7 @@
 
 .wui-select-list {
   @apply m-0 w-full py-2 relative overflow-y-auto;
-  @apply bg-white text-neutral-600 rounded shadow-popup;
+  @apply bg-white text-neutral-600 rounded shadow;
   @apply text-left break-words;
   max-height: 200px;
   list-style: none;

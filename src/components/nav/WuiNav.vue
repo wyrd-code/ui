@@ -3,7 +3,10 @@
     :is="as"
     class="wui-nav"
   >
-    <slot name="before" />
+    <slot
+      name="before"
+    />
+
     <component
       :is="itemAs"
       v-for="(item, idx) in items"

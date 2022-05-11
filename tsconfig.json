@@ -4,8 +4,7 @@
     "src/**/*.ts",
     "src/**/*.vue",
     ".eslintrc.js",
-    "unocss.config.ts",
-    "vite.config.ts"
+    "./*.ts"
   ],
   "exclude": [ 
     "node_modules",

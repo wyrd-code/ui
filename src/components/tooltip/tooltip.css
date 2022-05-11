@@ -1,6 +1,6 @@
 .wui-tooltip {
   @apply inline-block;
-  // z-index: 9;
+  /* z-index: 9; */
 
   &-trigger {
     @apply h-full relative inline-block;
@@ -11,7 +11,7 @@
   }
 
   &-content {
-    @apply shadow-popup p-3 break-words;
+    @apply shadow-lg p-3 break-words;
     @apply bg-white rounded text-black text-sm;
 
     width: max-content;
@@ -19,7 +19,7 @@
 
     &--borderless {
       @apply p-0;
-      // overflow: hidden;
+      /* overflow: hidden; */
     }
   }
 

@@ -78,7 +78,7 @@
         @click="
           $Notification({
             title: 'Image notification',
-            image: '/Equal/husky.jpg',
+            image: '/assets/raspberry.jpg',
             description: 'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet',
           })
         "
@@ -97,7 +97,7 @@
             @click="
               $Notification({
                 title: 'Top-left notification',
-                image: '/Equal/husky.jpg',
+                image: '/assets/raspberry.jpg',
                 placement: 'top-left',
                 description: 'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet',
               })
@@ -109,7 +109,7 @@
             @click="
               $Notification({
                 title: 'Top-right notification',
-                image: '/Equal/husky.jpg',
+                image: '/assets/raspberry.jpg',
                 placement: 'top-right',
                 description: 'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet',
               })
@@ -123,7 +123,7 @@
             @click="
               $Notification({
                 title: 'Bottom-left notification',
-                image: '/Equal/husky.jpg',
+                image: '/assets/raspberry.jpg',
                 placement: 'bottom-left',
                 description: 'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet',
               })
@@ -135,7 +135,7 @@
             @click="
               $Notification({
                 title: 'Top-right notification',
-                image: '/Equal/husky.jpg',
+                image: '/assets/raspberry.jpg',
                 placement: 'bottom-right',
                 description: 'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet',
               })
@@ -214,7 +214,7 @@ export default defineComponent({
 <WuiButton
   @click="$Notification({
   title: 'Top-left notification',
-  image: '/Equal/husky.jpg',
+  image: '/assets/raspberry.jpg',
   placement: 'top-left',
   description:
     'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet'
@@ -223,7 +223,7 @@ export default defineComponent({
 <WuiButton
   @click="$Notification({
   title: 'Top-right notification',
-  image: '/Equal/husky.jpg',
+  image: '/assets/raspberry.jpg',
   placement: 'top-right',
   description:
     'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet'
@@ -232,7 +232,7 @@ export default defineComponent({
 <WuiButton
   @click="$Notification({
   title: 'Bottom-left notification',
-  image: '/Equal/husky.jpg',
+  image: '/assets/raspberry.jpg',
   placement: 'bottom-left',
   description:
     'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet'
@@ -241,7 +241,7 @@ export default defineComponent({
 <WuiButton
   @click="$Notification({
   title: 'Top-right notification',
-  image: '/Equal/husky.jpg',
+  image: '/assets/raspberry.jpg',
   placement: 'bottom-right',
   description:
     'Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet'

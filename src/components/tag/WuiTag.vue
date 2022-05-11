@@ -7,10 +7,10 @@
     ]"
   >
     <slot />
-    <icon-ph-x
+    <span
       v-if="closable"
       name="clear"
-      class="wui-tag-close"
+      class="wui-tag-close icon-ph-x"
       @click="close"
     />
   </span>
@@ -26,6 +26,7 @@ export default defineComponent({
   name: 'WuiTag',
   props: {
     type: {
+      type: String,
       default: Colors.NEUTRAL,
       validator: (value: Colors) => ALLOWED_TYPES.includes(value),
     },

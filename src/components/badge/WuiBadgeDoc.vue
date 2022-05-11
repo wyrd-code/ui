@@ -98,7 +98,7 @@
         square
       >
         <WuiButton>
-          <icon-ph-heart class="h-full" />
+          <span class="h-full icon-ph-heart" />
         </WuiButton>
       </WuiBadge>
     </WuiCodeExample>

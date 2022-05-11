@@ -23,7 +23,8 @@
 
   display: flex;
   flex-direction: column;
-  // margin: 2px;
+  /* margin: 2px; */
+
   &:not(:first-child) {
     @apply border-t border-neutral-300;
   }

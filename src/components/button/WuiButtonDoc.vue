@@ -18,8 +18,9 @@
         <template v-if="!buttonIcon">
           {{ buttonText }}
         </template>
-        <icon-ph-heart
+        <div
           v-else
+          class="icon-ph-heart text-black"
         />
       </WuiButton>
 
@@ -194,9 +195,7 @@
         outline
         size="lg"
       >
-        <icon-ph-heart
-          class="h-full"
-        />
+        <div class="icon-ph-heart" />
       </WuiButton>
 
       <WuiButton
@@ -204,9 +203,7 @@
         circle
         outline
       >
-        <icon-ph-heart
-          class="h-full"
-        />
+        <div class="icon-ph-heart" />
       </WuiButton>
 
       <WuiButton
@@ -215,9 +212,7 @@
         outline
         size="sm"
       >
-        <icon-ph-heart
-          class="h-full"
-        />
+        <div class="icon-ph-heart" />
       </WuiButton>
 
       <WuiButton
@@ -226,9 +221,7 @@
         outline
         size="xs"
       >
-        <icon-ph-heart
-          class="h-full"
-        />
+        <div class="icon-ph-heart" />
       </WuiButton>
     </WuiCodeExample>
 
@@ -241,9 +234,7 @@
           size="lg"
         >
           <template #icon>
-            <icon-ph-heart
-              class="h-full"
-            />
+            <div class="icon-ph-heart" />
           </template>
           Some label
         </WuiButton>
@@ -252,9 +243,7 @@
           outline
         >
           <template #icon>
-            <icon-ph-heart
-              class="h-full"
-            />
+            <div class="icon-ph-heart" />
           </template>
           Some label
         </WuiButton>
@@ -264,9 +253,7 @@
           size="sm"
         >
           <template #icon>
-            <icon-ph-heart
-              class="h-full"
-            />
+            <div class="icon-ph-heart" />
           </template>
           Some label
         </WuiButton>
@@ -276,9 +263,7 @@
           size="xs"
         >
           <template #icon>
-            <icon-ph-heart
-              class="h-full"
-            />
+            <div class="icon-ph-heart" />
           </template>
           Some label
         </WuiButton>

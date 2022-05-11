@@ -1,6 +1,7 @@
 import vue from '@vitejs/plugin-vue'
 import anchor from 'markdown-it-anchor'
 import { resolve } from 'pathe'
+import { visualizer } from 'rollup-plugin-visualizer'
 import Unocss from 'unocss/vite'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
@@ -9,8 +10,33 @@ import svgLoader from 'vite-svg-loader'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  server: {
-    port: 4000,
+  build: {
+    lib: {
+      entry: resolve(__dirname, 'src/index.ts'),
+      name: 'wyrdui',
+    },
+    rollupOptions: {
+      // make sure to externalize deps that shouldn't be bundled
+      // into your library
+      external: ['vue'],
+      output: {
+        // Provide global variables to use in the UMD build
+        // for externalized deps
+        globals: {
+          vue: 'Vue',
+        },
+      },
+    },
+  },
+  optimizeDeps: {
+    include: [
+    ],
+    exclude: [
+      'vue',
+      'vue-router',
+      '@vueuse/core',
+      'vue-demi',
+    ],
   },
   resolve: {
     alias: {
@@ -46,10 +72,10 @@ export default defineConfig({
             space: false,
           })
         })
-        md.use(require('markdown-it-toc-done-right'), {
-          listType: 'ul',
-          level: 1,
-        })
+        // md.use(require('markdown-it-toc-done-right'), {
+        //   listType: 'ul',
+        //   level: 1,
+        // })
       },
     }),
     // https://github.com/jpkleemans/vite-svg-loader
@@ -62,15 +88,22 @@ export default defineConfig({
     }),
     // https://github.com/unocss/unocss
     Unocss(),
+    // https://github.com/btd/rollup-plugin-visualizer
+    visualizer({
+      open: true,
+      title: 'WYRD.UI Bundle Visualizer',
+    }),
   ],
-  optimizeDeps: {
-    include: [
-    ],
-    exclude: [
-      'vue',
-      'vue-router',
-      '@vueuse/core',
-      'vue-demi',
-    ],
+  css: {
+    postcss: {
+      plugins: [
+        require('postcss-import'),
+        require('postcss-nested')({
+          "bubble": [
+            "screen"
+          ]
+        }),
+      ],
+    },
   },
 });

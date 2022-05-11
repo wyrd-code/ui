@@ -49,8 +49,8 @@
             @click="clickCopy"
           >
             <template #icon>
-              <icon-ph-spinner
-                class="h-full"
+              <div
+                class="h-full icon-ph-spinner"
               />
             </template>
           </WuiButton>

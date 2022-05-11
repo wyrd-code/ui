@@ -3,8 +3,8 @@
     <h1>Avatar</h1>
     <WuiCodeDemo>
       <WuiAvatar
-        :text="avatarText ? 'Mike Yelinksy' : null"
-        :src="avatarImage ? husky : null"
+        :text="avatarText ? 'Mike Yelinksy' : undefined"
+        :src="avatarImage ? photo : undefined"
         :square="avatarSquare"
       />
       <template #props>       
@@ -41,9 +41,9 @@
     <WuiCodeExample
       title="Image"
     >
-      <WuiAvatar :src="husky" />
+      <WuiAvatar :src="photo" />
       <WuiAvatar
-        :src="husky"
+        :src="photo"
         square
       />
     </WuiCodeExample>
@@ -75,7 +75,7 @@
     >
       <WuiBadge value="1">
         <WuiAvatar
-          :src="husky"
+          :src="photo"
           square
         />
       </WuiBadge>
@@ -85,7 +85,7 @@
         point
       >
         <WuiAvatar
-          :src="husky"
+          :src="photo"
           square
         />
       </WuiBadge>
@@ -95,40 +95,40 @@
       title="Group"
     >
       <WuiAvatarGroup>
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
       </WuiAvatarGroup>
 
       <WuiAvatarGroup square>
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
       </WuiAvatarGroup>
 
       <WuiDivider />
 
       <WuiAvatarGroup vertical>
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
       </WuiAvatarGroup>
 
       <WuiAvatarGroup
         vertical
         square
       >
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
       </WuiAvatarGroup>
     </WuiCodeExample>
 
@@ -136,12 +136,12 @@
       title="Group with avatars limit"
     >
       <WuiAvatarGroup :max="3">
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
       </WuiAvatarGroup>
 
       <WuiDivider />
@@ -150,12 +150,12 @@
         :max="3"
         vertical
       >
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
-        <WuiAvatar :src="husky" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
+        <WuiAvatar :src="photo" />
       </WuiAvatarGroup>
     </WuiCodeExample>
 
@@ -173,7 +173,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 
-const husky = 'https://randomuser.me/api/portraits/women/72.jpg'
+const photo = '/raspberry.jpg'
 const avatarSquare = ref(false)
 const avatarImage = ref(false)
 const avatarText = ref(false)

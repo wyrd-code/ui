@@ -1,6 +1,5 @@
 import './themes.css'
 
-import './utilities/reset.css'
 import './utilities/glass.css'
 import './utilities/animations.css'
 
@@ -14,7 +13,7 @@ import '../components/button-group/button-group.css'
 import '../components/button/button.css'
 import '../components/card/card.css'
 import '../components/checkbox/checkbox.css'
-// import '../components/collapse/collapse.css'
+import '../components/collapse/collapse.css'
 import '../components/comment/comment.css'
 import '../components/divider/divider.css'
 import '../components/drawer/drawer.css'

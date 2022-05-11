@@ -3,14 +3,14 @@
   left: 0;
   width: 100%;
   height: 100%;
-  // pointer-events: none;
   overflow: hidden;
+  /* pointer-events: none; */
 
   &-mask {
     @apply h-full m-0 w-full top-0 left-0 fixed;
     @apply z-900 overflow-hidden box-border;
     background-color: rgba(0, 0, 0, 0.45);
-    // padding: 16px;
+    /* padding: 16px; */
   }
 
   &-body {
@@ -27,7 +27,7 @@
     &--right {
       top: 20px;
       right: 20px;
-      // height: 100%;
+      /* height: 100%; */
     }
 
     &--left {

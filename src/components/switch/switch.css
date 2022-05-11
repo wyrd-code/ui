@@ -7,7 +7,6 @@
   @apply bg-neutral-400 h-5;
   vertical-align: middle;
   transition: all 0.2s;
-  // overflow: hidden;
   user-select: none;
   cursor: pointer;
 
@@ -129,9 +128,9 @@
     }
   }
 
-  // &:hover {
-  //   background-color: @color-neutral;
-  // }
+  /* &:hover {
+    background-color: @color-neutral;
+  } */
 
   &-circle {
     display: block;

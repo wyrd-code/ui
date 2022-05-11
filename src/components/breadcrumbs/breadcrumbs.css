@@ -29,10 +29,11 @@
       }
       & + *:before{
         content: '';
-        @apply h-1.5 mr-3 ml-2 opacity-40 transform w-1.5 rotate-45 block;
+        @apply h-1.5 w-1.5 mr-3 ml-2 opacity-40 block;
         border-top: 1px solid;
         border-right: 1px solid;
         background-color: transparent;
+        transform: rotate(45deg);
       }
     }
   }

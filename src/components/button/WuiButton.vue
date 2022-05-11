@@ -6,9 +6,9 @@
     :class="rootClasses"
     v-bind="customProps"
   >    
-    <icon-ph-spinner
+    <div
       v-if="loading"
-      class="h-full animate-spin"
+      class="animate-spin icon-ph-spinner"
       :class="{ 'mr-2': $slots.default && !(loadingTakeover && loading) }"
     />
     <span

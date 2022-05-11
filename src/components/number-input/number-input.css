@@ -48,8 +48,8 @@
   &-buffer {
     @apply bg-none border-none h-full box-border;
     background-color: transparent;
-    // min-width: 16px;
     line-height: 1.5;
+    /* min-width: 16px; */
 
     &:focus {
       @apply border-none outline-none;

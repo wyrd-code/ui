@@ -26,8 +26,8 @@
 
       <WuiDrawer v-model="drawerVisible">
         <h3 class="m-6">
-          <icon-ph-user-circle
-            class="contacts"
+          <div
+            class="contacts icon-ph-user-circle"
           />
           Contacts
         </h3>
@@ -62,8 +62,8 @@
         placement="left"
       >
         <h3 class="m-6">
-          <icon-ph-user-circle
-            class="contacts"
+          <div
+            class="contacts icon-ph-user-circle"
           />
           Contacts
         </h3>
@@ -265,8 +265,8 @@ export default defineComponent({
 
 <WuiDrawer v-model="drawerVisible">
   <h3 style="margin: 24px">
-    <icon-ph-user-circle
-      class="contacts"
+    <div
+      class="contacts icon-ph-user-circle"
     />
     Contacts
   </h3>
@@ -288,8 +288,8 @@ export default defineComponent({
 
 <WuiDrawer placement="left" v-model="drawerLeftVisible">
   <h3 style="margin: 24px">
-    <icon-ph-user-circle
-      class="contacts"
+    <div
+      class="contacts icon-ph-user-circle"
     />
     Contacts
   </h3>

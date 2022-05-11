@@ -11,9 +11,9 @@
       @mouseleave="startTimer"
       @mouseenter="clearTimer"
     >
-      <icon-ph-heart
+      <div
         class="wui-message-icon"
-        :name="icon || computedIcon"
+        :class="icon || computedIcon"
       />
       <span class="wui-message-text">{{ text }}</span>
     </div>
@@ -27,10 +27,10 @@ import { Colors } from '../../models/enums'
 import type { Timeout } from '../../ui.types'
 
 const typeIcon: { [key in Colors]?: string } = {
-  [Colors.PRIMARY]: 'info_outline',
-  [Colors.SUCCESS]: 'done',
-  [Colors.WARNING]: 'error_outline',
-  [Colors.DANGER]: 'clear',
+  [Colors.PRIMARY]: 'icon-ph-info_outline',
+  [Colors.SUCCESS]: 'icon-ph-done',
+  [Colors.WARNING]: 'icon-ph-error_outline',
+  [Colors.DANGER]: 'icon-ph-clear',
 }
 
 export default defineComponent({
@@ -49,8 +49,8 @@ export default defineComponent({
     }
   },
   computed: {
-    computedIcon(): Colors {
-      return typeIcon[this.type] as Colors
+    computedIcon(): string {
+      return typeIcon[this.type] as string
     },
   },
   mounted() {

@@ -23,7 +23,10 @@
         aria-label="idi na stranicu 1"
         data-qa="link na prvu stranicu"
       >
-        <icon-ph-caret-left-light :class="iconClass" />
+        <div
+          class="icon-ph-caret-left-light"
+          :class="iconClass"
+        />
       </Component>
       <Component
         :is="currentPage > 1 ? `router-link` : `span`"
@@ -35,7 +38,10 @@
         :aria-label="`idi na stranicu ${previousPage}`"
         data-qa="link na prethodnu stranicu"
       >
-        <icon-ci-chevron-left :class="iconClass" />
+        <div
+          class="icon-ph-caret-left-light"
+          :class="iconClass"
+        />
       </Component>
       <div :class="summaryClass">
         {{ currentPage }}
@@ -52,7 +58,10 @@
         :aria-label="`idi na stranicu ${nextPage}`"
         data-qa="link na slijedeću stranicu"
       >
-        <icon-ci-chevron-right :class="iconClass" />
+        <div
+          class="icon-ph-caret-right-light"
+          :class="iconClass"
+        />
       </Component>
       <Component
         :is="currentPage < pageCount ? `router-link` : `span`"
@@ -64,7 +73,10 @@
         :aria-label="`idi na stranicu ${pageCount}`"
         data-qa="link na posljednju stranicu"
       >
-        <icon-ph-caret-right-light :class="iconClass" />
+        <div
+          class="icon-ph-caret-right-light"
+          :class="iconClass"
+        />
       </Component>
     </div>
     <div :class="summaryClass">

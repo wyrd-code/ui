@@ -18,8 +18,8 @@
     &:before {
       @apply rounded-full bg-neutral-300 h-2px w-0 absolute;
       transition: all 0.2s ease-out;
-      // left: 7px;
       content: '';
+      /* left: 7px; */
     }
 
     &--disabled {
@@ -40,9 +40,9 @@
   @apply bg-white border rounded border-neutral-300 shadow-input text-white;
   @apply h-5 w-5 relative inline-block items-center box-border whitespace-nowrap overflow-hidden;
   font-size: 0;
-  // z-index: 1;
   user-select: none;
   transition: all 0.1s;
+  /* z-index: 1; */
 
   > .wui-check-icon {
     @apply text-lg;
@@ -60,9 +60,11 @@
       margin-top: 0;
       @apply text-white;
     }
-    // &:hover {
-    //   background-color: @bg-color;
-    // }
+
+    /* &:hover {
+      background-color: @bg-color;
+    } */
+
     &:active {
       @apply !bg-white;
 
@@ -75,9 +77,9 @@
   &--disabled {
     @apply border !bg-neutral-300 !border-neutral-400;
     cursor: not-allowed;
-    // box-shadow: inset 0 0 0 1px @color-neutral !important;
     text-shadow: none;
     border: none;
+    /* box-shadow: inset 0 0 0 1px @color-neutral !important; */
 
     > .wui-check-icon {
       @apply !text-neutral-300;
@@ -97,7 +99,6 @@
 .wui-checkbox-input {
   position: absolute;
   top: 0;
-  // z-index: 2;
   right: 0;
   bottom: 0;
   left: 0;
@@ -106,6 +107,7 @@
   height: 100%;
   cursor: inherit;
   opacity: 0;
+  /* z-index: 2; */
 }
 
 .wui-checkbox-check-wrapper {

@@ -4,7 +4,7 @@
 }
 
 .hierarchy {
-  // display: inline-block;
+  /* display: inline-block; */
   display: table;
   text-align: center;
 
@@ -158,14 +158,15 @@
 
 .horizontal {
   .wui-hierarchy-node {
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: flex-start;
-    // align-items: center;
     display: table-cell;
     float: none;
     padding-top: 0;
     padding-left: 20px;
+
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* justify-content: flex-start; */
+    /* align-items: center; */
 
     &.is-leaf, &.collapsed {
       padding-top: 10px;
@@ -234,14 +235,15 @@
   }
 
   .wui-hierarchy-node-children {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: flex-start;
     display: table-cell;
     padding-top: 0;
     padding-left: 20px;
-
+ 
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: flex-start; */
+ 
     &:before {
       top: 50%;
       left: 0;

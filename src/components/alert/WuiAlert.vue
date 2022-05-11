@@ -26,16 +26,16 @@
           {{ body }}
         </p>
         <p
-          v-if="defaultSlot"
+          v-else-if="defaultSlot"
           class="wui-alert-slot"
         >
           <slot />
         </p>
       </div>
-      <icon-ph-x
+      <div
         v-if="closable"
         name="clear"
-        class="wui-alert-close"
+        class="wui-alert-close icon-ph-x"
         @click="clickCross"
       />
     </div>
@@ -43,17 +43,26 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType } from 'vue'
+import { computed, defineComponent } from 'vue'
 
 import { useCheckSlot } from '../../hooks'
 import { Colors } from '../../models/enums'
-import { ICON_BY_TYPE, ALLOWED_TYPES } from './constants'
+import { ALLOWED_TYPES } from './constants'
+
+const ICON_BY_TYPE: Partial<Record<Colors, string>> = {
+  [Colors.NEUTRAL]: 'icon-ph-circle-wavy',
+  [Colors.PRIMARY]: 'icon-ph-circle-wavy',
+  [Colors.INFO]:    'icon-ph-circle-wavy-warning',
+  [Colors.SUCCESS]: 'icon-ph-circle-wavy-check',
+  [Colors.WARNING]: 'icon-ph-warning',
+  [Colors.DANGER]:  'icon-ph-warning',
+}
 
 export default defineComponent({
   name: 'WuiAlert',
   props: {
     type: {
-      type: String as PropType<Colors>,
+      type: String,
       default: Colors.INFO,
       validator: (value: Colors) => ALLOWED_TYPES.includes(value),
     },
@@ -68,7 +77,7 @@ export default defineComponent({
     const defaultSlot = useCheckSlot(slots, 'default')
 
     const clickCross = () => emit('on-close')
-    const icon = computed(() => ICON_BY_TYPE[props.type])
+    const icon = computed(() => (ICON_BY_TYPE  as any)[props.type])
     const rootClasses = computed(() => [
       'wui-alert',
       `wui-alert--${props.type}`,

@@ -50,7 +50,7 @@
           v-for="type in alertTypes"
           :key="type"
           :type="type"
-          :title="type"
+          :title="type.toUpperCase()"
           :body="alertBody"
         />
       </div>
@@ -82,7 +82,7 @@
         >
           You can put whatever icon in here, just use class <strong>wui-alert-icon</strong> on it.
           <template #icon>
-            <icon-ph-heart class="wui-alert-icon" />
+            <div class="wui-alert-icon icon-ph-heart" />
           </template>
         </WuiAlert>
       </div>

@@ -184,11 +184,6 @@ export const pages: WyrdPageDefinition[] = [
           },
         ],
       },
-      {
-        slug: 'typography',
-        title: 'Typography',
-        component: (): Component => import('./pages/RouteWrapper.vue'),
-      },
     ],
   },
 ];

@@ -24,11 +24,6 @@ import { FormFieldText } from '~/ui.types';
 
 import { wuiFormInputPropsBase } from '../form/field.props'
 
-
-
-
-
-
 export default defineComponent({
   props: {
     schema: {
@@ -36,6 +31,15 @@ export default defineComponent({
       required: true,
     },
     ...wuiFormInputPropsBase,
+    // Note: copied from wuiFormInputPropsBase to fix ts error
+    value: {
+      type: [String],
+      default: null,
+    },
+    onChange: {
+      type: Function as PropType<((payload: Event) => void)>,
+      required: true,
+    },
   }
 })
 </script>

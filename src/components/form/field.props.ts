@@ -32,7 +32,7 @@ export const wuiFormInputPropsBase = {
     default: false,
   },
   onChange: {
-    type: Function as PropType<(payload: Event) => void>,
+    type: Function as PropType<((payload: Event) => void)>,
     required: true,
   },
   onFocus: {

@@ -19,10 +19,10 @@
           'border-right': (emoji || image) && '1px solid #dfdfdf',
         }"
       >
-        <icon-ph-heart
+        <span
           v-if="!image && !emoji"
           class="wui-notification-icon"
-          :name="icon || typeIcon"
+          :class="icon || typeIcon"
         />
         <span
           v-if="emoji && !image"
@@ -33,9 +33,8 @@
       </div>
       <div class="wui-notification-description-block">
         <span class="wui-notification-close">
-          <icon-ph-x
-            class="text-xl"
-            :name="icon || typeIcon"
+          <span
+            class="text-xl icon-ph-x"
             @click="destroy"
           />
         </span>
@@ -55,7 +54,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import { typeIcon } from '../../components/message/model'
+import { typeIcon } from '../../components/message/constants'
 import { Colors, Positions } from '../../models/enums'
 import type { Timeout } from '../../ui.types'
 

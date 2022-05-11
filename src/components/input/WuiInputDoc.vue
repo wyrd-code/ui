@@ -67,24 +67,24 @@
         v-model="inputValue"
       >
         <template #prefixIcon>
-          <icon-ph-heart />
+          <div class="icon-ph-heart" />
         </template>
       </WuiInput>
       <WuiInput
         v-model="inputValue"
       >
         <template #suffixIcon>
-          <icon-ph-heart />
+          <div class="icon-ph-heart" />
         </template>
       </WuiInput>
       <WuiInput
         v-model="inputValue"
       >
         <template #prefixIcon>
-          <icon-ph-heart />
+          <div class="icon-ph-heart" />
         </template>
         <template #suffixIcon>
-          <icon-ph-heart />
+          <div class="icon-ph-heart" />
         </template>
       </WuiInput>
     </WuiCodeExample>

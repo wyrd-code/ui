@@ -10,9 +10,9 @@
             :key="`demo-crumb-${idx}`"
           >
             <a>
-              <icon-ph-heart
+              <span
                 v-if="buttonIcon"
-                class="mr-2"
+                class="mr-2 icon-ph-heart"
               />
               {{ item }}
             </a>
@@ -51,18 +51,18 @@
         <ul>
           <li>
             <a>
-              <icon-ph-house class="h-4 stroke-current mr-2 w-4" />
+              <div class="h-4 stroke-current mr-2 w-4 icon-ph-house" />
               Home
             </a>
           </li> 
           <li>
             <a>
-              <icon-ph-user-list class="h-4 stroke-current mr-2 w-4" />
+              <div class="h-4 stroke-current mr-2 w-4 icon-ph-user-list" />
               Profiles list
             </a>
           </li> 
           <li>
-            <icon-ph-user-plus class="h-4 stroke-current mr-2 w-4" />
+            <div class="h-4 stroke-current mr-2 w-4 icon-ph-user-plus" />
             Invite a person
           </li>
         </ul>

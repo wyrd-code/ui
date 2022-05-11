@@ -68,15 +68,15 @@
                 class="items-center"
                 :style="{ display: 'flex' }"
               >
-                <icon-ph-github-logo-fill
-                  class="h-4 mr-2"
+                <span
+                  class="h-4 mr-2 icon-ph-github-logo-fill"
                 />
                 {{ option.name }}
               </div>
             </template>
             <template #icon>
-              <icon-ph-twitter-logo-fill
-                class="h-4 ml-2 text-info-500"
+              <span
+                class="h-4 ml-2 text-info-500 icon-ph-twitter-logo-fill"
               />
             </template>
           </WuiSelect>
@@ -96,13 +96,14 @@
 import { ref } from "vue"
  
 import { ALLOWED_POSITION } from "./constants" 
+import type { TOption } from "./types";
 
 const selectValue = ref('')
 const selectLabel = ref('Select me')
 const selectPlaceholder = ref('Select me')
 const selectDisabled = ref(false)
 const selectDivided = ref(false)
-const selectPlacement = ref(null)
+const selectPlacement = ref(undefined)
 const placementOptions = ALLOWED_POSITION
 const firstSelectOptions = [
   'Lorem ipsum dolor sit amet consectetur',
@@ -112,11 +113,12 @@ const firstSelectOptions = [
   'Lorem ipsum dolor iste nam quidem',
 ]
 
-const exampleValue = ref(null)
-const exampleOptions = [
-  { name: 'New York', value: 'nwrk' },
-  { name: 'Paris', value: 'prs' },
-  { name: 'Moscow', value: 'mscw' },
+const exampleValue = ref(undefined)
+
+const exampleOptions: TOption[] = [
+  { label: 'New York', value: 'nwrk' },
+  { label: 'Paris', value: 'prs' },
+  { label: 'Moscow', value: 'mscw' },
 ]
 
 const DATA_SHEET = [

@@ -43,7 +43,7 @@ export default defineComponent({
   @apply max-w-screen-xl mx-auto;
 }
 .ui-layout-wrapper-inner {
-  @apply bg-white relative;
+  @apply relative;
 }
 .ui-layout-aside {
   @apply w-64 fixed top-0 flex;

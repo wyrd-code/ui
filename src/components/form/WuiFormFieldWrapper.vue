@@ -14,9 +14,9 @@
         {{ schema.label }}
       </span>
       <span class="required">
-        <icon-ph-asterisk
+        <div
           v-if="isRequired"
-          class="icon w-2 h-2 ml-2"
+          class="icon w-2 h-2 ml-2 icon-ph-asterisk"
         />
       </span>
     </label>
