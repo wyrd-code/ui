@@ -12,6 +12,7 @@ import svgLoader from 'vite-svg-loader'
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
+    emptyOutDir: false,
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'wyrdui',
@@ -92,7 +93,7 @@ export default defineConfig({
     // https://github.com/btd/rollup-plugin-visualizer
     visualizer({
       open: true,
-      title: 'WYRD.UI Bundle Visualizer',
+      title: 'WyrdUI Bundle Visualizer',
     }),
   ],
   css: {

@@ -3,7 +3,16 @@
 [x] Replace icon imports 
 [x] Fix lint errors
 [x] Fix build
-[ ] Fix icon usages
+[ ] Separate docs from lib
+[ ] Optimize build size
+[ ] Fix all icon usages
+[ ] Fix generating .d.ts files (do we use generated volar.d.ts?)
+[ ] Dark mode support
+[ ] Theming support
+[ ] Import css in components directly ?
+[ ] Enforce Conventional Commits
+[ ] NPM publish
+[ ] Try importing / using in project
 [ ] Install vue globals when component is used only
 [ ] Provide types for global properties (extend vue instance when loaded in consuming project tsconfig types)
 

@@ -6,7 +6,7 @@ import {
   createMemoryHistory,
 } from 'vue-router'
 
-import WyrdUI from '../index'
+import { WyrdUI } from '../index'
 import routes from '../ui.routes'
 import App from './App.vue'
 

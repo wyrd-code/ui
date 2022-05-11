@@ -34,5 +34,3 @@ function install(Vue: App): void {
 }
 
 export const WyrdUI = { install }
-
-export default WyrdUI

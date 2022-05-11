@@ -1,13 +1,13 @@
 {
   "name": "@wyrd-code/ui",
-  "version": "0.0.1",
+  "version": "0.1.0-alpha.0",
   "description": "Vue3 Component Library",
   "author": "wyrd-code",
   "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "vite --host",
-    "build": "rimraf dist && vite build && vue-tsc --emitDeclarationOnly",
+    "build": "rimraf dist && vue-tsc && vite build",
     "preview": "vite preview",
     "publish:library": "npm publish --access public",
     "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore src --fix"
@@ -16,17 +16,18 @@
     "type": "git",
     "url": "https://github.com/wyrd-code/ui"
   },
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.es.js",
-  "types": "./dist/index.d.ts",
-  "unpkg": "./dist/index.umd.js",
-  "jsdelivr": "./dist/index.umd.js",
+  "main": "./dist/ui.umd.js",
+  "module": "./dist/ui.es.js",
+  "types": "./dist/types/src/index.d.ts",
+  "unpkg": "./dist/ui.umd.js",
+  "jsdelivr": "./dist/ui.umd.js",
   "exports": {
     ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.js",
-      "types": "./dist/index.d.ts"
-    }
+      "import": "./dist/ui.es.js",
+      "require": "./dist/ui.umd.js",
+      "types": "./dist/types/src/index.d.ts"
+    },
+    "./dist/style.css": "./dist/style.css"
   },
   "files": [
     "dist"

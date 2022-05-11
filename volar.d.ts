@@ -18,7 +18,6 @@ declare module '@vue/runtime-core' {
     RouteWrapper: typeof import('./src/docs/pages/RouteWrapper.vue')['default']
     Slider: typeof import('./src/components/slider/slider.md')['default']
     'Templates.home': typeof import('./src/docs/pages/templates.home.md')['default']
-    TODO: typeof import('./src/components/slider/TO-DO.md')['default']
     UI: typeof import('./src/docs/UI.vue')['default']
     WuiAlert: typeof import('./src/components/alert/WuiAlert.vue')['default']
     WuiAlertDoc: typeof import('./src/components/alert/WuiAlertDoc.vue')['default']

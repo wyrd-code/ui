@@ -1,5 +1,11 @@
 # WYRD UI
 
+A fairly modern Vue 3 component library.
+
+[![npm (scoped)](https://img.shields.io/npm/v/@wyrd-code/ui)](https://www.npmjs.com/package/@wyrd-code/ui)
+[![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@wyrd-code/ui)](https://bundlephobia.com/result?p=@wyrd-code/ui@latest)
+[![NPM](https://img.shields.io/npm/l/@wyrd-code/ui)](https://github.com/wyrd-code/ui/blob/main/LICENSE)
+
 ## Install
 
 ```ts
@@ -38,54 +44,144 @@ If you are using Volar, you can specify global component types by configuring co
 {
   "compilerOptions": {
     // ...
-    "types": ["naive-ui/volar"]
+    "types": ["@wyrd-code/ui/volar"]
   }
 }
 ```
 
-## Commit Message Convention
 
-This website follows [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+### Utilities and constants
 
-Commit message will be checked using [husky and commit lint](https://theodorusclarence.com/library/husky-commitlint-prettier), you can't commit if not using the proper convention below.
+The library includes example utilities and constants. They are also exported in
+[index.ts](src/index.ts). The client app may use them as below:
 
-### Format
+```js
+<script lang="ts">
+import { MyConstants, MyUtil } from 'my-lib'
 
-`<type>(optional scope): <description>`
-Example: `feat(pre-event): add speakers section`
+export default {
+  data () {
+    return {
+      magicNum: MyConstants.MAGIC_NUM
+    }
+  },
+  methods: {
+    add (a:number, b:number) {
+      return MyUtil.add(a, b)
+    }
+  }
+}
+</script>
+```
 
-### 1. Type
+### Styling
 
-Available types are:
+Individual compopnent may have styles defined in its `.vue` file. They will be processed,
+combined and minified into `dist/style.css`, which is included in the `exports` list in
+[package.json](package.json).
 
-- feat → Changes about addition or removal of a feature. Ex: `feat: add table on landing page`, `feat: remove table from landing page`
-- fix → Bug fixing, followed by the bug. Ex: `fix: illustration overflows in mobile view`
-- docs → Update documentation (README.md)
-- style → Updating style, and not changing any logic in the code (reorder imports, fix whitespace, remove comments)
-- chore → Installing new dependencies, or bumping deps
-- refactor → Changes in code, same output, but different approach
-- ci → Update github workflows, husky
-- test → Update testing suite, cypress files
-- revert → when reverting commits
-- perf → Fixing something regarding performance (deriving state, using memo, callback)
-- vercel → Blank commit to trigger vercel deployment. Ex: `vercel: trigger deployment`
+If you have library level styles shared by all components in the library, you may add them
+to [src/assets/main.scss](src/assets/main.scss). This file is imported in
+[index.ts](src/index.ts), therefore the processed styles are also included into
+`dist/style.css`. To avoid conflicting with other global styles, consider pre-fixing the
+class names or wrapping them into a namespace class.
 
-### 2. Optional Scope
+If you have your own special set of SVG icons, you may create a font file (`.woff` format)
+using tools like [Icomoon](https://icomoon.io/) or [Fontello](https://fontello.com/). This
+starter includes an example font file
+[src/assets/fonts/myfont.woff](src/assets/fonts/myfont.woff) and references it in
+[src/assets/main.scss](src/assets/main.scss), with utility icon CSS classes. An icon from
+the font file is used in Component A. Vite will include the font file into the build, see
+[https://vitejs.dev/guide/assets.html](https://vitejs.dev/guide/assets.html).
 
-Labels per page Ex: `feat(pre-event): add date label`
+The client app shall import `style.css`, usually in the entry file:
 
-\*If there is no scope needed, you don't need to write it
+```js
+import 'my-lib/dist/style.css'
+```
 
-### 3. Description
+### Third-party dependencies
 
-Description must fully explain what is being done.
+Third-party libraries used by you library may bloat up the size of your library, if you
+simply add them to the `dependencies` in [package.json](package.json).
 
-Add BREAKING CHANGE in the description if there is a significant change.
+The following are some strategies to reduce the size of your library:
 
-**If there are multiple changes, then commit one by one**
+#### Externalization
 
-- After colon, there are a single space Ex: `feat: add something`
-- When using `fix` type, state the issue Ex: `fix: file size limiter not working`
-- Use imperative, dan present tense: "change" not "changed" or "changes"
-- Don't use capitals in front of the sentence
-- Don't add full stop (.) at the end of the sentence
+If you expect the client app of your library may also need the same dependency, you may
+externalize the dependency. For example, to exclude PrimeVue from your library build
+artifact, in [vite.config.ts](vite.config.ts), you may have
+
+```js
+module.exports = defineConfig({
+    rollupOptions: {
+      external: ['vue', /primevue\/.+/]
+    }
+  }
+})
+```
+
+The dependency to be externalized may be declared as peer dependency in your library.
+
+#### Cherry picking
+
+If you don't expect the client app of your library also needing the same dependency, you
+may embed cherry-picked functions. For example, to embed the `fill` function of popular
+library [lodash](https://lodash.com), import the `fill` function like the following:
+
+```js
+import fill from 'lodash/fill'
+```
+
+Even with tree-shaking, the codes being brought into your library may still be large, as
+the function may have its own dependencies.
+
+Note that `import { fill } from 'lodash'` or `import _ from 'lodash'` will not work and
+will embed the whole `lodash` library.
+
+Finally, if your client app also use `lodash` and you don't want `lodash` to be in both
+the client app and your libraries, even after cherry-picking, you may consider
+cherry-picking in component library and re-export them as utils for client to consume, so
+that the client does not need to depend on `lodash`, therefore avoiding duplication.
+
+
+### Type generation
+
+In [tsconfig.json](tsconfig.json), the following options instructs `tsc` to emit
+declaration (`.d.ts` files) only, as `vite build` handles the `.js` file generation. The
+generated `.d.ts` files are sent to `dist/types` folder.
+
+```json
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "./dist/types"
+  }
+```
+
+In [package.json](package.json), the line below locates the generated types for library
+client.
+
+```json
+  "types": "./dist/types/index.d.ts",
+```
+
+> In [vite.config.ts](vite.config.ts), `build.emptyOutDir` is set to `false` and `rimraf`
+> is used instead to remove the `dist` folder before the build. This is to avoid the
+> `dist/types` folder generated by `tsc` being deleted when running `vite build`.
+
+### Configuration
+
+#### TypeScript
+
+In [tsconfig.json](tsconfig.js), `compilerOptions.isolatedModules` is set to `true` as
+recommended by Vite (since esbuild is used). However, enableing this option leads to
+[https://github.com/vitejs/vite/issues/5814](https://github.com/vitejs/vite/issues/5814).
+The workaround is to also enable `compilerOptions.skipLibCheck`.
+
+#### Dependencies
+
+In [package.json](package.json), Vue and PrimeVue are declared in both `peerDependencies`
+and `devDependencies`. The former requires the client app to add these dependencies, and
+the later makes it easier to setup this library by simply running `npm install`.
