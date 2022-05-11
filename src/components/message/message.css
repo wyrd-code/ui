@@ -1,0 +1,41 @@
+.wui-message {
+  @apply mx-auto mr-auto top-5 right-0 left-0 z-9999 fixed inline-block;
+  @apply py-2 px-4;
+  @apply bg-white rounded shadow-md text-black break-words;
+  width: max-content;
+  line-height: 1;
+  transition: all 0.4s;
+  /* max-width: 150px; */
+
+  &-icon {
+    @apply mr-3 align-middle;
+  }
+
+  &-text {
+    vertical-align: middle;
+  }
+
+  &--primary {
+    .wui-message-icon {
+      @apply text-primary-600;
+    }
+  }
+
+  &--success {
+    .wui-message-icon {
+      @apply text-success-600;
+    }
+  }
+
+  &--warning {
+    .wui-message-icon {
+      @apply text-warning-600;
+    }
+  }
+
+  &--danger {
+    .wui-message-icon {
+      @apply text-danger-600;
+    }
+  }
+}

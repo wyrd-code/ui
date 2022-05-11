@@ -1,0 +1,124 @@
+
+/* Fade */
+
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.15s;
+  transition-property: height, opacity;
+  transition-timing-function: ease;
+  overflow: hidden;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0
+}
+
+/* Slide #1 */
+
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition-duration: 0.15s;
+  transition-property: height, opacity, transform;
+  transition-timing-function: cubic-bezier(0.6, 0, 0.4, 1);
+  overflow: hidden;
+}
+.slide-left-enter,
+.slide-right-leave-active {
+  opacity: 0;
+  transform: translate(2em, 0);
+}
+.slide-left-leave-active,
+.slide-right-enter {
+  opacity: 0;
+  transform: translate(-2em, 0);
+}
+
+/* SlideScreen */
+
+.slide-screen-left-enter-active,
+.slide-screen-left-enter-active,
+.slide-screen-right-enter-active,
+.slide-screen-right-leave-active {
+  transition-duration: 0.153s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.6, 0, 0.4, 1);
+}
+.slide-screen-left-enter-to {
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+.slide-screen-left-enter-from {
+  position: absolute;
+  right: -100%;
+  width: 100%;
+}
+.slide-screen-left-leave-to {
+  position: absolute;
+  left: -100%;
+  width: 100%;
+}
+.slide-screen-left-leave-from {
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.slide-screen-right-enter-to {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+.slide-screen-right-enter-from {
+  position: absolute;
+  left: -100%;
+  width: 100%;
+}
+.slide-screen-right-leave-to {
+  position: absolute;
+  right: -100%;
+  width: 100%;
+}
+.slide-screen-right-leave-from {
+  position: absolute;
+  width: 100%;
+  right: 0;
+}
+
+/* Scale */
+
+.scale-enter-active,
+.scale-leave-active {
+  transition: all 0.25s ease-in-out;
+}
+.scale-enter-from,
+.scale-leave-to {
+  opacity: 0;
+  transform: scale(0.99);
+}
+
+/* Zoom */
+
+.zoom-enter-active,
+.zoom-leave-active {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-name: zoom;
+}
+.zoom-leave-active {
+  animation-direction: reverse;
+}
+@keyframes zoom {
+  from {
+    opacity: 0;
+    transform: scale3d(0.6, 0.5, 0.4);
+  }
+  75% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}

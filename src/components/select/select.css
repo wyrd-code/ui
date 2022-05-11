@@ -1,0 +1,233 @@
+:root {
+  --dropdown-offset: 6px;
+}
+
+.wui-select {
+  @apply inline-block min-w-12 rounded-full;
+
+  &-inner {
+    position: relative;
+  }
+
+  &-input {
+    @apply border-none h-full outline-none text-base w-auto p-0 inline-block box-border;
+    line-height: 1.2;
+    font-family: inherit;
+    background: transparent;
+
+    &::placeholder {
+      @apply text-neutral-500;
+      text-indent: 0;
+      transition: text-indent 0.27s ease;
+    }
+
+    &:focus::placeholder {
+      text-indent: 6px;
+      transition: text-indent 0.27s ease;
+    }
+  }
+}
+
+.wui-select-option-check {
+  position: absolute;
+  border-radius: 50%;
+  width: 7px;
+  height: 7px;
+  right: 16px;
+  top: 14px;
+  @apply bg-accent-500;
+}
+
+.wui-select-selection {
+  user-select: none;
+  box-sizing: border-box;
+  line-height: 1;
+  padding: 0 8px 0 12px;
+  outline: none;
+  transition: all 0.27s;
+  @apply rounded flex h-10 text-left relative items-center justify-between;
+  @apply bg-white text-neutral-700 border border-neutral-400 shadow-input;
+  @apply cursor-pointer;
+
+  &:hover {
+    @apply border-neutral-600;
+  }
+
+  &--active {
+    @apply border-accent-300 shadow shadow-accent-300;
+
+    & > .wui-select-arrow {
+      @apply text-accent-300;
+    }
+
+    &:hover {
+      @apply border-accent-300;
+    }
+  }
+
+  &--disabled {
+    @apply bg-neutral-300 border-neutral-400 text-neutral-800;
+    cursor: not-allowed;
+
+    .wui-select-placeholder {
+      @apply text-neutral-400;
+    }
+
+    .wui-select-arrow {
+      @apply text-neutral-400;
+    }
+
+    &:hover {
+      @apply border-neutral-400;
+    }
+  }
+
+  &:focus:not(&--disabled) {
+    @apply border-accent-400 shadow-accent-400;
+    /* box-shadow:
+      0 2px 4px fade(@color-primary, 40%),
+      0 0 0 3px fade(@color-primary, 20%); */
+  }
+}
+
+.wui-select-placeholder,
+.wui-select-selected {
+  @apply text-base overflow-hidden whitespace-nowrap;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  word-wrap: normal;
+}
+
+.wui-select-placeholder {
+  @apply text-neutral-500;
+
+  & + .wui-icon {
+    margin-left: 10px;
+  }
+}
+
+.wui-select-arrow {
+  @apply text-black text-lg;
+  margin-left: 12px;
+  transition: transform 0.27s;
+}
+
+.wui-select-dropdown {
+  @apply w-full z-50 absolute;
+  min-width: 130px;
+
+  &--divided .wui-select-option:not(:first-child) {
+    @apply border-t border-neutral-300;
+  }
+
+  &--bottom-left,
+  &--top-left,
+  &--bottom-right,
+  &--top-right,
+  &--left,
+  &--right {
+    width: auto;
+  }
+
+  &--bottom,
+  &--top {
+    &-left {
+      right: calc(100% + var(--dropdown-offset));
+    }
+
+    &-right {
+      left: calc(100% + var(--dropdown-offset));
+    }
+  }
+
+  &--bottom {
+    top: calc(100% + var(--dropdown-offset));
+
+    &-left,
+    &-right {
+      top: 0;
+    }
+  }
+
+  &--top {
+    bottom: calc(100% + var(--dropdown-offset));
+
+    &-left,
+    &-right {
+      bottom: 0;
+    }
+  }
+
+  &--left,
+  &--right {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  &--left {
+    right: calc(100% + var(--dropdown-offset));
+  }
+
+  &--right {
+    left: calc(100% + var(--dropdown-offset));
+  }
+}
+
+.wui-select-list {
+  @apply m-0 w-full py-2 relative overflow-y-auto;
+  @apply bg-white text-neutral-600 rounded shadow;
+  @apply text-left break-words;
+  max-height: 200px;
+  list-style: none;
+  user-select: none;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply bg-neutral-300;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    @apply bg-neutral-400;
+  }
+}
+
+.wui-select-option {
+  position: relative;
+  padding: 10px 28px 10px 12px;
+  display: block;
+  overflow: hidden;
+  line-height: 1;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  white-space: nowrap;
+  word-wrap: normal;
+  max-width: 100%;
+  width: 100%;
+
+  &--focused,
+  &:hover {
+    @apply bg-neutral-200;
+    cursor: pointer;
+  }
+
+  &--focused {
+    @apply bg-accent-400;
+  }
+
+  &--disabled {
+    @apply bg-white text-neutral-400;
+
+    &:hover {
+      @apply bg-white text-neutral-400;
+      cursor: not-allowed;
+    }
+  }
+}

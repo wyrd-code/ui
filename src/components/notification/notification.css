@@ -1,0 +1,32 @@
+.wui-notification {
+  @apply flex z-99999 fixed;
+  @apply max-w-sm min-h-12 break-words;
+  @apply bg-white rounded shadow-lg text-black;
+  line-height: 1;
+  transition: all 0.4s;
+
+  &-left {
+    @apply flex min-w-12 justify-center items-center;
+    background-size: cover;
+  }
+
+  &-icon,
+  &-emoji {
+    @apply text-2xl align-middle !text-white;
+    user-select: none;
+  }
+
+  &-description-block {
+    @apply flex flex-col py-3 px-4 relative;
+    @apply leading-tight break-words;
+
+    &-title {
+      @apply font-bold mb-2;
+    }
+  }
+
+  &-close {
+    @apply rounded-full p-1 -top-1 -right-1 absolute cursor-pointer;
+    @apply bg-white border border-neutral-300 hover:(bg-neutral-100);
+  }
+}

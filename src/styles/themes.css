@@ -1,0 +1,63 @@
+@layer base {
+  :root {
+    --bg-neutral: 200, 200, 200;
+    --text-neutral: 0, 0, 0;
+    --border-neutral: 180, 180, 180;
+
+    --bg-primary: 83, 32, 22;
+    --border-primary: 225, 225, 225;
+    --text-primary: 0, 0, 0;
+
+    --bg-secondary: 133, 213, 208;
+    --border-secondary: 225, 226, 227;
+    --text-secondary: 49, 78, 77;
+
+    --bg-accent: 216, 209, 0;
+    --border-accent: 228, 228, 228;
+    --text-accent: 255, 255, 255;
+
+    --bg-info: 133, 213, 208;
+    --border-info: 133, 213, 208;
+    --text-info: 49, 78, 77;
+
+    --bg-success: 55, 155, 55;
+    --border-success: 55, 155, 55;
+    --text-success: 255, 255, 255;
+
+    --bg-warning: 253, 109, 13;
+    --border-warning: 228, 98, 12;
+    --text-warning: 255, 240, 231;
+
+    --bg-danger: 127, 29, 29;
+    --border-danger: 228, 228, 228;
+    --text-danger: 255, 255, 255;
+
+    --bg-error: 238, 238, 238;
+    --border-error: 228, 228, 228;
+    --text-error: 255, 255, 255;
+  }
+
+  .dark {
+    --bg-neutral: 0, 0, 0;
+    --bg-primary: 0, 0, 0;
+    --bg-secondary: 145, 146, 147;
+    --bg-accent: 138, 138, 138;
+
+    --border-neutral: 225, 225, 225;
+    --border-primary: 225, 225, 225;
+    --border-secondary: 225, 226, 227;
+    --border-accent: 228, 228, 228;
+
+    --text-neutral: 255, 255, 255;
+    --text-primary: 255, 255, 255;
+    --text-secondary: 156, 163, 174;
+    --text-accent: 155, 55, 55;
+  }
+
+  .coffee {
+    /*
+    * update all colors:
+    * --bg-primary: ...
+    */
+  }
+}

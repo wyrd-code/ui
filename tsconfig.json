@@ -4,7 +4,7 @@
     "src/**/*.ts",
     "src/**/*.vue",
     ".eslintrc.js",
-    "vite.config.ts"
+    "./*.ts"
   ],
   "exclude": [ 
     "node_modules",
@@ -37,6 +37,9 @@
     "noUnusedLocals": true,
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
-    "declaration": true
+    "isolatedModules": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "./dist/types"
   },
 }

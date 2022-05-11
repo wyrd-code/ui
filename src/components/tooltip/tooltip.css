@@ -1,0 +1,41 @@
+.wui-tooltip {
+  @apply inline-block;
+  /* z-index: 9; */
+
+  &-trigger {
+    @apply h-full relative inline-block;
+  }
+
+  &-popper {
+    @apply z-9000 absolute;
+  }
+
+  &-content {
+    @apply shadow-lg p-3 break-words;
+    @apply bg-white rounded text-black text-sm;
+
+    width: max-content;
+    line-height: 1;
+
+    &--borderless {
+      @apply p-0;
+      /* overflow: hidden; */
+    }
+  }
+
+  &--top {
+    margin-top: -12px;
+  }
+
+  &--bottom {
+    margin-top: 12px;
+  }
+
+  &--left {
+    margin-left: -12px;
+  }
+
+  &--right {
+    margin-left: 12px;
+  }
+}
