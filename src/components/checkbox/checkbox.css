@@ -1,0 +1,120 @@
+.wui-checkbox-wrapper {
+  @apply flex m-0 p-0 relative justify-start;
+  @apply cursor-pointer outline-none whitespace-nowrap;
+  align-items: normal;
+
+  .wui-checkbox-label {
+    @apply flex text-base leading-6 relative items-center whitespace-pre-wrap;
+    transition: all 0.2s ease-out;
+
+    &-group {
+      @apply pl-4;
+    }
+
+    &--sub {
+      @apply pt-1 text-neutral-600 leading-6;
+    }
+
+    &:before {
+      @apply rounded-full bg-neutral-300 h-2px w-0 absolute;
+      transition: all 0.2s ease-out;
+      content: '';
+      /* left: 7px; */
+    }
+
+    &--disabled {
+      @apply text-neutral-300;
+    }
+
+    &--linethrough {
+      @apply text-neutral-300;
+
+      &:before {
+        @apply w-full;
+      }
+    }
+  }
+}
+
+.wui-checkbox {
+  @apply bg-white border rounded border-neutral-300 shadow-input text-white;
+  @apply h-5 w-5 relative inline-block items-center box-border whitespace-nowrap overflow-hidden;
+  font-size: 0;
+  user-select: none;
+  transition: all 0.1s;
+  /* z-index: 1; */
+
+  > .wui-check-icon {
+    @apply text-lg;
+    opacity: 0;
+    margin-top: 10px;
+    transition: all 0.15s;
+  }
+
+  &-checked {
+    @apply bg-accent-500 border-accent-700;
+
+    > .wui-check-icon {
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.07);
+      opacity: 1;
+      margin-top: 0;
+      @apply text-white;
+    }
+
+    /* &:hover {
+      background-color: @bg-color;
+    } */
+
+    &:active {
+      @apply !bg-white;
+
+      > .wui-check-icon {
+        margin-top: 4.4px;
+      }
+    }
+  }
+
+  &--disabled {
+    @apply border !bg-neutral-300 !border-neutral-400;
+    cursor: not-allowed;
+    text-shadow: none;
+    border: none;
+    /* box-shadow: inset 0 0 0 1px @color-neutral !important; */
+
+    > .wui-check-icon {
+      @apply !text-neutral-300;
+      text-shadow: none;
+    }
+
+    &:active {
+      @apply !bg-neutral-500;
+
+      > .wui-check-icon {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.wui-checkbox-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  cursor: inherit;
+  opacity: 0;
+  /* z-index: 2; */
+}
+
+.wui-checkbox-check-wrapper {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 2px;
+}

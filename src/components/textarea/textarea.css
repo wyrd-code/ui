@@ -1,0 +1,45 @@
+
+.wui-textarea {
+  @apply rounded  w-full relative box-border antialiased;
+  @apply bg-white border border-neutral-300 shadow-input;
+  padding: 5px 7px;
+  font-size: 13px;
+  color: #131313;
+  -webkit-appearance: none;
+  /* z-index: 2; */
+  transition: all 0.2s;
+
+  &:hover {
+    @apply border-neutral-500;
+  }
+
+  &:disabled {
+    @apply bg-neutral-300 text-neutral-700 !border-neutral-500;
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    @apply border border-accent-400 shadow-input;
+
+    &:hover {
+      @apply border-accent-500;
+    }
+  }
+
+  &::placeholder {
+    @apply text-neutral-500;
+    text-indent: 0;
+    transition: text-indent 0.27s ease;
+  }
+
+  &:focus::placeholder {
+    text-indent: 6px;
+    transition: text-indent 0.27s ease;
+  }
+
+  &-mask {
+    @apply top-0 right-0 bottom-0 left-0 fixed;
+    background-color: rgba(90, 98, 112, 0.5);
+    z-index: 99;
+  }
+}

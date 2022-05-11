@@ -1,0 +1,63 @@
+.wui-alert {
+  @apply p-4 rounded relative bg-white w-auto text-left flex;
+
+  &-iconwrapper {
+    @apply flex mr-3 justify-center items-center;
+  }
+    &-icon {
+      @apply text-3xl select-none;
+    }
+
+  &-close {
+    @apply fill-current cursor-pointer select-none text-2xl;
+    @apply ml-4;
+
+    &:hover {
+      @apply text-black;
+    }
+  }
+
+  &-body {
+    @apply flex flex-col align-middle;
+  }
+
+    &-title {
+      @apply font-bold text-lg leading-7;
+    }
+
+    &-slot {
+      @apply leading-none;
+    }
+
+  &--small {
+    @apply items-center;
+
+    .wui-alert-icon {
+      @apply text-3xl;
+    }
+  }
+
+  &--primary {
+    @apply border border-primary-400 bg-primary-100 text-primary-600;
+  }
+
+  &--neutral {
+    @apply border border-neutral-400 bg-neutral-100 text-neutral-600;
+  }
+
+  &--info {
+    @apply border border-info-400 bg-info-100 text-info-600;
+  }
+
+  &--success {
+    @apply border border-success-400 bg-success-100 text-success-600;
+  }
+
+  &--warning {
+    @apply border border-warning-400 bg-warning-100 text-warning-700;
+  }
+
+  &--danger {
+    @apply border border-danger-400 bg-danger-100;
+  }
+}

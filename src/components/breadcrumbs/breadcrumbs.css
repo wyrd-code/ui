@@ -1,0 +1,40 @@
+/* Unstyled */
+.wui-breadcrumbs {
+  @apply max-w-full overflow-x-auto;
+  & > ul{
+    @apply flex h-full items-center whitespace-nowrap;
+    min-height: min-content;
+    & > li{
+      @apply flex items-center;
+      & > a{
+        @apply cursor-pointer flex items-center;
+      }
+    }
+  }
+}
+
+/* Styled */
+.wui-breadcrumbs{
+  @apply py-2;
+  & > ul{
+    & > li{
+      & > a{
+        &:focus {
+          @apply outline-none;
+        }
+        &:focus-visible {
+          @apply rounded;
+          box-shadow: 0 0 0 2px currentColor;
+        }
+      }
+      & + *:before{
+        content: '';
+        @apply h-1.5 w-1.5 mr-3 ml-2 opacity-40 block;
+        border-top: 1px solid;
+        border-right: 1px solid;
+        background-color: transparent;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

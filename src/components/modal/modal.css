@@ -1,0 +1,55 @@
+
+.wui-modal {
+  &-mask {
+    @apply h-100vh m-0 w-full top-0 left-0 z-9999 fixed overflow-y-scroll;
+    @apply transition ease-in-out;
+    background-color: rgba(0, 0, 0, 0.45);
+  }
+
+  &-wrap {
+    @apply h-100vh w-full overflow-y-scroll table;
+    transition-delay: 0.05s;
+
+    &-inner {
+      @apply py-4 px-4 table-cell align-middle;
+    }
+  }
+
+  &-body {
+    @apply mx-auto w-full transition-transform table break-all;
+    @apply bg-white border-none rounded cursor-default outline-none shadow-2xl;
+
+    > img {
+      @apply max-w-full block;
+    }
+
+    &--has-image {
+      @apply w-auto max-w-9/10;
+      /* Test this fractional class works */
+      /* max-width: 90%; */
+    }
+  }
+
+  &-header {
+    @apply rounded-t text-left text-base p-6;
+    font-weight: 500;
+    line-height: 1;
+
+    & + .wui-modal-content {
+      @apply pt-0;
+    }
+  }
+
+  &-content {
+    @apply text-sm p-6;
+  }
+
+  &-footer {
+    @apply rounded-b flex flex-row-reverse  py-4 px-6 justify-end align-middle items-center;
+    @apply border-t bg-neutral-100 border-neutral-300;
+  }
+}
+
+.stop-scroll {
+  @apply overflow-hidden;
+}

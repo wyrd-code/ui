@@ -1,0 +1,54 @@
+.markdown-body {
+  @apply p-6 relative text-left;
+}
+
+.markdown-body .header-anchor {
+  @apply text-gray-300 hover:text-black -ml-8 top-0 p-2 hover:text-black;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4 {
+  @apply pt-2 mb-2 relative;
+}
+
+.markdown-body :first-child,
+.markdown-body :first-child,
+.markdown-body :first-child,
+.markdown-body :first-child {
+  @apply pt-0;
+}
+
+.markdown-body h1 {
+  @apply font-bold text-2xl;
+}
+.markdown-body h2 {
+  @apply font-bold text-xl;
+}
+.markdown-body h3 {
+  @apply font-bold text-lg;
+}
+.markdown-body h4 {
+  @apply font-bold;
+}
+
+.markdown-body .preview {
+  @apply my-4 bg-gray-50 p-4 border border-gray-200 rounded;
+}
+
+.markdown-body .table-of-contents {
+  @apply fixed right-0 top-0 lg:w-46 z-40;
+}
+
+.markdown-body .table-of-contents > ol,
+.markdown-body .table-of-contents > ul {
+  @apply -mt-4 bg-white pt-8 pb-4 pl-4 absolute left-0 top-0 right-0 lg:h-screen lg:overflow-y-scroll;
+}
+.markdown-body .table-of-contents > ol > ol
+.markdown-body .table-of-contents > ul > ul {
+  @apply pl-4;
+}
+
+.markdown-body .table-of-contents ol li { display: block; counter-increment: list-item; }
+.markdown-body .table-of-contents ol li:before { content: counters(list-item,'.') ' '; }

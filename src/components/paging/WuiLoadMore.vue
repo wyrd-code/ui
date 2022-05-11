@@ -1,0 +1,80 @@
+<template>
+  <WuiButton
+    v-if="isLoading && ((reverted && pagingMeta.hasPreviousPage) || (!reverted && pagingMeta.hasNextPage))"
+    block
+    class="text-center leading-none"
+  >
+    <span class="mx-auto inline-block">
+      <icon-icomoon-free-spinner9
+        class="w-4 h-4 animate-spin"
+      />
+    </span>
+  </WuiButton>
+  <WuiButton
+    v-else-if="!syncRoute && reverted && pagingMeta.hasPreviousPage"
+    type="info"
+    block
+    outline
+    class="text-center leading-none"
+    @click="() => $emit('load', { before: pagingMeta.startCursor })"
+  >
+    Učitaj prethodno
+  </WuiButton>
+  <WuiButton
+    v-else-if="!syncRoute && !reverted && pagingMeta.hasNextPage"
+    type="info"
+    outline
+    block
+    class="text-center leading-none"
+    @click="() => $emit('load', { after: pagingMeta.endCursor })"
+  >
+    Učitaj slijedeće
+  </WuiButton>
+  <WuiButton
+    v-else-if="reverted && pagingMeta.hasPreviousPage"
+    block
+    :link="{ query: { before: pagingMeta.startCursor } }"
+  >
+    Učitaj prethodno
+  </WuiButton>
+  <WuiButton
+    v-else-if="!reverted && pagingMeta.hasNextPage"
+    block
+    :link="{ query: { after: pagingMeta.endCursor } }"
+  >
+    Učitaj slijedeće
+  </WuiButton>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+import { PagingMeta } from '~/ui.types';
+
+export default defineComponent({
+  name: `WuiLoadMore`,
+  props: {
+    reverted: {
+      type: Boolean,
+      default: false,
+    },
+    syncRoute: {
+      type: Boolean,
+      default: false,
+    },
+    isLoading: {
+      type: Boolean,
+      default: false,
+    },
+    routeQuery: {
+      type: Object,
+      default: () => ({}),
+    },
+    pagingMeta: {
+      type: Object as () => PagingMeta,
+      default: () => ({}),
+    },
+  },
+  emits: ['load'],
+})
+</script>
