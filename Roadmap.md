@@ -1,6 +1,6 @@
 # Roadmap
 
-[x] Replace icon imports 
+[x] Replace icon imports
 [x] Fix lint errors
 [x] Fix build
 [ ] Separate docs from lib
@@ -8,13 +8,20 @@
 [ ] Fix all icon usages
 [ ] Fix generating .d.ts files (do we use generated volar.d.ts?)
 [ ] Dark mode support
+[ ] i18n validator messages (extract them all somehow?)
 [ ] Theming support
+  [ ] Color tokens
+  [ ] Adjust for [dark yellow](https://medium.com/@lodestar-design/the-dark-yellow-problem-in-design-system-color-palettes-a0db1eedc99d)
+  [ ] Theme provide/inject
+  [ ] [Theme overrides component props](https://mui.com/material-ui/customization/theme-components/)
+  [ ] [Pallete tool](https://material.io/resources/color/)
 [ ] Import css in components directly ?
 [ ] Enforce Conventional Commits
 [ ] NPM publish
 [ ] Try importing / using in project
 [ ] Install vue globals when component is used only
 [ ] Provide types for global properties (extend vue instance when loaded in consuming project tsconfig types)
+[ ] [Custom transitions builder](https://mui.com/material-ui/customization/transitions/)
 
 [ ] Theme customization using css vars?
 ```ts
