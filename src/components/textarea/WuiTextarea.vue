@@ -1,15 +1,9 @@
 <template>
   <div>
     <transition name="fade">
-      <div
-        v-show="focus && mask"
-        class="wui-textarea-mask"
-      />
+      <div v-show="focus && mask" class="wui-textarea-mask" />
     </transition>
-    <span
-      v-if="labelTop"
-      class="wui-input-label"
-    >{{ labelTop }}</span>
+    <span v-if="labelTop" class="wui-input-label">{{ labelTop }}</span>
     <textarea
       ref="textarea"
       :value="modelValue"
@@ -61,7 +55,7 @@ export default defineComponent({
     const focus = ref(false)
 
     const resize = computed(() =>
-      props.resizable === true ? 'vertical' : 'none',
+      props.resizable === true ? 'vertical' : 'none'
     )
 
     function onInput(e: InputEvent | any) {

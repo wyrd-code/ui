@@ -25,32 +25,15 @@
           label-top="Position"
           :options="ALLOWED_POSITIONS"
         />
-        <WuiCheckbox
-          v-model="badgePoint"
-          label="Point"
-        />
-        <WuiCheckbox
-          v-model="badgeSquare"
-          label="Square"
-        />
-        <WuiCheckbox
-          v-model="badgeShow"
-          label="Show"
-        />
-        <WuiNumberInput
-          v-model="badgeMax"
-          label-top="Max value"
-        />
-        <WuiNumberInput
-          v-model="badgeValue"
-          label-top="Badge value"
-        />
+        <WuiCheckbox v-model="badgePoint" label="Point" />
+        <WuiCheckbox v-model="badgeSquare" label="Square" />
+        <WuiCheckbox v-model="badgeShow" label="Show" />
+        <WuiNumberInput v-model="badgeMax" label-top="Max value" />
+        <WuiNumberInput v-model="badgeValue" label-top="Badge value" />
       </template>
     </WuiCodeDemo>
 
-    <WuiCodeExample
-      title="Type"
-    >
+    <WuiCodeExample title="Type">
       <div class="grid grid-cols-5 gap-4">
         <WuiBadge
           v-for="type in ALLOWED_TYPES"
@@ -65,16 +48,9 @@
       </div>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Point"
-    >
+    <WuiCodeExample title="Point">
       <div class="grid grid-cols-5 gap-4">
-        <WuiBadge
-          v-for="type in ALLOWED_TYPES"
-          :key="type"
-          :type="type"
-          point
-        >
+        <WuiBadge v-for="type in ALLOWED_TYPES" :key="type" :type="type" point>
           <WuiButton block>
             {{ type }}
           </WuiButton>
@@ -82,114 +58,56 @@
       </div>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Square"
-    >
-      <WuiBadge
-        type="primary"
-        :value="12"
-        square
-      >
+    <WuiCodeExample title="Square">
+      <WuiBadge type="primary" :value="12" square>
         <WuiButton>Square</WuiButton>
       </WuiBadge>
-      <WuiBadge
-        type="primary"
-        point
-        square
-      >
+      <WuiBadge type="primary" point square>
         <WuiButton>
           <span class="h-full icon-ph-heart" />
         </WuiButton>
       </WuiBadge>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Positions"
-    >
-      <WuiBadge
-        point
-        :value="12"
-      >
+    <WuiCodeExample title="Positions">
+      <WuiBadge point :value="12">
         <WuiButton>Top-right</WuiButton>
       </WuiBadge>
-      <WuiBadge
-        point
-        position="bottom-right"
-        :value="12"
-      >
+      <WuiBadge point position="bottom-right" :value="12">
         <WuiButton>Bottom-right</WuiButton>
       </WuiBadge>
-      <WuiBadge
-        point
-        position="bottom-left"
-        :value="12"
-      >
+      <WuiBadge point position="bottom-left" :value="12">
         <WuiButton>Bottom-left</WuiButton>
       </WuiBadge>
-      <WuiBadge
-        point
-        position="top-left"
-        :value="12"
-      >
+      <WuiBadge point position="top-left" :value="12">
         <WuiButton>Top-left</WuiButton>
       </WuiBadge>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Max value"
-    >
-      <WuiBadge
-        :value="110"
-        :max-value="99"
-      >
-        <WuiTag type="danger">
-          Maximum
-        </WuiTag>
+    <WuiCodeExample title="Max value">
+      <WuiBadge :value="110" :max-value="99">
+        <WuiTag type="danger"> Maximum </WuiTag>
       </WuiBadge>
 
-      <WuiBadge
-        class="mr-1"
-        type="info"
-        :value="40"
-        :max-value="99"
-      >
-        <WuiTag type="info">
-          In range
-        </WuiTag>
+      <WuiBadge class="mr-1" type="info" :value="40" :max-value="99">
+        <WuiTag type="info"> In range </WuiTag>
       </WuiBadge>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="WuiTag with inline Badge"
-    >
-      <WuiTag
-        type="danger"
-      >
-        <span class="mr-1">
-          Nice product
-        </span>
-        <WuiBadge
-          value="new"
-        />
+    <WuiCodeExample title="WuiTag with inline Badge">
+      <WuiTag type="danger">
+        <span class="mr-1"> Nice product </span>
+        <WuiBadge value="new" />
       </WuiTag>
 
       <WuiTag type="success">
-        <WuiBadge
-          type="success"
-          point
-          class="mr-1"
-        /> Systems online
+        <WuiBadge type="success" point class="mr-1" /> Systems online
       </WuiTag>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Standalone"
-    >
+    <WuiCodeExample title="Standalone">
       <WuiBadge :value="101" />
-      <WuiBadge
-        :value="101"
-        square
-      />
+      <WuiBadge :value="101" square />
     </WuiCodeExample>
 
     <WuiPropsTable :data-sheet="dataSheet" />

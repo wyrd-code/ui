@@ -1,13 +1,7 @@
 <template>
   <div class="wui-select">
-    <span
-      v-if="labelTop || labelTopSlotExist"
-      class="wui-input-label"
-    >
-      <slot
-        name="label-top"
-        :props="props"
-      >
+    <span v-if="labelTop || labelTopSlotExist" class="wui-input-label">
+      <slot name="label-top" :props="props">
         {{ labelTop }}
       </slot>
     </span>
@@ -26,34 +20,19 @@
         @keydown.esc.stop.prevent="() => setOpen(false)"
         @keydown.enter.stop.prevent="handleEnterKey"
       >
-        <span
-          v-if="wrappedValue.value"
-          class="wui-select-selected"
-        >
-          <slot
-            name="selected-option"
-            :props="props"
-          >
+        <span v-if="wrappedValue.value" class="wui-select-selected">
+          <slot name="selected-option" :props="props">
             {{ wrappedValue.label }}
           </slot>
         </span>
 
-        <span
-          v-else
-          class="wui-select-placeholder"
-        >
-          <slot
-            name="placeholder"
-            :props="props"
-          >
+        <span v-else class="wui-select-placeholder">
+          <slot name="placeholder" :props="props">
             {{ placeholder }}
           </slot>
         </span>
 
-        <slot
-          name="icon"
-          :props="props"
-        >
+        <slot name="icon" :props="props">
           <span
             class="wui-select-arrow icon-ph-caret-down"
             :class="show && 'wui-select-arrow--active'"
@@ -62,11 +41,7 @@
       </div>
 
       <transition name="drop-bottom">
-        <div
-          v-if="show"
-          class="wui-select-dropdown"
-          :class="dropdownClasses"
-        >
+        <div v-if="show" class="wui-select-dropdown" :class="dropdownClasses">
           <ul
             :ref="(dropdown) => setSelectListRef(dropdown as any)"
             class="wui-select-list"
@@ -81,11 +56,7 @@
               "
               @click="selectOption(optionIndex)"
             >
-              <slot
-                name="option"
-                :props="props"
-                :option="option"
-              >
+              <slot name="option" :props="props" :option="option">
                 {{ getOptionName(option) }}
                 <transition name="fade-right">
                   <span
@@ -107,12 +78,9 @@ import { defineComponent, computed, PropType } from 'vue'
 
 import { clickOutside } from '../../directives'
 import { useCheckSlot } from '../../hooks'
-import { Positions , EDirections } from '../../models/enums'
+import { Positions, EDirections } from '../../models/enums'
 import { TProps, TEmit } from '../../ui.types'
-import {
-  ALLOWED_POSITION,
-  CLASS_SELECTED_OPTION,
-} from './constants'
+import { ALLOWED_POSITION, CLASS_SELECTED_OPTION } from './constants'
 import { useSelect } from './hooks'
 import { TOption, TSelectProps } from './types'
 

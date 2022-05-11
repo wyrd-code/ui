@@ -1,9 +1,5 @@
 <template>
-  <component
-    :is="component"
-    class="form-component"
-    v-bind="dynamicProps"
-  >
+  <component :is="component" class="form-component" v-bind="dynamicProps">
     <template v-if="schema.children">
       <WuiFormField
         v-for="(childSchema, idx) in schema.children"
@@ -16,20 +12,11 @@
 </template>
 
 <script lang="ts">
-import {
-  defineComponent,
-  computed,
-  PropType,
-} from 'vue'
+import { defineComponent, computed, PropType } from 'vue'
 
 import { WuiForm, FormField } from '~/ui.types'
 
 import { formFieldMapper } from './field.mapper'
-
-
-
-
-
 
 export default defineComponent({
   props: {
@@ -49,7 +36,7 @@ export default defineComponent({
     const dynamicProps = computed(() => {
       if (!mapper) {
         return {
-          class: props.schema.customClass
+          class: props.schema.customClass,
         }
       }
 

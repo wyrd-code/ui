@@ -1,1 +1,1 @@
-export { default as WuiTag } from "./WuiTag.vue"
+export { default as WuiTag } from './WuiTag.vue'

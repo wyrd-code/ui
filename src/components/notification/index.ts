@@ -21,7 +21,9 @@ interface NotificationOptions {
   [key: string]: any
 }
 
-declare type NotificationFactory = (options: Partial<NotificationOptions>) => ComponentPublicInstance
+declare type NotificationFactory = (
+  options: Partial<NotificationOptions>
+) => ComponentPublicInstance
 
 export interface NotificationInstance extends Function {
   primary: NotificationFactory
@@ -35,7 +37,9 @@ const notifications: ComponentPublicInstance[] = []
 
 let idStart = 0
 
-export const Notification = (options: Partial<NotificationOptions> = {}): ComponentPublicInstance => {
+export const Notification = (
+  options: Partial<NotificationOptions> = {}
+): ComponentPublicInstance => {
   options.placement = options.placement || Positions.TR
   const onClose = options.onClose
   const id = idStart++
@@ -49,7 +53,7 @@ export const Notification = (options: Partial<NotificationOptions> = {}): Compon
 
   const newData = Object.assign(options, { id })
   for (const [key, value] of Object.entries(newData)) {
-    (instance.$data as NotificationOptions)[key] = value
+    ;(instance.$data as NotificationOptions)[key] = value
   }
 
   document.body.appendChild(instance.$el)
@@ -64,8 +68,7 @@ export const Notification = (options: Partial<NotificationOptions> = {}): Compon
 
   notifications
     .filter(
-      (el) =>
-        (el.$data as NotificationOptions).placement === options.placement,
+      (el) => (el.$data as NotificationOptions).placement === options.placement
     )
     .forEach((el) => {
       offsets[options.placement!] += (el.$el as HTMLElement).offsetHeight + 6
@@ -82,7 +85,7 @@ export const Notification = (options: Partial<NotificationOptions> = {}): Compon
 
 Notification.close = (id: number, onClose?: () => void) => {
   const index = notifications.findIndex(
-    (el) => (el.$data as NotificationOptions).id === id,
+    (el) => (el.$data as NotificationOptions).id === id
   )
   const height = (notifications[index].$el as HTMLElement).offsetHeight
   if (onClose) {
@@ -92,7 +95,7 @@ Notification.close = (id: number, onClose?: () => void) => {
     .filter(
       (el) =>
         (el.$data as NotificationOptions).placement ===
-        (notifications[index].$data as NotificationOptions).placement,
+        (notifications[index].$data as NotificationOptions).placement
     )
     .forEach((el) => {
       const data = el.$data as NotificationOptions
@@ -106,12 +109,9 @@ Notification.close = (id: number, onClose?: () => void) => {
     })
   notifications.splice(index, 1)
 }
-
-[Colors.PRIMARY, Colors.SUCCESS, Colors.DANGER, Colors.WARNING].forEach(
+;[Colors.PRIMARY, Colors.SUCCESS, Colors.DANGER, Colors.WARNING].forEach(
   (type) => {
-    (Notification as any)[type] = (options: NotificationOptions) =>
+    ;(Notification as any)[type] = (options: NotificationOptions) =>
       Notification({ ...options, type })
-  },
+  }
 )
-
-export default Notification

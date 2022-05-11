@@ -1,17 +1,12 @@
 <template>
   <div class="table-box">
-    <h2
-      v-if="dataSheet"
-      class="leading-none py-4 px-6"
-    >
-      Props <WuiTag v-if="tagName">
+    <h2 v-if="dataSheet" class="leading-none py-4 px-6">
+      Props
+      <WuiTag v-if="tagName">
         {{ tagName }}
       </WuiTag>
     </h2>
-    <table
-      v-if="dataSheet"
-      class="table"
-    >
+    <table v-if="dataSheet" class="table">
       <thead>
         <tr>
           <th>Property</th>
@@ -22,25 +17,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr
-          v-for="item in dataSheet"
-          :key="item.property"
-        >
-          <td
-            v-for="(col, name) in item"
-            :key="name"
-          >
+        <tr v-for="item in dataSheet" :key="item.property">
+          <td v-for="(col, name) in item" :key="name">
             <div
               v-if="
                 !['description', 'property'].includes(String(name)) &&
-                  Array.isArray(col)
+                Array.isArray(col)
               "
               style="line-height: 2"
             >
-              <WuiTag
-                v-for="i in col"
-                :key="i"
-              >
+              <WuiTag v-for="i in col" :key="i">
                 {{ i }}
               </WuiTag>
             </div>
@@ -50,16 +36,8 @@
       </tbody>
     </table>
 
-    <h2
-      v-if="slotSheet"
-      class="leading-none py-4 px-6"
-    >
-      Slots
-    </h2>
-    <table
-      v-if="slotSheet"
-      class="table"
-    >
+    <h2 v-if="slotSheet" class="leading-none py-4 px-6">Slots</h2>
+    <table v-if="slotSheet" class="table">
       <thead>
         <tr>
           <th>Name</th>
@@ -67,30 +45,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr
-          v-for="item in slotSheet"
-          :key="item.property"
-        >
-          <td
-            v-for="col in item"
-            :key="col"
-          >
+        <tr v-for="item in slotSheet" :key="item.property">
+          <td v-for="col in item" :key="col">
             <span>{{ col }}</span>
           </td>
         </tr>
       </tbody>
     </table>
 
-    <h2
-      v-if="methodSheet"
-      class="leading-none py-4 px-6"
-    >
-      Methods
-    </h2>
-    <table
-      v-if="methodSheet"
-      class="table"
-    >
+    <h2 v-if="methodSheet" class="leading-none py-4 px-6">Methods</h2>
+    <table v-if="methodSheet" class="table">
       <thead>
         <tr>
           <th>Method</th>
@@ -99,30 +63,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr
-          v-for="item in methodSheet"
-          :key="item.property"
-        >
-          <td
-            v-for="col in item"
-            :key="col"
-          >
+        <tr v-for="item in methodSheet" :key="item.property">
+          <td v-for="col in item" :key="col">
             <span>{{ col }}</span>
           </td>
         </tr>
       </tbody>
     </table>
 
-    <h2
-      v-if="eventSheet"
-      class="leading-none py-4 px-6"
-    >
-      Events
-    </h2>
-    <table
-      v-if="eventSheet"
-      class="table"
-    >
+    <h2 v-if="eventSheet" class="leading-none py-4 px-6">Events</h2>
+    <table v-if="eventSheet" class="table">
       <thead>
         <tr>
           <th>Event</th>
@@ -131,14 +81,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr
-          v-for="item in eventSheet"
-          :key="item.property"
-        >
-          <td
-            v-for="(col, name) in item"
-            :key="name"
-          >
+        <tr v-for="item in eventSheet" :key="item.property">
+          <td v-for="(col, name) in item" :key="name">
             <span>{{ col }}</span>
           </td>
         </tr>
@@ -158,19 +102,19 @@ export default defineComponent({
     },
     dataSheet: {
       type: Array as PropType<any[]>,
-      default: () => ([]),
+      default: () => [],
     },
     eventSheet: {
       type: Array as PropType<any[]>,
-      default: () => ([]),
+      default: () => [],
     },
     methodSheet: {
       type: Array as PropType<any[]>,
-      default: () => ([]),
+      default: () => [],
     },
     slotSheet: {
       type: Array as PropType<any[]>,
-      default: () => ([]),
+      default: () => [],
     },
   },
 })

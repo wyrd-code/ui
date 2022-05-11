@@ -1,1 +1,1 @@
-export { default as WuiAlert } from "./WuiAlert.vue"
+export { default as WuiAlert } from './WuiAlert.vue'

@@ -1,1 +1,1 @@
-export { default as WuiScrollUp } from "./WuiScrollUp.vue"
+export { default as WuiScrollUp } from './WuiScrollUp.vue'

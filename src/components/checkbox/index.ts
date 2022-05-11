@@ -1,1 +1,1 @@
-export { default as WuiCheckbox } from "./WuiCheckbox.vue"
+export { default as WuiCheckbox } from './WuiCheckbox.vue'

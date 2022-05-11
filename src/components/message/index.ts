@@ -3,7 +3,9 @@ import { createApp, ComponentPublicInstance } from 'vue'
 import { Colors } from '../../models/enums'
 import MessageVue from './WuiMessage.vue'
 
-declare type MessageFactory = (options: IMessageOptions) => ComponentPublicInstance
+declare type MessageFactory = (
+  options: IMessageOptions
+) => ComponentPublicInstance
 
 export interface MessageInstance extends Function {
   primary: MessageFactory
@@ -32,7 +34,9 @@ const messages: ComponentPublicInstance[] = []
 
 let idStart = 0
 
-const Message = (options: IMessageOptions = {}): ComponentPublicInstance => {
+export const Message = (
+  options: IMessageOptions = {}
+): ComponentPublicInstance => {
   const onClose = options.onClose
   const id = idStart++
 
@@ -45,7 +49,7 @@ const Message = (options: IMessageOptions = {}): ComponentPublicInstance => {
 
   const newData = Object.assign(options, { id })
   for (const [key, value] of Object.entries(newData)) {
-    (instance.$data as any)[key] = value
+    ;(instance.$data as any)[key] = value
   }
 
   const dataObj = instance.$data as Record<string, any>
@@ -75,13 +79,12 @@ Message.close = (id: number, onClose?: () => void): void => {
   }
   messages.forEach((el) => {
     if ((el.$data as any).id > id) {
-      (el.$data as any).top -= height + 6
+      ;(el.$data as any).top -= height + 6
     }
   })
 }
 
 messageTypes.forEach((type) => {
-  (Message as any)[type] = (options: IMessageOptions) => Message({ type, ...options })
+  ;(Message as any)[type] = (options: IMessageOptions) =>
+    Message({ type, ...options })
 })
-
-export default Message

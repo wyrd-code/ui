@@ -1,13 +1,15 @@
 <template>
   <WuiButton
-    v-if="isLoading && ((reverted && pagingMeta.hasPreviousPage) || (!reverted && pagingMeta.hasNextPage))"
+    v-if="
+      isLoading &&
+      ((reverted && pagingMeta.hasPreviousPage) ||
+        (!reverted && pagingMeta.hasNextPage))
+    "
     block
     class="text-center leading-none"
   >
     <span class="mx-auto inline-block">
-      <icon-icomoon-free-spinner9
-        class="w-4 h-4 animate-spin"
-      />
+      <icon-icomoon-free-spinner9 class="w-4 h-4 animate-spin" />
     </span>
   </WuiButton>
   <WuiButton
@@ -49,7 +51,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import { PagingMeta } from '~/ui.types';
+import { PagingMeta } from '~/ui.types'
 
 export default defineComponent({
   name: `WuiLoadMore`,

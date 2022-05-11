@@ -18,7 +18,7 @@ export default defineComponent({
 
     const { totalChildrenVNodes, label }: TUseAvatarGroup = useAvatarGroup(
       props,
-      slots,
+      slots
     )
 
     const classes = computed(() => ({
@@ -42,10 +42,10 @@ export default defineComponent({
                   class: ['wui-avatar-group-max'],
                   style: { width: props.size, height: props.size },
                 },
-                [h('span', `+${label.value.count}`)],
+                [h('span', `+${label.value.count}`)]
               )
             : null,
-        ],
+        ]
       )
   },
 })

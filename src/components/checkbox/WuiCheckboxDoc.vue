@@ -15,38 +15,21 @@
         </template>
       </WuiCheckbox>
       <template #props>
-        <WuiInput
-          v-model="checkboxLabel"
-          label-top="Checkbox label"
-        />
+        <WuiInput v-model="checkboxLabel" label-top="Checkbox label" />
         <WuiTextarea
           v-model="checkboxSubLabel"
           placeholder="Additional information"
           resize-on-write
           label-top="Checkbox sublabel"
         />
-        <WuiCheckbox
-          v-model="lineCheck"
-          label="Line through"
-        />
-        <WuiInput
-          v-model="checkboxIcon"
-          label-top="Checkbox icon"
-        />
-        <WuiCheckbox
-          v-model="checkboxPulse"
-          label="Pulse"
-        />
-        <WuiCheckbox
-          v-model="checkboxDisabled"
-          label="Disabled"
-        />
+        <WuiCheckbox v-model="lineCheck" label="Line through" />
+        <WuiInput v-model="checkboxIcon" label-top="Checkbox icon" />
+        <WuiCheckbox v-model="checkboxPulse" label="Pulse" />
+        <WuiCheckbox v-model="checkboxDisabled" label="Disabled" />
       </template>
     </WuiCodeDemo>
 
-    <WuiCodeExample
-      title="LineThrough"
-    >
+    <WuiCodeExample title="LineThrough">
       <div class="flex flex-col">
         <WuiCheckbox
           v-model="lineCheck0"
@@ -54,28 +37,28 @@
           label="It's time"
           line-through
         />
-        <br>
+        <br />
         <WuiCheckbox
           v-model="lineCheck1"
           type="primary"
           label="For"
           line-through
         />
-        <br>
+        <br />
         <WuiCheckbox
           v-model="lineCheck2"
           type="primary"
           label="One more"
           line-through
         />
-        <br>
+        <br />
         <WuiCheckbox
           v-model="lineCheck3"
           type="primary"
           label="To Do"
           line-through
         />
-        <br>
+        <br />
         <WuiCheckbox
           v-model="lineCheck4"
           type="primary"
@@ -85,38 +68,22 @@
       </div>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Sublabel"
-    >
+    <WuiCodeExample title="Sublabel">
       <div class="w-3/5">
-        <WuiCheckbox
-          v-model="lineCheckSub1"
-          type="primary"
-        >
+        <WuiCheckbox v-model="lineCheckSub1" type="primary">
           By signing this I agree with Terms and Conditions
         </WuiCheckbox>
-        <br>
-        <WuiCheckbox
-          v-model="lineCheckSub2"
-          type="primary"
-        >
-          <template #default>
-            Subscribe for updates
-          </template>
-          <template #sublabel>
-            Get notified when you get updates
-          </template>
+        <br />
+        <WuiCheckbox v-model="lineCheckSub2" type="primary">
+          <template #default> Subscribe for updates </template>
+          <template #sublabel> Get notified when you get updates </template>
         </WuiCheckbox>
       </div>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Pulse"
-    >
+    <WuiCodeExample title="Pulse">
       <template #description>
-        <p class="mx-6">
-          Pulse helps you to catch user's attention
-        </p>
+        <p class="mx-6">Pulse helps you to catch user's attention</p>
       </template>
       <WuiCheckbox
         v-model="pulseValue"

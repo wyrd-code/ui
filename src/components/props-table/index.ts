@@ -1,1 +1,1 @@
-export { default as WuiPropsTable } from "./WuiPropsTable.vue"
+export { default as WuiPropsTable } from './WuiPropsTable.vue'

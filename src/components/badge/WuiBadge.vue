@@ -1,14 +1,7 @@
 <template>
-  <span
-    class="wui-badge"
-    :class="rootClasses"
-  >
+  <span class="wui-badge" :class="rootClasses">
     <slot />
-    <span
-      v-if="show"
-      class="wui-badge-body"
-      :class="bodyClasses"
-    >
+    <span v-if="show" class="wui-badge-body" :class="bodyClasses">
       {{ contentValue }}
     </span>
   </span>

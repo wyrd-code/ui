@@ -18,10 +18,7 @@
         <template v-if="!buttonIcon">
           {{ buttonText }}
         </template>
-        <div
-          v-else
-          class="icon-ph-heart text-black"
-        />
+        <div v-else class="icon-ph-heart text-black" />
       </WuiButton>
 
       <template #props>
@@ -37,91 +34,40 @@
           label-top="Size"
           :options="buttonSizes"
         />
-        <WuiInput
-          v-model="buttonText"
-          label-top="Label"
-        />
-        <WuiCheckbox
-          v-model="buttonOutline"
-          label="Outline"
-        />
-        <WuiCheckbox
-          v-model="buttonCircle"
-          label="Circle"
-        />
-        <WuiCheckbox
-          v-model="buttonWide"
-          label="Wide"
-        />
-        <WuiCheckbox
-          v-model="buttonActive"
-          label="Active"
-        />
-        <WuiCheckbox
-          v-model="buttonBlock"
-          label="Block"
-        />
-        <WuiCheckbox
-          v-model="buttonIcon"
-          label="Icon"
-        />
-        <WuiCheckbox
-          v-model="buttonLoading"
-          label="Loading"
-        />
-        <WuiCheckbox
-          v-model="buttonLoadingTakeover"
-          label="Loading takeover"
-        />
-        <WuiCheckbox
-          v-model="buttonDisabled"
-          label="Disabled"
-        />
+        <WuiInput v-model="buttonText" label-top="Label" />
+        <WuiCheckbox v-model="buttonOutline" label="Outline" />
+        <WuiCheckbox v-model="buttonCircle" label="Circle" />
+        <WuiCheckbox v-model="buttonWide" label="Wide" />
+        <WuiCheckbox v-model="buttonActive" label="Active" />
+        <WuiCheckbox v-model="buttonBlock" label="Block" />
+        <WuiCheckbox v-model="buttonIcon" label="Icon" />
+        <WuiCheckbox v-model="buttonLoading" label="Loading" />
+        <WuiCheckbox v-model="buttonLoadingTakeover" label="Loading takeover" />
+        <WuiCheckbox v-model="buttonDisabled" label="Disabled" />
       </template>
     </WuiCodeDemo>
 
-    <WuiCodeExample
-      title="Type"
-    >
+    <WuiCodeExample title="Type">
       <div class="grid gap-4 grid-cols-6">
-        <WuiButton>
-          default
-        </WuiButton> 
-        <WuiButton
-          v-for="type in buttonTypes"
-          :key="type"
-          :type="type"
-        >
+        <WuiButton> default </WuiButton>
+        <WuiButton v-for="type in buttonTypes" :key="type" :type="type">
           {{ type }}
-        </WuiButton> 
+        </WuiButton>
       </div>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Outline"
-    >
+    <WuiCodeExample title="Outline">
       <div class="grid gap-4 grid-cols-6">
-        <WuiButton outline>
-          default
-        </WuiButton> 
-        <WuiButton
-          v-for="type in buttonTypes"
-          :key="type"
-          :type="type"
-          outline
-        >
+        <WuiButton outline> default </WuiButton>
+        <WuiButton v-for="type in buttonTypes" :key="type" :type="type" outline>
           {{ type }}
-        </WuiButton> 
+        </WuiButton>
       </div>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Disabled"
-    >
+    <WuiCodeExample title="Disabled">
       <div class="grid gap-4 grid-cols-6">
-        <WuiButton disabled>
-          default
-        </WuiButton> 
+        <WuiButton disabled> default </WuiButton>
         <WuiButton
           v-for="type in buttonTypes"
           :key="type"
@@ -129,139 +75,69 @@
           disabled
         >
           {{ type }}
-        </WuiButton> 
+        </WuiButton>
       </div>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Loading"
-    >
-      <WuiButton
-        type="neutral"
-        loading
-      >
-        loading
-      </WuiButton>
+    <WuiCodeExample title="Loading">
+      <WuiButton type="neutral" loading> loading </WuiButton>
 
-      <WuiButton
-        type="neutral"
-        loading
-        outline
-      >
-        loading
-      </WuiButton>
+      <WuiButton type="neutral" loading outline> loading </WuiButton>
 
-      <WuiButton
-        type="neutral"
-        loading
-      />
+      <WuiButton type="neutral" loading />
 
-      <WuiButton
-        type="neutral"
-        loading
-        circle
-      />
+      <WuiButton type="neutral" loading circle />
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Round"
-    >
+    <WuiCodeExample title="Round">
       <div class="flex space-x-8 items-center">
-        <WuiButton
-          type="neutral"
-          round
-          outline
-          size="lg"
-        >
-          Smooth
-        </WuiButton>
-        <WuiButton
-          type="neutral"
-          round
-          outline
-        >
-          Round
-          button 
-        </WuiButton>
+        <WuiButton type="neutral" round outline size="lg"> Smooth </WuiButton>
+        <WuiButton type="neutral" round outline> Round button </WuiButton>
       </div>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Icon & Circle"
-    >
-      <WuiButton
-        type="neutral"
-        circle
-        outline
-        size="lg"
-      >
+    <WuiCodeExample title="Icon & Circle">
+      <WuiButton type="neutral" circle outline size="lg">
         <div class="icon-ph-heart" />
       </WuiButton>
 
-      <WuiButton
-        type="neutral"
-        circle
-        outline
-      >
+      <WuiButton type="neutral" circle outline>
         <div class="icon-ph-heart" />
       </WuiButton>
 
-      <WuiButton
-        type="neutral"
-        circle
-        outline
-        size="sm"
-      >
+      <WuiButton type="neutral" circle outline size="sm">
         <div class="icon-ph-heart" />
       </WuiButton>
 
-      <WuiButton
-        type="neutral"
-        circle
-        outline
-        size="xs"
-      >
+      <WuiButton type="neutral" circle outline size="xs">
         <div class="icon-ph-heart" />
       </WuiButton>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Icon with label"
-    >
+    <WuiCodeExample title="Icon with label">
       <WuiButtonGroup vertical>
-        <WuiButton
-          outline
-          size="lg"
-        >
+        <WuiButton outline size="lg">
           <template #icon>
             <div class="icon-ph-heart" />
           </template>
           Some label
         </WuiButton>
 
-        <WuiButton
-          outline
-        >
+        <WuiButton outline>
           <template #icon>
             <div class="icon-ph-heart" />
           </template>
           Some label
         </WuiButton>
 
-        <WuiButton
-          outline
-          size="sm"
-        >
+        <WuiButton outline size="sm">
           <template #icon>
             <div class="icon-ph-heart" />
           </template>
           Some label
         </WuiButton>
 
-        <WuiButton
-          outline
-          size="xs"
-        >
+        <WuiButton outline size="xs">
           <template #icon>
             <div class="icon-ph-heart" />
           </template>
@@ -270,9 +146,7 @@
       </WuiButtonGroup>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Size"
-    >
+    <WuiCodeExample title="Size">
       <WuiButtonGroup vertical>
         <WuiButton
           v-for="size in buttonSizes"
@@ -282,52 +156,28 @@
           wide
         >
           {{ size }}
-        </WuiButton> 
+        </WuiButton>
       </WuiButtonGroup>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Wide"
-    >
-      <WuiButton
-        type="neutral"
-        wide
-      >
-        wide
-      </WuiButton>
+    <WuiCodeExample title="Wide">
+      <WuiButton type="neutral" wide> wide </WuiButton>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Block"
-    >
-      <WuiButton
-        type="neutral"
-        block
-      >
-        block
-      </WuiButton>
+    <WuiCodeExample title="Block">
+      <WuiButton type="neutral" block> block </WuiButton>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Glass"
-    >
+    <WuiCodeExample title="Glass">
       <div
         class="bg-cover border rounded bg-base-300 shadow-md p-20"
-        style="background-image:url(https://picsum.photos/id/102/400/300)"
+        style="background-image: url(https://picsum.photos/id/102/400/300)"
       >
-        <WuiButton
-          glass
-          size="lg"
-        >
-          Glass button
-        </WuiButton>
+        <WuiButton glass size="lg"> Glass button </WuiButton>
       </div>
     </WuiCodeExample>
 
-    <WuiPropsTable
-      tag-name="Button"
-      :data-sheet="dataSheet"
-    />
+    <WuiPropsTable tag-name="Button" :data-sheet="dataSheet" />
   </div>
 </template>
 

@@ -12,7 +12,7 @@ import {
 
 export const useStepsPoints = (
   startValue: TStepItem[],
-  { max, min, step, valuePosition }: TDataByPreparedStepList,
+  { max, min, step, valuePosition }: TDataByPreparedStepList
 ): ComputedRef<TStepItem[]> =>
   computed<TStepItem[]>(() => {
     const resultStepsPoints: TStepItem[] = [...startValue]
@@ -31,7 +31,7 @@ export const useStepsPoints = (
 
 export const useValuePosition = (
   props: { [key: string]: any },
-  emit: (name: string, prop: any) => void,
+  emit: (name: string, prop: any) => void
 ): TResultUseValuePosition => {
   const startValue = getTotalPosition({
     value: props.modelValue,

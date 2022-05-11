@@ -1,8 +1,5 @@
 <template>
-  <transition
-    name="fade-bottom"
-    @after-leave="destroy"
-  >
+  <transition name="fade-bottom" @after-leave="destroy">
     <div
       v-show="show"
       :style="positionPx"
@@ -24,25 +21,16 @@
           class="wui-notification-icon"
           :class="icon || typeIcon"
         />
-        <span
-          v-if="emoji && !image"
-          class="wui-notification-emoji"
-        >{{
+        <span v-if="emoji && !image" class="wui-notification-emoji">{{
           emoji
         }}</span>
       </div>
       <div class="wui-notification-description-block">
         <span class="wui-notification-close">
-          <span
-            class="text-xl icon-ph-x"
-            @click="destroy"
-          />
+          <span class="text-xl icon-ph-x" @click="destroy" />
         </span>
 
-        <span
-          v-if="title"
-          class="wui-notification-description-block-title"
-        >{{
+        <span v-if="title" class="wui-notification-description-block-title">{{
           title
         }}</span>
         <span>{{ description }}</span>

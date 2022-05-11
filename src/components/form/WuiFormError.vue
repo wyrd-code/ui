@@ -5,10 +5,7 @@
     <span>{{ errors.message }}</span>
 
     <div v-if="showChildErrors">
-      <p
-        v-for="child, i in errors.data || []"
-        :key="`child-message-${i}`"
-      >
+      <p v-for="(child, i) in errors.data || []" :key="`child-message-${i}`">
         {{ child.message }}
       </p>
     </div>

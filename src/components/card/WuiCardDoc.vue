@@ -2,9 +2,7 @@
   <div>
     <h1>Card</h1>
 
-    <WuiCodeExample
-      title="Default"
-    >
+    <WuiCodeExample title="Default">
       <WuiCard>
         The First Things First manifesto was written 29 November 1963 and
         published in 1964 by Ken Garland. It was backed by over 400 graphic

@@ -1,7 +1,5 @@
 <template>
-  <span
-    class="spinner animate-spin animate-loop icon-ph-spinner-thin"
-  />
+  <span class="spinner animate-spin animate-loop icon-ph-spinner-thin" />
 </template>
 
 <script lang="ts">

@@ -1,1 +1,1 @@
-export { default as WuiHierarchy } from "./WuiHierarchy.vue"
+export { default as WuiHierarchy } from './WuiHierarchy.vue'

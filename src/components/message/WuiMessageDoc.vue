@@ -2,38 +2,21 @@
   <div>
     <h1>Message</h1>
 
-    <WuiCodeExample
-      title="Types"
-    >
-      <WuiButton
-        type="primary"
-        @click="showMessage('primary')"
-      >
+    <WuiCodeExample title="Types">
+      <WuiButton type="primary" @click="showMessage('primary')">
         Primary message
       </WuiButton>
-      <WuiButton
-        type="success"
-        @click="showMessage('success')"
-      >
+      <WuiButton type="success" @click="showMessage('success')">
         Success message
       </WuiButton>
-      <WuiButton
-        type="danger"
-        @click="showMessage('danger')"
-      >
+      <WuiButton type="danger" @click="showMessage('danger')">
         Danger message
       </WuiButton>
-      <WuiButton
-        type="warning"
-        @click="showMessage('warning')"
-      >
+      <WuiButton type="warning" @click="showMessage('warning')">
         Warning message
       </WuiButton>
     </WuiCodeExample>
-    <WuiCodeExample
-      :code="durationCode"
-      title="Duration"
-    >
+    <WuiCodeExample :code="durationCode" title="Duration">
       <WuiButton
         @click="$Message({ duration: 5000, text: 'I have 5000ms left' })"
       >
@@ -41,9 +24,7 @@
       </WuiButton>
     </WuiCodeExample>
 
-    <WuiPropsTable
-      :data-sheet="dataSheet"
-    />
+    <WuiPropsTable :data-sheet="dataSheet" />
   </div>
 </template>
 
@@ -141,4 +122,3 @@ export default defineComponent({
   },
 })
 </script>
-

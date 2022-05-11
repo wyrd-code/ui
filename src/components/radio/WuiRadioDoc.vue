@@ -31,24 +31,12 @@
       </div>
 
       <template #props>
-        <WuiInput
-          v-model="radioLabel"
-          label-top="Radio label"
-        />
-        <WuiCheckbox
-          v-model="radioPulse"
-          label="Pulse"
-        />
-        <WuiCheckbox
-          v-model="radioDisabled"
-          label="Disabled"
-        />
+        <WuiInput v-model="radioLabel" label-top="Radio label" />
+        <WuiCheckbox v-model="radioPulse" label="Pulse" />
+        <WuiCheckbox v-model="radioDisabled" label="Disabled" />
       </template>
     </WuiCodeDemo>
-    <WuiCodeExample
-      :code="typeCode"
-      title="Types"
-    >
+    <WuiCodeExample :code="typeCode" title="Types">
       <WuiRadio
         v-for="t in allowedRadioTypes"
         :key="t"
@@ -59,66 +47,30 @@
       />
     </WuiCodeExample>
 
-    <WuiCodeExample
-      :code="codeSublabel"
-      title="Sublabel"
-    >
+    <WuiCodeExample :code="codeSublabel" title="Sublabel">
       <div>
-        <WuiRadio
-          v-model="subradio"
-          type="primary"
-          :value="1"
-        >
+        <WuiRadio v-model="subradio" type="primary" :value="1">
           By signing this I agree with Terms and Conditions
         </WuiRadio>
-        <br>
-        <WuiRadio
-          v-model="subradio"
-          type="primary"
-          :value="2"
-        >
-          <template #default>
-            Subscribe for updates
-          </template>
-          <template #sublabel>
-            Get notified when you get updates
-          </template>
+        <br />
+        <WuiRadio v-model="subradio" type="primary" :value="2">
+          <template #default> Subscribe for updates </template>
+          <template #sublabel> Get notified when you get updates </template>
         </WuiRadio>
       </div>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      :code="pulseCode"
-      title="Pulse"
-    >
+    <WuiCodeExample :code="pulseCode" title="Pulse">
       <template #description>
-        <p class="px-6">
-          Pulse helps you to catch user's attention
-        </p>
+        <p class="px-6">Pulse helps you to catch user's attention</p>
       </template>
-      <WuiRadio
-        v-model="pulseValue"
-        pulse
-        label="Look at me"
-        value="42"
-      />
+      <WuiRadio v-model="pulseValue" pulse label="Look at me" value="42" />
     </WuiCodeExample>
-    <WuiCodeExample
-      :code="disabledCode"
-      title="Disabled"
-    >
-      <WuiRadio
-        v-model="pulseValue"
-        disabled
-        label="I'm disabled"
-        value="42"
-      />
+    <WuiCodeExample :code="disabledCode" title="Disabled">
+      <WuiRadio v-model="pulseValue" disabled label="I'm disabled" value="42" />
     </WuiCodeExample>
 
-    <WuiPropsTable
-      tag-name="WuiRadio"
-      :data-sheet="dataSheet"
-    />
+    <WuiPropsTable tag-name="WuiRadio" :data-sheet="dataSheet" />
   </div>
 </template>
 <script lang="ts">

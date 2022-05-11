@@ -5,10 +5,10 @@ import { TUseAvatarGroup } from './types'
 
 export const useAvatarGroup = (
   props: { max: number | null },
-  slots: Slots,
+  slots: Slots
 ): TUseAvatarGroup => {
   const childrenVNodes = ref(
-    slots.default ? getChildrenVNodesFromSlot(slots.default) : [],
+    slots.default ? getChildrenVNodesFromSlot(slots.default) : []
   )
 
   onUpdated(() => {
@@ -21,7 +21,7 @@ export const useAvatarGroup = (
   })
 
   const totalChildrenVNodes = computed(() =>
-    childrenVNodes.value.slice(0, props.max || childrenVNodes.value.length),
+    childrenVNodes.value.slice(0, props.max || childrenVNodes.value.length)
   )
 
   const label = computed(() => ({

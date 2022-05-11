@@ -6,7 +6,7 @@ import {
   onMounted,
   onBeforeUnmount,
   ref,
-} from 'vue';
+} from 'vue'
 
 export default defineComponent({
   name: 'WuiScrollUp',
@@ -33,62 +33,68 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const pointer = ref(0);
-    const isTop = computed(() => pointer.value < props.scrollY);
+    const pointer = ref(0)
+    const isTop = computed(() => pointer.value < props.scrollY)
 
     function checkPoint() {
-      pointer.value = window.scrollY;
+      pointer.value = window.scrollY
     }
 
     function scrollToTop() {
-      const cosParameter = window.scrollY / 2;
-      let scrollCount = 0;
-      let oldTimestamp = performance.now();
+      const cosParameter = window.scrollY / 2
+      let scrollCount = 0
+      let oldTimestamp = performance.now()
       function step(newTimestamp: number) {
-        scrollCount += Math.PI / (props.scrollDuration / (newTimestamp - oldTimestamp));
+        scrollCount +=
+          Math.PI / (props.scrollDuration / (newTimestamp - oldTimestamp))
         if (scrollCount >= Math.PI) {
-          window.scrollTo(0, 0);
-          return;
+          window.scrollTo(0, 0)
+          return
         }
-        if (window.scrollY === 0) return;
-        window.scrollTo(0, Math.round(cosParameter + (cosParameter * Math.cos(scrollCount))));
-        oldTimestamp = newTimestamp;
-        window.requestAnimationFrame(step);
+        if (window.scrollY === 0) return
+        window.scrollTo(
+          0,
+          Math.round(cosParameter + cosParameter * Math.cos(scrollCount))
+        )
+        oldTimestamp = newTimestamp
+        window.requestAnimationFrame(step)
       }
-      window.requestAnimationFrame(step);
+      window.requestAnimationFrame(step)
     }
 
     onMounted(() => {
-      window.addEventListener('scroll', checkPoint);
-      checkPoint();
-    });
+      window.addEventListener('scroll', checkPoint)
+      checkPoint()
+    })
 
     onBeforeUnmount(() => {
-      window.removeEventListener('scroll', checkPoint);
-    });
+      window.removeEventListener('scroll', checkPoint)
+    })
 
     return {
       isTop,
       pointer,
       scrollToTop,
-    };
+    }
   },
   render() {
     return this.isTop && !this.alwaysShow
       ? undefined
       : h(
-        this.tag,
-        {
-          class: this.customClass,
-          onClick: this.scrollToTop,
-        },
-        this.$slots.default ? this.$slots.default({
-          pointer: this.pointer,
-          isTop: this.isTop,
-        }) : undefined,
-      );
+          this.tag,
+          {
+            class: this.customClass,
+            onClick: this.scrollToTop,
+          },
+          this.$slots.default
+            ? this.$slots.default({
+                pointer: this.pointer,
+                isTop: this.isTop,
+              })
+            : undefined
+        )
   },
-});
+})
 </script>
 
 <style lang="postcss">

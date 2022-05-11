@@ -5,48 +5,28 @@
     class="py-2 px-4"
     v-html="value"
   />
-  <div
-    v-else-if="field.linkTo"
-  >
-    <router-link
-      :to="field.linkTo(row)"
-      class="underline"
-    >
+  <div v-else-if="field.linkTo">
+    <router-link :to="field.linkTo(row)" class="underline">
       {{ value }}
     </router-link>
   </div>
-  <div
-    v-else-if="field.type === FormFieldType.DateTime"
-  >
-    <UseTimeAgo
-      v-slot="{ timeAgo }"
-      :time="value"
-    >
-      <WuiTooltip
-        :content="value"
-      >
-        <span
-          class="sm underline"
-        >
+  <div v-else-if="field.type === FormFieldType.DateTime">
+    <UseTimeAgo v-slot="{ timeAgo }" :time="value">
+      <WuiTooltip :content="value">
+        <span class="sm underline">
           {{ timeAgo }}
         </span>
       </WuiTooltip>
     </UseTimeAgo>
   </div>
-  <div
-    v-else
-  >
+  <div v-else>
     {{ value }}
   </div>
 </template>
 
 <script lang="ts">
 import { UseTimeAgo } from '@vueuse/components'
-import {
-  computed,
-  toRefs,
-  defineComponent, 
-} from 'vue'
+import { computed, toRefs, defineComponent } from 'vue'
 
 import { FieldPublicMeta, FormFieldType } from '~/ui.types'
 import { get } from '~/utilities'

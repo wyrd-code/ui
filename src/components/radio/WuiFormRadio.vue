@@ -24,7 +24,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 
-import type { FormFieldRadio } from '~/ui.types';
+import type { FormFieldRadio } from '~/ui.types'
 
 import { wuiFormInputPropsBase } from '../form/field.props'
 
@@ -37,7 +37,7 @@ export default defineComponent({
     ...wuiFormInputPropsBase,
     // Note: copied from wuiFormInputPropsBase to fix ts error
     onChange: {
-      type: Function as PropType<((payload: Event) => void)>,
+      type: Function as PropType<(payload: Event) => void>,
       required: true,
     },
   },

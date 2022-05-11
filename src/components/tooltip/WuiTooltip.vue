@@ -14,7 +14,9 @@
         v-show="show"
         ref="popover"
         class="wui-tooltip-popper"
-        :class="[placementPopover && `wui-tooltip--${placementPopover.split('-')[0]}`]"
+        :class="[
+          placementPopover && `wui-tooltip--${placementPopover.split('-')[0]}`,
+        ]"
         @mouseenter="handleMouseEnter"
         @mouseleave="handleMouseLeave"
       >

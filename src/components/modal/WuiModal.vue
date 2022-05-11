@@ -9,10 +9,7 @@
         :style="{ cursor: closableMask ? 'pointer' : 'default' }"
       >
         <transition name="drop-top">
-          <div
-            v-show="modelValue"
-            class="wui-modal-wrap"
-          >
+          <div v-show="modelValue" class="wui-modal-wrap">
             <div
               class="wui-modal-wrap-inner"
               tabindex="0"
@@ -22,28 +19,23 @@
                 ref="modalBody"
                 class="wui-modal-body"
                 :class="{
-                  'wui-modal-body--has-image': $slots.image && !($slots.header || $slots.body || $slots.actions),
-                  [width]: !$slots.image && ($slots.header || $slots.body || $slots.actions),
+                  'wui-modal-body--has-image':
+                    $slots.image &&
+                    !($slots.header || $slots.body || $slots.actions),
+                  [width]:
+                    !$slots.image &&
+                    ($slots.header || $slots.body || $slots.actions),
                 }"
               >
                 <slot name="image" />
                 <slot />
-                <div
-                  v-if="$slots.header"
-                  class="wui-modal-header"
-                >
+                <div v-if="$slots.header" class="wui-modal-header">
                   <slot name="header" />
                 </div>
-                <div
-                  v-if="$slots.body"
-                  class="wui-modal-content"
-                >
+                <div v-if="$slots.body" class="wui-modal-content">
                   <slot name="body" />
                 </div>
-                <div
-                  v-if="$slots.actions"
-                  class="wui-modal-footer"
-                >
+                <div v-if="$slots.actions" class="wui-modal-footer">
                   <slot name="actions" />
                 </div>
               </div>
@@ -56,15 +48,9 @@
 </template>
 
 <script lang="ts">
-import { useFocusTrap } from '@vueuse/integrations/useFocusTrap'
+import { useFocusTrap } from '@vueuse/integrations'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
-import {
-  defineComponent,
-  watch,
-  ref,
-  nextTick,
-  getCurrentInstance,
-} from 'vue'
+import { defineComponent, watch, ref, nextTick, getCurrentInstance } from 'vue'
 
 export default defineComponent({
   name: 'WuiModal',
@@ -143,9 +129,9 @@ export default defineComponent({
               }) translateY(${scaleAndTranslate![1] + 5}%)`
             })
 
-            if (modalBody.value){
+            if (modalBody.value) {
               modalBody.value.style.transform = ''
-            } 
+            }
 
             deactivate()
             if (!modalsList.length) {
@@ -154,7 +140,7 @@ export default defineComponent({
             document.removeEventListener('keydown', pressEsc)
           }
         }
-      },
+      }
     )
 
     return {

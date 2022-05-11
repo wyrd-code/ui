@@ -5,20 +5,14 @@
     :to="link"
     :class="rootClasses"
     v-bind="customProps"
-  >    
+  >
     <div
       v-if="loading"
       class="animate-spin icon-ph-spinner"
       :class="{ 'mr-2': $slots.default && !(loadingTakeover && loading) }"
     />
-    <span
-      v-else-if="$slots.icon"
-      class="wui-btn-icon-wrapper"
-    >
-      <slot
-        name="icon"
-        class="h-full"
-      />
+    <span v-else-if="$slots.icon" class="wui-btn-icon-wrapper">
+      <slot name="icon" class="h-full" />
     </span>
 
     <span
@@ -63,7 +57,7 @@ export default defineComponent({
     link: { type: Object, default: null },
   },
   setup(props, { slots }) {
-    const tag = computed(() => props.link ? 'router-link' : 'button')
+    const tag = computed(() => (props.link ? 'router-link' : 'button'))
     const rootClasses = computed(() => [
       {
         pulse: props.pulse,
@@ -75,7 +69,7 @@ export default defineComponent({
         'wui-btn-block': props.block,
         'wui-btn-active': props.active,
         'wui-btn-text': props.text,
-        'glass': props.glass,
+        glass: props.glass,
         'wui-btn-loading': props.loading,
         [`wui-btn-${props.size}`]: props.size,
         ...(props.type

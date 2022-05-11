@@ -1,1 +1,1 @@
-export { default as WuiModal } from "./WuiModal.vue"
+export { default as WuiModal } from './WuiModal.vue'

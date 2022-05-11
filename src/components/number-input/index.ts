@@ -1,1 +1,1 @@
-export { default as WuiNumberInput } from "./WuiNumberInput.vue"
+export { default as WuiNumberInput } from './WuiNumberInput.vue'

@@ -1,23 +1,8 @@
 <template>
-  <span
-    class="wui-avatar"
-    :class="rootClasses"
-    :style="rootStyles"
-  >
-    <img
-      v-if="src"
-      class="wui-avatar-img"
-      :src="src"
-      alt=""
-    >
-    <span
-      v-else-if="text"
-      class="wui-avatar-text"
-    >{{ avatarText }}</span>
-    <span
-      v-else
-      class="wui-avatar-icon icon-ph-user"
-    />
+  <span class="wui-avatar" :class="rootClasses" :style="rootStyles">
+    <img v-if="src" class="wui-avatar-img" :src="src" alt="" />
+    <span v-else-if="text" class="wui-avatar-text">{{ avatarText }}</span>
+    <span v-else class="wui-avatar-icon icon-ph-user" />
   </span>
 </template>
 

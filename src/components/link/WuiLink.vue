@@ -1,16 +1,13 @@
 <template>
-  <component
-    :is="elType"
-    v-bind="customProps"
-  >
+  <component :is="elType" v-bind="customProps">
     <slot>{{ text }}</slot>
   </component>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "vue";
+import { defineComponent, computed } from 'vue'
 
-import { RouteLocationRaw } from "~/ui.types";
+import { RouteLocationRaw } from '~/ui.types'
 
 export default defineComponent({
   name: `Link`,
@@ -26,26 +23,26 @@ export default defineComponent({
   },
   setup(props) {
     const elType = computed(() => {
-      return typeof props.to === "string" && props.to.startsWith("http")
-        ? "a"
-        : "router-link";
-    });
+      return typeof props.to === 'string' && props.to.startsWith('http')
+        ? 'a'
+        : 'router-link'
+    })
 
     const customProps = computed(() => {
-      if (elType.value === "a") {
+      if (elType.value === 'a') {
         return {
           href: props.to,
-        };
+        }
       }
       return {
         to: props.to,
-      };
-    });
+      }
+    })
 
     return {
       elType,
       customProps,
-    };
+    }
   },
-});
+})
 </script>

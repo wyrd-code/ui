@@ -1,23 +1,11 @@
 <template>
   <div>
     <transition name="fade">
-      <div
-        v-show="focus && mask"
-        class="wui-input-mask"
-      />
+      <div v-show="focus && mask" class="wui-input-mask" />
     </transition>
-    <span
-      v-if="labelTop"
-      class="wui-input-label"
-    >{{ labelTop }}</span>
-    <div
-      class="wui-input-prefix-wrapper"
-      :class="{ 'masked': mask }"
-    >
-      <div
-        v-if="prefix"
-        class="wui-input-prefix"
-      >
+    <span v-if="labelTop" class="wui-input-label">{{ labelTop }}</span>
+    <div class="wui-input-prefix-wrapper" :class="{ masked: mask }">
+      <div v-if="prefix" class="wui-input-prefix">
         {{ prefix }}
       </div>
       <div
@@ -27,14 +15,8 @@
           disabled && `wui-input-wrapper--disabled`,
         ]"
       >
-        <span
-          v-if="$slots.prefixIcon"
-          class="wui-input-icon-wrapper"
-        >
-          <span
-            class="wui-input-icon"
-            :name="prefixIcon"
-          >
+        <span v-if="$slots.prefixIcon" class="wui-input-icon-wrapper">
+          <span class="wui-input-icon" :name="prefixIcon">
             <slot name="prefixIcon" />
           </span>
         </span>
@@ -48,23 +30,14 @@
           @input="input"
           @focus="focus = true"
           @blur="focus = false"
-        >
-        <span
-          v-if="$slots.suffixIcon"
-          class="wui-input-icon-wrapper"
-        >
-          <span
-            class="wui-input-icon"
-            :name="suffixIcon"
-          >
+        />
+        <span v-if="$slots.suffixIcon" class="wui-input-icon-wrapper">
+          <span class="wui-input-icon" :name="suffixIcon">
             <slot name="suffixIcon" />
           </span>
         </span>
       </div>
-      <div
-        v-if="suffix"
-        class="wui-input-suffix"
-      >
+      <div v-if="suffix" class="wui-input-suffix">
         {{ suffix }}
       </div>
     </div>
@@ -76,7 +49,8 @@
           status && `wui-input-message--${status}`,
           disabled && `wui-input-message--disabled`,
         ]"
-      >{{ message }}</span>
+        >{{ message }}</span
+      >
     </transition>
   </div>
 </template>
@@ -93,12 +67,10 @@ export default defineComponent({
     status: {
       type: String,
       default: null,
-      validator: (value: Colors) => [
-        'default',
-        Colors.SUCCESS,
-        Colors.WARNING,
-        Colors.DANGER,
-      ].includes(value),
+      validator: (value: Colors) =>
+        ['default', Colors.SUCCESS, Colors.WARNING, Colors.DANGER].includes(
+          value
+        ),
     },
     type: {
       type: String,
@@ -134,8 +106,7 @@ export default defineComponent({
       type: String,
       default: null,
     },
-    modelValue: 
-    {
+    modelValue: {
       type: [String, Number],
       default: null,
     },

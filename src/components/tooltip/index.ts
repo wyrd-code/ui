@@ -1,1 +1,1 @@
-export { default as WuiTooltip } from "./WuiTooltip.vue"
+export { default as WuiTooltip } from './WuiTooltip.vue'

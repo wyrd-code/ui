@@ -1,17 +1,11 @@
 <template>
   <div>
     <!-- eslint-disable vue/no-v-html -->
-    <div
-      class=""
-      v-html="contentToDisplay"
-    />
-    <p
-      v-if="trimText"
-      class="bg-red-50"
-    >
+    <div class="" v-html="contentToDisplay" />
+    <p v-if="trimText" class="bg-red-50">
       <button
         class="btn btn-outline-primary block w-full mt-4"
-        @click="() => showFullText = true"
+        @click="() => (showFullText = true)"
       >
         Prikaži cijeli sadržaj
       </button>
@@ -20,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import clip from "text-clipper";
+import clip from 'text-clipper'
 import { defineComponent, ref, computed, toRefs } from 'vue'
 
 export default defineComponent({
@@ -46,7 +40,9 @@ export default defineComponent({
   setup(props) {
     const { content, limitChars, isHtml, maxLines } = toRefs(props)
     const showFullText = ref(false)
-    const trimText = computed(() => !showFullText.value && content.value.length > limitChars.value)
+    const trimText = computed(
+      () => !showFullText.value && content.value.length > limitChars.value
+    )
 
     const contentToDisplay = computed(() => {
       if (showFullText.value) {
@@ -55,7 +51,7 @@ export default defineComponent({
       return clip(content.value, limitChars.value, {
         html: isHtml.value,
         maxLines: maxLines.value,
-      });
+      })
     })
 
     return {

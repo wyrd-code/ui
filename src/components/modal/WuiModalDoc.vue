@@ -2,23 +2,17 @@
   <div>
     <h1>Modal</h1>
 
-    <WuiCodeExample
-      title="Modal example"
-    >
-      <WuiButton @click="defaultModal = true">
-        Modal
-      </WuiButton>
+    <WuiCodeExample title="Modal example">
+      <WuiButton @click="defaultModal = true"> Modal </WuiButton>
       <WuiModal v-model="defaultModal">
         <template #image>
           <img
             src="https://images.unsplash.com/photo-1549277513-f1b32fe1f8f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
-          >
+          />
         </template>
 
         <template #header>
-          <h3 style="margin: 0">
-            Header
-          </h3>
+          <h3 style="margin: 0">Header</h3>
         </template>
 
         <template #body>
@@ -36,13 +30,8 @@
         </template>
       </WuiModal>
     </WuiCodeExample>
-    <WuiCodeExample
-      title="Sign Up modal"
-    >
-      <WuiButton
-        type="primary"
-        @click="signinModal = true"
-      >
+    <WuiCodeExample title="Sign Up modal">
+      <WuiButton type="primary" @click="signinModal = true">
         Sign up
       </WuiButton>
       <WuiModal v-model="signinModal">
@@ -57,16 +46,10 @@
             />
             <div class="flex flex-row signupmodal-wrap-inputs">
               <div class="flex-1">
-                <WuiInput
-                  label-top="First Name"
-                  placeholder="John"
-                />
+                <WuiInput label-top="First Name" placeholder="John" />
               </div>
               <div class="flex-1">
-                <WuiInput
-                  label-top="Second Name"
-                  placeholder="Doe"
-                />
+                <WuiInput label-top="Second Name" placeholder="Doe" />
               </div>
             </div>
             <WuiInput
@@ -102,13 +85,8 @@
         </template>
       </WuiModal>
     </WuiCodeExample>
-    <WuiCodeExample
-      title="Confirmation modal"
-    >
-      <WuiButton
-        type="danger"
-        @click="confirmModal = true"
-      >
+    <WuiCodeExample title="Confirmation modal">
+      <WuiButton type="danger" @click="confirmModal = true">
         Delete account
       </WuiButton>
       <WuiModal v-model="confirmModal">
@@ -119,14 +97,12 @@
           Account will be deleted permanently, please confirm
         </template>
         <template #actions>
-          <WuiButton @click="confirmModal = false">
-            Cancel
-          </WuiButton>
+          <WuiButton @click="confirmModal = false"> Cancel </WuiButton>
           <WuiButton
             type="danger"
             @click="
               $Message.success({ text: 'Account deleted' }),
-              (confirmModal = false)
+                (confirmModal = false)
             "
           >
             Delete
@@ -134,13 +110,8 @@
         </template>
       </WuiModal>
     </WuiCodeExample>
-    <WuiCodeExample
-      title="Image only modal"
-    >
-      <WuiButton
-        type="primary"
-        @click="imageModal = true"
-      >
+    <WuiCodeExample title="Image only modal">
+      <WuiButton type="primary" @click="imageModal = true">
         Show image
       </WuiButton>
       <WuiModal v-model="imageModal">
@@ -148,14 +119,12 @@
           <img
             src="https://pbs.twimg.com/media/EeQvsMiWsAIleas?format=png&name=large"
             width="400"
-          >
+          />
         </template>
       </WuiModal>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Nested modals"
-    >
+    <WuiCodeExample title="Nested modals">
       <template #description>
         <p class="mx-6">
           Nested modals isn't a good idea for your interface, but we implemented
@@ -164,10 +133,7 @@
         </p>
       </template>
 
-      <WuiButton
-        type="primary"
-        @click="signinNestedModal = true"
-      >
+      <WuiButton type="primary" @click="signinNestedModal = true">
         Sign up
       </WuiButton>
       <WuiModal v-model="signinNestedModal">
@@ -182,16 +148,10 @@
             />
             <div class="flex flex-row signupmodal-wrap-inputs">
               <div class="flex-1">
-                <WuiInput
-                  label-top="First Name"
-                  placeholder="John"
-                />
+                <WuiInput label-top="First Name" placeholder="John" />
               </div>
               <div class="flex-1">
-                <WuiInput
-                  label-top="Second Name"
-                  placeholder="Doe"
-                />
+                <WuiInput label-top="Second Name" placeholder="Doe" />
               </div>
             </div>
             <WuiInput
@@ -208,12 +168,7 @@
               autocomplete="false"
             />
             <div class="signupmodal-wrap-checkbox">
-              <WuiButton
-                text
-                type="primary"
-                block
-                @click="nestedModal = true"
-              >
+              <WuiButton text type="primary" block @click="nestedModal = true">
                 Read Terms of Service
               </WuiButton>
             </div>
@@ -1095,10 +1050,7 @@
       </WuiModal>
     </WuiCodeExample>
 
-    <WuiPropsTable
-      :data-sheet="dataSheet"
-      :slot-sheet="slotSheet"
-    />
+    <WuiPropsTable :data-sheet="dataSheet" :slot-sheet="slotSheet" />
   </div>
 </template>
 

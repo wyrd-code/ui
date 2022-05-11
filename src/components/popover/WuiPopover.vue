@@ -1,13 +1,6 @@
 <template>
-  <div
-    v-clickoutside="hidePopover"
-    class="wui-tooltip"
-  >
-    <span
-      ref="trigger"
-      class="wui-tooltip-trigger"
-      @click="showPopover"
-    >
+  <div v-clickoutside="hidePopover" class="wui-tooltip">
+    <span ref="trigger" class="wui-tooltip-trigger" @click="showPopover">
       <slot />
     </span>
 
@@ -24,10 +17,7 @@
             'wui-tooltip-content--borderless': borderless,
           }"
         >
-          <slot
-            name="content"
-            :close="hidePopover"
-          />
+          <slot name="content" :close="hidePopover" />
         </div>
       </div>
     </transition>

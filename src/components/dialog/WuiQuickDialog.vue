@@ -1,8 +1,5 @@
 <template>
-  <WuiModal
-    :model-value="open"
-    @update:modelValue="() => $emit('close')"
-  >
+  <WuiModal :model-value="open" @update:modelValue="() => $emit('close')">
     <template #header>
       <h1>
         {{ title }}
@@ -17,10 +14,7 @@
         class="text-lg wui-btn"
         :class="`wui-btn-${submitType}`"
       >
-        <WuiSpinner
-          v-if="loading"
-          class="h-6 animate-spin w-6"
-        />
+        <WuiSpinner v-if="loading" class="h-6 animate-spin w-6" />
       </button>
       <button
         v-else

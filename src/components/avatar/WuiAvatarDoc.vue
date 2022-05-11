@@ -7,93 +7,51 @@
         :src="avatarImage ? photo : undefined"
         :square="avatarSquare"
       />
-      <template #props>       
-        <WuiCheckbox
-          v-model="avatarSquare"
-          label="Square"
-        />
-        <WuiCheckbox
-          v-model="avatarImage"
-          label="Image"
-        />
-        <WuiCheckbox
-          v-model="avatarText"
-          label="Text"
-        />
+      <template #props>
+        <WuiCheckbox v-model="avatarSquare" label="Square" />
+        <WuiCheckbox v-model="avatarImage" label="Image" />
+        <WuiCheckbox v-model="avatarText" label="Text" />
       </template>
     </WuiCodeDemo>
 
-    <WuiCodeExample
-      title="Type"
-    >
+    <WuiCodeExample title="Type">
       <WuiAvatar />
       <WuiAvatar square />
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Color"
-    >
+    <WuiCodeExample title="Color">
       <WuiAvatar color="#3051ff" />
       <WuiAvatar color="#f93155" />
       <WuiAvatar color="#131313" />
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Image"
-    >
+    <WuiCodeExample title="Image">
       <WuiAvatar :src="photo" />
-      <WuiAvatar
-        :src="photo"
-        square
-      />
+      <WuiAvatar :src="photo" square />
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Initials"
-    >
-      <WuiAvatar
-        color="#3051ff"
-        text="Yan"
-      />
-      <WuiAvatar
-        color="#3051ff"
-        text="Mike Yelinksy"
-      />
+    <WuiCodeExample title="Initials">
+      <WuiAvatar color="#3051ff" text="Yan" />
+      <WuiAvatar color="#3051ff" text="Mike Yelinksy" />
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Size"
-    >
+    <WuiCodeExample title="Size">
       <WuiAvatar />
       <WuiAvatar size="50px" />
       <WuiAvatar size="60px" />
       <WuiAvatar size="70px" />
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="With badge"
-    >
+    <WuiCodeExample title="With badge">
       <WuiBadge value="1">
-        <WuiAvatar
-          :src="photo"
-          square
-        />
+        <WuiAvatar :src="photo" square />
       </WuiBadge>
-      <WuiBadge
-        position="bottom-left"
-        type="success"
-        point
-      >
-        <WuiAvatar
-          :src="photo"
-          square
-        />
+      <WuiBadge position="bottom-left" type="success" point>
+        <WuiAvatar :src="photo" square />
       </WuiBadge>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Group"
-    >
+    <WuiCodeExample title="Group">
       <WuiAvatarGroup>
         <WuiAvatar :src="photo" />
         <WuiAvatar :src="photo" />
@@ -120,10 +78,7 @@
         <WuiAvatar :src="photo" />
       </WuiAvatarGroup>
 
-      <WuiAvatarGroup
-        vertical
-        square
-      >
+      <WuiAvatarGroup vertical square>
         <WuiAvatar :src="photo" />
         <WuiAvatar :src="photo" />
         <WuiAvatar :src="photo" />
@@ -132,9 +87,7 @@
       </WuiAvatarGroup>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Group with avatars limit"
-    >
+    <WuiCodeExample title="Group with avatars limit">
       <WuiAvatarGroup :max="3">
         <WuiAvatar :src="photo" />
         <WuiAvatar :src="photo" />
@@ -146,10 +99,7 @@
 
       <WuiDivider />
 
-      <WuiAvatarGroup
-        :max="3"
-        vertical
-      >
+      <WuiAvatarGroup :max="3" vertical>
         <WuiAvatar :src="photo" />
         <WuiAvatar :src="photo" />
         <WuiAvatar :src="photo" />
@@ -159,14 +109,8 @@
       </WuiAvatarGroup>
     </WuiCodeExample>
 
-    <WuiPropsTable
-      tag-name="WuiAvatar"
-      :data-sheet="dataSheet"
-    />
-    <WuiPropsTable
-      tag-name="WuiAvatarGroup"
-      :data-sheet="dataSheetGroup"
-    />
+    <WuiPropsTable tag-name="WuiAvatar" :data-sheet="dataSheet" />
+    <WuiPropsTable tag-name="WuiAvatarGroup" :data-sheet="dataSheetGroup" />
   </div>
 </template>
 

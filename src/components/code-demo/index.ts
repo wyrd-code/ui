@@ -1,1 +1,1 @@
-export { default as WuiCodeDemo } from "./WuiCodeDemo.vue"
+export { default as WuiCodeDemo } from './WuiCodeDemo.vue'

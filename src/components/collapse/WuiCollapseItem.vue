@@ -12,19 +12,13 @@
         v-if="active"
         class="wui-collapse-item-header-icon icon-ph-caret-down"
       />
-      <div
-        v-else
-        class="wui-collapse-item-header-icon icon-ph-caret-right"
-      />
+      <div v-else class="wui-collapse-item-header-icon icon-ph-caret-right" />
       <slot name="header">
         <span>{{ title }}</span>
       </slot>
     </button>
     <transition name="fade">
-      <div
-        v-show="active"
-        class="wui-collapse-item-body"
-      >
+      <div v-show="active" class="wui-collapse-item-body">
         <slot />
       </div>
     </transition>

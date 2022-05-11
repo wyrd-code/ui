@@ -1,9 +1,6 @@
 <template>
   <teleport to="body">
-    <div
-      ref="focusRef"
-      class="wui-drawer"
-    >
+    <div ref="focusRef" class="wui-drawer">
       <transition name="fade">
         <div
           v-show="modelValue && !hideMask"
@@ -30,7 +27,7 @@
 </template>
 
 <script lang="ts">
-import { useFocusTrap } from '@vueuse/integrations/useFocusTrap'
+import { useFocusTrap } from '@vueuse/integrations'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import {
   computed,
@@ -43,7 +40,6 @@ import {
 } from 'vue'
 
 import { Positions } from '../../models/enums'
-
 
 export default defineComponent({
   name: 'WuiDrawer',
@@ -129,7 +125,7 @@ export default defineComponent({
             deactivate()
           }
         }
-      },
+      }
     )
 
     function maskClick() {

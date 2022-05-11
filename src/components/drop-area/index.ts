@@ -1,1 +1,1 @@
-export { default as WuiDropArea } from "./WuiDropArea.vue"
+export { default as WuiDropArea } from './WuiDropArea.vue'

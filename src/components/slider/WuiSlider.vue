@@ -6,10 +6,7 @@
     @keydown.down.left.stop.prevent="keyEvent(Positions.L)"
     @keydown.up.right.stop.prevent="keyEvent(Positions.R)"
   >
-    <span
-      v-if="labelTop"
-      class="wui-slider-label"
-    >{{ labelTop }}</span>
+    <span v-if="labelTop" class="wui-slider-label">{{ labelTop }}</span>
     <div
       ref="sliderLineRef"
       class="wui-slider-line"
@@ -18,28 +15,19 @@
       @click="onSliderClick"
       @touchend="onSliderClick"
     >
-      <div
-        class="wui-slider-bar"
-        :style="{ width: `${valuePosition}%` }"
-      />
+      <div class="wui-slider-bar" :style="{ width: `${valuePosition}%` }" />
       <div
         class="wui-slider-controller-wrapper"
         :style="{ left: `${valuePosition}%` }"
         @mousedown="onMouseOrTouchDown"
         @touchstart.prevent="onMouseOrTouchDown"
       >
-        <wui-tooltip
-          ref="tooltipRef"
-          :content="modelValue"
-        >
+        <wui-tooltip ref="tooltipRef" :content="modelValue">
           <div class="wui-slider-controller" />
         </wui-tooltip>
       </div>
     </div>
-    <div
-      v-if="stepPoints && stepsPoints.length"
-      class="wui-slider-wrap-points"
-    >
+    <div v-if="stepPoints && stepsPoints.length" class="wui-slider-wrap-points">
       <div
         v-for="(point, index) in stepsPoints"
         :key="point.left"
@@ -48,10 +36,7 @@
         :class="{ 'wui-slider-point--active': point.active }"
       />
     </div>
-    <div
-      v-if="numbers"
-      class="wui-slider-numbers"
-    >
+    <div v-if="numbers" class="wui-slider-numbers">
       <div>{{ min }}</div>
       <div style="left: 100%">
         {{ max }}
@@ -99,7 +84,9 @@ export default defineComponent({
     const dragging = ref(false)
 
     const [valuePosition, setValuePosition] = useValuePosition(
-      props, emit as any)
+      props,
+      emit as any
+    )
 
     const stepsPoints: ComputedRef<TStepItem[]> = useStepsPoints(
       [{ left: 0, active: true }],
@@ -108,7 +95,7 @@ export default defineComponent({
         max: props.max,
         step: props.step,
         valuePosition,
-      },
+      }
     )
 
     watch(
@@ -121,7 +108,7 @@ export default defineComponent({
           max: props.max,
         } as TTotalValuePosition)
         setValuePosition(newValue)
-      },
+      }
     )
 
     function keyEvent(key: TKeyEvents) {

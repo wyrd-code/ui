@@ -26,13 +26,13 @@
 import { defineComponent } from 'vue'
 
 import { buildNavFromPageDefinitions } from '../ui.helpers'
-import pages from './pages'
+import { pages } from './pages'
 
 export default defineComponent({
   name: 'UI',
   setup() {
     return {
-      items: buildNavFromPageDefinitions(pages, 'ui')
+      items: buildNavFromPageDefinitions(pages, 'ui'),
     }
   },
 })

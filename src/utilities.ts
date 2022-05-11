@@ -1,17 +1,16 @@
 import { FormFieldType, WuiFormFieldSchema } from './ui.types'
 
-
 export const pick = (object: Record<string, any>, keys: string[]): object => {
   if (!Array.isArray(keys)) {
     throw new Error('INVALID KEYS ARRAY FOR OBJECT PICKING')
   }
 
-  return keys.reduce(function(result, key) {
+  return keys.reduce(function (result, key) {
     if (object && Object.prototype.hasOwnProperty.call(object, key)) {
-      result[key] = object[key];
+      result[key] = object[key]
     }
-    return result;
-  }, {} as Record<string, any>);
+    return result
+  }, {} as Record<string, any>)
 }
 
 // Graciously stolen from lodash's stringToPath
@@ -19,17 +18,21 @@ const charCodeOfDot = '.'.charCodeAt(0)
 const reEscapeChar = /\\(\\)?/g
 const rePropName = RegExp(
   // Match anything that isn't a dot or bracket.
-  '[^.[\\]]+' + '|' +
-  // Or match property names within brackets.
-  '\\[(?:' +
+  '[^.[\\]]+' +
+    '|' +
+    // Or match property names within brackets.
+    '\\[(?:' +
     // Match a non-string expression.
-    '([^"\'][^[]*)' + '|' +
+    '([^"\'][^[]*)' +
+    '|' +
     // Or match strings (supports escaping characters).
     '(["\'])((?:(?!\\2)[^\\\\]|\\\\.)*?)\\2' +
-  ')\\]'+ '|' +
-  // Or match "" as the space between consecutive dots or empty brackets.
-  '(?=(?:\\.|\\[\\])(?:\\.|\\[\\]|$))'
-  , 'g')
+    ')\\]' +
+    '|' +
+    // Or match "" as the space between consecutive dots or empty brackets.
+    '(?=(?:\\.|\\[\\])(?:\\.|\\[\\]|$))',
+  'g'
+)
 
 /**
  * Converts `string` to a property path array.
@@ -44,12 +47,16 @@ const stringToPath = (string: string) => {
     result.push('')
   }
   // tslint-disable-next-line
-  const replacer = (match: any, expression: any, quote: any, subString: any) => {
+  const replacer = (
+    match: any,
+    expression: any,
+    quote: any,
+    subString: any
+  ) => {
     let key = match
     if (quote) {
       key = subString.replace(reEscapeChar, '$1')
-    }
-    else if (expression) {
+    } else if (expression) {
       key = expression.trim()
     }
     result.push(key)
@@ -65,13 +72,22 @@ const stringToPath = (string: string) => {
  * @param {string} path A dot-notation path
  * @returns {any|undefined} If a truthy value is found at the path, it is returned
  */
-export const get = (input: Record<string, any>, path: string, defaultValue: any = undefined): any => {
+export const get = (
+  input: Record<string, any>,
+  path: string,
+  defaultValue: any = undefined
+): any => {
   const pathComponents = stringToPath(path)
   const currentProp = pathComponents[0]
   // end of the road?
-  if(pathComponents.length === 1) return input[currentProp]
+  if (pathComponents.length === 1) return input[currentProp]
   // keep going
-  if(input[currentProp]) return get(input[currentProp], pathComponents.slice(1).join('.'), defaultValue)
+  if (input[currentProp])
+    return get(
+      input[currentProp],
+      pathComponents.slice(1).join('.'),
+      defaultValue
+    )
   // surrender to the endless void
   return defaultValue
 }
@@ -79,7 +95,7 @@ export const get = (input: Record<string, any>, path: string, defaultValue: any 
 
 export const initDefaultDataForSchema = (
   schema: WuiFormFieldSchema,
-  rawData: Record<string, any> = {},
+  rawData: Record<string, any> = {}
 ): object => pick(rawData, extractFormFieldsFromSchema(schema))
 
 const formFieldTypes = Object.values(FormFieldType)
@@ -96,6 +112,4 @@ const extractFormFieldsFromSchema = (schema: WuiFormFieldSchema): string[] =>
     }
 
     return acc
-  },
-  [] as string[],
-)
+  }, [] as string[])

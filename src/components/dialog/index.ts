@@ -1,1 +1,1 @@
-export { default as WuiQuickDialog } from "./WuiQuickDialog.vue"
+export { default as WuiQuickDialog } from './WuiQuickDialog.vue'

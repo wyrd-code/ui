@@ -1,21 +1,9 @@
 <template>
-  <WuiDropdown
-    class="wui-button-dropdown"
-    :size="dropdownSize"
-  >
+  <WuiDropdown class="wui-button-dropdown" :size="dropdownSize">
     <template #button="{ toggle }">
-      <WuiButton
-        :size="buttonSize"
-        @click="toggle"
-      >
-        <template
-          v-if="showIcon && activeOption?.icon"
-          #icon
-        >
-          <div
-            :class="activeOption?.icon"
-            class="h-4 w-4"
-          />
+      <WuiButton :size="buttonSize" @click="toggle">
+        <template v-if="showIcon && activeOption?.icon" #icon>
+          <div :class="activeOption?.icon" class="h-4 w-4" />
         </template>
         <span v-if="showLabel">
           {{ activeOption?.label }}
@@ -30,13 +18,8 @@
         :class="itemClass"
         @click="() => onValueChange(option.value)"
       >
-        <template
-          v-if="showOptionIcon && option?.icon"
-        >
-          <div
-            :class="option?.icon"
-            class="h-4 text-neutral-500 w-4"
-          />
+        <template v-if="showOptionIcon && option?.icon">
+          <div :class="option?.icon" class="h-4 text-neutral-500 w-4" />
         </template>
         <span class="ml-1">{{ option.optionLabel || option.label }}</span>
       </a>
@@ -79,7 +62,8 @@ export default defineComponent({
     dropdownSize: {
       type: String as PropType<DropdownSize>,
       default: null,
-      validator: (val: DropdownSize) => Object.values(DropdownSize).includes(val),
+      validator: (val: DropdownSize) =>
+        Object.values(DropdownSize).includes(val),
     },
     showLabel: {
       type: Boolean,
@@ -96,8 +80,12 @@ export default defineComponent({
   },
   emits: ['update:modelValue'],
   setup(props, { emit }) {
-    const activeOptionByValue = computed(() => props.options.find(o => o.value === props.modelValue))
-    const activeOption = computed(() => activeOptionByValue.value || props.options.find(o => o.default))
+    const activeOptionByValue = computed(() =>
+      props.options.find((o) => o.value === props.modelValue)
+    )
+    const activeOption = computed(
+      () => activeOptionByValue.value || props.options.find((o) => o.default)
+    )
 
     const onValueChange = (value: any) => {
       emit('update:modelValue', value)
@@ -110,4 +98,3 @@ export default defineComponent({
   },
 })
 </script>
-

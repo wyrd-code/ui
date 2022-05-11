@@ -14,14 +14,8 @@
       />
 
       <template #props>
-        <WuiInput
-          v-model="inputPlaceholder"
-          label-top="Input placeholder"
-        />
-        <WuiInput
-          v-model="inputTopLabel"
-          label-top="Top label"
-        />
+        <WuiInput v-model="inputPlaceholder" label-top="Input placeholder" />
+        <WuiInput v-model="inputTopLabel" label-top="Top label" />
         <WuiInput
           v-model="inputMessageText"
           placeholder="Write something"
@@ -33,53 +27,29 @@
           label-top="Status"
           :options="statuses"
         />
-        <WuiCheckbox
-          v-model="inputMask"
-          label="Mask"
-        />
-        <WuiCheckbox
-          v-model="inputDisabled"
-          label="Disabled"
-        />
+        <WuiCheckbox v-model="inputMask" label="Mask" />
+        <WuiCheckbox v-model="inputDisabled" label="Disabled" />
       </template>
     </WuiCodeDemo>
 
     <WuiCodeExample title="Status">
-      <WuiInput
-        v-model="statusValue"
-        status="success"
-        message="Success"
-      />
-      <WuiInput
-        v-model="statusValue"
-        status="danger"
-        message="Danger"
-      />
-      <WuiInput
-        v-model="statusValue"
-        status="warning"
-        message="Warning"
-      />
+      <WuiInput v-model="statusValue" status="success" message="Success" />
+      <WuiInput v-model="statusValue" status="danger" message="Danger" />
+      <WuiInput v-model="statusValue" status="warning" message="Warning" />
     </WuiCodeExample>
 
     <WuiCodeExample title="With icons">
-      <WuiInput
-        v-model="inputValue"
-      >
+      <WuiInput v-model="inputValue">
         <template #prefixIcon>
           <div class="icon-ph-heart" />
         </template>
       </WuiInput>
-      <WuiInput
-        v-model="inputValue"
-      >
+      <WuiInput v-model="inputValue">
         <template #suffixIcon>
           <div class="icon-ph-heart" />
         </template>
       </WuiInput>
-      <WuiInput
-        v-model="inputValue"
-      >
+      <WuiInput v-model="inputValue">
         <template #prefixIcon>
           <div class="icon-ph-heart" />
         </template>
@@ -90,19 +60,9 @@
     </WuiCodeExample>
 
     <WuiCodeExample title="Prefix / suffix">
-      <WuiInput
-        v-model="inputValue"
-        prefix="https://"
-      />
-      <WuiInput
-        v-model="inputValue"
-        suffix=".com"
-      />
-      <WuiInput
-        v-model="inputValue"
-        prefix="https://"
-        suffix=".com"
-      />
+      <WuiInput v-model="inputValue" prefix="https://" />
+      <WuiInput v-model="inputValue" suffix=".com" />
+      <WuiInput v-model="inputValue" prefix="https://" suffix=".com" />
     </WuiCodeExample>
 
     <WuiCodeExample title="Masked">
@@ -123,15 +83,12 @@
       />
     </WuiCodeExample>
 
-    <WuiPropsTable
-      tag-name="WuiInput"
-      :data-sheet="dataSheet"
-    />
+    <WuiPropsTable tag-name="WuiInput" :data-sheet="dataSheet" />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue" 
+import { ref } from 'vue'
 
 const inputPlaceholder = ref('Your placeholder')
 const inputValue = ref('')
@@ -223,5 +180,4 @@ const dataSheet = [
     description: 'Makes input disabled',
   },
 ]
-
 </script>

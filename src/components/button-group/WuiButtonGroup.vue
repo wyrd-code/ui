@@ -5,10 +5,7 @@
       vertical ? 'wui-button-group--vertical' : 'wui-button-group--horizontal',
     ]"
   >
-    <slot
-      :value="modelValue"
-      @update="onUpdate"
-    />
+    <slot :value="modelValue" @update="onUpdate" />
 
     <WuiButton
       v-for="option in options"
@@ -16,19 +13,13 @@
       :type="modelValue === option.value ? activeType : type"
       @click="() => onUpdate(option.value)"
     >
-      <template
-        v-if="option?.icon"
-        #icon
-      >
-        <div
-          :class="option?.icon"
-          class="h-4 w-4"
-        />
+      <template v-if="option?.icon" #icon>
+        <div :class="option?.icon" class="h-4 w-4" />
       </template>
       <span>
         {{ option?.label }}
       </span>
-    </WuiButton> 
+    </WuiButton>
   </div>
 </template>
 
@@ -66,7 +57,7 @@ export default defineComponent({
   emits: ['update:modelValue'],
   setup(props, { emit }) {
     const onUpdate = (newValue: any) => {
-      emit('update:modelValue', newValue);
+      emit('update:modelValue', newValue)
     }
 
     return {

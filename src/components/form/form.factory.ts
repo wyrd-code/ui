@@ -1,4 +1,4 @@
-import { ref, unref, computed, Ref } from "vue";
+import { ref, unref, computed, Ref } from 'vue'
 
 import {
   WuiForm,
@@ -7,38 +7,41 @@ import {
   FormField,
   WuiFormFieldSchema,
   FormStatus,
-} from "~/ui.types";
-import { initDefaultDataForSchema } from "~/utilities";
+} from '~/ui.types'
+import { initDefaultDataForSchema } from '~/utilities'
 
-import { compileInputValidatorsFromString } from "../../composables/input-validators";
+import { compileInputValidatorsFromString } from '../../composables/input-validators'
 
-const validateField = async (field: FormField, data: Ref<Record<string, any>>): Promise<FormMessage[]> => {
+const validateField = async (
+  field: FormField,
+  data: Ref<Record<string, any>>
+): Promise<FormMessage[]> => {
   const { children, validation } = field
   const fieldMessages: FormMessage[] = []
   if (validation) {
     const validators = compileInputValidatorsFromString(validation)
 
-    const newMessages = await Object.keys(validators).reduce(async (prev, key: string) => {
-      const validator = validators[key]
-      const acc = await prev
-      const validatorMessages: any[] = []
-      const value = getCurrentFieldValue(field, data)
-      const result = await validator(value, field)
+    const newMessages = await Object.keys(validators).reduce(
+      async (prev, key: string) => {
+        const validator = validators[key]
+        const acc = await prev
+        const validatorMessages: any[] = []
+        const value = getCurrentFieldValue(field, data)
+        const result = await validator(value, field)
 
-      if (!result) {
-        return acc
-      }
+        if (!result) {
+          return acc
+        }
 
-      fieldMessages.push({
-        ...result,
-        validator: key,
-      })
+        fieldMessages.push({
+          ...result,
+          validator: key,
+        })
 
-      return [
-        ...acc,
-        ...validatorMessages,
-      ]
-    }, Promise.resolve([] as any[]))
+        return [...acc, ...validatorMessages]
+      },
+      Promise.resolve([] as any[])
+    )
     fieldMessages.push(...newMessages)
   }
 
@@ -48,25 +51,25 @@ const validateField = async (field: FormField, data: Ref<Record<string, any>>): 
 
   const childMessages = await validateFields(children, data)
 
-  return [
-    ...fieldMessages,
-    ...childMessages,
-  ]
+  return [...fieldMessages, ...childMessages]
 }
 
-const getCurrentFieldValue = (field: FormField, data: Ref<Record<string, any>>): any => {
+const getCurrentFieldValue = (
+  field: FormField,
+  data: Ref<Record<string, any>>
+): any => {
   return data.value[field.name as string]
 }
 
-const validateFields = async (fields: WuiFormFieldSchema, data: Ref<Record<string, any>>): Promise<FormMessage[]> => {
+const validateFields = async (
+  fields: WuiFormFieldSchema,
+  data: Ref<Record<string, any>>
+): Promise<FormMessage[]> => {
   const result = await fields.reduce(async (prev, field) => {
     const acc = await prev
     const fieldMessages = await validateField(field, data)
 
-    return [
-      ...acc,
-      ...fieldMessages,
-    ]
+    return [...acc, ...fieldMessages]
   }, Promise.resolve([] as FormMessage[]))
 
   return result
@@ -76,28 +79,31 @@ export const formFactory = (opts: WuiFormFactory): WuiForm => {
   const { schema } = opts
   const isLoading = ref(false)
 
-  const getDefaultData = () => typeof opts.defaultData === 'function'
-    ? opts.defaultData()
-    : unref(opts.defaultData) || {}
-  
-  const getCleanDefaultData = () => initDefaultDataForSchema(schema, getDefaultData())
+  const getDefaultData = () =>
+    typeof opts.defaultData === 'function'
+      ? opts.defaultData()
+      : unref(opts.defaultData) || {}
+
+  const getCleanDefaultData = () =>
+    initDefaultDataForSchema(schema, getDefaultData())
 
   const formData = ref<Record<string, any>>(getCleanDefaultData())
-  const resetFormData = () => formData.value = getCleanDefaultData()
+  const resetFormData = () => (formData.value = getCleanDefaultData())
 
   const getDefaultMessages = () => unref(opts.messages) || []
   const messages = ref<FormMessage[]>(getDefaultMessages())
-  const resetMessages = () => messages.value = []
-  const setMessages = (msgs: FormMessage[]) => messages.value = msgs
+  const resetMessages = () => (messages.value = [])
+  const setMessages = (msgs: FormMessage[]) => (messages.value = msgs)
 
-  const filterMessagesByType = <T>(type: string) => messages.value.filter(m => m.type === type) as unknown as FormMessage<T>[]
+  const filterMessagesByType = <T>(type: string) =>
+    messages.value.filter((m) => m.type === type) as unknown as FormMessage<T>[]
   const warnings = computed(() => filterMessagesByType<'warn'>('warn'))
   const infos = computed(() => filterMessagesByType<'info'>('info'))
   const errors = computed(() => filterMessagesByType<'error'>('error'))
-  const isValid = computed(() => errors.value.length === 0) 
+  const isValid = computed(() => errors.value.length === 0)
 
-  const status = ref<string | boolean | undefined>() 
-  const setStatus = (value?: FormStatus) => status.value = value
+  const status = ref<string | boolean | undefined>()
+  const setStatus = (value?: FormStatus) => (status.value = value)
 
   const resetForm = () => {
     resetFormData()
@@ -105,19 +111,17 @@ export const formFactory = (opts: WuiFormFactory): WuiForm => {
   }
 
   const setCurrentFieldValue = (field: FormField, value: unknown): any => {
-    return formData.value[field.name as string] = value
+    return (formData.value[field.name as string] = value)
   }
 
   const setFormData = (value: Record<string, any>): any => {
-    return formData.value = value
+    return (formData.value = value)
   }
 
   const onFieldValueChange = async (e: Event | any, field: FormField) => {
     // Be flexible about kinds of inputs allowed
     const isEventAnObject = typeof e === 'object'
-    const value = isEventAnObject
-      ? (e.target || {} as any).value
-      : e
+    const value = isEventAnObject ? (e.target || ({} as any)).value : e
 
     setCurrentFieldValue(field, value)
   }
@@ -136,7 +140,7 @@ export const formFactory = (opts: WuiFormFactory): WuiForm => {
       isLoading.value = false
       return
     }
-  
+
     if (opts.onSubmitForm) {
       const response = await opts.onSubmitForm(
         { ...formData.value }, // unwrap from vue proxy
@@ -146,25 +150,26 @@ export const formFactory = (opts: WuiFormFactory): WuiForm => {
           setStatus,
           setFormData,
           resetForm,
-        },
+        }
       )
       const { error } = response || {}
       if (error) {
-        let messages = [{
-          type: 'error',
-          status: error.status,
-          message: error.message,
-        }] as FormMessage[]
-        
-        if(Array.isArray(error.data)){
+        let messages = [
+          {
+            type: 'error',
+            status: error.status,
+            message: error.message,
+          },
+        ] as FormMessage[]
+
+        if (Array.isArray(error.data)) {
           messages = messages.concat(error.data)
         }
 
         setMessages(messages)
       }
-
     }
-  
+
     isLoading.value = false
   }
 
@@ -185,4 +190,4 @@ export const formFactory = (opts: WuiFormFactory): WuiForm => {
     infos,
     isValid,
   }
-} 
+}

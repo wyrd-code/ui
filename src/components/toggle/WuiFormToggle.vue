@@ -5,11 +5,7 @@
     }"
   >
     <label>
-      <input
-        type="checkbox"
-        :checked="isChecked"
-        @change="toggle"
-      >
+      <input type="checkbox" :checked="isChecked" @change="toggle" />
       <span class="toggle-track" />
     </label>
     <span @click="toggle">
@@ -19,19 +15,13 @@
 </template>
 
 <script lang="ts">
-import {
-  defineComponent,
-  computed, 
-} from 'vue'
+import { defineComponent, computed } from 'vue'
 
 export default defineComponent({
   props: {
     value: {
       default: 0,
-      type: [
-        Boolean,
-        Number,
-      ],
+      type: [Boolean, Number],
     },
   },
   emits: ['changed'],
@@ -39,8 +29,7 @@ export default defineComponent({
     const isChecked = computed(() => !!props.value)
 
     // Note: we are working with 0 and 1 not Bool
-    const toggle = () =>
-      emit('changed', isChecked.value ? 0 : 1)
+    const toggle = () => emit('changed', isChecked.value ? 0 : 1)
 
     return {
       toggle,

@@ -8,7 +8,7 @@ import type {
   _RouteRecordBase,
 } from 'vue-router'
 
-export type { RouteLocationRaw } from 'vue-router';
+export type { RouteLocationRaw } from 'vue-router'
 
 export type TEmit = (event: string, ...args: unknown[]) => void
 export type TProps = { [key: string]: any }
@@ -19,7 +19,6 @@ export interface IWui {
 }
 
 export type Timeout = ReturnType<typeof setTimeout>
-
 
 export interface WyrdNavItemMeta {
   auth?: any
@@ -69,10 +68,13 @@ export interface AppRouteMeta extends RouteMeta {
   layout?: {
     name: string
     component: Component
-  },
+  }
 }
 
-declare type _RouteRecordProps = boolean | Record<string, any> | ((to: RouteLocationNormalized) => Record<string, any>);
+declare type _RouteRecordProps =
+  | boolean
+  | Record<string, any>
+  | ((to: RouteLocationNormalized) => Record<string, any>)
 
 export interface AppRoute extends Omit<Partial<_RouteRecordBase>, 'children'> {
   component?: RouteComponent // AsyncComponentLoader
@@ -137,16 +139,16 @@ export enum FormInputValidationTriggerTypes {
   CHANGE = 'change',
 }
 export interface FormInputValidationTrigger {
-  type: FormInputValidationTriggerTypes;
-  threshold: number;
+  type: FormInputValidationTriggerTypes
+  threshold: number
 }
 
 interface FormFieldBase {
   type: string
   name?: string
   label?: string
-  ariaLabel?: string;
-  ariaLabelledBy?: string;
+  ariaLabel?: string
+  ariaLabelledBy?: string
   customClass?: string
   customStyle?: string
   disabled?: boolean
@@ -157,7 +159,7 @@ interface FormFieldBase {
   validationName?: string
   autocomplete?: string
   readonly?: boolean
-  validationTrigger?: FormInputValidationTrigger;
+  validationTrigger?: FormInputValidationTrigger
 }
 
 export interface FormFieldCheckbox extends FormFieldBase {
@@ -230,7 +232,7 @@ export interface FormFieldComponent extends FormFieldBase {
 }
 
 type FormFieldsNoChildren =
-  FormFieldCheckbox
+  | FormFieldCheckbox
   | FormFieldEditor
   | FormFieldFile
   | FormFieldGroup
@@ -255,7 +257,7 @@ export type FormStatus = string | boolean | undefined
 export interface FormSubmitContext {
   setFormData: (data: Record<string, any>) => void
   setMessages: (messages: FormMessage[]) => Promise<any> | any
-  resetForm: () => Promise<any> | any,
+  resetForm: () => Promise<any> | any
   setStatus: (val: FormStatus) => void
 }
 
@@ -267,47 +269,53 @@ export interface FormSubmitResponse {
   [x: string]: any
 }
 
-export type FormSubmitHandler<T = any, R = any> =
-  (formData: FormData<T>, context: FormSubmitContext) => R
+export type FormSubmitHandler<T = any, R = any> = (
+  formData: FormData<T>,
+  context: FormSubmitContext
+) => R
 
 export interface WuiFormFactory {
-  schema: WuiFormFieldSchema,
-  defaultData: FormData | Ref<FormData>,
-  messages?: FormMessage[] | Ref<FormMessage[]>,
-  onSubmitForm: FormSubmitHandler,
+  schema: WuiFormFieldSchema
+  defaultData: FormData | Ref<FormData>
+  messages?: FormMessage[] | Ref<FormMessage[]>
+  onSubmitForm: FormSubmitHandler
 }
 
-export interface FormMessage<T = 'warning' | 'error' | 'info' | 'success' | undefined> {
-  type: T,
-  message: string,
-  status?: string,
+export interface FormMessage<
+  T = 'warning' | 'error' | 'info' | 'success' | undefined
+> {
+  type: T
+  message: string
+  status?: string
   // superstruct validation Failure props
-  field?: string,
-  validator?: string,
-  path?: string,
+  field?: string
+  validator?: string
+  path?: string
   [x: string]: any
 }
 
 export interface WuiForm extends FormSubmitContext {
-  schema: WuiFormFieldSchema,
-  formData: Ref<Record<string, any>>,
-  messages: Ref<FormMessage[]>,
-  isLoading: Ref<boolean>,
-  status: Ref<FormStatus>,
-  onSubmit: () => Promise<any> | any,
-  onFieldValueChange: (e: Event | any, fieldSchema: FormFieldBase) => Promise<any> | any,
-  errors: Ref<FormMessage<'error'>[]>,
-  warnings: Ref<FormMessage<'warn'>[]>,
-  infos: Ref<FormMessage<'info'>[]>,
-  isValid: Ref<boolean>,
+  schema: WuiFormFieldSchema
+  formData: Ref<Record<string, any>>
+  messages: Ref<FormMessage[]>
+  isLoading: Ref<boolean>
+  status: Ref<FormStatus>
+  onSubmit: () => Promise<any> | any
+  onFieldValueChange: (
+    e: Event | any,
+    fieldSchema: FormFieldBase
+  ) => Promise<any> | any
+  errors: Ref<FormMessage<'error'>[]>
+  warnings: Ref<FormMessage<'warn'>[]>
+  infos: Ref<FormMessage<'info'>[]>
+  isValid: Ref<boolean>
 }
 
-export type FormInputValidator = (value: any, opts?: any) => Promise<FormMessage | undefined> | FormMessage | undefined
+export type FormInputValidator = (
+  value: any,
+  opts?: any
+) => Promise<FormMessage | undefined> | FormMessage | undefined
 
 // End WuiForm
 
-export type AlertType =
-  | 'info'
-  | 'warn'
-  | 'error'
-  | 'success'
+export type AlertType = 'info' | 'warn' | 'error' | 'success'

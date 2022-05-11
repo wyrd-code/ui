@@ -1,11 +1,6 @@
 <template>
   <div
-    class="
-      upload
-      border-4 border-b-4 border-dotted
-      relative
-      overflow-hidden
-    "
+    class="upload border-4 border-b-4 border-dotted relative overflow-hidden"
     :class="{
       'border-green-500 bg-green-100': dropActive,
       'border-yellow-500 ': dropActive,
@@ -13,15 +8,7 @@
   >
     <div
       v-if="active"
-      class="
-        absolute
-        left-0
-        top-0
-        right-0
-        bottom-0
-        bg-black
-        opacity-50
-      "
+      class="absolute left-0 top-0 right-0 bottom-0 bg-black opacity-50"
     />
     <slot />
   </div>

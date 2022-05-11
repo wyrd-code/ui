@@ -9,22 +9,13 @@
     />
 
     <!-- eslint-disable vue/no-v-html -->
-    <div
-      class="prose"
-      :class="classNames"
-      v-html="rendered"
-    />
+    <div class="prose" :class="classNames" v-html="rendered" />
   </div>
 </template>
 
 <script lang="ts">
 import MarkdownIt from 'markdown-it'
-import {
-  defineComponent,
-  ref,
-  toRefs,
-  watch, 
-} from 'vue'
+import { defineComponent, ref, toRefs, watch } from 'vue'
 
 export default defineComponent({
   props: {
@@ -55,8 +46,7 @@ export default defineComponent({
   },
   emits: ['changed'],
   setup(props, { emit }) {
-    const { value, breaks, linkify, typographer } =
-      toRefs(props)
+    const { value, breaks, linkify, typographer } = toRefs(props)
     const rendered = ref('')
 
     const mdInstance = new MarkdownIt().set({

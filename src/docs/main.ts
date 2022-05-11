@@ -15,9 +15,8 @@ import '../styles/reset.css'
 import '../styles/prism-tomorrow-night.css'
 import '../styles/markdown.styles.css'
 
-const history = import.meta.env.SSR === false
-  ? createWebHistory()
-  : createMemoryHistory()
+const history =
+  import.meta.env.SSR === false ? createWebHistory() : createMemoryHistory()
 
 const router = createVueRouter({
   history,
@@ -28,7 +27,7 @@ const router = createVueRouter({
       redirect: { name: 'ui.docs' },
       component: (): Component => import('./UI.vue'),
       children: routes,
-    }
+    },
   ],
 })
 

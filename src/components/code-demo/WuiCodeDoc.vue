@@ -1,6 +1,8 @@
 <template>
   <div class="wui-code-demo flex border border-solid bg-white rounded">
-    <div class="wui-code-demo-scene flex justify-center items-center flex-wrap p-4">
+    <div
+      class="wui-code-demo-scene flex justify-center items-center flex-wrap p-4"
+    >
       <slot />
     </div>
     <div class="wui-code-demo-props flex flex-col px-4 py-5">

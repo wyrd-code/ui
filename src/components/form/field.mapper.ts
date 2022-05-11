@@ -1,9 +1,4 @@
-import {
-  FormField,
-  FormFieldType,
-  FormFieldText,
-  WuiForm,
-} from "~/ui.types"
+import { FormField, FormFieldType, FormFieldText, WuiForm } from '~/ui.types'
 
 import WuiCheckbox from '../checkbox/WuiCheckbox.vue'
 import WuiFormEditorField from '../editor/WuiFormEditorField.vue'
@@ -19,19 +14,20 @@ declare type EmitFn = (payload: Event, args: any) => void
 
 const getListeners = (fieldSchema: FormField, emit: EmitFn, form: WuiForm) => {
   return {
-    onBlur: (e: InputEvent) => {
-    },
+    onBlur: (e: InputEvent) => {},
     onChange: (e: InputEvent) => {
       form.onFieldValueChange(e, fieldSchema)
     },
-    onFocus: (e: InputEvent) => {
-    },
+    onFocus: (e: InputEvent) => {},
   }
 }
 
 const getFieldProps = (schema: FormFieldText, emit: EmitFn, form: WuiForm) => {
-  const messages = form.messages.value.filter(m => m.field === schema.name)
-  const value = form.formData.value && schema.name ? form.formData.value[schema.name] : undefined
+  const messages = form.messages.value.filter((m) => m.field === schema.name)
+  const value =
+    form.formData.value && schema.name
+      ? form.formData.value[schema.name]
+      : undefined
 
   return {
     schema,
@@ -39,7 +35,7 @@ const getFieldProps = (schema: FormFieldText, emit: EmitFn, form: WuiForm) => {
     messages,
     isDisabled: form.isLoading.value,
     isRequired: schema.validation?.includes('required'),
-    isValid: !messages.some(m => m.type === 'error'),
+    isValid: !messages.some((m) => m.type === 'error'),
     ...getListeners(schema, emit, form),
   }
 }

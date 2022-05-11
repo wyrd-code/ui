@@ -1,11 +1,6 @@
 <template>
-  <component
-    :is="as"
-    class="wui-nav"
-  >
-    <slot
-      name="before"
-    />
+  <component :is="as" class="wui-nav">
+    <slot name="before" />
 
     <component
       :is="itemAs"
@@ -32,11 +27,7 @@
           {{ item.label }}
         </span>
       </router-link>
-      <span
-        v-else
-        :class="nonLinkClass"
-        @click="() => emitGo(item.to)"
-      >
+      <span v-else :class="nonLinkClass" @click="() => emitGo(item.to)">
         <div
           v-if="item.icon"
           class="wui-nav-item-icon"
@@ -48,11 +39,7 @@
       </span>
 
       <WuiNav
-        v-if="
-          showChildren &&
-            item.children &&
-            item.children.length
-        "
+        v-if="showChildren && item.children && item.children.length"
         :class="childNavClass"
         :as="as"
         :item-as="itemAs"
@@ -74,10 +61,7 @@
 </template>
 
 <script lang="ts">
-import {
-  defineComponent,
-  ref, 
-} from 'vue'
+import { defineComponent, ref } from 'vue'
 
 import type { WyrdNavItem } from '~/ui.types'
 
@@ -149,10 +133,8 @@ export default defineComponent({
   setup(_props, { emit }) {
     const emitGo = (to: any) => emit('go', to)
     const navsVisible = ref<Record<string, any>>({})
-    const setNavVisibility = (
-      key: string,
-      value: boolean,
-    ) => (navsVisible.value[key] = value)
+    const setNavVisibility = (key: string, value: boolean) =>
+      (navsVisible.value[key] = value)
 
     return {
       emitGo,

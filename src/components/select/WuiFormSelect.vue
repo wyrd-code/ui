@@ -22,7 +22,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 
-import { FormFieldSelect } from '~/ui.types';
+import { FormFieldSelect } from '~/ui.types'
 
 import { wuiFormInputPropsBase } from '../form/field.props'
 
@@ -34,7 +34,7 @@ export default defineComponent({
     },
     ...wuiFormInputPropsBase,
     onChange: {
-      type: Function as PropType<((payload: Event) => void)>,
+      type: Function as PropType<(payload: Event) => void>,
       required: true,
     },
   },

@@ -2,21 +2,14 @@
   <div>
     <h1>Popover</h1>
 
-    <WuiCodeExample
-      :code="exampleCode"
-      title="Example"
-    >
+    <WuiCodeExample :code="exampleCode" title="Example">
       <WuiPopover :disabled="removed">
         <WuiButton>Delete</WuiButton>
         <template #content>
           <div>
-            <p class="mb-2">
-              Please confirm deletion
-            </p>
+            <p class="mb-2">Please confirm deletion</p>
             <div class="flex justify-end">
-              <WuiButton size="sm">
-                No
-              </WuiButton>
+              <WuiButton size="sm"> No </WuiButton>
               <WuiButton
                 class="ml-2"
                 size="sm"
@@ -33,10 +26,7 @@
       </WuiPopover>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      :code="positionsCode"
-      title="Positions"
-    >
+    <WuiCodeExample :code="positionsCode" title="Positions">
       <template #description>
         <p class="px-6">
           Click to see the popover. There are 12 positions available for
@@ -48,58 +38,42 @@
         <WuiPopover placement="top">
           <WuiButton>Top</WuiButton>
 
-          <template #content>
-            Top popover
-          </template>
+          <template #content> Top popover </template>
         </WuiPopover>
         <WuiPopover placement="right">
           <WuiButton>Right</WuiButton>
 
-          <template #content>
-            Right popover
-          </template>
+          <template #content> Right popover </template>
         </WuiPopover>
         <WuiPopover placement="left">
           <WuiButton>Left</WuiButton>
 
-          <template #content>
-            Left popover
-          </template>
+          <template #content> Left popover </template>
         </WuiPopover>
         <WuiPopover placement="bottom">
           <WuiButton>Bottom</WuiButton>
 
-          <template #content>
-            Bottom popover
-          </template>
+          <template #content> Bottom popover </template>
         </WuiPopover>
       </WuiButton-group>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      :code="imageCode"
-      title="Image"
-    >
+    <WuiCodeExample :code="imageCode" title="Image">
       <template #description>
         <p class="px-6">
           You can disable paddings inside popover and show image
         </p>
       </template>
 
-      <WuiPopover
-        placement="top"
-        borderless
-      >
+      <WuiPopover placement="top" borderless>
         <WuiButton>Show image</WuiButton>
 
-        <template
-          #content
-        >
+        <template #content>
           <img
             width="150"
             src="https://picsum.photos/id/102/150/100"
             alt="logo"
-          >
+          />
         </template>
       </WuiPopover>
     </WuiCodeExample>

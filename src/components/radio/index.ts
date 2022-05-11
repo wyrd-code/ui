@@ -1,1 +1,1 @@
-export { default as WuiRadio } from "./WuiRadio.vue"
+export { default as WuiRadio } from './WuiRadio.vue'

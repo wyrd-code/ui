@@ -14,47 +14,21 @@
       </WuiTag>
 
       <template #props>
-        <WuiSelect
-          v-model="tagType"
-          label-top="Type"
-          :options="tagTypes"
-        />
-        <WuiInput
-          v-model="tagText"
-          label-top="Text"
-        />
-        <WuiCheckbox
-          v-model="tagFilled"
-          label="Filled"
-        />
-        <WuiCheckbox
-          v-model="tagClosable"
-          label="Closable"
-        />
+        <WuiSelect v-model="tagType" label-top="Type" :options="tagTypes" />
+        <WuiInput v-model="tagText" label-top="Text" />
+        <WuiCheckbox v-model="tagFilled" label="Filled" />
+        <WuiCheckbox v-model="tagClosable" label="Closable" />
       </template>
     </WuiCodeDemo>
 
-    <WuiCodeExample
-      title="Filled"
-    >
-      <WuiTag
-        v-for="type in ALLOWED_TYPES"
-        :key="type"
-        :type="type"
-      >
+    <WuiCodeExample title="Filled">
+      <WuiTag v-for="type in ALLOWED_TYPES" :key="type" :type="type">
         {{ type }}
       </WuiTag>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Filled"
-    >
-      <WuiTag
-        v-for="type in ALLOWED_TYPES"
-        :key="type"
-        :type="type"
-        filled
-      >
+    <WuiCodeExample title="Filled">
+      <WuiTag v-for="type in ALLOWED_TYPES" :key="type" :type="type" filled>
         {{ type }}
       </WuiTag>
     </WuiCodeExample>
@@ -74,11 +48,11 @@ import { Colors } from '../../models/enums'
 import { ALLOWED_TYPES } from './constants'
 
 const show = ref(true)
-const tagText = ref("Tag")
+const tagText = ref('Tag')
 const tagClosable = ref(false)
 const tagFilled = ref(false)
 const tagType = ref(Colors.NEUTRAL)
-const tagTypes = ALLOWED_TYPES.map(value => ({ value, label: value }))
+const tagTypes = ALLOWED_TYPES.map((value) => ({ value, label: value }))
 
 const onClose = () => {
   show.value = false
@@ -91,33 +65,33 @@ watch([tagType, tagText, tagClosable, tagFilled], () => {
 
 const eventSheet = [
   {
-    event: "@close",
-    description: "The event function triggered when user clicks on close icon",
-    arguments: "function(e: Event)",
+    event: '@close',
+    description: 'The event function triggered when user clicks on close icon',
+    arguments: 'function(e: Event)',
   },
 ]
 
 const dataSheet = [
   {
-    property: "type",
-    type: ["String"],
-    default: "neutral",
-    values: ["primary", "success", "danger", "warning", "black", "neutral"],
-    description: "Type of the tag",
+    property: 'type',
+    type: ['String'],
+    default: 'neutral',
+    values: ['primary', 'success', 'danger', 'warning', 'black', 'neutral'],
+    description: 'Type of the tag',
   },
   {
-    property: "filled",
-    type: ["Boolean"],
-    default: "false",
+    property: 'filled',
+    type: ['Boolean'],
+    default: 'false',
     values: [],
-    description: "Makes tag filled",
+    description: 'Makes tag filled',
   },
   {
-    property: "closable",
-    type: ["Boolean"],
-    default: "false",
+    property: 'closable',
+    type: ['Boolean'],
+    default: 'false',
     values: [],
-    description: "Makes tag closable",
+    description: 'Makes tag closable',
   },
 ]
 </script>

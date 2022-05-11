@@ -1,34 +1,19 @@
 <template>
   <transition name="fade">
-    <div
-      v-show="visible"
-      :class="rootClasses"
-    >
-      <div
-        v-if="showIcon"
-        class="wui-alert-iconwrapper"
-      >
+    <div v-show="visible" :class="rootClasses">
+      <div v-if="showIcon" class="wui-alert-iconwrapper">
         <slot name="icon">
-          <div
-            :class="icon"
-            class="wui-alert-icon"
-          />
+          <div :class="icon" class="wui-alert-icon" />
         </slot>
       </div>
       <div class="wui-alert-body">
         <p class="wui-alert-title">
           {{ title }}
         </p>
-        <p
-          v-if="!defaultSlot && body"
-          class="wui-alert-slot"
-        >
+        <p v-if="!defaultSlot && body" class="wui-alert-slot">
           {{ body }}
         </p>
-        <p
-          v-else-if="defaultSlot"
-          class="wui-alert-slot"
-        >
+        <p v-else-if="defaultSlot" class="wui-alert-slot">
           <slot />
         </p>
       </div>
@@ -52,10 +37,10 @@ import { ALLOWED_TYPES } from './constants'
 const ICON_BY_TYPE: Partial<Record<Colors, string>> = {
   [Colors.NEUTRAL]: 'icon-ph-circle-wavy',
   [Colors.PRIMARY]: 'icon-ph-circle-wavy',
-  [Colors.INFO]:    'icon-ph-circle-wavy-warning',
+  [Colors.INFO]: 'icon-ph-circle-wavy-warning',
   [Colors.SUCCESS]: 'icon-ph-circle-wavy-check',
   [Colors.WARNING]: 'icon-ph-warning',
-  [Colors.DANGER]:  'icon-ph-warning',
+  [Colors.DANGER]: 'icon-ph-warning',
 }
 
 export default defineComponent({
@@ -77,7 +62,7 @@ export default defineComponent({
     const defaultSlot = useCheckSlot(slots, 'default')
 
     const clickCross = () => emit('on-close')
-    const icon = computed(() => (ICON_BY_TYPE  as any)[props.type])
+    const icon = computed(() => (ICON_BY_TYPE as any)[props.type])
     const rootClasses = computed(() => [
       'wui-alert',
       `wui-alert--${props.type}`,

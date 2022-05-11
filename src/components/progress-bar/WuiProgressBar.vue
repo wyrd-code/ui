@@ -5,10 +5,7 @@
       :class="[infinite && 'it-progress-bar--infinite']"
       :style="{ height: `${height}px` }"
     >
-      <div
-        class="it-progress-line"
-        :style="progressStyle"
-      >
+      <div class="it-progress-line" :style="progressStyle">
         <!-- eslint-disable vue/no-v-html -->
         <span
           v-if="showTooltip && !infinite"
@@ -55,7 +52,7 @@ export default defineComponent({
         return {}
       }
       return {
-        width: `${props.progress}%`
+        width: `${props.progress}%`,
       }
     })
 

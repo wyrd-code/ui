@@ -15,7 +15,7 @@
       :value="modelValue"
       v-bind="$attrs"
       @change="check"
-    >
+    />
     <span :class="['wui-radio-border', pulse && !disabled && 'pulse']">
       <span class="wui-radio-circle" />
     </span>
@@ -24,12 +24,14 @@
         v-if="label && !$slots.default"
         class="wui-radio-label"
         :class="[disabled && 'wui-radio-label--disabled']"
-      >{{ label }}</span>
+        >{{ label }}</span
+      >
       <span
         v-if="subLabel && !$slots.sublabel"
         class="wui-radio-label wui-radio-label--sub"
         :class="[disabled && 'wui-radio-label--disabled']"
-      >{{ subLabel }}</span>
+        >{{ subLabel }}</span
+      >
 
       <span
         v-if="$slots.default"
@@ -68,7 +70,7 @@ export default defineComponent({
       type: String,
       default: null,
     },
-    subLabel: { type: String, default: null, },
+    subLabel: { type: String, default: null },
     pulse: { type: Boolean },
     disabled: { type: Boolean },
     lineThrough: { type: Boolean },

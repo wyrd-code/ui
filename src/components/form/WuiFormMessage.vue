@@ -1,18 +1,12 @@
 <template>
-  <WuiAlert
-    :key="message.name"
-    class="form-message"
-    :type="alertType"
-  >
+  <WuiAlert :key="message.name" class="form-message" :type="alertType">
     <span class="name">
       {{ message.name }}
     </span>
     <span class="text">
       {{ message.message }}
     </span>
-    <small class="context">
-      &nbsp;(in http {{ message.context }})
-    </small>
+    <small class="context"> &nbsp;(in http {{ message.context }}) </small>
   </WuiAlert>
 </template>
 

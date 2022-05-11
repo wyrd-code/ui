@@ -4,82 +4,47 @@
 
     <WuiCodeDemo>
       <WuiButtonGroup :vertical="!isHorizontal">
-        <WuiButton
-          v-for="(label, idx) in items"
-          :key="`horizontal-${idx}`"
-        >
+        <WuiButton v-for="(label, idx) in items" :key="`horizontal-${idx}`">
           {{ label }}
-        </WuiButton> 
+        </WuiButton>
       </WuiButtonGroup>
 
       <template #props>
-        <WuiCheckbox
-          v-model="isHorizontal"
-          label="Horizontal"
-        />
+        <WuiCheckbox v-model="isHorizontal" label="Horizontal" />
 
-        <WuiInput
-          v-model="newItemLabel"
-          placeholder="New item label"
-        />
-        <WuiButton
-          @click="addNewItem"
-        >
-          Add new item
-        </WuiButton>
+        <WuiInput v-model="newItemLabel" placeholder="New item label" />
+        <WuiButton @click="addNewItem"> Add new item </WuiButton>
       </template>
     </WuiCodeDemo>
 
-    <WuiCodeExample
-      title="Radio fields"
-    >
-      <WuiButtonGroup
-        v-model="radioValue"
-        :options="radioOptions"
-      />
+    <WuiCodeExample title="Radio fields">
+      <WuiButtonGroup v-model="radioValue" :options="radioOptions" />
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Horizontal"
-    >
+    <WuiCodeExample title="Horizontal">
       <WuiButtonGroup>
-        <WuiButton
-          v-for="(label, idx) in items"
-          :key="`horizontal-${idx}`"
-        >
+        <WuiButton v-for="(label, idx) in items" :key="`horizontal-${idx}`">
           {{ label }}
-        </WuiButton> 
+        </WuiButton>
       </WuiButtonGroup>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Vertical"
-    >
+    <WuiCodeExample title="Vertical">
       <WuiButtonGroup vertical>
-        <WuiButton
-          v-for="(label, idx) in items"
-          :key="`horizontal-${idx}`"
-        >
+        <WuiButton v-for="(label, idx) in items" :key="`horizontal-${idx}`">
           {{ label }}
-        </WuiButton> 
+        </WuiButton>
       </WuiButtonGroup>
     </WuiCodeExample>
 
-    <WuiPropsTable
-      tag-name="ButtonGroup"
-      :data-sheet="dataSheetGroup"
-    />
+    <WuiPropsTable tag-name="ButtonGroup" :data-sheet="dataSheetGroup" />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-const items = [
-  'An item',
-  'Another Item',
-  'One item longer than others',
-]
+const items = ['An item', 'Another Item', 'One item longer than others']
 
 const radioOptions = [
   {

@@ -19,32 +19,15 @@
           label-top="Alert type"
           :options="alertTypes"
         />
-        <WuiInput
-          v-model="alertTitle"
-          label-top="Alert title"
-        />
-        <WuiInput
-          v-model="alertBody"
-          label-top="Alert Body"
-        />
-        <WuiCheckbox
-          v-model="alertShowIcon"
-          label="Icon"
-        />
-        <WuiCheckbox
-          v-model="alertClosable"
-          label="Closable"
-        />
-        <WuiCheckbox
-          v-model="alertVisible"
-          label="Visible"
-        />
+        <WuiInput v-model="alertTitle" label-top="Alert title" />
+        <WuiInput v-model="alertBody" label-top="Alert Body" />
+        <WuiCheckbox v-model="alertShowIcon" label="Icon" />
+        <WuiCheckbox v-model="alertClosable" label="Closable" />
+        <WuiCheckbox v-model="alertVisible" label="Visible" />
       </template>
     </WuiCodeDemo>
 
-    <WuiCodeExample
-      title="Type"
-    >
+    <WuiCodeExample title="Type">
       <div class="flex flex-col flex-1 space-y-2">
         <WuiAlert
           v-for="type in alertTypes"
@@ -56,31 +39,20 @@
       </div>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Content slot"
-    >
+    <WuiCodeExample title="Content slot">
       <div class="flex flex-col flex-1">
-        <WuiAlert
-          title="Alert with content slot"
-          type="info"
-        >
+        <WuiAlert title="Alert with content slot" type="info">
           You can put whatever you want here, I'd put a
-          <WuiTag type="info">
-            Tag
-          </WuiTag>
+          <WuiTag type="info"> Tag </WuiTag>
         </WuiAlert>
       </div>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Icon slot"
-    >
+    <WuiCodeExample title="Icon slot">
       <div class="flex flex-col flex-1">
-        <WuiAlert
-          title="Alert with icon slot"
-          type="info"
-        >
-          You can put whatever icon in here, just use class <strong>wui-alert-icon</strong> on it.
+        <WuiAlert title="Alert with icon slot" type="info">
+          You can put whatever icon in here, just use class
+          <strong>wui-alert-icon</strong> on it.
           <template #icon>
             <div class="wui-alert-icon icon-ph-heart" />
           </template>
@@ -99,8 +71,8 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
- 
-import { ALLOWED_TYPES } from './constants' 
+
+import { ALLOWED_TYPES } from './constants'
 
 const alertVisible = ref(true)
 const alertTitle = ref('Alert title')
@@ -163,8 +135,7 @@ const dataSheet = [
 const eventSheet = [
   {
     event: '@on-close',
-    description:
-      'The event function triggered when user clicks on close icon',
+    description: 'The event function triggered when user clicks on close icon',
     arguments: 'function(e: Event)',
   },
 ]

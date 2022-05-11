@@ -1,10 +1,9 @@
-import isEmail from 'validator/lib/isEmail';
-import isEmpty from 'validator/lib/isEmpty';
-import isSlug from 'validator/lib/isSlug';
-import isStrongPassword from 'validator/lib/isStrongPassword';
+import isEmail from 'validator/lib/isEmail'
+import isEmpty from 'validator/lib/isEmpty'
+import isSlug from 'validator/lib/isSlug'
+import isStrongPassword from 'validator/lib/isStrongPassword'
 
-import { FormInputValidator } from '~/ui.types';
-
+import { FormInputValidator } from '~/ui.types'
 
 export const required: FormInputValidator = (value, opts) => {
   const valid = !!value && !isEmpty(String(value))
@@ -12,31 +11,31 @@ export const required: FormInputValidator = (value, opts) => {
     return {
       field: opts?.name,
       type: 'error',
-      message: "mora biti ispunjeno",
+      message: 'mora biti ispunjeno',
     }
   }
   return
 }
 
 export const email: FormInputValidator = (value, opts) => {
-  const valid =  !!value && isEmail(String(value))
+  const valid = !!value && isEmail(String(value))
   if (!valid) {
     return {
       field: opts.name,
       type: 'error',
-      message: "mora biti ispravna email addresa",
+      message: 'mora biti ispravna email addresa',
     }
   }
   return
 }
 
 export const slug: FormInputValidator = (value, opts) => {
-  const valid =  !!value && isSlug(String(value))
+  const valid = !!value && isSlug(String(value))
   if (!valid) {
     return {
       field: opts.name,
       type: 'error',
-      message: "može sadržavati samo slova, brojke i znak -",
+      message: 'može sadržavati samo slova, brojke i znak -',
     }
   }
   return
@@ -73,7 +72,9 @@ export const validatorMapper: Record<string, FormInputValidator> = {
 
 declare type CompiledValidators = Record<string, FormInputValidator>
 
-export const compileInputValidatorsFromString = (string: string): CompiledValidators => {
+export const compileInputValidatorsFromString = (
+  string: string
+): CompiledValidators => {
   const parts = String(string).split(',') || []
 
   return parts.reduce((acc, part) => {
@@ -82,9 +83,8 @@ export const compileInputValidatorsFromString = (string: string): CompiledValida
 
     if (validator) {
       Object.assign(acc, { [key]: validator })
-    }
-    else {
-      console.warn("Unknown validator:", key)  
+    } else {
+      console.warn('Unknown validator:', key)
     }
     return acc
   }, {})

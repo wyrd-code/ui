@@ -1,1 +1,1 @@
-export { default as WuiTextClipped } from "./WuiTextClipped.vue"
+export { default as WuiTextClipped } from './WuiTextClipped.vue'

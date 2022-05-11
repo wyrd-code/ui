@@ -14,34 +14,20 @@
       />
 
       <template #props>
-        <WuiInput
-          v-model="selectLabel"
-          label-top="Select label"
-        />
-        <WuiInput
-          v-model="selectPlaceholder"
-          label-top="Select placeholder"
-        />
+        <WuiInput v-model="selectLabel" label-top="Select label" />
+        <WuiInput v-model="selectPlaceholder" label-top="Select placeholder" />
         <WuiSelect
           v-model="selectPlacement"
           placeholder="Placement"
           label-top="Placement"
           :options="placementOptions"
         />
-        <WuiCheckbox
-          v-model="selectDivided"
-          label="Divided"
-        />
-        <WuiCheckbox
-          v-model="selectDisabled"
-          label="Disabled"
-        />
+        <WuiCheckbox v-model="selectDivided" label="Divided" />
+        <WuiCheckbox v-model="selectDisabled" label="Disabled" />
       </template>
     </WuiCodeDemo>
 
-    <WuiCodeExample
-      title="Slots"
-    >
+    <WuiCodeExample title="Slots">
       <div class="flex items-center justify-center">
         <div class="flex flex-col my-4 px-4 span-12 lg:span-3">
           <WuiSelect
@@ -53,10 +39,7 @@
               Label top slot, placement {{ props.placement }}
             </template>
             <template #placeholder="{ props }">
-              <div
-                class="items-center"
-                :style="{ display: 'flex' }"
-              >
+              <div class="items-center" :style="{ display: 'flex' }">
                 <span>(custom) {{ props.placeholder }}</span>
               </div>
             </template>
@@ -64,20 +47,13 @@
               You selected: {{ props.modelValue.value }}
             </template>
             <template #option="{ option }">
-              <div
-                class="items-center"
-                :style="{ display: 'flex' }"
-              >
-                <span
-                  class="h-4 mr-2 icon-ph-github-logo-fill"
-                />
+              <div class="items-center" :style="{ display: 'flex' }">
+                <span class="h-4 mr-2 icon-ph-github-logo-fill" />
                 {{ option.name }}
               </div>
             </template>
             <template #icon>
-              <span
-                class="h-4 ml-2 text-info-500 icon-ph-twitter-logo-fill"
-              />
+              <span class="h-4 ml-2 text-info-500 icon-ph-twitter-logo-fill" />
             </template>
           </WuiSelect>
         </div>
@@ -93,10 +69,10 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue"
- 
-import { ALLOWED_POSITION } from "./constants" 
-import type { TOption } from "./types";
+import { ref } from 'vue'
+
+import { ALLOWED_POSITION } from './constants'
+import type { TOption } from './types'
 
 const selectValue = ref('')
 const selectLabel = ref('Select me')

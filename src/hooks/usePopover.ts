@@ -1,4 +1,4 @@
-import { ref, Ref,nextTick, computed, toRef } from 'vue'
+import { ref, Ref, nextTick, computed, toRef } from 'vue'
 
 import { Positions } from '../models/enums'
 import type { Timeout } from '../ui.types'
@@ -8,7 +8,7 @@ import type { Timeout } from '../ui.types'
 export const usePopover = (props: Record<string, any>): any => {
   const show = ref(false)
   const placement: Ref<Positions> = ref<Positions>(
-    props.placement || Positions.T,
+    props.placement || Positions.T
   )
   const disabled = toRef(props, 'disabled') || ref(false)
   const clickable = toRef(props, 'hoverable') || ref(false)
@@ -90,7 +90,7 @@ export const usePopover = (props: Record<string, any>): any => {
         const posSide = pos.split('-')[0]
 
         const PosIsVertical = [Positions.T, Positions.B].includes(
-          posSide as Positions,
+          posSide as Positions
         )
 
         let searchPredicate = triggerTempGBCR[posSide as keyof DOMRect]

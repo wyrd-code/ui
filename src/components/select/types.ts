@@ -2,10 +2,7 @@ import type { Ref, ComputedRef } from 'vue'
 
 import { EDirections } from '../../models/enums'
 
-export type TOption =
-  | string
-  | number
-  | TSelectOption
+export type TOption = string | number | TSelectOption
 
 export type TSelectOption = {
   value: string | number

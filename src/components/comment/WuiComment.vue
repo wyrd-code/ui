@@ -1,22 +1,15 @@
 <template>
   <div class="wui-comment">
-    <div
-      class="wui-comment-header"
-    >
+    <div class="wui-comment-header">
       <slot name="header">
         {{ comment.author }}
       </slot>
     </div>
-    <div
-      class="wui-comment-body"
-    >
+    <div class="wui-comment-body">
       <slot />
       <pre>{{ comment }}</pre>
     </div>
-    <div
-      v-if="$slots.footer"
-      class="wui-comment-footer"
-    >
+    <div v-if="$slots.footer" class="wui-comment-footer">
       <slot name="footer" />
     </div>
   </div>

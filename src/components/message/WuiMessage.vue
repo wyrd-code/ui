@@ -1,8 +1,5 @@
 <template>
-  <transition
-    name="fade-bottom"
-    @after-leave="destroy"
-  >
+  <transition name="fade-bottom" @after-leave="destroy">
     <div
       v-show="show"
       :style="{ top: `${top}px` }"
@@ -11,10 +8,7 @@
       @mouseleave="startTimer"
       @mouseenter="clearTimer"
     >
-      <div
-        class="wui-message-icon"
-        :class="icon || computedIcon"
-      />
+      <div class="wui-message-icon" :class="icon || computedIcon" />
       <span class="wui-message-text">{{ text }}</span>
     </div>
   </transition>

@@ -18,34 +18,21 @@
       </tr>
     </thead>
     <tbody>
-      <tr
-        v-for="(row, idx) in data"
-        :key="`row-${idx}`"
-      >
+      <tr v-for="(row, idx) in data" :key="`row-${idx}`">
         <td
           v-for="field in fields"
           :key="`${field.key}Cell`"
           class="border-b border-neutral-200 text-sm text-left py-2 px-4 align-middle"
         >
-          <slot
-            :name="`${field.key}Cell`"
-            :field="field"
-            :row="row"
-          >
-            <WuiTableCell
-              :field="field"
-              :row="(row as any)"              
-            />
+          <slot :name="`${field.key}Cell`" :field="field" :row="row">
+            <WuiTableCell :field="field" :row="(row as any)" />
           </slot>
         </td>
         <td
           v-if="$slots.rowActions"
           class="border-b border-neutral-200 text-sm text-left py-2 px-4 table-cell whitespace-no-wrap align-middle"
         >
-          <slot
-            name="rowActions"
-            :row="row"
-          />
+          <slot name="rowActions" :row="row" />
         </td>
       </tr>
     </tbody>
@@ -53,18 +40,11 @@
 </template>
 
 <script lang="ts">
-import {
-  defineComponent,
-} from 'vue'
+import { defineComponent } from 'vue'
 
 import { FieldPublicMeta } from '~/ui.types'
 
 import WuiTableCell from './WuiTableCell.vue'
-
-
-
-
-
 
 export default defineComponent({
   name: 'WuiTable',

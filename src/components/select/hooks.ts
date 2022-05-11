@@ -14,15 +14,17 @@ export const useSelect = (props: TSelectProps, emit: TEmit): TSelect => {
   const show = ref(false)
 
   // Internally, always use the safe version (where each option is an obj with value and label)
-  const optionsSafe = computed<TSelectOption[]>(() => props.options.map(o => {
-    if (typeof o === 'object') {
-      return o
-    }
-    return {
-      value: o,
-      label: o,
-    }
-  }))
+  const optionsSafe = computed<TSelectOption[]>(() =>
+    props.options.map((o) => {
+      if (typeof o === 'object') {
+        return o
+      }
+      return {
+        value: o,
+        label: o,
+      }
+    })
+  )
 
   onBeforeUpdate(() => (optionsRefs.value = []))
 
@@ -87,7 +89,7 @@ export const useSelect = (props: TSelectProps, emit: TEmit): TSelect => {
     })
     await nextTick()
     const selectedEl = optionsRefs.value.find((r) =>
-      r.className.includes(CLASS_SELECTED_OPTION),
+      r.className.includes(CLASS_SELECTED_OPTION)
     )
     selectedEl?.scrollIntoView({ block: 'nearest', inline: 'start' })
   }
@@ -108,10 +110,10 @@ export const useSelect = (props: TSelectProps, emit: TEmit): TSelect => {
       return result
     }
 
-    const option = optionsSafe.value.find(o =>
+    const option = optionsSafe.value.find((o) =>
       typeof o === 'object'
         ? o.value === props.modelValue
-        : o === props.modelValue,
+        : o === props.modelValue
     )
 
     if (option) {
@@ -127,7 +129,6 @@ export const useSelect = (props: TSelectProps, emit: TEmit): TSelect => {
 
     return result
   })
-
 
   return {
     wrappedValue,

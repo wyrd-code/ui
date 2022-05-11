@@ -9,7 +9,7 @@
           :class="inputClass"
           name="paging-take"
           @keyup.enter="changeTake"
-        >
+        />
       </div>
     </div>
     <div class="flex -space-x-1px">
@@ -17,31 +17,25 @@
         :is="currentPage > 1 ? `router-link` : `span`"
         :to="{ query: routeQueryWithoutPage }"
         :class="[
-          currentPage > 1 ? linkClass: spanClass,
-          { 'is-disabled': currentPage === 1 }
+          currentPage > 1 ? linkClass : spanClass,
+          { 'is-disabled': currentPage === 1 },
         ]"
         aria-label="idi na stranicu 1"
         data-qa="link na prvu stranicu"
       >
-        <div
-          class="icon-ph-caret-left-light"
-          :class="iconClass"
-        />
+        <div class="icon-ph-caret-left-light" :class="iconClass" />
       </Component>
       <Component
         :is="currentPage > 1 ? `router-link` : `span`"
         :to="{ query: { ...routeQueryWithoutPage, page: previousPage } }"
         :class="[
-          currentPage > 1 ? linkClass: spanClass,
-          { 'is-disabled': currentPage === 1 }
+          currentPage > 1 ? linkClass : spanClass,
+          { 'is-disabled': currentPage === 1 },
         ]"
         :aria-label="`idi na stranicu ${previousPage}`"
         data-qa="link na prethodnu stranicu"
       >
-        <div
-          class="icon-ph-caret-left-light"
-          :class="iconClass"
-        />
+        <div class="icon-ph-caret-left-light" :class="iconClass" />
       </Component>
       <div :class="summaryClass">
         {{ currentPage }}
@@ -52,31 +46,25 @@
         :is="currentPage < pageCount ? `router-link` : `span`"
         :to="{ query: { ...routeQueryWithoutPage, page: nextPage } }"
         :class="[
-          currentPage < pageCount ? linkClass: spanClass,
-          { 'is-disabled': currentPage === pageCount }
+          currentPage < pageCount ? linkClass : spanClass,
+          { 'is-disabled': currentPage === pageCount },
         ]"
         :aria-label="`idi na stranicu ${nextPage}`"
         data-qa="link na slijedeću stranicu"
       >
-        <div
-          class="icon-ph-caret-right-light"
-          :class="iconClass"
-        />
+        <div class="icon-ph-caret-right-light" :class="iconClass" />
       </Component>
       <Component
         :is="currentPage < pageCount ? `router-link` : `span`"
         :to="{ query: { ...routeQueryWithoutPage, page: pageCount } }"
         :class="[
-          currentPage < pageCount ? linkClass: spanClass,
-          { 'is-disabled': currentPage === pageCount }
+          currentPage < pageCount ? linkClass : spanClass,
+          { 'is-disabled': currentPage === pageCount },
         ]"
         :aria-label="`idi na stranicu ${pageCount}`"
         data-qa="link na posljednju stranicu"
       >
-        <div
-          class="icon-ph-caret-right-light"
-          :class="iconClass"
-        />
+        <div class="icon-ph-caret-right-light" :class="iconClass" />
       </Component>
     </div>
     <div :class="summaryClass">
@@ -87,7 +75,7 @@
         :class="inputClass"
         name="paging-jump"
         @keyup.enter="changePage"
-      >
+      />
     </div>
   </div>
 </template>
@@ -95,7 +83,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import { PagingMeta } from '~/ui.types';
+import { PagingMeta } from '~/ui.types'
 
 export default defineComponent({
   name: `WuiPagination`,
@@ -114,11 +102,13 @@ export default defineComponent({
     },
     linkClass: {
       type: String,
-      default: 'bg-white rounded p-2 border border-gray-200 hover:border-primary-300',
+      default:
+        'bg-white rounded p-2 border border-gray-200 hover:border-primary-300',
     },
     summaryClass: {
       type: String,
-      default: 'bg-white rounded py-2 px-4 border border-gray-200 cursor-default',
+      default:
+        'bg-white rounded py-2 px-4 border border-gray-200 cursor-default',
     },
     spanClass: {
       type: String,
@@ -139,29 +129,29 @@ export default defineComponent({
   }),
   computed: {
     pageCount() {
-      return Math.round(this.pagingMeta.totalCount / this.pagingMeta.take);
+      return Math.round(this.pagingMeta.totalCount / this.pagingMeta.take)
     },
     currentPage() {
-      const page = this.routeQuery.page || 1;
-      return parseInt(page, 10);
+      const page = this.routeQuery.page || 1
+      return parseInt(page, 10)
     },
     routeQueryWithoutPage() {
-      const query = { ...this.routeQuery };
-      delete query.page;
-      return query;
+      const query = { ...this.routeQuery }
+      delete query.page
+      return query
     },
     previousPage() {
-      const previousPage = this.currentPage - 1;
-      return previousPage > 1 ? previousPage : undefined;
+      const previousPage = this.currentPage - 1
+      return previousPage > 1 ? previousPage : undefined
     },
     nextPage() {
-      return this.currentPage + 1;
+      return this.currentPage + 1
     },
   },
   watch: {
     pagingMeta: {
       immediate: true,
-      handler (pagingMeta) {
+      handler(pagingMeta) {
         this.customTake = pagingMeta.take
       },
     },

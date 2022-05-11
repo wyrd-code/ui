@@ -16,8 +16,8 @@
 import { ref, defineProps } from 'vue'
 
 defineProps<{
-  name?: string,
-  mode?: 'out-in' | 'in-out' | 'default' | undefined,
+  name?: string
+  mode?: 'out-in' | 'in-out' | 'default' | undefined
 }>()
 // import { useRouter } from 'vue-router'
 
@@ -69,30 +69,29 @@ defineProps<{
 //   }
 // })
 
-
 const prevHeight = ref('0')
 
 const beforeEnter = (element: any) => {
-  prevHeight.value = getComputedStyle(element).height;
+  prevHeight.value = getComputedStyle(element).height
 }
 
 const afterEnter = (element: any) => {
-  element.style.height = 'auto';
+  element.style.height = 'auto'
 }
 
 const enter = (element: any) => {
-  const { height } = getComputedStyle(element);
+  const { height } = getComputedStyle(element)
 
-  element.style.height = prevHeight.value;
-  prevHeight.value = getComputedStyle(element).height;
+  element.style.height = prevHeight.value
+  prevHeight.value = getComputedStyle(element).height
 
   setTimeout(() => {
-    element.style.height = height;
-  });
+    element.style.height = height
+  })
 }
 
 const beforeLeave = (element: any) => {
-  prevHeight.value = getComputedStyle(element).height;
+  prevHeight.value = getComputedStyle(element).height
 }
 </script>
 

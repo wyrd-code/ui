@@ -33,11 +33,8 @@
           @input="onInput"
           @keydown.up.stop.prevent="increase"
           @keydown.down.stop.prevent="decrease"
-        >
-        <div
-          ref="buffer"
-          class="wui-number-input-buffer"
-        >
+        />
+        <div ref="buffer" class="wui-number-input-buffer">
           {{ modelValue }}
         </div>
       </div>
@@ -89,7 +86,7 @@ export default defineComponent({
           await nextTick()
           width.value = (buffer.value! as HTMLDivElement).clientWidth
         }
-      },
+      }
     )
 
     // controllers +/-
@@ -106,7 +103,7 @@ export default defineComponent({
         () => {
           clearInterval(interval.value!)
         },
-        { once: true },
+        { once: true }
       )
     }
 

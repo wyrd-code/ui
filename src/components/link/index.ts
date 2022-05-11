@@ -1,1 +1,1 @@
-export { default as WuiLink } from "./WuiLink.vue"
+export { default as WuiLink } from './WuiLink.vue'

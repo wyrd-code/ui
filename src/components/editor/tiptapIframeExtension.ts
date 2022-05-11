@@ -1,8 +1,4 @@
-import {
-  Node,
-  Command,
-  mergeAttributes,
-} from '@tiptap/core'
+import { Node, Command, mergeAttributes } from '@tiptap/core'
 
 export interface IframeOptions {
   allowFullscreen: boolean
@@ -40,7 +36,7 @@ export default Node.create<IframeOptions>({
         src: '',
         class: 'embed-container',
       },
-    };
+    }
   },
   addAttributes() {
     return {
@@ -53,37 +49,32 @@ export default Node.create<IframeOptions>({
     }
   },
   parseHTML() {
-    return [{
-      tag: 'iframe[src]',
-    }]
+    return [
+      {
+        tag: 'iframe[src]',
+      },
+    ]
   },
   renderHTML({ HTMLAttributes }) {
     return [
       'iframe',
-      mergeAttributes(
-        this.options.HTMLAttributes,
-        HTMLAttributes,
-      ),
+      mergeAttributes(this.options.HTMLAttributes, HTMLAttributes),
     ]
   },
   addCommands() {
     return {
       setIframe:
         (options: { src: string }) =>
-          ({ tr, dispatch }) => {
-            const { selection } = tr
-            const node = this.type.create(options)
+        ({ tr, dispatch }) => {
+          const { selection } = tr
+          const node = this.type.create(options)
 
-            if (dispatch) {
-              tr.replaceRangeWith(
-                selection.from,
-                selection.to,
-                node,
-              )
-            }
+          if (dispatch) {
+            tr.replaceRangeWith(selection.from, selection.to, node)
+          }
 
-            return true
-          },
+          return true
+        },
     }
   },
 })

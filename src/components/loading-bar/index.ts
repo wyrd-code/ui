@@ -2,7 +2,8 @@ import { createApp, ComponentPublicInstance } from 'vue'
 
 import WuiLoadingBar from './WuiLoadingBar.vue'
 
-let instance: ComponentPublicInstance = null as unknown as ComponentPublicInstance
+let instance: ComponentPublicInstance =
+  null as unknown as ComponentPublicInstance
 
 if (document) {
   const tempDiv = document.createElement('div')
@@ -23,7 +24,9 @@ interface LoadingBarOptions {
   onClose?: () => void
 }
 
-export const LoadingBar = (options: LoadingBarOptions = {}): ComponentPublicInstance => {
+export const LoadingBar = (
+  options: LoadingBarOptions = {}
+): ComponentPublicInstance => {
   const onClose = options.onClose
   options.onClose = () => {
     LoadingBar.finish({ onClose })
@@ -53,8 +56,8 @@ LoadingBar.update = (value: number): void => {
     return
   }
   const dataObj = instance?.$data as Record<string, any>
-  dataObj.started = false;
-  dataObj.progress = value;
+  dataObj.started = false
+  dataObj.progress = value
 }
 
 interface LoadingBarFinishOpts {
@@ -64,12 +67,10 @@ interface LoadingBarFinishOpts {
 
 LoadingBar.finish = (opts: LoadingBarFinishOpts = {}): void => {
   const dataObj = instance?.$data as Record<string, any>
-  dataObj.started = false;
-  dataObj.progress = 100;
-  dataObj.height = 0;
+  dataObj.started = false
+  dataObj.progress = 100
+  dataObj.height = 0
   if (opts.onClose) {
     opts.onClose()
   }
 }
-
-export default LoadingBar

@@ -1,1 +1,1 @@
-export { default as WuiFormToggle } from "./WuiFormToggle.vue"
+export { default as WuiFormToggle } from './WuiFormToggle.vue'

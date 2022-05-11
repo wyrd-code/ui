@@ -2,13 +2,8 @@
   <div class="space-y-4">
     <h1>Tooltip</h1>
     <WuiCodeDemo>
-      <WuiTooltip
-        :placement="tooltipPlacement"
-        :content="tooltipText"
-      >
-        <WuiButton>
-          Hover me
-        </WuiButton>
+      <WuiTooltip :placement="tooltipPlacement" :content="tooltipText">
+        <WuiButton> Hover me </WuiButton>
       </WuiTooltip>
 
       <template #props>
@@ -18,31 +13,19 @@
           label-top="Placement"
           :options="tooltipPlacements"
         />
-        <WuiInput
-          v-model="tooltipText"
-          label-top="Text"
-        />
+        <WuiInput v-model="tooltipText" label-top="Text" />
       </template>
     </WuiCodeDemo>
 
-    <WuiCodeExample
-      title="Themed colors"
-    >
+    <WuiCodeExample title="Themed colors">
       <div class="space-x-4">
-        <WuiTooltip
-          :placement="tooltipPlacement"
-          :content="tooltipText"
-        >
-          <WuiButton>
-            Hover me
-          </WuiButton> 
+        <WuiTooltip :placement="tooltipPlacement" :content="tooltipText">
+          <WuiButton> Hover me </WuiButton>
         </WuiTooltip>
       </div>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Position"
-    >
+    <WuiCodeExample title="Position">
       <template #description>
         <p class="mx-6">
           There are 12 positions available for tooltip, most used are shown in
@@ -51,37 +34,23 @@
       </template>
       <div class="flex flex-col items-center">
         <WuiButtonGroup vertical>
-          <WuiTooltip
-            content="Top"
-            placement="top"
-          >
+          <WuiTooltip content="Top" placement="top">
             <WuiButton>Top</WuiButton>
           </WuiTooltip>
-          <WuiTooltip
-            content="Right"
-            placement="right"
-          >
+          <WuiTooltip content="Right" placement="right">
             <WuiButton>Right</WuiButton>
           </WuiTooltip>
-          <WuiTooltip
-            content="Left"
-            placement="left"
-          >
+          <WuiTooltip content="Left" placement="left">
             <WuiButton>Left</WuiButton>
           </WuiTooltip>
-          <WuiTooltip
-            content="Bottom"
-            placement="bottom"
-          >
+          <WuiTooltip content="Bottom" placement="bottom">
             <WuiButton>Bottom</WuiButton>
           </WuiTooltip>
         </WuiButtonGroup>
       </div>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Content Slot"
-    >
+    <WuiCodeExample title="Content Slot">
       <div class="flex flex-col items-center">
         <WuiTooltip placement="top">
           <template #content>
@@ -94,9 +63,7 @@
       </div>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      title="Autoposition"
-    >
+    <WuiCodeExample title="Autoposition">
       <div class="flex flex-col items-center">
         <WuiTooltip placement="bottom">
           <template #content>
@@ -121,7 +88,10 @@ import { ref } from 'vue'
 const tooltipText = ref('Hello there')
 
 const tooltipPlacement = ref('top')
-const tooltipPlacements = ['top', 'right', 'bottom', 'left'].map(value => ({ value, label: value }))
+const tooltipPlacements = ['top', 'right', 'bottom', 'left'].map((value) => ({
+  value,
+  label: value,
+}))
 
 const dataSheet = [
   {

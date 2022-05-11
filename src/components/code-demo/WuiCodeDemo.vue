@@ -45,7 +45,6 @@
   }
   .wui-code-demo-scene {
     @apply py-5 px-0;
-
   }
   .wui-code-demo-props {
     border-top: 1px solid #d3dae6;

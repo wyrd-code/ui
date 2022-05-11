@@ -1,13 +1,7 @@
 <template>
   <OnClickOutside @trigger="close">
-    <div
-      class="wui-dropdown"
-    >
-      <slot
-        name="button"
-        class="z-20"
-        :toggle="toggle"
-      />
+    <div class="wui-dropdown">
+      <slot name="button" class="z-20" :toggle="toggle" />
 
       <transition
         enter-active-class="transition ease-out duration-100"
@@ -17,11 +11,7 @@
         leave-from-class="transform opacity-100 scale-100"
         leave-to-class="transform opacity-0 scale-95"
       >
-        <div
-          v-if="isOpen"
-          v-bind="$attrs"
-          class="z-30 relative"
-        >
+        <div v-if="isOpen" v-bind="$attrs" class="z-30 relative">
           <div
             class="bg-white rounded-md shadow-lg ring-black mt-1 ring-1 ring-opacity-5 z-30 absolute focus:outline-none break-normal"
             :class="[directionClass, widthClass]"
@@ -60,7 +50,8 @@ export default defineComponent({
     size: {
       type: String as PropType<DropdownSize>,
       default: DropdownSize.Auto,
-      validator: (val: DropdownSize) => Object.values(DropdownSize).includes(val),
+      validator: (val: DropdownSize) =>
+        Object.values(DropdownSize).includes(val),
     },
     direction: {
       type: String,
@@ -70,14 +61,15 @@ export default defineComponent({
   setup(props) {
     const isOpen = ref(false)
 
-    const close = () => isOpen.value = false
-    const open = () => isOpen.value = true
-    const toggle = () => isOpen.value = !isOpen.value
-    
+    const close = () => (isOpen.value = false)
+    const open = () => (isOpen.value = true)
+    const toggle = () => (isOpen.value = !isOpen.value)
+
     const { direction, size } = toRefs(props)
-    const directionClass = computed(() => direction.value === 'left'
-      ? 'origin-top-left left-0'
-      : 'origin-top-right right-0'
+    const directionClass = computed(() =>
+      direction.value === 'left'
+        ? 'origin-top-left left-0'
+        : 'origin-top-right right-0'
     )
     const sizeClasses: Record<DropdownSize, string> = {
       auto: '',
@@ -95,7 +87,7 @@ export default defineComponent({
       directionClass,
       widthClass,
     }
-  }
+  },
 })
 </script>
 

@@ -1,9 +1,6 @@
 <template>
   <div class="wui-hierarchy-container">
-    <div
-      class="hierarchy"
-      :class="{horizontal, collapsable}"
-    >
+    <div class="hierarchy" :class="{ horizontal, collapsable }">
       <WuiHierarchyNode
         :data="data"
         :props="props"
@@ -12,17 +9,25 @@
         :collapsable="collapsable"
         :render-content="renderContent"
         :label-class-name="labelClassName"
-        @node-expand="(e, data,nodeContext) => $emit('node-expand', e, data,nodeContext)"
-        @node-focus="(e, data,nodeContext) => $emit('node-focus', e, data,nodeContext)"
-        @node-click="(e, data,nodeContext) => $emit('node-click', e, data,nodeContext)"
-        @node-mouseover="(e, data,nodeContext) => $emit('node-mouseover', e, data,nodeContext)"
-        @node-mouseout="(e, data,nodeContext) => $emit('node-mouseout', e, data,nodeContext)"
+        @node-expand="
+          (e, data, nodeContext) => $emit('node-expand', e, data, nodeContext)
+        "
+        @node-focus="
+          (e, data, nodeContext) => $emit('node-focus', e, data, nodeContext)
+        "
+        @node-click="
+          (e, data, nodeContext) => $emit('node-click', e, data, nodeContext)
+        "
+        @node-mouseover="
+          (e, data, nodeContext) =>
+            $emit('node-mouseover', e, data, nodeContext)
+        "
+        @node-mouseout="
+          (e, data, nodeContext) => $emit('node-mouseout', e, data, nodeContext)
+        "
       >
-        <template #node="{ data: childData, context}">
-          <slot
-            :data="childData"
-            :context="context"
-          />
+        <template #node="{ data: childData, context }">
+          <slot :data="childData" :context="context" />
         </template>
       </WuiHierarchyNode>
     </div>
@@ -30,10 +35,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType } from 'vue'
 
-import type { BlockTreeProps } from './hierarchy-types';
-import WuiHierarchyNode from './WuiHierarchyNode.vue';
+import type { BlockTreeProps } from './hierarchy-types'
+import WuiHierarchyNode from './WuiHierarchyNode.vue'
 
 export default defineComponent({
   name: 'WuiHierarchy',
@@ -43,7 +48,7 @@ export default defineComponent({
   props: {
     data: {
       type: Object,
-      required: true
+      required: true,
     },
     props: {
       type: Object as PropType<BlockTreeProps>,
@@ -51,8 +56,8 @@ export default defineComponent({
         label: 'label',
         expand: 'expand',
         children: 'children',
-        key: 'id'
-      })
+        key: 'id',
+      }),
     },
     horizontal: Boolean,
     collapsable: Boolean,
@@ -73,7 +78,7 @@ export default defineComponent({
     'node-expand',
     'node-focus',
     'node-click',
-    'node-mouseout', 
+    'node-mouseout',
     'node-mouseover',
   ],
 })

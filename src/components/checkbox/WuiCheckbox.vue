@@ -2,19 +2,17 @@
   <label
     class="wui-checkbox-wrapper"
     :class="{
-      'animate-pulse': pulse && !disabled
+      'animate-pulse': pulse && !disabled,
     }"
   >
-    <span
-      class="wui-checkbox-check-wrapper"
-    >
+    <span class="wui-checkbox-check-wrapper">
       <input
         type="checkbox"
         v-bind="$attrs"
         class="wui-checkbox-input"
         :disabled="disabled"
         @change="toggle"
-      >
+      />
       <span
         class="wui-checkbox"
         :class="[
@@ -23,10 +21,7 @@
           disabled && 'wui-checkbox--disabled',
         ]"
       >
-        <span
-          v-if="modelValue"
-          class="wui-check-icon icon-ph-check-bold"
-        />
+        <span v-if="modelValue" class="wui-check-icon icon-ph-check-bold" />
       </span>
     </span>
     <span class="wui-checkbox-label-group">
@@ -37,12 +32,14 @@
           lineThrough && modelValue && 'wui-checkbox-label--linethrough',
           disabled && 'wui-checkbox-label--disabled',
         ]"
-      >{{ label }}</span>
+        >{{ label }}</span
+      >
       <span
         v-if="subLabel && !$slots.sublabel"
         class="wui-checkbox-label wui-checkbox-label--sub"
         :class="[disabled && 'wui-checkbox-label--disabled']"
-      >{{ subLabel }}</span>
+        >{{ subLabel }}</span
+      >
 
       <span
         v-if="$slots.default"
@@ -91,11 +88,11 @@ export default defineComponent({
       type: String,
       default: null,
     },
-    subLabel: { type: String, default: null, },
+    subLabel: { type: String, default: null },
     pulse: { type: Boolean },
     disabled: { type: Boolean },
     lineThrough: { type: Boolean },
-    color: { type: String, default: null, },
+    color: { type: String, default: null },
     modelValue: {
       type: Boolean,
       required: true,

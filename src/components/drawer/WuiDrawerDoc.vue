@@ -2,103 +2,66 @@
   <div>
     <h1>Drawer</h1>
 
-    <WuiCodeExample
-      :code="exampleCode"
-      title="Drawer"
-    >
+    <WuiCodeExample :code="exampleCode" title="Drawer">
       <template #description>
         <p class="mx-6">
           This component is intended to be used only with wide screens
         </p>
       </template>
-      <WuiButton
-        type="primary"
-        @click="drawerLeftVisible = true"
-      >
+      <WuiButton type="primary" @click="drawerLeftVisible = true">
         Left drawer
       </WuiButton>
-      <WuiButton
-        type="primary"
-        @click="drawerVisible = true"
-      >
+      <WuiButton type="primary" @click="drawerVisible = true">
         Right drawer
       </WuiButton>
 
       <WuiDrawer v-model="drawerVisible">
         <h3 class="m-6">
-          <div
-            class="contacts icon-ph-user-circle"
-          />
+          <div class="contacts icon-ph-user-circle" />
           Contacts
         </h3>
         <WuiDivider />
-        <template
-          v-for="user in fakeUsers"
-          :key="user.username"
-        >
+        <template v-for="user in fakeUsers" :key="user.username">
           <div class="flex flex-row px-6 justify-between">
             <WuiAvatar :src="user.avatar" />
             <div class="flex flex-col flex-1 pl-3 justify-between">
               <p class="font-medium">
                 {{ user.name }}
               </p>
-              <p
-                style="color: #787f8a"
-                class="font-medium text-sm"
-              >
+              <p style="color: #787f8a" class="font-medium text-sm">
                 @{{ user.username }}
               </p>
             </div>
-            <WuiButton
-              icon="call"
-              type="primary"
-            />
+            <WuiButton icon="call" type="primary" />
           </div>
           <WuiDivider />
         </template>
       </WuiDrawer>
-      <WuiDrawer
-        v-model="drawerLeftVisible"
-        placement="left"
-      >
+      <WuiDrawer v-model="drawerLeftVisible" placement="left">
         <h3 class="m-6">
-          <div
-            class="contacts icon-ph-user-circle"
-          />
+          <div class="contacts icon-ph-user-circle" />
           Contacts
         </h3>
         <WuiDivider />
-        <template
-          v-for="user in fakeUsers"
-          :key="user.username"
-        >
+        <template v-for="user in fakeUsers" :key="user.username">
           <div class="flex flex-row px-6 justify-between">
             <WuiAvatar :src="user.avatar" />
             <div class="flex flex-col flex-1 pl-3 justify-between">
               <p class="font-medium">
                 {{ user.name }}
               </p>
-              <p
-                style="color: #787f8a"
-                class="font-medium text-sm"
-              >
+              <p style="color: #787f8a" class="font-medium text-sm">
                 @{{ user.username }}
               </p>
             </div>
-            <WuiButton
-              icon="call"
-              type="primary"
-            />
+            <WuiButton icon="call" type="primary" />
           </div>
           <WuiDivider />
         </template>
       </WuiDrawer>
     </WuiCodeExample>
 
-    <WuiCodeExample
-      :code="nestedCode"
-      title="Nested Drawers"
-    >
+    <WuiCodeExample :code="nestedCode" title="Nested Drawers">
       <template #description>
         <p class="mx-6">
           Nested drawers isn't a good idea for your interface, but we
@@ -106,92 +69,56 @@
         </p>
       </template>
 
-      <WuiButton
-        type="primary"
-        @click="nestedDrawer = true"
-      >
+      <WuiButton type="primary" @click="nestedDrawer = true">
         Left Nested drawer
       </WuiButton>
 
-      <WuiButton
-        type="primary"
-        @click="nestedDrawerR = true"
-      >
+      <WuiButton type="primary" @click="nestedDrawerR = true">
         Right Nested drawers
       </WuiButton>
 
-      <WuiDrawer
-        v-model="nestedDrawer"
-        placement="left"
-      >
+      <WuiDrawer v-model="nestedDrawer" placement="left">
         <div class="flex mt-12 justify-center">
-          <WuiButton
-            size="lg"
-            @click="nestedDrawer2 = true"
-          >
+          <WuiButton size="lg" @click="nestedDrawer2 = true">
             Show nested
           </WuiButton>
         </div>
       </WuiDrawer>
-      <WuiDrawer
-        v-model="nestedDrawer2"
-        placement="left"
-      >
+      <WuiDrawer v-model="nestedDrawer2" placement="left">
         <div class="flex mt-12 justify-center">
-          <WuiButton
-            size="lg"
-            @click="nestedDrawer3 = true"
-          >
+          <WuiButton size="lg" @click="nestedDrawer3 = true">
             Show nested
           </WuiButton>
         </div>
       </WuiDrawer>
-      <WuiDrawer
-        v-model="nestedDrawer3"
-        placement="left"
-      >
+      <WuiDrawer v-model="nestedDrawer3" placement="left">
         <div class="flex mt-12 justify-center">
-          <WuiButton
-            size="lg"
-            @click="nestedDrawer4 = true"
-          >
+          <WuiButton size="lg" @click="nestedDrawer4 = true">
             Show nested
           </WuiButton>
         </div>
       </WuiDrawer>
-      <WuiDrawer
-        v-model="nestedDrawer4"
-        placement="left"
-      >
+      <WuiDrawer v-model="nestedDrawer4" placement="left">
         <h2>Finally. No more drawers.</h2>
       </WuiDrawer>
 
       <WuiDrawer v-model="nestedDrawerR">
         <div class="flex mt-12 justify-center">
-          <WuiButton
-            size="lg"
-            @click="nestedDrawerR2 = true"
-          >
+          <WuiButton size="lg" @click="nestedDrawerR2 = true">
             Show nested
           </WuiButton>
         </div>
       </WuiDrawer>
       <WuiDrawer v-model="nestedDrawerR2">
         <div class="flex mt-12 justify-center">
-          <WuiButton
-            size="lg"
-            @click="nestedDrawerR3 = true"
-          >
+          <WuiButton size="lg" @click="nestedDrawerR3 = true">
             Show nested
           </WuiButton>
         </div>
       </WuiDrawer>
       <WuiDrawer v-model="nestedDrawerR3">
         <div class="flex mt-12 justify-center">
-          <WuiButton
-            size="lg"
-            @click="nestedDrawerR4 = true"
-          >
+          <WuiButton size="lg" @click="nestedDrawerR4 = true">
             Show nested
           </WuiButton>
         </div>
@@ -201,10 +128,7 @@
       </WuiDrawer>
     </WuiCodeExample>
 
-    <WuiPropsTable
-      :data-sheet="dataSheet"
-      :slot-sheet="slotSheet"
-    />
+    <WuiPropsTable :data-sheet="dataSheet" :slot-sheet="slotSheet" />
   </div>
 </template>
 
@@ -214,20 +138,20 @@ import { defineComponent } from 'vue'
 import WuiPropsTable from '../props-table/WuiPropsTable.vue'
 
 export default defineComponent({
-    components: { WuiPropsTable },
-    data: () => ({
-        drawerVisible: false,
-        drawerLeftVisible: false,
-        nestedDrawer: false,
-        nestedDrawer2: false,
-        nestedDrawer3: false,
-        nestedDrawer4: false,
-        nestedDrawerR: false,
-        nestedDrawerR2: false,
-        nestedDrawerR3: false,
-        nestedDrawerR4: false,
-        fakeUsers: [] as any[],
-        nestedCode: `
+  components: { WuiPropsTable },
+  data: () => ({
+    drawerVisible: false,
+    drawerLeftVisible: false,
+    nestedDrawer: false,
+    nestedDrawer2: false,
+    nestedDrawer3: false,
+    nestedDrawer4: false,
+    nestedDrawerR: false,
+    nestedDrawerR2: false,
+    nestedDrawerR3: false,
+    nestedDrawerR4: false,
+    fakeUsers: [] as any[],
+    nestedCode: `
 <WuiButton type="primary" @click="nestedDrawer = true">Left Nested drawer</WuiButton>
 <WuiButton type="primary" @click="nestedDrawerR = true">Right Nested drawers</WuiButton>
 
@@ -255,7 +179,7 @@ export default defineComponent({
 <WuiDrawer v-model="nestedDrawerR4">
   <img class="w-full" src="/finally.png" />
 </WuiDrawer>`,
-        exampleCode: `<WuiButton @click="drawerLeftVisible = true" type="primary">
+    exampleCode: `<WuiButton @click="drawerLeftVisible = true" type="primary">
     Left drawer
     </WuiButton>
 
@@ -308,62 +232,64 @@ export default defineComponent({
     <WuiDivider />
   </template>
 </WuiDrawer>`,
-        dataSheet: [
-            {
-                property: "width",
-                type: ["String"],
-                default: "500px",
-                values: [],
-                description: "Drawer width",
-            },
-            {
-                property: "placement",
-                type: ["String"],
-                default: "right",
-                values: ["right", "left"],
-                description: "Drawer position",
-            },
-            {
-                property: "closable-mask",
-                type: ["Boolean"],
-                default: "true",
-                values: [],
-                description: "Close drawer on the mask click",
-            },
-            {
-                property: "hide-mask",
-                type: ["Boolean"],
-                default: "false",
-                values: [],
-                description: "Hides drawer mask",
-            },
-            {
-                property: "v-model",
-                type: ["Boolean"],
-                default: "false",
-                values: [],
-                description: "Drawer v-model value",
-            },
-        ],
-        slotSheet: [
-            {
-                name: "default",
-                description: "Drawer body",
-            },
-        ],
-    }),
-    async mounted() {
-        const reqNames = await fetch("https://randomuser.me/api/?inc=picture,name,login&results=12");
-        const data = await reqNames.json();
-        this.fakeUsers = data.results.map((el: any) => {
-            const { first, last } = el.name;
-            return {
-                name: `${first} ${last}`,
-                avatar: el.picture.medium,
-                username: el.login.username,
-            };
-        });
-    }
+    dataSheet: [
+      {
+        property: 'width',
+        type: ['String'],
+        default: '500px',
+        values: [],
+        description: 'Drawer width',
+      },
+      {
+        property: 'placement',
+        type: ['String'],
+        default: 'right',
+        values: ['right', 'left'],
+        description: 'Drawer position',
+      },
+      {
+        property: 'closable-mask',
+        type: ['Boolean'],
+        default: 'true',
+        values: [],
+        description: 'Close drawer on the mask click',
+      },
+      {
+        property: 'hide-mask',
+        type: ['Boolean'],
+        default: 'false',
+        values: [],
+        description: 'Hides drawer mask',
+      },
+      {
+        property: 'v-model',
+        type: ['Boolean'],
+        default: 'false',
+        values: [],
+        description: 'Drawer v-model value',
+      },
+    ],
+    slotSheet: [
+      {
+        name: 'default',
+        description: 'Drawer body',
+      },
+    ],
+  }),
+  async mounted() {
+    const reqNames = await fetch(
+      'https://randomuser.me/api/?inc=picture,name,login&results=12'
+    )
+    const data = await reqNames.json()
+    this.fakeUsers = data.results.map((el: any) => {
+      const { first, last } = el.name
+      return {
+        name: `${first} ${last}`,
+        avatar: el.picture.medium,
+        username: el.login.username,
+      }
+    })
+  },
 })
 </script>
 

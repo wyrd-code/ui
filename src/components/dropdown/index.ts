@@ -1,1 +1,1 @@
-export { default as WuiDropdown } from "./WuiDropdown.vue"
+export { default as WuiDropdown } from './WuiDropdown.vue'

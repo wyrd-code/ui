@@ -17,7 +17,7 @@
         style="z-index: 10"
         v-bind="$attrs"
         @change="toggle"
-      >
+      />
       <span class="wui-switch-circle" />
     </span>
     <span class="wui-switch-label-group">
@@ -25,23 +25,27 @@
         v-if="label && !$slots.default"
         class="wui-switch-label"
         :class="[disabled && 'wui-switch-label--disabled']"
-      >{{ label }}</span>
+        >{{ label }}</span
+      >
       <span
         v-if="subLabel && !$slots.sublabel"
         class="wui-switch-label wui-switch-label--sub"
         :class="[disabled && 'wui-switch-label--disabled']"
-      >{{ subLabel }}</span>
+        >{{ subLabel }}</span
+      >
 
       <span
         v-if="$slots.default"
         class="wui-switch-label"
         :class="[disabled && 'wui-switch-label--disabled']"
-      ><slot /></span>
+        ><slot
+      /></span>
       <span
         v-if="$slots.sublabel"
         class="wui-switch-label wui-switch-label--sub"
         :class="[disabled && 'wui-switch-label--disabled']"
-      ><slot name="sublabel" /></span>
+        ><slot name="sublabel"
+      /></span>
     </span>
   </label>
 </template>

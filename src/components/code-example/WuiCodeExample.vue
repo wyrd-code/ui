@@ -1,27 +1,16 @@
 <template>
-  <div
-    class="wui-code-example"
-    :class="{ 'overflow-hidden': overflowHidden }"
-  >
+  <div class="wui-code-example" :class="{ 'overflow-hidden': overflowHidden }">
     <h2 class="font-bold leading-none py-4 px-4 wui-code-example-title">
       {{ title }}
     </h2>
-    <div
-      v-if="$slots.description"
-      class="px-4 pb-4"
-    >
+    <div v-if="$slots.description" class="px-4 pb-4">
       <slot name="description" />
     </div>
-    <div
-      class="wui-code-example-scene"
-    >
+    <div class="wui-code-example-scene">
       <slot />
     </div>
 
-    <div
-      v-if="code"
-      style="border-top: 1px solid #d3dae6"
-    >
+    <div v-if="code" style="border-top: 1px solid #d3dae6">
       <WuiButton
         class="!rounded-none"
         type="ghost"
@@ -44,14 +33,9 @@
           class="wui-code-example-code-copy"
           placement="left"
         >
-          <WuiButton
-            type="neutral"
-            @click="clickCopy"
-          >
+          <WuiButton type="neutral" @click="clickCopy">
             <template #icon>
-              <div
-                class="h-full icon-ph-spinner"
-              />
+              <div class="h-full icon-ph-spinner" />
             </template>
           </WuiButton>
         </WuiTooltip>
@@ -95,8 +79,8 @@ export default defineComponent({
 
     async clickCopy() {
       this.copyText = 'Copied!'
-      await navigator.clipboard.writeText(this.code);
-      (this.$refs.tooltip as any).setPopoverPosition()
+      await navigator.clipboard.writeText(this.code)
+      ;(this.$refs.tooltip as any).setPopoverPosition()
     },
   },
 })

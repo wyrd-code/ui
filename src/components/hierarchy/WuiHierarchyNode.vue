@@ -9,11 +9,7 @@
         @mouseover="(e) => $emit('node-mouseover', e, data, nodeContext)"
         @focus="(e) => $emit('node-focus', e, data, nodeContext)"
       >
-        <slot
-          name="node"
-          :data="data"
-          :context="nodeContext"
-        >
+        <slot name="node" :data="data" :context="nodeContext">
           <span v-if="!renderContent">{{ nodeLabel(data) }}</span>
           <span v-else>{{ renderContent(data) }}</span>
         </slot>
@@ -43,18 +39,24 @@
           :render-content="renderContent"
           :label-width="labelWidthString"
           :label-class-name="labelClassName"
-          @node-expand="(e, data, context) => $emit('node-expand', e, data, context)"
-          @node-focus="(e, data, context) => $emit('node-focus', e, data, context)"
-          @node-click="(e, data, context) => $emit('node-click', e, data, context)"
-          @node-mouseover="(e, data, context) => $emit('node-mouseover', e, data, context)"
-          @node-mouseout="(e, data, context) => $emit('node-mouseout', e, data, context)"
+          @node-expand="
+            (e, data, context) => $emit('node-expand', e, data, context)
+          "
+          @node-focus="
+            (e, data, context) => $emit('node-focus', e, data, context)
+          "
+          @node-click="
+            (e, data, context) => $emit('node-click', e, data, context)
+          "
+          @node-mouseover="
+            (e, data, context) => $emit('node-mouseover', e, data, context)
+          "
+          @node-mouseout="
+            (e, data, context) => $emit('node-mouseout', e, data, context)
+          "
         >
           <template #node="{ data: childData, context }">
-            <slot
-              name="node"
-              :data="childData"
-              :context="context"
-            />
+            <slot name="node" :data="childData" :context="context" />
           </template>
         </WuiHierarchyNode>
       </div>
@@ -63,16 +65,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref } from 'vue';
+import { defineComponent, computed, ref } from 'vue'
 
-import type { NodeContext } from './hierarchy-types';
+import type { NodeContext } from './hierarchy-types'
 
 export default defineComponent({
   name: 'WuiHierarchyNode',
   props: {
     data: {
       type: Object,
-      required: true
+      required: true,
     },
     props: {
       type: Object,
@@ -80,12 +82,12 @@ export default defineComponent({
         label: 'label',
         expand: 'expand',
         children: 'children',
-        key: 'id'
-      })
+        key: 'id',
+      }),
     },
     collapsable: {
       type: Boolean,
-      default: false
+      default: false,
     },
     labelWidth: {
       type: [String, Number],
@@ -104,45 +106,59 @@ export default defineComponent({
     'node-expand',
     'node-focus',
     'node-click',
-    'node-mouseout', 
+    'node-mouseout',
     'node-mouseover',
   ],
   setup(props, { emit }) {
-    const isLeaf = computed(() => Array.isArray(props.data[props.props.children]) && props.data[props.props.children].length > 0 ? false : true);
-    const labelWidthString = computed(() => props.labelWidth ? (typeof (props.labelWidth) === 'number' ? `${props.labelWidth}px` : props.labelWidth) : 'auto');
-    const expanded = ref<boolean>(props.data[props.props.expand] && true);
+    const isLeaf = computed(() =>
+      Array.isArray(props.data[props.props.children]) &&
+      props.data[props.props.children].length > 0
+        ? false
+        : true
+    )
+    const labelWidthString = computed(() =>
+      props.labelWidth
+        ? typeof props.labelWidth === 'number'
+          ? `${props.labelWidth}px`
+          : props.labelWidth
+        : 'auto'
+    )
+    const expanded = ref<boolean>(props.data[props.props.expand] && true)
 
     const nodeClass = computed(() => {
       return {
         'wui-hierarchy-node': true,
         'is-leaf': isLeaf.value,
-        'collapsed': !isLeaf.value && props.collapsable && !expanded.value
+        collapsed: !isLeaf.value && props.collapsable && !expanded.value,
       }
-    });
+    })
 
     const innerLabelClass = computed(() => {
-      const labelClassName = typeof props.labelClassName === 'function' ? props.labelClassName(props.data) : props.labelClassName;
+      const labelClassName =
+        typeof props.labelClassName === 'function'
+          ? props.labelClassName(props.data)
+          : props.labelClassName
 
       return {
         'wui-hierarchy-node-label-inner': true,
         [labelClassName]: !!labelClassName,
       }
-    });
+    })
 
     const nodeExpandBtnClass = computed(() => {
       return {
         'wui-hierarchy-node-btn': true,
-        'expanded': !!expanded.value,
+        expanded: !!expanded.value,
       }
-    });
+    })
 
     const toggleExpand = () => {
-      expanded.value = !expanded.value;
-    };
+      expanded.value = !expanded.value
+    }
 
     const onExpandBtnClick = (e: Event) => {
-      toggleExpand();
-      emit('node-expand', e, props.data, nodeContext);
+      toggleExpand()
+      emit('node-expand', e, props.data, nodeContext)
     }
 
     const nodeContext = <NodeContext>{
@@ -155,7 +171,7 @@ export default defineComponent({
       if (typeof property === 'function') {
         return property(child)
       }
-      const label = child[property];
+      const label = child[property]
       if (typeof label === 'function') {
         return label(child)
       }
@@ -166,29 +182,29 @@ export default defineComponent({
     const nodeKey = evaluateChildProp('key')
 
     const enter = (event: any) => {
-      const element = event;
-      element.style.visibility = 'hidden';
-      element.style.height = 'auto';
-      const { height } = getComputedStyle(element);
-      element.style.visibility = null;
-      element.style.height = 0;
+      const element = event
+      element.style.visibility = 'hidden'
+      element.style.height = 'auto'
+      const { height } = getComputedStyle(element)
+      element.style.visibility = null
+      element.style.height = 0
       setTimeout(() => {
-        element.style.height = height;
-      });
+        element.style.height = height
+      })
     }
 
     const afterEnter = (event: any) => {
-      const element = event;
-      element.style.height = 'auto';
+      const element = event
+      element.style.height = 'auto'
     }
 
     const leave = (event: any) => {
-      const element = event;
-      const { height } = getComputedStyle(element);
-      element.style.height = height;
+      const element = event
+      const { height } = getComputedStyle(element)
+      element.style.height = height
       setTimeout(() => {
-        element.style.height = 0;
-      });
+        element.style.height = 0
+      })
     }
 
     return {
@@ -206,6 +222,6 @@ export default defineComponent({
       nodeKey,
       nodeLabel,
     }
-  }
-});
+  },
+})
 </script>

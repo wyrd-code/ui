@@ -1,32 +1,17 @@
 <template>
-  <div
-    class="form-field"
-    :class="[
-      'error' ? !isValid : '',
-      customClass,
-    ]"
-  >
-    <label
-      v-if="schema.label"
-      class="label"
-    >
+  <div class="form-field" :class="['error' ? !isValid : '', customClass]">
+    <label v-if="schema.label" class="label">
       <span class="text">
         {{ schema.label }}
       </span>
       <span class="required">
-        <div
-          v-if="isRequired"
-          class="icon w-2 h-2 ml-2 icon-ph-asterisk"
-        />
+        <div v-if="isRequired" class="icon w-2 h-2 ml-2 icon-ph-asterisk" />
       </span>
     </label>
 
     <slot />
 
-    <p
-      v-if="schema.help"
-      class="text-sm"
-    >
+    <p v-if="schema.help" class="text-sm">
       {{ schema.help }}
     </p>
 
@@ -41,14 +26,9 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 
-import { FormField } from '~/ui.types';
+import { FormField } from '~/ui.types'
 
 import { wuiFormInputWrapperPropsBase } from './field.props'
-
-
-
-
-
 
 export default defineComponent({
   props: {
@@ -57,6 +37,6 @@ export default defineComponent({
       required: true,
     },
     ...wuiFormInputWrapperPropsBase,
-  }
+  },
 })
 </script>
