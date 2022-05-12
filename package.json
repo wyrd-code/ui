@@ -32,9 +32,6 @@
   "files": [
     "dist"
   ],
-  "peerDependencies": {
-    "vue": ">=3.2.0"
-  },
   "dependencies": {},
   "devDependencies": {
     "@iconify-json/ph": "^1.1.1",
