@@ -7,13 +7,23 @@
           :items="items"
           :show-children="true"
           item-class="font-bold"
-          link-class="text-black hover:text-link-600"
+          link-class="link"
           link-active-class="underline font-bold"
-          link-exact-active-class="text-link-600"
-          child-nav-class="mb-4 font-normal text-sm"
+          link-exact-active-class="underline"
+          child-nav-class="pl-4 font-normal text-sm leading-relaxed"
           child-nav-item-class="font-bold"
-          child-nav-link-class="text-black hover:text-link-600"
-        />
+          child-nav-link-class="link"
+        >
+          <template #before>
+            <WuiLink
+              class="w-full flex items-center space-x-2 mb-4"
+              :to="{ name: 'ui.home' }"
+            >
+              <WyrdLogoSVG class="w-5 h-5" />
+              <strong>WYRD.UI</strong>
+            </WuiLink>
+          </template>
+        </WuiNav>
       </aside>
       <main class="ui-layout-main">
         <router-view />
@@ -25,11 +35,15 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
+import WyrdLogoSVG from '../assets/wyrd-logo.svg'
 import { buildNavFromPageDefinitions } from '../ui.helpers'
 import { pages } from './pages'
 
 export default defineComponent({
   name: 'UI',
+  components: {
+    WyrdLogoSVG: WyrdLogoSVG as any,
+  },
   setup() {
     return {
       items: buildNavFromPageDefinitions(pages, 'ui'),

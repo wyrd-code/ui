@@ -7,8 +7,9 @@ import {
 } from 'vue-router'
 
 import { WyrdUI } from '../index'
-import routes from '../ui.routes'
+import { buildRouteItemFromPageDefinition } from '../ui.helpers'
 import App from './App.vue'
+import { pages } from './pages'
 
 import '@unocss/reset/tailwind.css'
 import '../styles/reset.css'
@@ -24,9 +25,9 @@ const router = createVueRouter({
     {
       path: '/',
       name: 'ui',
-      redirect: { name: 'ui.docs' },
+      redirect: { name: 'ui.home' },
       component: (): Component => import('./UI.vue'),
-      children: routes,
+      children: pages.map((p) => buildRouteItemFromPageDefinition(p, 'ui')),
     },
   ],
 })

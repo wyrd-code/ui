@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
     'Components.home': typeof import('./src/docs/pages/components.home.md')['default']
     'Docs.configuration': typeof import('./src/docs/pages/docs.configuration.md')['default']
     'Docs.home': typeof import('./src/docs/pages/docs.home.md')['default']
+    Homepage: typeof import('./src/docs/pages/Homepage.vue')['default']
     'Layouts.home': typeof import('./src/docs/pages/layouts.home.md')['default']
     'Layouts.splash': typeof import('./src/docs/pages/layouts.splash.vue')['default']
     'Layouts.threeColumn': typeof import('./src/docs/pages/layouts.three-column.vue')['default']

@@ -4,17 +4,12 @@ import type { WyrdPageDefinition } from '~/ui.types'
 
 export const pages: WyrdPageDefinition[] = [
   {
-    slug: 'docs',
-    title: 'Wyrd UI',
-    component: (): Component => import('./pages/RouteWrapper.vue'),
-    redirect: { name: 'ui.docs.home' },
-    children: [
-      {
-        slug: 'home',
-        title: 'Home',
-        component: (): Component => import('./pages/docs.home.md'),
-      },
-    ],
+    slug: 'home',
+    title: 'Home',
+    component: (): Component => import('./pages/docs.home.md'),
+    meta: {
+      nav: false,
+    },
   },
   {
     slug: 'components',
