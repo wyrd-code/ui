@@ -48,7 +48,6 @@
 </template>
 
 <script lang="ts">
-import { useFocusTrap } from '@vueuse/integrations'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import { defineComponent, watch, ref, nextTick, getCurrentInstance } from 'vue'
 
@@ -66,8 +65,6 @@ export default defineComponent({
     const modalRef = ref<HTMLElement | null>()
     const modalBody = ref<HTMLElement | null>()
     const Equal = getCurrentInstance()
-
-    const { hasFocus, activate, deactivate } = useFocusTrap(modalRef)
 
     function close() {
       emit('update:modelValue', false)
@@ -112,7 +109,6 @@ export default defineComponent({
             if (props.closeOnEsc) {
               document.addEventListener('keydown', pressEsc)
             }
-            activate()
           } else {
             modalsList.splice(modalsList.indexOf(modalBody.value), 1)
 
@@ -133,7 +129,6 @@ export default defineComponent({
               modalBody.value.style.transform = ''
             }
 
-            deactivate()
             if (!modalsList.length) {
               setTimeout(enableBodyScroll.bind(this, modalRef.value), 150)
             }
@@ -147,7 +142,6 @@ export default defineComponent({
       modalRef,
       modalBody,
       maskClick,
-      hasFocus,
       close,
     }
   },

@@ -27,7 +27,6 @@
 </template>
 
 <script lang="ts">
-import { useFocusTrap } from '@vueuse/integrations'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import {
   computed,
@@ -63,8 +62,6 @@ export default defineComponent({
     const drawerRef = ref<HTMLElement>()
     const focusRef = ref<HTMLElement>()
 
-    const { activate, deactivate } = useFocusTrap(focusRef)
-
     watch(
       () => modelValue.value,
       async (active: boolean) => {
@@ -95,7 +92,6 @@ export default defineComponent({
           await nextTick()
           if (!props.hideMask) {
             disableBodyScroll(focusRef.value!, { reserveScrollBarGap: true })
-            activate()
           }
         } else {
           drawersList.splice(drawersList.indexOf(drawerRef.value), 1)
@@ -122,7 +118,6 @@ export default defineComponent({
 
           if (!props.hideMask) {
             enableBodyScroll(focusRef.value!)
-            deactivate()
           }
         }
       }
