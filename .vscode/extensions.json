@@ -1,10 +1,12 @@
 {
   "recommendations": [
-    "johnsoncodehk.volar",
     "antfu.iconify",
     "antfu.unocss",
+    "buianhthang.gitflow",
+    "csstools.postcss",
     "dbaeumer.vscode-eslint",
+    "johnpapa.vscode-peacock",
     "voorjaar.windicss-intellisense",
-    "csstools.postcss"
+    "vue.volar",
   ]
 }
