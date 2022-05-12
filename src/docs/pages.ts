@@ -196,6 +196,20 @@ export const pages: WyrdPageDefinition[] = [
         ],
       },
       {
+        slug: 'wip',
+        title: 'WIP',
+        component: (): Component => import('./pages/RouteWrapper.vue'),
+        redirect: { name: 'ui.components.wip.article' },
+        children: [
+          {
+            slug: 'article',
+            title: 'Article',
+            component: (): Component =>
+              import('../components/article/WuiArticleDoc.vue'),
+          },
+        ],
+      },
+      {
         slug: 'navigation',
         title: 'Navigation',
         component: (): Component => import('./pages/RouteWrapper.vue'),

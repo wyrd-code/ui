@@ -1,36 +1,45 @@
 html {
 }
 
+.font-heading {
+  @apply font-sans font-bold;
+}
+.font-default-sm {
+  @apply font-sans text-sm md:text-base;
+}
+
 body {
+  @apply font-default;
   /* Force scrollbars to prevent content jumping */
   @apply overflow-y-scroll;
 }
 
-.h0 {
-  @apply font-sans text-3xl font-bold md:text-5xl;
-}
+*:not(.prose) {
+  .h0 {
+    @apply font-heading text-3xl md:text-5xl;
+  }
 
-h1,
-.h1 {
-  @apply font-sans text-2xl font-bold md:text-4xl;
-}
+  h1,
+  .h1 {
+    @apply font-heading text-2xl md:text-4xl;
+  }
 
-h2,
-.h2 {
-  @apply font-sans text-xl font-bold md:text-3xl;
-}
+  h2,
+  .h2 {
+    @apply font-heading text-xl md:text-3xl;
+  }
 
-h3,
-.h3 {
-  @apply font-sans text-lg font-bold md:text-2xl;
-}
+  h3,
+  .h3 {
+    @apply font-heading text-lg md:text-2xl;
+  }
 
-h4,
-.h4 {
-  @apply font-sans text-base font-bold md:text-lg;
-}
+  h4,
+  .h4 {
+    @apply font-heading text-base md:text-lg;
+  }
 
-body,
-.p {
-  @apply font-sans text-sm md:text-base;
+  .p {
+    @apply font-default;
+  }
 }
