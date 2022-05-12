@@ -85,7 +85,7 @@
     "validator": "^13.6.0",
     "vite-plugin-md": "^0.13.1",
     "vite-svg-loader": "^3.3.0",
-    "vite": "^2.9.6",
+    "vite": "^2.9.9",
     "vue-router": "^4.0.14",
     "vue-tsc": "^0.34.11",
     "vue-upload-component": "^3.0.50",
