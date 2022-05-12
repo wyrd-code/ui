@@ -7,6 +7,12 @@ html {
 .font-default-sm {
   @apply font-sans text-sm md:text-base;
 }
+.link {
+  @apply text-link-600 hover:(text-link-800 underline);
+}
+.link:visited {
+  @apply text-link-800;
+}
 
 body {
   @apply font-default;
