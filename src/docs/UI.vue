@@ -40,7 +40,7 @@ export default defineComponent({
 
 <style lang="css">
 .ui-layout-wrapper {
-  @apply max-w-screen-xl mx-auto;
+  @apply max-w-1800px mx-auto;
 }
 .ui-layout-wrapper-inner {
   @apply relative;
