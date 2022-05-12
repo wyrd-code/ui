@@ -143,14 +143,3 @@ export function createConfig({ strict = true, dev = true } = {}): any {
 }
 
 export default createConfig()
-
-// textColors: {
-// accent
-// neutral
-// success
-// warning
-// danger
-// primary
-// link
-// info
-// },
