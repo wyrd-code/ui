@@ -6,8 +6,8 @@ import {
   createMemoryHistory,
 } from 'vue-router'
 
-import { WyrdUI } from '../index'
 import { buildRouteItemFromPageDefinition } from '../ui.helpers'
+import { WyrdUI } from '../ui.plugin'
 import App from './App.vue'
 import { pages } from './pages'
 

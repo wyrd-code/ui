@@ -1,9 +1,9 @@
-import type { LoadingBarInstance } from './components/loading-bar'
-import type { MessageInstance } from './components/message'
-import type { NotificationInstance } from './components/notification'
+import { LoadingBarInstance } from './components/loading-bar'
+import { MessageInstance } from './components/message'
+import { NotificationInstance } from './components/notification'
 
-declare module '@vue/runtime-core' {
-  export interface ComponentCustomProperties {
+declare module 'vue' {
+  interface ComponentCustomProperties {
     $Message: MessageInstance
     $Notification: NotificationInstance
     $LoadingBar: LoadingBarInstance

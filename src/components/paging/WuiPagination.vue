@@ -82,6 +82,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 import { PagingMeta } from '~/ui.types'
 
@@ -180,9 +181,12 @@ export default defineComponent({
       this.updateQuery({ take })
     },
     updateQuery(params: Record<string, any>) {
-      this.$router.replace({
+      const router = useRouter()
+      const route = useRoute()
+
+      router.replace({
         query: {
-          ...this.$route.query,
+          ...route.query,
           ...params,
         },
       })

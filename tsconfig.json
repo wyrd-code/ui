@@ -3,8 +3,6 @@
     "src/**/*.d.ts",
     "src/**/*.ts",
     "src/**/*.vue",
-    ".eslintrc.js",
-    "./*.ts"
   ],
   "exclude": [
     "node_modules",
@@ -12,7 +10,8 @@
     "**/*.spec.ts"
   ],
   "compilerOptions": {
-    "outDir": "./dist/js/",
+    "composite": true,
+    "outDir": "./dist/lib",
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"],
@@ -23,23 +22,19 @@
     "strict": true,
     "jsx": "preserve",
     "allowJs": true,
-    "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
     "types": [
       "vite/client",
+      "vue-router",
       "node",
       "unocss",
     ],
-    "incremental": false,
     "skipLibCheck": true,
     "noUnusedLocals": true,
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "declarationDir": "./dist/types"
+    "isolatedModules": true
   },
 }

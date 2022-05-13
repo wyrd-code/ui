@@ -6,12 +6,11 @@ import anchor from 'markdown-it-anchor'
 import { visualizer } from 'rollup-plugin-visualizer'
 import Unocss from 'unocss/vite'
 import Components from 'unplugin-vue-components/vite'
-import { defineConfig } from 'vite'
 import Markdown from 'vite-plugin-md'
 import svgLoader from 'vite-svg-loader'
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default {
   build: {
     emptyOutDir: false,
     lib: {
@@ -87,7 +86,7 @@ export default defineConfig({
     Unocss(),
     // https://github.com/btd/rollup-plugin-visualizer
     visualizer({
-      open: true,
+      open: false,
       title: 'WyrdUI Bundle Visualizer',
     }),
   ],
@@ -101,4 +100,4 @@ export default defineConfig({
       ],
     },
   },
-})
+}
