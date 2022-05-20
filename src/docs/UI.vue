@@ -36,8 +36,8 @@
 import { defineComponent } from 'vue'
 
 import WyrdLogoSVG from '../assets/wyrd-logo.svg'
-import { buildNavFromPageDefinitions } from '../ui.helpers'
-import { pages } from './pages'
+import { buildNavFromPageDefinitions } from '../helpers'
+import { pages } from './ui.docs.pages'
 
 export default defineComponent({
   name: 'UI',

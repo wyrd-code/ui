@@ -28,8 +28,8 @@
 import { UseTimeAgo } from '@vueuse/components'
 import { computed, toRefs, defineComponent } from 'vue'
 
-import { FieldPublicMeta, FormFieldType } from '~/ui.types'
-import { get } from '~/utilities'
+import { FieldPublicMeta, FormFieldType } from '../../ui.types'
+import { get } from '../../utilities'
 
 export default defineComponent({
   name: 'WuiTableCell',

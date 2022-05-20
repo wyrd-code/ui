@@ -66,7 +66,7 @@ export default defineComponent({
       () => modelValue.value,
       async (active: boolean) => {
         const drawersList =
-          Equal!.appContext.config.globalProperties.$Equal.drawers
+          Equal!.appContext.config.globalProperties.$WyrdUI.drawers
         if (active) {
           drawersList.push(drawerRef.value)
 

@@ -30,7 +30,7 @@ module.exports = defineConfig({
         },
         extensions: ['.ts', '.js', '.json', '.vue'],
         // Note: if using lerna or yarn worskpaces, try this for failing imports
-        // packages: ['packages/*'],
+        packages: ['packages/*'],
       },
     },
   },

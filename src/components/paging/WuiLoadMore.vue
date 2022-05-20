@@ -51,7 +51,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import { PagingMeta } from '~/ui.types'
+import { PagingMeta } from '../../ui.types'
 
 export default defineComponent({
   name: `WuiLoadMore`,

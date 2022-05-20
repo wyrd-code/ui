@@ -1,16 +1,16 @@
 import { ref, unref, computed, Ref } from 'vue'
 
-import {
-  WuiForm,
-  FormMessage,
-  WuiFormFactory,
-  FormField,
-  WuiFormFieldSchema,
-  FormStatus,
-} from '~/ui.types'
 import { initDefaultDataForSchema } from '~/utilities'
 
 import { compileInputValidatorsFromString } from '../../composables/input-validators'
+import {
+  WuiFormController,
+  FormMessage,
+  WuiFormFactoryOptions,
+  FormField,
+  WuiFormFieldSchema,
+  FormStatus,
+} from '../../ui.types'
 
 const validateField = async (
   field: FormField,
@@ -75,7 +75,7 @@ const validateFields = async (
   return result
 }
 
-export const formFactory = (opts: WuiFormFactory): WuiForm => {
+export const formFactory = (opts: WuiFormFactoryOptions): WuiFormController => {
   const { schema } = opts
   const isLoading = ref(false)
 

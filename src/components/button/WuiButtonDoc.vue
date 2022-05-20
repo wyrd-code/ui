@@ -171,7 +171,10 @@
     <WuiCodeExample title="Glass">
       <div
         class="bg-cover border rounded bg-base-300 shadow-md p-20"
-        style="background-image: url(https://picsum.photos/id/102/400/300)"
+        style="
+          background-image: url(/raspberry.jpg);
+          background-position: center center;
+        "
       >
         <WuiButton glass size="lg"> Glass button </WuiButton>
       </div>

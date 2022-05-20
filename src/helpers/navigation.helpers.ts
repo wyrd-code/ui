@@ -1,6 +1,6 @@
 import { RouteRecordRaw } from 'vue-router'
 
-import type { WyrdPageDefinition, WyrdNavItem } from '~/ui.types'
+import type { WyrdPageDefinition, WyrdNavItem } from '../ui.types'
 
 export const buildNavFromPageDefinitions = (
   pages: WyrdPageDefinition[],

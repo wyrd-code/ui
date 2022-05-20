@@ -11,7 +11,7 @@
   ],
   "compilerOptions": {
     "composite": true,
-    "outDir": "./dist/lib",
+    "outDir": "./dist",
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"],
@@ -26,14 +26,15 @@
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
     "types": [
+      "vite-svg-loader",
       "vite/client",
       "vue-router",
       "node",
       "unocss",
     ],
-    "skipLibCheck": true,
     "noUnusedLocals": true,
     "strictNullChecks": true,
+    "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true
   },

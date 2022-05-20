@@ -22,8 +22,11 @@ declare module '@vue/runtime-core' {
     UI: typeof import('./src/docs/UI.vue')['default']
     WuiAlert: typeof import('./src/components/alert/WuiAlert.vue')['default']
     WuiAlertDoc: typeof import('./src/components/alert/WuiAlertDoc.vue')['default']
+    WuiAppFooter: typeof import('./src/templates/app/WuiAppFooter.vue')['default']
+    WuiAppHeader: typeof import('./src/templates/app/WuiAppHeader.vue')['default']
     WuiArticle: typeof import('./src/components/article/WuiArticle.vue')['default']
     WuiArticleDoc: typeof import('./src/components/article/WuiArticleDoc.vue')['default']
+    WuiArticleLayout: typeof import('./src/templates/layout/WuiArticleLayout.vue')['default']
     WuiArticleProseExample: typeof import('./src/components/article/WuiArticleProseExample.vue')['default']
     WuiAvatar: typeof import('./src/components/avatar/WuiAvatar.vue')['default']
     WuiAvatarDoc: typeof import('./src/components/avatar/WuiAvatarDoc.vue')['default']
@@ -50,6 +53,7 @@ declare module '@vue/runtime-core' {
     WuiCollapseItem: typeof import('./src/components/collapse/WuiCollapseItem.vue')['default']
     WuiComment: typeof import('./src/components/comment/WuiComment.vue')['default']
     WuiCommentDoc: typeof import('./src/components/comment/WuiCommentDoc.vue')['default']
+    WuiCursorListing: typeof import('./src/templates/listing/WuiCursorListing.vue')['default']
     WuiDivider: typeof import('./src/components/divider/WuiDivider.vue')['default']
     WuiDrawer: typeof import('./src/components/drawer/WuiDrawer.vue')['default']
     WuiDrawerDoc: typeof import('./src/components/drawer/WuiDrawerDoc.vue')['default']
@@ -78,6 +82,10 @@ declare module '@vue/runtime-core' {
     WuiHierarchyNode: typeof import('./src/components/hierarchy/WuiHierarchyNode.vue')['default']
     WuiInput: typeof import('./src/components/input/WuiInput.vue')['default']
     WuiInputDoc: typeof import('./src/components/input/WuiInputDoc.vue')['default']
+    WuiLayoutPageListing: typeof import('./src/templates/layout/WuiLayoutPageListing.vue')['default']
+    WuiLayoutSplash: typeof import('./src/templates/layout/WuiLayoutSplash.vue')['default']
+    WuiLayoutThreeColumn: typeof import('./src/templates/layout/WuiLayoutThreeColumn.vue')['default']
+    WuiLayoutTwoColumn: typeof import('./src/templates/layout/WuiLayoutTwoColumn.vue')['default']
     WuiLink: typeof import('./src/components/link/WuiLink.vue')['default']
     WuiLoadingBar: typeof import('./src/components/loading-bar/WuiLoadingBar.vue')['default']
     WuiLoadingBarDoc: typeof import('./src/components/loading-bar/WuiLoadingBarDoc.vue')['default']
@@ -120,6 +128,7 @@ declare module '@vue/runtime-core' {
     WuiTooltipDoc: typeof import('./src/components/tooltip/WuiTooltipDoc.vue')['default']
     WuiTransition: typeof import('./src/components/transition/WuiTransition.vue')['default']
     WuiTransitionPage: typeof import('./src/components/transition/WuiTransitionPage.vue')['default']
+    WuiUpload: typeof import('./src/components/upload/WuiUpload.vue')['default']
   }
 }
 

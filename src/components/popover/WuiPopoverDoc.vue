@@ -69,11 +69,7 @@
         <WuiButton>Show image</WuiButton>
 
         <template #content>
-          <img
-            width="150"
-            src="https://picsum.photos/id/102/150/100"
-            alt="logo"
-          />
+          <img width="150" src="/raspberry.jpg" alt="example photo" />
         </template>
       </WuiPopover>
     </WuiCodeExample>

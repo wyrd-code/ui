@@ -372,23 +372,4 @@ h5 {
 .editor__content blockquote {
   @apply bg-gray-200 border-gray-300 border-l-8 text-left py-1 px-4;
 }
-/*
-  .editor__content h1 {
-    @apply font-bold text-4xl;
-  }
-  .editor__content h2 {
-    @apply text-3xl;
-  }
-  .editor__content h3 {
-    @apply font-bold text-2xl;
-  }
-  .editor__content h4 {
-    @apply text-xl;
-  }
-  .editor__content h5 {
-    @apply text-lg;
-  }
-  .editor__content pre code {
-    @apply border-black rounded bg-gray-900 mb-2 p-4 text-gray-300 block;
-  } */
 </style>

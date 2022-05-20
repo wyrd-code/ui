@@ -2,13 +2,11 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "composite": false,
-    "outDir": "./dist/types",
-    "sourceMap": false,
-    "declarationMap": false,
-  },
-  "include": [
-    "src/**/*.d.ts",
-    "src/**/*.ts",
-    "src/**/*.vue"
-  ]
+    "emitDeclarationOnly": true,
+    "isolatedModules": false,
+    "declaration": true,
+    "declarationDir": "dist/dts",
+    "declarationMap": true,
+    "skipLibCheck": true
+  }
 }

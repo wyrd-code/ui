@@ -42,8 +42,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import { FieldPublicMeta } from '~/ui.types'
-
+import { FieldPublicMeta } from '../../ui.types'
 import WuiTableCell from './WuiTableCell.vue'
 
 export default defineComponent({

@@ -21,7 +21,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import type { WyrdNavItem } from '~/ui.types'
+import type { WyrdNavItem } from '../../ui.types'
 
 export default defineComponent({
   name: 'WuiTabNav',

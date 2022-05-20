@@ -1,5 +1,9 @@
-import { FormField, FormFieldType, FormFieldText, WuiForm } from '~/ui.types'
-
+import {
+  FormField,
+  FormFieldType,
+  FormFieldText,
+  WuiFormController,
+} from '../../ui.types'
 import WuiCheckbox from '../checkbox/WuiCheckbox.vue'
 import WuiFormEditorField from '../editor/WuiFormEditorField.vue'
 import WuiFormBlank from '../input/WuiFormBlank.vue'
@@ -12,7 +16,11 @@ import WuiFormPassword from './WuiFormPassword.vue'
 
 declare type EmitFn = (payload: Event, args: any) => void
 
-const getListeners = (fieldSchema: FormField, emit: EmitFn, form: WuiForm) => {
+const getListeners = (
+  fieldSchema: FormField,
+  emit: EmitFn,
+  form: WuiFormController
+) => {
   return {
     onBlur: (e: InputEvent) => {},
     onChange: (e: InputEvent) => {
@@ -22,7 +30,11 @@ const getListeners = (fieldSchema: FormField, emit: EmitFn, form: WuiForm) => {
   }
 }
 
-const getFieldProps = (schema: FormFieldText, emit: EmitFn, form: WuiForm) => {
+const getFieldProps = (
+  schema: FormFieldText,
+  emit: EmitFn,
+  form: WuiFormController
+) => {
   const messages = form.messages.value.filter((m) => m.field === schema.name)
   const value =
     form.formData.value && schema.name
@@ -43,55 +55,91 @@ const getFieldProps = (schema: FormFieldText, emit: EmitFn, form: WuiForm) => {
 export const formFieldMapper: Record<string, any> = {
   [FormFieldType.Blank]: {
     component: WuiFormBlank,
-    getProps: (schema: FormFieldText, emit: EmitFn, form: WuiForm) => {
+    getProps: (
+      schema: FormFieldText,
+      emit: EmitFn,
+      form: WuiFormController
+    ) => {
       return getFieldProps(schema, emit, form)
     },
   },
   [FormFieldType.Text]: {
     component: WuiFormText,
-    getProps: (schema: FormFieldText, emit: EmitFn, form: WuiForm) => {
+    getProps: (
+      schema: FormFieldText,
+      emit: EmitFn,
+      form: WuiFormController
+    ) => {
       return getFieldProps(schema, emit, form)
     },
   },
   [FormFieldType.Textarea]: {
     component: WuiFormTextarea,
-    getProps: (schema: FormFieldText, emit: EmitFn, form: WuiForm) => {
+    getProps: (
+      schema: FormFieldText,
+      emit: EmitFn,
+      form: WuiFormController
+    ) => {
       return getFieldProps(schema, emit, form)
     },
   },
   [FormFieldType.Editor]: {
     component: WuiFormEditorField,
-    getProps: (schema: FormFieldText, emit: EmitFn, form: WuiForm) => {
+    getProps: (
+      schema: FormFieldText,
+      emit: EmitFn,
+      form: WuiFormController
+    ) => {
       return getFieldProps(schema, emit, form)
     },
   },
   [FormFieldType.Checkbox]: {
     component: WuiCheckbox,
-    getProps: (schema: FormFieldText, emit: EmitFn, form: WuiForm) => {
+    getProps: (
+      schema: FormFieldText,
+      emit: EmitFn,
+      form: WuiFormController
+    ) => {
       return getFieldProps(schema, emit, form)
     },
   },
   [FormFieldType.Select]: {
     component: WuiFormSelect,
-    getProps: (schema: FormFieldText, emit: EmitFn, form: WuiForm) => {
+    getProps: (
+      schema: FormFieldText,
+      emit: EmitFn,
+      form: WuiFormController
+    ) => {
       return getFieldProps(schema, emit, form)
     },
   },
   [FormFieldType.Radio]: {
     component: WuiFormRadio,
-    getProps: (schema: FormFieldText, emit: EmitFn, form: WuiForm) => {
+    getProps: (
+      schema: FormFieldText,
+      emit: EmitFn,
+      form: WuiFormController
+    ) => {
       return getFieldProps(schema, emit, form)
     },
   },
   [FormFieldType.Toggle]: {
     component: WuiFormToggle,
-    getProps: (schema: FormFieldText, emit: EmitFn, form: WuiForm) => {
+    getProps: (
+      schema: FormFieldText,
+      emit: EmitFn,
+      form: WuiFormController
+    ) => {
       return getFieldProps(schema, emit, form)
     },
   },
   [FormFieldType.Password]: {
     component: WuiFormPassword,
-    getProps: (schema: FormFieldText, emit: EmitFn, form: WuiForm) => {
+    getProps: (
+      schema: FormFieldText,
+      emit: EmitFn,
+      form: WuiFormController
+    ) => {
       return getFieldProps(schema, emit, form)
     },
   },

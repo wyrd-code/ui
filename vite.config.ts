@@ -3,7 +3,7 @@ import { resolve } from 'path'
 
 import vue from '@vitejs/plugin-vue'
 import anchor from 'markdown-it-anchor'
-import { visualizer } from 'rollup-plugin-visualizer'
+// import { visualizer } from 'rollup-plugin-visualizer'
 import Unocss from 'unocss/vite'
 import Components from 'unplugin-vue-components/vite'
 import Markdown from 'vite-plugin-md'
@@ -15,13 +15,15 @@ export default {
     emptyOutDir: false,
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'wyrdui',
+      name: 'WyrdUI',
+      fileName: (format: string): string => `index.${format}.js`,
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
       external: ['vue'],
       output: {
+        inlineDynamicImports: true,
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
@@ -85,10 +87,10 @@ export default {
     // https://github.com/unocss/unocss
     Unocss(),
     // https://github.com/btd/rollup-plugin-visualizer
-    visualizer({
-      open: false,
-      title: 'WyrdUI Bundle Visualizer',
-    }),
+    // visualizer({
+    //   open: false,
+    //   title: 'WyrdUI Bundle Visualizer',
+    // }),
   ],
   css: {
     postcss: {

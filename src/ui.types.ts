@@ -1,29 +1,37 @@
 import type { Component, Ref } from 'vue'
-import type {
-  RouteRecordRaw,
-  RouteComponent,
-  RouteLocationRaw,
-  RouteLocationNormalized,
-  RouteMeta,
-  _RouteRecordBase,
-} from 'vue-router'
+import type { RouteLocationRaw, _RouteRecordBase } from 'vue-router'
+
+import { LoadingBarInstance } from './components/loading-bar'
+import { MessageInstance } from './components/message'
+import { NotificationInstance } from './components/notification'
 
 export type { RouteLocationRaw } from 'vue-router'
 
-export type TEmit = (event: string, ...args: unknown[]) => void
+/**
+ * @internal
+ */
+export type TEmit = (event: string, ...args: any[]) => void
+
+/**
+ * @internal
+ */
 export type TProps = { [key: string]: any }
 
-export interface IWui {
-  drawers: Ref[]
-  modals: Ref[]
-}
-
+/**
+ * @internal
+ */
 export type Timeout = ReturnType<typeof setTimeout>
 
+/**
+ * @internal
+ */
 export interface WyrdNavItemMeta {
-  auth?: any
+  [x: string]: unknown
 }
 
+/**
+ * @public
+ */
 export interface WyrdNavItem {
   as?: string
   to?: RouteLocationRaw
@@ -35,10 +43,16 @@ export interface WyrdNavItem {
   icon?: string
 }
 
+/**
+ * @public
+ */
 export interface WyrdNavItemDefinition extends WyrdNavItem {
   nav: string
 }
 
+/**
+ * @public
+ */
 export interface WyrdPageDefinition {
   slug: string
   name?: string // when slug is empty, set route name
@@ -50,48 +64,14 @@ export interface WyrdPageDefinition {
   children?: WyrdPageDefinition[]
 }
 
+/**
+ * @internal
+ */
 export type ComponentMap = Record<string, Component>
 
-export interface RoutesConfig {
-  routes?: AppRoute[]
-}
-
-export interface NavigationsConfig {
-  navs?: WyrdNavItemDefinition[]
-}
-
-export interface AppNavigationConfig extends NavigationsConfig {
-  defaultRoute?: RouteRecordRaw
-}
-
-export interface AppRouteMeta extends RouteMeta {
-  layout?: {
-    name: string
-    component: Component
-  }
-}
-
-declare type _RouteRecordProps =
-  | boolean
-  | Record<string, any>
-  | ((to: RouteLocationNormalized) => Record<string, any>)
-
-export interface AppRoute extends Omit<Partial<_RouteRecordBase>, 'children'> {
-  component?: RouteComponent // AsyncComponentLoader
-  icon?: string
-  meta?: AppRouteMeta
-  children?: AppRoute[]
-  props?: _RouteRecordProps
-  parentRouteName?: string
-}
-
-// API READ MANY
-
-export interface ReadManyResult<T> {
-  data: T[]
-  meta: ReadManyResultMeta
-}
-
+/**
+ * @public
+ */
 export interface PagingMeta {
   take: number
   totalCount: number
@@ -101,13 +81,11 @@ export interface PagingMeta {
   endCursor?: string
 }
 
-export interface ReadManyResultMeta {
-  paging: PagingMeta
-  [key: string]: any
-}
+// Form
 
-// Fields
-
+/**
+ * @public
+ */
 export enum FormFieldType {
   Blank = 'blank',
   Checkbox = 'checkbox',
@@ -123,6 +101,9 @@ export enum FormFieldType {
   DateTime = 'datetime',
 }
 
+/**
+ * @public
+ */
 export interface FieldPublicMeta {
   type: FormFieldType
   key: string
@@ -132,18 +113,23 @@ export interface FieldPublicMeta {
   // TODO: use prisma enums without loading @prisma/client from client code
 }
 
-// Wui Form
-
+/**
+ * @internal
+ */
 export enum FormInputValidationTriggerTypes {
   BLUR = 'blur',
   CHANGE = 'change',
 }
-export interface FormInputValidationTrigger {
+
+interface FormInputValidationTrigger {
   type: FormInputValidationTriggerTypes
   threshold: number
 }
 
-interface FormFieldBase {
+/**
+ * @public
+ */
+export interface FormFieldBase {
   type: string
   name?: string
   label?: string
@@ -162,45 +148,72 @@ interface FormFieldBase {
   validationTrigger?: FormInputValidationTrigger
 }
 
+/**
+ * @public
+ */
 export interface FormFieldCheckbox extends FormFieldBase {
   type: FormFieldType.Editor
 }
 
+/**
+ * @public
+ */
 export interface FormFieldEditor extends FormFieldBase {
   type: FormFieldType.Editor
   placeholder?: string
 }
 
+/**
+ * @public
+ */
 export interface FormFieldFile extends FormFieldBase {
   type: FormFieldType.File
 }
 
+/**
+ * @public
+ */
 export interface FormFieldGroup extends FormFieldBase {
   type: FormFieldType.Group
   repeatable?: boolean
   addLabel?: string
 }
 
+/**
+ * @public
+ */
 export interface FormFieldText extends FormFieldBase {
   type: FormFieldType.Text
   placeholder?: string
 }
 
+/**
+ * @public
+ */
 export interface FormFieldPassword extends FormFieldBase {
   type: FormFieldType.Password
 }
 
+/**
+ * @public
+ */
 export interface FormSelectOption {
   value: string
   label: string
 }
 
+/**
+ * @public
+ */
 export interface FormFieldSelect extends FormFieldBase {
   type: FormFieldType.Select
   options: FormSelectOption[]
   disableNoSelection?: boolean
 }
 
+/**
+ * @public
+ */
 export interface FormRadioOption extends FormSelectOption {
   type?: string
   subLabel?: string
@@ -209,21 +222,33 @@ export interface FormRadioOption extends FormSelectOption {
   lineThrough?: boolean
 }
 
+/**
+ * @public
+ */
 export interface FormFieldRadio extends FormFieldBase {
   type: FormFieldType.Radio
   options: FormRadioOption[]
   disableNoSelection?: boolean
 }
 
+/**
+ * @public
+ */
 export interface FormFieldTextarea extends FormFieldBase {
   type: FormFieldType.Textarea
   placeholder?: string
 }
 
+/**
+ * @public
+ */
 export interface FormFieldToggle extends FormFieldBase {
   type: FormFieldType.Toggle
 }
 
+/**
+ * @public
+ */
 export interface FormFieldComponent extends FormFieldBase {
   type: string
   src?: string
@@ -243,17 +268,32 @@ type FormFieldsNoChildren =
   | FormFieldToggle
   | FormFieldComponent
 
+/**
+ * @public
+ */
 export type FormField = FormFieldsNoChildren & {
   type?: string
   children?: WuiFormFieldSchema
 }
 
+/**
+ * @public
+ */
 export type WuiFormFieldSchema = FormField[]
 
+/**
+ * @public
+ */
 export type FormData<T = Record<string, any>> = T
 
+/**
+ * @public
+ */
 export type FormStatus = string | boolean | undefined
 
+/**
+ * @public
+ */
 export interface FormSubmitContext {
   setFormData: (data: Record<string, any>) => void
   setMessages: (messages: FormMessage[]) => Promise<any> | any
@@ -261,6 +301,9 @@ export interface FormSubmitContext {
   setStatus: (val: FormStatus) => void
 }
 
+/**
+ * @public
+ */
 export interface FormSubmitResponse {
   status: FormStatus
   messages?: FormMessage[]
@@ -269,18 +312,27 @@ export interface FormSubmitResponse {
   [x: string]: any
 }
 
+/**
+ * @public
+ */
 export type FormSubmitHandler<T = any, R = any> = (
   formData: FormData<T>,
   context: FormSubmitContext
 ) => R
 
-export interface WuiFormFactory {
+/**
+ * @public
+ */
+export interface WuiFormFactoryOptions {
   schema: WuiFormFieldSchema
   defaultData: FormData | Ref<FormData>
   messages?: FormMessage[] | Ref<FormMessage[]>
   onSubmitForm: FormSubmitHandler
 }
 
+/**
+ * @public
+ */
 export interface FormMessage<
   T = 'warning' | 'error' | 'info' | 'success' | undefined
 > {
@@ -294,7 +346,10 @@ export interface FormMessage<
   [x: string]: any
 }
 
-export interface WuiForm extends FormSubmitContext {
+/**
+ * @public
+ */
+export interface WuiFormController extends FormSubmitContext {
   schema: WuiFormFieldSchema
   formData: Ref<Record<string, any>>
   messages: Ref<FormMessage[]>
@@ -311,11 +366,27 @@ export interface WuiForm extends FormSubmitContext {
   isValid: Ref<boolean>
 }
 
+/**
+ * @public
+ */
 export type FormInputValidator = (
   value: any,
   opts?: any
 ) => Promise<FormMessage | undefined> | FormMessage | undefined
 
-// End WuiForm
+// End Form
 
+/**
+ * @public
+ */
 export type AlertType = 'info' | 'warn' | 'error' | 'success'
+
+// Shim vue global instance properties
+
+declare module 'vue' {
+  interface ComponentCustomProperties {
+    $Message: MessageInstance
+    $Notification: NotificationInstance
+    $LoadingBar: LoadingBarInstance
+  }
+}

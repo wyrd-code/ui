@@ -22,8 +22,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 
-import { FormFieldSelect } from '~/ui.types'
-
+import { FormFieldSelect } from '../../ui.types'
 import { wuiFormInputPropsBase } from '../form/field.props'
 
 export default defineComponent({

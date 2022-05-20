@@ -74,15 +74,15 @@
 <script lang="ts">
 import { defineComponent, toRefs } from 'vue'
 
-import type { WuiForm } from '~/ui.types'
-
+import type { WuiFormController } from '../../ui.types'
 import WuiPopover from '../popover/WuiPopover.vue'
 
 export default defineComponent({
+  name: 'WuiForm',
   components: { WuiPopover },
   props: {
     form: {
-      type: Object as () => WuiForm,
+      type: Object as () => WuiFormController,
       required: true,
     },
     submitText: {

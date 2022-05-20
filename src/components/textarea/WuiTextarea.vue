@@ -23,11 +23,6 @@
 <script lang="ts">
 import { defineComponent, onMounted, nextTick, ref, computed } from 'vue'
 
-/* 
-  todo:
-  [] consider this https://css-tricks.com/the-cleanest-trick-for-autogrowing-textareas/
-*/
-
 export default defineComponent({
   name: 'WuiTextarea',
   props: {

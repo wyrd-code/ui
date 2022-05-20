@@ -13,7 +13,7 @@
 <script lang="ts">
 import { computed, defineComponent, toRefs } from 'vue'
 
-import type { FormMessage } from '~/ui.types'
+import type { FormMessage } from '../../ui.types'
 
 export default defineComponent({
   props: {

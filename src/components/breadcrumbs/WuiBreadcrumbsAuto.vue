@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 
-import type { WyrdNavItem } from '~/ui.types'
+import type { WyrdNavItem } from '../../ui.types'
 
 const route = useRoute()
 const matched = route.matched.filter((r) => r.name)

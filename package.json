@@ -7,8 +7,11 @@
   "private": true,
   "scripts": {
     "dev": "vite --host",
-    "build:dts": "vue-tsc --declaration --emitDeclarationOnly --project tsconfig.dts.json",
-    "build": "rimraf dist && yarn build:dts && vite build",
+    "types:build": "vue-tsc --project tsconfig.dts.json",
+    "types:compact": "api-extractor run --local --verbose",
+    "types:cleanup": "eslint dist/index.d.ts --fix --no-ignore && rimraf dist/dts",
+    "build:types": "yarn types:build && yarn types:compact && yarn types:cleanup",
+    "build": "yarn lint && rimraf dist && yarn build:types && vite build",
     "preview": "vite preview",
     "publish:library": "npm publish --access public",
     "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore src --fix"
@@ -17,14 +20,28 @@
     "type": "git",
     "url": "https://github.com/wyrd-code/ui"
   },
-  "main": "./dist/lib/ui.umd.js",
-  "module": "./dist/lib/ui.es.js",
-  "typings": "./dist/types/main.d.ts",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    },
+    "./style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "sideEffects": false,
   "files": [
     "dist"
   ],
-  "dependencies": {},
+  "peerDependencies": {
+    "vue": "^3.2.33"
+  },
   "devDependencies": {
+    "@microsoft/api-extractor": "^7.23.2",
     "@iconify-json/ph": "^1.1.1",
     "@iconify/iconify": "^2.2.1",
     "@tiptap/core": "^2.0.0-beta.174",
@@ -39,6 +56,7 @@
     "@types/validator": "^13.7.2",
     "@typescript-eslint/eslint-plugin": "^4.32.0",
     "@typescript-eslint/parser": "^4.32.0",
+    "@unocss/preset-wind": "^0.33.2",
     "@unocss/reset": "^0.33.2",
     "@vitejs/plugin-vue": "^2.3.1",
     "@vue/runtime-core": "^3.2.33",
@@ -46,6 +64,7 @@
     "@vueuse/core": "^8.3.1",
     "@vueuse/head": "^0.7.5",
     "body-scroll-lock": "^4.0.0-beta.0",
+    "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-define-config": "^1.0.9",
     "eslint-import-resolver-custom-alias": "^1.3.0",
@@ -53,16 +72,15 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^7.13.0",
-    "eslint": "^7.32.0",
+    "markdown-it": "^12.3.2",
     "markdown-it-anchor": "^8.6.3",
     "markdown-it-emoji": "^2.0.2",
     "markdown-it-footnote": "^3.0.3",
     "markdown-it-prism": "^2.2.4",
     "markdown-it-toc-done-right": "^4.2.0",
-    "markdown-it": "^12.3.2",
+    "postcss": "^8.4.13",
     "postcss-import": "^14.1.0",
     "postcss-nested": "^5.0.6",
-    "postcss": "^8.4.13",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "rollup-plugin-visualizer": "^5.6.0",
@@ -71,12 +89,11 @@
     "unocss": "^0.33.2",
     "unplugin-vue-components": "^0.19.3",
     "validator": "^13.6.0",
+    "vite": "^2.9.9",
     "vite-plugin-md": "^0.13.1",
     "vite-svg-loader": "^3.3.0",
-    "vite": "^2.9.9",
+    "vue": "^3.2.33",
     "vue-router": "^4.0.14",
-    "vue-tsc": "^0.34.13",
-    "vue-upload-component": "^3.0.50",
-    "vue": "^3.2.33"
+    "vue-tsc": "^0.34.13"
   }
 }

@@ -14,8 +14,7 @@
 <script lang="ts">
 import { defineComponent, computed, PropType } from 'vue'
 
-import { WuiForm, FormField } from '~/ui.types'
-
+import { WuiFormController, FormField } from '../../ui.types'
 import { formFieldMapper } from './field.mapper'
 
 export default defineComponent({
@@ -25,7 +24,7 @@ export default defineComponent({
       required: true,
     },
     form: {
-      type: Object as PropType<WuiForm>,
+      type: Object as PropType<WuiFormController>,
       required: true,
     },
   },

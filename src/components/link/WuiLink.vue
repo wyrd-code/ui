@@ -7,7 +7,7 @@
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
 
-import { RouteLocationRaw } from '~/ui.types'
+import { RouteLocationRaw } from '../../ui.types'
 
 export default defineComponent({
   name: `Link`,

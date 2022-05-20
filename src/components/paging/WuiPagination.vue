@@ -84,7 +84,7 @@
 import { defineComponent } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
-import { PagingMeta } from '~/ui.types'
+import { PagingMeta } from '../../ui.types'
 
 export default defineComponent({
   name: `WuiPagination`,

@@ -63,7 +63,7 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 
-import type { WyrdNavItem } from '~/ui.types'
+import type { WyrdNavItem } from '../../ui.types'
 
 export default defineComponent({
   name: 'WuiNav',

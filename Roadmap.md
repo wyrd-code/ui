@@ -3,10 +3,12 @@
 [x] Replace icon imports
 [x] Fix lint errors
 [x] Fix build
+[ ] Use https://dwightjack.github.io/vue-types/
+[x] Use https://api-extractor.com/ instead of vue-tsc for typings
+[x] Fix generating .d.ts files (do we use generated volar.d.ts?)
 [ ] Separate docs from lib
 [ ] Optimize build size
 [ ] Fix all icon usages
-[ ] Fix generating .d.ts files (do we use generated volar.d.ts?)
 [ ] Dark mode support
 [ ] i18n validator messages (extract them all somehow?)
 [ ] Theming support
@@ -18,10 +20,13 @@
 [ ] Import css in components directly ?
 [ ] Enforce Conventional Commits
 [ ] NPM publish
-[ ] Try importing / using in project
-[ ] Install vue globals when component is used only
+[x] Try importing / using in project
 [ ] Provide types for global properties (extend vue instance when loaded in consuming project tsconfig types)
 [ ] [Custom transitions builder](https://mui.com/material-ui/customization/transitions/)
+[ ] Try implementing https://css-tricks.com/the-cleanest-trick-for-autogrowing-textareas/
+
+
+[ ] Add an example for integration (via build assets) (for a simple end usage test -> run build on example)
 
 [ ] Theme customization using css vars?
 ```ts

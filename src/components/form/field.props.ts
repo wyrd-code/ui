@@ -1,6 +1,6 @@
 import type { PropType } from 'vue'
 
-import type { FormMessage } from '~/ui.types'
+import type { FormMessage } from '../../ui.types'
 
 export const wuiFormInputWrapperPropsBase = {
   isRequired: {
