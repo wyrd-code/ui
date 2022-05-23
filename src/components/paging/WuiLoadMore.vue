@@ -9,7 +9,7 @@
     class="text-center leading-none"
   >
     <span class="mx-auto inline-block">
-      <icon-icomoon-free-spinner9 class="w-4 h-4 animate-spin" />
+      <WuiSpinner class="w-4 h-4" />
     </span>
   </WuiButton>
   <WuiButton
@@ -52,9 +52,11 @@
 import { defineComponent } from 'vue'
 
 import { PagingMeta } from '../../ui.types'
+import WuiSpinner from '../spinner/WuiSpinner.vue'
 
 export default defineComponent({
   name: `WuiLoadMore`,
+  components: { WuiSpinner },
   props: {
     reverted: {
       type: Boolean,

@@ -26,7 +26,9 @@
         </WuiNav>
       </aside>
       <main class="ui-layout-main">
-        <router-view />
+        <slot>
+          <RouterView />
+        </slot>
       </main>
     </div>
   </div>

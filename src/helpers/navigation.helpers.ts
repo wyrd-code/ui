@@ -62,6 +62,7 @@ export const buildRouteItemFromPageDefinition = (
   const { slug, title, redirect, meta, component } = page
   const name =
     (prefix && `${prefix}.${slug}`) || (slug?.length && slug) || page.name
+
   const path = (prefix && slug) || `/${slug}`
   const children =
     page.children?.map((child) =>

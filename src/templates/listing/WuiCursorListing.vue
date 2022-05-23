@@ -1,10 +1,6 @@
 <template>
   <div v-if="isLoading && !data.length">
-    <CardSkeleton
-      v-for="i in meta.paging.take"
-      :key="`skeleton-${i}`"
-      class="filter grayscale"
-    />
+    <WuiSpinner />
   </div>
   <WuiFormError v-else-if="isError" :errors="error" />
   <div v-else-if="!data.length">
@@ -38,8 +34,11 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 
+import WuiSpinner from '~/components/spinner/WuiSpinner.vue'
+
 export default defineComponent({
   name: 'WuiCursorListing',
+  components: { WuiSpinner },
   props: {
     syncRoute: {
       type: Boolean,
@@ -73,16 +72,13 @@ export default defineComponent({
   emits: ['load'],
   setup(props, { emit }) {
     const params = ref<Record<string, unknown>>({})
-
     const onParamsChange = (value: Record<string, unknown>) => {
       params.value = value
       load()
     }
-
     const load = () => {
       emit('load', params.value)
     }
-
     return {
       onParamsChange,
       load,
