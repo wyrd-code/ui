@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.3 (2022-05-23)
+
+Update package name in markdown documents
+
+### Bug Fixes
+
+* package name in docs ([b6633ee](https://github.com/wyrd-code/ui/commit/b6633ee6a2318ad230ab088dfe92fa66596ab819))
+
 ### 0.1.2 (2022-05-23)
 
 Make package public on npm
