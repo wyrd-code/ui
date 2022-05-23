@@ -110,13 +110,13 @@ The following are some strategies to reduce the size of your library:
 #### Externalization
 
 If you expect the client app of your library may also need the same dependency, you may
-externalize the dependency. For example, to exclude PrimeVue from your library build
+externalize the dependency. For example, to exclude WyrdUI from your library build
 artifact, in [vite.config.ts](vite.config.ts), you may have
 
 ```js
 module.exports = defineConfig({
     rollupOptions: {
-      external: ['vue', /primevue\/.+/]
+      external: ['vue', 'wyrd-ui']
     }
   }
 })
@@ -182,6 +182,6 @@ The workaround is to also enable `compilerOptions.skipLibCheck`.
 
 #### Dependencies
 
-In [package.json](package.json), Vue and PrimeVue are declared in both `peerDependencies`
+In [package.json](package.json), vue and wyrd-ui are declared in both `peerDependencies`
 and `devDependencies`. The former requires the client app to add these dependencies, and
 the later makes it easier to setup this library by simply running `npm install`.
