@@ -2,8 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.1 (2022-05-23)
+
+Rename package
+
 ## 0.1.0 (2022-05-23)
 
+Initial release
 
 ### Features
 
@@ -28,10 +33,3 @@ All notable changes to this project will be documented in this file. See [standa
 * docs routes importing in an app ([295f7fc](https://github.com/wyrd-code/ui/commit/295f7fcf7bc7bab0dccb10a218150b199799ea36))
 * remove vue peer dep ([6e3cd3a](https://github.com/wyrd-code/ui/commit/6e3cd3aac4767fbeaa8075fe680e2d66ecc64973))
 * Unocss config lint ([7b88f6f](https://github.com/wyrd-code/ui/commit/7b88f6f7379bb3b833af0ef620a937ddc0313340))
-
-## 0.1.0 (2022-05-23)
-
-
-### Features
-
-Initial release
