@@ -2,9 +2,9 @@
 
 A fairly modern Vue 3 component library.
 
-[![npm (scoped)](https://img.shields.io/npm/v/@wyrd-code/ui)](https://www.npmjs.com/package/@wyrd-code/ui)
-[![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@wyrd-code/ui)](https://bundlephobia.com/result?p=@wyrd-code/ui@latest)
-[![NPM](https://img.shields.io/npm/l/@wyrd-code/ui)](https://github.com/wyrd-code/ui/blob/main/LICENSE)
+[![npm (scoped)](https://img.shields.io/npm/v/wyrd-ui)](https://www.npmjs.com/package/wyrd-ui)
+[![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/wyrd-ui)](https://bundlephobia.com/result?p=wyrd-ui@latest)
+[![NPM](https://img.shields.io/npm/l/wyrd-ui)](https://github.com/wyrd-code/ui/blob/main/LICENSE)
 
 ## Install
 
@@ -44,7 +44,7 @@ If you are using Volar, you can specify global component types by configuring co
 {
   "compilerOptions": {
     // ...
-    "types": ["@wyrd-code/ui/volar"]
+    "types": ["wyrd-ui/volar"]
   }
 }
 ```

@@ -8,15 +8,15 @@ Use [`yarn link`](https://classic.yarnpkg.com/en/docs/cli/link) to use local pac
 $ cd wyrd-ui
 $ yarn link
 yarn link vx.x.x
-success Registered "@wyrd-code/ui".
-info You can now run `yarn link "@wyrd-code/ui"` in the projects where you want to use this module and it will be used instead.
+success Registered "wyrd-ui".
+info You can now run `yarn link "wyrd-ui"` in the projects where you want to use this module and it will be used instead.
 ```
 
 ```sh
 $ cd ../your-project
-$ yarn link @wyrd-code/ui
+$ yarn link wyrd-ui
 yarn link vx.x.x
-success Registered "@wyrd-code/ui".
+success Registered "wyrd-ui".
 ```
 
 ## Commit Message Convention

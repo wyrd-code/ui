@@ -15,5 +15,5 @@ It is inspired heavily by [Equal UI](https://github.com/quatrochan/Equal) and [D
 ## Install
 
 ```text
-yarn add @wyrd-code/ui -D
+yarn add wyrd-ui -D
 ```
