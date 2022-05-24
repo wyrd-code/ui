@@ -38,9 +38,10 @@ export default {
     },
   },
   optimizeDeps: {
-    include: ['body-scroll-lock'],
+    include: [],
     exclude: [
       'vue',
+      'body-scroll-lock',
       'vue-router',
       '@vue/runtime-dom',
       '@vueuse/core',
