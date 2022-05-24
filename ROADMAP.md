@@ -6,14 +6,13 @@
 [ ] Use https://dwightjack.github.io/vue-types/
 [x] Use https://api-extractor.com/ instead of vue-tsc for typings
 [x] Fix generating .d.ts files (do we use generated volar.d.ts?)
-[ ] Separate docs from lib
 [ ] Optimize build size
 [ ] Check/Fix all icon usages (after switching to css based)
 [ ] Fix checkbox design
 [ ] Cleanup event names (on-close -> close)
 [ ] Copy typography example, styles from https://vuestic.dev/en/styles/typography
 [ ] Copy vuestic monorepo structure https://github.com/epicmaxco/vuestic-ui/tree/develop/packages
-[ ] Fix generating .d.ts files (do we use generated volar.d.ts?)
+[x] Fix generating .d.ts files
 [ ] Dark mode support
 [ ] i18n validator messages (extract them all somehow?)
 [ ] Theming support
@@ -31,6 +30,7 @@
 [ ] [Custom transitions builder](https://mui.com/material-ui/customization/transitions/)
 
 [ ] Accessibility https://www.w3.org/TR/wai-aria-practices-1.1/
+[ ] Form best practices https://enlear.academy/top-6-vue-related-libraries-that-will-explode-in-2022-889df221c7
 
 [ ] Replicate [micromodal](https://micromodal.vercel.app)
 - Toggling aria-hidden attribute on modal
