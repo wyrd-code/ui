@@ -11,4 +11,4 @@ export const ALLOWED_POSITION = [
   Positions.BR,
 ]
 
-export const CLASS_SELECTED_OPTION = 'it-select-option--focused'
+export const CLASS_SELECTED_OPTION = 'wui-select-option--focused'

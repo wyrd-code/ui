@@ -54,7 +54,7 @@ const colorTypes: { [key in Colors]?: string } = {
 }
 
 export default defineComponent({
-  name: 'ItNotification',
+  name: 'WuiNotification',
   data() {
     return {
       id: null,
