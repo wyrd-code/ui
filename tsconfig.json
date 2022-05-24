@@ -1,26 +1,11 @@
 {
-  "include": [
-    "src/**/*.d.ts",
-    "src/**/*.ts",
-    "src/**/*.vue",
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "**/*.spec.ts"
-  ],
   "compilerOptions": {
-    "outDir": "./dist",
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["src/*"],
-    },
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
     "strict": true,
     "jsx": "preserve",
-    "allowJs": true,
+    "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
@@ -31,10 +16,21 @@
       "node",
       "unocss",
     ],
+
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"],
+    },
+    "allowJs": true,
     "noUnusedLocals": true,
     "strictNullChecks": true,
-    "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true
   },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.vue"
+  ],
 }

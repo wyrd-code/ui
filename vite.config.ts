@@ -12,33 +12,44 @@ import svgLoader from 'vite-svg-loader'
 // https://vitejs.dev/config/
 export default {
   build: {
-    emptyOutDir: false,
+    emptyOutDir: true,
+    sourcemap: true,
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: resolve(process.cwd(), 'src/exports'),
       name: 'WyrdUI',
       fileName: (format: string): string => `index.${format}.js`,
     },
     rollupOptions: {
+      // vite (v2.9.9) tree shaking doesn't work without this
+      // preserveModules: true,
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['vue'],
+      external: ['vue', 'vue-router', '@vue/runtime-dom', '@vueuse/core'],
       output: {
-        inlineDynamicImports: true,
+        // inlineDynamicImports: true,
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
           vue: 'Vue',
+          'vue-router': 'VueRouter',
+          '@vueuse/core': 'VueUseCore',
         },
       },
     },
   },
   optimizeDeps: {
     include: [],
-    exclude: ['vue', 'vue-router', '@vueuse/core', 'vue-demi'],
+    exclude: [
+      'vue',
+      'vue-router',
+      '@vue/runtime-dom',
+      '@vueuse/core',
+      'vue-demi',
+    ],
   },
   resolve: {
     alias: {
-      '~': resolve(__dirname, './src'),
+      '~': resolve(process.cwd(), 'src'),
     },
   },
   plugins: [
