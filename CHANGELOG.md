@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 0.1.7 (2022-05-24)
+
+### Bug Fixes
+
+* cleanup changelog ([7b4663c](https://github.com/wyrd-code/ui/commit/7b4663c84519d11be30625dacc17c4d5963b96d5))
+* manually cleanup changelog ([12c1f5c](https://github.com/wyrd-code/ui/commit/12c1f5cb43187004626d750f77b5f0f4a72690bd))
+
 ## 0.1.6 (2022-05-24)
 
 ## 0.1.5 (2022-05-24)
