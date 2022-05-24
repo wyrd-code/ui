@@ -4,10 +4,6 @@ import { LoadingBar } from './components/loading-bar'
 import { Message } from './components/message'
 import { Notification } from './components/notification'
 
-import './styles/ui-styles'
-// eslint-disable-next-line import/no-unresolved
-import 'uno.css'
-
 /**
  * WyrdUI plugin
  *
