@@ -10,8 +10,8 @@ A fairly modern Vue 3 component library.
 
 ```ts
 import { createApp } from 'vue'
-import WyrdUI from 'wyrd-ui'
-import 'wyrd-ui/dist/styles.css'
+import { WyrdUI } from 'wyrd-ui'
+import 'wyrd-ui/dist/style.css'
 
 const app = createApp(App)
 app.use(WyrdUI)
