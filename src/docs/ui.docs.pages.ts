@@ -6,7 +6,7 @@ export const pages: WyrdPageDefinition[] = [
   {
     slug: 'home',
     title: 'Home',
-    component: (): Component => import('./pages/docs.home.md'),
+    component: (): Component => import('./pages/DocsHome.md'),
     meta: {
       nav: false,
     },
@@ -20,7 +20,7 @@ export const pages: WyrdPageDefinition[] = [
       {
         slug: 'home',
         title: 'Home',
-        component: (): Component => import('./pages/components.home.md'),
+        component: (): Component => import('./pages/DocsComponentsHome.md'),
       },
       {
         slug: 'feedback',

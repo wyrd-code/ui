@@ -10,7 +10,7 @@ import { defineComponent, computed } from 'vue'
 import { RouteLocationRaw } from '../../ui.types'
 
 export default defineComponent({
-  name: `Link`,
+  name: 'WuiLink',
   props: {
     to: {
       type: [Object as () => RouteLocationRaw, String],

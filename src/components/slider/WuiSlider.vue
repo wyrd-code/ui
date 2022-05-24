@@ -198,7 +198,7 @@ export default defineComponent({
     }: {
       step: TStepItem
       index: number
-    }): object {
+    }): any {
       const styles: { [key: string]: any } = {
         left: `${step.left}%`,
         height: null,
