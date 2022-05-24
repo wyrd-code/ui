@@ -42,7 +42,7 @@
   "files.eol": "\n",
   "files.exclude": {
     "**/node_modules": true,
-    "**/dist": true,
+    "**/dist": false,
     "**/tsconfig.tsbuildinfo": true,
   },
   "git.inputValidation": "off",
