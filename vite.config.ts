@@ -12,7 +12,7 @@ import svgLoader from 'vite-svg-loader'
 // https://vitejs.dev/config/
 export default {
   build: {
-    emptyOutDir: true,
+    emptyOutDir: false,
     sourcemap: true,
     lib: {
       entry: resolve(process.cwd(), 'src/exports'),
