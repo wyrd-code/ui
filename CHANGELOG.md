@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 0.1.8 (2022-05-24)
+
+### Bug Fixes
+
+* externalize body-scroll-lock ([da8d0f0](https://github.com/wyrd-code/ui/commit/da8d0f06937644105b1276d26e1c1f078a8017f6))
+
 ## 0.1.7 (2022-05-24)
 
 ### Bug Fixes
