@@ -17,7 +17,7 @@ module.exports = {
     },
     {
       type: "dx",
-      hidden: true
+      hidden: false
     },
     {
       type: "docs",
