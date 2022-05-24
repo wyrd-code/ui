@@ -32,9 +32,13 @@
     "dist",
     "src"
   ],
-  "peerDependencies": {
+  "dependencies": {
     "@vueuse/core": "^8.5.0",
-    "body-scroll-lock": "^4.0.0-beta.0",
+    "@vueuse/components": "^8.5.0",
+    "@vueuse/head": "^0.7.6",
+    "body-scroll-lock": "^4.0.0-beta.0"
+  },
+  "peerDependencies": {
     "vue-router": "^4.0.15",
     "vue": "^3.2.36"
   },

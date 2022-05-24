@@ -39,14 +39,7 @@ export default {
   },
   optimizeDeps: {
     include: [],
-    exclude: [
-      'vue',
-      'body-scroll-lock',
-      'vue-router',
-      '@vue/runtime-dom',
-      '@vueuse/core',
-      'vue-demi',
-    ],
+    exclude: ['vue', 'vue-router', '@vue/runtime-dom', 'vue-demi'],
   },
   resolve: {
     alias: {
