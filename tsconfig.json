@@ -10,7 +10,6 @@
     "**/*.spec.ts"
   ],
   "compilerOptions": {
-    "composite": true,
     "outDir": "./dist",
     "baseUrl": ".",
     "paths": {
