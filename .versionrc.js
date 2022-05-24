@@ -1,7 +1,4 @@
 module.exports = {
-  skip: {
-    commit: true
-  },
   types: [
     {
       type: "feat",
