@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.1.9 (2022-05-24)
+
+### Bug Fixes
+
+* include specific dependencies in bundle ([aa58115](https://github.com/wyrd-code/ui/commit/aa58115ff5279cda674fdf2df176a5546063de60))
+* don't commit on release ([e88fbf6](https://github.com/wyrd-code/ui/commit/e88fbf6433a5b45ccb916567f46466b2ecfdb033))
+* include dx commits in changelog ([156820c](https://github.com/wyrd-code/ui/commit/156820c4abb45d31fbcf4288259af9fafa21863d))
+
 ## 0.1.8 (2022-05-24)
 
 ### Bug Fixes
