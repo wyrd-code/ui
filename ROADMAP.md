@@ -7,6 +7,7 @@
 [x] Use https://api-extractor.com/ instead of vue-tsc for typings
 [x] Fix generating .d.ts files (do we use generated volar.d.ts?)
 [ ] Optimize build size
+[ ] Refactor forms (https://github.com/ChronicStone/vue-sweetforms)
 [ ] Check/Fix all icon usages (after switching to css based)
 [ ] Fix checkbox design
 [ ] Cleanup event names (on-close -> close)
@@ -21,12 +22,12 @@
   [ ] Theme provide/inject
   [ ] [Theme overrides component props](https://mui.com/material-ui/customization/theme-components/)
   [ ] [Pallete tool](https://material.io/resources/color/)
-[ ] Import css in components directly ?
-[ ] Enforce Conventional Commits
-[ ] NPM publish
-[ ] Try importing / using in project
+[ ] Import css in components directly (scoped css modules in components)
+[x] Enforce Conventional Commits
+[x] NPM publish
+[x] Try importing / using in project
 [ ] Install vue globals when component is used only
-[ ] Provide types for global properties (extend vue instance when loaded in consuming project tsconfig types)
+[x] Provide types for global properties (extend vue instance when loaded in consuming project tsconfig types)
 [ ] [Custom transitions builder](https://mui.com/material-ui/customization/transitions/)
 
 [ ] Accessibility https://www.w3.org/TR/wai-aria-practices-1.1/
