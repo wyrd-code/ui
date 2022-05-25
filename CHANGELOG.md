@@ -2,7 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### 0.1.9 (2022-05-24)
+## 0.1.10 (2022-05-25)
+
+### Bug Fixes
+
+* commit on release ([61865e6](https://github.com/wyrd-code/ui/commit/61865e6083811e3ef35b300a5d99370306ca54e0))
+* don't empty out dir (& delete types) ([11352c5](https://github.com/wyrd-code/ui/commit/11352c5a1f5443fb2176f9ab5f43dc0063df1dbd))
+* lint issues ([c230775](https://github.com/wyrd-code/ui/commit/c230775cf0b859b1d05c3e3f77626160621612b1))
+
+## 0.1.9 (2022-05-24)
 
 ### Bug Fixes
 
