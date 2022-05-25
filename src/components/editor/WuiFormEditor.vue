@@ -206,7 +206,7 @@ export default defineComponent({
       default: '',
     },
   },
-  emits: ['update:modelValue'],
+  emits: ['update:model-value'],
   setup(props, { emit }) {
     let editor = ref<any>(undefined as unknown as Editor)
     const content = toRefs(props).modelValue
@@ -216,7 +216,7 @@ export default defineComponent({
         content: content.value || '<p></p>',
         extensions: [StarterKit, Image, Link, IframeExtension],
         onUpdate: () => {
-          emit('update:modelValue', editor.value.getHTML())
+          emit('update:model-value', editor.value.getHTML())
         },
         editorProps: {
           attributes: {

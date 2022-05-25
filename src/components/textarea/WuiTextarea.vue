@@ -44,7 +44,7 @@ export default defineComponent({
       default: null,
     },
   },
-  emits: ['update:modelValue'],
+  emits: ['update:model-value'],
   setup(props, { emit }) {
     const textarea = ref(null)
     const focus = ref(false)
@@ -55,7 +55,7 @@ export default defineComponent({
 
     function onInput(e: InputEvent | any) {
       const target = e.target as HTMLTextAreaElement
-      emit('update:modelValue', target.value)
+      emit('update:model-value', target.value)
 
       if (props.resizeOnWrite) {
         target.style.height = 'auto'

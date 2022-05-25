@@ -60,14 +60,14 @@ export default defineComponent({
     closableMask: { type: Boolean, default: true },
     closeOnEsc: { type: Boolean, default: true },
   },
-  emits: ['update:modelValue'],
+  emits: ['update:model-value'],
   setup(props, { emit, slots }) {
     const modalRef = ref<HTMLElement | null>()
     const modalBody = ref<HTMLElement | null>()
     const Equal = getCurrentInstance()
 
     function close() {
-      emit('update:modelValue', false)
+      emit('update:model-value', false)
     }
 
     function maskClick() {

@@ -54,10 +54,10 @@ export default defineComponent({
       default: () => [],
     },
   },
-  emits: ['update:modelValue'],
+  emits: ['update:model-value'],
   setup(props, { emit }) {
     const onUpdate = (newValue: any) => {
-      emit('update:modelValue', newValue)
+      emit('update:model-value', newValue)
     }
 
     return {

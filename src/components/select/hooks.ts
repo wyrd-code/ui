@@ -72,7 +72,7 @@ export const useSelect = (props: TSelectProps, emit: TEmit): TSelect => {
   const selectOption = (optionIndex: number) => {
     const option = optionsSafe.value[optionIndex]
     selectedOptionIndex = optionIndex
-    emit('update:modelValue', option.value)
+    emit('update:model-value', option.value)
   }
 
   const unfocusOption = () => {

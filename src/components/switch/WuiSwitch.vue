@@ -83,14 +83,14 @@ export default defineComponent({
     disabled: { type: Boolean },
     modelValue: { type: Boolean, default: false },
   },
-  emits: ['update:modelValue'],
+  emits: ['update:model-value'],
   setup(props, { emit }) {
     function toggle() {
       if (props.disabled) {
         return
       }
       const newValue = !props.modelValue
-      emit('update:modelValue', newValue)
+      emit('update:model-value', newValue)
     }
 
     return { toggle }

@@ -80,7 +80,7 @@ export default defineComponent({
       required: true,
     },
   },
-  emits: ['update:modelValue'],
+  emits: ['update:model-value'],
   setup(props, { emit }) {
     const isChecked = computed(() => props.modelValue === props.value)
 
@@ -88,7 +88,7 @@ export default defineComponent({
       if (props.disabled) {
         return
       }
-      emit('update:modelValue', props.value)
+      emit('update:model-value', props.value)
     }
 
     return {

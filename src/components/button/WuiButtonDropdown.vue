@@ -78,7 +78,7 @@ export default defineComponent({
       default: true,
     },
   },
-  emits: ['update:modelValue'],
+  emits: ['update:model-value'],
   setup(props, { emit }) {
     const activeOptionByValue = computed(() =>
       props.options.find((o) => o.value === props.modelValue)
@@ -88,7 +88,7 @@ export default defineComponent({
     )
 
     const onValueChange = (value: any) => {
-      emit('update:modelValue', value)
+      emit('update:model-value', value)
     }
 
     return {

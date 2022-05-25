@@ -70,7 +70,7 @@ export default defineComponent({
     labelTop: { type: String, default: null },
     modelValue: { type: [Number, String], default: 0 },
   },
-  emits: ['update:modelValue'],
+  emits: ['update:model-value'],
   setup(props, { emit }) {
     const width = ref<number | null>(null)
     const buffer = ref(null)
@@ -141,7 +141,7 @@ export default defineComponent({
         value = props.min
       }
 
-      emit('update:modelValue', Number(value.toFixed(10)))
+      emit('update:model-value', Number(value.toFixed(10)))
     }
 
     function increase() {
@@ -160,13 +160,13 @@ export default defineComponent({
       const newVal = watchVal ?? Number((e.target as HTMLInputElement).value)
 
       if (newVal > props.max) {
-        emit('update:modelValue', props.max)
+        emit('update:model-value', props.max)
         return
       } else if (newVal < props.min) {
-        emit('update:modelValue', props.min)
+        emit('update:model-value', props.min)
         return
       }
-      emit('update:modelValue', newVal)
+      emit('update:model-value', newVal)
     }
 
     return {

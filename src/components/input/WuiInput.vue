@@ -111,12 +111,12 @@ export default defineComponent({
       default: null,
     },
   },
-  emits: ['update:modelValue'],
+  emits: ['update:model-value'],
   setup(props, { emit }) {
     const focus = ref(false)
 
     function input(e: Event) {
-      emit('update:modelValue', (e.target as HTMLInputElement).value)
+      emit('update:model-value', (e.target as HTMLInputElement).value)
     }
 
     return { input, focus }

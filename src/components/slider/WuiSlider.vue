@@ -70,7 +70,7 @@ export default defineComponent({
     step: { type: Number, default: DEFAULT_PROPS.STEP },
     modelValue: { type: Number, default: DEFAULT_PROPS.VALUE },
   },
-  emits: ['update:modelValue'],
+  emits: ['update:model-value'],
   setup(props, { emit }) {
     const sliderLineRef = ref(null)
     const tooltipRef = ref<typeof Tooltip | null>(null)
@@ -124,9 +124,9 @@ export default defineComponent({
         : props.modelValue
 
       if (moreValue) {
-        emit('update:modelValue', newValue)
+        emit('update:model-value', newValue)
       } else if (lessValue) {
-        emit('update:modelValue', newValue)
+        emit('update:model-value', newValue)
       }
     }
 

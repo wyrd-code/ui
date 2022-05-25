@@ -55,7 +55,7 @@ export default defineComponent({
         [Positions.L, Positions.R].includes(value),
     },
   },
-  emits: ['update:modelValue'],
+  emits: ['update:model-value'],
   setup(props, { emit }) {
     const { modelValue } = toRefs(props)
     const Equal = getCurrentInstance()
@@ -130,7 +130,7 @@ export default defineComponent({
     }
 
     function close() {
-      emit('update:modelValue', false)
+      emit('update:model-value', false)
     }
 
     const transitionSide = computed(() => {

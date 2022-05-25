@@ -105,7 +105,7 @@ export default defineComponent({
     },
     modelValue: { type: [String, Number, Object], default: null },
   },
-  emits: ['update:modelValue'],
+  emits: ['update:model-value'],
   setup(props: TProps, { emit, slots }) {
     const labelTopSlotExist = useCheckSlot(slots, 'label-top') != null
 

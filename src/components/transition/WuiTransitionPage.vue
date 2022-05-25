@@ -3,10 +3,10 @@
     appear
     :name="name || 'fade'"
     :mode="mode || 'out-in'"
-    @beforeEnter="beforeEnter"
-    @beforeLeave="beforeLeave"
+    @before-enter="beforeEnter"
+    @before-leave="beforeLeave"
     @enter="enter"
-    @afterEnter="afterEnter"
+    @after-enter="afterEnter"
   >
     <slot />
   </transition>
