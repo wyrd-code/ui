@@ -11,7 +11,7 @@
     "types:cleanup": "eslint dist/index.d.ts --fix --no-ignore && rimraf dist/dts",
     "build:types": "yarn types:build && yarn types:compact && yarn types:cleanup",
     "build:client": "vite build",
-    "build": "yarn lint && rimraf dist && yarn build:types && build:client",
+    "build": "yarn lint && rimraf dist && yarn build:types && yarn build:client",
     "preview": "vite preview",
     "release": "standard-version",
     "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore src --fix"
