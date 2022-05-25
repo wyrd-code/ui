@@ -10,7 +10,8 @@
     "types:compact": "api-extractor run --local --verbose",
     "types:cleanup": "eslint dist/index.d.ts --fix --no-ignore && rimraf dist/dts",
     "build:types": "yarn types:build && yarn types:compact && yarn types:cleanup",
-    "build": "yarn lint && rimraf dist && yarn build:types && vite build",
+    "build:client": "vite build",
+    "build": "yarn lint && rimraf dist && yarn build:types && build:client",
     "preview": "vite preview",
     "release": "standard-version",
     "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore src --fix"
@@ -22,23 +23,26 @@
   "publishConfig": {
     "access": "public"
   },
+  "main": "./dist/wyrd-ui.umd.js",
+  "module": "./dist/wyrd-ui.es.js",
   "types": "dist/index.d.ts",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.es.js",
-  "sideEffects": [
-    "*.css"
-  ],
-  "files": [
-    "dist",
-    "src"
-  ],
+  "style": "dist/style.css",
+  "exports": {
+    ".": {
+      "require": "./dist/wyrd-ui.um.js",
+      "import": "./dist/wyrd-ui.es.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "sideEffects": false,
+  "files": ["dist"],
   "dependencies": {
-    "@vueuse/core": "^8.5.0",
-    "@vueuse/components": "^8.5.0",
-    "@vueuse/head": "^0.7.6",
     "body-scroll-lock": "^4.0.0-beta.0"
   },
   "peerDependencies": {
+    "@vueuse/components": "^8.5.0",
+    "@vueuse/core": "^8.5.0",
+    "@vueuse/head": "^0.7.6",
     "vue-router": "^4.0.15",
     "vue": "^3.2.36"
   },
@@ -90,7 +94,6 @@
     "text-clipper": "^2.2.0",
     "typescript": "4.6.4",
     "unocss": "^0.34.1",
-    "unplugin-vue-components": "^0.19.5",
     "validator": "^13.7.0",
     "vite": "^2.9.9",
     "vite-plugin-md": "^0.13.1",

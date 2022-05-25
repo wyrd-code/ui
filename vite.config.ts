@@ -3,11 +3,12 @@ import { resolve } from 'path'
 
 import vue from '@vitejs/plugin-vue'
 import anchor from 'markdown-it-anchor'
-// import { visualizer } from 'rollup-plugin-visualizer'
+import { visualizer } from 'rollup-plugin-visualizer'
 import Unocss from 'unocss/vite'
-import Components from 'unplugin-vue-components/vite'
 import Markdown from 'vite-plugin-md'
 import svgLoader from 'vite-svg-loader'
+
+import pkg from './package.json'
 
 // https://vitejs.dev/config/
 export default {
@@ -17,29 +18,27 @@ export default {
     lib: {
       entry: resolve(process.cwd(), 'src/exports'),
       name: 'WyrdUI',
-      fileName: (format: string): string => `index.${format}.js`,
     },
     rollupOptions: {
       // vite (v2.9.9) tree shaking doesn't work without this
       // preserveModules: true,
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ['vue', 'vue-router', '@vue/runtime-dom', '@vueuse/core'],
+      external: [...Object.keys(pkg.peerDependencies)],
       output: {
+        format: ['es'],
         // inlineDynamicImports: true,
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
           vue: 'Vue',
           'vue-router': 'VueRouter',
+          'body-scroll-lock': 'bodyScrollLock',
           '@vueuse/core': 'VueUseCore',
+          '@vueuse/components': 'VueUseComponents',
         },
       },
     },
-  },
-  optimizeDeps: {
-    include: [],
-    exclude: ['vue', 'vue-router', '@vue/runtime-dom', 'vue-demi'],
   },
   resolve: {
     alias: {
@@ -84,18 +83,13 @@ export default {
     // https://github.com/jpkleemans/vite-svg-loader
     svgLoader(),
     // https://github.com/antfu/vite-plugin-components
-    Components({
-      dirs: ['src'],
-      dts: 'volar.d.ts',
-      extensions: ['vue', 'md'],
-    }),
     // https://github.com/unocss/unocss
     Unocss(),
     // https://github.com/btd/rollup-plugin-visualizer
-    // visualizer({
-    //   open: false,
-    //   title: 'WyrdUI Bundle Visualizer',
-    // }),
+    visualizer({
+      open: false,
+      title: 'WyrdUI Bundle Visualizer',
+    }),
   ],
   css: {
     postcss: {
