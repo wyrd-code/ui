@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.11](https://github.com/wyrd-code/ui/compare/v0.1.10...v0.1.11) (2022-05-25)
+
+
+### Bug Fixes
+
+* build script ([cb919c1](https://github.com/wyrd-code/ui/commit/cb919c1a40e9e7185298667abb3ff39ef56a0f33))
+* remove non-optimized components ([9fb912c](https://github.com/wyrd-code/ui/commit/9fb912ca1ff9521a7da02fe413289680528672d3))
+
 ## 0.1.10 (2022-05-25)
 
 ### Bug Fixes
