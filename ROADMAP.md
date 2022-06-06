@@ -8,6 +8,7 @@
 [x] Fix generating .d.ts files (do we use generated volar.d.ts?)
 [ ] Optimize build size
 [ ] Refactor forms (https://github.com/ChronicStone/vue-sweetforms)
+[ ] Refactor forms (https://github.com/formkit/formkit)
 [ ] Check/Fix all icon usages (after switching to css based)
 [ ] Fix checkbox design
 [ ] Cleanup event names (on-close -> close)
@@ -28,7 +29,9 @@
 [x] Try importing / using in project
 [ ] Install vue globals when component is used only
 [x] Provide types for global properties (extend vue instance when loaded in consuming project tsconfig types)
+[ ] Fix: missing popover styles
 [ ] [Custom transitions builder](https://mui.com/material-ui/customization/transitions/)
+[ ] Clone https://flowbite.com/docs/components/ styles where applicable
 
 [ ] Accessibility https://www.w3.org/TR/wai-aria-practices-1.1/
 [ ] Form best practices https://enlear.academy/top-6-vue-related-libraries-that-will-explode-in-2022-889df221c7
