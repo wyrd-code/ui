@@ -32,13 +32,13 @@ const props = {
   @apply w-full;
 }
 .page-header {
-  @apply border-b space-x-4 p-4 bg-neutral-100;
+  @apply space-x-4 p-4;
 }
 .page-content {
   @apply flex min-h-screen w-full max-w-full;
 }
 .page-content-aside {
-  @apply order-last lg:w-64 p-4 border-l border-neutral-200;
+  @apply order-last lg:w-64 p-4;
 }
 .page-content-main {
   @apply max-w-full w-full;

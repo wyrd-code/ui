@@ -28,3 +28,7 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="css" scoped>
+@import url('comment.css');
+</style>

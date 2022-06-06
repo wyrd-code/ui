@@ -50,3 +50,7 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="css" scoped>
+@import url('avatar-group.css');
+</style>

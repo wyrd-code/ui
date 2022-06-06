@@ -94,7 +94,12 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 
+import WuiTag from '../tag/WuiTag.vue'
+
 export default defineComponent({
+  components: {
+    WuiTag,
+  },
   props: {
     tagName: {
       type: String,
@@ -119,3 +124,7 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="css" scoped>
+@import url('props-table.css');
+</style>

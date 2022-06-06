@@ -38,12 +38,15 @@
 import { defineComponent } from 'vue'
 
 import WyrdLogoSVG from '../assets/wyrd-logo.svg'
+import { WuiLink, WuiNav } from '../components'
 import { buildNavFromPageDefinitions } from '../helpers'
 import { pages } from './ui.docs.pages'
 
 export default defineComponent({
-  name: 'UI',
+  name: 'UiLayout',
   components: {
+    WuiLink,
+    WuiNav,
     WyrdLogoSVG: WyrdLogoSVG as any,
   },
   setup() {

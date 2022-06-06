@@ -16,7 +16,7 @@
   </div>
 </template>
 
-<style lang="css">
+<style lang="css" scoped>
 .wui-code-demo {
   border-color: #d3dae6;
   min-height: 200px;

@@ -30,11 +30,13 @@ import { computed, toRefs, defineComponent } from 'vue'
 
 import { FieldPublicMeta, FormFieldType } from '../../ui.types'
 import { get } from '../../utilities'
+import WuiTooltip from '../tooltip/WuiTooltip.vue'
 
 export default defineComponent({
   name: 'WuiTableCell',
   components: {
     UseTimeAgo,
+    WuiTooltip,
   },
   props: {
     row: {

@@ -14,7 +14,8 @@ export const pages: WyrdPageDefinition[] = [
   {
     slug: 'components',
     title: 'Components',
-    component: (): Component => import('./pages/RouteWrapper.vue'),
+    component: (): Component =>
+      import('../components/routing/WuiRouteWrapper.vue'),
     redirect: { name: 'ui.components.home' },
     children: [
       {
@@ -25,7 +26,8 @@ export const pages: WyrdPageDefinition[] = [
       {
         slug: 'feedback',
         title: 'Feedback',
-        component: (): Component => import('./pages/RouteWrapper.vue'),
+        component: (): Component =>
+          import('../components/routing/WuiRouteWrapper.vue'),
         redirect: { name: 'ui.components.feedback.alert' },
         children: [
           {
@@ -87,9 +89,16 @@ export const pages: WyrdPageDefinition[] = [
       {
         slug: 'form',
         title: 'Form',
-        component: (): Component => import('./pages/RouteWrapper.vue'),
-        redirect: { name: 'ui.components.form.select' },
+        component: (): Component =>
+          import('../components/routing/WuiRouteWrapper.vue'),
+        redirect: { name: 'ui.components.form.home' },
         children: [
+          {
+            slug: 'home',
+            title: 'Form',
+            component: (): Component =>
+              import('../components/form/WuiFormDoc.vue'),
+          },
           {
             slug: 'checkbox',
             title: 'Checkbox',
@@ -143,7 +152,8 @@ export const pages: WyrdPageDefinition[] = [
       {
         slug: 'data-display',
         title: 'Data display',
-        component: (): Component => import('./pages/RouteWrapper.vue'),
+        component: (): Component =>
+          import('../components/routing/WuiRouteWrapper.vue'),
         redirect: { name: 'ui.components.data-display.avatar' },
         children: [
           {
@@ -193,7 +203,8 @@ export const pages: WyrdPageDefinition[] = [
       {
         slug: 'wip',
         title: 'WIP',
-        component: (): Component => import('./pages/RouteWrapper.vue'),
+        component: (): Component =>
+          import('../components/routing/WuiRouteWrapper.vue'),
         redirect: { name: 'ui.components.wip.article' },
         children: [
           {
@@ -207,7 +218,8 @@ export const pages: WyrdPageDefinition[] = [
       {
         slug: 'navigation',
         title: 'Navigation',
-        component: (): Component => import('./pages/RouteWrapper.vue'),
+        component: (): Component =>
+          import('../components/routing/WuiRouteWrapper.vue'),
         redirect: { name: 'ui.components.navigation.breadcrumbs' },
         children: [
           {

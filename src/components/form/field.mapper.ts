@@ -1,8 +1,10 @@
+import { Component } from 'vue'
+
 import {
   FormField,
   FormFieldType,
-  FormFieldText,
-  WuiFormController,
+  FormController,
+  FormFieldBase,
 } from '../../ui.types'
 import WuiCheckbox from '../checkbox/WuiCheckbox.vue'
 import WuiFormEditorField from '../editor/WuiFormEditorField.vue'
@@ -16,10 +18,15 @@ import WuiFormPassword from './WuiFormPassword.vue'
 
 declare type EmitFn = (payload: Event, args: any) => void
 
+declare type EmitFnAlt = (
+  event: 'focus' | 'blur' | 'change' | 'validate',
+  ...args: any[]
+) => void
+
 const getListeners = (
   fieldSchema: FormField,
-  emit: EmitFn,
-  form: WuiFormController
+  emit: EmitFn | EmitFnAlt,
+  form: FormController
 ) => {
   return {
     onBlur: (e: InputEvent) => {},
@@ -30,10 +37,10 @@ const getListeners = (
   }
 }
 
-const getFieldProps = (
-  schema: FormFieldText,
-  emit: EmitFn,
-  form: WuiFormController
+export const getFieldProps = (
+  schema: FormFieldBase,
+  emit: EmitFn | EmitFnAlt,
+  form: FormController
 ) => {
   const messages = form.messages.value.filter((m) => m.field === schema.name)
   const value =
@@ -52,95 +59,14 @@ const getFieldProps = (
   }
 }
 
-export const formFieldMapper: Record<string, any> = {
-  [FormFieldType.Blank]: {
-    component: WuiFormBlank,
-    getProps: (
-      schema: FormFieldText,
-      emit: EmitFn,
-      form: WuiFormController
-    ) => {
-      return getFieldProps(schema, emit, form)
-    },
-  },
-  [FormFieldType.Text]: {
-    component: WuiFormText,
-    getProps: (
-      schema: FormFieldText,
-      emit: EmitFn,
-      form: WuiFormController
-    ) => {
-      return getFieldProps(schema, emit, form)
-    },
-  },
-  [FormFieldType.Textarea]: {
-    component: WuiFormTextarea,
-    getProps: (
-      schema: FormFieldText,
-      emit: EmitFn,
-      form: WuiFormController
-    ) => {
-      return getFieldProps(schema, emit, form)
-    },
-  },
-  [FormFieldType.Editor]: {
-    component: WuiFormEditorField,
-    getProps: (
-      schema: FormFieldText,
-      emit: EmitFn,
-      form: WuiFormController
-    ) => {
-      return getFieldProps(schema, emit, form)
-    },
-  },
-  [FormFieldType.Checkbox]: {
-    component: WuiCheckbox,
-    getProps: (
-      schema: FormFieldText,
-      emit: EmitFn,
-      form: WuiFormController
-    ) => {
-      return getFieldProps(schema, emit, form)
-    },
-  },
-  [FormFieldType.Select]: {
-    component: WuiFormSelect,
-    getProps: (
-      schema: FormFieldText,
-      emit: EmitFn,
-      form: WuiFormController
-    ) => {
-      return getFieldProps(schema, emit, form)
-    },
-  },
-  [FormFieldType.Radio]: {
-    component: WuiFormRadio,
-    getProps: (
-      schema: FormFieldText,
-      emit: EmitFn,
-      form: WuiFormController
-    ) => {
-      return getFieldProps(schema, emit, form)
-    },
-  },
-  [FormFieldType.Toggle]: {
-    component: WuiFormToggle,
-    getProps: (
-      schema: FormFieldText,
-      emit: EmitFn,
-      form: WuiFormController
-    ) => {
-      return getFieldProps(schema, emit, form)
-    },
-  },
-  [FormFieldType.Password]: {
-    component: WuiFormPassword,
-    getProps: (
-      schema: FormFieldText,
-      emit: EmitFn,
-      form: WuiFormController
-    ) => {
-      return getFieldProps(schema, emit, form)
-    },
-  },
+export const formFieldMapper: Record<string, Component> = {
+  [FormFieldType.Blank]: WuiFormBlank,
+  [FormFieldType.Text]: WuiFormText,
+  [FormFieldType.Textarea]: WuiFormTextarea,
+  [FormFieldType.Editor]: WuiFormEditorField,
+  [FormFieldType.Checkbox]: WuiCheckbox,
+  [FormFieldType.Select]: WuiFormSelect,
+  [FormFieldType.Radio]: WuiFormRadio,
+  [FormFieldType.Toggle]: WuiFormToggle,
+  [FormFieldType.Password]: WuiFormPassword,
 }

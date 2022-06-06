@@ -19,3 +19,7 @@ export default defineComponent({
   name: 'WuiCard',
 })
 </script>
+
+<style lang="css" scoped>
+@import url('card.css');
+</style>

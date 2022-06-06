@@ -32,3 +32,7 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="css" scoped>
+@import url('loading-bar.css');
+</style>

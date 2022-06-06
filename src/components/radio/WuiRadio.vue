@@ -98,3 +98,7 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="css" scoped>
+@import url('radio.css');
+</style>

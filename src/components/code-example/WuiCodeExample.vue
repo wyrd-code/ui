@@ -1,5 +1,8 @@
 <template>
-  <div class="wui-code-example" :class="{ 'overflow-hidden': overflowHidden }">
+  <div
+    class="wui-code-example"
+    :class="{ 'overflow-hidden': overflowHidden, horizontal }"
+  >
     <h2 class="font-bold leading-none py-4 px-4 wui-code-example-title">
       {{ title }}
     </h2>
@@ -50,8 +53,15 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
+import WuiButton from '../button/WuiButton.vue'
+import WuiTooltip from '../tooltip/WuiTooltip.vue'
+
 export default defineComponent({
   name: 'WuiCodeExample',
+  components: {
+    WuiTooltip,
+    WuiButton,
+  },
   props: {
     code: {
       type: String,
@@ -62,6 +72,10 @@ export default defineComponent({
       default: null,
     },
     overflowHidden: {
+      type: Boolean,
+      default: false,
+    },
+    horizontal: {
       type: Boolean,
       default: false,
     },
@@ -98,7 +112,15 @@ export default defineComponent({
 }
 
 .wui-code-example-scene {
-  @apply space-x-4 leading-none w-full py-6 px-6;
+  @apply leading-none w-full py-6 px-6;
+}
+
+.wui-code-example.horizontal .wui-code-example-scene {
+  @apply space-x-4;
+}
+
+.wui-code-example:not(.horizontal) .wui-code-example-scene {
+  @apply space-y-4;
 }
 
 .wui-code-example-scene > * {

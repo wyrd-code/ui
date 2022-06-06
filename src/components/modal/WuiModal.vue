@@ -147,3 +147,7 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="css" scoped>
+@import url('modal.css');
+</style>

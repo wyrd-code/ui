@@ -46,17 +46,19 @@
               <template #content="{ close }">
                 <div>
                   <p style="margin-bottom: 8px">
-                    Sigurno želiš odbaciti izmjene?
+                    Reset will discard all changes. Are you sure?
                   </p>
                   <div style="display: flex; justify-content: flex-end">
-                    <WuiButton size="sm" @click="close"> Ups... </WuiButton>
+                    <WuiButton size="sm" @click="close">
+                      No, keep my changes
+                    </WuiButton>
                     <WuiButton
                       class="ml-4"
                       size="sm"
                       type="danger"
                       @click="onReset"
                     >
-                      Nastavi
+                      Yes, reset
                     </WuiButton>
                   </div>
                 </div>
@@ -74,24 +76,27 @@
 <script lang="ts">
 import { defineComponent, toRefs } from 'vue'
 
-import type { WuiFormController } from '../../ui.types'
+import type { FormController } from '../../ui.types'
+import WuiButton from '../button/WuiButton.vue'
 import WuiPopover from '../popover/WuiPopover.vue'
+import WuiFormField from './WuiFormField.vue'
+import WuiFormMessage from './WuiFormMessage.vue'
 
 export default defineComponent({
   name: 'WuiForm',
-  components: { WuiPopover },
+  components: { WuiPopover, WuiFormField, WuiButton, WuiFormMessage },
   props: {
     form: {
-      type: Object as () => WuiFormController,
+      type: Object as () => FormController,
       required: true,
     },
     submitText: {
       type: String,
-      default: 'pošalji',
+      default: 'submit',
     },
     resetText: {
       type: String,
-      default: 'poništi',
+      default: 'cancel',
     },
     submitButtonProps: {
       type: Object,

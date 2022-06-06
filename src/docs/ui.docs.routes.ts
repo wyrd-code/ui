@@ -31,7 +31,8 @@ export const docsEmbedRoutes = [
         component: defineAsyncComponent(() => import('./UiLayout.vue')),
       },
     },
-    component: (): Component => import('./pages/RouteWrapper.vue'),
+    component: (): Component =>
+      import('../components/routing/WuiRouteWrapper.vue'),
     children,
   },
 ]

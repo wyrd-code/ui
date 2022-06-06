@@ -22,8 +22,14 @@ import { defineComponent, PropType } from 'vue'
 
 import { FormFieldText } from '../../ui.types'
 import { wuiFormInputPropsBase } from '../form/field.props'
+import WuiFormFieldWrapper from '../form/WuiFormFieldWrapper.vue'
+import WuiFormEditor from './WuiFormEditor.vue'
 
 export default defineComponent({
+  components: {
+    WuiFormFieldWrapper,
+    WuiFormEditor,
+  },
   props: {
     schema: {
       type: Object as PropType<FormFieldText>,

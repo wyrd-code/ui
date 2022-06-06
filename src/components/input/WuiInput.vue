@@ -123,3 +123,7 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="css" scoped>
+@import url('input.css');
+</style>

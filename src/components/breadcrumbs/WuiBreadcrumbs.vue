@@ -3,3 +3,7 @@
     <slot />
   </div>
 </template>
+
+<style lang="css" scoped>
+@import url('breadcrumbs.css');
+</style>

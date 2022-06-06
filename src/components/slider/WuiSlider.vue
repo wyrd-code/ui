@@ -225,3 +225,7 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="css" scoped>
+@import url('slider.css');
+</style>

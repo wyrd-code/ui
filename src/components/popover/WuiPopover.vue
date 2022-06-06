@@ -74,3 +74,7 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="css" scoped>
+@import url('../tooltip/tooltip.css');
+</style>

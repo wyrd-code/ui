@@ -1,16 +1,15 @@
 import { ref, unref, computed, Ref } from 'vue'
 
-import { initDefaultDataForSchema } from '~/utilities'
-
 import { compileInputValidatorsFromString } from '../../composables/input-validators'
 import {
-  WuiFormController,
+  FormController,
   FormMessage,
   WuiFormFactoryOptions,
   FormField,
-  WuiFormFieldSchema,
+  FormFieldSchema,
   FormStatus,
 } from '../../ui.types'
+import { initDefaultDataForSchema } from '../../utilities'
 
 const validateField = async (
   field: FormField,
@@ -62,7 +61,7 @@ const getCurrentFieldValue = (
 }
 
 const validateFields = async (
-  fields: WuiFormFieldSchema,
+  fields: FormFieldSchema,
   data: Ref<Record<string, any>>
 ): Promise<FormMessage[]> => {
   const result = await fields.reduce(async (prev, field) => {
@@ -75,7 +74,7 @@ const validateFields = async (
   return result
 }
 
-export const formFactory = (opts: WuiFormFactoryOptions): WuiFormController => {
+export const formFactory = (opts: WuiFormFactoryOptions): FormController => {
   const { schema } = opts
   const isLoading = ref(false)
 

@@ -20,7 +20,7 @@
     class="text-center leading-none"
     @click="() => $emit('load', { before: pagingMeta.startCursor })"
   >
-    Učitaj prethodno
+    Load previous
   </WuiButton>
   <WuiButton
     v-else-if="!syncRoute && !reverted && pagingMeta.hasNextPage"
@@ -30,21 +30,21 @@
     class="text-center leading-none"
     @click="() => $emit('load', { after: pagingMeta.endCursor })"
   >
-    Učitaj slijedeće
+    Load next
   </WuiButton>
   <WuiButton
     v-else-if="reverted && pagingMeta.hasPreviousPage"
     block
     :link="{ query: { before: pagingMeta.startCursor } }"
   >
-    Učitaj prethodno
+    Load previous
   </WuiButton>
   <WuiButton
     v-else-if="!reverted && pagingMeta.hasNextPage"
     block
     :link="{ query: { after: pagingMeta.endCursor } }"
   >
-    Učitaj slijedeće
+    Load next
   </WuiButton>
 </template>
 
@@ -52,11 +52,12 @@
 import { defineComponent } from 'vue'
 
 import { PagingMeta } from '../../ui.types'
+import WuiButton from '../button/WuiButton.vue'
 import WuiSpinner from '../spinner/WuiSpinner.vue'
 
 export default defineComponent({
   name: `WuiLoadMore`,
-  components: { WuiSpinner },
+  components: { WuiSpinner, WuiButton },
   props: {
     reverted: {
       type: Boolean,

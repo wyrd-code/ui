@@ -17,3 +17,7 @@ export default defineComponent({
   props: { vertical: { type: Boolean } },
 })
 </script>
+
+<style lang="css" scoped>
+@import url('divider.css');
+</style>

@@ -28,8 +28,12 @@ import { defineComponent, PropType } from 'vue'
 
 import { FormField } from '../../ui.types'
 import { wuiFormInputWrapperPropsBase } from './field.props'
+import WuiFormMessage from './WuiFormMessage.vue'
 
 export default defineComponent({
+  components: {
+    WuiFormMessage,
+  },
   props: {
     schema: {
       type: Object as PropType<FormField>,

@@ -273,13 +273,13 @@ type FormFieldsNoChildren =
  */
 export type FormField = FormFieldsNoChildren & {
   type?: string
-  children?: WuiFormFieldSchema
+  children?: FormFieldSchema
 }
 
 /**
  * @public
  */
-export type WuiFormFieldSchema = FormField[]
+export type FormFieldSchema = FormField[]
 
 /**
  * @public
@@ -324,7 +324,7 @@ export type FormSubmitHandler<T = any, R = any> = (
  * @public
  */
 export interface WuiFormFactoryOptions {
-  schema: WuiFormFieldSchema
+  schema: FormFieldSchema
   defaultData: FormData | Ref<FormData>
   messages?: FormMessage[] | Ref<FormMessage[]>
   onSubmitForm: FormSubmitHandler
@@ -349,8 +349,8 @@ export interface FormMessage<
 /**
  * @public
  */
-export interface WuiFormController extends FormSubmitContext {
-  schema: WuiFormFieldSchema
+export interface FormController extends FormSubmitContext {
+  schema: FormFieldSchema
   formData: Ref<Record<string, any>>
   messages: Ref<FormMessage[]>
   isLoading: Ref<boolean>

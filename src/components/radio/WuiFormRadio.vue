@@ -26,8 +26,12 @@ import { defineComponent, PropType } from 'vue'
 
 import type { FormFieldRadio } from '../../ui.types'
 import { wuiFormInputPropsBase } from '../form/field.props'
+import WuiFormFieldWrapper from '../form/WuiFormFieldWrapper.vue'
 
 export default defineComponent({
+  components: {
+    WuiFormFieldWrapper,
+  },
   props: {
     schema: {
       type: Object as PropType<FormFieldRadio>,

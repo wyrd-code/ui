@@ -11,7 +11,7 @@ export const required: FormInputValidator = (value, opts) => {
     return {
       field: opts?.name,
       type: 'error',
-      message: 'mora biti ispunjeno',
+      message: 'is required',
     }
   }
   return
@@ -23,7 +23,7 @@ export const email: FormInputValidator = (value, opts) => {
     return {
       field: opts.name,
       type: 'error',
-      message: 'mora biti ispravna email addresa',
+      message: 'is not a valid email address',
     }
   }
   return
@@ -35,7 +35,7 @@ export const slug: FormInputValidator = (value, opts) => {
     return {
       field: opts.name,
       type: 'error',
-      message: 'može sadržavati samo slova, brojke i znak -',
+      message: 'can contain only letters, numbers and the "-" character',
     }
   }
   return

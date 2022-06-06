@@ -5,7 +5,7 @@
   <WuiFormError v-else-if="isError" :errors="error" />
   <div v-else-if="!data.length">
     <slot name="nocontent">
-      <WuiAlert> Nema sadržaja. </WuiAlert>
+      <WuiAlert>No content found</WuiAlert>
     </slot>
   </div>
   <div v-else>
@@ -34,11 +34,14 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 
-import WuiSpinner from '~/components/spinner/WuiSpinner.vue'
+import WuiAlert from '../alert/WuiAlert.vue'
+import WuiFormError from '../form/WuiFormError.vue'
+import WuiLoadMore from '../paging/WuiLoadMore.vue'
+import WuiSpinner from '../spinner/WuiSpinner.vue'
 
 export default defineComponent({
-  name: 'WuiCursorListing',
-  components: { WuiSpinner },
+  name: 'WuiListing',
+  components: { WuiSpinner, WuiLoadMore, WuiAlert, WuiFormError },
   props: {
     syncRoute: {
       type: Boolean,

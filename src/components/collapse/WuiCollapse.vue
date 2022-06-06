@@ -11,3 +11,7 @@ export default defineComponent({
   name: 'WuiCollapse',
 })
 </script>
+
+<style lang="css" scoped>
+@import url('collapse.css');
+</style>

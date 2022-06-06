@@ -111,3 +111,7 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="css" scoped>
+@import url('checkbox.css');
+</style>

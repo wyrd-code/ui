@@ -72,3 +72,7 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="css" scoped>
+@import url('message.css');
+</style>

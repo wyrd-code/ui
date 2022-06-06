@@ -1,4 +1,4 @@
-import { FormFieldType, WuiFormFieldSchema } from './ui.types'
+import { FormFieldSchema } from './ui.types'
 
 export const pick = (object: Record<string, any>, keys: string[]): object => {
   if (!Array.isArray(keys)) {
@@ -94,15 +94,21 @@ export const get = (
 // Helpers for preparing data object for use with a form
 
 export const initDefaultDataForSchema = (
-  schema: WuiFormFieldSchema,
+  schema: FormFieldSchema,
   rawData: Record<string, any> = {}
-): object => pick(rawData, extractFormFieldsFromSchema(schema))
+): object => {
+  const fields = extractFormFieldsFromSchema(schema)
+  if (!fields.length) {
+    console.warn(
+      'Cannot initialize default form data, no fields defined in schema'
+    )
+  }
+  return pick(rawData, fields)
+}
 
-const formFieldTypes = Object.values(FormFieldType)
-
-const extractFormFieldsFromSchema = (schema: WuiFormFieldSchema): string[] =>
+const extractFormFieldsFromSchema = (schema: FormFieldSchema): string[] =>
   schema.reduce((acc, field) => {
-    if (field.name && formFieldTypes.includes(field.type as FormFieldType)) {
+    if (field.name) {
       acc.push(field.name)
     }
 

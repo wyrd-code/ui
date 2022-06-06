@@ -1,6 +1,6 @@
 {
   "name": "wyrd-ui",
-  "version": "0.1.11",
+  "version": "0.2.0",
   "description": "Vue3 Component Library",
   "author": "wyrd-code",
   "license": "MIT",
@@ -23,20 +23,11 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "./dist/wyrd-ui.umd.js",
-  "module": "./dist/wyrd-ui.es.js",
-  "types": "dist/index.d.ts",
-  "style": "dist/style.css",
-  "exports": {
-    ".": {
-      "require": "./dist/wyrd-ui.um.js",
-      "import": "./dist/wyrd-ui.es.js"
-    },
-    "./dist/style.css": "./dist/style.css"
-  },
+  "main": "./src/exports.ts",
+  "types": "./src/exports.ts",
   "sideEffects": false,
   "files": [
-    "dist"
+    "src"
   ],
   "dependencies": {
     "body-scroll-lock": "^4.0.0-beta.0"

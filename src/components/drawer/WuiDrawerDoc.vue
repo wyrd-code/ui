@@ -135,10 +135,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import WuiPropsTable from '../props-table/WuiPropsTable.vue'
-
 export default defineComponent({
-  components: { WuiPropsTable },
   data: () => ({
     drawerVisible: false,
     drawerLeftVisible: false,
