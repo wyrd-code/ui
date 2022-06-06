@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/wyrd-code/ui/compare/v0.1.11...v0.2.1) (2022-06-06)
+
+
+### Bug Fixes
+
+* ts issues when loaded in parent repo ([1c97555](https://github.com/wyrd-code/ui/commit/1c97555522fb34a9e734b9e7863afd75a193cbae))
+
 ### [0.1.11](https://github.com/wyrd-code/ui/compare/v0.1.10...v0.1.11) (2022-05-25)
 
 
