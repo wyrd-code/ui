@@ -1,11 +1,21 @@
 html {
+  height: 100%;
+  font-size: 14px;
+}
+
+body {
+  @apply flex flex-col text-gray-700 font-default;
+  /* Force scrollbars to prevent content jumping */
+  @apply overflow-y-scroll;
+  height: 100%;
+}
+
+html.dark body {
+  @apply bg-gray-800 text-gray-200;
 }
 
 .font-heading {
   @apply font-sans font-bold;
-}
-.font-default-sm {
-  @apply font-sans text-sm md:text-base;
 }
 .link {
   @apply text-link-600 hover:(text-link-800 underline);
@@ -14,10 +24,12 @@ html {
   @apply text-link-800;
 }
 
-body {
-  @apply font-default;
-  /* Force scrollbars to prevent content jumping */
-  @apply overflow-y-scroll;
+html.dark .link {
+  @apply text-link-200 hover:(text-link-100 underline);
+}
+
+html.dark .link:visited {
+  @apply text-link-300;
 }
 
 *:not(.prose) {

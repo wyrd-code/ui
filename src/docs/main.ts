@@ -62,7 +62,7 @@ import { docsRoutes as routes } from './ui.docs.routes'
 import '@unocss/reset/tailwind.css'
 import '~/styles/utilities/glass.css'
 import '~/styles/utilities/animations.css'
-import '~/styles/reset.css'
+import '~/styles/base.css'
 import '~/styles/prism-tomorrow-night.css'
 import '~/styles/markdown.styles.css'
 // eslint-disable-next-line import/no-unresolved
