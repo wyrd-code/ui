@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.4](https://github.com/wyrd-code/ui/compare/v0.2.3...v0.2.4) (2022-06-16)
+
+
+### Bug Fixes
+
+* remove docs routes exports ([6964300](https://github.com/wyrd-code/ui/commit/69643001e0327d3a694a695444717ff158c0ad24))
+
 ### [0.2.3](https://github.com/wyrd-code/ui/compare/v0.2.2...v0.2.3) (2022-06-16)
 
 
