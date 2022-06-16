@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/wyrd-code/ui/compare/v0.2.2...v0.2.3) (2022-06-16)
+
+
+### Features
+
+* dark theme toggle in docs ([e7c29b6](https://github.com/wyrd-code/ui/commit/e7c29b6f4526d321216a7d443090c6c770aa127e))
+* improved dark theme support in components ([f0313ad](https://github.com/wyrd-code/ui/commit/f0313ad2530a2db4ce153b5968caa5f779290b7f))
+
+
+### Bug Fixes
+
+* dark theme toggle icons ([fe9fb57](https://github.com/wyrd-code/ui/commit/fe9fb57f0b6950925f0f716ad021bd3cdd2d0436))
+
 ### [0.2.2](https://github.com/wyrd-code/ui/compare/v0.2.1...v0.2.2) (2022-06-06)
 
 ### [0.2.1](https://github.com/wyrd-code/ui/compare/v0.1.11...v0.2.1) (2022-06-06)
