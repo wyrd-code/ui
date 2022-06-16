@@ -28,7 +28,7 @@
               title="Toggle dark theme"
               @click="toggleDark"
             >
-              <span class="icon-carbon-sun dark:icon-carbon-moon" />
+              <span class="icon-ph-sun dark:icon-ph-moon" />
             </button>
           </template>
         </WuiNav>
