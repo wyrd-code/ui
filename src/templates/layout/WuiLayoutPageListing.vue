@@ -35,7 +35,7 @@ const props = {
   @apply space-x-4 p-4;
 }
 .page-content {
-  @apply flex min-h-screen w-full max-w-full;
+  @apply flex w-full max-w-full;
 }
 .page-content-aside {
   @apply order-last lg:w-64 p-4;

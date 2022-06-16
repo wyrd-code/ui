@@ -22,6 +22,14 @@
               <WyrdLogoSVG class="w-5 h-5" />
               <strong>WYRD.UI</strong>
             </WuiLink>
+
+            <button
+              class="toggle"
+              title="Toggle dark theme"
+              @click="toggleDark"
+            >
+              <span class="icon-carbon-sun dark:icon-carbon-moon" />
+            </button>
           </template>
         </WuiNav>
       </aside>
@@ -34,27 +42,16 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
+<script lang="ts" setup>
 import WyrdLogoSVG from '../assets/wyrd-logo.svg'
 import { WuiLink, WuiNav } from '../components'
+import { useTheme } from '../composables/useTheme'
 import { buildNavFromPageDefinitions } from '../helpers'
 import { pages } from './ui.docs.pages'
 
-export default defineComponent({
-  name: 'UiLayout',
-  components: {
-    WuiLink,
-    WuiNav,
-    WyrdLogoSVG: WyrdLogoSVG as any,
-  },
-  setup() {
-    return {
-      items: buildNavFromPageDefinitions(pages, 'ui'),
-    }
-  },
-})
+const { toggleDark } = useTheme()
+
+const items = buildNavFromPageDefinitions(pages, 'ui')
 </script>
 
 <style lang="css">
@@ -73,5 +70,14 @@ export default defineComponent({
 }
 .ui-layout-main {
   @apply ml-64 p-8;
+}
+.toggle {
+  @apply rounded-full flex p-1 items-center justify-center;
+  @apply border border-neutral-200;
+  @apply hover:(border-neutral-300);
+}
+html.dark .toggle {
+  @apply border-neutral-600;
+  @apply hover:(border-neutral-500);
 }
 </style>
