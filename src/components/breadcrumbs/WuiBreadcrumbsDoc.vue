@@ -85,6 +85,10 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 
+import WuiCheckbox from '../checkbox/WuiCheckbox.vue'
+import WuiBreadcrumbs from './WuiBreadcrumbs.vue'
+import WuiBreadcrumbsAuto from './WuiBreadcrumbsAuto.vue'
+
 const buttonIcon = ref(false)
 const demoItems = ref(['Home', 'Section', 'Subsection', 'Endpoint'])
 </script>

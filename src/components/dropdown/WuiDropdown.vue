@@ -12,19 +12,11 @@
         leave-to-class="transform opacity-0 scale-95"
       >
         <div v-if="isOpen" v-bind="$attrs" class="z-30 relative">
-          <div
-            class="bg-white rounded-md shadow-lg ring-black mt-1 ring-1 ring-opacity-5 z-30 absolute focus:outline-none break-normal"
-            :class="[directionClass, widthClass]"
-          >
+          <div class="wui-dropdown-inner" :class="[directionClass, widthClass]">
             <slot
               name="items"
-              item-class="flex items-center space-x-2 px-3 py-3
-                text-sm leading-tight cursor-pointer
-                border-b border-neutral-200 last:border-none
-                first:rounded-t-md last:rounded-b-md
-                hover:bg-neutral-100
-              "
-              item-active-class="bg-neutral-100"
+              item-class="wui-dropdown-item"
+              item-active-class="bg-neutral-100 dark:(bg-neutral-800)"
               :close="close"
             />
           </div>
@@ -94,5 +86,19 @@ export default defineComponent({
 <style lang="css">
 .wui-dropdown {
   @apply relative text-left leading-none;
+}
+.wui-dropdown-inner {
+  @apply bg-white rounded-md shadow-lg ring-black mt-1 ring-1 ring-opacity-5 z-30 absolute focus:outline-none break-normal;
+}
+html.dark .wui-dropdown-inner {
+  @apply bg-neutral-900;
+}
+.wui-dropdown-item {
+  @apply flex items-center space-x-2 px-3 py-3 text-sm leading-tight cursor-pointer;
+  @apply border-b border-neutral-200;
+  @apply last:(border-none rounded-b-md) first:rounded-t-md hover:(underline);
+}
+html.dark .wui-dropdown-item {
+  @apply border-neutral-700;
 }
 </style>

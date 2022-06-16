@@ -1,0 +1,21 @@
+.wui-table {
+  @apply bg-transparent border-collapse w-full;
+
+  thead {
+    th {
+      @apply font-semibold text-sm text-left;
+      @apply py-4 px-4 capitalize whitespace-no-wrap align-middle;
+      @apply border-b border-neutral-200;
+      @apply dark:(border-neutral-700);
+    }
+  }
+
+  tbody {
+    td {
+      @apply text-sm text-left py-2 px-4;
+      @apply table-cell whitespace-no-wrap align-middle;
+      @apply border-b border-neutral-200;
+      @apply dark:(border-neutral-700);
+    }
+  }
+}

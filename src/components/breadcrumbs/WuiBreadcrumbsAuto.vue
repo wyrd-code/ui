@@ -8,6 +8,8 @@
 import { useRoute } from 'vue-router'
 
 import type { WyrdNavItem } from '../../ui.types'
+import WuiNav from '../nav/WuiNav.vue'
+import WuiBreadcrumbs from './WuiBreadcrumbs.vue'
 
 const route = useRoute()
 const matched = route.matched.filter((r) => r.name)

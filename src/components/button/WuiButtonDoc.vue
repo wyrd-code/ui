@@ -188,6 +188,9 @@
 import { ref } from 'vue'
 
 import { Colors, Sizes } from '../../models/enums'
+import WuiCheckbox from '../checkbox/WuiCheckbox.vue'
+import WuiInput from '../input/WuiInput.vue'
+import WuiSelect from '../select/WuiSelect.vue'
 
 const buttonText = ref('Button')
 const buttonOutline = ref(false)

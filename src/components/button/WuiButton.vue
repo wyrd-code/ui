@@ -21,6 +21,9 @@
     >
       <slot />
     </span>
+    <span v-else-if="$slots.iconafter" class="wui-btn-icon-wrapper">
+      <slot name="icon" class="h-full" />
+    </span>
   </component>
 </template>
 

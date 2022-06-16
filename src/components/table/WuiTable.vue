@@ -1,37 +1,21 @@
 <template>
-  <table class="bg-transparent border-collapse w-full">
-    <thead class="">
+  <table class="wui-table">
+    <thead>
       <tr>
-        <th
-          v-for="field in fields"
-          :key="field.key"
-          class="border-b font-semibold border-gray-300 text-sm text-left py-4 px-4 capitalize whitespace-no-wrap align-middle"
-        >
+        <th v-for="field in fields" :key="field.key">
           {{ field.label }}
         </th>
-        <th
-          v-if="$slots.rowActions"
-          class="border-b font-semibold border-gray-300 text-sm text-left py-4 px-4 whitespace-no-wrap align-middle"
-        >
-          Actions
-        </th>
+        <th v-if="$slots.rowActions">Actions</th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="(row, idx) in data" :key="`row-${idx}`">
-        <td
-          v-for="field in fields"
-          :key="`${field.key}Cell`"
-          class="border-b border-neutral-200 text-sm text-left py-2 px-4 align-middle"
-        >
+        <td v-for="field in fields" :key="`${field.key}Cell`">
           <slot :name="`${field.key}Cell`" :field="field" :row="row">
             <WuiTableCell :field="field" :row="(row as any)" />
           </slot>
         </td>
-        <td
-          v-if="$slots.rowActions"
-          class="border-b border-neutral-200 text-sm text-left py-2 px-4 table-cell whitespace-no-wrap align-middle"
-        >
+        <td v-if="$slots.rowActions">
           <slot name="rowActions" :row="row" />
         </td>
       </tr>
@@ -70,3 +54,7 @@ export default defineComponent({
   },
 })
 </script>
+
+<style lang="css" scoped>
+@import url('table.css');
+</style>

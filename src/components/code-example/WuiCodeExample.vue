@@ -102,9 +102,11 @@ export default defineComponent({
 
 <style lang="css">
 .wui-code-example {
-  @apply bg-white rounded flex flex-col my-10 w-full box-border;
-  border: 1px solid #d3dae6;
-  min-height: 120px;
+  @apply rounded flex flex-col my-10 min-h-200px w-full box-border;
+  @apply bg-white border-neutral-200;
+}
+html.dark .wui-code-example {
+  @apply bg-neutral-900 border-neutral-800;
 }
 
 .wui-code-example-title .wui-tag {
@@ -128,13 +130,11 @@ export default defineComponent({
 }
 
 .wui-code-example-code {
-  border-top: 1px solid #d3dae6;
+  @apply border-t border-neutral-200;
   transition: max-height 0.4s;
 }
 
 .wui-code-example-code-copy {
-  position: absolute !important;
-  right: 10px;
-  top: 10px;
+  @apply !absolute top-10px right-10px;
 }
 </style>

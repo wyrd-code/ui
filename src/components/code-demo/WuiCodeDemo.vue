@@ -18,8 +18,10 @@
 
 <style lang="css" scoped>
 .wui-code-demo {
-  border-color: #d3dae6;
-  min-height: 200px;
+  @apply border-neutral-200 min-h-200px;
+}
+html.dark .wui-code-demo {
+  @apply bg-neutral-900 border-neutral-800;
 }
 
 .wui-code-demo-scene {
@@ -28,7 +30,10 @@
 
 .wui-code-demo-props {
   flex: 2;
-  border-left: 1px solid #d3dae6;
+  @apply border-l border-neutral-200;
+}
+html.dark .wui-code-demo-props {
+  @apply border-neutral-700;
 }
 
 .wui-code-demo-props > *:not(.wui-divider) {
@@ -47,8 +52,7 @@
     @apply py-5 px-0;
   }
   .wui-code-demo-props {
-    border-top: 1px solid #d3dae6;
-    border-left: none;
+    @apply border-t border-l-none border-neutral-200;
   }
 }
 </style>

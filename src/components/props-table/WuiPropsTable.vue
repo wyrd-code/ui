@@ -1,12 +1,12 @@
 <template>
-  <div class="table-box">
+  <div class="props-table-box">
     <h2 v-if="dataSheet" class="leading-none py-4 px-6">
       Props
       <WuiTag v-if="tagName">
         {{ tagName }}
       </WuiTag>
     </h2>
-    <table v-if="dataSheet" class="table">
+    <table v-if="dataSheet" class="props-table">
       <thead>
         <tr>
           <th>Property</th>
@@ -37,7 +37,7 @@
     </table>
 
     <h2 v-if="slotSheet" class="leading-none py-4 px-6">Slots</h2>
-    <table v-if="slotSheet" class="table">
+    <table v-if="slotSheet" class="props-table">
       <thead>
         <tr>
           <th>Name</th>
@@ -54,7 +54,7 @@
     </table>
 
     <h2 v-if="methodSheet" class="leading-none py-4 px-6">Methods</h2>
-    <table v-if="methodSheet" class="table">
+    <table v-if="methodSheet" class="props-table">
       <thead>
         <tr>
           <th>Method</th>
@@ -72,7 +72,7 @@
     </table>
 
     <h2 v-if="eventSheet" class="leading-none py-4 px-6">Events</h2>
-    <table v-if="eventSheet" class="table">
+    <table v-if="eventSheet" class="props-table">
       <thead>
         <tr>
           <th>Event</th>

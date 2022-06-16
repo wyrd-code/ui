@@ -27,6 +27,12 @@
       </template>
     </WuiCodeDemo>
 
+    <WuiCodeExample title="Title only">
+      <div class="flex flex-col flex-1">
+        <WuiAlert title="Alert with Title only" />
+      </div>
+    </WuiCodeExample>
+
     <WuiCodeExample title="Type">
       <div class="flex flex-col flex-1 space-y-2">
         <WuiAlert
@@ -72,6 +78,9 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 
+import WuiCheckbox from '../checkbox/WuiCheckbox.vue'
+import WuiInput from '../input/WuiInput.vue'
+import WuiSelect from '../select/WuiSelect.vue'
 import { ALLOWED_TYPES } from './constants'
 
 const alertVisible = ref(true)

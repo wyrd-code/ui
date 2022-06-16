@@ -61,3 +61,38 @@
     @apply border border-danger-400 bg-danger-100;
   }
 }
+
+html.dark .wui-alert {
+  @apply bg-black;
+
+  &-close {
+    &:hover {
+      @apply text-white;
+    }
+  }
+
+  &--primary {
+    @apply border-primary-800 bg-primary-900 text-primary-200;
+  }
+
+  &--neutral {
+    @apply border-neutral-800 bg-neutral-900 text-neutral-200;
+  }
+
+  &--info {
+    @apply border-info-800 bg-info-900 text-info-200;
+  }
+
+  &--success {
+    @apply border-success-800 bg-success-900 text-success-200;
+  }
+
+  &--warning {
+    @apply border-warning-800 bg-warning-900 text-warning-200;
+  }
+
+  &--danger {
+    @apply border-danger-800 bg-danger-900 text-danger-200;
+  }
+
+}

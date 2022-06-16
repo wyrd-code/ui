@@ -4,6 +4,6 @@
   </div>
 </template>
 
-<style lang="css" scoped>
+<style lang="css">
 @import url('breadcrumbs.css');
 </style>

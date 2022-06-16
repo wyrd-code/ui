@@ -5,7 +5,7 @@
   <WuiFormError v-else-if="isError" :errors="error" />
   <div v-else-if="!data.length">
     <slot name="nocontent">
-      <WuiAlert>No content found</WuiAlert>
+      <WuiAlert title="No content found" />
     </slot>
   </div>
   <div v-else>
@@ -82,6 +82,7 @@ export default defineComponent({
     const load = () => {
       emit('load', params.value)
     }
+
     return {
       onParamsChange,
       load,
