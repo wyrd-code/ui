@@ -82,7 +82,6 @@ export default {
     }),
     // https://github.com/jpkleemans/vite-svg-loader
     svgLoader(),
-    // https://github.com/antfu/vite-plugin-components
     // https://github.com/unocss/unocss
     Unocss(),
     // https://github.com/btd/rollup-plugin-visualizer
