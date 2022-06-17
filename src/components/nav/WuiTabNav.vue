@@ -18,18 +18,14 @@
   </WuiNav>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
+<script lang="ts" setup>
 import type { WyrdNavItem } from '../../ui.types'
+import WuiNav from './WuiNav.vue'
 
-export default defineComponent({
-  name: 'WuiTabNav',
-  props: {
-    items: {
-      type: Array as () => WyrdNavItem[],
-      default: () => [],
-    },
+defineProps({
+  items: {
+    type: Array as () => WyrdNavItem[],
+    default: () => [],
   },
 })
 </script>

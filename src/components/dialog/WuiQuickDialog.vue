@@ -36,69 +36,58 @@
   </WuiModal>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue'
+<script lang="ts" setup>
+import { ref } from 'vue'
 
+import WuiModal from '../modal/WuiModal.vue'
 import WuiSpinner from '../spinner/WuiSpinner.vue'
 
-export default defineComponent({
-  name: 'WuiQuickDialog',
-  components: {
-    WuiSpinner,
+const props = defineProps({
+  open: {
+    type: Boolean,
+    default: false,
   },
-  props: {
-    open: {
-      type: Boolean,
-      default: false,
-    },
-    title: {
-      type: String,
-      default: null,
-    },
-    description: {
-      type: String,
-      default: null,
-    },
-    submitMessage: {
-      type: String,
-      default: null,
-    },
-    submitCallback: {
-      type: Function,
-      required: true,
-    },
-    submitType: {
-      type: String,
-      default: 'primary',
-    },
-    cancelVisible: {
-      type: Boolean,
-      default: true,
-    },
-    cancelMessage: {
-      type: String,
-      default: 'Odustani',
-    },
+  title: {
+    type: String,
+    default: null,
   },
-  emits: ['close'],
-  setup(props, { emit }) {
-    const loading = ref(false)
-
-    const onSubmit = async () => {
-      if (loading.value) {
-        return
-      }
-
-      loading.value = true
-      await props.submitCallback()
-      loading.value = false
-      emit('close')
-    }
-
-    return {
-      loading,
-      onSubmit,
-    }
+  description: {
+    type: String,
+    default: null,
+  },
+  submitMessage: {
+    type: String,
+    default: null,
+  },
+  submitCallback: {
+    type: Function,
+    required: true,
+  },
+  submitType: {
+    type: String,
+    default: 'primary',
+  },
+  cancelVisible: {
+    type: Boolean,
+    default: true,
+  },
+  cancelMessage: {
+    type: String,
+    default: 'Odustani',
   },
 })
+
+const emit = defineEmits(['close'])
+const loading = ref(false)
+
+const onSubmit = async () => {
+  if (loading.value) {
+    return
+  }
+
+  loading.value = true
+  await props.submitCallback()
+  loading.value = false
+  emit('close')
+}
 </script>
