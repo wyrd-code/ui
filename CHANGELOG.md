@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.11](https://github.com/wyrd-code/ui/compare/v0.2.10...v0.2.11) (2022-06-17)
+
+
+### Bug Fixes
+
+* button group, dropdown imports ([88f1e68](https://github.com/wyrd-code/ui/commit/88f1e68b15d0f067c68e924ac17036719ad31598))
+
 ### [0.2.10](https://github.com/wyrd-code/ui/compare/v0.2.9...v0.2.10) (2022-06-17)
 
 
