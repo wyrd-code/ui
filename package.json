@@ -30,8 +30,7 @@
     "src"
   ],
   "dependencies": {
-    "body-scroll-lock": "^4.0.0-beta.0",
-    "text-clipper": "^2.2.0"
+    "body-scroll-lock": "^4.0.0-beta.0"
   },
   "peerDependencies": {
     "@vueuse/components": "^8.5.0",

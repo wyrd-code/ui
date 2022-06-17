@@ -3930,11 +3930,6 @@ svgo@^2.7.0:
     picocolors "^1.0.0"
     stable "^0.1.8"
 
-text-clipper@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/text-clipper/-/text-clipper-2.2.0.tgz#4b81a4d01ffcc51096ceab84b26856f88643990a"
-  integrity sha512-tfHW2GUfXLGto6gx9JB3CFL9qgX8+SbX6db0oM1kqkbPsemAX5whdXf4da6r1V/7lij34J1oOODj+0j3crl0UA==
-
 text-extensions@^1.0.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/text-extensions/-/text-extensions-1.9.0.tgz#1853e45fee39c945ce6f6c36b2d659b5aabc2a26"
