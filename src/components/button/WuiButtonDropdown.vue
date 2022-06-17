@@ -31,7 +31,9 @@
 import { defineComponent, computed, PropType } from 'vue'
 
 import { Sizes } from '../../models/enums'
+import WuiButton from '../button/WuiButton.vue'
 import { DropdownSize } from '../dropdown/constants'
+import WuiDropdown from '../dropdown/WuiDropdown.vue'
 
 declare type Value = string | number | boolean
 
@@ -45,6 +47,10 @@ interface ButtonDropdownOption {
 
 export default defineComponent({
   name: 'WuiButtonDropdown',
+  components: {
+    WuiDropdown,
+    WuiButton,
+  },
   props: {
     options: {
       type: Array as () => ButtonDropdownOption[],
