@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.8](https://github.com/wyrd-code/ui/compare/v0.2.7...v0.2.8) (2022-06-17)
+
+
+### Bug Fixes
+
+* move text-clipper to dependencies (again) ([9f7e11c](https://github.com/wyrd-code/ui/commit/9f7e11c84b4dc7ef82398290e69d6a3f0a7579f6))
+
 ### [0.2.7](https://github.com/wyrd-code/ui/compare/v0.2.6...v0.2.7) (2022-06-17)
 
 
