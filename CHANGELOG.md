@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.10](https://github.com/wyrd-code/ui/compare/v0.2.9...v0.2.10) (2022-06-17)
+
+
+### Bug Fixes
+
+* QuickDialog, TabNav ([1b95740](https://github.com/wyrd-code/ui/commit/1b957402c7d881f304d047980d507824196ddc97))
+
 ### [0.2.9](https://github.com/wyrd-code/ui/compare/v0.2.8...v0.2.9) (2022-06-17)
 
 
