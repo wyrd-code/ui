@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.9](https://github.com/wyrd-code/ui/compare/v0.2.8...v0.2.9) (2022-06-17)
+
+
+### Bug Fixes
+
+* remove WuiTextClipped ([07d95d3](https://github.com/wyrd-code/ui/commit/07d95d33cd1114bb04c1b0cc2a7cfc820364fdbb))
+
 ### [0.2.8](https://github.com/wyrd-code/ui/compare/v0.2.7...v0.2.8) (2022-06-17)
 
 
