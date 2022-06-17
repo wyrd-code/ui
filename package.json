@@ -36,9 +36,10 @@
     "@vueuse/components": "^8.5.0",
     "@vueuse/core": "^8.5.0",
     "@vueuse/head": "^0.7.6",
+    "text-clipper": "^2.2.0",
     "validator": "^13.7.0",
-    "vue-router": "^4.0.15",
-    "vue": "^3.2.36"
+    "vue": "^3.2.36",
+    "vue-router": "^4.0.15"
   },
   "devDependencies": {
     "@iconify-json/ph": "^1.1.1",
@@ -85,7 +86,6 @@
     "rimraf": "^3.0.2",
     "rollup-plugin-visualizer": "^5.6.0",
     "standard-version": "^9.5.0",
-    "text-clipper": "^2.2.0",
     "typescript": "4.6.4",
     "unocss": "^0.34.1",
     "vite": "^2.9.9",
