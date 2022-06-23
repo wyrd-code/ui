@@ -32,6 +32,33 @@ html.dark .link:visited {
   @apply text-link-300;
 }
 
+
+::selection {
+  @apply bg-neutral-600 hover:bg-neutral-600 text-white;
+}
+::-moz-selection {
+  @apply bg-neutral-600 hover:bg-neutral-600 text-white;
+}
+
+*  {
+  /* Firefox */
+  scrollbar-color: #333 #555;
+}
+*::-webkit-scrollbar {
+  /* Chrome, Edge, and Safari */
+  @apply w-4;
+}
+*::-webkit-scrollbar-track {
+  @apply mr-2 border-l;
+  @apply bg-neutral-200 border-neutral-300;
+  @apply dark:(bg-neutral-700 border-neutral-800);
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply bg-neutral-300 rounded-full shadow-inner;
+  @apply dark:(bg-neutral-500);
+}
+
 *:not(.prose) {
   .h0 {
     @apply font-heading text-3xl md:text-5xl;
