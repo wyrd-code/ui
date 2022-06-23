@@ -1,24 +1,28 @@
 <template>
-  <WuiNav
-    class="flex border-b border-neutral-300"
-    :items="items"
-    item-class="flex"
-    link-class="px-4 py-2 -mr-1px hover:(underline)"
-    link-exact-active-class="-mb-1px border-l border-t border-r border-neutral-300 bg-neutral-50 rounded-t"
-  >
-    <template v-if="$slots.before" #before>
-      <slot name="before" />
-    </template>
-    <template v-if="$slots.beforeItems" #beforeItems>
-      <slot name="beforeItems" />
-    </template>
-    <template v-if="$slots.default" #default>
-      <slot name="default" />
-    </template>
-  </WuiNav>
+  <div class="wui-tab-nav" :class="type">
+    <WuiNav
+      class="wui-tab-nav-items"
+      :items="items"
+      item-class="wui-tab-nav-item"
+      link-class="wui-tab-nav-link"
+      link-exact-active-class="wui-tab-nav-link-active"
+    >
+      <template v-if="$slots.before" #before>
+        <slot name="before" />
+      </template>
+      <template v-if="$slots.beforeItems" #beforeItems>
+        <slot name="beforeItems" />
+      </template>
+      <template v-if="$slots.default" #default>
+        <slot name="default" />
+      </template>
+    </WuiNav>
+  </div>
 </template>
 
 <script lang="ts" setup>
+import { defineProps } from 'vue'
+
 import type { WyrdNavItem } from '../../ui.types'
 import WuiNav from './WuiNav.vue'
 
@@ -27,5 +31,14 @@ defineProps({
     type: Array as () => WyrdNavItem[],
     default: () => [],
   },
+  type: {
+    type: String,
+    default: 'tabs',
+    validator: (val: string) => ['tabs', 'pills'].includes(val),
+  },
 })
 </script>
+
+<style lang="css" scoped>
+@import url('tab-nav.css');
+</style>

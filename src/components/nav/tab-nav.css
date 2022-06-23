@@ -1,0 +1,60 @@
+.wui-tab-nav.tabs {
+  @apply border-b;
+  @apply border-neutral-300;
+  @apply dark:(border-neutral-700);
+}
+.wui-tab-nav.tabs .wui-tab-nav-items {
+  @apply m-0 px-6 pt-4 space-x-2;
+}
+.wui-tab-nav.tabs .wui-tab-nav-item {
+  @apply inline-block;
+}
+.wui-tab-nav.tabs .wui-tab-nav-link,
+.wui-tab-nav.tabs .wui-tab-nav-link:visited {
+  @apply block px-6 py-4 -mb-1px rounded-t;
+  @apply border border-b-0;
+  @apply hover:(no-underline);
+  @apply border-neutral-200 text-neutral-600;
+  @apply dark:(border-neutral-700 text-neutral-400);
+  @apply hover:(border-neutral-300 text-black underline);
+  @apply dark:hover:(text-white border-neutral-600);
+}
+.wui-tab-nav.tabs .wui-tab-nav-link-active,
+.wui-tab-nav.tabs .wui-tab-nav-link-active:visited {
+  @apply bg-neutral-100 border-neutral-300 text-black;
+  @apply dark:(bg-neutral-800 border-neutral-700 text-white);
+  border-bottom-color: white;
+}
+.wui-tab-nav.tabs .wui-tab-nav-item.disabled {
+  @apply inline-block p-4 text-neutral-400 rounded-t-lg cursor-not-allowed dark:text-neutral-500;
+}
+
+.wui-tab-nav.pills .wui-tab-nav-item {
+  @apply inline-block p-4px;
+  @apply bg-neutral-200 text-neutral-600;
+  @apply dark:(bg-neutral-900 text-neutral-400);
+}
+.wui-tab-nav.pills .wui-tab-nav-link,
+.wui-tab-nav.pills .wui-tab-nav-link:visited {
+  @apply block px-6 py-4 rounded border border-transparent;
+  @apply bg-neutral-200 text-neutral-600;
+  @apply hover:(no-underline);
+  @apply dark:(bg-neutral-900 text-neutral-400);
+  @apply hover:(text-black underline);
+  @apply dark:hover:(text-white);
+}
+.wui-tab-nav.pills .wui-tab-nav-link-active,
+.wui-tab-nav.pills .wui-tab-nav-link-active:visited {
+  @apply bg-white border-neutral-300 text-black border;
+  @apply border-neutral-300;
+  @apply dark:(bg-neutral-700 border-neutral-700 text-white shadow-inner);
+}
+.wui-tab-nav.pills .wui-tab-nav-item.disabled {
+  @apply inline-block p-4 text-neutral-400 rounded-t-lg cursor-not-allowed dark:text-neutral-500;
+}
+.wui-tab-nav.pills .wui-tab-nav-item:first-child {
+  @apply rounded-l-lg;
+}
+.wui-tab-nav.pills .wui-tab-nav-item:last-child {
+  @apply rounded-r-lg;
+}
