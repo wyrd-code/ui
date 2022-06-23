@@ -21,7 +21,6 @@
           </span>
         </span>
         <input
-          v-bind="$attrs"
           :type="type"
           class="wui-input"
           :disabled="disabled"
