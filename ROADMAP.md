@@ -1,50 +1,125 @@
 # Roadmap
 
+## Fixes
+
 [x] Replace icon imports
 [x] Fix lint errors
 [x] Fix build
-[ ] Use https://dwightjack.github.io/vue-types/
 [x] Use https://api-extractor.com/ instead of vue-tsc for typings
 [x] Fix generating .d.ts files (do we use generated volar.d.ts?)
-[ ] Optimize build size
-[ ] Refactor forms (https://github.com/ChronicStone/vue-sweetforms)
-[ ] Refactor forms (https://github.com/formkit/formkit)
-[ ] Check/Fix all icon usages (after switching to css based)
+[ ] Fix all icon usage in consuming apps
 [ ] Fix checkbox design
-[ ] Cleanup event names (on-close -> close)
-[ ] Copy typography example, styles from https://vuestic.dev/en/styles/typography
-[ ] Copy vuestic monorepo structure https://github.com/epicmaxco/vuestic-ui/tree/develop/packages
+[ ] Fix build size / treeshaking & dynamic imports
 [x] Fix generating .d.ts files
+[ ] Fix missing popover styles (arrow)
+[ ] Fix Notifications position
+[ ] Fix dropdown/popup positioning
+
+## Refactor
+
+[ ] Define Design system tokens
+[ ] Design token selection UI
+[ ] Collor Pallete tokens
+  https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/colors/doc/colors.mdx?p=doc
+  https://studio.backlight.dev/edit/RadUTqBDyFX8ZDiIWlhd/color/doc/index.md?p=doc
+
+[ ] Theme customization using css vars?
 [ ] Dark mode support
-[ ] i18n validator messages (extract them all somehow?)
+[ ] Use https://dwightjack.github.io/vue-types/
+[ ] Cleanup event names (on-close -> close)
+[ ] Rewrite component docs a la vuestic
+[ ] Notifications stacked in 3d
+[ ] Drawer () https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/drawer/doc/doc.mdx?p=stories
+[ ] BreadCrumb customization (icons, separator, dropdown, collapsed) https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/breadcrumbs/doc/doc.mdx?p=stories
+
+## Tables
+
+[ ] Replicate Table from https://vuestic.dev/en/ui-elements/table
+[ ] Replicate Table from https://github.com/TanStack/table
+[ ] Replicate Table from https://www.tailwindtoolbox.com/components/responsive-table
+[ ] Replicate Table from https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/table/doc/doc.mdx?p=stories
+
+## Forms
+
+[ ] Fork FormKit (https://github.com/formkit/formkit)
+[ ] Make Form component inherit classnames/attributes
+[ ] Apply advanced concepts/features from SweetForms (https://github.com/ChronicStone/vue-sweetforms)
+[ ] Form best practices https://enlear.academy/top-6-vue-related-libraries-that-will-explode-in-2022-889df221c7
+[ ] Clone https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/autocomplete/doc/doc.mdx?p=doc
+[ ] Clone https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/select/doc/doc.mdx?p=doc
+[ ] Clone https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/toggle-button/doc/doc.mdx?p=doc for Form Editor Toolbars
+[ ] Clone https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/text-field/doc/doc.mdx?p=stories
+[ ] Clone https://vuestic.dev/en/ui-elements/form
+[ ] Clone https://vuestic.dev/en/ui-elements/file-upload
+[ ] Clone https://vuestic.dev/en/ui-elements/date-picker
+[ ] Clone https://vuestic.dev/en/ui-elements/date-input
+[ ] Clone https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/time-picker/doc/doc.mdx?p=doc
+[ ] Clone https://vuestic.dev/en/ui-elements/radio (design)
+[ ] Clone https://vuestic.dev/en/ui-elements/checkbox (error state)
+[ ] Notification color match with button/message/alert
+[ ] Clone https://vuestic.dev/en/ui-elements/select approach to things
+- Includes error, success, disabled or loading state
+- Searchable
+- Allow create
+- Validation rules
+- Keyboard nav
+
+## Features
+
+[ ] Sync form values to route query
+[ ] Sync form values to route query
+[ ] Use a type of ReactQuery implementation to reactive watch form/filter/query values
+[ ] Extract Layouts&Templates
+[ ] Clone https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/speed-dial/doc/doc.mdx?p=doc for hex nav?
+[ ] Clone https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/dialog/doc/doc.mdx?p=doc
+[ ] Clone https://flowbite.com/docs/components/ styles where applicable
+[ ] Clone typography example, styles from https://vuestic.dev/en/styles/typography
+[ ] Clone vuestic monorepo structure https://github.com/epicmaxco/vuestic-ui/tree/develop/packages
+[ ] Clone https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/backdrop/doc/doc.mdx?p=doc
+[ ] Clone (customized list) https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/list/doc/doc.mdx?p=stories
+[ ] I18n
+[ ] A11y https://www.w3.org/TR/wai-aria-practices-1.1/
+[ ] A11y https://backlight.dev/blog/the-importance-of-accessibility-in-design-systems
 [ ] Theming support
   [ ] Color tokens
   [ ] Adjust for [dark yellow](https://medium.com/@lodestar-design/the-dark-yellow-problem-in-design-system-color-palettes-a0db1eedc99d)
   [ ] Theme provide/inject
   [ ] [Theme overrides component props](https://mui.com/material-ui/customization/theme-components/)
   [ ] [Pallete tool](https://material.io/resources/color/)
-[ ] Import css in components directly (scoped css modules in components)
 [x] Enforce Conventional Commits
 [x] NPM publish
 [x] Try importing / using in project
 [ ] Install vue globals when component is used only
 [x] Provide types for global properties (extend vue instance when loaded in consuming project tsconfig types)
-[ ] Fix: missing popover styles
 [ ] [Custom transitions builder](https://mui.com/material-ui/customization/transitions/)
-[ ] Clone https://flowbite.com/docs/components/ styles where applicable
-
-[ ] Accessibility https://www.w3.org/TR/wai-aria-practices-1.1/
-[ ] Form best practices https://enlear.academy/top-6-vue-related-libraries-that-will-explode-in-2022-889df221c7
-
 [ ] Replicate [micromodal](https://micromodal.vercel.app)
-- Toggling aria-hidden attribute on modal
-- Trapping tab focus within the modal
-- Maintaining focus position before and after toggling modal
-- Focusing on the first focusable element within the modal
+  - Toggling aria-hidden attribute on modal
+  - Trapping tab focus within the modal
+  - Maintaining focus position before and after toggling modal
+  - Focusing on the first focusable element within the modal
+[ ] Add icon slot to Tags
+[ ] Clone https://vuestic.dev/en/ui-elements/button-group
+[ ] Clone https://vuestic.dev/en/ui-elements/button-toggle
+[ ] Clone https://vuestic.dev/en/ui-elements/button-dropdown
+[ ] Clone https://vuestic.dev/en/ui-elements/image
+[ ] Clone https://vuestic.dev/en/ui-elements/modal (long content)
+[ ] Clone https://vuestic.dev/en/ui-elements/rating
+[] Clone https://vuestic.dev/en/ui-elements/navbar
+[] Clone https://vuestic.dev/en/ui-elements/pagination
+[] Clone https://vuestic.dev/en/ui-elements/sidebar-item
+[] Clone https://vuestic.dev/en/ui-elements/affix
+[] Clone https://vuestic.dev/en/ui-elements/app-bar
+[] Clone https://vuestic.dev/en/ui-elements/backtop
+[] Clone https://vuestic.dev/en/ui-elements/inner-loading
+[] Clone https://vuestic.dev/en/ui-elements/parallax
+[] Clone https://vuestic.dev/en/ui-elements/progress-circle
+[] Clone https://vuestic.dev/en/ui-elements/list
+- component structure like <va-list-item-section> and <va-list-item-label>
 
-[ ] Rewrite component docs a la vuestic
+## Code examples
 
-[ ] Theme customization using css vars?
+### Css variables
+
 ```ts
 function withOpacity(variableName) {
   return ({ opacityValue }) => {
@@ -65,7 +140,7 @@ colors: {
 },
 ```
 
-[ ] Animated underline
+### Animated underline
 ```css
 :root {
   /* Customize these variable */
@@ -94,7 +169,7 @@ colors: {
 }
 ```
 
-[ ] Custom font-face example
+### Custom font-face example
 
 ```css
   @font-face {
@@ -109,7 +184,7 @@ colors: {
   }
 ```
 
-[ ] Debounce search inputs & stuff
+### Debounce search inputs & stuff
 ```ts
 useEffect(() => {
   const timer = setTimeout(() => {
@@ -124,38 +199,3 @@ useEffect(() => {
   return () => clearTimeout(timer);
 }, [searchTerm]);
 ```
-
-[ ] Add icon slot to Tags
-[ ] Clone https://vuestic.dev/en/ui-elements/button-group
-[ ] Clone https://vuestic.dev/en/ui-elements/button-toggle
-[ ] Clone https://vuestic.dev/en/ui-elements/button-dropdown
-[ ] Clone https://vuestic.dev/en/ui-elements/table
-[ ] Clone https://vuestic.dev/en/ui-elements/form
-[ ] Clone https://vuestic.dev/en/ui-elements/file-upload
-[ ] Clone https://vuestic.dev/en/ui-elements/date-picker
-[ ] Clone https://vuestic.dev/en/ui-elements/date-input
-[ ] Clone https://vuestic.dev/en/ui-elements/image
-[ ] Clone https://vuestic.dev/en/ui-elements/modal (long content)
-[ ] Clone https://vuestic.dev/en/ui-elements/rating
-[ ] Clone https://vuestic.dev/en/ui-elements/radio (design)
-[ ] Clone https://vuestic.dev/en/ui-elements/checkbox (error state)
-[ ] Notification color match with button/message/alert
-
-[ ] Clone https://vuestic.dev/en/ui-elements/select approach to things
-- Includes error, success, disabled or loading state
-- Searchable
-- Allow create
-- Validation rules
-- Keyboard nav
-
-[] Clone https://vuestic.dev/en/ui-elements/navbar
-[] Clone https://vuestic.dev/en/ui-elements/pagination
-[] Clone https://vuestic.dev/en/ui-elements/sidebar-item
-[] Clone https://vuestic.dev/en/ui-elements/affix
-[] Clone https://vuestic.dev/en/ui-elements/app-bar
-[] Clone https://vuestic.dev/en/ui-elements/backtop
-[] Clone https://vuestic.dev/en/ui-elements/inner-loading
-[] Clone https://vuestic.dev/en/ui-elements/parallax
-[] Clone https://vuestic.dev/en/ui-elements/progress-circle
-[] Clone https://vuestic.dev/en/ui-elements/list
-- component structure like <va-list-item-section> and <va-list-item-label>
