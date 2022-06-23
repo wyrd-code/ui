@@ -3,7 +3,7 @@
     <div v-show="visible" :class="rootClasses">
       <div v-if="showIcon" class="wui-alert-iconwrapper">
         <slot name="icon">
-          <div :class="icon" class="wui-alert-icon" />
+          <div :class="iconClass" class="wui-alert-icon" />
         </slot>
       </div>
       <div class="wui-alert-body">
@@ -55,6 +55,7 @@ export default defineComponent({
     closable: { type: Boolean, default: false },
     visible: { type: Boolean, default: true },
     title: { type: String, default: null },
+    icon: { type: String, default: null },
     body: { type: String, default: null },
   },
   emits: ['on-close'],
@@ -62,7 +63,9 @@ export default defineComponent({
     const defaultSlot = useCheckSlot(slots, 'default')
 
     const clickCross = () => emit('on-close')
-    const icon = computed(() => (ICON_BY_TYPE as any)[props.type])
+    const iconClass = computed(
+      () => props.icon || (ICON_BY_TYPE as any)[props.type]
+    )
     const rootClasses = computed(() => [
       'wui-alert',
       `wui-alert--${props.type}`,
@@ -72,7 +75,7 @@ export default defineComponent({
     return {
       defaultSlot,
       clickCross,
-      icon,
+      iconClass,
       rootClasses,
     }
   },
