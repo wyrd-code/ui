@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.12](https://github.com/wyrd-code/ui/compare/v0.2.11...v0.2.12) (2022-06-23)
+
+
+### Features
+
+* export code demo & example components ([c51fc78](https://github.com/wyrd-code/ui/commit/c51fc7895e70c81deb32a5d9c78a7a89e2e56ca6))
+* Export WuiArticleProseExample ([7ee003d](https://github.com/wyrd-code/ui/commit/7ee003dba4f554f0dbae1a851da4b722774996f6))
+* style scrollbars and text selection ([8d05458](https://github.com/wyrd-code/ui/commit/8d054588a87df1925687a5487fa8592c1e42f83a))
+* update tab nav ([4d41ac4](https://github.com/wyrd-code/ui/commit/4d41ac4d733aad841de31e5d6fb98d9b431028cc))
+* WuiAlert icon prop ([ff97242](https://github.com/wyrd-code/ui/commit/ff97242934d306921dd733090fb72dc959b1f904))
+
+
+### Bug Fixes
+
+* appending home route to auto breadcrumbs ([a1e88f8](https://github.com/wyrd-code/ui/commit/a1e88f8231a2018a9a70bb83481e5d97defa844a))
+* colors from gray to neutral (theme defined) ([deba678](https://github.com/wyrd-code/ui/commit/deba6784308deda101afffa6bebc5b6652fab666))
+
 ### [0.2.11](https://github.com/wyrd-code/ui/compare/v0.2.10...v0.2.11) (2022-06-17)
 
 
