@@ -4,14 +4,14 @@ html {
 }
 
 body {
-  @apply flex flex-col text-gray-700 font-default;
+  @apply flex flex-col text-neutral-700 font-default;
   /* Force scrollbars to prevent content jumping */
   @apply overflow-y-scroll;
   height: 100%;
 }
 
 html.dark body {
-  @apply bg-gray-800 text-gray-200;
+  @apply bg-neutral-800 text-neutral-200;
 }
 
 .font-heading {
