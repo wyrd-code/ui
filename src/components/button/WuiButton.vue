@@ -11,8 +11,8 @@
       class="animate-spin icon-ph-spinner"
       :class="{ 'mr-2': $slots.default && !(loadingTakeover && loading) }"
     />
-    <span v-else-if="$slots.icon" class="wui-btn-icon-wrapper">
-      <slot name="icon" class="h-full" />
+    <span v-else-if="$slots.iconPrefix" class="wui-btn-icon-wrapper">
+      <slot name="iconPrefix" class="h-full" />
     </span>
 
     <span
@@ -21,8 +21,8 @@
     >
       <slot />
     </span>
-    <span v-else-if="$slots.iconafter" class="wui-btn-icon-wrapper">
-      <slot name="icon" class="h-full" />
+    <span v-else-if="$slots.iconSuffix" class="wui-btn-icon-wrapper">
+      <slot name="iconSuffix" class="h-full" />
     </span>
   </component>
 </template>

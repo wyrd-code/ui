@@ -37,7 +37,7 @@
           placement="left"
         >
           <WuiButton type="neutral" @click="clickCopy">
-            <template #icon>
+            <template #iconPrefix>
               <div class="h-full icon-ph-spinner" />
             </template>
           </WuiButton>

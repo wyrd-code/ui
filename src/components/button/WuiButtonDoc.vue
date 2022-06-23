@@ -117,28 +117,28 @@
     <WuiCodeExample title="Icon with label">
       <WuiButtonGroup vertical>
         <WuiButton outline size="lg">
-          <template #icon>
+          <template #iconPrefix>
             <div class="icon-ph-heart" />
           </template>
           Some label
         </WuiButton>
 
         <WuiButton outline>
-          <template #icon>
+          <template #iconPrefix>
             <div class="icon-ph-heart" />
           </template>
           Some label
         </WuiButton>
 
         <WuiButton outline size="sm">
-          <template #icon>
+          <template #iconPrefix>
             <div class="icon-ph-heart" />
           </template>
           Some label
         </WuiButton>
 
         <WuiButton outline size="xs">
-          <template #icon>
+          <template #iconPrefix>
             <div class="icon-ph-heart" />
           </template>
           Some label
