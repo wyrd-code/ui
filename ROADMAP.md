@@ -14,6 +14,8 @@
 [ ] Fix missing popover styles (arrow)
 [ ] Fix Notifications position
 [ ] Fix dropdown/popup positioning
+[ ] Fix types & build? https://github.com/Akryum/vue-typegen
+[ ] Fix floating uis? https://floating-vue.starpad.dev/
 
 ## Refactor
 
@@ -52,6 +54,7 @@
 [ ] Clone https://vuestic.dev/en/ui-elements/form
 [ ] Clone https://vuestic.dev/en/ui-elements/file-upload
 [ ] Clone https://vuestic.dev/en/ui-elements/date-picker
+[ ] Use https://day.js.org for date/time pickers
 [ ] Clone https://vuestic.dev/en/ui-elements/date-input
 [ ] Clone https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/time-picker/doc/doc.mdx?p=doc
 [ ] Clone https://vuestic.dev/en/ui-elements/radio (design)
@@ -65,6 +68,10 @@
 - Keyboard nav
 
 ## Features
+
+[ ] VueMentions https://vue-mention.netlify.app/
+[ ] swiperjs.com https://github.com/Akryum/swiper
+    Most modern mobile touch slider with hardware accelerated transitions
 
 [ ] Sync form values to route query
 [ ] Sync form values to route query
@@ -198,4 +205,42 @@ useEffect(() => {
 
   return () => clearTimeout(timer);
 }, [searchTerm]);
+```
+
+### custom onClickOutside
+
+```ts
+import { onMounted, onUnmounted } from 'vue';
+
+export const useOnClickOutside = (ref = null, callback = () => {}) => {
+  function handleClickOutside(event) {
+    if (ref.value && !ref.value.contains(event.target)) {
+      callback()
+    }
+  }
+
+  onMounted(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+  })
+
+  onUnmounted(() => {
+    document.removeEventListener('mousedown', handleClickOutside);
+  });
+}
+```
+Use like this
+
+```vue
+<template>
+  <div ref="container">View</div>
+</template>
+<script setup>
+import { ref } from 'vue';
+
+const container = ref(null);
+
+useOnClickOutside(container, () => {
+  console.log('Clicked outside');
+}
+</script>
 ```
