@@ -1,5 +1,5 @@
 .wui-tag {
-  @apply relative inline-flex items-center py-1 px-2 text-sm leading-5 box-border;
+  @apply inline-flex items-center py-1 px-2 text-sm leading-5 box-border;
   @apply bg-white text-black rounded border items-center;
 
   &-close {
