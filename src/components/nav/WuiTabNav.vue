@@ -39,6 +39,6 @@ defineProps({
 })
 </script>
 
-<style lang="css" scoped>
+<style lang="css">
 @import url('tab-nav.css');
 </style>
