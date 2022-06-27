@@ -71,10 +71,6 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
-    routeQuery: {
-      type: Object,
-      default: () => ({}),
-    },
     pagingMeta: {
       type: Object as () => PagingMeta,
       default: () => ({}),
