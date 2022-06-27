@@ -67,10 +67,6 @@ export default defineComponent({
       type: Object,
       default: null,
     },
-    status: {
-      type: String,
-      required: true,
-    },
   },
   emits: ['load'],
   setup(props, { emit }) {
