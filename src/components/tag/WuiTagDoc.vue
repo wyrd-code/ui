@@ -21,7 +21,7 @@
       </template>
     </WuiCodeDemo>
 
-    <WuiCodeExample title="Filled">
+    <WuiCodeExample title="Regular">
       <WuiTag v-for="type in ALLOWED_TYPES" :key="type" :type="type">
         {{ type }}
       </WuiTag>
