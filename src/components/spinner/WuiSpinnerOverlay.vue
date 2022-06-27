@@ -5,11 +5,11 @@
     :class="overlayRounding"
   >
     <div
-      class="flex h-full items-center justify-center z-50 bg-black opacity-50"
+      class="flex h-full items-center justify-center z-50 bg-black dark:bg-white opacity-50"
     >
       <WuiSpinner
         v-bind="$attrs"
-        class="w-12 h-12 z-50 text-white fill-current"
+        class="w-12 h-12 z-50 text-white dark:text-black fill-current"
       />
     </div>
   </div>
