@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.13](https://github.com/wyrd-code/ui/compare/v0.2.12...v0.2.13) (2022-06-27)
+
+
+### Bug Fixes
+
+* remove relative class from wui-tag ([5ee67bd](https://github.com/wyrd-code/ui/commit/5ee67bdd8485f6a31ce703a66bfbbe558ab79367))
+* remove scoped prop from tab nav styles ([2735b73](https://github.com/wyrd-code/ui/commit/2735b7351757b2134ce6e7070c298ca6a57bbb1a))
+* spinner overlay dark theme ([080d5fe](https://github.com/wyrd-code/ui/commit/080d5fe3c3f22e7219978dfc891bfe169f0564fc))
+
 ### [0.2.12](https://github.com/wyrd-code/ui/compare/v0.2.11...v0.2.12) (2022-06-23)
 
 
