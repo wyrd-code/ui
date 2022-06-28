@@ -1,8 +1,10 @@
+import FloatingVue from 'floating-vue'
 import type { App, Ref } from 'vue'
 
 import { LoadingBar } from './components/loading-bar'
 import { Message } from './components/message'
 import { Notification } from './components/notification'
+import 'floating-vue/dist/style.css'
 
 /**
  * WyrdUI plugin
@@ -10,6 +12,8 @@ import { Notification } from './components/notification'
  * @public
  */
 export function install(app: App): void {
+  app.use(FloatingVue)
+
   app.config.globalProperties.$Message = Message
   app.provide('$Message', Message)
 

@@ -7,15 +7,16 @@
 [x] Fix build
 [x] Use https://api-extractor.com/ instead of vue-tsc for typings
 [x] Fix generating .d.ts files (do we use generated volar.d.ts?)
-[ ] Fix all icon usage in consuming apps
-[ ] Fix checkbox design
+[x] Fix all icon usage in consuming apps
+[x] Fix checkbox design
 [ ] Fix build size / treeshaking & dynamic imports
 [x] Fix generating .d.ts files
 [ ] Fix missing popover styles (arrow)
 [ ] Fix Notifications position
-[ ] Fix dropdown/popup positioning
+[x] Fix dropdown positioning
+[ ] Fix popup positioning
 [ ] Fix types & build? https://github.com/Akryum/vue-typegen
-[ ] Fix floating uis? https://floating-vue.starpad.dev/
+[x] Fix floating uis? https://floating-vue.starpad.dev/
 
 ## Refactor
 

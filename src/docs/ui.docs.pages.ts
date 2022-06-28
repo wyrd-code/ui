@@ -228,6 +228,18 @@ export const pages: WyrdPageDefinition[] = [
             component: (): Component =>
               import('../components/breadcrumbs/WuiBreadcrumbsDoc.vue'),
           },
+          {
+            slug: 'button-dropdown',
+            title: 'Button Dropdown',
+            component: (): Component =>
+              import('../components/button/WuiButtonDropdownDoc.vue'),
+          },
+          {
+            slug: 'dropdown',
+            title: 'Dropdown',
+            component: (): Component =>
+              import('../components/dropdown/WuiDropdownDoc.vue'),
+          },
         ],
       },
     ],

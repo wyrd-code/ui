@@ -1,38 +1,44 @@
 <template>
-  <WuiDropdown class="wui-button-dropdown">
-    <template #button="{ toggle }">
-      <WuiButton :size="buttonSize" @click="toggle">
-        <template v-if="showIcon && activeOption?.icon" #icon>
-          <div :class="activeOption?.icon" class="h-4 w-4" />
+  <div class="space-y-4">
+    <h1>Button Dropdown</h1>
+
+    <WuiCodeDemo>
+      <WuiDropdown class="wui-button-dropdown">
+        <template #button="{ toggle }">
+          <WuiButton :size="buttonSize" @click="toggle">
+            <template v-if="showIcon && activeOption?.icon" #icon>
+              <div :class="activeOption?.icon" class="h-4 w-4" />
+            </template>
+            <span v-if="showLabel">
+              {{ activeOption?.label }}
+            </span>
+          </WuiButton>
         </template>
-        <span v-if="showLabel">
-          {{ activeOption?.label }}
-        </span>
-      </WuiButton>
-    </template>
-    <template #items="{ itemClass }">
-      <a
-        v-for="(option, idx) in options"
-        :key="idx"
-        class="text-xs !py-8px"
-        :class="itemClass"
-        @click="() => onValueChange(option.value)"
-      >
-        <template v-if="showOptionIcon && option?.icon">
-          <div :class="option?.icon" class="h-4 text-neutral-500 w-4" />
+        <template #items="{ itemClass }">
+          <a
+            v-for="(option, idx) in options"
+            :key="idx"
+            class="text-xs !py-8px"
+            :class="itemClass"
+            @click="() => onValueChange(option.value)"
+          >
+            <template v-if="showOptionIcon && option?.icon">
+              <div :class="option?.icon" class="h-4 text-neutral-500 w-4" />
+            </template>
+            <span class="ml-1">{{ option.optionLabel || option.label }}</span>
+          </a>
         </template>
-        <span class="ml-1">{{ option.optionLabel || option.label }}</span>
-      </a>
-    </template>
-  </WuiDropdown>
+      </WuiDropdown>
+    </WuiCodeDemo>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, computed, PropType } from 'vue'
 
 import { Sizes } from '../../models/enums'
-import WuiButton from '../button/WuiButton.vue'
 import WuiDropdown from '../dropdown/WuiDropdown.vue'
+import WuiButton from './WuiButton.vue'
 
 declare type Value = string | number | boolean
 
@@ -61,7 +67,7 @@ export default defineComponent({
     },
     buttonSize: {
       type: String,
-      default: null,
+      default: Sizes.NORMAL,
       validator: (value: Sizes) => Object.values(Sizes).includes(value),
     },
     showLabel: {

@@ -35,16 +35,16 @@
       <div class="flex flex-col items-center">
         <WuiButtonGroup vertical>
           <WuiTooltip content="Top" placement="top">
-            <WuiButton>Top</WuiButton>
+            <WuiButton wide>Top</WuiButton>
           </WuiTooltip>
           <WuiTooltip content="Right" placement="right">
-            <WuiButton>Right</WuiButton>
+            <WuiButton wide>Right</WuiButton>
           </WuiTooltip>
           <WuiTooltip content="Left" placement="left">
-            <WuiButton>Left</WuiButton>
+            <WuiButton wide>Left</WuiButton>
           </WuiTooltip>
           <WuiTooltip content="Bottom" placement="bottom">
-            <WuiButton>Bottom</WuiButton>
+            <WuiButton wide>Bottom</WuiButton>
           </WuiTooltip>
         </WuiButtonGroup>
       </div>
