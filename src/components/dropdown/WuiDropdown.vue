@@ -5,10 +5,11 @@
       <button>Click me</button>
     </slot>
 
-    <template #popper>
+    <template #popper="{ toggle }">
       <slot
         item-class="wui-dropdown-item"
         item-active-class="wui-dropdown-item-active"
+        :toggle="toggle"
       />
     </template>
   </VDropdown>

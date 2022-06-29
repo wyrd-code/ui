@@ -2,6 +2,9 @@
   <WuiDropdown class="wui-button-dropdown">
     <template #button="{ toggle }">
       <WuiButton :size="buttonSize" @click="toggle">
+        <template v-if="!activeOption">
+          {{ placeholder }}
+        </template>
         <template v-if="showIcon && activeOption?.icon" #icon>
           <div :class="activeOption?.icon" class="h-4 w-4" />
         </template>
@@ -10,7 +13,7 @@
         </span>
       </WuiButton>
     </template>
-    <template #items="{ itemClass }">
+    <template #default="{ itemClass }">
       <a
         v-for="(option, idx) in options"
         :key="idx"
@@ -75,6 +78,10 @@ export default defineComponent({
     showOptionIcon: {
       type: Boolean,
       default: true,
+    },
+    placeholder: {
+      type: String,
+      required: true,
     },
   },
   emits: ['update:model-value'],
