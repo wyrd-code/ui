@@ -53,6 +53,8 @@ const colorTypes: { [key in Colors]?: string } = {
   [Colors.WARNING]: '#ffba00',
 }
 
+// @unocss-include
+
 export default defineComponent({
   name: 'WuiNotification',
   data() {
