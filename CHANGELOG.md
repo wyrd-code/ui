@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.15](https://github.com/wyrd-code/ui/compare/v0.2.14...v0.2.15) (2022-06-29)
+
+
+### Bug Fixes
+
+* collapse styles ([183860e](https://github.com/wyrd-code/ui/commit/183860e1e8359e08427776da12bd2b0f1b833b1d))
+* try fixing missing notification close icon in consumer project ([b44f530](https://github.com/wyrd-code/ui/commit/b44f5305f3b8f8b2dd99452b7300dfdaa31abb7c))
+
 ### [0.2.14](https://github.com/wyrd-code/ui/compare/v0.2.13...v0.2.14) (2022-06-28)
 
 
