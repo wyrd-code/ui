@@ -1,19 +1,24 @@
 .wui-collapse {
-  @apply border rounded border-neutral-300 w-full;
-  box-shadow: #e4e7eb 0 1px 1px 0;
+  @apply border rounded-lg w-full shadow;
+  @apply border-neutral-300;
+  @apply dark:border-neutral-700;
 
-  &-item {
+
+  .wui-collapse-item {
     @apply flex flex-col;
 
     &:not(:first-child) {
-      @apply border-t border-neutral-300;
+      @apply border-t;
+      @apply border-neutral-300;
+      @apply dark:border-neutral-700;
     }
 
-    &-header {
+    .wui-collapse-item-header {
       @apply m-0 px-4 py-3 relative;
       @apply flex items-center space-x-4;
       @apply cursor-pointer outline-none;
-      @apply bg-gray-100;
+      @apply bg-neutral-100;
+      @apply dark:bg-neutral-900;
 
       font-family: inherit;
       padding: 14px 16px;
@@ -31,7 +36,9 @@
     }
 
     &-body {
-      @apply border-t border-neutral-300;
+      @apply border-t;
+      @apply border-neutral-300;
+      @apply dark:border-neutral-700;
       padding: 14px 16px 24px;
       font-size: 14px;
       font-weight: 400;
@@ -39,14 +46,12 @@
       line-height: 1.2;
     }
 
-    &:first-child > &-title {
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
+    &:first-child .wui-collapse-item-header {
+      @apply rounded-t-lg;
     }
 
-    &:last-child:not(&--expanded) > &-title {
-      border-bottom-left-radius: 4px;
-      border-bottom-right-radius: 4px;
+    &:last-child:not(&--expanded) .wui-collapse-item-header {
+      @apply rounded-b-lg;
     }
   }
 }

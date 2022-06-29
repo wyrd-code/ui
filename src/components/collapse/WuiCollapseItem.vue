@@ -14,7 +14,7 @@
       />
       <div v-else class="wui-collapse-item-header-icon icon-ph-caret-right" />
       <slot name="header">
-        <span>{{ title }}</span>
+        <span class="wui-collapse-item-title">{{ title }}</span>
       </slot>
     </button>
     <transition name="fade">
