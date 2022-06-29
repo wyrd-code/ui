@@ -64,7 +64,7 @@
         </p>
       </template>
 
-      <WuiBreadcrumbsAuto class="border rounded px-4" />
+      <WuiBreadcrumbsAuto class="" />
     </WuiCodeExample>
 
     <WuiCodeExample title="Size">
@@ -73,10 +73,10 @@
       </template>
 
       <div class="flex flex-col space-y-4 items-center">
-        <WuiBreadcrumbsAuto class="border rounded text-xs px-4" />
-        <WuiBreadcrumbsAuto class="border rounded text-base px-4" />
-        <WuiBreadcrumbsAuto class="border rounded text-lg px-4" />
-        <WuiBreadcrumbsAuto class="border rounded text-xl px-4" />
+        <WuiBreadcrumbsAuto class="text-xs" />
+        <WuiBreadcrumbsAuto class="text-base" />
+        <WuiBreadcrumbsAuto class="text-lg" />
+        <WuiBreadcrumbsAuto class="text-xl" />
       </div>
     </WuiCodeExample>
   </div>
