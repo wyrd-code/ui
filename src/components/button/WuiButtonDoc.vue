@@ -114,50 +114,46 @@
       </WuiButton>
     </WuiCodeExample>
 
-    <WuiCodeExample title="Icon with label">
-      <WuiButtonGroup vertical>
-        <WuiButton outline size="lg">
-          <template #iconPrefix>
-            <div class="icon-ph-heart" />
-          </template>
-          Some label
-        </WuiButton>
+    <WuiCodeExample title="Icon with label" vertical>
+      <WuiButton outline size="lg">
+        <template #iconPrefix>
+          <div class="icon-ph-heart" />
+        </template>
+        Some label
+      </WuiButton>
 
-        <WuiButton outline>
-          <template #iconPrefix>
-            <div class="icon-ph-heart" />
-          </template>
-          Some label
-        </WuiButton>
+      <WuiButton outline>
+        <template #iconPrefix>
+          <div class="icon-ph-heart" />
+        </template>
+        Some label
+      </WuiButton>
 
-        <WuiButton outline size="sm">
-          <template #iconPrefix>
-            <div class="icon-ph-heart" />
-          </template>
-          Some label
-        </WuiButton>
+      <WuiButton outline size="sm">
+        <template #iconPrefix>
+          <div class="icon-ph-heart" />
+        </template>
+        Some label
+      </WuiButton>
 
-        <WuiButton outline size="xs">
-          <template #iconPrefix>
-            <div class="icon-ph-heart" />
-          </template>
-          Some label
-        </WuiButton>
-      </WuiButtonGroup>
+      <WuiButton outline size="xs">
+        <template #iconPrefix>
+          <div class="icon-ph-heart" />
+        </template>
+        Some label
+      </WuiButton>
     </WuiCodeExample>
 
     <WuiCodeExample title="Size">
-      <WuiButtonGroup vertical>
-        <WuiButton
-          v-for="size in buttonSizes"
-          :key="size"
-          :size="size"
-          type="neutral"
-          wide
-        >
-          {{ size }}
-        </WuiButton>
-      </WuiButtonGroup>
+      <WuiButton
+        v-for="size in buttonSizes"
+        :key="size"
+        :size="size"
+        type="neutral"
+        wide
+      >
+        {{ size }}
+      </WuiButton>
     </WuiCodeExample>
 
     <WuiCodeExample title="Wide">

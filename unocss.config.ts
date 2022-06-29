@@ -15,6 +15,7 @@ export function createConfig({ strict = true, dev = true } = {}): any {
     theme: {
       colors: {
         primary: colors?.indigo,
+        secondary: colors?.blue,
         accent: colors?.sky,
         neutral: colors?.zinc,
         success: colors?.lime,

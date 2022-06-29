@@ -75,9 +75,8 @@ export default defineComponent({
         glass: props.glass,
         'wui-btn-loading': props.loading,
         [`wui-btn-${props.size}`]: props.size,
-        ...(props.type
-          ? { [`wui-btn-${props.type}`]: true }
-          : { 'wui-btn--neutral': true }),
+        [`wui-btn-type--${props.type}`]: props.typ,
+        ...(props.type ? { [`wui-btn-type--${props.type}`]: true } : {}),
       },
     ])
 
