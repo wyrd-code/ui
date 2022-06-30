@@ -6,13 +6,9 @@
     :class="rootClasses"
     v-bind="customProps"
   >
-    <div
-      v-if="loading"
-      class="animate-spin icon-ph-spinner"
-      :class="{ 'mr-2': $slots.default && !(loadingTakeover && loading) }"
-    />
+    <div v-if="loading" class="animate-spin icon-ph-spinner wui-btn-icon" />
     <span v-else-if="$slots.iconPrefix" class="wui-btn-icon-wrapper">
-      <slot name="iconPrefix" class="h-full" />
+      <slot name="iconPrefix" class="wui-btn-icon" />
     </span>
 
     <span
@@ -21,8 +17,11 @@
     >
       <slot />
     </span>
-    <span v-else-if="$slots.iconSuffix" class="wui-btn-icon-wrapper">
-      <slot name="iconSuffix" class="h-full" />
+    <span
+      v-else-if="$slots.iconSuffix"
+      class="wui-btn-icon-wrapper wui-btn-icon-suffix"
+    >
+      <slot name="iconSuffix" class="wui-btn-icon" />
     </span>
   </component>
 </template>
