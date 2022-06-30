@@ -6,6 +6,40 @@ import { Message } from './components/message'
 import { Notification } from './components/notification'
 import 'floating-vue/dist/style.css'
 
+const floatingTheme = {
+  handleResize: true,
+  html: true,
+  loadingContent: '...',
+}
+
+FloatingVue.options.themes.wuipopover = {
+  ...floatingTheme,
+  placement: 'top',
+  triggers: ['click', 'focus', 'touch'],
+  delay: {
+    show: 150,
+    hide: 0,
+  },
+}
+
+FloatingVue.options.themes.wuitooltip = {
+  $extend: 'wuitooltip',
+  triggers: ['hover', 'focus'],
+  popperTriggers: ['hover', 'focus'],
+  delay: {
+    show: 0,
+    hide: 400,
+  },
+}
+
+FloatingVue.options.themes.wuidropdown = {
+  ...floatingTheme,
+  placement: 'bottom',
+  triggers: ['click'],
+  autoHide: true,
+  delay: 0,
+}
+
 /**
  * WyrdUI plugin
  *

@@ -3,27 +3,29 @@
     <h1>Popover</h1>
 
     <WuiCodeExample :code="exampleCode" title="Example">
-      <WuiPopover :disabled="removed">
-        <WuiButton>Delete</WuiButton>
-        <template #content>
-          <div>
-            <p class="mb-2">Please confirm deletion</p>
-            <div class="flex justify-end">
-              <WuiButton size="sm"> No </WuiButton>
-              <WuiButton
-                class="ml-2"
-                size="sm"
-                type="danger"
-                @click="
-                  ;(removed = true), $Message.success({ text: 'Deleted' })
-                "
-              >
-                Yes
-              </WuiButton>
+      <div class="flex items-center justify-center">
+        <WuiPopover placement="bottom">
+          <WuiButton>Delete</WuiButton>
+          <template #content>
+            <div>
+              <p class="mb-2">Please confirm deletion</p>
+              <div class="flex justify-end">
+                <WuiButton size="sm"> No </WuiButton>
+                <WuiButton
+                  class="ml-2"
+                  size="sm"
+                  type="danger"
+                  @click="
+                    ;(removed = true), $Message.success({ text: 'Deleted' })
+                  "
+                >
+                  Yes
+                </WuiButton>
+              </div>
             </div>
-          </div>
-        </template>
-      </WuiPopover>
+          </template>
+        </WuiPopover>
+      </div>
     </WuiCodeExample>
 
     <WuiCodeExample :code="positionsCode" title="Positions">
@@ -34,45 +36,48 @@
         </p>
       </template>
 
-      <WuiButton-group vertical>
-        <WuiPopover placement="top">
-          <WuiButton>Top</WuiButton>
+      <div class="flex items-center justify-center">
+        <WuiButton-group vertical class="w-128">
+          <WuiPopover placement="top">
+            <WuiButton wide>Top</WuiButton>
 
-          <template #content> Top popover </template>
-        </WuiPopover>
-        <WuiPopover placement="right">
-          <WuiButton>Right</WuiButton>
+            <template #content> Top popover </template>
+          </WuiPopover>
+          <WuiPopover placement="right">
+            <WuiButton wide>Right</WuiButton>
 
-          <template #content> Right popover </template>
-        </WuiPopover>
-        <WuiPopover placement="left">
-          <WuiButton>Left</WuiButton>
+            <template #content> Right popover </template>
+          </WuiPopover>
+          <WuiPopover placement="left">
+            <WuiButton wide>Left</WuiButton>
 
-          <template #content> Left popover </template>
-        </WuiPopover>
-        <WuiPopover placement="bottom">
-          <WuiButton>Bottom</WuiButton>
+            <template #content> Left popover </template>
+          </WuiPopover>
+          <WuiPopover placement="bottom">
+            <WuiButton wide>Bottom</WuiButton>
 
-          <template #content> Bottom popover </template>
-        </WuiPopover>
-      </WuiButton-group>
+            <template #content> Bottom popover </template>
+          </WuiPopover>
+        </WuiButton-group>
+      </div>
     </WuiCodeExample>
 
     <WuiCodeExample :code="imageCode" title="Image">
       <template #description>
-        <p class="px-6">
-          You can disable paddings inside popover and show image
-        </p>
+        <p class="">You can disable paddings inside popover and show image</p>
       </template>
 
-      <WuiPopover placement="top" borderless>
-        <WuiButton>Show image</WuiButton>
+      <div class="flex items-center justify-center">
+        <WuiPopover placement="top">
+          <WuiButton>Show image</WuiButton>
 
-        <template #content>
-          <img width="150" src="/raspberry.jpg" alt="example photo" />
-        </template>
-      </WuiPopover>
+          <template #content>
+            <img width="150" src="/raspberry.jpg" alt="example photo" />
+          </template>
+        </WuiPopover>
+      </div>
     </WuiCodeExample>
+
     <WuiPropsTable
       tag-name="WuiPopover"
       :data-sheet="dataSheet"

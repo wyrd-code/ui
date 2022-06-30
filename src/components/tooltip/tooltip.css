@@ -1,41 +1,20 @@
-.wui-tooltip {
-  @apply inline-block;
-  /* z-index: 9; */
-
-  &-trigger {
-    @apply h-full relative inline-block;
-  }
-
-  &-popper {
-    @apply z-9000 absolute;
-  }
-
-  &-content {
-    @apply shadow-lg p-3 break-words;
-    @apply bg-white rounded text-black text-sm;
-
-    width: max-content;
-    line-height: 1;
-
-    &--borderless {
-      @apply p-0;
-      /* overflow: hidden; */
+.v-popper--theme-wuitooltip {
+  .v-popper__wrapper {
+    .v-popper__inner {
+      @apply shadow-lg p-3 border rounded;
+      @apply bg-neutral-50 border-neutral-200 text-neutral-800;
+      @apply dark:(bg-neutral-800 border-neutral-700 text-neutral-300);
+      @apply dark:(shadow-black);
     }
-  }
-
-  &--top {
-    margin-top: -12px;
-  }
-
-  &--bottom {
-    margin-top: 12px;
-  }
-
-  &--left {
-    margin-left: -12px;
-  }
-
-  &--right {
-    margin-left: 12px;
+    .v-popper__arrow-container {
+      .v-popper__arrow-inner {
+        @apply border-neutral-50 visible;
+        @apply dark:border-neutral-800;
+      }
+      .v-popper__arrow-outer {
+        @apply border-neutral-200;
+        @apply dark:border-neutral-700;
+      }
+    }
   }
 }

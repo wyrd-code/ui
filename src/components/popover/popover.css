@@ -1,0 +1,20 @@
+.v-popper--theme-wuipopover {
+  .v-popper__wrapper {
+    .v-popper__inner {
+      @apply shadow-lg p-3 border rounded;
+      @apply bg-neutral-50 border-neutral-200 text-neutral-800;
+      @apply dark:(bg-neutral-800 border-neutral-700 text-neutral-300);
+      @apply dark:(shadow-black);
+    }
+    .v-popper__arrow-container {
+      .v-popper__arrow-inner {
+        @apply border-neutral-50 visible;
+        @apply dark:border-neutral-800;
+      }
+      .v-popper__arrow-outer {
+        @apply border-neutral-200;
+        @apply dark:border-neutral-700;
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.wui-dropdown {
+  /* note: class not used for container in component,
+  in favor of floating-vue one below */
+  @apply shadow-lg border rounded;
+  @apply bg-neutral-100 border-neutral-200;
+  @apply dark:(bg-neutral-800 border-neutral-700);
+  @apply dark:(shadow-black);
+
+  /* note: child classes are used */
+  &-item {
+    @apply flex items-center space-x-2 px-3 py-3 leading-tight cursor-pointer;
+    @apply border-b;
+    @apply last:(border-none rounded-b-md) first:rounded-t-md hover:(underline);
+    @apply bg-neutral-50 border-neutral-200 text-neutral-700;
+    @apply dark:(bg-neutral-800 border-neutral-700 text-neutral-300);
+  }
+  &-item-active {
+  }
+}
+
+.v-popper--theme-wuidropdown {
+  .v-popper__wrapper {
+    .v-popper__inner {
+      @apply shadow-lg border rounded;
+      @apply bg-neutral-100 border-neutral-200;
+      @apply dark:(bg-neutral-800 border-neutral-700);
+      @apply dark:(shadow-black);
+    }
+    .v-popper__arrow-container {
+      .v-popper__arrow-inner {
+        @apply border-neutral-100 visible;
+        @apply dark:border-neutral-800;
+      }
+      .v-popper__arrow-outer {
+        @apply border-neutral-200;
+        @apply dark:border-neutral-700;
+      }
+    }
+  }
+}
