@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.18](https://github.com/wyrd-code/ui/compare/v0.2.17...v0.2.18) (2022-06-30)
+
+
+### Bug Fixes
+
+* button group borders ([779e8f5](https://github.com/wyrd-code/ui/commit/779e8f52fe7b79db7d5ec31a77135d1aaa4bb38d))
+* button group styles ([994b5b7](https://github.com/wyrd-code/ui/commit/994b5b7483f007bca6912debcf2da25ad64a3161))
+* code demo props spacing ([d9071f7](https://github.com/wyrd-code/ui/commit/d9071f7df8f65a5a3bd6fe52bc5b86948d0151b3))
+* code example dark theme, style ([dc1e30b](https://github.com/wyrd-code/ui/commit/dc1e30be2e844f64f4dea43fc487abe01f074a45))
+* input dark theme ([5f871df](https://github.com/wyrd-code/ui/commit/5f871df84b835d4b2d532f09fea1b0f0576b93ad))
+* modal dark theme ([b256f67](https://github.com/wyrd-code/ui/commit/b256f67b56ae3d2284984a267b59d5bb896f3370))
+* radio button icon positioning & dark mode ([c257574](https://github.com/wyrd-code/ui/commit/c2575741ab669aa482071f0e55b2b178cc34557a))
+* select dark mode ([d743a7c](https://github.com/wyrd-code/ui/commit/d743a7ceaacaa8179c61a23884d87a3f6a1e0cf6))
+
 ### [0.2.17](https://github.com/wyrd-code/ui/compare/v0.2.16...v0.2.17) (2022-06-30)
 
 
