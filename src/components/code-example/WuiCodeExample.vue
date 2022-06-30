@@ -3,9 +3,9 @@
     class="wui-code-example"
     :class="{ 'overflow-hidden': overflowHidden, horizontal }"
   >
-    <h2 class="font-bold leading-none py-4 px-4 wui-code-example-title">
+    <strong class="wui-code-example-title">
       {{ title }}
-    </h2>
+    </strong>
     <div v-if="$slots.description" class="px-4 pb-4">
       <slot name="description" />
     </div>
@@ -13,7 +13,7 @@
       <slot />
     </div>
 
-    <div v-if="code" style="border-top: 1px solid #d3dae6">
+    <div v-if="code" class="wui-code-example-code-toggle">
       <WuiButton
         class="!rounded-none"
         type="ghost"
@@ -103,12 +103,17 @@ export default defineComponent({
 <style lang="css">
 .wui-code-example {
   @apply rounded flex flex-col my-10 min-h-200px w-full box-border;
+  @apply border;
   @apply bg-white border-neutral-200;
-}
-html.dark .wui-code-example {
-  @apply bg-neutral-900 border-neutral-800;
+  @apply dark:(bg-neutral-900 border-neutral-800);
 }
 
+.wui-code-example-title {
+  @apply font-bold text-xl leading-none p-4;
+  @apply border-b;
+  @apply border-neutral-200;
+  @apply dark:(border-neutral-800);
+}
 .wui-code-example-title .wui-tag {
   @apply ml-2;
 }
@@ -129,11 +134,12 @@ html.dark .wui-code-example {
   @apply mb-4;
 }
 
+.wui-code-example-code-toggle,
 .wui-code-example-code {
-  @apply border-t border-neutral-200;
-  transition: max-height 0.4s;
+  @apply border-t;
+  @apply border-neutral-200;
+  @apply dark:(border-neutral-800);
 }
-
 .wui-code-example-code-copy {
   @apply !absolute top-10px right-10px;
 }
