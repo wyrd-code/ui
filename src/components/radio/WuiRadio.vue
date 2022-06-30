@@ -16,7 +16,7 @@
       v-bind="$attrs"
       @change="check"
     />
-    <span :class="['wui-radio-border', pulse && !disabled && 'pulse']">
+    <span class="wui-radio-border">
       <span class="wui-radio-circle" />
     </span>
     <span class="wui-radio-label-group">
@@ -71,7 +71,6 @@ export default defineComponent({
       default: null,
     },
     subLabel: { type: String, default: null },
-    pulse: { type: Boolean },
     disabled: { type: Boolean },
     lineThrough: { type: Boolean },
     modelValue: { type: [String, Number, Boolean, Object], default: null },

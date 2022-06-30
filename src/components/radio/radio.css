@@ -174,7 +174,7 @@
 }
 
 .wui-radio-circle {
-  @apply rounded-full h-2 mt-3px w-2;
+  @apply rounded-full h-6px w-2;
   @apply opacity-0 transition-all translate-x-1/2 translate-y-1/2;
 }
 

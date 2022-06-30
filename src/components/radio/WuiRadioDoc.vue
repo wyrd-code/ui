@@ -3,19 +3,17 @@
     <h1>Radio</h1>
 
     <WuiCodeDemo>
-      <div class="radios">
+      <div class="flex flex-col space-y-4">
         <WuiRadio
           v-model="radioValue"
           name="demo"
           :disabled="radioDisabled"
-          :pulse="radioPulse"
           :label="radioLabel"
           value="1"
         />
         <WuiRadio
           v-model="radioValue"
           :disabled="radioDisabled"
-          :pulse="radioPulse"
           name="demo"
           label="Second"
           value="2"
@@ -23,7 +21,6 @@
         <WuiRadio
           v-model="radioValue"
           :disabled="radioDisabled"
-          :pulse="radioPulse"
           name="demo"
           label="Third"
           value="3"
@@ -32,7 +29,6 @@
 
       <template #props>
         <WuiInput v-model="radioLabel" label-top="Radio label" />
-        <WuiCheckbox v-model="radioPulse" label="Pulse" />
         <WuiCheckbox v-model="radioDisabled" label="Disabled" />
       </template>
     </WuiCodeDemo>
@@ -60,12 +56,6 @@
       </div>
     </WuiCodeExample>
 
-    <WuiCodeExample :code="pulseCode" title="Pulse">
-      <template #description>
-        <p class="px-6">Pulse helps you to catch user's attention</p>
-      </template>
-      <WuiRadio v-model="pulseValue" pulse label="Look at me" value="42" />
-    </WuiCodeExample>
     <WuiCodeExample :code="disabledCode" title="Disabled">
       <WuiRadio v-model="pulseValue" disabled label="I'm disabled" value="42" />
     </WuiCodeExample>
@@ -83,9 +73,7 @@ export default defineComponent({
     allowedRadioTypes,
     radioValue: '1',
     radioLabel: 'Edit me',
-    radioPulse: false,
     radioDisabled: false,
-    pulseValue: false,
     typeValue: false,
     subradio: 1,
 
@@ -94,9 +82,7 @@ export default defineComponent({
 <WuiRadio v-model="typeValue" type="danger" label="Danger" value="22"/>
 <WuiRadio v-model="typeValue" type="warning" label="Warning" value="33"/>`,
 
-    pulseCode: `<WuiRadio v-model="pulseValue" pulse label="Look at me" value="42"/>`,
-
-    disabledCode: `<WuiRadio v-model="pulseValue" disabled label="I'm disabled" value="42"/>`,
+    disabledCode: `<WuiRadio disabled label="I'm disabled" value="42"/>`,
 
     codeSublabel: `<WuiRadio type="primary" v-model="subradio" :value="1">By signing this I agree with Terms and Conditions</WuiRadio>
 
@@ -133,13 +119,6 @@ export default defineComponent({
         default: '-',
         values: [],
         description: 'Value of the radio',
-      },
-      {
-        property: 'pulse',
-        type: ['Boolean'],
-        default: 'false',
-        values: [],
-        description: 'Pulse of the radio',
       },
       {
         property: 'disabled',
