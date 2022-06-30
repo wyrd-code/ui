@@ -40,13 +40,17 @@ html.dark .link:visited {
   @apply bg-neutral-600 hover:bg-neutral-600 text-white;
 }
 
+/* Firefox */
 *  {
-  /* Firefox */
-  scrollbar-color: #333 #555;
+  scrollbar-color: #CCC #EEE;
 }
+html.dark *  {
+  scrollbar-color: #111 #333;
+}
+
+/* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-  /* Chrome, Edge, and Safari */
-  @apply w-4;
+  @apply w-3;
 }
 *::-webkit-scrollbar-track {
   @apply mr-2 border-l;

@@ -6,7 +6,7 @@
   @apply box-border overflow-hidden;
   @apply border;
   @apply bg-white border-neutral-300;
-  @apply dark:(bg-neutral-800 border-neutral-600);
+  @apply dark:(bg-neutral-800 border-neutral-700);
 
   &:not(:last-child) {
     @apply rounded-r-none;

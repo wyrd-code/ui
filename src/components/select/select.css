@@ -26,6 +26,11 @@
       transition: text-indent 0.27s ease;
     }
   }
+
+  .wui-input-label {
+    @apply text-left block;
+    @apply text-current mb-2;
+  }
 }
 
 .wui-select-option-check {
@@ -46,11 +51,14 @@
   outline: none;
   transition: all 0.27s;
   @apply rounded flex h-10 text-left relative items-center justify-between;
-  @apply bg-white text-neutral-700 border border-neutral-400 shadow-input;
+  @apply border shadow-input;
+  @apply bg-white border-neutral-400 text-neutral-700;
   @apply cursor-pointer;
+  @apply dark:(bg-neutral-800 border-neutral-700 text-neutral-300);
 
   &:hover {
     @apply border-neutral-600;
+    @apply dark:border-neutral-400;
   }
 
   &--active {
@@ -99,7 +107,8 @@
 }
 
 .wui-select-placeholder {
-  @apply text-neutral-500;
+  @apply text-neutral-400;
+  @apply dark:text-neutral-600;
 
   & + .wui-icon {
     margin-left: 10px;
@@ -107,9 +116,9 @@
 }
 
 .wui-select-arrow {
-  @apply text-black text-lg;
-  margin-left: 12px;
-  transition: transform 0.27s;
+  @apply text-lg ml-2 transition-all duration-50;
+  @apply text-black;
+  @apply dark:text-neutral-300;
 }
 
 .wui-select-dropdown {
@@ -117,7 +126,9 @@
   min-width: 130px;
 
   &--divided .wui-select-option:not(:first-child) {
-    @apply border-t border-neutral-300;
+    @apply border-t;
+    @apply border-neutral-300;
+    @apply dark:border-neutral-700;
   }
 
   &--bottom-left,
@@ -175,47 +186,31 @@
 
 .wui-select-list {
   @apply m-0 w-full py-2 relative overflow-y-auto;
-  @apply bg-white text-neutral-600 rounded shadow;
+  @apply rounded shadow;
   @apply text-left break-words;
+  @apply bg-white text-neutral-600;
+  @apply dark:(bg-neutral-800 text-neutral-300);
   max-height: 200px;
   list-style: none;
   user-select: none;
 
-  &::-webkit-scrollbar {
-    width: 8px;
-  }
-
   &::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    @apply bg-neutral-300;
-    border-radius: 10px;
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    @apply bg-neutral-400;
+    @apply rounded-rt rounded-br overflow-hidden;
   }
 }
 
 .wui-select-option {
-  position: relative;
+  @apply w-full h-full relative block;
+  @apply box-border whitespace-nowrap whitespace-normal;
+  @apply text-ellipsis overflow-hidden;
   padding: 10px 28px 10px 12px;
-  display: block;
-  overflow: hidden;
   line-height: 1;
-  text-overflow: ellipsis;
-  box-sizing: border-box;
-  white-space: nowrap;
-  word-wrap: normal;
-  max-width: 100%;
-  width: 100%;
 
   &--focused,
   &:hover {
+    @apply cursor-pointer;
     @apply bg-neutral-200;
-    cursor: pointer;
+    @apply dark:bg-neutral-700;
   }
 
   &--focused {
@@ -224,6 +219,7 @@
 
   &--disabled {
     @apply bg-white text-neutral-400;
+    @apply dark:bg-neutral-700;
 
     &:hover {
       @apply bg-white text-neutral-400;
