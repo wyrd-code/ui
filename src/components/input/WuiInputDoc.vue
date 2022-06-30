@@ -33,36 +33,42 @@
     </WuiCodeDemo>
 
     <WuiCodeExample title="Status">
-      <WuiInput v-model="statusValue" status="success" message="Success" />
-      <WuiInput v-model="statusValue" status="danger" message="Danger" />
-      <WuiInput v-model="statusValue" status="warning" message="Warning" />
+      <div class="flex flex-col space-y-8">
+        <WuiInput v-model="statusValue" status="success" message="Success" />
+        <WuiInput v-model="statusValue" status="danger" message="Danger" />
+        <WuiInput v-model="statusValue" status="warning" message="Warning" />
+      </div>
     </WuiCodeExample>
 
     <WuiCodeExample title="With icons">
-      <WuiInput v-model="inputValue">
-        <template #prefixIcon>
-          <div class="icon-ph-heart" />
-        </template>
-      </WuiInput>
-      <WuiInput v-model="inputValue">
-        <template #suffixIcon>
-          <div class="icon-ph-heart" />
-        </template>
-      </WuiInput>
-      <WuiInput v-model="inputValue">
-        <template #prefixIcon>
-          <div class="icon-ph-heart" />
-        </template>
-        <template #suffixIcon>
-          <div class="icon-ph-heart" />
-        </template>
-      </WuiInput>
+      <div class="flex flex-col space-y-8">
+        <WuiInput v-model="inputValue">
+          <template #prefixIcon>
+            <div class="icon-ph-heart" />
+          </template>
+        </WuiInput>
+        <WuiInput v-model="inputValue">
+          <template #suffixIcon>
+            <div class="icon-ph-heart" />
+          </template>
+        </WuiInput>
+        <WuiInput v-model="inputValue">
+          <template #prefixIcon>
+            <div class="icon-ph-heart" />
+          </template>
+          <template #suffixIcon>
+            <div class="icon-ph-heart" />
+          </template>
+        </WuiInput>
+      </div>
     </WuiCodeExample>
 
     <WuiCodeExample title="Prefix / suffix">
-      <WuiInput v-model="inputValue" prefix="https://" />
-      <WuiInput v-model="inputValue" suffix=".com" />
-      <WuiInput v-model="inputValue" prefix="https://" suffix=".com" />
+      <div class="flex flex-col space-y-8">
+        <WuiInput v-model="inputValue" prefix="https://" />
+        <WuiInput v-model="inputValue" suffix=".com" />
+        <WuiInput v-model="inputValue" prefix="https://" suffix=".com" />
+      </div>
     </WuiCodeExample>
 
     <WuiCodeExample title="Masked">

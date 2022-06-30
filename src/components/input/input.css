@@ -1,19 +1,23 @@
 .wui-input-wrapper {
-  @apply rounded flex h-10 w-full relative items-center justify-between;
-  @apply bg-white border border-neutral-300 shadow-input antialiased;
-  @apply cursor-pointer text-left box-border overflow-hidden;
-  transition: all 0.2s;
+  @apply transition-all duration-200;
+  @apply rounded h-10 w-full relative;
+  @apply flex items-center justify-between;
+  @apply cursor-pointer text-left antialiased;
+  @apply box-border overflow-hidden;
+  @apply border;
+  @apply bg-white border-neutral-300;
+  @apply dark:(bg-neutral-800 border-neutral-600);
 
   &:not(:last-child) {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    @apply rounded-r-none;
+  }
+
+  &:not(:first-child) {
+    @apply rounded-l-none;
   }
 
   &:focus-within {
-    @apply border border-accent-400 shadow-input;
-    /* box-shadow:
-      0 2px 4px fade(@color-primary, 40%),
-      0 0 0 3px fade(@color-primary, 20%); */
+    @apply border border-accent-400;
 
     &:hover {
       @apply border-accent-500;
@@ -22,21 +26,19 @@
 
   &:hover {
     @apply border-neutral-500;
-    /* border-color: darken(@color-secondary-text, 10%); */
   }
 
   &--disabled,
   &--disabled:hover {
-    @apply bg-neutral-300 !border-neutral-500;
-    cursor: not-allowed;
+    @apply opacity-50 cursor-not-allowed;
 
     .wui-input:disabled {
-      cursor: not-allowed;
-      @apply text-neutral-700;
+      @apply text-neutral-700 cursor-not-allowed;
+      @apply dark:text-neutral-400;
     }
 
     .wui-input-icon {
-      cursor: not-allowed;
+      @apply cursor-not-allowed;
     }
   }
 
@@ -82,36 +84,9 @@
 
 .wui-input {
   @apply h-full w-full py-4 px-3 box-border inline-block;
-  @apply bg-none border-none outline-none text-base;
-
-  &-prefix-wrapper {
-    @apply flex relative;
-
-    &.masked {
-      @apply z-50;
-    }
-  }
-
-  &-prefix,
-  &-suffix {
-    @apply flex px-4 justify-center items-center;
-    @apply border bg-neutral-200 border-neutral-400 text-sm text-neutral-700;
-    line-height: 1;
-  }
-
-  &-prefix {
-    @apply rounded-tl rounded-bl border-r-0;
-
-    & + .wui-input-wrapper {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-    }
-  }
-
-  &-suffix {
-    @apply border border-neutral-400;
-    @apply rounded-tr rounded-br border-l-0;
-  }
+  @apply bg-none outline-none border-none text-base;
+  @apply bg-white;
+  @apply dark:(bg-neutral-800);
 
   .wui-input-icon-wrapper + & {
     padding: 4px 0;
@@ -133,14 +108,38 @@
   }
 }
 
+.wui-input-prefix-wrapper {
+  @apply flex relative;
+
+  &.masked {
+    @apply z-50;
+  }
+
+  .wui-input-prefix,
+  .wui-input-suffix {
+    @apply flex px-4 justify-center items-center;
+    @apply border text-sm;
+    @apply bg-neutral-100 border-neutral-300 text-neutral-600;
+    @apply dark:(bg-neutral-800 border-neutral-700 text-neutral-400);
+    line-height: 1;
+  }
+
+  .wui-input-prefix {
+    @apply rounded-tl rounded-bl border-r-0;
+  }
+
+  .wui-input-suffix {
+    @apply rounded-tr rounded-br border-l-0;
+  }
+}
+
 .wui-input-label {
-  @apply text-left text-black block;
-  font-size: 14px;
-  margin-bottom: 7px;
+  @apply text-left block;
+  @apply text-current mb-2;
 }
 
 .wui-input-message {
-  font-size: 12px;
+  @apply text-sm inline-block pt-1;
 
   &--success {
     @apply text-success-700;
