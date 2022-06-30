@@ -8,7 +8,7 @@
     </div>
     <div
       v-if="$slots.props"
-      class="flex flex-col py-5 px-4 wui-code-demo-props"
+      class="flex flex-col space-y-4 p-4 wui-code-demo-props"
     >
       <h3>Props</h3>
       <slot name="props" />
