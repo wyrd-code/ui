@@ -66,10 +66,10 @@
     @apply h-16 min-h-16 px-6 text-2xl;
   }
 
-  &-wide {
+  &-wide.wui-btn {
     @apply w-64;
   }
-  &-block {
+  &-block.wui-btn {
     @apply w-full;
   }
   &-square{
