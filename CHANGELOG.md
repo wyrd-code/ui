@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.17](https://github.com/wyrd-code/ui/compare/v0.2.16...v0.2.17) (2022-06-30)
+
+
+### Bug Fixes
+
+* breadcrumbs doc dark mode ([c827151](https://github.com/wyrd-code/ui/commit/c827151edbce0e77a349fff70b3cb2da63976ccc))
+* button dropdown ([2da8708](https://github.com/wyrd-code/ui/commit/2da870855874d47f5d5efa363b03cdaf7c1cc75e))
+* button sizing and icons ([6503538](https://github.com/wyrd-code/ui/commit/6503538018366bf84d6b46e71d9ec02973749f1e))
+* WuiDropdown dark mode ([ca69f71](https://github.com/wyrd-code/ui/commit/ca69f71e3856aa6723bf0d5b2a504b40f1beeffa))
+
 ### [0.2.16](https://github.com/wyrd-code/ui/compare/v0.2.15...v0.2.16) (2022-06-29)
 
 ### [0.2.15](https://github.com/wyrd-code/ui/compare/v0.2.14...v0.2.15) (2022-06-29)
