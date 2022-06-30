@@ -329,7 +329,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="postcss" scoped>
+<style lang="css" scoped>
 .menubar {
   @apply border bg-gray-200 border-gray-300 -m-2 text-sm mb-2 p-2 pb-0;
 }

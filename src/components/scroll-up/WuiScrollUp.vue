@@ -97,7 +97,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="postcss">
+<style lang="css">
 .wui-scroll-up {
   @apply bg-gray-400/50 text-gray-100 hover:bg-gray-400 border-gray-300 rounded-full;
   @apply flex items-center justify-center;

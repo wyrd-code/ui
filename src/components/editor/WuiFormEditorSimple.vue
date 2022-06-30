@@ -185,7 +185,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="postcss" scoped>
+<style lang="css" scoped>
 /* https://github.com/vuejs/rfcs/blob/master/active-rfcs/0023-scoped-styles-changes.md */
 
 ::v-deep(.editor__content .ProseMirror) {
