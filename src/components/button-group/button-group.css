@@ -16,14 +16,14 @@
     .wui-tooltip:not(:first-child):not(:last-child) .wui-btn,
     & > div:not(:first-child):not(:last-child) .wui-btn,
     & > .wui-btn:not(:first-child):not(:last-child) {
-      @apply rounded-none border-r-none border-l-none;
+      @apply rounded-none border-r-none;
     }
 
     .wui-tooltip:first-child .wui-btn--outlined,
     & > div:first-child .wui-btn,
     & > div:first-child > div:first-child > .wui-btn,
     & > .wui-btn:first-child {
-      @apply rounded-l;
+      @apply rounded-l border-r-none;
     }
 
     .wui-tooltip:last-child .wui-btn--outlined,
@@ -55,7 +55,7 @@
     .wui-tooltip:not(:first-child):not(:last-child) .wui-btn,
     & > div:not(:first-child):not(:last-child) .wui-btn,
     & > .wui-btn:not(:first-child):not(:last-child) {
-      @apply rounded-none border-t-none border-b-none;
+      @apply rounded-none border-t-none;
     }
 
     .wui-tooltip:first-child .wui-btn--outlined,
@@ -69,7 +69,7 @@
     & > div:last-child .wui-btn,
     & > div:last-child > div:last-child > .wui-btn,
     & > .wui-btn:last-child {
-      @apply rounded-b;
+      @apply rounded-b border-t-none;
     }
 /*
     .wui-tooltip:not(:last-of-type) .wui-btn--neutral,
