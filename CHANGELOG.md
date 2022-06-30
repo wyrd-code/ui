@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.19](https://github.com/wyrd-code/ui/compare/v0.2.18...v0.2.19) (2022-06-30)
+
+
+### Bug Fixes
+
+* button wide class specificity ([d464fb9](https://github.com/wyrd-code/ui/commit/d464fb9f8ade74d50faa7f45a3b4382ac4147b52))
+* css lang declaration in some components ([2c391fe](https://github.com/wyrd-code/ui/commit/2c391fe2cdf5051052dc055a517c0f88ee94bfe2))
+* popovers, dropdowns ([f069523](https://github.com/wyrd-code/ui/commit/f0695233621e93967ad439eb9d617d81eb532fe2))
+
 ### [0.2.18](https://github.com/wyrd-code/ui/compare/v0.2.17...v0.2.18) (2022-06-30)
 
 
