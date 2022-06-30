@@ -17,7 +17,9 @@
 
   &-body {
     @apply mx-auto w-full transition-transform table break-all;
-    @apply bg-white border-none rounded cursor-default outline-none shadow-2xl;
+    @apply border-none rounded cursor-default outline-none shadow-2xl;
+    @apply bg-white;
+    @apply dark:bg-neutral-800;
 
     > img {
       @apply max-w-full block;
@@ -46,7 +48,10 @@
 
   &-footer {
     @apply rounded-b flex flex-row-reverse  py-4 px-6 justify-end align-middle items-center;
-    @apply border-t bg-neutral-100 border-neutral-300;
+    @apply border-t;
+    @apply bg-neutral-100 border-neutral-300;
+    @apply dark:(bg-neutral-700 border-neutral-900);
+
   }
 }
 

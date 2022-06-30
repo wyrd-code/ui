@@ -1122,7 +1122,7 @@ const slotSheet = [
 ]
 </script>
 
-<style lang="postcss">
+<style lang="css">
 .signupmodal {
   & > * + * {
     margin: 16px 0;
