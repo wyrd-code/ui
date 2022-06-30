@@ -61,6 +61,6 @@ const onUpdate = (newValue: any) => {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="css">
 @import url('button-group.css');
 </style>

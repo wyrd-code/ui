@@ -13,47 +13,25 @@
   &--horizontal {
     justify-content: stretch;
 
-    .wui-tooltip:first-child .wui-btn,
+    .wui-tooltip:not(:first-child):not(:last-child) .wui-btn,
+    & > div:not(:first-child):not(:last-child) .wui-btn,
+    & > .wui-btn:not(:first-child):not(:last-child) {
+      @apply rounded-none border-r-none border-l-none;
+    }
+
+    .wui-tooltip:first-child .wui-btn--outlined,
     & > div:first-child .wui-btn,
     & > div:first-child > div:first-child > .wui-btn,
     & > .wui-btn:first-child {
-      @apply rounded-tl rounded-bl border-r-0;
+      @apply rounded-l;
     }
-
-    /* .wui-tooltip:first-child .wui-btn--outlined,
-    & > .wui-btn--outlined:first-child {
-      border-right-width: 1px !important;
-    } */
-
-    .wui-tooltip:last-child .wui-btn,
-    & > .wui-btn:last-of-type {
-      @apply rounded-tr rounded-br;
-    }
-/* 
-    .wui-tooltip:not(:last-of-type) .wui-btn,
-    & > .wui-btn:not(:last-of-type) {
-      @apply border-r-0 underline;
-    } */
 
     .wui-tooltip:last-child .wui-btn--outlined,
     & > div:last-child .wui-btn,
     & > div:last-child > div:last-child > .wui-btn,
-    & > .wui-btn + .wui-btn--outlined:last-child {
-      @apply border-l-1px rounded-tr rounded-br;
+    & > .wui-btn:last-child {
+      @apply rounded-r;
     }
-
-    /* & > .wui-btn--neutral:not(:last-of-type):not(:first-of-type) {
-      @apply !border-r-0;
-    }
-
-    & > .wui-btn--outlined:not(:last-of-type):not(:first-of-type) {
-      @apply !border-r-0;
-    }
-
-    .wui-tooltip + .wui-tooltip .wui-btn--outlined,
-    & > .wui-btn--outlined + .wui-btn {
-      @apply border-l-0;
-    } */
   }
 
   &--vertical {
@@ -74,22 +52,26 @@
       width: 100%;
     }
 
-    .wui-tooltip:first-child .wui-btn,
-    & > .wui-btn:first-child {
-      border-radius: 4px 4px 0 0;
-      border-bottom-width: 0;
+    .wui-tooltip:not(:first-child):not(:last-child) .wui-btn,
+    & > div:not(:first-child):not(:last-child) .wui-btn,
+    & > .wui-btn:not(:first-child):not(:last-child) {
+      @apply rounded-none border-t-none border-b-none;
     }
 
     .wui-tooltip:first-child .wui-btn--outlined,
-    & > .wui-btn--outlined:first-child {
-      border-bottom-width: 1px !important;
+    & > div:first-child .wui-btn,
+    & > div:first-child > div:first-child > .wui-btn,
+    & > .wui-btn:first-child {
+      @apply rounded-t;
     }
 
-    .wui-tooltip:last-child .wui-btn,
+    .wui-tooltip:last-child .wui-btn--outlined,
+    & > div:last-child .wui-btn,
+    & > div:last-child > div:last-child > .wui-btn,
     & > .wui-btn:last-child {
-      border-radius: 0 0 4px 4px;
+      @apply rounded-b;
     }
-
+/*
     .wui-tooltip:not(:last-of-type) .wui-btn--neutral,
     & > .wui-btn--neutral:not(:last-of-type) {
       border-bottom-width: 0;
@@ -116,6 +98,6 @@
     .wui-tooltip + .wui-tooltip .wui-btn--outlined,
     .wui-btn--outlined + .wui-btn {
       border-top-width: 0 !important;
-    }
+    } */
   }
 }

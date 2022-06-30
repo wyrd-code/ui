@@ -18,23 +18,33 @@
     </WuiCodeDemo>
 
     <WuiCodeExample title="Radio fields">
-      <WuiButtonGroup v-model="radioValue" :options="radioOptions" />
+      <div class="flex justify-center">
+        <WuiButtonGroup v-model="radioValue" :options="radioOptions" />
+      </div>
     </WuiCodeExample>
 
     <WuiCodeExample title="Horizontal">
-      <WuiButtonGroup>
-        <WuiButton v-for="(label, idx) in items" :key="`horizontal-${idx}`">
-          {{ label }}
-        </WuiButton>
-      </WuiButtonGroup>
+      <div class="flex justify-center">
+        <WuiButtonGroup>
+          <WuiButton v-for="(label, idx) in items" :key="`horizontal-${idx}`">
+            {{ label }}
+          </WuiButton>
+        </WuiButtonGroup>
+      </div>
     </WuiCodeExample>
 
     <WuiCodeExample title="Vertical">
-      <WuiButtonGroup vertical>
-        <WuiButton v-for="(label, idx) in items" :key="`horizontal-${idx}`">
-          {{ label }}
-        </WuiButton>
-      </WuiButtonGroup>
+      <div class="flex justify-center">
+        <WuiButtonGroup vertical>
+          <WuiButton
+            v-for="(label, idx) in items"
+            :key="`horizontal-${idx}`"
+            block
+          >
+            {{ label }}
+          </WuiButton>
+        </WuiButtonGroup>
+      </div>
     </WuiCodeExample>
 
     <WuiPropsTable tag-name="ButtonGroup" :data-sheet="dataSheetGroup" />
