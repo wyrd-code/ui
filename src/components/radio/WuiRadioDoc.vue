@@ -57,7 +57,7 @@
     </WuiCodeExample>
 
     <WuiCodeExample :code="disabledCode" title="Disabled">
-      <WuiRadio v-model="pulseValue" disabled label="I'm disabled" value="42" />
+      <WuiRadio disabled label="I'm disabled" value="42" />
     </WuiCodeExample>
 
     <WuiPropsTable tag-name="WuiRadio" :data-sheet="dataSheet" />
