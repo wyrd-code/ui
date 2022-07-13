@@ -87,14 +87,14 @@ export const pages: WyrdPageDefinition[] = [
         ],
       },
       {
-        slug: 'form',
-        title: 'Form',
+        slug: 'forms',
+        title: 'Forms',
         component: (): Component =>
           import('../components/routing/WuiRouteWrapper.vue'),
-        redirect: { name: 'ui.components.form.home' },
+        redirect: { name: 'ui.components.forms.form' },
         children: [
           {
-            slug: 'home',
+            slug: 'form',
             title: 'Form',
             component: (): Component =>
               import('../components/form/WuiFormDoc.vue'),
