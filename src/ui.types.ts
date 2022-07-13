@@ -1,5 +1,5 @@
 import type { Component, Ref } from 'vue'
-import type { RouteLocationRaw, _RouteRecordBase } from 'vue-router'
+import type { RouteRecordRaw } from 'vue-router'
 
 import { LoadingBarInstance } from './components/loading-bar'
 import { MessageInstance } from './components/message'
@@ -34,7 +34,7 @@ export interface WyrdNavItemMeta {
  */
 export interface WyrdNavItem {
   as?: string
-  to?: RouteLocationRaw
+  to?: RouteRecordRaw
   label: string
   sort?: number
   children?: WyrdNavItem[]
@@ -109,21 +109,8 @@ export interface FieldPublicMeta {
   key: string
   label: string
   path?: string
-  linkTo?: (row: any) => RouteLocationRaw
+  linkTo?: (row: any) => RouteRecordRaw
   // TODO: use prisma enums without loading @prisma/client from client code
-}
-
-/**
- * @internal
- */
-export enum FormInputValidationTriggerTypes {
-  BLUR = 'blur',
-  CHANGE = 'change',
-}
-
-interface FormInputValidationTrigger {
-  type: FormInputValidationTriggerTypes
-  threshold: number
 }
 
 /**
@@ -131,7 +118,7 @@ interface FormInputValidationTrigger {
  */
 export interface FormFieldBase {
   type: string
-  name?: string
+  name: string
   label?: string
   ariaLabel?: string
   ariaLabelledBy?: string
@@ -145,7 +132,7 @@ export interface FormFieldBase {
   validationName?: string
   autocomplete?: string
   readonly?: boolean
-  validationTrigger?: FormInputValidationTrigger
+  validationTrigger?: 'blur' | 'change'
 }
 
 /**
@@ -198,7 +185,7 @@ export interface FormFieldPassword extends FormFieldBase {
  * @public
  */
 export interface FormSelectOption {
-  value: string
+  value: string | number | null | boolean
   label: string
 }
 
@@ -273,13 +260,13 @@ type FormFieldsNoChildren =
  */
 export type FormField = FormFieldsNoChildren & {
   type?: string
-  children?: FormFieldSchema
+  children?: FormFieldsSchema
 }
 
 /**
  * @public
  */
-export type FormFieldSchema = FormField[]
+export type FormFieldsSchema = FormField[]
 
 /**
  * @public
@@ -294,11 +281,17 @@ export type FormStatus = string | boolean | undefined
 /**
  * @public
  */
-export interface FormSubmitContext {
-  setFormData: (data: Record<string, any>) => void
-  setMessages: (messages: FormMessage[]) => Promise<any> | any
-  resetForm: () => Promise<any> | any
-  setStatus: (val: FormStatus) => void
+export interface FormMessage<
+  T = 'warning' | 'error' | 'info' | 'success' | undefined
+> {
+  type: T
+  message: string
+  status?: string
+  // superstruct validation Failure props
+  field?: string
+  validator?: string
+  path?: string
+  [x: string]: any
 }
 
 /**
@@ -323,34 +316,29 @@ export type FormSubmitHandler<T = any, R = any> = (
 /**
  * @public
  */
-export interface WuiFormFactoryOptions {
-  schema: FormFieldSchema
+export interface FormDefinition {
+  schema: FormFieldsSchema
   defaultData: FormData | Ref<FormData>
   messages?: FormMessage[] | Ref<FormMessage[]>
-  onSubmitForm: FormSubmitHandler
+  onSubmit: FormSubmitHandler
+  onSuccess?: FormSubmitHandler
 }
 
 /**
  * @public
  */
-export interface FormMessage<
-  T = 'warning' | 'error' | 'info' | 'success' | undefined
-> {
-  type: T
-  message: string
-  status?: string
-  // superstruct validation Failure props
-  field?: string
-  validator?: string
-  path?: string
-  [x: string]: any
+export interface FormSubmitContext {
+  setFormData: (data: Record<string, any>) => void
+  setMessages: (messages: FormMessage[]) => Promise<any> | any
+  resetForm: () => Promise<any> | any
+  setStatus: (val: FormStatus) => void
 }
 
 /**
  * @public
  */
 export interface FormController extends FormSubmitContext {
-  schema: FormFieldSchema
+  schema: FormFieldsSchema
   formData: Ref<Record<string, any>>
   messages: Ref<FormMessage[]>
   isLoading: Ref<boolean>
