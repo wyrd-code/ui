@@ -1,6 +1,7 @@
 import FloatingVue from 'floating-vue'
 import type { App, Ref } from 'vue'
 
+import { FormPlugin } from './components/form'
 import { LoadingBar } from './components/loading-bar'
 import { Message } from './components/message'
 import { Notification } from './components/notification'
@@ -47,6 +48,7 @@ FloatingVue.options.themes.wuidropdown = {
  */
 export function install(app: App): void {
   app.use(FloatingVue)
+  app.use(FormPlugin, { text: true })
 
   app.config.globalProperties.$Message = Message
   app.provide('$Message', Message)

@@ -1,4 +1,5 @@
-import { FormFieldSchema } from './ui.types'
+import { isUndefined } from '@s-libs/micro-dash'
+import { camelize } from 'vue'
 
 export const pick = (object: Record<string, any>, keys: string[]): object => {
   if (!Array.isArray(keys)) {
@@ -93,29 +94,77 @@ export const get = (
 }
 // Helpers for preparing data object for use with a form
 
-export const initDefaultDataForSchema = (
-  schema: FormFieldSchema,
-  rawData: Record<string, any> = {}
-): object => {
-  const fields = extractFormFieldsFromSchema(schema)
-  if (!fields.length) {
-    console.warn(
-      'Cannot initialize default form data, no fields defined in schema'
-    )
+// Source: https://github.com/simontonsoftware/s-libs/blob/master/projects/micro-dash/src/lib/object/set.ts
+
+export const set = (
+  object: Record<string, any>,
+  path: ReadonlyArray<number | string> | string,
+  newValue: unknown
+): any => {
+  // WARNING: This is not a drop in replacement solution and
+  // it might not work for some edge cases. Test your code!
+  // Regex explained: https://regexr.com/58j0k
+  let pathArray
+  if (Array.isArray(path)) {
+    pathArray = path
+  } else if (typeof path === 'string') {
+    pathArray = path.match(/([^[.\]])+/g) || []
+  } else {
+    pathArray = []
+    // throw?
   }
-  return pick(rawData, fields)
+
+  if (object && pathArray.length) {
+    let current: any = object
+    const { length } = path
+    for (let i = 0; i < length; ++i) {
+      const key = path[i]
+      let value = current[key]
+      if (i < length - 1) {
+        if (!(value instanceof Object)) {
+          value = Number.isInteger(path[i + 1] as any) ? [] : {}
+        }
+      } else {
+        value = newValue
+      }
+      current = current[key] = value
+    }
+  }
 }
 
-const extractFormFieldsFromSchema = (schema: FormFieldSchema): string[] =>
-  schema.reduce((acc, field) => {
-    if (field.name) {
-      acc.push(field.name)
-    }
+export const resetReactiveObject = (
+  obj: Record<string, any>,
+  newData: Record<string, any> = {}
+) => {
+  const newValue: Record<string, any> = {}
+  Object.keys(obj).map((key) => (newValue[key] = undefined))
+  Object.assign(obj, { ...newValue, ...newData })
 
-    if (field.children) {
-      const childFields = extractFormFieldsFromSchema(field.children)
-      childFields.length && acc.push(...childFields)
-    }
+  return obj
+}
 
-    return acc
-  }, [] as string[])
+export const removeMatchedObjectProperties = (
+  obj: Record<string, any> = {},
+  matcher: (value: any) => boolean
+): Record<string, any> => {
+  const cleanObj: Record<string, any> = {}
+  const keys = Object.keys(obj).filter((key: string) => matcher(obj[key]))
+  keys.map((key) => (cleanObj[key] = obj[key]))
+
+  return cleanObj
+}
+
+export const removeUndefinedObjectProperties = (
+  obj: Record<string, any> = {}
+): Record<string, any> =>
+  removeMatchedObjectProperties(obj, (value: any) => !isUndefined(value))
+
+export const camelizeObjectKeys = (
+  object: Record<string, unknown>
+): Record<string, unknown> => {
+  const newObj = {}
+  Object.keys(object).map((key) => {
+    Object.assign(newObj, { [camelize(key)]: object[key] })
+  })
+  return newObj
+}

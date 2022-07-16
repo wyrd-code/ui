@@ -30,13 +30,14 @@
     "src"
   ],
   "dependencies": {
-    "body-scroll-lock": "^4.0.0-beta.0",
-    "floating-vue": "^2.0.0-beta.17"
   },
   "peerDependencies": {
+    "@s-libs/micro-dash": "^14.0.0",
     "@vueuse/components": "^8.5.0",
     "@vueuse/core": "^8.5.0",
     "@vueuse/head": "^0.7.6",
+    "body-scroll-lock": "^4.0.0-beta.0",
+    "floating-vue": "^2.0.0-beta.17",
     "validator": "^13.7.0",
     "vue": "^3.2.36",
     "vue-router": "^4.0.15"

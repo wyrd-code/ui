@@ -1,45 +1,49 @@
 <template>
-  <div class="form-field" :class="['error' ? !isValid : '', customClass]">
-    <label v-if="schema.label" class="label">
+  <div class="form-field" :class="['error' ? !validator.isValid : '']">
+    <label v-if="label" class="label">
       <span class="text">
-        {{ schema.label }}
+        {{ label }}
       </span>
       <span class="required">
-        <div v-if="isRequired" class="icon w-2 h-2 ml-2 icon-ph-asterisk" />
+        <div
+          v-if="validator.isRequired"
+          class="icon w-2 h-2 ml-2 icon-ph-asterisk"
+        />
       </span>
     </label>
 
     <slot />
 
-    <p v-if="schema.help" class="text-sm">
-      {{ schema.help }}
+    <p v-if="help" class="text-sm">
+      {{ help }}
     </p>
 
     <WuiFormMessage
-      v-for="(message, idx) in messages"
+      v-for="(message, idx) in validator.messages"
       :key="`form-message-${idx}`"
       :message="message"
     />
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
+import { defineProps, PropType } from 'vue'
 
-import { FormField } from '../../ui.types'
-import { wuiFormInputWrapperPropsBase } from './field.props'
+import type { FormFieldValidation } from './form.types'
 import WuiFormMessage from './WuiFormMessage.vue'
 
-export default defineComponent({
-  components: {
-    WuiFormMessage,
+defineProps({
+  label: {
+    type: String,
+    default: null,
   },
-  props: {
-    schema: {
-      type: Object as PropType<FormField>,
-      required: true,
-    },
-    ...wuiFormInputWrapperPropsBase,
+  help: {
+    type: String,
+    default: null,
+  },
+  validator: {
+    type: Object as PropType<FormFieldValidation>,
+    default: () => ({}),
   },
 })
 </script>

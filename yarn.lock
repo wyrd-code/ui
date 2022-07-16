@@ -230,6 +230,14 @@
     colors "~1.2.1"
     string-argv "~0.3.1"
 
+"@s-libs/micro-dash@^14.0.0":
+  version "14.0.0"
+  resolved "https://registry.yarnpkg.com/@s-libs/micro-dash/-/micro-dash-14.0.0.tgz#0944f6dd7d7e27c62e4c5b6e1952aa96ca1bb92c"
+  integrity sha512-tpq5skwP4pDyfoAIyzpxltFq3xcULPcjOm+TVtEBm+iWQMN6rBpMd8o1imP+RCJZqQX2ULFSni2C5xO52eWAaA==
+  dependencies:
+    tslib "^2.3.0"
+    utility-types "^3.10.0"
+
 "@tiptap/core@^2.0.0-beta.176":
   version "2.0.0-beta.176"
   resolved "https://registry.yarnpkg.com/@tiptap/core/-/core-2.0.0-beta.176.tgz#a8bb9b57d2ecf77b6cd02340324626ef3e336a15"
@@ -4024,6 +4032,11 @@ tslib@^1.8.1:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
+tslib@^2.3.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
+  integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
+
 tsutils@^3.21.0:
   version "3.21.0"
   resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-3.21.0.tgz#b48717d394cea6c1e096983eed58e9d61715b623"
@@ -4143,6 +4156,11 @@ util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
+
+utility-types@^3.10.0:
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/utility-types/-/utility-types-3.10.0.tgz#ea4148f9a741015f05ed74fd615e1d20e6bed82b"
+  integrity sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==
 
 v8-compile-cache@^2.0.3:
   version "2.3.0"

@@ -14,9 +14,10 @@
 [ ] Fix missing popover styles (arrow)
 [ ] Fix Notifications position
 [x] Fix dropdown positioning
-[ ] Fix popup positioning
+[x] Fix popup positioning
 [ ] Fix types & build? https://github.com/Akryum/vue-typegen
 [x] Fix floating uis? https://floating-vue.starpad.dev/
+[x] Fix 404 http://localhost:3000/components/NO_SUCH_URL
 
 ## Refactor
 
@@ -25,6 +26,8 @@
 [ ] Collor Pallete tokens
   https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/colors/doc/colors.mdx?p=doc
   https://studio.backlight.dev/edit/RadUTqBDyFX8ZDiIWlhd/color/doc/index.md?p=doc
+  https://medium.com/@mewomewoliu/build-a-design-system-from-0-to-1-color-system-3a322827ada6
+[ ] Switch docs to "vitedocs" or what ever it's called
 
 [ ] Theme customization using css vars?
 [ ] Dark mode support
@@ -42,12 +45,35 @@
 [ ] Replicate Table from https://www.tailwindtoolbox.com/components/responsive-table
 [ ] Replicate Table from https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/table/doc/doc.mdx?p=stories
 
+
 ## Forms
 
+[x] Refactor Forms
+[ ] Clone validation from formkit
+[x] Support custom field types
+[ ] Support overriding field types
+[x] Support form generation schema
+[x] Support manually created forms
+[ ] Support repeatable inputs (returns an array of values)
+[ ] Validate on change/blur
+[ ] Restyle form components using css vars ?
+[ ] Support masking presets
+[x] Track if form dirty
+[ ] Prevent navigation if dirty/reset if not
+[ ] Form extensions
+  [ ] can add hooks to submit/success handlers
+  [ ] can modify definitions
+  [ ] can adjust message formats
+[ ] Conversational forms
+[ ] Multi-step forms
+[ ] I18n support (for validation)
+
+[ ] Input status (warn, error, success)
+
+[ ] Flow form  https://github.com/ditdot-dev/vue-flow-form
 [ ] Fork FormKit (https://github.com/formkit/formkit)
 [ ] Make Form component inherit classnames/attributes
 [ ] Apply advanced concepts/features from SweetForms (https://github.com/ChronicStone/vue-sweetforms)
-[ ] Form best practices https://enlear.academy/top-6-vue-related-libraries-that-will-explode-in-2022-889df221c7
 [ ] Clone https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/autocomplete/doc/doc.mdx?p=doc
 [ ] Clone https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/select/doc/doc.mdx?p=doc
 [ ] Clone https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/toggle-button/doc/doc.mdx?p=doc for Form Editor Toolbars
@@ -70,13 +96,11 @@
 
 ## Features
 
+[ ] Tabs component (inline components)
 [ ] VueMentions https://vue-mention.netlify.app/
 [ ] swiperjs.com https://github.com/Akryum/swiper
     Most modern mobile touch slider with hardware accelerated transitions
 
-[ ] Sync form values to route query
-[ ] Sync form values to route query
-[ ] Use a type of ReactQuery implementation to reactive watch form/filter/query values
 [ ] Extract Layouts&Templates
 [ ] Clone https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/speed-dial/doc/doc.mdx?p=doc for hex nav?
 [ ] Clone https://studio.backlight.dev/edit/k0DvZztNuwmS6XnXoohE/dialog/doc/doc.mdx?p=doc

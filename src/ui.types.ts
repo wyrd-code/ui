@@ -260,13 +260,13 @@ type FormFieldsNoChildren =
  */
 export type FormField = FormFieldsNoChildren & {
   type?: string
-  children?: FormFieldsSchema
+  children?: FormSchema
 }
 
 /**
  * @public
  */
-export type FormFieldsSchema = FormField[]
+export type FormSchema = FormField[]
 
 /**
  * @public
@@ -317,7 +317,7 @@ export type FormSubmitHandler<T = any, R = any> = (
  * @public
  */
 export interface FormDefinition {
-  schema: FormFieldsSchema
+  schema: FormSchema
   defaultData: FormData | Ref<FormData>
   messages?: FormMessage[] | Ref<FormMessage[]>
   onSubmit: FormSubmitHandler
@@ -338,7 +338,7 @@ export interface FormSubmitContext {
  * @public
  */
 export interface FormController extends FormSubmitContext {
-  schema: FormFieldsSchema
+  schema: FormSchema
   formData: Ref<Record<string, any>>
   messages: Ref<FormMessage[]>
   isLoading: Ref<boolean>

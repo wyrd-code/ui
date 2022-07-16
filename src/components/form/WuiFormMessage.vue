@@ -1,19 +1,15 @@
 <template>
-  <WuiAlert :key="message.name" class="form-message" :type="alertType">
-    <span class="name">
-      {{ message.name }}
-    </span>
+  <WuiAlert class="form-message" :type="alertType">
     <span class="text">
       {{ message.message }}
     </span>
-    <small class="context"> &nbsp;(in http {{ message.context }}) </small>
   </WuiAlert>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent, toRefs } from 'vue'
 
-import type { FormMessage } from '../../ui.types'
+import type { FormMessage } from './form.types'
 
 export default defineComponent({
   props: {
