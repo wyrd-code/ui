@@ -12,10 +12,10 @@
     </span>
 
     <span
-      v-if="$slots.default && !(loadingTakeover && loading)"
+      v-if="($slots.default || label) && !(loadingTakeover && loading)"
       class="wui-btn-text"
     >
-      <slot />
+      <slot>{{ label }}</slot>
     </span>
     <span
       v-else-if="$slots.iconSuffix"
@@ -44,6 +44,7 @@ export default defineComponent({
       default: null,
       validator: (value: Sizes) => Object.values(Sizes).includes(value),
     },
+    label: { type: String, default: null },
     disabled: { type: Boolean },
     outline: { type: Boolean },
     circle: { type: Boolean },
@@ -74,7 +75,7 @@ export default defineComponent({
         glass: props.glass,
         'wui-btn-loading': props.loading,
         [`wui-btn-${props.size}`]: props.size,
-        [`wui-btn-type--${props.type}`]: props.typ,
+        [`wui-btn-type--${props.type}`]: props.type,
         ...(props.type ? { [`wui-btn-type--${props.type}`]: true } : {}),
       },
     ])

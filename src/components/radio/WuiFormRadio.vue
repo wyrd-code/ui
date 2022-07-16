@@ -10,7 +10,7 @@
     <WuiRadio
       v-for="(option, idx) in schema.options"
       :key="`radio-${idx}-${option.value}`"
-      :model-value="value"
+      :model-value="modelValue"
       v-bind="option"
       :disabled="isDisabled || option.disabled"
       :name="schema.name"
@@ -33,15 +33,14 @@ export default defineComponent({
     WuiFormFieldWrapper,
   },
   props: {
+    ...wuiFormInputPropsBase,
     schema: {
       type: Object as PropType<FormFieldRadio>,
       required: true,
     },
-    ...wuiFormInputPropsBase,
-    // Note: copied from wuiFormInputPropsBase to fix ts error
-    onChange: {
-      type: Function as PropType<(payload: Event) => void>,
-      required: true,
+    modelValue: {
+      type: [String, Number, Boolean],
+      default: null,
     },
   },
 })

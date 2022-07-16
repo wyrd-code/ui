@@ -26,7 +26,7 @@
           :disabled="disabled"
           :value="modelValue"
           :placeholder="placeholder"
-          @input="input"
+          @change="input"
           @focus="focus = true"
           @blur="focus = false"
         />

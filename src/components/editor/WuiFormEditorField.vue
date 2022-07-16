@@ -9,7 +9,7 @@
   >
     <WuiFormEditor
       class="wui-input-editor-inner"
-      :model-value="value"
+      :model-value="modelValue"
       @update:model-value="onChange"
       @focus="onFocus"
       @blur="onBlur"
@@ -31,19 +31,14 @@ export default defineComponent({
     WuiFormEditor,
   },
   props: {
+    ...wuiFormInputPropsBase,
     schema: {
       type: Object as PropType<FormFieldText>,
       required: true,
     },
-    ...wuiFormInputPropsBase,
-    // Note: copied from wuiFormInputPropsBase to fix ts error
-    value: {
-      type: [String],
+    modelValue: {
+      type: String,
       default: null,
-    },
-    onChange: {
-      type: Function as PropType<(payload: Event) => void>,
-      required: true,
     },
   },
 })

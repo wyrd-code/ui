@@ -11,7 +11,9 @@
         v-bind="$attrs"
         class="wui-checkbox-input"
         :disabled="disabled"
-        @change="toggle"
+        :value="true"
+        :checked="modelValue"
+        @input="toggle"
       />
       <span
         class="wui-checkbox"
@@ -26,37 +28,21 @@
     </span>
     <span class="wui-checkbox-label-group">
       <span
-        v-if="label && !$slots.default"
-        class="wui-checkbox-label"
-        :class="[
-          lineThrough && modelValue && 'wui-checkbox-label--linethrough',
-          disabled && 'wui-checkbox-label--disabled',
-        ]"
-        >{{ label }}</span
-      >
-      <span
-        v-if="subLabel && !$slots.sublabel"
-        class="wui-checkbox-label wui-checkbox-label--sub"
-        :class="[disabled && 'wui-checkbox-label--disabled']"
-        >{{ subLabel }}</span
-      >
-
-      <span
-        v-if="$slots.default"
+        v-if="$slots.default || label"
         class="wui-checkbox-label"
         :class="[
           lineThrough && modelValue && 'wui-checkbox-label--linethrough',
           disabled && 'wui-checkbox-label--disabled',
         ]"
       >
-        <slot />
+        <slot>{{ label }}</slot>
       </span>
       <span
-        v-if="$slots.sublabel"
+        v-if="$slots.sublabel || subLabel"
         class="wui-checkbox-label wui-checkbox-label--sub"
         :class="[disabled && 'wui-checkbox-label--disabled']"
       >
-        <slot name="sublabel" />
+        <slot name="sublabel">{{ subLabel }}</slot>
       </span>
     </span>
   </label>
@@ -95,7 +81,6 @@ export default defineComponent({
     color: { type: String, default: null },
     modelValue: {
       type: Boolean,
-      required: true,
     },
   },
   emits: ['update:model-value'],
@@ -104,9 +89,10 @@ export default defineComponent({
       if (props.disabled) {
         return
       }
-      const newValue = !props.modelValue
+      const newValue = props.modelValue ? false : true
       emit('update:model-value', newValue)
     }
+
     return { toggle }
   },
 })

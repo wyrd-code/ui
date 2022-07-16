@@ -8,7 +8,7 @@
     class="input-select"
   >
     <WuiSelect
-      :model-value="value"
+      :model-value="modelValue"
       :disabled="isDisabled"
       :name="schema.name"
       :options="schema.options"
@@ -31,14 +31,14 @@ export default defineComponent({
     WuiFormFieldWrapper,
   },
   props: {
+    ...wuiFormInputPropsBase,
     schema: {
       type: Object as PropType<FormFieldSelect>,
       required: true,
     },
-    ...wuiFormInputPropsBase,
-    onChange: {
-      type: Function as PropType<(payload: Event) => void>,
-      required: true,
+    modelValue: {
+      type: [String, Number, Boolean],
+      default: null,
     },
   },
 })
