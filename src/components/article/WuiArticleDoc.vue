@@ -34,5 +34,5 @@
 import { ref } from 'vue'
 
 const sizeClass = ref('xl:text-lg')
-const proseClass = ref('prose-zinc')
+const proseClass = ref('prose-zinc dark:prose-invert')
 </script>
