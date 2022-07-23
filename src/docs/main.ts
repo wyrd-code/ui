@@ -5,7 +5,6 @@ import {
   createWebHistory,
   createMemoryHistory,
 } from 'vue-router'
-
 import {
   WuiAlert,
   WuiTag,

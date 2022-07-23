@@ -2,36 +2,29 @@
   <div class="ui-layout-wrapper">
     <div class="ui-layout-wrapper-inner">
       <aside class="ui-layout-aside">
+        <WuiLink
+          class="w-full flex items-center space-x-2 mb-4"
+          :to="{ name: 'ui.home' }"
+        >
+          <WyrdLogoSVG class="w-5 h-5" />
+          <strong>WYRD.UI</strong>
+        </WuiLink>
+
+        <button class="toggle" title="Toggle dark theme" @click="toggleDark">
+          <span class="text-xl icon-ph-sun dark:icon-ph-moon" />
+        </button>
         <WuiNav
           class="ui-layout-nav"
           :items="items"
           :show-children="true"
           item-class="font-bold"
           link-class="link"
-          link-active-class="underline font-bold"
+          link-active-class="underline"
           link-exact-active-class="underline"
-          child-nav-class="pl-4 font-normal text-sm leading-relaxed"
+          child-nav-class="pb-4 font-normal leading-relaxed"
           child-nav-item-class="font-bold"
           child-nav-link-class="link"
-        >
-          <template #before>
-            <WuiLink
-              class="w-full flex items-center space-x-2 mb-4"
-              :to="{ name: 'ui.home' }"
-            >
-              <WyrdLogoSVG class="w-5 h-5" />
-              <strong>WYRD.UI</strong>
-            </WuiLink>
-
-            <button
-              class="toggle"
-              title="Toggle dark theme"
-              @click="toggleDark"
-            >
-              <span class="icon-ph-sun dark:icon-ph-moon" />
-            </button>
-          </template>
-        </WuiNav>
+        />
       </aside>
       <main class="ui-layout-main">
         <slot>
@@ -56,20 +49,21 @@ const items = buildNavFromPageDefinitions(pages, 'ui')
 
 <style lang="css">
 .ui-layout-wrapper {
-  @apply max-w-1800px mx-auto;
+  @apply max-w-screen-3xl mx-auto;
 }
 .ui-layout-wrapper-inner {
-  @apply relative;
+  @apply ml-64 flex flex-grow justify-center;
+  @apply min-h-screen;
 }
 .ui-layout-aside {
-  @apply w-64 fixed top-0 flex;
+  @apply w-64 fixed top-0 left-0 p-8 space-y-8;
   @apply h-screen overflow-y-scroll;
 }
 .ui-layout-nav {
-  @apply w-full p-8 text-left;
+  @apply w-full text-left;
 }
 .ui-layout-main {
-  @apply ml-64 p-8;
+  @apply p-8 flex-grow max-w-screen-xl;
 }
 .toggle {
   @apply rounded-full flex p-1 items-center justify-center;

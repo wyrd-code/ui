@@ -1,11 +1,10 @@
 import type { Component } from 'vue'
-
 import type { WyrdPageDefinition } from '~/ui.types'
 
 export const pages: WyrdPageDefinition[] = [
   {
     slug: 'home',
-    title: 'Home',
+    title: 'Wyrd UI',
     component: (): Component => import('./pages/DocsHome.md'),
     meta: {
       nav: false,
