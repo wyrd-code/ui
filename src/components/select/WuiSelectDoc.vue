@@ -8,18 +8,18 @@
         :placeholder="selectPlaceholder"
         :disabled="selectDisabled"
         :placement="selectPlacement"
-        :label-top="selectLabel"
+        :label="selectLabel"
         :divided="selectDivided"
         :options="firstSelectOptions"
       />
 
       <template #props>
-        <WuiInput v-model="selectLabel" label-top="Select label" />
-        <WuiInput v-model="selectPlaceholder" label-top="Select placeholder" />
+        <WuiInput v-model="selectLabel" label="Select label" />
+        <WuiInput v-model="selectPlaceholder" label="Select placeholder" />
         <WuiSelect
           v-model="selectPlacement"
           placeholder="Placement"
-          label-top="Placement"
+          label="Placement"
           :options="placementOptions"
         />
         <WuiCheckbox v-model="selectDivided" label="Divided" />
@@ -35,7 +35,7 @@
             :options="exampleOptions"
             placeholder="Please select"
           >
-            <template #label-top="{ props }">
+            <template #label="{ props }">
               Label top slot, placement {{ props.placement }}
             </template>
             <template #placeholder="{ props }">
@@ -43,17 +43,17 @@
                 <span>(custom) {{ props.placeholder }}</span>
               </div>
             </template>
-            <template #selected-option="{ props }">
-              You selected: {{ props.modelValue.value }}
+            <template #selected-option="{ selectedOption }">
+              You selected: {{ selectedOption.label }}
             </template>
             <template #option="{ option }">
               <div class="items-center" :style="{ display: 'flex' }">
                 <span class="h-4 mr-2 icon-ph-github-logo-fill" />
-                {{ option.name }}
+                {{ option.label }}
               </div>
             </template>
             <template #icon>
-              <span class="h-4 ml-2 text-info-500 icon-ph-twitter-logo-fill" />
+              <span class="h-4 ml-2 text-yellow-400 icon-ph-github-logo-fill" />
             </template>
           </WuiSelect>
         </div>
@@ -82,24 +82,21 @@ const selectDivided = ref(false)
 const selectPlacement = ref(undefined)
 const placementOptions = ALLOWED_POSITION
 const firstSelectOptions = [
-  'Lorem ipsum dolor sit amet consectetur',
-  'Dolor',
-  'Lorem ipsum',
-  'Lorem ipsum dolor',
-  'Lorem ipsum dolor iste nam quidem',
+  { label: 'New York', value: 'newyork' },
+  { label: 'Paris', value: 'paris' },
 ]
 
 const exampleValue = ref(undefined)
 
 const exampleOptions: TOption[] = [
-  { label: 'New York', value: 'nwrk' },
-  { label: 'Paris', value: 'prs' },
-  { label: 'Moscow', value: 'mscw' },
+  { label: 'New York', value: 'newyork' },
+  { label: 'Paris', value: 'paris' },
+  { label: 'Moscow', value: 'moscow' },
 ]
 
 const DATA_SHEET = [
   {
-    property: 'label-top',
+    property: 'label',
     type: ['String'],
     default: '-',
     values: [],
@@ -159,7 +156,7 @@ const DATA_SHEET = [
 
 const SLOT_SHEET = [
   {
-    property: 'label-top',
+    property: 'label',
     description: 'Label top text',
   },
   {

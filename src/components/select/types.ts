@@ -17,8 +17,8 @@ export type TSelectProps = {
 }
 
 export type TSelect = {
-  wrappedValue: ComputedRef<TSelectOption>
-  getOptionName: (option: TOption) => string | number
+  selectedOption: ComputedRef<TSelectOption>
+  getOptionLabel: (option: TOption) => string | number
   getOptionValue: (option: TOption) => string | number
   setOptionRef: (el: HTMLElement, i: number) => void
   indexFocusedOption: Ref<number>

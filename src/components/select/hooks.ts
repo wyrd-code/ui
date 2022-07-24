@@ -35,7 +35,7 @@ export const useSelect = (props: TSelectProps, emit: TEmit): TSelect => {
       selectListRef.value.scrollTop = selectedOption?.offsetTop
   }
 
-  const getOptionName = (option: TOption) =>
+  const getOptionLabel = (option: TOption) =>
     typeof option === 'object' ? option.label : option
 
   const getOptionValue = (option: TOption) =>
@@ -103,7 +103,7 @@ export const useSelect = (props: TSelectProps, emit: TEmit): TSelect => {
     setOpen(false)
   }
 
-  const wrappedValue = computed<TSelectOption>(() => {
+  const selectedOption = computed<TSelectOption>(() => {
     const result: TSelectOption = { label: '', value: '' }
 
     if (props.modelValue == null) {
@@ -131,9 +131,9 @@ export const useSelect = (props: TSelectProps, emit: TEmit): TSelect => {
   })
 
   return {
-    wrappedValue,
+    selectedOption,
     getOptionValue,
-    getOptionName,
+    getOptionLabel,
     setOptionRef,
     indexFocusedOption,
     optionsSafe,

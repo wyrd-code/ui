@@ -1,8 +1,8 @@
 <template>
   <div class="wui-select">
-    <span v-if="labelTop || labelTopSlotExist" class="wui-input-label">
-      <slot name="label-top" :props="props">
-        {{ labelTop }}
+    <span v-if="label || $slots.label" class="wui-input-label">
+      <slot name="label" :props="props">
+        {{ label }}
       </slot>
     </span>
 
@@ -20,9 +20,13 @@
         @keydown.esc.stop.prevent="() => setOpen(false)"
         @keydown.enter.stop.prevent="handleEnterKey"
       >
-        <span v-if="wrappedValue.value" class="wui-select-selected">
-          <slot name="selected-option" :props="props">
-            {{ wrappedValue.label }}
+        <span v-if="selectedOption.value" class="wui-select-selected">
+          <slot
+            name="selected-option"
+            :props="props"
+            :selected-option="selectedOption"
+          >
+            {{ selectedOption.label }}
           </slot>
         </span>
 
@@ -57,10 +61,10 @@
               @click="selectOption(optionIndex)"
             >
               <slot name="option" :props="props" :option="option">
-                {{ getOptionName(option) }}
+                {{ getOptionLabel(option) }}
                 <transition name="fade-right">
                   <span
-                    v-if="wrappedValue['value'] === getOptionValue(option)"
+                    v-if="selectedOption['value'] === getOptionValue(option)"
                     class="wui-select-option-check"
                   />
                 </transition>
@@ -77,7 +81,6 @@
 import { defineComponent, computed, PropType } from 'vue'
 
 import { clickOutside } from '../../directives'
-import { useCheckSlot } from '../../hooks'
 import { Positions, EDirections } from '../../models/enums'
 import { TProps, TEmit } from '../../ui.types'
 import { ALLOWED_POSITION, CLASS_SELECTED_OPTION } from './constants'
@@ -97,7 +100,7 @@ export default defineComponent({
     },
     disabled: { type: Boolean, default: false },
     divided: { type: Boolean, default: false },
-    labelTop: { type: String, default: null },
+    label: { type: String, default: null },
     placeholder: { type: String, default: 'Select option' },
     options: {
       type: Array as PropType<TOption[]>,
@@ -107,11 +110,9 @@ export default defineComponent({
   },
   emits: ['update:model-value'],
   setup(props: TProps, { emit, slots }) {
-    const labelTopSlotExist = useCheckSlot(slots, 'label-top') != null
-
     const {
-      wrappedValue,
-      getOptionName,
+      selectedOption,
+      getOptionLabel,
       getOptionValue,
       setOptionRef,
       indexFocusedOption,
@@ -139,10 +140,9 @@ export default defineComponent({
     }))
 
     return {
-      labelTopSlotExist,
       CLASS_SELECTED_OPTION,
-      wrappedValue,
-      getOptionName,
+      selectedOption,
+      getOptionLabel,
       getOptionValue,
       setOptionRef,
       indexFocusedOption,
