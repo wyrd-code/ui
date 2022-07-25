@@ -19,6 +19,7 @@
     "./.vscode/css-data.json"
   ],
   "html.autoClosingTags": true,
+  "eslint.packageManager": "yarn",
   "eslint.format.enable": true,
   "eslint.alwaysShowStatus": true,
   "eslint.codeActionsOnSave.mode": "problems",
