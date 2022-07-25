@@ -1,5 +1,5 @@
 import type { Component, Ref } from 'vue'
-import type { RouteRecordRaw } from 'vue-router'
+import type { RouteLocationRaw } from 'vue-router'
 
 import { LoadingBarInstance } from './components/loading-bar'
 import { MessageInstance } from './components/message'
@@ -34,7 +34,7 @@ export interface WyrdNavItemMeta {
  */
 export interface WyrdNavItem {
   as?: string
-  to?: RouteRecordRaw
+  to?: RouteLocationRaw
   label: string
   sort?: number
   children?: WyrdNavItem[]
@@ -109,7 +109,7 @@ export interface FieldPublicMeta {
   key: string
   label: string
   path?: string
-  linkTo?: (row: any) => RouteRecordRaw
+  linkTo?: (row: any) => RouteLocationRaw
   // TODO: use prisma enums without loading @prisma/client from client code
 }
 
