@@ -1,3 +1,4 @@
+import { mauve, sage, slate, olive, sand } from '@radix-ui/colors'
 import { colors } from '@unocss/preset-wind'
 import {
   defineConfig,
@@ -23,6 +24,11 @@ export function createConfig({ strict = true, dev = true } = {}): any {
         danger: colors?.rose,
         link: colors?.sky,
         info: colors?.sky,
+        mauve,
+        sage,
+        slate,
+        olive,
+        sand,
       },
     },
     presets: [

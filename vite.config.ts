@@ -5,6 +5,7 @@ import vue from '@vitejs/plugin-vue'
 import anchor from 'markdown-it-anchor'
 import { visualizer } from 'rollup-plugin-visualizer'
 import Unocss from 'unocss/vite'
+import Components from 'unplugin-vue-components/vite'
 import Markdown from 'vite-plugin-md'
 import svgLoader from 'vite-svg-loader'
 
@@ -88,6 +89,17 @@ export default {
     visualizer({
       open: false,
       title: 'WyrdUI Bundle Visualizer',
+    }),
+    Components({
+      // Note: generated types are gitignored because they often update after comit
+      // leading to subtle changes between code and types
+      dts: true,
+      resolvers: [
+        (componentName) => {
+          if (componentName.startsWith('Wui'))
+            return { name: componentName.slice(3), from: './src/components' }
+        },
+      ],
     }),
   ],
   css: {

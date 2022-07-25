@@ -1,0 +1,7 @@
+@import "../../../src/themes/radix/index.css";
+
+:root {
+  --vp-c-brand: #e22314;
+  --vp-button-brand-bg: #bc1b10;
+  --vp-button-brand-border: #e22314;
+}
