@@ -2,37 +2,47 @@
   <div>
     <h1>Collapse</h1>
 
-    <WuiCodeExample :code="collapseCode" title="Default">
+    <WuiCodeExample title="Default">
       <WuiCollapse>
         <WuiCollapseItem title="Title 1">
-          The First Things First manifesto was written 29 November 1963 and
-          published in 1964 by Ken Garland. It was backed by over 400 graphic
-          designers and artists and also received the backing of Tony Benn,
-          radical left-wing MP and activist, who published it in its entirety in
-          The Guardian newspaper.
+          Fusce sem metus, viverra sit amet blandit non, elementum eget leo.
+          Curabitur leo dolor, bibendum et lacus id, mattis viverra justo.
+          Curabitur tempor euismod tempor. Nulla facilisi. Aenean sit amet nibh
+          congue, volutpat felis a, aliquet ipsum. Phasellus venenatis pulvinar
+          urna. Ut tempus vitae nunc eu rutrum.
         </WuiCollapseItem>
         <WuiCollapseItem title="Title 2">
-          Reacting against a rich and affluent Britain of the 1960s, it tried to
-          re-radicalise a design industry which the signatories felt had become
-          lazy and uncritical. Drawing on ideas shared by critical theory, the
-          Frankfurt School, and the counter-culture of the time, it explicitly
-          reaffirmed the belief that design is not a neutral, value-free
-          process.
+          Praesent accumsan tellus fermentum sem aliquam, at tincidunt nulla
+          feugiat. Donec in lacus dui. Mauris ullamcorper ultricies mi,
+          consequat interdum tortor egestas sed. Sed sollicitudin elementum ex
+          sit amet placerat. Praesent porttitor auctor leo in accumsan. Sed at
+          arcu ex. In at hendrerit elit. Proin massa tellus, maximus in dui sed,
+          pretium vulputate diam. Pellentesque eleifend ante at iaculis
+          fringilla. Aenean vitae dictum lorem. Nulla ut mi eget lectus
+          consequat vulputate. Mauris sit amet ipsum vulputate, facilisis nisi
+          sed, porta libero. Nunc dictum purus massa.
         </WuiCollapseItem>
         <WuiCollapseItem title="Title 3">
-          It rallied against the consumerist culture that was purely concerned
-          with buying and selling things and tried to highlight a Humanist
-          dimension to graphic design theory. It was later updated and
-          republished with a new group of signatories as the First Things First
-          2000 manifesto.
+          In vel est auctor, aliquet ligula sed, volutpat diam. In blandit
+          pretium orci non laoreet. Fusce sit amet aliquam eros. Curabitur in
+          quam et odio cursus gravida a vel turpis. In sapien lectus, vestibulum
+          commodo ligula a, rhoncus porttitor lacus. Nam consequat et lectus
+          quis fermentum. Cras dolor nisl, rutrum eget vestibulum quis,
+          dignissim vestibulum orci. Nulla tincidunt facilisis ornare. Integer
+          et eleifend libero. Etiam et varius lorem, eget elementum diam. Etiam
+          convallis vitae metus vel volutpat. Maecenas quis magna faucibus,
+          maximus nisi euismod, tempus nisl. Integer lacinia tristique nisl,
+          pulvinar scelerisque metus rutrum sed. Nunc tempor bibendum neque, sed
+          ullamcorper nibh vulputate molestie. Phasellus volutpat tristique
+          felis quis auctor.
         </WuiCollapseItem>
         <WuiCollapseItem title="Title 4">
-          Try Equal UI, you'll like it
+          Sed ut aliquam mauris.
         </WuiCollapseItem>
       </WuiCollapse>
     </WuiCodeExample>
 
-    <WuiCodeExample :code="singleCode" title="Single">
+    <WuiCodeExample title="Single">
       <div class="flex flex-col w-full">
         <WuiCollapse>
           <WuiCollapseItem title="Article"> Hello there </WuiCollapseItem>
@@ -48,7 +58,7 @@
       </div>
     </WuiCodeExample>
 
-    <WuiCodeExample :code="nestedCode" title="Nested">
+    <WuiCodeExample title="Nested">
       <WuiCollapse>
         <WuiCollapseItem title="Question">
           Why would you use nested collapse components?
@@ -60,95 +70,5 @@
         </WuiCollapseItem>
       </WuiCollapse>
     </WuiCodeExample>
-
-    <WuiPropsTable
-      tag-name="WuiCollapseItem"
-      :data-sheet="dataSheet"
-      :slot-sheet="slotSheet"
-    />
   </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  data: () => ({
-    collapseCode: `<WuiCollapse>
-  <WuiCollapseItem title="Title 1"
-    >The First Things First manifesto was written 29 November 1963 and
-    published in 1964 by Ken Garland. It was backed by over 400 graphic
-    designers and artists and also received the backing of Tony Benn,
-    radical left-wing MP and activist, who published it in its entirety in
-    The Guardian newspaper.</WuiCollapseItem
-  >
-  <WuiCollapseItem title="Title 2"
-    >Reacting against a rich and affluent Britain of the 1960s, it tried
-    to re-radicalise a design industry which the signatories felt had
-    become lazy and uncritical. Drawing on ideas shared by critical
-    theory, the Frankfurt School, and the counter-culture of the time, it
-    explicitly reaffirmed the belief that design is not a neutral,
-    value-free process.</WuiCollapseItem
-  >
-  <WuiCollapseItem title="Title 3"
-    >It rallied against the consumerist culture that was purely concerned
-    with buying and selling things and tried to highlight a Humanist
-    dimension to graphic design theory. It was later updated and
-    republished with a new group of signatories as the First Things First
-    2000 manifesto.</WuiCollapseItem
-  >
-  <WuiCollapseItem title="Title 4"
-    >Try Equal UI, you'll like it</WuiCollapseItem
-  >
-</WuiCollapse>`,
-    singleCode: `<WuiCollapse>
-  <WuiCollapseItem title="Article"
-    >Hello there</WuiCollapseItem
-  >
-</WuiCollapse>
-
-<WuiCollapse>
-  <WuiCollapseItem title="Article"
-    >Hello there</WuiCollapseItem
-  >
-</WuiCollapse>
-
-<WuiCollapse>
-  <WuiCollapseItem title="Article"
-    >Hello there</WuiCollapseItem
-  >
-</WuiCollapse>`,
-    nestedCode: `<WuiCollapse>
-  <WuiCollapseItem title="Question">
-    Why would you use nested collapse components?
-
-    <WuiCollapse>
-      <WuiCollapseItem title="Answer">Because I can :3</WuiCollapseItem>
-    </WuiCollapse>
-  </WuiCollapseItem>
-</WuiCollapse>`,
-    dataSheet: [
-      {
-        property: 'opened',
-        type: ['Boolean'],
-        default: 'false',
-        values: [],
-        description: 'Opened state',
-      },
-      {
-        property: 'title',
-        type: ['String'],
-        default: '',
-        values: [],
-        description: 'Title of the collapse item',
-      },
-    ],
-    slotSheet: [
-      {
-        name: 'default',
-        description: 'Collapse item body',
-      },
-    ],
-  }),
-})
-</script>

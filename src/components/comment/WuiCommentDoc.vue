@@ -18,11 +18,12 @@ export default defineComponent({
   setup() {
     const comment = {
       id: 1,
-      content: `The First Things First manifesto was written 29 November 1963 and
-published in 1964 by Ken Garland. It was backed by over 400 graphic
-designers and artists and also received the backing of Tony Benn,
-radical left-wing MP and activist, who published it in its entirety in
-The Guardian newspaper.`,
+      content: `Fusce sem metus, viverra sit amet blandit non,
+      elementum eget leo. Curabitur leo dolor, bibendum et lacus id,
+      mattis viverra justo. Curabitur tempor euismod tempor.
+      Nulla facilisi. Aenean sit amet nibh congue, volutpat felis a,
+      aliquet ipsum. Phasellus venenatis pulvinar urna.
+      Ut tempus vitae nunc eu rutrum.`,
     }
     return {
       comment,
