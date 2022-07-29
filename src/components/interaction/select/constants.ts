@@ -1,0 +1,14 @@
+import { Positions } from '@/core'
+
+export const ALLOWED_POSITION = [
+  Positions.T,
+  Positions.B,
+  Positions.L,
+  Positions.R,
+  Positions.TL,
+  Positions.TR,
+  Positions.BL,
+  Positions.BR,
+]
+
+export const CLASS_SELECTED_OPTION = 'wui-select-option--focused'

@@ -8,16 +8,13 @@ import Components from 'unplugin-vue-components/vite'
 export default {
   resolve: {
     alias: {
-      '~': resolve(process.cwd(), 'src'),
-      '@': resolve(process.cwd(), 'docs'),
+      '@': resolve(process.cwd(), 'src'),
     },
   },
   plugins: [
     Unocss(),
     Components({
-      // Note: generated types are gitignored because they often update after comit
-      // leading to subtle changes between code and types
-      dts: true,
+      dts: false,
       resolvers: [
         (componentName) => {
           if (componentName.startsWith('Wui'))

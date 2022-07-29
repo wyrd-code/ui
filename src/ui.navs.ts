@@ -1,4 +1,4 @@
-import type { WyrdNavItemDefinition } from '~/ui.types'
+import type { WyrdNavItemDefinition } from '@/types'
 
 export const uiNavs: WyrdNavItemDefinition[] = [
   {

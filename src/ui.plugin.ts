@@ -1,63 +1,32 @@
-import FloatingVue from 'floating-vue'
+/* eslint-disable import/no-named-as-default-member */
 import type { App, Ref } from 'vue'
 
-import { FormPlugin } from './components/form'
-import { LoadingBar } from './components/loading-bar'
-import { Message } from './components/message'
-import { Notification } from './components/notification'
-import 'floating-vue/dist/style.css'
+// eslint-disable-next-line import/no-unresolved
+// import 'uno.css'
 
-const floatingTheme = {
-  handleResize: true,
-  html: true,
-  loadingContent: '...',
-}
-
-FloatingVue.options.themes.wuipopover = {
-  ...floatingTheme,
-  placement: 'top',
-  triggers: ['click', 'focus', 'touch'],
-  delay: {
-    show: 150,
-    hide: 0,
-  },
-}
-
-FloatingVue.options.themes.wuitooltip = {
-  $extend: 'wuitooltip',
-  triggers: ['hover', 'focus'],
-  popperTriggers: ['hover', 'focus'],
-  delay: {
-    show: 0,
-    hide: 400,
-  },
-}
-
-FloatingVue.options.themes.wuidropdown = {
-  ...floatingTheme,
-  placement: 'bottom',
-  triggers: ['click'],
-  autoHide: true,
-  delay: 0,
-}
+import {
+  FormPlugin,
+  WuiLoadingBar,
+  WuiMessage,
+  WuiNotification,
+} from './components'
 
 /**
  * WyrdUI plugin
  *
  * @public
  */
-export function install(app: App): void {
-  app.use(FloatingVue)
+function install(app: App): void {
   app.use(FormPlugin, { text: true })
 
-  app.config.globalProperties.$Message = Message
-  app.provide('$Message', Message)
+  app.config.globalProperties.$Message = WuiMessage
+  app.provide('$Message', WuiMessage)
 
-  app.config.globalProperties.$Notification = Notification
-  app.provide('$Notification', Notification)
+  app.config.globalProperties.$WuiNotification = WuiNotification
+  app.provide('$Notification', WuiNotification)
 
-  app.config.globalProperties.$LoadingBar = LoadingBar
-  app.provide('$LoadingBar', LoadingBar)
+  app.config.globalProperties.$LoadingBar = WuiLoadingBar
+  app.provide('$LoadingBar', WuiLoadingBar)
 
   const $WyrdUI = {
     drawers: [] as Ref[],
