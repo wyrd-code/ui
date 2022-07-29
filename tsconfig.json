@@ -1,36 +1,43 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "declaration": true,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noLib": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
     "module": "esnext",
+    "target": "esnext",
     "moduleResolution": "node",
     "strict": true,
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "lib": ["esnext", "dom"],
+    "lib": ["dom", "dom.iterable", "esnext", "webworker"],
     "types": [
-      "vite-svg-loader",
-      "vite/client",
-      "vue-router",
+      "dom.iterable",
+      "dom",
+      "esnext",
       "node",
       "unocss",
+      "vite-svg-loader",
+      "vite/client",
+      "vitest/globals",
+      "vue-router"
     ],
-
-    "outDir": "./dist",
-    "baseUrl": ".",
     "paths": {
-      "~/*": ["src/*"],
+      "@": ["./src"],
+      "@/*": ["./src/*"]
     },
+    "outDir": "./dist",
     "allowJs": true,
     "noUnusedLocals": true,
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.vue"
-  ],
+  "exclude": ["node_modules", "**/*/lib", "**/*/dist"]
 }

@@ -26,11 +26,11 @@ module.exports = defineConfig({
     'import/resolver': {
       'eslint-import-resolver-custom-alias': {
         alias: {
-          '~': './src',
+          '@': './src',
         },
-        extensions: ['.ts', '.js', '.json', '.vue'],
+        extensions: ['.ts', '.js', '.json', '.vue', '.md'],
         // Note: if using lerna or yarn worskpaces, try this for failing imports
-        packages: ['packages/*'],
+        // packages: ['packages/*'],
       },
     },
   },

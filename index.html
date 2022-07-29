@@ -2,12 +2,28 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#e31e00"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="black"
+    />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WyrdUI</title>
   </head>
   <body>
     <div id="app"></div>
-    <script type="module" src="./src/docs/main.ts"></script>
+    <div id="teleported"></div>
+    <script type="module" src="./demo/main.ts"></script>
   </body>
 </html>
