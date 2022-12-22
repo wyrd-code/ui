@@ -7,15 +7,15 @@
           :to="{ name: 'ui.home' }"
         >
           <img src="/wyrd.svg" class="w-5 h-5" />
-          <strong>WYRD.UI</strong>
+          <strong>WyrdUI</strong>
         </WuiLink>
 
         <button class="toggle" title="Toggle dark theme" @click="toggleDark">
           <span class="text-xl icon-ph-sun dark:icon-ph-moon" />
         </button>
-        <WuiNav
+        <WuiMenu
           class="ui-layout-nav"
-          :items="items"
+          :items="[]"
           :show-children="true"
           item-class="font-bold"
           link-class="link"
@@ -36,14 +36,10 @@
 </template>
 
 <script lang="ts" setup>
-import { WuiLink, WuiNav } from '@/components'
-import { useTheme, buildNavFromPageDefinitions } from '@/core'
+import { WuiLink, WuiMenu } from '@/components'
+import { useDarkTheme } from '@/ui-vue/composables'
 
-const pages = []
-
-const { toggleDark } = useTheme()
-
-const items = buildNavFromPageDefinitions(pages, 'ui')
+const { toggleDark } = useDarkTheme()
 </script>
 
 <style lang="css">

@@ -5,14 +5,14 @@ import {
   createMemoryHistory,
 } from 'vue-router'
 
-import { WyrdUI } from '@'
+import { WyrdUI } from '@/ui-vue'
 
 import App from './App.vue'
 import DemoHome from './DemoHome.vue'
 
 // eslint-disable-next-line import/no-unresolved
 // import '@unocss/reset/tailwind.css'
-import '@/ui.css'
+// import '@/ui.css'
 // eslint-disable-next-line import/no-unresolved
 import 'uno.css'
 
