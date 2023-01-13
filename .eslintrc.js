@@ -35,6 +35,12 @@ module.exports = defineConfig({
     },
   },
   rules: {
+    complexity: ['error', 5],
+    'max-depth': ['error', 3],
+    'no-shadow': 'off',
+    'max-params': ['error', 3],
+    'no-nested-ternary': 'error',
+    '@typescript-eslint/no-shadow': 'warn',
     'prettier/prettier': 'error',
     eqeqeq: ['warn', 'always', { null: 'never' }],
     'no-debugger': ['error'],
