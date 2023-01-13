@@ -14,6 +14,7 @@ module.exports = defineConfig({
     'plugin:import/recommended',
     'plugin:import/typescript',
     'prettier',
+    'plugin:vuejs-accessibility/recommended',
   ],
   parser: 'vue-eslint-parser',
   parserOptions: {
@@ -21,7 +22,7 @@ module.exports = defineConfig({
     sourceType: 'module',
     ecmaVersion: 2020,
   },
-  plugins: ['import', '@typescript-eslint', 'prettier'],
+  plugins: ['import', '@typescript-eslint', 'prettier', 'vuejs-accessibility'],
   settings: {
     'import/resolver': {
       'eslint-import-resolver-custom-alias': {
