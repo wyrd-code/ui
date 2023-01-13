@@ -74,5 +74,54 @@
     "titleBar.inactiveForeground": "#15202b99",
     "commandCenter.border": "#15202b99"
   },
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "todo-tree.general.statusBar": "top three",
+  "todo-tree.general.statusBarClickBehaviour": "cycle",
+  "todo-tree.tree.showCountsInTree": true,
+  "todo-tree.general.showIconsInsteadOfTagsInStatusBar": false,
+  "todo-tree.general.showActivityBarBadge": true,
+  "todo-tree.highlights.highlightDelay": 0,
+  "todo-tree.filtering.useBuiltInExcludes": "file excludes",
+  "todo-tree.tree.labelFormat": "${after}",
+  "todo-tree.highlights.customHighlight": {
+    "PENDING": {
+      "foreground": "#e9f5f9",
+      "iconColour": "#e9f5f9",
+    },
+    "DONE": {
+      "foreground": "#96be25",
+      "iconColour": "#96be25",
+    },
+    "FIX": {
+      "foreground": "#be2596",
+      "iconColour": "#be2596",
+    },
+  },
+  "todo-tree.general.tags": [
+    "TODO",
+    "REFACTOR",
+    "BUG",
+    "FIX",
+    "FIXME",
+    "- [ ]",
+    "- [ ] Fix",
+    "- [x]"
+  ],
+  "todo-tree.general.tagGroups": {
+    "DONE": [
+      "- [x]",
+    ],
+    "PENDING": [
+      "TODO",
+      "REFACTOR",
+      "- [ ]",
+    ],
+    "FIX": [
+      "- [ ] Fix",
+      "BUG",
+      "FIX",
+      "FIXME",
+    ],
+  },
   "peacock.color": "#61dafb",
 }
