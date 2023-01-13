@@ -47,6 +47,7 @@
     "**/node_modules": true,
     "**/dist": false,
     "**/tsconfig.tsbuildinfo": true,
+    "**/.vitepress/cache": true,
   },
   "git.inputValidation": "off",
   "typescript.suggest.completeFunctionCalls": true,
