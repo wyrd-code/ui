@@ -11,6 +11,7 @@
   "[typescript, javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   },
+  "editor.snippetSuggestions": "top",
   "editor.quickSuggestions": {
     "strings": true
   },

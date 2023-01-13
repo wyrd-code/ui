@@ -1,0 +1,76 @@
+{
+	// Place your snippets for vue here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+  "template": {
+		"prefix": "tpl",
+		"body": [
+			"<template>",
+      "\t<${1:tag}>",
+      "\t\t$0",
+      "\t</${1:tag}>",
+			"</template>",
+      ""
+		],
+		"description": "Vue SFC template"
+	},
+	"script": {
+		"prefix": "scr",
+		"body": [
+			"<script lang=\"ts\" setup>",
+      "const $1 = $0",
+			"</script>",
+      ""
+		],
+		"description": "Vue3 script setup"
+	},
+  "styleLang": {
+    "prefix": "sty",
+    "body": [
+        "<style scoped>",
+        "$1 {",
+        "\t@apply $0;",
+        "}",
+        "</style>",
+        ""
+    ],
+    "description": "style element with lang attribute"
+  },
+  "computed": {
+		"prefix": "com",
+		"body": [
+      "const $1 = computed(() => $0)",
+      ""
+		],
+		"description": "Vue3 computed property declaration"
+	},
+  "constantFunction": {
+		"prefix": "cf",
+		"body": [
+      "const $1 = () => {",
+      "$0",
+      "}",
+      ""
+		],
+		"description": "Vue3 computed property declaration"
+	},
+  "exportConstantFunction": {
+		"prefix": "ecf",
+		"body": [
+      "export const $1 = () => {",
+      "$0",
+      "}",
+      ""
+		],
+		"description": "Vue3 computed property declaration"
+	},
+  "constantVariable": {
+		"prefix": "cv",
+		"body": [
+      "const $1 = $0",
+      ""
+		],
+		"description": "javascript const variable declaration"
+	}
+}
