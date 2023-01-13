@@ -5,6 +5,7 @@
 *.cpuprofile
 *.local
 *.log
+.vitepress/cache
 dist
 dist-ssr
 explorations
@@ -16,3 +17,4 @@ TODO.md
 *.local
 .env
 stats.html
+inspiration
