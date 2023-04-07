@@ -13,7 +13,7 @@
 			"</template>",
       ""
 		],
-		"description": "Vue SFC template"
+		"description": "Vue Template Tag"
 	},
 	"script": {
 		"prefix": "scr",
@@ -23,7 +23,7 @@
 			"</script>",
       ""
 		],
-		"description": "Vue3 script setup"
+		"description": "Vue Script Tag"
 	},
   "styleLang": {
     "prefix": "sty",
@@ -35,7 +35,7 @@
         "</style>",
         ""
     ],
-    "description": "style element with lang attribute"
+    "description": "Vue Style Tag"
   },
   "computed": {
 		"prefix": "com",
@@ -43,7 +43,7 @@
       "const $1 = computed(() => $0)",
       ""
 		],
-		"description": "Vue3 computed property declaration"
+		"description": "Vue Computed Property"
 	},
   "constantFunction": {
 		"prefix": "cf",
@@ -53,7 +53,7 @@
       "}",
       ""
 		],
-		"description": "Vue3 computed property declaration"
+		"description": "Constant Function"
 	},
   "exportConstantFunction": {
 		"prefix": "ecf",
@@ -63,14 +63,34 @@
       "}",
       ""
 		],
-		"description": "Vue3 computed property declaration"
+		"description": "Export Constant Function"
+	},
+  "exportInterface": {
+		"prefix": "ei",
+		"body": [
+      "export interface $1 {",
+      "$0",
+      "}",
+      ""
+		],
+		"description": "Export Interface"
+	},
+  "exportType": {
+		"prefix": "et",
+		"body": [
+      "export type $1 = {",
+      "$0",
+      "}",
+      ""
+		],
+		"description": "Export Type"
 	},
   "constantVariable": {
-		"prefix": "cv",
+		"prefix": "con",
 		"body": [
       "const $1 = $0",
       ""
 		],
-		"description": "javascript const variable declaration"
+		"description": "Constant declaration"
 	}
 }
