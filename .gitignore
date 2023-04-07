@@ -6,6 +6,7 @@
 *.local
 *.log
 .vitepress/cache
+.tmp
 dist
 dist-ssr
 explorations

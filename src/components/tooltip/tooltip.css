@@ -1,0 +1,56 @@
+.wui-tooltip {
+}
+
+.wui-tooltip :deep(.wui-popover) {
+  @apply bg-neutral-1 text-neutral-11 border-neutral-7;
+  @apply p-4 rounded-lg text-sm;
+  @apply border shadow-lg;
+  @apply z-9999;
+}
+.wui-tooltip :deep(.wui-popover-arrow) {
+  @apply text-neutral-7;
+}
+.wui-tooltip :deep(.wui-popover-arrow::before) {
+  @apply border-neutral-7 bg-neutral-1;
+}
+
+/*
+.wui-tooltip > :deep(.popper > .popper-arrow::before) {
+  @apply bg-neutral-1;
+  @apply z-999;
+}
+
+.wui-tooltip > :deep(.popper-arrow),
+.wui-tooltip > :deep(.popper-arrow::before)  {
+  @apply absolute box-border;
+  @apply bg-neutral-1;
+  @apply w-3 h-3;
+}
+.wui-tooltip > :deep(.popper-arrow) {
+}
+.wui-tooltip > :deep(.popper-arrow::before) {
+  @apply visible rotate-45 content-[''];
+}
+
+.wui-tooltip > :deep(.popper[data-popper-placement^='top'] > .popper-arrow) {
+  @apply -bottom-1.75;
+}
+.wui-tooltip > :deep(.popper[data-popper-placement^='top'] > .popper-arrow::before) {
+  @apply border-r border-b border-neutral-7;
+}
+.wui-tooltip > :deep(.popper[data-popper-placement^='bottom'] > .popper-arrow) {
+  @apply -top-1.75;
+}
+.wui-tooltip > :deep(.popper[data-popper-placement^='bottom'] > .popper-arrow::before) {
+  @apply border-l border-t border-neutral-7;
+}
+.wui-tooltip > :deep(.popper[data-popper-placement^='left'] > .popper-arrow) {
+  @apply -right-1.5;
+}
+.wui-tooltip > :deep(.popper[data-popper-placement^='left'] > .popper-arrow::before) {
+  @apply border-r border-t border-neutral-7;
+}
+.wui-tooltip > :deep(.popper[data-popper-placement^='right'] > .popper-arrow) {
+  @apply -left-3;
+}
+*/

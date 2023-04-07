@@ -5,7 +5,7 @@ import {
   createMemoryHistory,
 } from 'vue-router'
 
-import { WyrdUI } from '@/ui-vue'
+import { WyrdUI } from '@/plugin'
 
 import App from './App.vue'
 import DemoHome from './DemoHome.vue'

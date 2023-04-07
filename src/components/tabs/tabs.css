@@ -1,0 +1,10 @@
+.wui-list.wui-tabs {
+  @apply border-b border-neutral-7;
+  @apply px-6 pt-4 space-x-2;
+  @apply flex-row;
+}
+.wui-list.wui-tabs :deep(> li > .wui-nav-item) {
+  @apply border border-b-0;
+  @apply border-neutral-6;
+  @apply rounded-b-0;
+}

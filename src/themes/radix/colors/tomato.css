@@ -1,0 +1,30 @@
+:root,
+.light {
+  --wui-color-tomato-1: hsl(10, 100%, 99.4%);
+  --wui-color-tomato-2: hsl(8, 100%, 98.4%);
+  --wui-color-tomato-3: hsl(8, 100%, 96.6%);
+  --wui-color-tomato-4: hsl(8, 100%, 94.3%);
+  --wui-color-tomato-5: hsl(8, 92.8%, 91%);
+  --wui-color-tomato-6: hsl(9, 84.7%, 86.3%);
+  --wui-color-tomato-7: hsl(10, 77.3%, 79.5%);
+  --wui-color-tomato-8: hsl(10, 71.6%, 71%);
+  --wui-color-tomato-9: hsl(10, 78%, 54%);
+  --wui-color-tomato-10: hsl(10, 71.5%, 50%);
+  --wui-color-tomato-11: hsl(10, 82%, 43.5%);
+  --wui-color-tomato-12: hsl(10, 50%, 13.5%);
+}
+
+html.dark {
+  --wui-color-tomato-1: hsl(10, 23%, 9.4%);
+  --wui-color-tomato-2: hsl(9, 44.8%, 11.4%);
+  --wui-color-tomato-3: hsl(8, 52%, 15.3%);
+  --wui-color-tomato-4: hsl(7, 56.3%, 18%);
+  --wui-color-tomato-5: hsl(7, 60.1%, 20.6%);
+  --wui-color-tomato-6: hsl(8, 64.8%, 24%);
+  --wui-color-tomato-7: hsl(8, 71.2%, 29.1%);
+  --wui-color-tomato-8: hsl(10, 80.2%, 35.7%);
+  --wui-color-tomato-9: hsl(10, 78%, 54%);
+  --wui-color-tomato-10: hsl(10, 81.7%, 59%);
+  --wui-color-tomato-11: hsl(10, 85%, 62.8%);
+  --wui-color-tomato-12: hsl(10, 89%, 96%);
+}

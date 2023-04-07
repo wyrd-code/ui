@@ -1,0 +1,225 @@
+.wui-radio {
+  @apply m-0 p-0 relative;
+  @apply cursor-pointer leading-4 whitespace-nowrap;
+  align-items: normal;
+
+  .body {
+    @apply flex items-center;
+    @apply space-x-2;
+  }
+
+  .label {
+    @apply flex-grow relative;
+    @apply align-middle items-center;
+    @apply transition-all whitespace-pre-wrap;
+  }
+
+  .help {
+    @apply text-sm;
+    @apply opacity-75;
+  }
+
+  .circle-border {
+    @apply rounded-full relative;
+    @apply flex box-border whitespace-nowrap align-middle justify-center;
+    @apply cursor-pointer transition-all;
+    @apply border-1;
+
+    &:focus:not(:focus-visible) {
+      @apply outline-none;
+    }
+  }
+
+  .circle {
+    @apply m-3px;
+    @apply rounded-full w-2 h-2;
+    @apply opacity-0 transition-all;
+    @apply shadow-input;
+  }
+
+  .input {
+    @apply m-0 top-0 right-0 bottom-0 left-0 absolute;
+    @apply h-full w-full;
+    @apply cursor-pointer opacity-0;
+  }
+
+  /* .input:focus + .circle-border {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+  }
+  .input:checked > .border > .circle {
+    @apply opacity-0 scale-1 translate-x-1/2 translate-y-1/2;
+  }
+  &:focus:not(:focus-visible) {
+    @apply outline-none;
+  }
+  */
+
+  &.checked {
+    .circle-border {
+      @apply bg-neutral-10;
+      @apply hover:(bg-neutral-10);
+    }
+    .circle {
+      @apply opacity-100;
+      @apply bg-neutral-1;
+    }
+  }
+
+  .disabled {
+    @apply cursor-not-allowed;
+
+    .circle,
+    .circle:hover {
+      @apply opacity-0;
+    }
+
+    .circle-border,
+    .circle-border:hover,
+    .circle-border:active {
+      @apply cursor-not-allowed;
+    }
+
+    .label {
+    }
+  }
+
+  .primary {
+    .circle-border {
+      @apply border-primary-10;
+    }
+
+    &.checked {
+      .circle-border,
+      .circle-border:hover {
+        @apply bg-primary-10 border-primary-10;
+      }
+
+      .circle {
+        @apply bg-primary-12;
+      }
+    }
+
+    .input:focus + .circle-border {
+    }
+  }
+
+  .success {
+    .circle-border:hover {
+    }
+
+    .circle-border:active {
+    }
+
+    .checked {
+      .circle-border,
+      .circle-border:hover {
+      }
+
+      .circle {
+      }
+    }
+
+    .input:focus + .circle-border {
+    }
+  }
+
+  .warning {
+    .circle-border:hover {
+      @apply border-warning-5;
+    }
+
+    .circle-border:active {
+      @apply border-warning-5;
+    }
+
+    .checked {
+      .circle-border,
+      .circle-border:hover {
+        @apply bg-warning-5 border-warning-5;
+      }
+
+      .circle {
+        @apply bg-white opacity-1;
+      }
+    }
+
+    .input:focus + .circle-border {
+      @apply border-warning-5;
+    }
+  }
+
+  .danger {
+    .circle-border:hover {
+      @apply border-danger-5;
+    }
+
+    .circle-border:active {
+      @apply border-danger-5;
+    }
+
+    .checked {
+      .circle-border,
+      .circle-border:hover {
+        @apply bg-danger-5 border-danger-5;
+      }
+
+      .circle {
+        @apply bg-white opacity-1;
+      }
+    }
+
+    .input:focus + .circle-border {
+      @apply border-danger-5;
+    }
+  }
+
+  .neutral {
+    .circle-border:hover {
+      @apply border-neutral-5;
+    }
+
+    .circle-border:active {
+      @apply border-neutral-5;
+    }
+
+    .checked {
+      .circle-border,
+      .circle-border:hover {
+        @apply bg-neutral-5 border-neutral-5;
+      }
+
+      .circle {
+        @apply bg-white opacity-1;
+      }
+    }
+
+    .input:focus + .circle-border {
+      @apply border-neutral-5;
+    }
+  }
+
+  .black {
+    .circle-border:hover {
+      @apply border-black;
+    }
+
+    .circle-border:active {
+      @apply border-black;
+    }
+
+    &--checked {
+      .circle-border,
+      .circle-border:hover {
+        @apply bg-black border border-black;
+      }
+
+      .circle {
+        @apply bg-white opacity-1;
+      }
+    }
+
+    .input:focus + .circle-border {
+      @apply border-black;
+    }
+  }
+}

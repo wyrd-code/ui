@@ -1,0 +1,92 @@
+:root {
+  /*
+  --vp-c-brand-dark: var(--wui-color-primary-11);
+  --vp-c-brand: var(--wui-color-primary-9);
+  --vp-c-bg-alt: var(--wui-color-neutral-3);
+  --vp-c-bg: var(--wui-color-neutral-2);
+  --vp-button-brand-bg: var(--wui-color-primary-10);
+  --vp-home-hero-name-color: var(--wui-color-primary-11);
+  --vp-button-brand-border: var(--wui-color-primary-11);
+  --vp-layout-max-width: 1640px;
+  */
+}
+
+body {
+  overflow-y: scroll;
+}
+
+.VPSidebar {
+  border-right: 1px solid var(--wui-color-neutral-6);
+  @apply relative z-20;
+}
+
+.VPNav {
+}
+.VPNav .VPNavBar:not(.has-sidebar),
+.VPNav .VPNavBar.has-sidebar .content {
+  @apply border-b border-neutral-5;
+}
+.VPNav .VPNavBar.has-sidebar .content {
+  @apply relative z-10;
+}
+
+.VPDoc.has-aside .content .content-container {
+  max-width: 888px;
+}
+/*
+baseline grid overlay
+.VPContent,
+.VPSidebar {
+  background-size: 1.5rem 1.5rem;
+  background-image:
+    linear-gradient(to bottom, rgba(0,150,0,0.4) 1px, transparent 1px);
+} */
+
+.vp-doc {
+  .task-list {
+    @apply list-none;
+    @apply p-0;
+
+    ul {
+      @apply ml-6;
+      @apply border-l border-neutral-6;
+      @apply text-sm;
+    }
+
+    li {
+      @apply my-2;
+    }
+    li + li {
+    }
+
+    p {
+      @apply m-0;
+    }
+
+    ul > li {
+      @apply pl-4;
+
+      & > span {
+        @apply -ml-6;
+      }
+    }
+  }
+
+  .c-checkbox {
+    @apply bg-white;
+    @apply border-2 border-neutral-8;
+    @apply rounded;
+    @apply inline-block;
+    @apply h-1rem w-1rem mr-2;
+    @apply text-center align-middle;
+  }
+  .c-svg {
+    @apply block p-1px;
+  }
+  .c-positive {
+    @apply text-success-9 bg-transparent border-none;
+  }
+  .c-negative {
+    @apply text-danger-1 bg-danger-8 border-danger-9;
+  }
+}

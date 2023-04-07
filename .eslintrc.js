@@ -37,6 +37,7 @@ module.exports = defineConfig({
   },
   rules: {
     complexity: ['error', 5],
+    'import/no-cycle': 2,
     'max-depth': ['error', 3],
     'no-shadow': 'off',
     'max-params': ['error', 3],

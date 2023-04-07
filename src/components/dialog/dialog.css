@@ -1,0 +1,116 @@
+.wui-dialog-wrapper {
+  @apply flex flex-col justify-center items-center;
+  @apply fixed top-0 left-0 bottom-0 right-0;
+  @apply z-999;
+}
+
+.wui-dialog-wrapper.fade-enter-active,
+.wui-dialog-wrapper.fade-leave-active,
+.wui-dialog-wrapper.active {
+}
+
+.wui-dialog-mask {
+  @apply h-100vh w-full;
+  @apply bg-overlay-black-10;
+  @apply fixed top-0 left-0 bottom-0 right-0;
+  @apply z-999;
+}
+
+.wui-dialog {
+  @apply relative outline-none;
+
+  &:focused {
+    @apply border-4 border-red-8 p-5;
+  }
+
+  &-close {
+    @apply absolute -right-4 -top-4;
+
+    & > .wui-btn {
+      @apply text-lg;
+    }
+  }
+
+  &-inner {
+    @apply py-4 px-4;
+  }
+
+  &-body {
+    @apply border-none rounded cursor-default shadow-2xl;
+    @apply bg-neutral-2;
+  }
+
+  &-media {
+    @apply overflow-hidden;
+
+    &:first-child {
+      @apply rounded-t;
+    }
+
+    &:last-child {
+      @apply rounded-b;
+    }
+
+    img {
+    }
+  }
+
+  &-header {
+    @apply rounded-t text-left text-base p-6;
+    @apply leading-none;
+
+    & + .wui-dialog-content {
+      @apply pt-0;
+    }
+  }
+
+  &--pinned {
+    .wui-dialog-body {
+      @apply max-h-90vh;
+    }
+    .wui-dialog-header {
+      @apply shadow-lg;
+    }
+    .wui-dialog-content {
+      @apply max-h-70vh  overflow-y-auto;
+    }
+    .wui-dialog-footer {
+      @apply flex;
+    }
+  }
+
+  &--size-xs {
+    @apply max-w-64;
+  }
+  &--size-sm {
+    @apply max-w-128;
+  }
+  &--size-base {
+    @apply max-w-screen-sm;
+  }
+  &--size-lg {
+    @apply max-w-screen-md;
+  }
+  &--size-xl {
+    @apply max-w-screen-lg;
+  }
+  &--size-auto {
+    @apply max-w-none w-auto;
+  }
+
+  &-content {
+    @apply p-6;
+  }
+
+  &-footer {
+    @apply flex flex-shrink-0 flex-row-reverse;
+    @apply rounded-b justify-end align-middle items-center;
+    @apply bg-neutral-4 border-neutral-7;
+    @apply border-t;
+    @apply p-6;
+  }
+}
+
+.stop-scroll {
+  @apply overflow-hidden;
+}

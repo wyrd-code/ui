@@ -1,0 +1,30 @@
+:root,
+.light {
+  --wui-color-indigo-1: hsl(225, 60%, 99.4%);
+  --wui-color-indigo-2: hsl(223, 100%, 98.6%);
+  --wui-color-indigo-3: hsl(223, 98.4%, 97.1%);
+  --wui-color-indigo-4: hsl(223, 92.9%, 95%);
+  --wui-color-indigo-5: hsl(224, 87.1%, 92%);
+  --wui-color-indigo-6: hsl(224, 81.9%, 87.8%);
+  --wui-color-indigo-7: hsl(225, 77.4%, 82.1%);
+  --wui-color-indigo-8: hsl(226, 75.4%, 74.5%);
+  --wui-color-indigo-9: hsl(226, 70%, 55.5%);
+  --wui-color-indigo-10: hsl(226, 58.6%, 51.3%);
+  --wui-color-indigo-11: hsl(226, 55%, 45%);
+  --wui-color-indigo-12: hsl(226, 62%, 17%);
+}
+
+html.dark {
+  --wui-color-indigo-1: hsl(229, 24%, 10%);
+  --wui-color-indigo-2: hsl(230, 36.4%, 12.9%);
+  --wui-color-indigo-3: hsl(228, 43.3%, 17.5%);
+  --wui-color-indigo-4: hsl(227, 47.2%, 21%);
+  --wui-color-indigo-5: hsl(227, 50%, 24.1%);
+  --wui-color-indigo-6: hsl(226, 52.9%, 28.2%);
+  --wui-color-indigo-7: hsl(226, 56%, 34.5%);
+  --wui-color-indigo-8: hsl(226, 58.2%, 44.1%);
+  --wui-color-indigo-9: hsl(226, 70%, 55.5%);
+  --wui-color-indigo-10: hsl(227, 75.2%, 61.6%);
+  --wui-color-indigo-11: hsl(228, 100%, 75.9%);
+  --wui-color-indigo-12: hsl(226, 83%, 96.3%);
+}

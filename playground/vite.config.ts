@@ -16,9 +16,8 @@ export default defineConfig({
   publicDir: '../public',
   // resolve: {
   //   alias: {
-  //     '@': resolve(process.cwd()),
+  //     'wyrd-ui': resolve(process.cwd(), 'src'),
   //     // '@': fileURLToPath(new URL('./', import.meta.url)),
-  //     // '@wyrdui': fileURLToPath(new URL('./', import.meta.url)),
   //   },
   // },
   // build: {

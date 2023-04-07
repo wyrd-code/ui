@@ -1,8 +1,0 @@
-@import '@/style/default';
-
-:root {
-  /* Vitepress */
-  --vp-c-brand: #e22314;
-  --vp-button-brand-bg: #bc1b10;
-  --vp-button-brand-border: #e22314;
-}

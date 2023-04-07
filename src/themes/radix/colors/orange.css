@@ -1,0 +1,30 @@
+:root,
+.light {
+  --wui-color-orange-1: hsl(24, 70%, 99%);
+  --wui-color-orange-2: hsl(24, 83.3%, 97.6%);
+  --wui-color-orange-3: hsl(24, 100%, 95.3%);
+  --wui-color-orange-4: hsl(25, 100%, 92.2%);
+  --wui-color-orange-5: hsl(25, 100%, 88.2%);
+  --wui-color-orange-6: hsl(25, 100%, 82.8%);
+  --wui-color-orange-7: hsl(24, 100%, 75.3%);
+  --wui-color-orange-8: hsl(24, 94.5%, 64.3%);
+  --wui-color-orange-9: hsl(24, 94%, 50%);
+  --wui-color-orange-10: hsl(24, 100%, 46.5%);
+  --wui-color-orange-11: hsl(24, 100%, 37%);
+  --wui-color-orange-12: hsl(15, 60%, 17%);
+}
+
+html.dark {
+  --wui-color-orange-1: hsl(30, 70%, 7.2%);
+  --wui-color-orange-2: hsl(28, 100%, 8.4%);
+  --wui-color-orange-3: hsl(26, 91.1%, 11.6%);
+  --wui-color-orange-4: hsl(25, 88.3%, 14.1%);
+  --wui-color-orange-5: hsl(24, 87.6%, 16.6%);
+  --wui-color-orange-6: hsl(24, 88.6%, 19.8%);
+  --wui-color-orange-7: hsl(24, 92.4%, 24%);
+  --wui-color-orange-8: hsl(25, 100%, 29%);
+  --wui-color-orange-9: hsl(24, 94%, 50%);
+  --wui-color-orange-10: hsl(24, 100%, 58.5%);
+  --wui-color-orange-11: hsl(24, 100%, 62.2%);
+  --wui-color-orange-12: hsl(24, 97%, 93.2%);
+}

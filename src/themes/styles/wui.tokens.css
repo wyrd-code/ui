@@ -1,0 +1,128 @@
+:root {
+	--wui-color-token-usage: (surface, content, and border);
+	--wui-color-token-sentiment: (neutral, primary, info, success, warning, danger);
+	--wui-color-token-prominence: (default, prominent, faded, and muted);
+	--wui-color-token-interaction: (default, hover, active, and disabled);
+
+  --wui-color--surface-neutral-default: var(--wui-color-neutral-4)
+
+
+  /* --wui-color--surface-neutral-default */
+
+  /* @each $variant in var(--wui-color-token-usage) {
+    &-variant--$variant {
+      border-color: var(--wui-color-$(variant)-6);
+      background-color: var(--wui-color-$(variant)-3);
+      color: var(--wui-color-$(variant)-11);
+    }
+  } */
+
+/*
+
+Have a spacer hierarchy with semantic/alias token on each spacer variant. Things like:
+
+Spacer/header-subtitle (-xsmall)
+Spacer/button-text (-medium)
+…
+Spacer/nav-offset (-xlarge)
+Spacer/footing (-2xlarge)
+
+
+// READING/SETTING CSS VARS IN BROWSER:
+
+// Set CSS vars in JS
+const root = document.documentElement;
+root.style.setProperty('--primary', '#CCCC00');
+
+https://codepen.io/shshaw/pen/NYVoGa?editors=0112
+
+https://codepen.io/tomhodgins/pen/gqrPQq?editors=0112
+
+document.body.style.color = colors.primary;
+
+function getStyle(element, style, no){
+  return window
+    .getComputedStyle(element)
+    .getPropertyValue(style)
+    .trim();
+}
+
+// Pull simple variables directly.
+console.log(
+  'Primary Color',
+  getStyle(document.body, '--color-primary')
+);
+
+// By using JSON.parse on our CSS variables, we can extract full JS data from our CSS!
+console.log(
+  JSON.parse( getStyle(document.body, '--array') )
+);
+console.log(
+  JSON.parse( getStyle(document.body, '--object') )
+);
+
+
+
+interactive-color :
+  default: *color-blue-50
+  dark: *color-blue-60
+
+background-color :
+  default : *color-white
+  light : *color-neutral-90
+  dark : *color-neutral-20
+  disabled: *color-neutral-90
+
+text-color :
+  default : *color-neutral-25
+  on-light : *color-neutral-25
+  on-dark : *color-white
+  light : *color-neutral-55
+  disabled : *color-neutral-65
+  link :
+    default : *color-blue-50
+    on-dark : *color-white
+
+font :
+	family :
+	size :
+	line-height :
+
+border :
+
+size :
+	icon :
+
+space :
+	inset :
+	stack :
+	inline :
+	grid :
+
+layout :
+	row :
+	margin :
+	gutter :
+
+shadow :
+	block :
+	text :
+
+size :
+
+transition :
+
+timing :
+
+layers :
+
+responsive :
+  viewports
+
+theme :
+	product :
+	age :
+	motif :
+
+  */
+}

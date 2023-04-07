@@ -1,0 +1,51 @@
+@import './../radix/index.css';
+
+:root {
+  --wui-color-accent-1:           var(--wui-color-cyan-1);
+  --wui-color-accent-2:           var(--wui-color-cyan-2);
+  --wui-color-accent-3:           var(--wui-color-cyan-3);
+  --wui-color-accent-4:           var(--wui-color-cyan-4);
+  --wui-color-accent-5:           var(--wui-color-cyan-5);
+  --wui-color-accent-6:           var(--wui-color-cyan-6);
+  --wui-color-accent-7:           var(--wui-color-cyan-7);
+  --wui-color-accent-8:           var(--wui-color-cyan-8);
+  --wui-color-accent-9:           var(--wui-color-cyan-9);
+  --wui-color-accent-10:          var(--wui-color-cyan-10);
+  --wui-color-accent-11:          var(--wui-color-cyan-11);
+  --wui-color-accent-12:          var(--wui-color-cyan-12);
+/*
+  --wui-color-info-1:             var(--wui-color-blue-1);
+  --wui-color-info-2:             var(--wui-color-blue-2);
+  --wui-color-info-3:             var(--wui-color-blue-3);
+  --wui-color-info-4:             var(--wui-color-blue-4);
+  --wui-color-info-5:             var(--wui-color-blue-5);
+  --wui-color-info-6:             var(--wui-color-blue-6);
+  --wui-color-info-7:             var(--wui-color-blue-7);
+  --wui-color-info-8:             var(--wui-color-blue-8);
+  --wui-color-info-9:             var(--wui-color-blue-9);
+  --wui-color-info-10:            var(--wui-color-blue-10);
+  --wui-color-info-11:            var(--wui-color-blue-11);
+  --wui-color-info-12:            var(--wui-color-blue-12); */
+
+  --wui-text-color-default:       var(--wui-color-gray-11);
+  --wui-text-color-pronounced:    var(--wui-color-gray-12);
+  --wui-text-color-subtle:        var(--wui-color-gray-10);
+  --wui-text-color-faded:         var(--wui-color-gray-8);
+  --wui-text-color-interactive:   var(--wui-color-accent-11);
+  --wui-text-color-hover:         var(--wui-color-accent-10);
+
+  --wui-surface-ocean-bg:         var(--wui-color-black);
+  --wui-surface-continent-bg:     var(--wui-color-gray-1);
+  --wui-surface-lake-bg:          var(--wui-color-gray-2);
+  --wui-surface-island-bg:        var(--wui-color-gray-3);
+}
+
+:root,
+.light {
+}
+
+html.dark {
+}
+
+body {
+}

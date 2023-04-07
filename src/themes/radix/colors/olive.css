@@ -1,0 +1,30 @@
+:root,
+.light {
+  --wui-color-olive-1: hsl(110, 20%, 99%);
+  --wui-color-olive-2: hsl(120, 16.7%, 97.6%);
+  --wui-color-olive-3: hsl(119, 10.1%, 95.2%);
+  --wui-color-olive-4: hsl(118, 8.1%, 93%);
+  --wui-color-olive-5: hsl(117, 7.1%, 90.8%);
+  --wui-color-olive-6: hsl(115, 6.4%, 88.5%);
+  --wui-color-olive-7: hsl(114, 5.9%, 85.4%);
+  --wui-color-olive-8: hsl(110, 5.2%, 77.3%);
+  --wui-color-olive-9: hsl(110, 3.5%, 55.5%);
+  --wui-color-olive-10: hsl(111, 2.8%, 51.7%);
+  --wui-color-olive-11: hsl(110, 3%, 43%);
+  --wui-color-olive-12: hsl(110, 25%, 9.5%);
+}
+
+.dark {
+  --wui-color-olive-1: hsl(110, 5%, 8.6%);
+  --wui-color-olive-2: hsl(105, 7.4%, 10.6%);
+  --wui-color-olive-3: hsl(106, 6.4%, 13.1%);
+  --wui-color-olive-4: hsl(106, 5.8%, 15.3%);
+  --wui-color-olive-5: hsl(107, 5.3%, 17.4%);
+  --wui-color-olive-6: hsl(107, 4.9%, 19.9%);
+  --wui-color-olive-7: hsl(108, 4.4%, 23.6%);
+  --wui-color-olive-8: hsl(110, 3.8%, 30.6%);
+  --wui-color-olive-9: hsl(110, 6%, 42.5%);
+  --wui-color-olive-10: hsl(111, 4.8%, 48.2%);
+  --wui-color-olive-11: hsl(110, 5%, 61.8%);
+  --wui-color-olive-12: hsl(110, 6%, 93%);
+}

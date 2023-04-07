@@ -8,7 +8,7 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 
-import { useTimeAgo } from '@/ui-vue'
+import { useTimeAgo } from '@/composables'
 
 const refVal = computed(() => '2022-07-28T23:54:47Z')
 

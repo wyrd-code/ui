@@ -1,0 +1,30 @@
+:root,
+.light {
+  --wui-color-bronze-1: hsl(15, 30%, 99.1%);
+  --wui-color-bronze-2: hsl(17, 63.6%, 97.8%);
+  --wui-color-bronze-3: hsl(17, 42.1%, 95.2%);
+  --wui-color-bronze-4: hsl(17, 35.2%, 92.1%);
+  --wui-color-bronze-5: hsl(17, 31.5%, 88.2%);
+  --wui-color-bronze-6: hsl(17, 29%, 83%);
+  --wui-color-bronze-7: hsl(17, 26.9%, 75.6%);
+  --wui-color-bronze-8: hsl(17, 25.1%, 66.5%);
+  --wui-color-bronze-9: hsl(17, 20%, 54%);
+  --wui-color-bronze-10: hsl(17, 18.1%, 50.1%);
+  --wui-color-bronze-11: hsl(15, 20%, 43.1%);
+  --wui-color-bronze-12: hsl(12, 22%, 21.5%);
+}
+
+html.dark {
+  --wui-color-bronze-1: hsl(17, 10%, 8.8%);
+  --wui-color-bronze-2: hsl(15, 14.8%, 10.6%);
+  --wui-color-bronze-3: hsl(15, 16.3%, 14.3%);
+  --wui-color-bronze-4: hsl(16, 17.1%, 17.2%);
+  --wui-color-bronze-5: hsl(16, 17.6%, 19.6%);
+  --wui-color-bronze-6: hsl(16, 18.1%, 22.9%);
+  --wui-color-bronze-7: hsl(17, 18.8%, 28.8%);
+  --wui-color-bronze-8: hsl(17, 19.6%, 38%);
+  --wui-color-bronze-9: hsl(17, 20%, 54%);
+  --wui-color-bronze-10: hsl(18, 24%, 59%);
+  --wui-color-bronze-11: hsl(18, 35%, 68.5%);
+  --wui-color-bronze-12: hsl(18, 57%, 94.1%);
+}

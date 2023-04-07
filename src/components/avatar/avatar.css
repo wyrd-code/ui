@@ -1,0 +1,92 @@
+.wui-avatar {
+  @apply relative inline-flex overflow-hidden;
+  @apply leading-none
+  @apply items-center justify-center whitespace-nowrap;
+  @apply rounded-full;
+  @apply bg-neutral-2 border border-neutral-7;
+
+  &-img {
+    @apply block w-full h-full object-cover;
+  }
+
+  &-label {
+    @apply align-middle font-semibold tracking-tighter;
+    @apply text-neutral-11;
+  }
+
+  &-placeholder-icon {
+    @apply absolute text-neutral-7;
+  }
+
+  &--square {
+    @apply rounded-none;
+  }
+
+  &--size-xs {
+    @apply h-6 w-6 text-xs;
+
+    .wui-avatar-placeholder-icon {
+      @apply h-6 w-6 -bottom-1;
+    }
+  }
+
+  &--size-sm {
+    @apply h-8 w-8 text-sm;
+
+    .wui-avatar-placeholder-icon {
+      @apply h-8 w-8 -bottom-1;
+    }
+  }
+
+  &--size-base {
+    @apply h-10 w-10;
+
+    .wui-avatar-placeholder-icon {
+      @apply h-10 w-10 -bottom-1.5;
+    }
+  }
+
+  &--size-lg {
+    @apply h-12 w-12 text-xl;
+
+    .wui-avatar-placeholder-icon {
+      @apply h-12 w-12 -bottom-2;
+    }
+  }
+
+  &--size-xl {
+    @apply h-16 w-16 text-3xl;
+
+    .wui-avatar-placeholder-icon {
+      @apply h-16 w-16 -bottom-2;
+    }
+  }
+
+  &--size-2xl {
+    @apply h-24 w-24 text-4xl;
+
+    .wui-avatar-placeholder-icon {
+      @apply h-24 w-24 -bottom-2;
+    }
+  }
+
+  &--size-3xl {
+    @apply h-36 w-36 text-5xl;
+
+    .wui-avatar-placeholder-icon {
+      @apply h-36 w-36 -bottom-2;
+    }
+  }
+}
+
+.wui-avatar-group .wui-avatar {
+  @apply inline-block;
+  /* @apply ring-2 ring-white dark:ring-black; */
+}
+
+/* .wui-avatar-group--horizontal .wui-avatar {
+  > span,
+  > img {
+    @apply ring-2 ring-white;
+  }
+} */

@@ -1,0 +1,75 @@
+/* scale-in */
+.scale-in-enter,
+.scale-in-leave-to{
+   transform: scale(0.88);
+   opacity: 0;
+}
+
+.scale-in-enter-active,
+.scale-in-leave-active{
+    transition:  transform 0.3s, opacity 0.5s ;
+}
+
+/* shrink */
+.shrink-enter,
+.shrink-leave-to {
+  transform: scale(1.12);
+  opacity: 0;
+}
+
+.shrink-enter-active,
+.shrink-leave-active {
+  transition: transform 0.5s, opacity 0.3s;
+}
+
+/* flip-x */
+.flip-x-enter,
+.flip-x-leave-to{
+  transform: rotateY(-80deg);
+  opacity: 0;
+}
+
+.flip-x-enter-active,
+.flip-x-leave-active{
+    transition:  transform 0.5s, opacity 0.3s;
+}
+
+/* fade-x */
+.fade-x-enter,
+.fade-x-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.fade-x-enter-active,
+.fade-x-leave-to {
+  transition: opacity 0.3s, transform 0.5s;
+}
+
+/* fade-y */
+.fade-y-enter,
+.fade-y-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-y-enter-active,
+.fade-y-leave-active {
+  transition: opacity 0.3s, transform 0.5s;
+}
+
+/* scale-slide */
+.scale-slide-enter-active,
+.scale-slide-leave-active {
+  position: absolute;
+  transition: all 0.85s ease;
+}
+.scale-slide-enter-from {
+  left: -100%;
+}
+.scale-slide-enter-to {
+  left: 0%;
+}
+.scale-slide-leave-from {
+  transform: scale(1);
+}

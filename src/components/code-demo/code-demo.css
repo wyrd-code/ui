@@ -1,0 +1,51 @@
+.wui-code-demo {
+  @apply rounded-lg;
+  @apply border border-neutral-6;
+  @apply my-4;
+
+  &-content {
+    @apply rounded-t-lg;
+    @apply p-4 flex flex-col space-y-4 w-full justify-center items-center;
+    @apply border-b border-neutral-6;
+  }
+
+  &-row {
+    @apply grid grid-flow-col auto-cols-max gap-4 w-full;
+    @apply content-center items-center place-content-center;
+  }
+
+  &-row + &-row {
+    @apply mt-4;
+  }
+
+  &-row-label {
+    @apply row-span-2;
+    @apply md:(row-span-2);
+    @apply lg:(row-span-1);
+  }
+
+  &-actions {
+    @apply rounded-b-lg;
+    @apply bg-neutral-3;
+    @apply p-2 space-x-2;
+    @apply leading-none flex justify-end;
+
+    &.expanded {
+      @apply rounded-b-none;
+    }
+  }
+
+  div[class*='language-'] {
+    @apply w-full mb-0 mt-0;
+    @apply rounded-b-lg rounded-t-none;
+    @apply border-t border-neutral-6;
+
+    pre {
+      @apply flex p-4 my-0;
+    }
+  }
+
+  html.dark & div[class*='language-'] {
+    @apply bg-neutral-2;
+  }
+}

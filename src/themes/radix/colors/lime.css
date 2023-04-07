@@ -1,0 +1,30 @@
+:root,
+.light {
+  --wui-color-lime-1: hsl(85, 50%, 98.7%);
+  --wui-color-lime-2: hsl(85, 66.7%, 96.5%);
+  --wui-color-lime-3: hsl(85, 76%, 92.3%);
+  --wui-color-lime-4: hsl(84, 75.3%, 87.5%);
+  --wui-color-lime-5: hsl(84, 71.5%, 81.9%);
+  --wui-color-lime-6: hsl(82, 65%, 74.6%);
+  --wui-color-lime-7: hsl(79, 53.2%, 61.8%);
+  --wui-color-lime-8: hsl(76, 61.7%, 45.1%);
+  --wui-color-lime-9: hsl(81, 67%, 50%);
+  --wui-color-lime-10: hsl(80, 68.3%, 46.9%);
+  --wui-color-lime-11: hsl(75, 80%, 26%);
+  --wui-color-lime-12: hsl(78, 70%, 11.5%);
+}
+
+html.dark {
+  --wui-color-lime-1: hsl(75, 55%, 6%);
+  --wui-color-lime-2: hsl(74, 56.8%, 7.3%);
+  --wui-color-lime-3: hsl(78, 50.2%, 9.9%);
+  --wui-color-lime-4: hsl(79, 50.3%, 12.1%);
+  --wui-color-lime-5: hsl(79, 52.6%, 14.2%);
+  --wui-color-lime-6: hsl(78, 55.7%, 16.7%);
+  --wui-color-lime-7: hsl(77, 59.7%, 20.1%);
+  --wui-color-lime-8: hsl(75, 64.8%, 24.5%);
+  --wui-color-lime-9: hsl(81, 67%, 50%);
+  --wui-color-lime-10: hsl(75, 85%, 60%);
+  --wui-color-lime-11: hsl(81, 70%, 43.8%);
+  --wui-color-lime-12: hsl(84, 79%, 92.6%);
+}

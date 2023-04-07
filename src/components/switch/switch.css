@@ -1,0 +1,174 @@
+.wui-switch {
+  &-interface {
+    @apply relative inline-flex;
+    @apply border rounded-full;
+    @apply align-middle;
+    @apply cursor-pointer;
+    @apply focus:(ring-accent-9 ring-offset-accent-9 ring-3)
+  }
+
+  &--checked &-interface {
+    @apply justify-end;
+  }
+
+  &-circle {
+    @apply rounded-full;
+    @apply bg-white border;
+    @apply transition;
+  }
+
+  &-input {
+    @apply hidden;
+  }
+
+  &-label {
+    @apply inline-flex items-center;
+  }
+  &-label-text {
+    @apply ml-2;
+  }
+
+  &-help {
+    @apply text-sm;
+  }
+
+  &:not(&--disabled, &--readonly) &-label {
+    @apply cursor-pointer;
+  }
+
+  &--accent {
+    .wui-switch-interface {
+      @apply bg-accent-5 hover:bg-accent-8 border-accent-7;
+    }
+    .wui-switch-circle {
+      @apply border-accent-8;
+    }
+    &.wui-switch--checked .wui-switch-interface {
+      @apply bg-accent-9 border-accent-10;
+    }
+  }
+  &--primary {
+    .wui-switch-interface {
+      @apply bg-primary-5 hover:bg-primary-8 border-primary-7;
+    }
+    .wui-switch-circle {
+      @apply border-primary-8;
+    }
+    &.wui-switch--checked .wui-switch-interface {
+      @apply bg-primary-9 border-primary-10;
+    }
+  }
+  &--info {
+    .wui-switch-interface {
+      @apply bg-info-5 hover:bg-info-8 border-info-7;
+    }
+    .wui-switch-circle {
+      @apply border-info-8;
+    }
+    &.wui-switch--checked .wui-switch-interface {
+      @apply bg-info-9 border-info-10;
+    }
+  }
+  &--success {
+    .wui-switch-interface {
+      @apply bg-success-5 hover:bg-success-8 border-success-7;
+    }
+    .wui-switch-circle {
+      @apply border-success-8;
+    }
+    &.wui-switch--checked .wui-switch-interface {
+      @apply bg-success-9 border-success-10;
+    }
+  }
+  &--warning {
+    .wui-switch-interface {
+      @apply bg-warning-5 hover:bg-warning-8 border-warning-7;
+    }
+    .wui-switch-circle {
+      @apply border-warning-8;
+    }
+    &.wui-switch--checked .wui-switch-interface {
+      @apply bg-warning-9 border-warning-10;
+    }
+  }
+  &--danger {
+    .wui-switch-interface {
+      @apply bg-danger-5 hover:bg-danger-8 border-danger-7;
+    }
+    .wui-switch-circle {
+      @apply border-danger-8;
+    }
+    &.wui-switch--checked .wui-switch-interface {
+      @apply bg-danger-9 border-danger-10;
+    }
+  }
+  &--neutral {
+    .wui-switch-interface {
+      @apply bg-neutral-5 hover:bg-neutral-8 border-neutral-7;
+    }
+    .wui-switch-circle {
+      @apply border-neutral-8;
+    }
+    &.wui-switch--checked .wui-switch-interface {
+      @apply bg-neutral-9 border-neutral-10;
+    }
+  }
+
+  &--readonly,
+  &--readonly.wui-switch--checked {
+    .wui-switch-interface,
+    .wui-switch-label {
+      @apply cursor-not-allowed;
+    }
+  }
+
+  &--disabled,
+  &--disabled.wui-switch--checked {
+    .wui-switch-interface,
+    .wui-switch-label {
+      @apply cursor-not-allowed opacity-50;
+    }
+  }
+
+  &--sm {
+    .wui-switch-label {
+      @apply text-sm;
+    }
+    .wui-switch-interface {
+      @apply min-w-7;
+    }
+    .wui-switch-circle {
+      @apply w-4 h-4;
+    }
+  }
+  &--base {
+    .wui-switch-interface {
+      @apply min-w-8;
+    }
+    .wui-switch-circle {
+      @apply w-5 h-5;
+    }
+  }
+  &--lg {
+    .wui-switch-label {
+      @apply text-lg;
+    }
+    .wui-switch-interface {
+      @apply min-w-10;
+    }
+    .wui-switch-circle {
+      @apply w-5.5 h-5.5;
+    }
+  }
+  &--xl {
+    .wui-switch-label {
+      @apply text-2xl;
+    }
+    .wui-switch-interface {
+      @apply min-w-12;
+    }
+    .wui-switch-circle {
+      @apply w-7 h-7;
+    }
+  }
+}

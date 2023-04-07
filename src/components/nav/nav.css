@@ -1,0 +1,53 @@
+.wui-nav {
+  @apply flex flex-col;
+  @apply text-sm;
+  @apply p-0;
+}
+
+.wui-nav :deep(.wui-nav) {
+  @apply border-none;
+}
+
+.wui-nav :deep(.wui-nav .wui-nav-item) {
+  @apply pl-6;
+}
+
+.wui-nav :deep(.group .wui-nav) {
+  @apply pl-0;
+}
+
+.wui-nav :deep(.wui-nav-item) {
+  @apply flex align-middle items-center;
+  @apply w-full text-left;
+  @apply rounded;
+  @apply space-x-2;
+}
+
+.wui-nav :deep(.wui-nav-item[disabled]) {
+  @apply opacity-75;
+}
+.wui-nav :deep(.wui-nav-item-icon) {
+  @apply inline-flex align-middle items-center;
+}
+.wui-nav :deep(.wui-nav-item-description) {
+  @apply text-xs leading-none;
+}
+.wui-nav :deep(.wui-nav-item-body) {
+  @apply flex-grow;
+}
+.wui-nav :deep(.wui-nav-item:not(:first-child):not(:last-child)) .wui-btn {
+  @apply rounded-none;
+}
+
+.wui-nav :deep(.wui-nav-item) {
+}
+.wui-nav :deep(span.wui-nav-item) {
+  @apply font-bold;
+}
+.wui-nav :deep(a.wui-nav-item) {
+}
+.wui-nav :deep(a.wui-nav-item:hover) {
+}
+.wui-nav :deep(a.wui-nav-item:focus) {
+  @apply outline-none;
+}

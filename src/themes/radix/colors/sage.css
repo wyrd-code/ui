@@ -1,0 +1,30 @@
+:root,
+.light {
+  --wui-color-sage-1: hsl(155, 30%, 98.8%);
+  --wui-color-sage-2: hsl(150, 16.7%, 97.6%);
+  --wui-color-sage-3: hsl(151, 10.6%, 95.2%);
+  --wui-color-sage-4: hsl(151, 8.8%, 93%);
+  --wui-color-sage-5: hsl(151, 7.8%, 90.8%);
+  --wui-color-sage-6: hsl(152, 7.2%, 88.4%);
+  --wui-color-sage-7: hsl(153, 6.7%, 85.3%);
+  --wui-color-sage-8: hsl(154, 6.1%, 77.5%);
+  --wui-color-sage-9: hsl(155, 3.5%, 55.5%);
+  --wui-color-sage-10: hsl(154, 2.8%, 51.7%);
+  --wui-color-sage-11: hsl(155, 3%, 43%);
+  --wui-color-sage-12: hsl(155, 24%, 9%);
+}
+
+html.dark {
+  --wui-color-sage-1: hsl(155, 7%, 8.4%);
+  --wui-color-sage-2: hsl(150, 7.4%, 10.6%);
+  --wui-color-sage-3: hsl(150, 6.7%, 13.1%);
+  --wui-color-sage-4: hsl(150, 6.4%, 15.3%);
+  --wui-color-sage-5: hsl(150, 6.1%, 17.4%);
+  --wui-color-sage-6: hsl(150, 5.8%, 19.9%);
+  --wui-color-sage-7: hsl(150, 5.5%, 23.6%);
+  --wui-color-sage-8: hsl(150, 5.1%, 30.6%);
+  --wui-color-sage-9: hsl(155, 6%, 42.5%);
+  --wui-color-sage-10: hsl(153, 4.8%, 48.2%);
+  --wui-color-sage-11: hsl(155, 5%, 61.8%);
+  --wui-color-sage-12: hsl(155, 6%, 93%);
+}

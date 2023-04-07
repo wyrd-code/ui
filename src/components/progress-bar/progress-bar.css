@@ -1,0 +1,151 @@
+@keyframes animate-moving {
+  0% {
+    width: 20%;
+    margin-left: -20%;
+  }
+  /* 50% {
+    width: 50%;
+    margin-left: 20%;
+  } */
+  100% {
+    width: 40%;
+    margin-left: 100%;
+  }
+}
+
+@keyframes animate-sliding {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+.wui-progress-bar {
+  @apply inline-block w-full;
+  @apply relative;
+  @apply overflow-hidden;
+
+  /* Anatomy */
+
+  &__track {
+    @apply w-full;
+    @apply flex items-center;
+    @apply bg-neutral-3 border border-neutral-6;
+    @apply shadow shadow-inset;
+    @apply p-1;
+  }
+
+  &__fill {
+    @apply h-full;
+    @apply bg-accent-7 border border-accent-9;
+    @apply shadow shadow-inset;
+    transition: all 0.2s ease-out;
+    max-width: 100%;
+  }
+
+  &__label {
+    @apply flex items-center justify-center;
+    @apply absolute;
+    @apply leading-none;
+    @apply w-full h-full;
+  }
+  &__track > &__label {
+  }
+  &__fill > &__label {
+    @apply hidden;
+  }
+
+  /* Permutations */
+
+  &--centered &__track {
+    @apply justify-center;
+  }
+  &--sliding &__fill {
+    animation: animate-sliding 2s linear infinite;
+  }
+  &--moving &__fill {
+    animation: animate-moving 1.15s ease-in-out infinite;
+  }
+  &--striped &__fill {
+    background-size: 50px 50px;
+    background-image: linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.2) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.2) 75%,
+      transparent 75%,
+      transparent
+    );
+  }
+  &--infinite {
+    @apply overflow-hidden;
+  }
+  &--infinite &__track {
+  }
+  &--infinite &__fill {
+    @apply w-full bg-accent-10;
+  }
+
+  /*
+  &--infinite &__fill:after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background-image: linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, .2) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, .2) 50%,
+      rgba(255, 255, 255, .2) 75%,
+      transparent 75%,
+      transparent
+    );
+    z-index: 1;
+    background-size: 50px 50px;
+    animation: move 2s linear infinite;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow: hidden;
+  }
+  */
+
+  /* Shapes */
+
+  &--shape-round &__fill,
+  &--shape-round &__track {
+    @apply rounded-full;
+  }
+
+  &--shape-rounded &__fill,
+  &--shape-rounded &__track {
+    @apply rounded;
+  }
+
+  &--shape-square {
+  }
+
+  /* Sizes */
+
+  &--size-xs &__track {
+    @apply h-6;
+  }
+  &--size-sm &__track {
+    @apply h-6;
+  }
+  &--size-base &__track {
+    @apply h-10;
+  }
+  &--size-lg &__track {
+    @apply h-12;
+  }
+  &--size-xl &__track {
+    @apply h-16;
+  }
+}

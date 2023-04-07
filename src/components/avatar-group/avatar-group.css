@@ -1,0 +1,32 @@
+.wui-avatar-group {
+  @apply flex overflow-hidden relative;
+
+  .wui-avatar-group-max {
+    @apply flex items-center justify-center;
+    @apply bg-neutral-2 border border-neutral-7;
+    @apply rounded-full;
+    @apply z-5;
+  }
+
+  &--horizontal {
+    @apply flex-wrap -space-x-4;
+
+    .wui-avatar-group-max {
+      @apply px-2 py-2;
+    }
+  }
+
+  &--vertical {
+    @apply items-start flex-col -space-y-3;
+
+    .wui-avatar-group-max {
+      @apply px-2 py-1.5;
+    }
+  }
+}
+  .wui-avatar-group > .wui-avatar {
+    @apply z-1 border-blue-8;
+  }
+  .wui-avatar-group > .wui-avatar:hover {
+    @apply z-10 border-red-8;
+  }

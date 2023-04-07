@@ -1,0 +1,160 @@
+.wui-tag {
+  @apply inline-flex items-center align-middle box-border;
+  @apply border;
+  @apply py-1 px-3 space-x-2;
+  @apply text-sm leading-5;
+
+  &-body {
+    @apply inline-flex items-center align-middle box-border;
+    @apply space-x-2;
+  }
+
+  &-close {
+    @apply items-center cursor-pointer cursor-pointer;
+    @apply border border-red-8;
+    @apply text-lg;
+  }
+
+  &--round {
+    @apply rounded-full;
+  }
+
+  &--rounded {
+    @apply rounded;
+  }
+
+  &--square {
+  }
+
+  &--neutral {
+    @apply bg-neutral-4 border-neutral-7 text-neutral-11;
+
+    &.wui-tag--link:hover {
+      @apply bg-neutral-5;
+    }
+
+    &.wui-tag--filled {
+      @apply bg-neutral-9 border-neutral-10 text-white;
+
+      &.wui-tag--link:hover {
+        @apply bg-neutral-8;
+      }
+    }
+
+    &.wui-tag--pointed::after {
+      @apply border-l-neutral-7;
+    }
+  }
+
+  &--primary {
+    @apply bg-primary-4 border-primary-7 text-primary-11;
+
+    &.wui-tag--link:hover {
+      @apply bg-primary-5;
+    }
+
+    &.wui-tag--filled {
+      @apply bg-primary-9 border-primary-10 text-white;
+
+      &.wui-tag--link:hover {
+        @apply bg-primary-8;
+      }
+    }
+  }
+
+  &--accent {
+    @apply bg-accent-4 border-accent-7 text-accent-11;
+
+    &.wui-tag--link:hover {
+      @apply bg-accent-5;
+    }
+
+    &.wui-tag--filled {
+      @apply bg-accent-9 border-accent-10 text-white;
+
+      &.wui-tag--link:hover {
+        @apply bg-accent-8;
+      }
+    }
+  }
+
+  &--info {
+    @apply bg-info-4 border-info-7 text-info-11;
+
+    &.wui-tag--link:hover {
+      @apply bg-info-5;
+    }
+
+    &.wui-tag--filled {
+      @apply bg-info-9 border-info-10 text-white;
+
+      &.wui-tag--link:hover {
+        @apply bg-info-8;
+      }
+    }
+  }
+
+  &--success {
+    @apply bg-success-4 border-success-7 text-success-11;
+
+    &.wui-tag--link:hover {
+      @apply bg-success-5;
+    }
+
+    &.wui-tag--filled {
+      @apply bg-success-9 border-success-10 text-white;
+
+      &.wui-tag--link:hover {
+        @apply bg-success-8;
+      }
+    }
+  }
+
+  &--warning {
+    @apply bg-warning-4 border-warning-7 text-warning-11;
+
+    &.wui-tag--link:hover {
+      @apply bg-warning-5;
+    }
+
+    &.wui-tag--filled {
+      @apply bg-warning-9 border-warning-10 text-white;
+
+      &.wui-tag--link:hover {
+        @apply bg-warning-8;
+      }
+    }
+ }
+
+  &--danger {
+    @apply bg-danger-4 border-danger-7 text-danger-11;
+
+    &.wui-tag--link:hover {
+      @apply bg-danger-5;
+    }
+
+    &.wui-tag--filled {
+      @apply bg-danger-9 border-danger-10 text-white;
+
+      &.wui-tag--link:hover {
+        @apply bg-danger-8;
+      }
+    }
+  }
+
+  &--black {
+    @apply bg-black border-black text-white;
+
+    &.wui-tag--link:hover {
+      @apply bg-neutral-10  ;
+    }
+  }
+
+  &--white {
+    @apply bg-white border-neutral-6 text-neutral-11;
+
+    &.wui-tag--link:hover {
+      @apply bg-neutral-2;
+    }
+  }
+}

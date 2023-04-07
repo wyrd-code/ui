@@ -1,0 +1,112 @@
+.wui-checkbox {
+  &-label {
+    @apply flex-inline items-center;
+  }
+    &-input {
+      @apply hidden;
+    }
+
+    &-icon {
+      @apply border border-gray-300 rounded-sm bg-white;
+      @apply bg-no-repeat bg-center bg-contain;
+      @apply transition duration-200;
+      @apply rounded;
+      @apply mr-2;
+      @apply flex-inline align-middle items-center;
+
+      > span {
+        @apply h-full w-full;
+      }
+
+      @apply focus:(ring-accent-9 ring-offset-accent-9 ring-3)
+    }
+
+  &:not(&--disabled, &--readonly) &-label {
+    @apply cursor-pointer;
+  }
+  &:not(&--disabled, &--readonly) &-icon {
+    @apply cursor-pointer;
+  }
+
+  &--checked.wui-checkbox--accent &-icon {
+    @apply bg-accent-9 border-accent-10;
+  }
+  &--checked.wui-checkbox--primary &-icon {
+    @apply bg-primary-9 border-primary-10;
+  }
+  &--checked.wui-checkbox--warning &-icon {
+    @apply bg-warning-9 border-warning-10;
+  }
+  &--checked.wui-checkbox--danger &-icon {
+    @apply bg-danger-9 border-danger-10;
+  }
+  &--checked.wui-checkbox--success &-icon {
+    @apply bg-success-9 border-success-10;
+  }
+  &--checked.wui-checkbox--info &-icon {
+    @apply bg-info-9 border-info-10;
+  }
+  &--checked.wui-checkbox--neutral &-icon {
+    @apply bg-neutral-9 border-neutral-10;
+  }
+
+  &--checked &-icon > span {
+    @apply text-white;
+  }
+
+  &-help {
+    @apply text-sm;
+  }
+
+  &--strike {
+    @apply line-through;
+
+    &:before {
+      @apply w-full;
+    }
+  }
+
+  &--disabled {
+    @apply text-neutral-11 cursor-not-allowed;
+  }
+  &--disabled &-icon {
+    @apply bg-neutral-2 border-neutral-6;
+  }
+  &--checked.wui-checkbox--disabled &-icon {
+    @apply bg-neutral-8 border-neutral-9;
+  }
+
+  &--pulse {
+    @apply animate-pulse;
+  }
+
+  &--sm {
+    .wui-checkbox-label {
+      @apply text-sm;
+    }
+    .wui-checkbox-icon {
+      @apply h-3 w-3;
+    }
+  }
+  &--base {
+    .wui-checkbox-icon {
+      @apply h-4 w-4;
+    }
+  }
+  &--lg {
+    .wui-checkbox-label {
+      @apply text-lg;
+    }
+    .wui-checkbox-icon {
+      @apply h-5 w-5;
+    }
+  }
+  &--xl {
+    .wui-checkbox-label {
+      @apply text-2xl;
+    }
+    .wui-checkbox-icon {
+      @apply h-6 w-6;
+    }
+  }
+}

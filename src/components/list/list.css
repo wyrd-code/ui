@@ -1,0 +1,137 @@
+.wui-list {
+  &--fit {
+    @apply w-fit;
+  }
+
+  > li {
+    @apply list-item relative;
+    @apply transition-colors duration-300;
+
+    &:disabled,
+    &--disabled {
+      @apply cursor-not-allowed text-neutral-9;
+    }
+
+    > a {
+      @apply text-accent-11;
+    }
+    > a:focus {
+    }
+    > a:focus-visible {
+    }
+    > a:active,
+    > a.wui-list-item--active {
+      @apply bg-accent-9 border-accent-9 text-accent-3;
+    }
+    > a:hover {
+      @apply bg-accent-9 border-accent-9 text-accent-3;
+    }
+
+    &::marker {
+    }
+  }
+
+  &-item-body {
+    @apply flex flex-col gap-1 truncate whitespace-nowrap;
+  }
+  &-item-description {
+    @apply text-sm text-neutral-11;
+  }
+
+  > li > a {
+    @apply block;
+  }
+
+  &--bordered {
+    > li {
+      @apply border-l border-r border-neutral-7;
+    }
+    > li:first-child {
+      @apply border-t;
+    }
+    > li:last-child {
+      @apply border-b;
+    }
+  }
+
+  &--divided {
+    > li:not(:last-child) {
+      @apply border-b border-neutral-7;
+    }
+  }
+
+  &--rounded {
+    @apply rounded-lg;
+
+    > li {
+      &:first-child {
+        @apply rounded-t-lg;
+      }
+      &:last-child {
+        @apply rounded-b-lg;
+      }
+    }
+  }
+
+  &--inside {
+    @apply list-inside;
+
+    > li > * {
+      @apply inline-flex;
+    }
+  }
+
+  &--outside {
+    @apply list-outside;
+  }
+
+  &-item-icon {
+    @apply float-left;
+  }
+
+  &--sm > li > * {
+    @apply px-2 py-1 text-sm;
+  }
+  &--base > li > * {
+    @apply px-3 py-1 text-base;
+  }
+  &--lg > li > * {
+    @apply px-4 py-1.5;
+  }
+  &--xl > li > * {
+    @apply px-4 py-2 text-lg;
+  }
+
+
+  &--sm > li > * >  &-item-icon {
+    @apply w-6;
+
+    > span {
+      @apply w-4 h-4;
+    }
+  }
+
+  &--base > li > * > &-item-icon {
+    @apply w-8;
+
+    > span {
+      @apply w-5 h-5;
+    }
+  }
+
+  &--lg > li > * > &-item-icon {
+    @apply w-8;
+
+    > span {
+      @apply w-5 h-5;
+    }
+  }
+
+  &--xl > li > * > &-item-icon {
+    @apply w-10;
+
+    > span {
+      @apply w-6 h-6;
+    }
+  }
+}

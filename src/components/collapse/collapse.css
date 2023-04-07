@@ -1,0 +1,49 @@
+
+.wui-collapse {
+  @apply border rounded-lg w-full shadow;
+  @apply surface-island;
+  @apply border-neutral-6;
+
+  .wui-collapse-item {
+    @apply flex flex-col;
+
+    &:not(:first-child) {
+      @apply border-t;
+      @apply border-neutral-6;
+    }
+
+    .wui-collapse-item-header {
+      @apply m-0 relative;
+      @apply px-4 py-3;
+      @apply flex items-center space-x-4;
+      @apply cursor-pointer outline-none;
+
+      font-family: inherit;
+      font-weight: 500;
+
+      &:focus {
+        box-shadow: 0 0 0 3px fade(#a6b0bb, 20%);
+        z-index: 100;
+      }
+
+      &-icon {
+        font-size: 17px !important;
+        user-select: none;
+      }
+    }
+
+    &-body {
+      @apply border-t border-neutral-6;
+      @apply px-4 py-3;
+      will-change: height;
+    }
+
+    &:first-child .wui-collapse-item-header {
+      @apply rounded-t-lg;
+    }
+
+    &:last-child:not(&--expanded) .wui-collapse-item-header {
+      @apply rounded-b-lg;
+    }
+  }
+}

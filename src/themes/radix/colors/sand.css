@@ -1,0 +1,30 @@
+:root,
+.light {
+  --wui-color-sand-1: hsl(50, 20%, 99%);
+  --wui-color-sand-2: hsl(60, 7.7%, 97.5%);
+  --wui-color-sand-3: hsl(59, 6.5%, 95.1%);
+  --wui-color-sand-4: hsl(58, 6.1%, 92.9%);
+  --wui-color-sand-5: hsl(57, 6%, 90.7%);
+  --wui-color-sand-6: hsl(56, 5.9%, 88.4%);
+  --wui-color-sand-7: hsl(55, 5.9%, 85.2%);
+  --wui-color-sand-8: hsl(51, 6%, 77.1%);
+  --wui-color-sand-9: hsl(50, 2%, 55.7%);
+  --wui-color-sand-10: hsl(55, 1.7%, 51.9%);
+  --wui-color-sand-11: hsl(50, 2%, 43.1%);
+  --wui-color-sand-12: hsl(50, 6%, 10%);
+}
+
+html.dark {
+  --wui-color-sand-1: hsl(61, 2%, 8.3%);
+  --wui-color-sand-2: hsl(60, 3.7%, 10.6%);
+  --wui-color-sand-3: hsl(58, 3.7%, 13.1%);
+  --wui-color-sand-4: hsl(57, 3.6%, 15.3%);
+  --wui-color-sand-5: hsl(56, 3.7%, 17.4%);
+  --wui-color-sand-6: hsl(55, 3.7%, 19.9%);
+  --wui-color-sand-7: hsl(53, 3.7%, 23.6%);
+  --wui-color-sand-8: hsl(50, 3.8%, 30.6%);
+  --wui-color-sand-9: hsl(50, 4%, 42.7%);
+  --wui-color-sand-10: hsl(52, 3.1%, 48.3%);
+  --wui-color-sand-11: hsl(50, 4%, 61.8%);
+  --wui-color-sand-12: hsl(56, 4%, 92.8%);
+}

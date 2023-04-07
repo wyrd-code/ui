@@ -1,0 +1,69 @@
+.wui-badge {
+  @apply relative inline-flex;
+
+  &-body {
+    @apply h-6 px-2 py-0 inline-flex;
+    @apply items-center justify-center leading-none;
+    @apply text-white text-xs font-bold whitespace-nowrap;
+    @apply border border-white;
+    @apply rounded-full;
+
+    &--placement {
+      &-top-end {
+        @apply absolute top-0 right-0;
+        @apply translate-x-45% -translate-y-45%;
+      }
+
+      &-top-start {
+        @apply absolute top-0 left-0;
+        @apply -translate-x-45% -translate-y-45%;
+      }
+
+      &-bottom-end {
+        @apply absolute bottom-0 right-0;
+        @apply translate-x-45% translate-y-45%;
+      }
+
+      &-bottom-start {
+        @apply absolute bottom-0 left-0;
+        @apply -translate-x-45% translate-y-45%;
+      }
+    }
+
+    &--rounded {
+      @apply rounded;
+    }
+
+    &--dot {
+      @apply w-4 h-4 p-0;
+    }
+
+    &-variant--neutral {
+      @apply bg-neutral-9;
+    }
+    &-variant--primary {
+      @apply bg-primary-9;
+    }
+    &-variant--accent {
+      @apply bg-accent-9;
+    }
+    &-variant--info {
+      @apply bg-info-9;
+    }
+    &-variant--success {
+      @apply bg-success-9;
+    }
+    &-variant--warning {
+      @apply bg-warning-9;
+    }
+    &-variant--danger {
+      @apply bg-danger-9;
+    }
+    &-variant--black {
+      @apply bg-black;
+    }
+    &-variant--white {
+      @apply bg-white;
+    }
+  }
+}

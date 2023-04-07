@@ -1,0 +1,206 @@
+.wui-toast {
+  @apply relative;
+  @apply flex items-stretch;
+  @apply mx-auto;
+  @apply break-words;
+  @apply bg-neutral-8 rounded text-neutral-12;
+  @apply transition duration-200 ease-in-out;
+  @apply shadow-lg hover:shadow-xl;
+  @apply border;
+  @apply max-w-126;
+
+  > * {
+    @apply flex;
+  }
+
+  &-icon {
+    @apply pl-3 py-3;
+    @apply text-xl;
+    @apply items-center;
+  }
+
+  &-content {
+    @apply p-3;
+    @apply flex flex-col flex-grow;
+    @apply text-left;
+  }
+    &-label {
+      @apply font-bold;
+    }
+    &-description {
+      @apply text-sm;
+    }
+    &-actions {
+      @apply mt-3;
+    }
+  &-aside {
+    @apply items-center;
+    @apply p-3;
+  }
+  &-close {
+    @apply items-center;
+    @apply text-xl;
+    @apply leading-none;
+    @apply p-3;
+    @apply cursor-pointer;
+    @apply border-l;
+  }
+
+  &--variant-primary {
+    @apply bg-primary-11 text-primary-1 border-primary-10;
+  }
+  &--variant-primary &-close {
+    @apply border-primary-10 hover:bg-primary-10;
+  }
+  &--variant-primary &-aside {
+    @apply border-primary-10;
+  }
+
+  &--variant-secondary {
+    @apply bg-neutral-11 text-neutral-1;
+    @apply border-neutral-10;
+  }
+  &--variant-secondary &-close {
+    @apply border-neutral-10 hover:bg-neutral-10;
+  }
+  &--variant-secondary &-aside {
+    @apply border-neutral-10;
+  }
+
+  &--variant-neutral {
+    @apply bg-neutral-1 text-neutral-11;
+    @apply border-neutral-6;
+  }
+  &--variant-neutral &-close {
+    @apply border-neutral-6 hover:bg-neutral-3;
+  }
+  &--variant-neutral &-aside {
+    @apply border-neutral-6;
+  }
+
+  &--variant-info {
+    @apply bg-info-11 text-info-1;
+    @apply border-info-10;
+  }
+  &--variant-info &-close {
+    @apply border-info-10 hover:bg-info-10;
+  }
+  &--variant-info &-aside {
+    @apply border-info-10;
+  }
+
+  &--variant-success {
+    @apply bg-success-11 text-success-1;
+    @apply border-success-10;
+  }
+  &--variant-success &-close {
+    @apply border-success-10 hover:bg-success-10;
+  }
+  &--variant-success &-aside {
+    @apply border-success-10;
+  }
+
+  &--variant-warning {
+    @apply bg-warning-11 text-warning-1;
+    @apply border-warning-10;
+  }
+  &--variant-warning &-close {
+    @apply border-warning-10 hover:bg-warning-10;
+  }
+  &--variant-warning &-aside {
+    @apply border-warning-10;
+  }
+
+  &--variant-danger {
+    @apply bg-danger-11 text-danger-1;
+    @apply border-danger-10;
+  }
+  &--variant-danger &-close {
+    @apply border-danger-10 hover:bg-danger-10;
+  }
+  &--variant-danger &-aside {
+    @apply border-danger-10;
+  }
+}
+
+.wui-toast-container {
+  @apply fixed flex flex-col space-y-2 p-4;
+  @apply box-border;
+  @apply z-999;
+
+  &.--top {
+    @apply top-0 flex;
+  }
+
+  &.--center {
+    @apply w-full sm:fixed sm:left-2/4 sm:w-auto;
+
+    @screen sm {
+      transform: translate(-50%, 0);
+    }
+  }
+
+  &.--bottom {
+    @apply bottom-0 flex flex-col-reverse;
+
+    & > :not([hidden]) {
+      @apply mt-2;
+    }
+  }
+
+  &.--right {
+    @apply right-0 w-full sm:w-auto;
+  }
+
+  &.--left {
+    @apply left-0 w-full w-auto;
+  }
+}
+
+.wui-toast-slide-top-enter-active,
+.wui-toast-slide-top-leave-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wui-toast-slide-top-enter-from,
+.wui-toast-slide-top-leave-to {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.wui-toast-slide-bottom-enter-active,
+.wui-toast-slide-bottom-leave-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wui-toast-slide-bottom-enter-from,
+.wui-toast-slide-bottom-leave-to {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.wui-toast-slide-right-enter-active,
+.wui-toast-slide-right-leave-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.wui-toast-slide-right-enter-from,
+.wui-toast-slide-right-leave-to {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.wui-toast-slide-left-enter-active,
+.wui-toast-slide-left-leave-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.wui-toast-slide-left-enter-from,
+.wui-toast-slide-left-leave-to {
+  opacity: 0;
+  transform: translateX(-100%);
+}

@@ -1,0 +1,21 @@
+.wui-divider {
+  @apply border-box bg-neutral-8;
+
+  &:not(.wui-divider--vertical) {
+    @apply w-full min-w-full clear-both;
+    @apply h-1px my-7;
+    @apply inline-flex justify-center items-center;
+  }
+
+  &--vertical {
+    @apply inline-block relative align-middle;
+    @apply w-2px mx-[7-2px] h-[.9em];
+  }
+
+  &-icon {
+    @apply px-2 py-2 rounded-full;
+    @apply leading-none;
+    @apply border-1px;
+    @apply bg-neutral-2 border-neutral-8 text-neutral-11;
+  }
+}

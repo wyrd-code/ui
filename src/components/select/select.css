@@ -1,0 +1,233 @@
+:root {
+  --dropdown-offset: 6px;
+}
+
+.wui-select {
+  @apply inline-block min-w-12 rounded-full;
+
+  &-inner {
+    position: relative;
+  }
+
+  &-input {
+    @apply border-none h-full text-base w-auto p-0 inline-block box-border;
+    line-height: 1.2;
+    font-family: inherit;
+    background: transparent;
+
+    &::placeholder {
+      @apply text-neutral-5;
+      text-indent: 0;
+      transition: text-indent 0.27s ease;
+    }
+
+    &:focus::placeholder {
+      text-indent: 6px;
+      transition: text-indent 0.27s ease;
+    }
+
+    &:focus:not(:focus-visible) {
+      @apply outline-none;
+    }
+  }
+
+  .wui-input-label {
+    @apply text-left block;
+    @apply text-current mb-2;
+  }
+}
+
+.wui-select-option-check {
+  position: absolute;
+  border-radius: 50%;
+  width: 7px;
+  height: 7px;
+  right: 16px;
+  top: 14px;
+  @apply bg-accent-5;
+}
+
+.wui-select-selection {
+  user-select: none;
+  box-sizing: border-box;
+  line-height: 1;
+  padding: 0 8px 0 12px;
+  outline: none;
+  transition: all 0.27s;
+  @apply rounded flex h-10 text-left relative items-center justify-between;
+  @apply border shadow-input;
+  @apply bg-white border-neutral-4 text-neutral-7;
+  @apply cursor-pointer;
+  @apply dark:(bg-neutral-8 border-neutral-7 text-neutral-3);
+
+  &:hover {
+    @apply border-neutral-6;
+    @apply dark:border-neutral-4;
+  }
+
+  &--active {
+    @apply border-accent-3 shadow shadow-accent-3;
+
+    & > .wui-select-arrow {
+      @apply text-accent-3;
+    }
+
+    &:hover {
+      @apply border-accent-3;
+    }
+  }
+
+  &--disabled {
+    @apply bg-neutral-3 border-neutral-4 text-neutral-8;
+    cursor: not-allowed;
+
+    .wui-select-placeholder {
+      @apply text-neutral-4;
+    }
+
+    .wui-select-arrow {
+      @apply text-neutral-4;
+    }
+
+    &:hover {
+      @apply border-neutral-4;
+    }
+  }
+
+  &:focus:not(&--disabled) {
+    @apply border-accent-4 shadow-accent-4;
+    /* box-shadow:
+      0 2px 4px fade(@color-primary, 40%),
+      0 0 0 3px fade(@color-primary, 20%); */
+  }
+}
+
+.wui-select-placeholder,
+.wui-select-selected {
+  @apply text-base overflow-hidden whitespace-nowrap;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  word-wrap: normal;
+}
+
+.wui-select-placeholder {
+  @apply text-neutral-4;
+  @apply dark:text-neutral-6;
+
+  & + .wui-icon {
+    margin-left: 10px;
+  }
+}
+
+.wui-select-arrow {
+  @apply text-lg ml-2 transition-all duration-50;
+  @apply text-black;
+  @apply dark:text-neutral-3;
+}
+
+.wui-select-dropdown {
+  @apply w-full z-50 absolute;
+  min-width: 130px;
+
+  &--divided .wui-select-option:not(:first-child) {
+    @apply border-t;
+    @apply border-neutral-3;
+    @apply dark:border-neutral-7;
+  }
+
+  &--bottom-left,
+  &--top-left,
+  &--bottom-right,
+  &--top-right,
+  &--left,
+  &--right {
+    width: auto;
+  }
+
+  &--bottom,
+  &--top {
+    &-left {
+      right: calc(100% + var(--dropdown-offset));
+    }
+
+    &-right {
+      left: calc(100% + var(--dropdown-offset));
+    }
+  }
+
+  &--bottom {
+    top: calc(100% + var(--dropdown-offset));
+
+    &-left,
+    &-right {
+      top: 0;
+    }
+  }
+
+  &--top {
+    bottom: calc(100% + var(--dropdown-offset));
+
+    &-left,
+    &-right {
+      bottom: 0;
+    }
+  }
+
+  &--left,
+  &--right {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  &--left {
+    right: calc(100% + var(--dropdown-offset));
+  }
+
+  &--right {
+    left: calc(100% + var(--dropdown-offset));
+  }
+}
+
+.wui-select-list {
+  @apply m-0 w-full py-2 relative overflow-y-auto;
+  @apply rounded shadow;
+  @apply text-left break-words;
+  @apply bg-white text-neutral-6;
+  @apply dark:(bg-neutral-8 text-neutral-3);
+  max-height: 200px;
+  list-style: none;
+  user-select: none;
+
+  &::-webkit-scrollbar-track {
+    @apply rounded-rt rounded-br overflow-hidden;
+  }
+}
+
+.wui-select-option {
+  @apply w-full h-full relative block;
+  @apply box-border whitespace-nowrap whitespace-normal;
+  @apply text-ellipsis overflow-hidden;
+  padding: 10px 28px 10px 12px;
+  line-height: 1;
+
+  &--focused,
+  &:hover {
+    @apply cursor-pointer;
+    @apply bg-neutral-3;
+    @apply dark:bg-neutral-7;
+  }
+
+  &--focused {
+    @apply bg-accent-4;
+  }
+
+  &--disabled {
+    @apply bg-white text-neutral-4;
+    @apply dark:bg-neutral-7;
+
+    &:hover {
+      @apply bg-white text-neutral-4;
+      cursor: not-allowed;
+    }
+  }
+}

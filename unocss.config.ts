@@ -1,7 +1,5 @@
-import { colors } from '@unocss/preset-wind'
 import {
   defineConfig,
-  presetWind,
   presetTypography,
   presetIcons,
   transformerCompileClass,
@@ -9,23 +7,13 @@ import {
   transformerVariantGroup,
 } from 'unocss'
 
+import { presetRadix } from './src/preset/preset-radix'
+import { presetWyrd } from './src/preset/preset-wyrd'
+
 export function createConfig({ strict = true, dev = true } = {}): any {
   return defineConfig({
     envMode: dev ? 'dev' : 'build',
-    theme: {
-      colors: {
-        primary: colors?.indigo,
-        accent: colors?.sky,
-        neutral: colors?.zinc,
-        success: colors?.lime,
-        warning: colors?.amber,
-        danger: colors?.rose,
-        link: colors?.sky,
-        info: colors?.sky,
-      },
-    },
     presets: [
-      presetWind(),
       presetTypography({}),
       presetIcons({
         prefix: 'icon-',
@@ -35,6 +23,20 @@ export function createConfig({ strict = true, dev = true } = {}): any {
           color: 'inherit',
         },
       }),
+      presetRadix({
+        prefix: '--wui-color-',
+        palette: ['mauve', 'mint', 'yellow', 'lime', 'sky', 'tomato', 'amber'],
+        aliases: {
+          neutral: 'mauve',
+          primary: 'mint',
+          secondary: 'yellow',
+          info: 'sky',
+          warn: 'amber',
+          danger: 'tomato',
+          success: 'lime',
+        },
+      }),
+      presetWyrd(),
     ],
     transformers: [
       transformerVariantGroup(),

@@ -1,0 +1,30 @@
+:root,
+.light {
+  --wui-color-mauve-1: hsl(300, 20%, 99%);
+  --wui-color-mauve-2: hsl(300, 7.7%, 97.5%);
+  --wui-color-mauve-3: hsl(294, 5.5%, 95.3%);
+  --wui-color-mauve-4: hsl(289, 4.7%, 93.3%);
+  --wui-color-mauve-5: hsl(283, 4.4%, 91.3%);
+  --wui-color-mauve-6: hsl(278, 4.1%, 89.1%);
+  --wui-color-mauve-7: hsl(271, 3.9%, 86.3%);
+  --wui-color-mauve-8: hsl(255, 3.7%, 78.8%);
+  --wui-color-mauve-9: hsl(252, 4%, 57.3%);
+  --wui-color-mauve-10: hsl(253, 3.5%, 53.5%);
+  --wui-color-mauve-11: hsl(252, 4%, 44.8%);
+  --wui-color-mauve-12: hsl(260, 25%, 11%);
+}
+
+html.dark {
+  --wui-color-mauve-1: hsl(246, 6%, 9%);
+  --wui-color-mauve-2: hsl(240, 5.1%, 11.6%);
+  --wui-color-mauve-3: hsl(241, 5%, 14.3%);
+  --wui-color-mauve-4: hsl(242, 4.9%, 16.5%);
+  --wui-color-mauve-5: hsl(243, 4.9%, 18.8%);
+  --wui-color-mauve-6: hsl(244, 4.9%, 21.5%);
+  --wui-color-mauve-7: hsl(245, 4.9%, 25.4%);
+  --wui-color-mauve-8: hsl(247, 4.8%, 32.5%);
+  --wui-color-mauve-9: hsl(252, 4%, 45.2%);
+  --wui-color-mauve-10: hsl(247, 3.4%, 50.7%);
+  --wui-color-mauve-11: hsl(253, 4%, 63.7%);
+  --wui-color-mauve-12: hsl(256, 6%, 93.2%);
+}

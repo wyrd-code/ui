@@ -13,7 +13,7 @@
     "moduleResolution": "node",
     "strict": true,
     "jsx": "preserve",
-    "sourceMap": true,
+    "sourceMap": false,
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["dom", "dom.iterable", "esnext", "webworker"],
@@ -23,11 +23,14 @@
       "esnext",
       "node",
       "unocss",
+      "unocss/vite",
+      "unplugin-vue-components/vite",
       "vite-svg-loader",
       "vite/client",
       "vitest/globals",
       "vue-router"
     ],
+    "baseUrl": "./",
     "paths": {
       "@": ["./src"],
       "@/*": ["./src/*"]
@@ -39,5 +42,9 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true
   },
-  "exclude": ["node_modules", "**/*/lib", "**/*/dist"]
+  "exclude": ["node_modules", "dist"],
+  "include": [
+    "./**/*.ts",
+    "./**/*.vue"
+  ]
 }

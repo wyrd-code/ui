@@ -1,5 +1,0 @@
-export { default as WuiLayoutSplash } from './WuiLayoutSplash.vue'
-export { default as WuiLayoutThreeColumn } from './WuiLayoutThreeColumn.vue'
-export { default as WuiLayoutTwoColumn } from './WuiLayoutTwoColumn.vue'
-export { default as WuiArticleLayout } from './WuiArticleLayout.vue'
-export { default as WuiLayoutPageListing } from './WuiLayoutPageListing.vue'

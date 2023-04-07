@@ -1,0 +1,52 @@
+.wui-menu {
+  @apply min-w-54 max-w-128;
+  @apply flex flex-col;
+  @apply -space-y-1px;
+  @apply bg-neutral-1 border border-neutral-5 shadow-lg;
+  @apply text-sm;
+  @apply rounded;
+}
+
+.wui-menu :deep(li:first-child .wui-menu-item) {
+  @apply rounded-t;
+}
+.wui-menu :deep(li:last-child .wui-menu-item) {
+  @apply rounded-b;
+}
+
+.wui-menu :deep(.wui-menu-item) {
+  @apply w-full text-left;
+  @apply flex align-middle items-center;
+  @apply space-x-2;
+  @apply py-2;
+}
+.wui-menu :deep(.wui-menu-item[disabled]) {
+  @apply opacity-50;
+}
+.wui-menu :deep(.wui-menu-item-icon) {
+  @apply inline-flex align-middle items-center;
+}
+.wui-menu :deep(.wui-menu-item-description) {
+  @apply text-xs text-neutral-10 leading-none;
+}
+.wui-menu :deep(.wui-menu-item-body) {
+  @apply flex-grow;
+}
+.wui-menu :deep(.wui-menu-item:hover) {
+  @apply bg-neutral-3;
+}
+.wui-menu :deep(.wui-menu-item:focus) {
+  @apply outline-none;
+  @apply bg-accent-11 text-white;
+}
+.wui-menu :deep(.wui-menu-item:focus .wui-menu-item-description) {
+  @apply text-white;
+}
+.wui-menu :deep([role='separator']) {
+  @apply block;
+  @apply border-t border-neutral-5;
+  @apply pb-1;
+}
+.wui-menu :deep(.wui-menu-item:not(:first-child):not(:last-child)) .wui-btn {
+  @apply rounded-none;
+}
