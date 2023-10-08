@@ -85,96 +85,99 @@ export default defineConfig({
       pattern: 'https://github.com/wyrd-code/ui/edit/master/docs/:path',
       text: 'Edit this page on GitHub',
     },
+    search: {
+      provider: 'local',
+    },
     nav: [
-      { text: 'Guide', link: '/guide/' },
-      { text: 'Patterns', link: '/patterns/patterns.html' },
+      { text: 'Guide', link: '/docs/guide/' },
+      { text: 'Patterns', link: '/docs/patterns/patterns.html' },
       { text: 'Components', link: '/components/components.html' },
       { text: 'Templates', link: '/templates/templates.html' },
       { text: `v${version}`, link: '/CHANGELOG.html' },
       { text: 'Roadmap', link: '/ROADMAP.html' },
     ],
     sidebar: {
-      '/guide/': [
+      '/docs/guide/': [
         {
           text: 'Guide',
-          collapsible: true,
+          collapsed: false,
           items: [
-            { text: 'Overview', link: '/guide/' },
-            { text: 'Getting started', link: '/guide/getting-started' },
-            // { text: 'Configuration', link: '/guide/configuration' },
-            // { text: 'i18n', link: '/guide/i18n' },
-            { text: 'Accessibility', link: '/guide/a11y.html' },
-            { text: 'Typography Preview', link: '/guide/typography-preview' },
-            { text: 'Styleguide', link: '/guide/styleguide' },
+            { text: 'Overview', link: '/guide/docs/' },
+            { text: 'Getting started', link: '/guide/docs/getting-started' },
+            // { text: 'Configuration', link: '/guide/docs/configuration' },
+            // { text: 'i18n', link: '/guide/docs/i18n' },
+            { text: 'Accessibility', link: '/guide/docs/a11y.html' },
+            { text: 'Typography Preview', link: '/guide/docs/typography-preview' },
+            { text: 'Styleguide', link: '/guide/docs/styleguide' },
           ],
         },
         {
           text: 'Architecture',
-          collapsible: true,
+          collapsed: false,
           items: [
-            { text: 'Architecture', link: '/guide/architecture' },
-            { text: 'Atomic design', link: '/guide/design-system/atomic-design' },
+            { text: 'Architecture', link: '/guide/docs/architecture' },
+            { text: 'Atomic design', link: '/guide/docs/design-system/atomic-design' },
           ],
         },
         {
           text: 'Design system',
-          collapsible: true,
+          collapsed: false,
           items: [
-            { text: 'Overview', link: '/guide/design-system/' },
+            { text: 'Overview', link: '/guide/docs/design-system/' },
             {
               text: 'Tokens',
               items: [
-                { text: 'Design Tokens', link: '/guide/design-system/tokens' },
-                { text: 'Elevation', link: '/guide/design-system/elevation' },
-                { text: 'Shape', link: '/guide/design-system/shape' },
-                { text: 'Spacing', link: '/guide/design-system/spacing' },
-                { text: 'Tokens', link: '/guide/design-system/tokens' },
-                { text: 'Typography', link: '/guide/design-system/typography' },
+                { text: 'Design Tokens', link: '/guide/docs/design-system/tokens' },
+                { text: 'Elevation', link: '/guide/docs/design-system/elevation' },
+                { text: 'Shape', link: '/guide/docs/design-system/shape' },
+                { text: 'Spacing', link: '/guide/docs/design-system/spacing' },
+                { text: 'Tokens', link: '/guide/docs/design-system/tokens' },
+                { text: 'Typography', link: '/guide/docs/design-system/typography' },
               ],
             },
             {
               text: 'Color theory',
               items: [
-                { text: 'Color', link: '/guide/design-system/color' },
-                { text: 'Color scales', link: '/guide/design-system/color-scales' },
-                { text: 'Understanding the scale', link: '/guide/design-system/understanding-the-scale' },
-                { text: 'Palette composition', link: '/guide/design-system/color-palette-composition' },
+                { text: 'Color', link: '/guide/docs/design-system/color' },
+                { text: 'Color scales', link: '/guide/docs/design-system/color-scales' },
+                { text: 'Understanding the scale', link: '/guide/docs/design-system/understanding-the-scale' },
+                { text: 'Palette composition', link: '/guide/docs/design-system/color-palette-composition' },
               ],
             },
             {
               text: 'Other',
               items: [
-                { text: 'Animation', link: '/guide/design-system/animation' },
-                { text: 'Haptics', link: '/guide/design-system/haptics' },
-                { text: 'Sound', link: '/guide/design-system/sound' },
-                { text: 'Iconography', link: '/guide/design-system/iconography' },
-                { text: 'Theme editor', link: '/guide/design-system/theme-editor' },
+                { text: 'Animation', link: '/guide/docs/design-system/animation' },
+                { text: 'Haptics', link: '/guide/docs/design-system/haptics' },
+                { text: 'Sound', link: '/guide/docs/design-system/sound' },
+                { text: 'Iconography', link: '/guide/docs/design-system/iconography' },
+                { text: 'Theme editor', link: '/guide/docs/design-system/theme-editor' },
               ],
             },
           ],
         },
       ],
-      '/patterns/': [
+      '/docs/patterns/': [
         {
           text: 'Patterns',
-          collapsible: true,
+          collapsed: false,
           items: [
-            { text: 'Overview', link: '/patterns/' },
-            { text: 'Transitions', link: '/patterns/transitions.html' },
+            { text: 'Overview', link: '/docs/patterns/' },
+            { text: 'Transitions', link: '/docs/patterns/transitions.html' },
           ],
         },
         {
           text: 'Composables',
-          collapsible: true,
+          collapsed: false,
           items: [
-            // { text: 'useRouterLink', link: '/patterns/composables/use-router-link.html' },
+            // { text: 'useRouterLink', link: '/docs/patterns/composables/use-router-link.html' },
           ],
         },
       ],
       '/components/': [
         {
           text: 'Components',
-          collapsible: true,
+          collapsed: false,
           items: [
             { text: 'Overview', link: '/components/components.html' },
             { text: 'Alert', link: '/components/alert/alert.html' },
@@ -224,7 +227,7 @@ export default defineConfig({
         },
         {
           text: 'Pending',
-          collapsible: true,
+          collapsed: false,
           items: [
             { text: 'Tray', link: '/components/tray/tray.html' },
             { text: 'Theme', link: '/components/theme/theme.html' },
@@ -238,7 +241,7 @@ export default defineConfig({
       '/templates/': [
         {
           text: 'Templates',
-          collapsible: true,
+          collapsed: false,
           items: [
             { text: 'Overview', link: '/templates/' },
           ],

@@ -1,6 +1,3 @@
-/* eslint-disable import/no-unresolved */
-// import { fileURLToPath, URL } from 'url'
-
 import { resolve } from 'path'
 
 import postcssAtVariables from 'postcss-at-rules-variables'
@@ -15,24 +12,17 @@ import postcssPrefixer from 'postcss-prefix-selector'
 import Unocss from 'unocss/vite'
 import Components from 'unplugin-vue-components/vite'
 import { UserConfig } from 'vite'
-import dts from 'vite-plugin-dts'
-import mix from 'vite-plugin-mix'
 import svgLoader from 'vite-svg-loader'
 
 const config: UserConfig = {
   resolve: {
     alias: {
       '@': resolve(process.cwd(), 'src'),
-      // '@': fileURLToPath(new URL('./', import.meta.url)),
     },
   },
   plugins: [
     svgLoader(),
     Unocss(),
-    dts({
-      root: '.',
-      entryRoot: '.',
-    }),
     Components({
       dts: false,
       resolvers: [
@@ -40,9 +30,6 @@ const config: UserConfig = {
           if (name.startsWith('Wui')) return { name, from: '@/components' }
         },
       ],
-    }),
-    mix({
-      handler: resolve(process.cwd(), 'src/api.handler.ts'),
     }),
     // visualizer({
     //   open: false,
