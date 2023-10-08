@@ -21,7 +21,6 @@
   ],
   "html.autoClosingTags": true,
   "typescript.preferences.importModuleSpecifier": "non-relative",
-  "eslint.packageManager": "yarn",
   "eslint.format.enable": true,
   "eslint.alwaysShowStatus": true,
   "eslint.codeActionsOnSave.mode": "problems",
