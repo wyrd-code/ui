@@ -34,6 +34,11 @@ const props = defineProps({
   ...routerLinkProps,
   // override default tag value
   tag: { type: String, default: 'button' },
+  type: {
+    type: String,
+    default: 'submit',
+    validator: (value: string) => ['submit', 'reset'].includes(value),
+  },
   variant: {
     type: String,
     default: WUI_BUTTON_VARIANT_DEFAULT,
