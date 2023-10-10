@@ -73,7 +73,7 @@ defineProps({
   round: { type: Boolean },
 })
 
-const emit = defineEmits(['update:model-value'])
+const emit = defineEmits(['update:modelValue'])
 
 const expandOptions = (opts) =>
   opts.map((value) => {
@@ -81,7 +81,7 @@ const expandOptions = (opts) =>
   })
 
 const onUpdate = (newValue: any) => {
-  emit('update:model-value', newValue)
+  emit('update:modelValue', newValue)
 }
 </script>
 

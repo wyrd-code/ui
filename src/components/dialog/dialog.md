@@ -13,7 +13,7 @@ Dialogs are meant to grab the user's full attention. They typically render a flo
 
 ## Value
 
-The component expects a `v-model` to be used on it, meaning it will accept a `model-value` prop and emit an `update:model-value` event.
+The component expects a `v-model` to be used on it, meaning it will accept a `model-value` prop and emit an `update:modelValue` event.
 
 ## Slots
 

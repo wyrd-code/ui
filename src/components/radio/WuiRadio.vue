@@ -54,7 +54,7 @@ export default defineComponent({
     lineThrough: { type: Boolean },
     id: { type: String, default: useHtmlId },
   },
-  emits: ['update:model-value'],
+  emits: ['update:modelValue'],
   setup(props, { emit }) {
     const isSelected = computed(() => props.modelValue === props.value)
 
@@ -62,7 +62,7 @@ export default defineComponent({
       if (props.disabled) {
         return
       }
-      emit('update:model-value', props.value)
+      emit('update:modelValue', props.value)
     }
 
     return {

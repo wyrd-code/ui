@@ -38,7 +38,7 @@ export default defineComponent({
     modelValue: { type: String, default: null },
     labelTop: { type: String, default: null },
   },
-  emits: ['update:model-value'],
+  emits: ['update:modelValue'],
   setup(props, { emit }) {
     const textarea = ref(null)
     const focus = ref(false)
@@ -49,7 +49,7 @@ export default defineComponent({
 
     function onInput(e: InputEvent | any) {
       const target = e.target as HTMLTextAreaElement
-      emit('update:model-value', target.value)
+      emit('update:modelValue', target.value)
 
       if (props.resizeOnWrite) {
         target.style.height = 'auto'

@@ -64,7 +64,7 @@ export default defineComponent({
     step: { type: Number, default: DEFAULT_PROPS.STEP },
     modelValue: { type: Number, default: DEFAULT_PROPS.VALUE },
   },
-  emits: ['update:model-value'],
+  emits: ['update:modelValue'],
   setup(props, { emit }) {
     const sliderLineRef = ref(null)
     const startX = ref(0)
@@ -108,7 +108,7 @@ export default defineComponent({
 
       const newValue = calculateNewValue(key)
       if (!newValue) return
-      emit('update:model-value', newValue)
+      emit('update:modelValue', newValue)
     }
 
     const calculateNewValue = (key: TKeyEvents) => {

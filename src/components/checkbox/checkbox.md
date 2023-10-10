@@ -18,7 +18,7 @@ If the mental model is **enable** or **turn on** (ie *Airplane mode*) and value 
 
 ## Value
 
-The component expects a `v-model` to be used on it, meaning it will accept a `model-value` prop and emit an `update:model-value` event.
+The component expects a `v-model` to be used on it, meaning it will accept a `model-value` prop and emit an `update:modelValue` event.
 
 ## Slots
 

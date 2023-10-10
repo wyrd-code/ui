@@ -8,7 +8,7 @@
       <WuiInput
         :model-value="value"
         class="text-color-default"
-        @update:model-value="(value) => $emit('save', value)"
+        @update:modelValue="(value) => $emit('save', value)"
       />
 
       <!-- <div

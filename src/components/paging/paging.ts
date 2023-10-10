@@ -39,7 +39,7 @@ export type PagingProps = Partial<ExtractPropTypes<typeof usePagingProps>>
 
 export const usePaging = (
   props: PagingProps,
-  emit?: (event: 'update:model-value', ...args: any[]) => void
+  emit?: (event: 'update:modelValue', ...args: any[]) => void
 ) => {
   const currentPage = ref(props.modelValue || WUI_PAGING_DEFAULT_PAGE)
 
@@ -56,7 +56,7 @@ export const usePaging = (
     if (value === WUI_PAGING_SEPARATOR || value === currentPage.value) {
       return
     }
-    emit && emit('update:model-value', value)
+    emit && emit('update:modelValue', value)
     currentPage.value = value as number
   }
 

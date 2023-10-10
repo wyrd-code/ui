@@ -10,7 +10,7 @@
     <WuiFormEditor
       class="wui-input-editor-inner"
       :model-value="modelValue"
-      @update:model-value="onChange"
+      @update:modelValue="onChange"
       @focus="onFocus"
       @blur="onBlur"
     />

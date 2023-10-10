@@ -8,7 +8,7 @@ import { usePagingProps, usePaging } from './paging'
 const props = defineProps({
   ...usePagingProps,
 })
-const emit = defineEmits(['update:model-value'])
+const emit = defineEmits(['update:modelValue'])
 usePaging(props, emit)
 </script>
 

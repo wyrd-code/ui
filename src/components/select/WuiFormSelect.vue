@@ -12,7 +12,7 @@
       :disabled="isDisabled"
       :name="schema.name"
       :options="schema.options"
-      @update:model-value="onChange"
+      @update:modelValue="onChange"
       @focus="onFocus"
       @blur="onBlur"
     />

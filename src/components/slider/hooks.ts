@@ -52,7 +52,7 @@ export const useValuePosition = (
     totalValue = parseFloat(totalValue.toFixed(0))
     totalValue = totalValue > props.max ? props.max : totalValue
 
-    emit('update:model-value', totalValue)
+    emit('update:modelValue', totalValue)
     valuePosition.value = getTotalPosition({
       value: totalValue,
       min: props.min,

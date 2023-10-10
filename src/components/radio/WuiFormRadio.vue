@@ -14,7 +14,7 @@
       v-bind="option"
       :disabled="isDisabled || option.disabled"
       :name="schema.name"
-      @update:model-value="onChange"
+      @update:modelValue="onChange"
       @focus="onFocus"
       @blur="onBlur"
     />

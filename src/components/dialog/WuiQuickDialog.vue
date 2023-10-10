@@ -1,5 +1,5 @@
 <template>
-  <WuiDialog :model-value="open" @update:model-value="() => $emit('close')">
+  <WuiDialog :model-value="open" @update:modelValue="() => $emit('close')">
     <template #header>
       <h1>
         {{ title }}

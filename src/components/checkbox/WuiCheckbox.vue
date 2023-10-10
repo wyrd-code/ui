@@ -79,7 +79,7 @@ export default defineComponent({
     readonly: { type: Boolean },
     strike: { type: Boolean },
   },
-  emits: ['update:model-value'],
+  emits: ['update:modelValue'],
   setup(props, { emit }) {
     const id = useHtmlId()
 
@@ -88,7 +88,7 @@ export default defineComponent({
         return
       }
       const newValue = props.modelValue !== true
-      emit('update:model-value', newValue)
+      emit('update:modelValue', newValue)
     }
 
     const ariaChecked = computed(() => {

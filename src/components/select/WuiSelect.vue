@@ -109,7 +109,7 @@ export default defineComponent({
     },
     modelValue: { type: [String, Number, Object], default: null },
   },
-  emits: ['update:model-value'],
+  emits: ['update:modelValue'],
   setup(props, { emit, slots }) {
     const {
       selectedOption,

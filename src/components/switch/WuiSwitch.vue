@@ -65,13 +65,13 @@ export default defineComponent({
     help: { type: String, default: null },
     id: { type: String, default: useHtmlId },
   },
-  emits: ['update:model-value'],
+  emits: ['update:modelValue'],
   setup(props, { emit }) {
     function toggle() {
       if (props.disabled || props.readonly) {
         return
       }
-      emit('update:model-value', !props.modelValue)
+      emit('update:modelValue', !props.modelValue)
     }
 
     const classNames = computed(() => ({

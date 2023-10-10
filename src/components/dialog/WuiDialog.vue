@@ -111,14 +111,14 @@ export default defineComponent({
       validator: (value: string) => WUI_DIALOG_SIZES.includes(value),
     },
   },
-  emits: ['update:model-value'],
+  emits: ['update:modelValue'],
   setup(props, { emit }) {
     const mask = ref<HTMLElement | null>(null)
     const dialog = ref<HTMLElement | null>(null)
     const appInstance = getCurrentInstance()
 
     function close() {
-      emit('update:model-value', false)
+      emit('update:modelValue', false)
     }
 
     function maskClick() {

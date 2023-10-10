@@ -12,7 +12,7 @@
         :key="idx"
         v-bind="item"
         :model-value="modelValue"
-        @update:model-value="(val) => $emit('update:model-value', val)"
+        @update:modelValue="(val) => $emit('update:modelValue', val)"
       />
     </div>
   </div>
@@ -36,7 +36,7 @@ defineProps({
   items: { type: Array as () => Array<WyrdRadio>, default: () => [] },
 })
 
-defineEmits(['update:model-value'])
+defineEmits(['update:modelValue'])
 </script>
 
 <style lang="css" scoped>
