@@ -2,8 +2,11 @@
   @apply rounded-lg;
   @apply border border-solid;
   @apply border-neutral-6;
-  @apply dark:(border-neutral-11);
   @apply my-4;
+
+  .dark & {
+    @apply border-neutral-11;
+  }
 
   &-content {
     @apply rounded-t-lg;
@@ -32,10 +35,13 @@
     @apply border-solid border-t;
     @apply border-l-none border-r-none border-b-none;
     @apply bg-neutral-2 border-neutral-6;
-    @apply dark:(bg-neutral-12 border-neutral-11);
 
     &.expanded {
       @apply rounded-b-none;
+    }
+
+    .dark & {
+      @apply bg-neutral-12 border-neutral-11;
     }
   }
 
@@ -44,10 +50,8 @@
     @apply rounded-b-lg rounded-t-none;
     @apply border-solid border-t;
     @apply border-l-none border-r-none border-b-none;
-    @apply bg-neutral-12;
-    @apply border-neutral-6;
-    @apply dark:(border-neutral-11);
     @apply overflow-x-scroll;
+    @apply bg-neutral-12 border-neutral-11;
 
     pre {
       @apply flex p-4 my-0;
