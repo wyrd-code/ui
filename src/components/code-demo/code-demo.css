@@ -1,12 +1,13 @@
 .wui-code-demo {
   @apply rounded-lg;
-  @apply border border-neutral-6;
+  @apply border border-solid;
+  @apply border-neutral-6;
+  @apply dark:(border-neutral-11);
   @apply my-4;
 
   &-content {
     @apply rounded-t-lg;
     @apply p-4 flex flex-col space-y-4 w-full justify-center items-center;
-    @apply border-b border-neutral-6;
   }
 
   &-row {
@@ -26,9 +27,12 @@
 
   &-actions {
     @apply rounded-b-lg;
-    @apply bg-neutral-3;
     @apply p-2 space-x-2;
     @apply leading-none flex justify-end;
+    @apply border-solid border-t;
+    @apply border-l-none border-r-none border-b-none;
+    @apply bg-neutral-2 border-neutral-6;
+    @apply dark:(bg-neutral-12 border-neutral-11);
 
     &.expanded {
       @apply rounded-b-none;
@@ -38,14 +42,15 @@
   div[class*='language-'] {
     @apply w-full mb-0 mt-0;
     @apply rounded-b-lg rounded-t-none;
-    @apply border-t border-neutral-6;
+    @apply border-solid border-t;
+    @apply border-l-none border-r-none border-b-none;
+    @apply bg-neutral-12;
+    @apply border-neutral-6;
+    @apply dark:(border-neutral-11);
+    @apply overflow-x-scroll;
 
     pre {
       @apply flex p-4 my-0;
     }
-  }
-
-  html.dark & div[class*='language-'] {
-    @apply bg-neutral-2;
   }
 }
