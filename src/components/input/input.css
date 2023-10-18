@@ -81,9 +81,10 @@
 }
 
 .wui-input {
-  @apply h-full w-full py-4 px-3 box-border inline-block;
-  @apply bg-none border-none text-base;
-  @apply bg-neutral-7;
+  @apply h-full w-full py-4 px-3 inline-block;
+  @apply text-base;
+  @apply border border-solid box-border;
+  @apply bg-neutral-1 border-neutral-8 text-neutral-11;
 
   &:focus:not(:focus-visible) {
     @apply outline-none;
@@ -94,13 +95,7 @@
   }
 
   &::placeholder {
-    @apply text-neutral-5;
-    text-indent: 0;
-    transition: text-indent 0.27s ease;
-  }
-
-  &:focus::placeholder {
-    text-indent: 6px;
+    @apply text-neutral-9 italic tracking-wide;
   }
 
   &-mask {

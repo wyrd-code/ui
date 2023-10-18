@@ -1,50 +1,52 @@
 <template>
   <WuiForm
-    :data="data"
+    v-model="initialData"
     :on-submit="onSubmit"
     :on-success="onSuccess"
     :on-reset="onReset"
   >
-    <div class="space-y-4">
-      <WuiFormText
-        name="email"
-        validates="required"
-        placeholder="Your email address"
-        label="Your email"
-        help="write it carefully"
-        prefix="manual"
-      />
-      <WuiFormCheckbox
-        name="accepted"
-        validates="required"
-        label="Accept terms"
-        sub-label="It's required"
-      />
-      <div class="space-x-4">
-        <WuiFormSubmit type="primary" label="Send" />
-        <WuiFormReset outline label="Reset" />
-      </div>
-    </div>
-    <div class="space-y-4">
-      {{ status }}
-      {{ info }}
-    </div>
+    <WuiFormText
+      name="email"
+      validates="required"
+      placeholder="your@email.address"
+      label="Email"
+      help="A standard email address field"
+      prefix="test"
+    />
+    <WuiFormPassword
+      name="password"
+      validates="required"
+      label="Password"
+      help="A typical password field"
+      v-model="initialData.password"
+    />
+
+    <template #footer>
+      <WuiFormSubmit variant="primary" label="Send" />
+      <WuiFormReset variant="danger" label="Reset" />
+      <pre>
+        {{ status }}
+        {{ info }}
+      </pre>
+      <hr />
+      <pre>
+        {{ initialData }}
+      </pre>
+    </template>
   </WuiForm>
 </template>
 
 <script lang="ts" setup>
-import { reactive, ref } from 'vue'
+import { ref } from 'vue'
 
-import {
-  WuiFormCheckbox,
-  WuiFormText,
-  WuiFormSubmit,
-  WuiFormReset,
-} from '../definitions'
 import WuiForm from '../WuiForm.vue'
+import WuiFormText from '../WuiFormText.vue'
+import WuiFormSubmit from '../WuiFormSubmit.vue'
+import WuiFormPassword from '../WuiFormPassword.vue'
 
-const data = reactive({
-  email: '@',
+const initialData = ref({
+  email: null,
+  password: null,
 })
 
 const status = ref('')

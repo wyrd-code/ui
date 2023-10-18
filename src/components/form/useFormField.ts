@@ -1,7 +1,19 @@
-import { pick, isObject } from '@s-libs/micro-dash'
-import { Component, computed, inject, reactive } from 'vue'
+import {
+  // pick,
+  isObject,
+} from '@s-libs/micro-dash'
+import {
+  // Component,
+  computed,
+  inject,
+  reactive,
+} from 'vue'
 
-import { get, camelizeObjectKeys, isString } from '@/utilities'
+import {
+  get,
+  // camelizeObjectKeys,
+  isString,
+} from '@/utilities'
 
 import type {
   FormFieldDefinition,
@@ -17,27 +29,28 @@ const defaultValidaton = {
   messages: [] as FormMessage[],
 }
 
-const alwaysAllowedAttributes = ['class']
+// const alwaysAllowedAttributes = ['class']
 
 export const useFormField = <T>(
   options: FormFieldOptions
 ): FormFieldInstance<T> => {
-  const { name, type, attrs } = options
   const form = inject<FormInstance>('formInstance', {} as FormInstance)
-  const definition = form?.definitions[type]
-  const component = computed<Component | string>(
-    () => definition?.component || type || 'div'
-  )
 
-  const attributes = filterAttributes(attrs, [
-    ...alwaysAllowedAttributes,
-    ...(definition?.allowedAttributes || []),
-  ])
+  const { name, type, attributes } = options
+  const definition = form?.definitions[type]
+  // const component = computed<Component | string>(
+  //   () => definition?.component || type || 'div'
+  // )
+
+  // const attributes = filterAttributes(attrs, [
+  //   ...alwaysAllowedAttributes,
+  //   ...(definition?.allowedAttributes || []),
+  // ])
 
   const field = {
     properties: {},
-    attributes,
-    component,
+    attributes: attributes || {},
+    // component,
     definition,
   }
 
@@ -53,26 +66,34 @@ export const useFormField = <T>(
     Object.assign(field, getValuePropsFromDefinition(form, definition, name))
   }
 
+  console.warn('field', field)
+
   return field
 }
 
-const filterAttributes = (
-  attrs: Record<string, unknown> = {},
-  attributeList: string[] = []
-) => (isObject(attrs) ? pick(camelizeObjectKeys(attrs), ...attributeList) : {})
+// const filterAttributes = (
+//   attrs: Record<string, unknown> = {},
+//   attributeList: string[] = []
+// ) => (isObject(attrs) ? pick(camelizeObjectKeys(attrs), ...attributeList) : {})
 
 const getValuePropsFromDefinition = (
   form: FormInstance,
   definition: FormFieldDefinition = {},
   fieldPath?: string
 ) => {
-  const properties = {}
+  const properties = {
+    onClick: () => {
+      console.log('Element clicked')
+    },
+  }
   const { getListeners, isValued } = definition
 
   if (isValued && fieldPath) {
+    console.log('Setting update model hanlder', fieldPath)
     Object.assign(properties, {
       'onUpdate:modelValue': (value: any) => {
-        return form.tryUpdateFieldValue(fieldPath, value)
+        console.log('Setting value', value)
+        return form.setFieldValue(fieldPath, value)
       },
     })
   }
@@ -80,6 +101,8 @@ const getValuePropsFromDefinition = (
   if (getListeners) {
     Object.assign(properties, getListeners(form))
   }
+
+  return properties
 }
 
 const getValidationPropsFromDefinition = <T>(

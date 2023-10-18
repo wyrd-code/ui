@@ -1,16 +1,25 @@
-import { mount, createLocalVue } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
+import { ref, h } from 'vue'
 
-import WuiButton from '../button/WuiButton.vue'
-import WuiFormText from '../input/WuiFormText.vue'
+import WuiFormText from './WuiFormText.vue'
+import WuiFormSubmit from './WuiFormSubmit.vue'
+import WuiFormReset from './WuiFormReset.vue'
 import WuiForm from './WuiForm.vue'
+import { FormPlugin } from './form.plugin'
+import { FormSchema } from '@/components/form/form.types'
+import WuiFormSchema from '@/components/form/WuiFormSchema'
 
-describe.concurrent('List', () => {
-  describe('Basic', () => {
+describe.concurrent('Form', () => {
+  describe('Minimal', () => {
     const wrapper = mount(WuiForm, {
+      global: {
+        plugins: [FormPlugin],
+      },
       props: {
         onSubmit: () => {},
         onSuccess: () => {},
+        onReset: () => {},
       },
       slots: {
         default: `Foo`,
@@ -30,55 +39,241 @@ describe.concurrent('List', () => {
     })
   })
 
-  describe('Input', () => {
-    let data = {}
+  describe('Static', () => {
+    const oldEmailValue = 'henry@usedcars.com'
+    const newEmailValue = 'sarah@newcars.com'
+
+    let submittedData = null
+    let data = ref({
+      email: oldEmailValue,
+    })
 
     const wrapper = mount(WuiForm, {
-      props: {
-        onSubmit: (formData: any) => (data = formData),
-        onSuccess: () => {},
-      },
       global: {
-        components: {
-          WuiFormText,
-          WuiButton,
+        plugins: [FormPlugin],
+      },
+      props: {
+        onSubmit: (formData: any) => submittedData = formData,
+        onSuccess: () => {},
+        onReset: () => {},
+        modelValue: data,
+        'onUpdate:modelValue': (formData: any) => {
+          data.value = formData
         },
       },
       slots: {
         default: `
           <WuiFormText
-            name="foo"
-            label="Foo"
+            name="email"
+            label="Email"
           />
-          <WuiButton
-            type="primary"
+          <WuiFormSubmit
             label="Submit"
+          />
+          <WuiFormReset
+            label="Reset"
           />
         `,
       },
     })
 
+    const textField = wrapper.findComponent(WuiFormText)
+    const input = wrapper.get('[name="email"]')
+    const submitButton = wrapper.findComponent(WuiFormSubmit)
+    const resetButton = wrapper.findComponent(WuiFormReset)
+
     it('renders text input', async () => {
-      expect(wrapper.findComponent(WuiFormText).exists()).toBe(true)
+      expect(textField.exists()).toBe(true)
+      expect(input).toBeTruthy()
     })
 
-    // it('renders submit button', async () => {
-    //   expect(buttonComponent).toBeTruthy()
-    // })
+    it('renders submit button', async () => {
+      expect(submitButton.exists()).toBe(true)
+    })
+
+    it('renders reset button', async () => {
+      expect(resetButton.exists()).toBe(true)
+    })
+
+    it('updates form data when input value changes', async () => {
+      // Establish initial state
+      expect(data.value).toEqual({
+        email: oldEmailValue,
+      })
+
+      // Change input value
+      await input.setValue(newEmailValue)
+
+      // Check form data reflects the changes
+      expect(data.value).toEqual({
+        email: newEmailValue,
+      })
+    })
 
     it('submits data correctly', async () => {
-      expect(data).toEqual({})
+      // Establish initial state
+      expect(submittedData).toBeNull()
+      expect(data.value).toEqual({
+        email: newEmailValue,
+      })
 
-      // const input = wrapper.findComponent(WuiFormText).vm.$emit('cstom')
+      // Submit the form
+      await submitButton.trigger('click')
 
-      // await input.setValue('my@mail.com')
-      // expect(input.element.value).toBe('my@mail.com')
+      // Form data unchanged
+      expect(data.value).toEqual({
+        email: newEmailValue,
+      })
 
-      // expect(input.emitted().foo.length).toBe(2)
+      // Check onSubmit handler received correct form data
+      expect(submittedData).toEqual({
+        email: newEmailValue,
+      })
+    })
+  })
 
-      // await button.trigger('click')
+  describe('Generated', () => {
+    const oldEmailValue = 'henry@usedcars.com'
+    const newEmailValue = 'sarah@newcars.com'
+    const schema: FormSchema = [
+      {
+        element: 'div',
+        attributes: {
+          class: 'wrapper-division',
+        },
+        children: [
+          {
+            component: 'WuiFormText',
+            props: {
+              name: 'email',
+              validates: 'required|email',
+            },
+            attributes: {
+              label: 'Your email',
+              placeholder: 'your@email.address',
+              help: 'A standard email address field',
+              prefix: 'test',
+            },
+          },
+          {
+            component: 'WuiFormPassword',
+            props: {
+              name: 'password',
+              validates: 'required|password',
+            },
+            attributes: {
+              label: 'Password',
+              help: 'A typical password field',
+            },
+          },
+          {
+            component: 'WuiButtonGroup',
+            attributes: {
+              // class: 'space-x-4',
+            },
+            children: [
+              {
+                component: 'WuiFormSubmit',
+                props: {
+                  variant: 'primary',
+                  label: 'Send',
+                },
+              },
+              {
+                component: 'WuiFormReset',
+                props: {
+                  variant: 'danger',
+                  label: 'Reset',
+                },
+                attributes: {
+                },
+              },
+            ],
+          },
+        ],
+      },
+    ]
 
-      expect(data).toEqual({})
+    let submittedData = null
+    let data = ref({
+      email: oldEmailValue,
+    })
+
+    const wrapper = mount(WuiForm, {
+      global: {
+        plugins: [FormPlugin],
+      },
+      props: {
+        onSubmit: (formData: any) => submittedData = formData,
+        onSuccess: () => {},
+        onReset: () => {},
+        modelValue: data,
+        'onUpdate:modelValue': (formData: any) => {
+          data.value = formData
+        },
+      },
+      slots: {
+        default: h(WuiFormSchema, { schema }),
+      },
+    })
+
+    const wrapperDivision = wrapper.get('.wrapper-division')
+    const textField = wrapper.findComponent(WuiFormText)
+    const input = wrapper.get('[name="email"]')
+    const submitButton = wrapper.findComponent(WuiFormSubmit)
+    const resetButton = wrapper.findComponent(WuiFormReset)
+
+    it('renders wrapping html division', async () => {
+      expect(wrapperDivision).toBeTruthy()
+    })
+
+    it('renders text input', async () => {
+      expect(textField.exists()).toBe(true)
+      expect(input).toBeTruthy()
+    })
+
+    it('renders submit button', async () => {
+      expect(submitButton.exists()).toBe(true)
+    })
+
+    it('renders reset button', async () => {
+      expect(resetButton.exists()).toBe(true)
+    })
+
+    it('updates form data when input value changes', async () => {
+      // Establish initial state
+      expect(data.value).toEqual({
+        email: oldEmailValue,
+      })
+
+      // Change input value
+      await input.setValue(newEmailValue)
+
+      // Check form data reflects the changes
+      expect(data.value).toEqual({
+        email: newEmailValue,
+      })
+    })
+
+    it('submits data correctly', async () => {
+      // Establish initial state
+      expect(submittedData).toBeNull()
+      expect(data.value).toEqual({
+        email: newEmailValue,
+      })
+
+      // Submit the form
+      await submitButton.trigger('click')
+
+      // Form data unchanged
+      expect(data.value).toEqual({
+        email: newEmailValue,
+      })
+
+      // Check onSubmit handler received correct form data
+      expect(submittedData).toEqual({
+        email: newEmailValue,
+      })
     })
   })
 })

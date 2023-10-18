@@ -1,82 +1,116 @@
 <template>
-  <WuiForm :data="data" :on-submit="onSubmit" :on-success="onSuccess">
-    <WuiFormGenerator :schema="schema" />
+  <WuiForm
+    v-model="data"
+    :on-submit="onSubmit"
+    :on-success="onSuccess"
+    :on-reset="onReset"
+  >
+    <WuiFormSchema :schema="schema" />
+
+    <template #footer>
+      <pre>
+        {{ status }}
+        {{ info }}
+      </pre>
+      <hr />
+      <pre>
+        {{ data }}
+      </pre>
+    </template>
   </WuiForm>
 </template>
 
 <script lang="ts" setup>
-import { reactive } from 'vue'
+import { ref } from 'vue'
 
 import type { FormSchema } from '../form.types'
 import WuiForm from '../WuiForm.vue'
-import WuiFormGenerator from '../WuiFormGenerator.vue'
+import WuiFormSchema from '../WuiFormSchema'
 
-const data = reactive({
-  email: '@',
+const data = ref({
+  email: null,
+  password: null,
 })
 
-const onSubmit = (datas: any) => {
-  console.log('Form Submit', datas)
+const status = ref('')
+const info = ref({})
+
+const onSubmit = (formData: any) => {
+  info.value = formData
+  status.value = 'submitted'
 }
 
-const onSuccess = (datas: any) => {
-  console.log('Form success', datas)
+const onSuccess = (formData: any) => {
+  info.value = formData
+  status.value = 'success'
+}
+
+const onReset = () => {
+  info.value = {}
+  status.value = ''
 }
 
 const schema: FormSchema = [
   {
-    type: 'div',
-    attrs: {
+    element: 'div',
+    attributes: {
       class: 'space-y-4',
     },
     children: [
       {
-        type: 'text',
-        name: 'email',
-        // validate: 'required|email',
-        attrs: {
+        component: 'WuiFormText',
+        props: {
+          name: 'email',
+          validates: 'required|email',
+        },
+        attributes: {
           label: 'Your email',
-          help: 'write it carefully',
-          placeholder: 'an email',
-          prefix: 'schema',
+          placeholder: 'your@email.address',
+          help: 'A standard email address field',
+          prefix: 'test',
         },
       },
       {
-        type: 'checkbox',
-        name: 'accepted',
-        // validate: 'required|accepted',
-        attrs: {
-          label: 'Do you accept?',
-          subLabel: 'This is required for your own good',
-          type: 'danger',
+        component: 'WuiFormPassword',
+        props: {
+          name: 'password',
+          validates: 'required|password',
+        },
+        attributes: {
+          label: 'Password',
+          help: 'A typical password field',
         },
       },
+      // {
+      //   element: 'WuiFormCheckbox',
+      //   name: 'accepted',
+      //   validates: 'required|true',
+      //   props: {
+      //     label: 'Do you accept?',
+      //     subLabel: 'This is required for your own good',
+      //     variant: 'danger',
+      //   },
+      // },
       {
-        type: 'div',
-        attrs: {
-          class: 'space-x-4',
+        component: 'WuiButtonGroup',
+        attributes: {
+          // class: 'space-x-4',
         },
         children: [
           {
-            type: 'submit',
-            attrs: {
-              type: 'primary',
-              label: 'Send it over',
+            component: 'WuiFormSubmit',
+            props: {
+              variant: 'primary',
+              label: 'Send',
             },
           },
-          // {
-          //   type: 'button',
-          //   attrs: {
-          //     type: 'submit',
-          //     class: 'wui-button border border-red-300 p-4',
-          //     innerHTML: ['Send it over'],
-          //   },
-          // },
           {
-            type: 'reset',
-            attrs: {
-              outline: true,
+            component: 'WuiFormReset',
+            props: {
+              variant: 'danger',
               label: 'Reset',
+            },
+            attributes: {
             },
           },
         ],

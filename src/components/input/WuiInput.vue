@@ -24,6 +24,7 @@
         <input
           :id="id"
           :type="type"
+          :name="name"
           class="wui-input"
           :disabled="disabled"
           :value="modelValue"
@@ -68,6 +69,10 @@ export default defineComponent({
   name: 'WuiInput',
   inheritAttrs: false,
   props: {
+    name: {
+      type: String,
+      required: true,
+    },
     status: {
       type: String,
       default: null,
@@ -117,12 +122,12 @@ export default defineComponent({
       default: null,
     },
   },
-  emits: ['update:model-value'],
+  emits: ['update:modelValue'],
   setup(props, { emit }) {
     const focus = ref(false)
 
     function input(e: Event) {
-      emit('update:model-value', (e.target as HTMLInputElement).value)
+      emit('update:modelValue', (e.target as HTMLInputElement).value)
     }
 
     return { input, focus }

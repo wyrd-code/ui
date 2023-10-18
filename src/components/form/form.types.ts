@@ -1,21 +1,21 @@
-import type { Component, ComputedRef } from 'vue'
+import type {
+  Component,
+  ComputedRef,
+  WritableComputedRef,
+} from 'vue'
 
 // Definitions
 
 export interface FormFieldDefinition {
-  component?: Component
+  name: string
+  component: Component
   isValued?: boolean
   isValidated?: boolean
   allowedProps?: string[]
   allowedAttributes?: string[]
-  getPropsValues?: (
-    schema: FormFieldSchema,
-    form: Partial<FormInstance>
-  ) => Record<string, unknown>
-  getListeners?: (form: Partial<FormInstance>) => Record<string, unknown>
 }
 
-export type FormDefinitions = Record<string, FormFieldDefinition>
+export type FormDefinitions = FormFieldDefinition[]
 
 // Configuration
 
@@ -29,19 +29,21 @@ export type FormData<T = Record<string, any>> = T
 
 export type FormSubmitHandler<T = any, R = any> = (
   data: FormData<T>,
-  form: Partial<FormInstance>
+  form: FormInstance<T>
 ) => R
 
 export interface FormOptions extends FormConfiguration {
-  data: unknown
+  modelValue: unknown
   onSubmit?: FormSubmitHandler
+  onReset?: FormSubmitHandler
   onSuccess?: FormSubmitHandler
 }
 
-export interface FormInstance<T = Record<string, unknown>> {
+export interface FormInstance<T = FormData | ComputedRef<FormData>> {
   data: T
+  getFieldValue: <T>(name: string) => WritableComputedRef<T>
   getFieldDefinition: (type: string) => FormFieldDefinition | undefined
-  tryUpdateFieldValue: (name: string, value: unknown) => void
+  setFieldValue: (name: string, value: unknown) => void
   submit: () => void
   reset: () => void
   isLoading: ComputedRef<boolean>
@@ -52,15 +54,22 @@ export interface FormInstance<T = Record<string, unknown>> {
 // Schema
 
 interface FormFieldSchemaBase {
-  type: string
-  name?: string
-  validate?: string
-  attrs?: Record<string, unknown>
-}
-
-export interface FormFieldSchema extends FormFieldSchemaBase {
+  type?: string
+  validates?: string
+  attributes?: Record<string, unknown>
   children?: FormFieldSchema[]
 }
+
+export interface FormFieldSchemaVueComponent extends FormFieldSchemaBase {
+  component: string
+  props?: Record<string, unknown>
+}
+
+export interface FormFieldSchemaHtmlElement extends FormFieldSchemaBase {
+  element: string
+}
+
+export type FormFieldSchema = FormFieldSchemaVueComponent | FormFieldSchemaHtmlElement
 
 export type FormSchema = FormFieldSchema[]
 

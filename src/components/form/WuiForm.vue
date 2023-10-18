@@ -13,19 +13,25 @@ import type { FormSubmitHandler } from './form.types'
 import { useForm } from './useForm'
 
 const props = defineProps({
-  data: {
+  modelValue: {
     type: Object,
     default: null,
   },
   onSubmit: {
     type: Function as PropType<FormSubmitHandler>,
-    required: true,
+    required: false,
   },
   onSuccess: {
     type: Function as PropType<FormSubmitHandler>,
-    required: true,
+    required: false,
+  },
+  onReset: {
+    type: Function as PropType<FormSubmitHandler>,
+    required: false,
   },
 })
 
-const form = useForm(props)
+const emit = defineEmits(['update:modelValue'])
+
+const form = useForm(props, emit)
 </script>

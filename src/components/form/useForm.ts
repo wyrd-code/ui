@@ -1,26 +1,33 @@
 import { isMatch } from '@s-libs/micro-dash'
 import { set } from '@vueuse/shared'
-import { computed, reactive, inject, provide } from 'vue'
+import {
+  computed,
+  inject,
+  provide,
+  ref,
+  unref,
+} from 'vue'
 
 import {
   removeUndefinedObjectProperties,
-  resetReactiveObject,
 } from '@/utilities'
 
-import { WuiFormConfigSymbol } from './form.constants'
-import type { FormOptions, FormInstance, FormConfiguration } from './form.types'
+import {
+  WuiFormConfigSymbol,
+  WuiFormInstaceSymbol,
+} from './form.constants'
+import type {
+  FormOptions,
+  FormInstance,
+  FormConfiguration,
+  FormData,
+} from './form.types'
 
-export const useForm = (options: FormOptions): FormInstance => {
-  const wuiForm = inject<FormConfiguration>(
-    WuiFormConfigSymbol
-  ) as FormConfiguration
-  const data = reactive({
-    ...(options.data as any),
-  })
-  const initialData = {
-    ...data,
-  }
-  let isLoading = false
+export const useForm = (options: FormOptions, emit: (event: any, ...args: any[]) => void): FormInstance => {
+  const pluginConfig = inject<FormConfiguration>(WuiFormConfigSymbol)
+  const initialData = unref(options.modelValue || {})
+  const data = ref<FormData>({ ...initialData })
+  let loading = false
 
   const isDirty = computed(
     () =>
@@ -30,53 +37,55 @@ export const useForm = (options: FormOptions): FormInstance => {
       )
   )
 
-  // const isValid = computed(
-  //   () =>
-  //     !isMatch(
-  //       removeUndefinedObjectProperties(initialData),
-  //       removeUndefinedObjectProperties(data)
-  //     )
-  // )
-
-  const definitions = {
-    ...wuiForm?.definitions,
-    ...options?.definitions,
-  }
+  const definitions = [
+    ...pluginConfig?.definitions || [],
+    ...options?.definitions || [],
+  ]
 
   const getFieldDefinition = (type: string) => definitions[type]
 
-  const tryUpdateFieldValue = (name: string, value: unknown) => {
-    set(data, name, value)
+  const getFieldValue = (name: string) => computed({
+    get: () => data.value[name],
+    set: (value) => setFieldValue(name, value)
+  })
+
+  const setFieldValue = (name: string, value: unknown) => {
+    set(data.value, name, value)
+    emit('update:modelValue', data.value)
   }
 
   const reset = () => {
-    console.log('Resetting form')
-    isLoading = true
-    resetReactiveObject(data, initialData)
-    isLoading = false
+    loading = true
+    data.value = { ...initialData }
+    emit('update:modelValue', data.value)
+
+    if (options.onReset) {
+      options.onReset(data.value, form)
+    }
+    loading = false
   }
 
   const submit = () => {
-    console.log('Submitting form')
-    isLoading = true
+    loading = true
     if (options.onSubmit) {
-      options.onSubmit(data, form)
+      options.onSubmit(data.value, form)
     }
-    isLoading = false
+    loading = false
   }
 
   const form = {
     data,
     definitions,
     getFieldDefinition,
-    tryUpdateFieldValue,
-    isLoading: computed(() => isLoading),
+    getFieldValue,
+    setFieldValue,
+    isLoading: computed(() => loading),
     isDirty,
     submit,
     reset,
   }
 
-  provide('formInstance', form)
+  provide(WuiFormInstaceSymbol, form)
 
   return form
 }

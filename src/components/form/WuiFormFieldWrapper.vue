@@ -1,31 +1,37 @@
 <!-- eslint-disable vuejs-accessibility/label-has-for -->
 <template>
-  <div class="form-field" :class="['error' ? !validator.isValid : '']">
+  <div class="form-field" :class="['error' ? !validation.isValid : '']">
     <label v-if="label" :for="id" class="label">
       <span class="text">
         {{ label }}
       </span>
       <span class="required">
         <div
-          v-if="validator.isRequired"
+          v-if="validation.isRequired"
           class="icon w-2 h-2 ml-2 icon-ph-asterisk"
         />
       </span>
     </label>
 
-    <slot :id="id" />
+    <slot :id="id" v-bind="$attrs"  />
 
     <p v-if="help" class="text-sm">
       {{ help }}
     </p>
 
     <WuiFormMessage
-      v-for="(message, idx) in validator.messages"
+      v-for="(message, idx) in validation.messages"
       :key="`form-message-${idx}`"
       :message="message"
     />
   </div>
 </template>
+
+<script lang="ts">
+export default {
+  inheritAttrs: false,
+}
+</script>
 
 <script lang="ts" setup>
 import { PropType } from 'vue'
@@ -48,7 +54,7 @@ defineProps({
     type: String,
     default: null,
   },
-  validator: {
+  validation: {
     type: Object as PropType<FormFieldValidation>,
     default: () => ({}),
   },
