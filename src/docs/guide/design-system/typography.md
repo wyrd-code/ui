@@ -57,3 +57,5 @@ The vertical white space between elements is also in multiples of 24px.
 ## Read more
 
 ["Why UI Design Is All About Typography" by Ayadi Ghaith](https://medium.muz.li/why-ui-design-is-all-about-typography-370250d89ce8)
+
+[Ways to create fluid text using CSS](https://javascript.plainenglish.io/ways-to-create-fluid-text-using-css-1183e2680143)
