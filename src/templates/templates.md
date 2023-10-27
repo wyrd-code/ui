@@ -14,6 +14,10 @@
 ## Roadmap
 
 - [ ] Auth layout with app features previewed on the side of ie sign in form
+- [ ] Page headers
+  - [ ] [Modern CSS Layouts: Headers](https://javascript.plainenglish.io/modern-css-layouts-headers-a02577e3181d)
+- [ ] Hero sections
+  - [ ] [A layout concept for Hero Sections without Media Queries](https://javascript.plainenglish.io/modern-css-layouts-hero-sections-673e56386b16)
 - [ ] [Home screens](https://tailwindui.com/components/application-ui/page-examples/home-screens)
   - [ ] Full width with sidebar
   - [ ] Card layout width with sidebar

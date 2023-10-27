@@ -3,18 +3,22 @@
 }
 
 .wui-alert {
-  @apply box-sm p-4 rounded flex border w-full;
+  @apply island-sm;
+  @apply p-4 w-full flex;
+  @apply rounded border border-neutral-6;
+
+  &:after {
+  }
 
   &-icon-wrapper {
-    @apply flex mr-3 justify-center items-center text-lg;
+    @apply flex mr-4 justify-center;
   }
   &-icon {
     @apply select-none;
   }
 
   &-close {
-    @apply text-color-default cursor-pointer select-none text-xl;
-    @apply ml-4 mt-1;
+    @apply text-color-default cursor-pointer select-none;
 
     &:hover {
       @apply text-color-pronounced;
@@ -23,17 +27,23 @@
 
   &-body {
     @apply flex flex-col align-middle flex-grow;
+    @apply leading-none;
   }
 
   &-title {
-    @apply block font-bold text-lg;
+    @apply block font-bold;
+    @apply leading-none;
+  }
+
+  &-title+* {
+    @apply mt-1rem;
   }
 
   /* Variants */
   @each $variant in var(--wui-alert-variants) {
     &-variant--$variant {
-      border-color: var(--wui-color-$(variant)6);
-      background-color: var(--wui-color-$(variant)3);
+      border-color: var(--wui-color-$(variant)-6);
+      background-color: var(--wui-color-$(variant)-3);
       color: var(--wui-color-$(variant)-11);
     }
   }

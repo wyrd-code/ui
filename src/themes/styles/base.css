@@ -43,6 +43,10 @@ html.dark .link:visited {
   @apply bg-neutral-600 hover:bg-neutral-600 text-white;
 }
 
+div {
+  display: none;
+}
+
 /* Firefox */
 * {
   scrollbar-color: #ccc #eee;

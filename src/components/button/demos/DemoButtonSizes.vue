@@ -1,8 +1,13 @@
 <template>
   <WuiCodeDemoRow>
-    <WuiButton v-for="size in WUI_BUTTON_SIZES" :key="size" :size="size">{{
-      size
-    }}</WuiButton>
+    <WuiButton
+      v-for="size in WUI_BUTTON_SIZES"
+      :key="size"
+      :size="size"
+      variant="secondary"
+    >
+      {{ size }}
+    </WuiButton>
   </WuiCodeDemoRow>
 </template>
 

@@ -1,7 +1,6 @@
 
 .wui-collapse {
-  @apply border rounded-lg w-full shadow;
-  @apply surface-island;
+  @apply border w-full;
   @apply border-neutral-6;
 
   .wui-collapse-item {

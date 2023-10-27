@@ -1,21 +1,103 @@
-.wui-code-demo {
-  @apply rounded-lg;
-  @apply border border-solid;
-  @apply border-neutral-6;
-  @apply my-4;
+/* Settings */
+:root {
+  --offset: 0;
+  --max_width: 72rem;
+  --columns: 12;
+  --gutter: .5rem;
+  --baseline: 1rem;
+  --baseline-shift: 0;
+  /* --baseline-shift: calc(var(--baseline) / 2); */
+  --line-thickness: 1px;
+  --color: hsla(286, 51%, 44%, 0.5);
+  --color-text: hsla(286, 51%, 44%, 1);
+  --media-query: 'base';
+}
 
-  .dark & {
-    @apply border-neutral-11;
+/*
+@media (min-width: 35em) {
+  :root {
+    --offset: 2rem;
+    --gutter: .75rem;
+    --baseline: 1.5rem;
+    --media-query: 'small';
   }
+}
+
+@media (min-width: 48em) {
+  :root {
+    --offset: 3rem;
+    --columns: 12;
+    --gutter: 1rem;
+    --baseline: 2rem;
+    --media-query: 'medium';
+  }
+}
+
+@media (min-width: 70em) {
+  :root {
+    --offset: 4rem;
+    --baseline: 3rem;
+    --media-query: 'large';
+  }
+} */
+
+/* Helper variables */
+:root {
+  --repeating-width: calc(100% / var(--columns));
+  --column-width: calc((100% / var(--columns)) - var(--gutter));
+  --background-width: calc(100% + var(--gutter));
+  --background-columns: repeating-linear-gradient(
+    to right,
+    var(--color),
+    var(--color) var(--line-thickness),
+    transparent var(--line-thickness),
+    transparent calc(var(--column-width) - var(--line-thickness)),
+    var(--color) calc(var(--column-width) - var(--line-thickness)),
+    var(--color) var(--column-width),
+    transparent var(--column-width),
+    transparent var(--repeating-width)
+  );
+  --background-baseline: repeating-linear-gradient(
+    to bottom,
+    var(--color),
+    var(--color) 1px,
+    transparent 1px,
+    transparent var(--baseline)
+  );
+}
+
+.wui-code-demo {
+  @apply my-4 rounded-lg;
+  @apply bg-neutral-1 border border-neutral-6;
 
   &-content {
     @apply rounded-t-lg;
     @apply p-4 flex flex-col space-y-4 w-full justify-center items-center;
+    @apply relative;
+
+    &.grid-overlay::before {
+      @apply m-4 absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      content: '';
+      z-index: 1000;
+      pointer-events: none;
+      background-size: var(--background-width) 100%;
+      background-position: 0 var(--baseline-shift);
+    }
+    &.grid-overlay-both::before {
+      background-image: var(--background-columns), var(--background-baseline);
+    }
+    &.grid-overlay-horizontal::before {
+      background-image: var(--background-columns);
+    }
+    &.grid-overlay-vertical::before {
+      background-image: var(--background-baseline);
+    }
   }
 
   &-row {
     @apply grid grid-flow-col auto-cols-max gap-4 w-full;
-    @apply content-center items-center place-content-center;
+    @apply content-center place-content-center;
   }
 
   &-row + &-row {
@@ -32,8 +114,7 @@
     @apply rounded-b-lg;
     @apply p-2 space-x-2;
     @apply leading-none flex justify-end;
-    @apply border-solid border-t;
-    @apply border-l-none border-r-none border-b-none;
+    @apply border-t;
     @apply bg-neutral-2 border-neutral-6;
 
     &.expanded {
@@ -48,10 +129,9 @@
   div[class*='language-'] {
     @apply w-full mb-0 mt-0;
     @apply rounded-b-lg rounded-t-none;
-    @apply border-solid border-t;
-    @apply border-l-none border-r-none border-b-none;
     @apply overflow-x-scroll;
-    @apply bg-neutral-12 border-neutral-11;
+    @apply border-t;
+    @apply bg-black border-neutral-11;
 
     pre {
       @apply flex p-4 my-0;

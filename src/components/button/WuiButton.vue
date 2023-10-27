@@ -22,39 +22,20 @@ import { computed, useSlots } from 'vue'
 import { useRouterLink, routerLinkProps } from '@/composables'
 
 import {
-  WUI_BUTTON_VARIANTS,
-  WUI_BUTTON_VARIANT_DEFAULT,
-  WUI_BUTTON_SIZE_DEFAULT,
-  WUI_BUTTON_SIZES,
-  WUI_BUTTON_SHAPE_DEFAULT,
-  WUI_BUTTON_SHAPES,
+  WUI_BUTTON_PROPS,
 } from './button'
 
 const props = defineProps({
   ...routerLinkProps,
+  ...WUI_BUTTON_PROPS,
   // override default tag value
   tag: { type: String, default: 'button' },
+  label: { type: String, default: null },
   type: {
     type: String,
     default: 'submit',
     validator: (value: string) => ['submit', 'reset'].includes(value),
   },
-  variant: {
-    type: String,
-    default: WUI_BUTTON_VARIANT_DEFAULT,
-    validator: (value: string) => WUI_BUTTON_VARIANTS.includes(value),
-  },
-  size: {
-    type: String,
-    default: WUI_BUTTON_SIZE_DEFAULT,
-    validator: (value: string) => WUI_BUTTON_SIZES.includes(value),
-  },
-  shape: {
-    type: String,
-    default: WUI_BUTTON_SHAPE_DEFAULT,
-    validator: (value: string) => WUI_BUTTON_SHAPES.includes(value),
-  },
-  label: { type: String, default: null },
   disabled: { type: Boolean },
   icon: { type: Boolean },
   loading: { type: Boolean },
@@ -80,6 +61,8 @@ const classNames = computed(() => ({
   'wui-btn-with-icon': props.icon || props.loading,
   'wui-btn-active': props.active,
   'wui-btn--disabled': props.disabled,
+  'wui-btn--ghost': props.ghost,
+  'wui-btn--outlined': props.outlined,
   'wui-btn-loading': props.loading,
   'wui-btn--link': tagComputed.value !== props.tag,
   [`wui-btn--size-${props.size}`]: props.size,

@@ -2,7 +2,7 @@
   <WuiButtonGroup class="wui-paging__links" aria-label="Pagination links">
     <WuiPagingFirst
       v-if="showFirstLast"
-      v-bind="buttonPropsComputed"
+      v-bind="props"
       @click="() => onPageChange(1)"
     >
       <slot name="first" />
@@ -10,7 +10,7 @@
 
     <WuiPagingPrevious
       v-if="showPrevNext"
-      v-bind="buttonPropsComputed"
+      v-bind="props"
       @click="() => onPageChange(state.page - 1)"
     >
       <slot name="previous" />
@@ -23,7 +23,7 @@
         :label="n"
         :value="n"
         :active="state.page === n"
-        v-bind="buttonPropsComputed"
+        v-bind="props"
         @click="() => onPageChange(n)"
       >
         <slot name="number" :label="n" value="n" />
@@ -32,7 +32,7 @@
 
     <WuiPagingNext
       v-if="showPrevNext"
-      v-bind="buttonPropsComputed"
+      v-bind="props"
       @click="() => onPageChange(state.page + 1)"
     >
       <slot name="next" />
@@ -40,7 +40,7 @@
 
     <WuiPagingLast
       v-if="showFirstLast"
-      v-bind="buttonPropsComputed"
+      v-bind="props"
       @click="() => onPageChange(state.pages)"
     >
       <slot name="last" />
@@ -49,17 +49,11 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue'
-
 import { usePagingPropsLinks, injectPaging } from './paging'
 
-defineProps({
+const props = defineProps({
   ...usePagingPropsLinks,
 })
 
 const { state, onPageChange, getPages } = injectPaging()
-
-const buttonPropsComputed = computed(() => ({
-  variant: 'neutral',
-}))
 </script>

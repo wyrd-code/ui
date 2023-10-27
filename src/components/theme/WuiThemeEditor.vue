@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>namespace: {{ theme.namespace }}</div>
+    <div>Theme name: {{ theme.name }}</div>
   </div>
   <div>
     <WuiButton type="primary">Load theme</WuiButton>
@@ -15,9 +15,9 @@
 </template>
 
 <script lang="ts" setup>
-import { WUI_DEFAULT_THEME } from '@/themes/default'
+import { WUI_THEME_DEFAULT } from '@/themes/default'
 
-const theme = { ...WUI_DEFAULT_THEME }
+const theme = { ...WUI_THEME_DEFAULT }
 
 const save = (...args) => {
   console.log('Saving', ...args)

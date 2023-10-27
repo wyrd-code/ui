@@ -132,6 +132,7 @@ text
 
 - [Design tokens cheatsheet](https://uxdesign.cc/design-tokens-cheatsheet-927fc1404099)
 - [Naming tokens in design systems](https://medium.com/eightshapes-llc/naming-tokens-in-design-systems-9e86c7444676)
+- [How to define color usage through semantic sets for design systems](https://uxdesign.cc/how-to-define-color-usage-through-semantic-sets-for-design-systems-99445804233d)
 
 
 ## Further reading

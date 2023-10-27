@@ -4,7 +4,7 @@ import DemoButtonIcon from '@/components/button/demos/DemoButtonIcon.vue'
 import DemoButtonLink from '@/components/button/demos/DemoButtonLink.vue'
 import DemoButtonShapes from '@/components/button/demos/DemoButtonShapes.vue'
 import DemoButtonSizes from '@/components/button/demos/DemoButtonSizes.vue'
-import DemoButtonVariantDanger from '@/components/button/demos/DemoButtonVariantDanger.vue'
+import DemoButtonVariantSystem from '@/components/button/demos/DemoButtonVariantSystem.vue'
 import DemoButtonVariantGhost from '@/components/button/demos/DemoButtonVariantGhost.vue'
 import DemoButtonVariantOutlined from '@/components/button/demos/DemoButtonVariantOutlined.vue'
 import DemoButtonVariantPrimary from '@/components/button/demos/DemoButtonVariantPrimary.vue'
@@ -28,8 +28,6 @@ Each button variant has a particular function and its design signals that functi
 
 For primary call to action on the page. Primary buttons should only appear once per screen. Modal dialogs, sidebars and similar overlaid components.
 
-Primary buttons use the `accent` color scale, same as the other primary/active form elements.
-
 :::demo button/demos/DemoButtonVariantPrimary
 <DemoButtonVariantPrimary />
 :::
@@ -50,20 +48,20 @@ For less prominent, and sometimes independent, actions. Outlined buttons can be 
 <DemoButtonVariantOutlined />
 :::
 
-### Danger
-
-For actions that could have destructive effects on the user’s data (for example, delete or remove). Danger button has three styles: primary, tertiary, and ghost.
-
-:::demo button/demos/DemoButtonVariantDanger
-<DemoButtonVariantDanger />
-:::
-
 ### Ghost
 
 For the least pronounced actions; often used in conjunction with a primary button. In a situation such as a progress flow, a ghost button may be paired with a primary and secondary button set, where the primary button is for forward action, the secondary button is for “Back”, and the ghost button is for “Cancel”.
 
 :::demo button/demos/DemoButtonVariantGhost
 <DemoButtonVariantGhost />
+:::
+
+### Systen variants
+
+Buttons also support system variants: info, success, warning and danger.
+
+:::demo button/demos/DemoButtonVariantSystem
+<DemoButtonVariantSystem />
 :::
 
 ## Sizes
@@ -86,7 +84,6 @@ For the least pronounced actions; often used in conjunction with a primary butto
 
 ## Icon
 
-- Use the `round` prop to make the buttons rounded
 - Use the `icon` (bool) prop to adjust padding for icons
 
 :::demo button/demos/DemoButtonIcon

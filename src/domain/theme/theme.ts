@@ -1,5 +1,4 @@
 import type { Theme } from '@unocss/preset-mini'
-import { list } from 'radash'
 
 import { kebabCase } from '../../utilities'
 import {
@@ -19,6 +18,7 @@ export interface WuiThemeSpec {
 }
 
 export interface WuiThemeOptions extends Omit<Theme, 'colors'> {
+  name: string
   colors: WuiColorValues
 }
 
@@ -51,7 +51,7 @@ export const buildThemeColorConfig = (
     }
 
     const scaleVars = {}
-    for (const step of list(0, 12)) {
+    for (const step of Array(12).keys()) {
       scaleVars[step] = createColorValueToken(kebabKey, step)
     }
 
@@ -64,76 +64,8 @@ export const buildThemeColorConfig = (
 /**
  * Builds theme configuration for UnoCSS from theme specification
  */
-export const buildUnoThemeFromSpec = (spec: WuiThemeSpec): Theme => {
+export const buildThemeFromSpec = (spec: WuiThemeSpec): Theme => {
   return {
     colors: buildThemeColorConfig(spec.color.definitions),
   }
 }
-
-// export const createColorValueToken = (key: string, postfix?: string) =>
-//   `hsl(var(--wui-color-${key}${postfix}))`
-
-// export const createValueObjectScale = (definition: WuiColorDefinition) =>
-//   Object.keys(WUI_COLOR_SPEC_STEPS).reduce((valueObject, step) => {
-//     const stepValue = createColorValueToken(definition.key, `-${step}`)
-
-//     Object.assign(valueObject, { [step]: stepValue })
-
-//     return valueObject
-//   }, {})
-
-// export const createValueObjectDualScale = (
-//   definition: WuiColorDefinition
-// ): Record<string, WuiColorValueScale> => ({
-//   [definition.key]: {
-//     dark: createValueObjectScale(definition),
-//     light: createValueObjectScale(definition),
-//   },
-// })
-
-// export const getThemeColorValue = (
-//   definition: WuiColorDefinition
-// ): WuiColorValue => {
-//   if (definition.type === COLOR_TYPE.SIMPLE) {
-//     return createColorValueToken(definition.key)
-//   }
-
-//   return createValueObjectScale(definition)
-// }
-
-// export declare type UnoThemeColorValueList = Record<
-//   string,
-//   string | Record<string, string>
-// >
-
-// export const getThemeColors = (): UnoThemeColorValueList =>
-//   Object.values(WUI_COLOR_SPEC).reduce((colors, definition) => {
-//     Object.assign(colors, getThemeColorValue(definition))
-//     return colors
-//   }, {} as UnoThemeColorValueList)
-
-// export const generateThemeSpecification = (): WuiTheme => {
-//   console.log('****************')
-//   console.log('GENERATING THEME SPECIFICATION')
-//   const theme = {
-//     namespace: 'WYRD.UI.THEME.DEFAULT',
-//     description: 'WYRD.UI.THEME.DEFAULT',
-//     colors: getThemeColors(),
-//   }
-//   console.log('GENERATED THEME SPECIFICATION', theme)
-//   console.log('****************')
-//   return theme
-// }
-
-// Aditional color options
-// const themeColors = {
-// link: colors?.blue,
-// primary: 'hsl(var(--a-primary))',
-// success: 'hsl(var(--a-success))',
-// info: 'hsl(var(--a-info))',
-// warning: 'hsl(var(--a-warning))',
-// danger: 'hsl(var(--a-danger))',
-// a: { border: 'hsla(var(--a-base-color),var(--a-border-opacity))' },
-// }
-
-// export const WUI_DEFAULT_THEME = generateThemeSpecification()

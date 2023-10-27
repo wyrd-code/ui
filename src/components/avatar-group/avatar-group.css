@@ -25,8 +25,8 @@
   }
 }
   .wui-avatar-group > .wui-avatar {
-    @apply z-1 border-blue-8;
+    @apply z-1;
   }
   .wui-avatar-group > .wui-avatar:hover {
-    @apply z-10 border-red-8;
+    @apply z-10;
   }

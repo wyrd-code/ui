@@ -43,7 +43,7 @@ const config: UserConfig = {
           /* atRules: ['media'] */
         }),
         // postcssColorFunction(),
-        postcssAtEach(),
+        postcssAtEach,
         postcssAtImport({
           plugins: [
             postcssAtVariables,

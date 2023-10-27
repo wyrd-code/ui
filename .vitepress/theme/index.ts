@@ -1,8 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import { WyrdUI } from '../../src/plugin'
 import './customize-vitepress.css'
-
-// eslint-disable-next-line import/no-unresolved
 import 'uno.css'
 
 import WuiCodeDemo from '../../src/components/code-demo/WuiCodeDemo.vue'

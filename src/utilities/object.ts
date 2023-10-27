@@ -131,7 +131,6 @@ export const camelizeObjectKeys = (
   return newObj
 }
 
-// eslint-disable-next-line max-params
 const mergeNodeProps = (target, obj, deep, prop) => {
   if (Object.prototype.hasOwnProperty.call(obj, prop)) {
     const mergeDeep =
@@ -144,20 +143,18 @@ const mergeNodeProps = (target, obj, deep, prop) => {
 export const mergeObjects = <T>(
   ...args: (Record<string, any> | undefined)[]
 ): T => {
-  // Variables
   const target = {} as T
   const deep = true
   let i = 0
 
   // Merge the object into the target object
-
   const merger = (obj) => {
     for (const prop in obj) {
       mergeNodeProps(target, obj, deep, prop)
     }
   }
 
-  //Loop through each object and conduct a merge
+  // Loop through each object and conduct a merge
   for (; i < args.length; i++) {
     merger(args[i] || {})
   }

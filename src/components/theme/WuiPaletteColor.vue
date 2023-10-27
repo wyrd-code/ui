@@ -3,7 +3,8 @@
     <div class="wui-palette-color-header">
       <strong>{{ color.key }}</strong>
     </div>
-    <template v-if="color.type === 'single'">
+    {{ colorValue }}
+    <!-- <template v-if="color.type === 'single'">
       <div class="wui-palette-color-single" :style="{ background: colorValue }">
         {{ colorValue }}
       </div>
@@ -15,14 +16,14 @@
         :variant="variant"
         @save="(...args) => $emit('save', ...args)"
       />
-    </template>
+    </template> -->
   </div>
 </template>
 
 <script lang="ts" setup>
 import { computed, PropType } from 'vue'
 
-import type { WuiTheme, WuiColorDefinition } from '@/themes'
+import type { WuiThemeOptions, WuiColorDefinition } from '@/domain'
 
 defineEmits(['save'])
 
@@ -36,7 +37,7 @@ const props = defineProps({
     default: false,
   },
   theme: {
-    type: Object as PropType<WuiTheme>,
+    type: Object as PropType<WuiThemeOptions>,
     required: true,
   },
 })

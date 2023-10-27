@@ -15,17 +15,25 @@ body {
   overflow-y: scroll;
 }
 
+/*
+body {
+  @apply bg-white;
+}
+html.dark body {
+  @apply bg-black
+}
+*/
+
+/* add missing unocss border defaults  */
+*, :before, :after {
+  border-width: 0px;
+  border-style: solid;
+}
+
 .VPSidebar {
-  border-right: 1px solid var(--wui-color-neutral-6);
   @apply relative z-20;
 }
 
-.VPNav {
-}
-.VPNav .VPNavBar:not(.has-sidebar),
-.VPNav .VPNavBar.has-sidebar .content {
-  @apply border-b border-neutral-5;
-}
 .VPNav .VPNavBar.has-sidebar .content {
   @apply relative z-10;
 }

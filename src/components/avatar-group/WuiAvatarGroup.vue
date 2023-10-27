@@ -5,7 +5,7 @@ import { useAvatarGroup } from './avatar-group-composable'
 import { TUseAvatarGroup } from './types'
 
 export default defineComponent({
-  name: 'AvatarGroup',
+  name: 'WuiAvatarGroup',
   props: {
     vertical: { type: Boolean },
     max: { type: Number, default: 5 },

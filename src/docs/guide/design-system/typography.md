@@ -1,5 +1,9 @@
 # Typography
 
+## Ideas
+
+[Bionic reading component](https://www.instagram.com/reel/Cxz5AglREvD/?utm_source=ig_web_copy_link)
+
 ## Theory
 
 https://www.youtube.com/watch?v=_4cW79vF1mU

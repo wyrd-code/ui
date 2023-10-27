@@ -1,4 +1,5 @@
 import { ExtractPropTypes, computed, ref, watch, inject, provide } from 'vue'
+import { WUI_BUTTON_PROPS } from '../button/button'
 
 export enum PagingSummaryMode {
   Results = 'results',
@@ -28,6 +29,7 @@ export const usePagingPropsLinks = {
   showPrevNext: { type: Boolean, default: true },
   showFirstLast: { type: Boolean, default: false },
   showNumbers: { type: Boolean, default: true },
+  ...WUI_BUTTON_PROPS,
 }
 
 export const usePagingProps = {

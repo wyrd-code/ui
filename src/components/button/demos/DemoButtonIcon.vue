@@ -1,38 +1,28 @@
 <template>
   <WuiCodeDemoRow>
-    <WuiButton variant="secondary" icon size="xs">
-      <span class="icon-ph-heart" />
-    </WuiButton>
-    <WuiButton variant="secondary" icon size="sm">
-      <span class="icon-ph-heart" />
-    </WuiButton>
-    <WuiButton variant="secondary" icon size="base">
-      <span class="icon-ph-heart" />
-    </WuiButton>
-    <WuiButton variant="secondary" icon size="lg">
-      <span class="icon-ph-heart" />
-    </WuiButton>
-    <WuiButton variant="secondary" icon size="xl">
+    <WuiButton
+      v-for="size in WUI_BUTTON_SIZES"
+      :key="size"
+      :size="size"
+      icon
+    >
       <span class="icon-ph-heart" />
     </WuiButton>
   </WuiCodeDemoRow>
+
   <WuiCodeDemoRow>
-    <WuiButton variant="primary" round icon size="xs">
-      <span class="icon-ph-heart" />
-    </WuiButton>
-    <WuiButton variant="primary" round icon size="sm">
-      <span class="icon-ph-heart" />
-    </WuiButton>
-    <WuiButton variant="primary" round icon size="base">
-      <span class="icon-ph-heart" />
-    </WuiButton>
-    <WuiButton variant="primary" round icon size="lg">
-      <span class="icon-ph-heart" />
-    </WuiButton>
-    <WuiButton variant="primary" round icon size="xl">
+    <WuiButton
+      v-for="size in WUI_BUTTON_SIZES"
+      :key="size"
+      :size="size"
+      icon
+      variant="primary"
+      shape="round"
+    >
       <span class="icon-ph-heart" />
     </WuiButton>
   </WuiCodeDemoRow>
+
   <WuiCodeDemoRow>
     <WuiButton>
       <template #iconPrefix>
@@ -48,3 +38,7 @@
     </WuiButton>
   </WuiCodeDemoRow>
 </template>
+
+<script lang="ts" setup>
+import { WUI_BUTTON_SIZES } from '../button'
+</script>

@@ -2,6 +2,7 @@
 import DemoPagingDelta from '@/components/paging/demos/DemoPagingDelta.vue'
 import DemoPagingSimple from '@/components/paging/demos/DemoPagingSimple.vue'
 import DemoPagingBasic from '@/components/paging/demos/DemoPagingBasic.vue'
+import DemoPagingVariants from '@/components/paging/demos/DemoPagingVariants.vue'
 import DemoPagingSummary from '@/components/paging/demos/DemoPagingSummary.vue'
 import DemoPagingExpanded from '@/components/paging/demos/DemoPagingExpanded.vue'
 </script>
@@ -34,6 +35,12 @@ By using `delta` prop you can change the number of pages links visible aside the
 
 :::demo paging/demos/DemoPagingExpanded
 <DemoPagingExpanded />
+:::
+
+## Variants
+
+:::demo paging/demos/DemoPagingVariants
+<DemoPagingVariants />
 :::
 
 ## Summary

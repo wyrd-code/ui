@@ -1,5 +1,5 @@
 <template>
-  <WuiCollapse>
+  <WuiCollapse class="rounded bg-white">
     <WuiCollapseItem title="Title 1">
       Fusce sem metus, viverra sit amet blandit non, elementum eget leo.
       Curabitur leo dolor, bibendum et lacus id, mattis viverra justo. Curabitur

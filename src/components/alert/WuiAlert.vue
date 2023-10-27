@@ -13,7 +13,7 @@
           </template>
           <slot v-else name="title" />
         </strong>
-        <div>
+        <div v-if="$slots.default || text">
           <template v-if="!$slots.default">
             {{ text }}
           </template>
