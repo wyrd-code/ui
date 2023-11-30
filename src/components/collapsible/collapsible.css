@@ -1,0 +1,17 @@
+
+.wui-collapsible {
+
+  &-header {
+    @apply flex justify-between items-center;
+  }
+
+  &-preview {
+    @apply my-4;
+  }
+
+  &-content {
+    @apply my-4;
+    @apply text-base;
+    will-change: height;
+  }
+}
