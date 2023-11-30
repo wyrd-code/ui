@@ -34,7 +34,8 @@ const props = defineProps({
   type: {
     type: String,
     default: 'submit',
-    validator: (value: string) => ['submit', 'reset'].includes(value),
+    // note: may have unusual values when used with radix-vue asChild
+    // so we don't validate here, but only assigning it to the button when below
   },
   disabled: { type: Boolean },
   icon: { type: Boolean },
@@ -74,9 +75,10 @@ const classNames = computed(() => ({
 const useAttributes = computed(() => {
   const attrs = { ...linkAttributesComputed.value }
   if (isLinkTag.value) {
-    Object.assign(attrs, {
-      tabindex: '0',
-    })
+    Object.assign(attrs, { tabindex: '0' })
+  }
+  if (['submit', 'reset'].includes(props.type)) {
+    Object.assign(attrs, { type: props.type })
   }
   return attrs
 })
