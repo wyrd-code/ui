@@ -177,6 +177,7 @@ export default defineConfig({
           text: 'Components',
           link: '/components/components.html',
           items: [
+            { text: 'Accordion', link: '/components/accordion/accordion.html' },
             { text: 'Alert', link: '/components/alert/alert.html' },
             { text: 'Avatar group', link: '/components/avatar-group/avatar-group.html' },
             { text: 'Avatar', link: '/components/avatar/avatar.html' },
@@ -185,7 +186,7 @@ export default defineConfig({
             { text: 'Button group', link: '/components/button-group/button-group.html' },
             { text: 'Button', link: '/components/button/button.html' },
             { text: 'Card', link: '/components/card/card.html' },
-            { text: 'Collapse', link: '/components/collapse/collapse.html' },
+            { text: 'Collapsible', link: '/components/collapsible/collapsible.html' },
             { text: 'Dialog', link: '/components/dialog/dialog.html' },
             { text: 'Divider', link: '/components/divider/divider.html' },
             { text: 'Drawer', link: '/components/drawer/drawer.html' },

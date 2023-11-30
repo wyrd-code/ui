@@ -102,6 +102,7 @@
     "postcss-prefix-selector": "^1.16.0",
     "prettier": "^2.6.2",
     "radash": "^7.1.0",
+    "radix-vue": "^1.0.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.77.0",
     "rollup-plugin-visualizer": "^5.8.3",

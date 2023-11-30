@@ -11,6 +11,7 @@ import postcssPrefixer from 'postcss-prefix-selector'
 // import { visualizer } from 'rollup-plugin-visualizer'
 import Unocss from 'unocss/vite'
 import Components from 'unplugin-vue-components/vite'
+import RadixVueResolver from 'radix-vue/resolver'
 import { UserConfig } from 'vite'
 import svgLoader from 'vite-svg-loader'
 
@@ -29,6 +30,7 @@ const config: UserConfig = {
         (name) => {
           if (name.startsWith('Wui')) return { name, from: '@/components' }
         },
+        RadixVueResolver(),
       ],
     }),
     // visualizer({

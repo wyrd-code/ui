@@ -67,7 +67,7 @@ export const presetWyrd = (options: PresetWyrdOptions = {}): Preset<Theme> => {
 
   const themeOptions = mergeObjects(
     WUI_THEME_DEFAULT,
-    options.theme
+    options.theme,
   ) as WuiThemeOptions
 
   const {
