@@ -10,7 +10,7 @@ import DemoButtonGroupStretch from '@/components/button-group/demos/DemoButtonGr
 
 Button group displays multiple related actions stacked or in a horizontal row to help with arrangement and spacing.
 
-:::demo button-group/demos/DemoButtonGroup
+:::demo components/button-group/demos/DemoButtonGroup
 <DemoButtonGroup />
 :::
 
@@ -18,7 +18,7 @@ Button group displays multiple related actions stacked or in a horizontal row to
 
 By default, buttons are separated using standard sizing units. If you wish to condense them together, set the `condensed` prop.
 
-:::demo button-group/demos/DemoButtonGroupCondensed
+:::demo components/button-group/demos/DemoButtonGroupCondensed
 <DemoButtonGroupCondensed />
 :::
 
@@ -28,7 +28,7 @@ Make sure you always declare initial value for radio buttons as they need to hol
 
 You can set individual button prop values by adding them to the radio option.
 
-:::demo button-group/demos/DemoButtonGroupRadio
+:::demo components/button-group/demos/DemoButtonGroupRadio
 <DemoButtonGroupRadio />
 :::
 
@@ -36,13 +36,13 @@ You can set individual button prop values by adding them to the radio option.
 
 Force button groups to stretch horizontally using `stretch` values `wide` and `full`.
 
-:::demo button-group/demos/DemoButtonGroupStretch
+:::demo components/button-group/demos/DemoButtonGroupStretch
 <DemoButtonGroupStretch />
 :::
 
 ## Vertical
 
-:::demo button-group/demos/DemoButtonGroupVertical
+:::demo components/button-group/demos/DemoButtonGroupVertical
 <DemoButtonGroupVertical />
 :::
 

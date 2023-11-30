@@ -10,7 +10,7 @@ The only modified prop is placement which defaults to `auto` instead of `bottom`
 
 It will emit `open` and `closed` events.
 
-:::demo popover/demos/DemoPopover
+:::demo components/popover/demos/DemoPopover
 <DemoPopover />
 :::
 

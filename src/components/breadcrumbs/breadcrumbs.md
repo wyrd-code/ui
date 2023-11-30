@@ -8,7 +8,7 @@ import DemoBreadcrumbsIcons from '@/components/breadcrumbs/demos/DemoBreadcrumbs
 
 Breadcrumbs help users visualize the current page position within the hierarchical structure of a website, and allow quickly jumping to any of the "ancestors" of the current page.
 
-:::demo breadcrumbs/demos/DemoBreadcrumbs
+:::demo components/breadcrumbs/demos/DemoBreadcrumbs
 <DemoBreadcrumbs />
 :::
 
@@ -16,13 +16,13 @@ Breadcrumbs help users visualize the current page position within the hierarchic
 
 Control size using regular css font-size property of the containing element.
 
-:::demo breadcrumbs/demos/DemoBreadcrumbsSize
+:::demo components/breadcrumbs/demos/DemoBreadcrumbsSize
 <DemoBreadcrumbsSize />
 :::
 
 ## Icons
 
-:::demo breadcrumbs/demos/DemoBreadcrumbsIcons
+:::demo components/breadcrumbs/demos/DemoBreadcrumbsIcons
 <DemoBreadcrumbsIcons />
 :::
 

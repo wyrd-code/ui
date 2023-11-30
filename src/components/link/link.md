@@ -8,7 +8,7 @@ Use `WuiLink` to link to different pages and urls.
 
 It will appear as `<router-link>` if you pass it the `to` prop, and `<a>` if you pass it the `href` prop.
 
-:::demo link/demos/DemoLink
+:::demo components/link/demos/DemoLink
 <DemoLink />
 :::
 

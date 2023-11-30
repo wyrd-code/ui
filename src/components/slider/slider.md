@@ -9,24 +9,24 @@ import DemoSliderDisabled from '@/components/slider/demos/DemoSliderDisabled.vue
 
 Sliders allow quick selection of a value within a range of values. Use them when min and max values are fixed and/or when you need fixed value increments.
 
-:::demo slider/demos/DemoSlider
+:::demo components/slider/demos/DemoSlider
 <DemoSlider />
 :::
 
 ## Steps
 
-:::demo slider/demos/DemoSliderSteps
+:::demo components/slider/demos/DemoSliderSteps
 <DemoSliderSteps />
 :::
 
 ## Numbers
 
-:::demo slider/demos/DemoSliderNumbers
+:::demo components/slider/demos/DemoSliderNumbers
 <DemoSliderNumbers />
 :::
 
 ## Disabled
 
-:::demo slider/demos/DemoSliderDisabled
+:::demo components/slider/demos/DemoSliderDisabled
 <DemoSliderDisabled />
 :::

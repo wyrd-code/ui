@@ -8,7 +8,7 @@ import DemoCollapsibleCard from '@/components/collapsible/demos/DemoCollapsibleC
 
 Use `WuiCollapsible` to display an expanding/collapsing panel
 
-:::demo collapsible/demos/DemoCollapsible
+:::demo components/collapsible/demos/DemoCollapsible
 <DemoCollapsible />
 :::
 
@@ -17,7 +17,7 @@ Use `WuiCollapsible` to display an expanding/collapsing panel
 
 `WuiCollapsible` exposes `default`, `header` and `preview` slots.
 
-:::demo collapsible/demos/DemoCollapsibleSlots
+:::demo components/collapsible/demos/DemoCollapsibleSlots
 <DemoCollapsibleSlots />
 :::
 
@@ -26,6 +26,6 @@ Use `WuiCollapsible` to display an expanding/collapsing panel
 
 You can wrap `WuiCollapsible` in `WuiCard` for layout purposes.
 
-:::demo collapsible/demos/DemoCollapsibleCard
+:::demo components/collapsible/demos/DemoCollapsibleCard
 <DemoCollapsibleCard />
 :::

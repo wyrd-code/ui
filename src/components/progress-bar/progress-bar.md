@@ -14,19 +14,19 @@ Use the `WuiProgressBar` component to present loading states.
 
 ## Basic
 
-:::demo progress-bar/demos/DemoProgressBarBasic
+:::demo components/progress-bar/demos/DemoProgressBarBasic
 <DemoProgressBarBasic />
 :::
 
 ## Shape
 
-:::demo progress-bar/demos/DemoProgressBarShape
+:::demo components/progress-bar/demos/DemoProgressBarShape
 <DemoProgressBarShape />
 :::
 
 ## Size
 
-:::demo progress-bar/demos/DemoProgressBarSize
+:::demo components/progress-bar/demos/DemoProgressBarSize
 <DemoProgressBarSize />
 :::
 
@@ -34,13 +34,13 @@ Use the `WuiProgressBar` component to present loading states.
 
 Combine `WuiProgressBar` with `WuiTooltip` for interesting and fun variations.
 
-:::demo progress-bar/demos/DemoProgressBarTooltip
+:::demo components/progress-bar/demos/DemoProgressBarTooltip
 <DemoProgressBarTooltip />
 :::
 
 ## Infinite
 
-:::demo progress-bar/demos/DemoProgressBarInfinite
+:::demo components/progress-bar/demos/DemoProgressBarInfinite
 <DemoProgressBarInfinite />
 :::
 
@@ -49,12 +49,12 @@ Combine `WuiProgressBar` with `WuiTooltip` for interesting and fun variations.
 Add stripes by adding the `striped` prop.
 Animate using the `moving` or `sliding` props.
 
-:::demo progress-bar/demos/DemoProgressBarAppearance
+:::demo components/progress-bar/demos/DemoProgressBarAppearance
 <DemoProgressBarAppearance />
 :::
 
 ## Centered
 
-:::demo progress-bar/demos/DemoProgressBarCentered
+:::demo components/progress-bar/demos/DemoProgressBarCentered
 <DemoProgressBarCentered />
 :::

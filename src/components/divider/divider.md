@@ -9,18 +9,18 @@ import DemoDividerVertical from '@/components/divider/demos/DemoDividerVertical.
 A divider is used to visually separate content elements.
 The default appearance is a simple horizontal line spread to 100 width of the parent element.
 
-:::demo divider/demos/DemoDivider
+:::demo components/divider/demos/DemoDivider
 <DemoDivider />
 :::
 
 ## Icon
 
-:::demo divider/demos/DemoDividerIcon
+:::demo components/divider/demos/DemoDividerIcon
 <DemoDividerIcon />
 :::
 
 ## Vertical
 
-:::demo divider/demos/DemoDividerVertical
+:::demo components/divider/demos/DemoDividerVertical
 <DemoDividerVertical />
 :::

@@ -7,7 +7,7 @@ import DemoAccordionSlots from '@/components/accordion/demos/DemoAccordionSlots.
 # Accordion
 
 Use `Accordion` and `AccordionItem` components to easily compose collapsible interfaces.
-:::demo accordion/demos/DemoAccordion
+:::demo components/accordion/demos/DemoAccordion
 <DemoAccordion />
 :::
 
@@ -16,12 +16,12 @@ Use `Accordion` and `AccordionItem` components to easily compose collapsible int
 
 `AccordionItem` exposes `default`, `header`, `icon-expanded` and `icon-contracted` slots.
 
-:::demo accordion/demos/DemoAccordionSlots
+:::demo components/accordion/demos/DemoAccordionSlots
 <DemoAccordionSlots />
 :::
 
 ## Nested
 
-:::demo accordion/demos/DemoAccordionNested
+:::demo components/accordion/demos/DemoAccordionNested
 <DemoAccordionNested />
 :::

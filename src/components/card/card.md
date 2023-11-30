@@ -21,7 +21,7 @@ They’re also well-suited for showcasing elements whose size or supported actio
 
 Use slots `top`, `preview`, `header`, `actions` and `default` to build your card.
 
-:::demo card/demos/DemoCard
+:::demo components/card/demos/DemoCard
 <DemoCard />
 :::
 
@@ -29,7 +29,7 @@ Use slots `top`, `preview`, `header`, `actions` and `default` to build your card
 
 Use the `condensed` prop to reduce internal padding in the card slots.
 
-:::demo card/demos/DemoCardCondensed
+:::demo components/card/demos/DemoCardCondensed
 <DemoCardCondensed />
 :::
 
@@ -37,7 +37,7 @@ Use the `condensed` prop to reduce internal padding in the card slots.
 
 Use the `unpadded` prop to remove internal padding in the card slots.
 
-:::demo card/demos/DemoCardUnpadded
+:::demo components/card/demos/DemoCardUnpadded
 <DemoCardUnpadded />
 :::
 
@@ -45,7 +45,7 @@ Use the `unpadded` prop to remove internal padding in the card slots.
 
 Use the `horizontal` prop to reduce internal padding in the card slots.
 
-:::demo card/demos/DemoCardHorizontal
+:::demo components/card/demos/DemoCardHorizontal
 <DemoCardHorizontal />
 :::
 
@@ -53,7 +53,7 @@ Use the `horizontal` prop to reduce internal padding in the card slots.
 
 Use the `inverse` prop to switch the flex order of `media` and `body` slots.
 
-:::demo card/demos/DemoCardInverse
+:::demo components/card/demos/DemoCardInverse
 <DemoCardInverse />
 :::
 
@@ -61,31 +61,31 @@ Use the `inverse` prop to switch the flex order of `media` and `body` slots.
 
 Use the `divided` prop to add internal borders to the card slots.
 
-:::demo card/demos/DemoCardDivided
+:::demo components/card/demos/DemoCardDivided
 <DemoCardDivided />
 :::
 
 The `divided` prop adopts to presence of the `top` slot and `horizontal` prop.
 
-:::demo card/demos/DemoCardHorizontalDivided
+:::demo components/card/demos/DemoCardHorizontalDivided
 <DemoCardHorizontalDivided />
 :::
 
 ## Disabled
 
-:::demo card/demos/DemoCardDisabled
+:::demo components/card/demos/DemoCardDisabled
 <DemoCardDisabled />
 :::
 
 ## Image card
 
-:::demo card/demos/DemoCardImageOverlay
+:::demo components/card/demos/DemoCardImageOverlay
 <DemoCardImageOverlay />
 :::
 
 ## Profile Card
 
-:::demo card/demos/DemoCardProfile
+:::demo components/card/demos/DemoCardProfile
 <DemoCardProfile />
 :::
 

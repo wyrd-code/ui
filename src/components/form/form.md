@@ -13,7 +13,7 @@ There are two ways to implement forms, static and dynamic.
 
 Static forms are created by placing form element components into the form components default slot, just as any other vue components.
 
-:::demo form/demos/DemoForm
+:::demo components/form/demos/DemoForm
 <DemoForm />
 :::
 
@@ -23,7 +23,7 @@ This form is generated using a schema object. It supports detailed
 customization of the form layout by allowing html elements and
 attributes to be used in the schema.
 
-:::demo form/demos/DemoFormGenerated
+:::demo components/form/demos/DemoFormGenerated
 <DemoFormGenerated />
 :::
 

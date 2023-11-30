@@ -25,7 +25,7 @@ Every item in a list should:
 
 ## Simple
 
-:::demo list/demos/DemoList
+:::demo components/list/demos/DemoList
 <DemoList />
 :::
 
@@ -35,7 +35,7 @@ You can control list styling using the `marker` prop.
 
 If you use `roman`, `latin`, `greek` or `numbered` marker, it will change the default `tag` prop from `<ul>` to `<ol>`. Passing a custom `tag` prop will override it.
 
-:::demo list/demos/DemoListMarker
+:::demo components/list/demos/DemoListMarker
 <DemoListMarker />
 :::
 
@@ -46,7 +46,7 @@ To change the marker position, use `inside` or `outside` (default) as value for 
 Note that using an inside marker position will break the layout flow of the immediate child element of the list item, so `WuiList` will change the inner wrapper from a `div` to a `<span>` element.
 Thus, we recommend only using the `inside` position for simple text based list items.
 
-:::demo list/demos/DemoListMarkerPosition
+:::demo components/list/demos/DemoListMarkerPosition
 <DemoListMarkerPosition />
 :::
 
@@ -54,7 +54,7 @@ Thus, we recommend only using the `inside` position for simple text based list i
 
 You can add dividers between list elements using the `divided` prop.
 
-:::demo list/demos/DemoListDivided
+:::demo components/list/demos/DemoListDivided
 <DemoListDivided />
 :::
 
@@ -62,7 +62,7 @@ You can add dividers between list elements using the `divided` prop.
 
 To add default theme borders, add the `bordered` prop.
 
-:::demo list/demos/DemoListBordered
+:::demo components/list/demos/DemoListBordered
 <DemoListBordered />
 :::
 
@@ -70,13 +70,13 @@ To add default theme borders, add the `bordered` prop.
 
 To use default corner rounding, add the `rounded` prop.
 
-:::demo list/demos/DemoListRounded
+:::demo components/list/demos/DemoListRounded
 <DemoListRounded />
 :::
 
 ## Sizes
 
-:::demo list/demos/DemoListSize
+:::demo components/list/demos/DemoListSize
 <DemoListSize />
 :::
 
@@ -84,13 +84,13 @@ To use default corner rounding, add the `rounded` prop.
 
 If you have a hierarchical or recursive array of list items, you can display them recursively using the `children` property of each item. You can set it as an array of items or an object with an `items` property where any extra properties will be propagated to the child list component. Using the latter approach, you can customize the nested lists easily.
 
-:::demo list/demos/DemoListNested
+:::demo components/list/demos/DemoListNested
 <DemoListNested />
 :::
 
 ## Icons
 
-:::demo list/demos/DemoListIcons
+:::demo components/list/demos/DemoListIcons
 <DemoListIcons />
 :::
 
@@ -98,6 +98,6 @@ If you have a hierarchical or recursive array of list items, you can display the
 
 Use the `disabled` prop on `WuiListItem` to make the element disabled and non-interactive with a visual cue of the state.
 
-:::demo list/demos/DemoListLinked
+:::demo components/list/demos/DemoListLinked
 <DemoListLinked />
 :::

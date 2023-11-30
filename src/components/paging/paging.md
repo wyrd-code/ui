@@ -13,7 +13,7 @@ Use the paging component for navigating large data sets.
 
 ## Basic
 
-:::demo paging/demos/DemoPagingBasic
+:::demo components/paging/demos/DemoPagingBasic
 <DemoPagingBasic />
 :::
 
@@ -21,25 +21,25 @@ Use the paging component for navigating large data sets.
 
 By using `delta` prop you can change the number of pages links visible aside the active one.
 
-:::demo paging/demos/DemoPagingDelta
+:::demo components/paging/demos/DemoPagingDelta
 <DemoPagingDelta />
 :::
 
 ## Simple
 
-:::demo paging/demos/DemoPagingSimple
+:::demo components/paging/demos/DemoPagingSimple
 <DemoPagingSimple />
 :::
 
 ## Expanded
 
-:::demo paging/demos/DemoPagingExpanded
+:::demo components/paging/demos/DemoPagingExpanded
 <DemoPagingExpanded />
 :::
 
 ## Variants
 
-:::demo paging/demos/DemoPagingVariants
+:::demo components/paging/demos/DemoPagingVariants
 <DemoPagingVariants />
 :::
 
@@ -47,6 +47,6 @@ By using `delta` prop you can change the number of pages links visible aside the
 
 You can switch the summary text by changing the `mode` prop of the `WuiPagingSummary` component.
 
-:::demo paging/demos/DemoPagingSummary
+:::demo components/paging/demos/DemoPagingSummary
 <DemoPagingSummary />
 :::

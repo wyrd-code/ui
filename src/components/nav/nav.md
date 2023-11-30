@@ -11,24 +11,24 @@ import DemoNavGrouped from '@/components/nav/demos/DemoNavGrouped.vue'
 
 Use `WuiNav` when clicking on items is expected to result in main content change.
 
-:::demo nav/demos/DemoNav
+:::demo components/nav/demos/DemoNav
 <DemoNav />
 :::
 
 ## Icons
 
-:::demo nav/demos/DemoNavIcons
+:::demo components/nav/demos/DemoNavIcons
 <DemoNavIcons />
 :::
 
 ## Nested
 
-:::demo nav/demos/DemoNavNested
+:::demo components/nav/demos/DemoNavNested
 <DemoNavNested />
 :::
 
 ## Grouped
 
-:::demo nav/demos/DemoNavGrouped
+:::demo components/nav/demos/DemoNavGrouped
 <DemoNavGrouped />
 :::

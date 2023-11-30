@@ -13,7 +13,7 @@ Tooltip is triggered primarily by hovering, while popover is by default triggere
 
 It will emit `open` and `closed` events.
 
-:::demo tooltip/demos/DemoTooltip
+:::demo components/tooltip/demos/DemoTooltip
 <DemoTooltip />
 :::
 
@@ -27,7 +27,7 @@ In such cases it may make sense to use an inline icon to trigger the popup and p
 
 You can manualy set the `placement` prop `left`, `right`, `top`, `bottom`.
 
-:::demo tooltip/demos/DemoTooltipPlacement
+:::demo components/tooltip/demos/DemoTooltipPlacement
 <DemoTooltipPlacement />
 :::
 
@@ -37,12 +37,12 @@ Not setting the placement will default to `auto`, automatically detecting the ri
 
 Observe how the following tooltip changes position as you scroll it's container towards the top/bottom of your screen.
 
-:::demo tooltip/demos/DemoTooltipAutoplacement
+:::demo components/tooltip/demos/DemoTooltipAutoplacement
 <DemoTooltipAutoplacement />
 :::
 
 ## Image
 
-:::demo tooltip/demos/DemoTooltipImage
+:::demo components/tooltip/demos/DemoTooltipImage
 <DemoTooltipImage />
 :::

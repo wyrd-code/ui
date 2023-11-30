@@ -6,18 +6,18 @@ import DemoRadioAdvanced from '@/components/radio/demos/DemoRadioAdvanced.vue'
 
 # Radio Group
 
-:::demo radio/demos/DemoRadio
+:::demo components/radio/demos/DemoRadio
 <DemoRadio />
 :::
 
 ## Orientation
 
-:::demo radio/demos/DemoRadioOrientation
+:::demo components/radio/demos/DemoRadioOrientation
 <DemoRadioOrientation />
 :::
 
 ## Advanced
 
-:::demo radio/demos/DemoRadioAdvanced
+:::demo components/radio/demos/DemoRadioAdvanced
 <DemoRadioAdvanced />
 :::

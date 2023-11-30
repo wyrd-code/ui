@@ -10,7 +10,7 @@ import DemoDrawerNested from '@/components/drawer/demos/DemoDrawerNested.vue'
 
 Use the `close`, `image`, `header`, `actions` and the `default` slot for body content.
 
-:::demo drawer/demos/DemoDrawer
+:::demo components/drawer/demos/DemoDrawer
 <DemoDrawer />
 :::
 
@@ -18,6 +18,6 @@ Use the `close`, `image`, `header`, `actions` and the `default` slot for body co
 
 Use nested drawers only on wide screens.
 
-:::demo drawer/demos/DemoDrawerNested
+:::demo components/drawer/demos/DemoDrawerNested
 <DemoDrawerNested />
 :::

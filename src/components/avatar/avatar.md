@@ -13,7 +13,7 @@ import DemoAvatarLabel from '@/components/avatar/demos/DemoAvatarLabel.vue'
 
 Avatars are round by default to keep close to the prevalent standard appearance of avatars on the web.
 
-:::demo avatar/demos/DemoAvatar
+:::demo components/avatar/demos/DemoAvatar
 <DemoAvatar />
 :::
 
@@ -21,7 +21,7 @@ Avatars are round by default to keep close to the prevalent standard appearance 
 
 By default, the avatar will display a placeholder icon if no `src` or `label` props are set.
 
-:::demo avatar/demos/DemoAvatarPlaceholder
+:::demo components/avatar/demos/DemoAvatarPlaceholder
 <DemoAvatarPlaceholder />
 :::
 
@@ -29,7 +29,7 @@ By default, the avatar will display a placeholder icon if no `src` or `label` pr
 
 If you wish for it to fill a rectangular surface, set the square prop.
 
-:::demo avatar/demos/DemoAvatarSquare
+:::demo components/avatar/demos/DemoAvatarSquare
 <DemoAvatarSquare />
 :::
 
@@ -37,7 +37,7 @@ If you wish for it to fill a rectangular surface, set the square prop.
 
 With a `name` and no `src`, avatar will display up to three initial words of the label letters.
 
-:::demo avatar/demos/DemoAvatarInitials
+:::demo components/avatar/demos/DemoAvatarInitials
 <DemoAvatarInitials />
 :::
 
@@ -45,7 +45,7 @@ With a `name` and no `src`, avatar will display up to three initial words of the
 
 You can set custom text value when no `src` is set, using the `label` prop.
 
-:::demo avatar/demos/DemoAvatarLabel
+:::demo components/avatar/demos/DemoAvatarLabel
 <DemoAvatarLabel />
 :::
 
@@ -53,7 +53,7 @@ You can set custom text value when no `src` is set, using the `label` prop.
 
 Avatars are often combined with different badges. Here is an example.
 
-:::demo avatar/demos/DemoAvatarBadge
+:::demo components/avatar/demos/DemoAvatarBadge
 <DemoAvatarBadge />
 :::
 
@@ -64,12 +64,12 @@ Note that the classes need to have stronger [specificity](https://developer.mozi
 
 If adding classes directly to the avatar component, use `!bg-black` instead of `bg-black`.
 
-:::demo avatar/demos/DemoAvatarColor
+:::demo components/avatar/demos/DemoAvatarColor
 <DemoAvatarColor />
 :::
 
 ## Size
 
-:::demo avatar/demos/DemoAvatarSize
+:::demo components/avatar/demos/DemoAvatarSize
 <DemoAvatarSize />
 :::

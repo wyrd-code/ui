@@ -4,6 +4,6 @@ import DemoLoadingBar from '@/components/loading-bar/demos/DemoLoadingBar.vue'
 
 # Loading bar
 
-:::demo loading-bar/demos/DemoLoadingBar
+:::demo components/loading-bar/demos/DemoLoadingBar
 <DemoLoadingBar />
 :::

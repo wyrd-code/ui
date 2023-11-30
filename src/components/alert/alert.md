@@ -14,7 +14,7 @@ import WuiAlertDemoTransition from '@/components/alert/demos/WuiAlertDemoTransit
 
 **An alert displays a short, important message in a way that attracts the user's attention without interrupting the user's flow.**
 
-:::demo alert/demos/WuiAlertDemo
+:::demo components/alert/demos/WuiAlertDemo
 <WuiAlertDemo />
 :::
 
@@ -22,7 +22,7 @@ import WuiAlertDemoTransition from '@/components/alert/demos/WuiAlertDemoTransit
 
 You can set the `title`, `text` and `icon` via prop or a slot. If both provided, slotted content will be shown.
 
-:::demo alert/demos/WuiAlertDemoTitle
+:::demo components/alert/demos/WuiAlertDemoTitle
 <WuiAlertDemoTitle />
 :::
 
@@ -30,7 +30,7 @@ You can set the `title`, `text` and `icon` via prop or a slot. If both provided,
 
 There are four variants that communicate the severity of information being communicated.
 
-:::demo alert/demos/WuiAlertDemoVariants
+:::demo components/alert/demos/WuiAlertDemoVariants
 <WuiAlertDemoVariants />
 :::
 
@@ -38,7 +38,7 @@ There are four variants that communicate the severity of information being commu
 
 Alert component has predefined icons for each severity. You can pass a custom icon using the `icon` prop or slot.
 
-:::demo alert/demos/WuiAlertDemoIcon
+:::demo components/alert/demos/WuiAlertDemoIcon
 <WuiAlertDemoIcon />
 :::
 
@@ -50,7 +50,7 @@ Listen to this event and change the `visible` prop value to false to hide the al
 To customize the transition, simply include it's css definition somewhere in your app or component, and pass it's name via the `transition` prop.
 Here, we are using `slide-left` as the transition.
 
-:::demo alert/demos/WuiAlertDemoTransition
+:::demo components/alert/demos/WuiAlertDemoTransition
 <WuiAlertDemoTransition />
 :::
 

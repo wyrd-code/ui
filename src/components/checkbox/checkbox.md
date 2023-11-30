@@ -24,7 +24,7 @@ The component expects a `v-model` to be used on it, meaning it will accept a `mo
 
 Use the `label` and `help` slots or `label` & `help` props.
 
-:::demo checkbox/demos/DemoCheckbox
+:::demo components/checkbox/demos/DemoCheckbox
 <DemoCheckbox />
 :::
 
@@ -34,7 +34,7 @@ Checkbox can be **selected**, **not selected** and in an **indeterminate state**
 
 Checkbox value is accordingly `true`, `false` or `mixed` when in an indeterminate state.
 
-:::demo checkbox/demos/DemoCheckboxState
+:::demo components/checkbox/demos/DemoCheckboxState
 <DemoCheckboxState />
 :::
 
@@ -44,7 +44,7 @@ When a checkbox is used in a hierarchy, representing multiple values that are no
 
 The checkbox component will change `mixed` value to `true` on toggle, but it's up to you to get it back into a `mixed` state as fit, and adjust the rest of the values.
 
-:::demo checkbox/demos/DemoCheckboxMultipleValues
+:::demo components/checkbox/demos/DemoCheckboxMultipleValues
 <DemoCheckboxMultipleValues />
 :::
 
@@ -54,7 +54,7 @@ By default, checkboxes are not emphasized (gray). This version is optimal for wh
 
 The emphasized (blue) version provides a visual prominence that is optimal for forms, settings, lists or grids of assets, and other situations where a checkbox need to be noticed.
 
-:::demo checkbox/demos/DemoCheckboxVariants
+:::demo components/checkbox/demos/DemoCheckboxVariants
 <DemoCheckboxVariants />
 :::
 
@@ -62,7 +62,7 @@ The emphasized (blue) version provides a visual prominence that is optimal for f
 
 A checkbox in a disabled state shows that a selection exists, but is not available in that circumstance. This can be used to maintain layout continuity and communicate that an action may become available later.
 
-:::demo checkbox/demos/DemoCheckboxDisabled
+:::demo components/checkbox/demos/DemoCheckboxDisabled
 <DemoCheckboxDisabled />
 :::
 
@@ -70,7 +70,7 @@ A checkbox in a disabled state shows that a selection exists, but is not availab
 
 Use the `readonly` prop to make the checkbox disabled but not visually affected.
 
-:::demo checkbox/demos/DemoCheckboxReadonly
+:::demo components/checkbox/demos/DemoCheckboxReadonly
 <DemoCheckboxReadonly />
 :::
 
@@ -78,7 +78,7 @@ Use the `readonly` prop to make the checkbox disabled but not visually affected.
 
 Use the sizes sparingly, they should be used to create a hierarchy of importance within the page.
 
-:::demo checkbox/demos/DemoCheckboxSizes
+:::demo components/checkbox/demos/DemoCheckboxSizes
 <DemoCheckboxSizes />
 :::
 
@@ -86,7 +86,7 @@ Use the sizes sparingly, they should be used to create a hierarchy of importance
 
 Use `pulse` prop to attract user's attention to the checkbox
 
-:::demo checkbox/demos/DemoCheckboxPulse
+:::demo components/checkbox/demos/DemoCheckboxPulse
 <DemoCheckboxPulse />
 :::
 
@@ -94,7 +94,7 @@ Use `pulse` prop to attract user's attention to the checkbox
 
 Use the `strike` prop to show a line through the label when checkbox value is true.
 
-:::demo checkbox/demos/DemoCheckboxStrike
+:::demo components/checkbox/demos/DemoCheckboxStrike
 <DemoCheckboxStrike />
 :::
 

@@ -10,7 +10,7 @@ import DemoSwitchVariants from '@/components/switch/demos/DemoSwitchVariants.vue
 
 # Switch
 
-:::demo switch/demos/DemoSwitch
+:::demo components/switch/demos/DemoSwitch
 <DemoSwitch />
 :::
 
@@ -26,19 +26,19 @@ Please see [Stop Misusing Toggle Switches](https://uxmovement.com/mobile/stop-mi
 
 ## Slots
 
-:::demo switch/demos/DemoSwitchSlots
+:::demo components/switch/demos/DemoSwitchSlots
 <DemoSwitchSlots />
 :::
 
 ## Variants
 
-:::demo switch/demos/DemoSwitchVariants
+:::demo components/switch/demos/DemoSwitchVariants
 <DemoSwitchVariants />
 :::
 
 ## Disabled
 
-:::demo switch/demos/DemoSwitchDisabled
+:::demo components/switch/demos/DemoSwitchDisabled
 <DemoSwitchDisabled />
 :::
 
@@ -46,7 +46,7 @@ Please see [Stop Misusing Toggle Switches](https://uxmovement.com/mobile/stop-mi
 
 Use the `readonly` prop to make the switch disabled but not visually affected.
 
-:::demo switch/demos/DemoSwitchReadonly
+:::demo components/switch/demos/DemoSwitchReadonly
 <DemoSwitchReadonly />
 :::
 
@@ -54,7 +54,7 @@ Use the `readonly` prop to make the switch disabled but not visually affected.
 
 Use the `pulse` prop to attract users attention
 
-:::demo switch/demos/DemoSwitchPulse
+:::demo components/switch/demos/DemoSwitchPulse
 <DemoSwitchPulse />
 :::
 
@@ -62,7 +62,7 @@ Use the `pulse` prop to attract users attention
 
 Use the sizes sparingly, they should be used to create a hierarchy of importance within the page.
 
-:::demo switch/demos/DemoSwitchSizes
+:::demo components/switch/demos/DemoSwitchSizes
 <DemoSwitchSizes />
 :::
 

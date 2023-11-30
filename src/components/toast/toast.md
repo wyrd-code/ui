@@ -21,7 +21,7 @@ Use one of `top`, `top-start`, `top-end` or `bottom`, `bottom-start`, `bottom-en
 
 Use the variant prop to change the appearance of the toast.
 
-:::demo toast/demos/DemoToastVariants
+:::demo components/toast/demos/DemoToastVariants
 <DemoToastVariants />
 :::
 
@@ -47,7 +47,7 @@ Toasts with a duration have internal timers. Hovering the toast will temporarily
 
 ### Basic
 
-:::demo toast/demos/DemoToast
+:::demo components/toast/demos/DemoToast
 <DemoToast />
 :::
 
@@ -55,7 +55,7 @@ Toasts with a duration have internal timers. Hovering the toast will temporarily
 
 An advanced demo using slots and inline rendering of component.
 
-:::demo toast/demos/DemoToastAdvanced
+:::demo components/toast/demos/DemoToastAdvanced
 <DemoToastAdvanced />
 :::
 
@@ -63,7 +63,7 @@ An advanced demo using slots and inline rendering of component.
 
 Another advanced demo, showing how the `aside` slot can be used to customize the main action button location.
 
-:::demo toast/demos/DemoToastMessage
+:::demo components/toast/demos/DemoToastMessage
 <DemoToastMessage />
 :::
 

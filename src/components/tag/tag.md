@@ -10,13 +10,13 @@ import DemoTagVariants from '@/components/tag/demos/DemoTagVariants.vue'
 
 # Tag
 
-:::demo tag/demos/DemoTag
+:::demo components/tag/demos/DemoTag
 <DemoTag />
 :::
 
 ## Closable
 
-:::demo tag/demos/DemoTagClosable
+:::demo components/tag/demos/DemoTagClosable
 <DemoTagClosable />
 :::
 
@@ -24,7 +24,7 @@ import DemoTagVariants from '@/components/tag/demos/DemoTagVariants.vue'
 
 Note: you can add a `filled` property to the tag and it will use a stronger background color, flipping to white text for readability purposes.
 
-:::demo tag/demos/DemoTagVariants
+:::demo components/tag/demos/DemoTagVariants
 <DemoTagVariants />
 :::
 
@@ -32,19 +32,19 @@ Note: you can add a `filled` property to the tag and it will use a stronger back
 
 Available shapes are `square`, `rounded` and the default `round`. Use this property to make the tags visually separate from other components. For example, if your buttons are all `round`, you may want to use `rounded` tags accross your app.
 
-:::demo tag/demos/DemoTagShape
+:::demo components/tag/demos/DemoTagShape
 <DemoTagShape />
 :::
 
 ## Tooltip
 
-:::demo tag/demos/DemoTagTooltip
+:::demo components/tag/demos/DemoTagTooltip
 <DemoTagTooltip />
 :::
 
 ## Icon
 
-:::demo tag/demos/DemoTagIcon
+:::demo components/tag/demos/DemoTagIcon
 <DemoTagIcon />
 :::
 
@@ -52,6 +52,6 @@ Available shapes are `square`, `rounded` and the default `round`. Use this prope
 
 <!--@include: ../../ui-vue/composables/use-router-link.short.md-->
 
-:::demo tag/demos/DemoTagLink
+:::demo components/tag/demos/DemoTagLink
 <DemoTagLink />
 :::

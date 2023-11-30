@@ -11,18 +11,18 @@ import DemoCommentNested from '@/components/comment/demos/DemoCommentNested.vue'
 
 Use slots `top`, `preview`, `header`, `actions` and `default` to build your comment.
 
-:::demo comment/demos/DemoComment
+:::demo components/comment/demos/DemoComment
 <DemoComment />
 :::
 
 ## Single
 
-:::demo comment/demos/DemoCommentSingle
+:::demo components/comment/demos/DemoCommentSingle
 <DemoCommentSingle />
 :::
 
 ## Nested
 
-:::demo comment/demos/DemoCommentNested
+:::demo components/comment/demos/DemoCommentNested
 <DemoCommentNested />
 :::

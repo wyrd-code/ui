@@ -12,7 +12,7 @@ Use `WuiSpinner` to indicate loading state.
 
 The size of the spinner will adjust to the text size in it's parent component.
 
-:::demo spinner/demos/DemoSpinner
+:::demo components/spinner/demos/DemoSpinner
 <DemoSpinner />
 :::
 
@@ -22,7 +22,7 @@ Change the spinner icon by setting the `icon-class` property.
 
 Note: this assumes you have UnoCSS setup and the icon class you are using has a corresponding icon in the relevant icon library.
 
-:::demo spinner/demos/DemoSpinnerIcon
+:::demo components/spinner/demos/DemoSpinnerIcon
 <DemoSpinnerIcon />
 :::
 
@@ -32,6 +32,6 @@ Use `WuiSpinnerOverlay` to indicate loading state using an overlay that prevents
 
 The overlay is absolutely positioned using CSS, so make sure to set `position: relative` on one of it's parent html elements so the overlay can fit that element.
 
-:::demo spinner/demos/DemoSpinnerOverlay
+:::demo components/spinner/demos/DemoSpinnerOverlay
 <DemoSpinnerOverlay />
 :::

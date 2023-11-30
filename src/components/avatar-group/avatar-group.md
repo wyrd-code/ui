@@ -8,7 +8,7 @@ import DemoAvatarGroupMax from '@/components/avatar-group/demos/DemoAvatarGroupM
 
 For displaying several avatars together. For example, when an article is co-authored by several authors.
 
-:::demo avatar-group/demos/DemoAvatarGroup
+:::demo components/avatar-group/demos/DemoAvatarGroup
 <DemoAvatarGroup />
 :::
 
@@ -17,7 +17,7 @@ For displaying several avatars together. For example, when an article is co-auth
 By default, number of avatars is limited to 5. You can set the `max` prop to change this value.
 Any remaining avatars will be hidden and a small count of the hidden avatars will be displayed.
 
-:::demo avatar-group/demos/DemoAvatarGroupMax
+:::demo components/avatar-group/demos/DemoAvatarGroupMax
 <DemoAvatarGroupMax />
 :::
 
@@ -25,7 +25,7 @@ Any remaining avatars will be hidden and a small count of the hidden avatars wil
 
 For article sidebars and special layouts, you can use the `vertical` prop.
 
-:::demo avatar-group/demos/DemoAvatarGroupVertical
+:::demo components/avatar-group/demos/DemoAvatarGroupVertical
 <DemoAvatarGroupVertical />
 :::
 

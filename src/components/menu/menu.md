@@ -7,7 +7,7 @@ import DemoMenuAdvanced from '@/components/menu/demos/DemoMenuAdvanced.vue'
 
 `WuiMenu` is used to display a list of controls (a, button) that perform a function within the page.
 
-:::demo menu/demos/DemoMenu
+:::demo components/menu/demos/DemoMenu
 <DemoMenu />
 :::
 
@@ -21,7 +21,7 @@ This allows precise control over aria attributes and let's each components work 
 
 Including disabled & separator items, with icons, descriptions and custom styling of both item and it's icon
 
-:::demo menu/demos/DemoMenuAdvanced
+:::demo components/menu/demos/DemoMenuAdvanced
 <DemoMenuAdvanced />
 :::
 

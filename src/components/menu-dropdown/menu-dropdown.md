@@ -6,6 +6,6 @@ import DemoMenuDropdown from '@/components/menu-dropdown/demos/DemoMenuDropdown.
 
 `WuiMenuDropdown` is used to dynamically reveal a Menu within a page.
 
-:::demo menu-dropdown/demos/DemoMenuDropdown
+:::demo components/menu-dropdown/demos/DemoMenuDropdown
 <DemoMenuDropdown />
 :::

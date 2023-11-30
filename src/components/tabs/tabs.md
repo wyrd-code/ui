@@ -4,6 +4,6 @@ import DemoTabs from '@/components/tabs/demos/DemoTabs.vue'
 
 # Tabs
 
-:::demo tabs/demos/DemoTabs
+:::demo components/tabs/demos/DemoTabs
 <DemoTabs />
 :::

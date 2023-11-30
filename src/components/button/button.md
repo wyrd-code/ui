@@ -20,7 +20,7 @@ For user triggered actions.
 
 Each button variant has a particular function and its design signals that function to the user. It is therefore very important that the different variants are implemented consistently across products, so that they convey consistent meaning to users.
 
-:::demo button/demos/DemoButtonVariant
+:::demo components/button/demos/DemoButtonVariant
 <DemoButtonVariant />
 :::
 
@@ -28,7 +28,7 @@ Each button variant has a particular function and its design signals that functi
 
 For primary call to action on the page. Primary buttons should only appear once per screen. Modal dialogs, sidebars and similar overlaid components.
 
-:::demo button/demos/DemoButtonVariantPrimary
+:::demo components/button/demos/DemoButtonVariantPrimary
 <DemoButtonVariantPrimary />
 :::
 
@@ -36,7 +36,7 @@ For primary call to action on the page. Primary buttons should only appear once 
 
 For secondary actions on each page. Secondary buttons can only be used in conjunction with a primary button. As part of a pair, the secondary button’s function is to perform the negative action of the set, such as “Cancel” or “Back”. Do not use a secondary button in isolation and do not use a secondary button for a positive action.
 
-:::demo button/demos/DemoButtonVariantSecondary
+:::demo components/button/demos/DemoButtonVariantSecondary
 <DemoButtonVariantSecondary />
 :::
 
@@ -44,7 +44,7 @@ For secondary actions on each page. Secondary buttons can only be used in conjun
 
 For less prominent, and sometimes independent, actions. Outlined buttons can be used in isolation or paired with a primary button when there are multiple calls to action. Outlined buttons can also be used for sub-tasks on a page where a primary button for the main and final action is present.
 
-:::demo button/demos/DemoButtonVariantOutlined
+:::demo components/button/demos/DemoButtonVariantOutlined
 <DemoButtonVariantOutlined />
 :::
 
@@ -52,7 +52,7 @@ For less prominent, and sometimes independent, actions. Outlined buttons can be 
 
 For the least pronounced actions; often used in conjunction with a primary button. In a situation such as a progress flow, a ghost button may be paired with a primary and secondary button set, where the primary button is for forward action, the secondary button is for “Back”, and the ghost button is for “Cancel”.
 
-:::demo button/demos/DemoButtonVariantGhost
+:::demo components/button/demos/DemoButtonVariantGhost
 <DemoButtonVariantGhost />
 :::
 
@@ -60,25 +60,25 @@ For the least pronounced actions; often used in conjunction with a primary butto
 
 Buttons also support system variants: info, success, warning and danger.
 
-:::demo button/demos/DemoButtonVariantSystem
+:::demo components/button/demos/DemoButtonVariantSystem
 <DemoButtonVariantSystem />
 :::
 
 ## Sizes
 
-:::demo button/demos/DemoButtonSizes
+:::demo components/button/demos/DemoButtonSizes
 <DemoButtonSizes />
 :::
 
 ## Stretch
 
-:::demo button/demos/DemoButtonStretch
+:::demo components/button/demos/DemoButtonStretch
 <DemoButtonStretch />
 :::
 
 ## Shapes
 
-:::demo button/demos/DemoButtonShapes
+:::demo components/button/demos/DemoButtonShapes
 <DemoButtonShapes />
 :::
 
@@ -86,7 +86,7 @@ Buttons also support system variants: info, success, warning and danger.
 
 - Use the `icon` (bool) prop to adjust padding for icons
 
-:::demo button/demos/DemoButtonIcon
+:::demo components/button/demos/DemoButtonIcon
 <DemoButtonIcon />
 :::
 
@@ -94,7 +94,7 @@ Buttons also support system variants: info, success, warning and danger.
 
 <!--@include: ../../ui-vue/composables/use-router-link.short.md-->
 
-:::demo button/demos/DemoButtonLink
+:::demo components/button/demos/DemoButtonLink
 <DemoButtonLink />
 :::
 

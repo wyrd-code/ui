@@ -14,7 +14,7 @@ import DemoBadgeVisible from '@/components/badge/demos/DemoBadgeVisible.vue'
 
 Badges are round by default to keep close to the prevalent standard appearance of badges on the web.
 
-:::demo badge/demos/DemoBadge
+:::demo components/badge/demos/DemoBadge
 <DemoBadge />
 :::
 
@@ -22,7 +22,7 @@ Badges are round by default to keep close to the prevalent standard appearance o
 
 You can use the `max` prop to cap the value of the badge content.
 
-:::demo badge/demos/DemoBadgeMax
+:::demo components/badge/demos/DemoBadgeMax
 <DemoBadgeMax />
 :::
 
@@ -30,7 +30,7 @@ You can use the `max` prop to cap the value of the badge content.
 
 The badge hides automatically when `value` is zero. You can override this with the `showZero` prop.
 
-:::demo badge/demos/DemoBadgeEmpty
+:::demo components/badge/demos/DemoBadgeEmpty
 <DemoBadgeEmpty />
 :::
 
@@ -38,7 +38,7 @@ The badge hides automatically when `value` is zero. You can override this with t
 
 You can use the `visible` prop to control badge visibility
 
-:::demo badge/demos/DemoBadgeVisible
+:::demo components/badge/demos/DemoBadgeVisible
 <DemoBadgeVisible />
 :::
 
@@ -46,7 +46,7 @@ You can use the `visible` prop to control badge visibility
 
 You can use the `dot` prop to show a small circular badge.
 
-:::demo badge/demos/DemoBadgeDot
+:::demo components/badge/demos/DemoBadgeDot
 <DemoBadgeDot />
 :::
 
@@ -54,7 +54,7 @@ You can use the `dot` prop to show a small circular badge.
 
 You can use the `rounded` prop to show a square shaped badge that is still rounded.
 
-:::demo badge/demos/DemoBadgeRounded
+:::demo components/badge/demos/DemoBadgeRounded
 <DemoBadgeRounded />
 :::
 
@@ -63,7 +63,7 @@ You can use the `rounded` prop to show a square shaped badge that is still round
 By default badges are placed as absolute positioned to the top right of their main slot content.
 You can use the `placement` prop to change this.
 
-:::demo badge/demos/DemoBadgePlacement
+:::demo components/badge/demos/DemoBadgePlacement
 <DemoBadgePlacement />
 :::
 
@@ -71,7 +71,7 @@ You can use the `placement` prop to change this.
 
 You can use badges as inline elements instead of the default floating (absolute positioned). Simply place them where you like as inline elements with no slot content.
 
-:::demo badge/demos/DemoBadgeInline
+:::demo components/badge/demos/DemoBadgeInline
 <DemoBadgeInline />
 :::
 
@@ -79,7 +79,7 @@ You can use badges as inline elements instead of the default floating (absolute 
 
 Use the `variant` prop to change the styling of within a limited set of standard system colors.
 
-:::demo badge/demos/DemoBadgeVariants
+:::demo components/badge/demos/DemoBadgeVariants
 <DemoBadgeVariants />
 :::
 

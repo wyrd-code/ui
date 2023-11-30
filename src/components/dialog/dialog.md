@@ -19,7 +19,7 @@ The component expects a `v-model` to be used on it, meaning it will accept a `mo
 
 Use the `close`, `image`, `header`, `actions` and the `default` slot for body content.
 
-:::demo dialog/demos/DemoDialog
+:::demo components/dialog/demos/DemoDialog
 <DemoDialog />
 :::
 
@@ -29,31 +29,31 @@ Use the `closable` prop to toggle the close button/slot and close the dialog whe
 
 Use the `closable-mask` prop to control if the dialog will close when the mask is clicked (by default, true if dialog is closable)
 
-:::demo dialog/demos/DemoDialogClosable
+:::demo components/dialog/demos/DemoDialogClosable
 <DemoDialogClosable />
 :::
 
 ## Form
 
-:::demo dialog/demos/DemoDialogForm
+:::demo components/dialog/demos/DemoDialogForm
 <DemoDialogForm />
 :::
 
 ## Confirmation
 
-:::demo dialog/demos/DemoDialogConfirmation
+:::demo components/dialog/demos/DemoDialogConfirmation
 <DemoDialogConfirmation />
 :::
 
 ## Image
 
-:::demo dialog/demos/DemoDialogImage
+:::demo components/dialog/demos/DemoDialogImage
 <DemoDialogImage />
 :::
 
 ## Nested
 
-:::demo dialog/demos/DemoDialogNested
+:::demo components/dialog/demos/DemoDialogNested
 <DemoDialogNested />
 :::
 
