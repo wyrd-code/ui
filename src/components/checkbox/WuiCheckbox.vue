@@ -8,8 +8,8 @@
         class="wui-checkbox-input visually-hidden"
         :disabled="disabled"
         :value="true"
-        :checked="ariaChecked"
-        @input="toggle"
+        :aria-checked="ariaChecked"
+        aria-hidden
       />
       <span
         class="wui-checkbox-icon"
@@ -17,6 +17,7 @@
         role="checkbox"
         :aria-checked="ariaChecked"
         :aria-readonly="readonly || disabled"
+        @click="toggle"
         @keydown.space.prevent="toggle"
       >
         <slot name="icon">
@@ -87,6 +88,7 @@ export default defineComponent({
       if (props.disabled || props.readonly) {
         return
       }
+      console.log('Toggle', props.modelValue)
       const newValue = props.modelValue !== true
       emit('update:modelValue', newValue)
     }
