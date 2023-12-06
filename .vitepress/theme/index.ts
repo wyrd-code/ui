@@ -4,11 +4,13 @@ import './customize-vitepress.css'
 import 'uno.css'
 
 import WuiCodeDemo from '../../src/components/code-demo/WuiCodeDemo.vue'
+import TemplateLayout from './components/TemplateLayout.vue'
 
 export default {
-  ...DefaultTheme,
+  extends: DefaultTheme,
   enhanceApp({ app }) {
     app.component('WuiCodeDemo', WuiCodeDemo)
+    app.component('TemplateLayout', TemplateLayout)
     app.use(WyrdUI)
     // app.component('dynamic-link', {
     //   template: '<component v-bind:is="transformed"></component>',
