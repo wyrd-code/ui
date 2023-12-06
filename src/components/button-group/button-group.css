@@ -1,5 +1,5 @@
 .wui-btn-group {
-  @apply flex flex-wrap align-middle items-center justify-center;
+  @apply flex flex-wrap align-middle items-center;
 
   .wui-btn {
     &:hover {
