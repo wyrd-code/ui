@@ -1,69 +1,51 @@
 <template>
   <WuiForm
-    v-model="initialData"
+    v-model="data"
     :on-submit="onSubmit"
-    :on-success="onSuccess"
-    :on-reset="onReset"
   >
     <WuiFormText
       name="email"
       validates="required"
       placeholder="your@email.address"
       label="Email"
-      help="A standard email address field"
       prefix="test"
+      v-model="data.email"
     />
     <WuiFormPassword
       name="password"
       validates="required"
       label="Password"
-      help="A typical password field"
-      v-model="initialData.password"
+      v-model="data.password"
+    />
+    <WuiCheckbox
+      name="remember"
+      label="Remember me"
+      v-model="data.remember"
     />
 
-    <template #footer>
-      <WuiFormSubmit variant="primary" label="Send" />
-      <WuiFormReset variant="danger" label="Reset" />
-      <pre>
-        {{ status }}
-        {{ info }}
-      </pre>
-      <hr />
-      <pre>
-        {{ initialData }}
-      </pre>
+    <template #actions>
+      <WuiButtonGroup>
+        <WuiFormSubmit variant="primary" label="Send" />
+        <WuiFormReset variant="danger" label="Reset" />
+      </WuiButtonGroup>
     </template>
+
+    <pre>
+      {{ data }}
+    </pre>
   </WuiForm>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
 
-import WuiForm from '../WuiForm.vue'
-import WuiFormText from '../WuiFormText.vue'
-import WuiFormSubmit from '../WuiFormSubmit.vue'
-import WuiFormPassword from '../WuiFormPassword.vue'
-
-const initialData = ref({
+const data = ref({
   email: null,
   password: null,
+  remember: false,
 })
 
-const status = ref('')
-const info = ref({})
-
 const onSubmit = (formData: any) => {
-  info.value = formData
-  status.value = 'submitted'
-}
-
-const onSuccess = (formData: any) => {
-  info.value = formData
-  status.value = 'success'
-}
-
-const onReset = () => {
-  info.value = {}
-  status.value = ''
+  alert(JSON.stringify(formData))
 }
 </script>

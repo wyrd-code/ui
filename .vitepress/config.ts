@@ -242,6 +242,14 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: 'Overview', link: '/templates/' },
+            {
+              text: 'Auth',
+              collapsed: false,
+              items: [
+                { text: 'Layouts', link: '/templates/auth/layouts/layouts.html' },
+                { text: 'Forms', link: '/templates/auth/forms/forms.html' },
+              ],
+            },
           ],
         },
       ],
@@ -281,4 +289,8 @@ export default defineConfig({
       // )
     }
   },
+  transformPageData(pageData) {
+    if (pageData.frontmatter.sidebar != null) return
+    pageData.frontmatter.sidebar = pageData.frontmatter.layout !== 'TemplateLayout'
+  }
 })

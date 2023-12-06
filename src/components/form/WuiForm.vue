@@ -2,7 +2,7 @@
   <form class="wui-form" novalidate @submit.prevent>
     <slot name="header" :form="form" />
     <slot :form="form" />
-    <slot name="footer" :form="form" />
+    <slot name="actions" :form="form" />
   </form>
 </template>
 

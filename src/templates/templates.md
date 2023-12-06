@@ -13,7 +13,12 @@
 
 ## Roadmap
 
-- [ ] Auth layout with app features previewed on the side of ie sign in form
+- [ ] Auth layouts
+  - [ ] app features previewed on the side of ie sign in form
+- [ ] Auth forms
+  - [ ] Login
+  - [ ] Signup
+  - [ ] Password recover
 - [ ] Page headers
   - [ ] [Modern CSS Layouts: Headers](https://javascript.plainenglish.io/modern-css-layouts-headers-a02577e3181d)
 - [ ] Hero sections
