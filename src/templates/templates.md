@@ -13,12 +13,15 @@
 
 ## Roadmap
 
-- [ ] Auth layouts
-  - [ ] app features previewed on the side of ie sign in form
-- [ ] Auth forms
-  - [ ] Login
-  - [ ] Signup
-  - [ ] Password recover
+- Layouts
+  - [x] simple
+  - [x] split
+  - [ ] [Layouts without media queries](https://medium.com/@bogdanfromkyiv/responsive-layouts-without-media-queries-a859911790fc)
+- Auth forms
+  - [x] Login
+  - [x] Signup
+  - [x] Password reset
+- [ ] Navigation bars
 - [ ] Page headers
   - [ ] [Modern CSS Layouts: Headers](https://javascript.plainenglish.io/modern-css-layouts-headers-a02577e3181d)
 - [ ] Hero sections

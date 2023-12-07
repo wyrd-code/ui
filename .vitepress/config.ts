@@ -190,6 +190,7 @@ export default defineConfig({
             { text: 'Dialog', link: '/components/dialog/dialog.html' },
             { text: 'Divider', link: '/components/divider/divider.html' },
             { text: 'Drawer', link: '/components/drawer/drawer.html' },
+            { text: 'Dropdown', link: '/components/dropdown/dropdown.html' },
             {
               text: 'Forms & Input',
               items: [
@@ -250,6 +251,8 @@ export default defineConfig({
                 { text: 'Forms', link: '/templates/auth/forms/forms.html' },
               ],
             },
+            { text: 'Header', link: '/templates/header/header.html' },
+            { text: 'Footer', link: '/templates/footer/footer.html' },
           ],
         },
       ],
