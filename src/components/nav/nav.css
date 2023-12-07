@@ -4,6 +4,10 @@
   @apply p-0;
 }
 
+.wui-nav.horizontal {
+  @apply flex-row;
+}
+
 .wui-nav :deep(.wui-nav) {
   @apply border-none;
 }

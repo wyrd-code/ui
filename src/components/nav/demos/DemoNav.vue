@@ -3,8 +3,6 @@
 </template>
 
 <script lang="ts" setup>
-import WuiNav from '../WuiNav.vue'
-
 const items = [
   {
     href: '/components/badge/badge.html',

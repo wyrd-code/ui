@@ -1,5 +1,9 @@
 <template>
-  <WuiList class="wui-nav" role="menu">
+  <WuiList
+    class="wui-nav"
+    role="menu"
+    :class="{ horizontal }"
+  >
     <slot v-if="$slots.default" />
     <WuiNavItem v-for="(item, idx) in items" :key="idx" :item="item" />
   </WuiList>
@@ -11,7 +15,7 @@ import { PropType } from 'vue'
 import type { WyrdNavItem } from './nav'
 
 defineProps({
-  test: { type: String, default: 'A' },
+  horizontal: { type: Boolean, default: false },
   items: {
     type: Array as () => Array<WyrdNavItem>,
     default: () => [],
