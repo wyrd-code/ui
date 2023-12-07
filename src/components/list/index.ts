@@ -1,4 +1,5 @@
 import { defineAsyncComponent } from 'vue'
+export type { WyrdListItem } from './list'
 
 export const WuiList = defineAsyncComponent(() => import('./WuiList.vue'))
 export const WuiListItem = defineAsyncComponent(
