@@ -8,7 +8,6 @@
       validates="required"
       placeholder="your@email.address"
       label="Email"
-      prefix="test"
       v-model="data.email"
     />
     <WuiFormPassword
@@ -17,7 +16,7 @@
       label="Password"
       v-model="data.password"
     />
-    <WuiCheckbox
+    <WuiFormCheckbox
       name="remember"
       label="Remember me"
       v-model="data.remember"
@@ -29,10 +28,6 @@
         <WuiFormReset variant="danger" label="Reset" />
       </WuiButtonGroup>
     </template>
-
-    <pre>
-      {{ data }}
-    </pre>
   </WuiForm>
 </template>
 

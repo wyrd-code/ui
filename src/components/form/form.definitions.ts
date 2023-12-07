@@ -1,6 +1,7 @@
 import type {
   FormDefinitions,
 } from '@/components/form/form.types'
+import WuiFormCheckbox from '@/components/form/WuiFormCheckbox.vue'
 import WuiFormSubmit from '@/components/form/WuiFormSubmit.vue'
 import WuiFormReset from '@/components/form/WuiFormReset.vue'
 import WuiFormText from '@/components/form/WuiFormText.vue'
@@ -17,6 +18,10 @@ export const defaultFormFieldDefinitions: FormDefinitions = [
   {
     name: 'WuiButtonGroup',
     component: WuiButtonGroup,
+  },
+  {
+    name: 'WuiFormCheckbox',
+    component: WuiFormCheckbox,
   },
   {
     name: 'WuiFormText',

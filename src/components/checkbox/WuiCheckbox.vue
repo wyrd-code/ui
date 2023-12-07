@@ -88,7 +88,6 @@ export default defineComponent({
       if (props.disabled || props.readonly) {
         return
       }
-      console.log('Toggle', props.modelValue)
       const newValue = props.modelValue !== true
       emit('update:modelValue', newValue)
     }
