@@ -9,9 +9,18 @@ import { computed } from 'vue'
 
 import { routerLinkProps } from '@/domain'
 
-const props = defineProps(routerLinkProps)
+const props = defineProps({
+  ...routerLinkProps,
+  link: {
+    type: [String, Object],
+  },
+})
 
 const tag = computed(() => {
+  if (props.link) {
+    return typeof props.link === 'string' ? 'a' : 'router-link'
+  }
+
   if (props.href) {
     return 'a'
   }
@@ -22,6 +31,25 @@ const tag = computed(() => {
 })
 
 const customProps = computed(() => {
+  if (props.link) {
+    if (typeof props.link === 'string') {
+      return {
+        href: props.link,
+        target: props.target,
+      }
+    }
+
+    return {
+      to: props.link,
+      replace: props.replace,
+      append: props.append,
+      exact: props.exact,
+      activeClass: props.activeClass,
+      exactActiveClass: props.exactActiveClass,
+      disabled: props.disabled,
+    }
+  }
+
   if (props.href) {
     return {
       href: props.href,

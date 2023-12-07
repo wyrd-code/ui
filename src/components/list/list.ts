@@ -1,4 +1,6 @@
-export interface WyrdListItem {
+import { RouterLinkProps } from '@/domain/navigation'
+
+export interface WyrdListItem extends RouterLinkProps {
   label: string
   icon?: string
   iconClass?: string
