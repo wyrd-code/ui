@@ -24,7 +24,7 @@
       @apply bg-accent-9 border-accent-9 text-accent-3;
     }
     > a:hover {
-      @apply bg-accent-9 border-accent-9 text-accent-3;
+      @apply underline;
     }
 
     &::marker {
@@ -64,10 +64,12 @@
     @apply rounded-lg;
 
     > li {
-      &:first-child {
+      &:first-child,
+      &:first-child:hover {
         @apply rounded-t-lg;
       }
-      &:last-child {
+      &:last-child,
+      &:last-child:hover  {
         @apply rounded-b-lg;
       }
     }
