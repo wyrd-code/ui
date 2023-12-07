@@ -1,7 +1,7 @@
 <template>
   <WuiMenuDropdown>
     <template #button="{ attrs }">
-      <WuiButton variant="neutral" v-bind="attrs">
+      <WuiButton variant="secondary" v-bind="attrs">
         <span>{{ value }}</span>
         <span class="icon-ph-caret-down ml-2 text-lg" />
       </WuiButton>

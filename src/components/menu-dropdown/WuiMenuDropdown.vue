@@ -12,7 +12,6 @@
             ...slotProps,
             close,
             handleSelection: (value) => close() && emit('selected', value),
-            test: 'B',
           }"
         />
       </FocusLoop>
