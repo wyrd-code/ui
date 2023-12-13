@@ -1,23 +1,21 @@
 <template>
   <WuiFormFieldWrapper
-    class="wui-form-password"
-    :label="label"
+    class="wui-form-radio"
     :id="id"
     :help="help"
   >
-    <WuiPasswordInput
-      :id="id"
-      :name="name"
+    <WuiRadio
+      :label="label"
       :disabled="disabled"
-      :autocomplete="autocomplete"
-      :placeholder="placeholder"
+      :items="items"
+      :orientation="orientation"
       v-model="value"
     />
   </WuiFormFieldWrapper>
 </template>
 
 <script lang="ts" setup>
-import { WUI_PASSWORD_INPUT_PROPS } from '@/components/input';
+import { WUI_RADIO_PROPS } from '../radio'
 import { formFieldWrapperProps } from './form.props'
 import { useFormInstance } from './useFormInstance'
 import WuiFormFieldWrapper from './WuiFormFieldWrapper.vue'
@@ -25,7 +23,7 @@ import { useHtmlId } from '@/composables'
 
 const props = defineProps({
   ...formFieldWrapperProps,
-  ...WUI_PASSWORD_INPUT_PROPS,
+  ...WUI_RADIO_PROPS,
 })
 
 const id = useHtmlId()

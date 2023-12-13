@@ -1,10 +1,10 @@
 <template>
-  <WuiRadioGroup
+  <WuiRadio
     v-model="value"
     :items="items"
     label="Fruit"
     orientation="horizontal"
-    instructions="Please select a fruit"
+    help="Please select a fruit"
   />
 </template>
 

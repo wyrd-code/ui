@@ -44,45 +44,14 @@
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
 
-import { useHtmlId } from '@/composables'
-
-import {
-  WUI_CHECKBOX_VARIANTS,
-  WUI_CHECKBOX_VARIANT_DEFAULT,
-  WUI_CHECKBOX_SIZES,
-  WUI_CHECKBOX_SIZE_DEFAULT,
-} from './checkbox'
+import { WUI_CHECKBOX_PROPS } from './checkbox'
 
 export default defineComponent({
   name: 'WuiCheckbox',
   inheritAttrs: false,
-  props: {
-    modelValue: {
-      type: [Boolean, String],
-      default: false,
-      validator: (value: 'mixed' | boolean) =>
-        [true, false, 'mixed'].includes(value),
-    },
-    variant: {
-      type: String,
-      default: WUI_CHECKBOX_VARIANT_DEFAULT,
-      validator: (value: string) => WUI_CHECKBOX_VARIANTS.includes(value),
-    },
-    size: {
-      type: String,
-      default: WUI_CHECKBOX_SIZE_DEFAULT,
-      validator: (value: string) => WUI_CHECKBOX_SIZES.includes(value),
-    },
-    label: { type: String, default: null },
-    help: { type: String, default: null },
-    pulse: { type: Boolean },
-    disabled: { type: Boolean },
-    readonly: { type: Boolean },
-    strike: { type: Boolean },
-  },
+  props: WUI_CHECKBOX_PROPS,
   emits: ['update:modelValue'],
   setup(props, { emit }) {
-    const id = useHtmlId()
 
     function toggle() {
       if (props.disabled || props.readonly) {
@@ -108,7 +77,7 @@ export default defineComponent({
       [`wui-checkbox--${props.variant}`]: true,
     }))
 
-    return { id, toggle, classNames, ariaChecked }
+    return { toggle, classNames, ariaChecked }
   },
 })
 </script>

@@ -31,6 +31,7 @@ const schema: FormSchema = [
       name: 'email',
       label: 'Your email',
       placeholder: 'your@email.address',
+      autocomplete: 'email',
     },
     attributes: {
     },
@@ -40,6 +41,7 @@ const schema: FormSchema = [
     props: {
       name: 'password',
       label: 'Password',
+      autocomplete: 'password',
     },
     attributes: {
     },

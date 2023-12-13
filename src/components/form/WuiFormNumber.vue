@@ -1,11 +1,11 @@
 <template>
   <WuiFormFieldWrapper
-    class="wui-form-password"
+    class="wui-form-number"
     :label="label"
     :id="id"
     :help="help"
   >
-    <WuiPasswordInput
+    <WuiNumberInput
       :id="id"
       :name="name"
       :disabled="disabled"
@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts" setup>
-import { WUI_PASSWORD_INPUT_PROPS } from '@/components/input';
+import { WUI_NUMBER_INPUT_PROPS } from '@/components/input';
 import { formFieldWrapperProps } from './form.props'
 import { useFormInstance } from './useFormInstance'
 import WuiFormFieldWrapper from './WuiFormFieldWrapper.vue'
@@ -25,7 +25,7 @@ import { useHtmlId } from '@/composables'
 
 const props = defineProps({
   ...formFieldWrapperProps,
-  ...WUI_PASSWORD_INPUT_PROPS,
+  ...WUI_NUMBER_INPUT_PROPS,
 })
 
 const id = useHtmlId()

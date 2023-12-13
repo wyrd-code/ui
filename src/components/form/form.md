@@ -1,6 +1,7 @@
 <script setup>
 import DemoForm from './demos/DemoForm.vue'
 import DemoFormGenerated from './demos/DemoFormGenerated.vue'
+import DemoFormFull from './demos/DemoFormFull.vue'
 </script>
 
 # Form
@@ -25,6 +26,14 @@ attributes to be used in the schema.
 
 :::demo components/form/demos/DemoFormGenerated
 <DemoFormGenerated />
+:::
+
+## Static Full
+
+Static form with full range of field types used.
+
+:::demo components/form/demos/DemoFormFull
+<DemoFormFull />
 :::
 
 ## Reading list

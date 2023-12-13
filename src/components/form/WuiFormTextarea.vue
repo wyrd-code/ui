@@ -1,18 +1,16 @@
 <template>
   <WuiFormFieldWrapper
-    class="wui-form-text"
+    class="wui-form-textarea"
     :label="label"
     :id="id"
     :help="help"
   >
-    <WuiInput
+    <WuiTextarea
       :id="id"
-      :type="type"
       :name="name"
       :disabled="disabled"
       :autocomplete="autocomplete"
       :placeholder="placeholder"
-      :prefix="prefix"
       v-model="value"
     />
   </WuiFormFieldWrapper>
@@ -22,8 +20,8 @@
 import { formFieldWrapperProps } from '@/components/form/form.props'
 import { useFormInstance } from '@/components/form/useFormInstance'
 import WuiFormFieldWrapper from '@/components/form/WuiFormFieldWrapper.vue'
-import WuiInput from '@/components/input/WuiInput.vue'
-import { WUI_INPUT_PROPS } from '@/components/input'
+import WuiTextarea from '@/components/textarea/WuiTextarea.vue'
+import { WUI_TEXTAREA_PROPS } from '@/components/textarea'
 import { useHtmlId } from '@/composables'
 
 defineOptions({
@@ -32,10 +30,10 @@ defineOptions({
 
 const props = defineProps({
   ...formFieldWrapperProps,
-  ...WUI_INPUT_PROPS,
+  ...WUI_TEXTAREA_PROPS,
 })
 
 const id = useHtmlId()
 const form = useFormInstance()
-const value = form.getFieldValue<string | number | undefined>(props.name)
+const value = form.getFieldValue<string | undefined>(props.name)
 </script>

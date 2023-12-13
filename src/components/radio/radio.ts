@@ -1,4 +1,5 @@
 import { Colors } from '@/domain'
+import { PropType } from 'vue'
 
 export const allowedRadioTypes = [
   Colors.PRIMARY,
@@ -8,3 +9,33 @@ export const allowedRadioTypes = [
   Colors.BLACK,
   Colors.NEUTRAL,
 ]
+
+export interface WyrdRadio {
+  label: string
+  value: string | number
+}
+
+export const WUI_RADIO_PROPS = {
+  modelValue: {
+    type: [String, Number, Boolean] as PropType<string | number | null>,
+    default: null,
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+  orientation: {
+    type: String,
+    default: 'vertical',
+    validator: (val: string) => ['vertical', 'horizontal'].includes(val),
+  },
+  items: { type: Array as () => Array<WyrdRadio>, default: () => [] },
+  label: {
+    type: String,
+    default: null,
+  },
+  help: {
+    type: String,
+    default: null,
+  },
+}

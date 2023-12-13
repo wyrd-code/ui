@@ -4,19 +4,33 @@
     :on-submit="onSubmit"
   >
     <WuiFormText
-      name="email"
-      placeholder="your@email.address"
-      label="Email"
-      autocomplete="email"
+      name="text"
+      label="Text"
+      prefix="prefix"
+      autocomplete="text"
     />
     <WuiFormPassword
       name="password"
       label="Password"
       autocomplete="password"
     />
+    <WuiFormNumber
+      name="number"
+      label="Number"
+      autocomplete="number"
+    />
     <WuiFormCheckbox
-      name="remember"
-      label="Remember me"
+      name="checkbox"
+      label="Checkbox"
+    />
+    <WuiFormRadio
+      name="radio"
+      label="Radio"
+      :items="radioItems"
+    />
+    <WuiFormTextarea
+      name="textarea"
+      label="Textarea"
     />
 
     <template #actions>
@@ -32,10 +46,23 @@
 import { ref } from 'vue'
 
 const data = ref({
-  email: null,
+  text: null,
   password: null,
-  remember: false,
+  checkbox: false,
+  radio: false,
+  textarea: '',
 })
+
+const radioItems = [
+  {
+    label: 'Apples',
+    value: 'apples',
+  },
+  {
+    label: 'Bananas',
+    value: 'bananas',
+  },
+]
 
 const onSubmit = (formData: any) => {
   alert(JSON.stringify(formData))

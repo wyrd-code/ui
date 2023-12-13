@@ -1,10 +1,14 @@
 .wui-textarea {
-  @apply rounded  w-full relative box-border antialiased;
-  @apply bg-white border border-neutral-3 shadow-input;
-  padding: 5px 7px;
-  font-size: 13px;
-  color: #131313;
+  @apply transition-all duration-200;
+  @apply rounded w-full relative;
+
+  @apply p-2;
+  @apply text-base;
+  @apply border border-solid box-border;
+  @apply bg-neutral-1 border-neutral-8 text-neutral-11;
+
   -webkit-appearance: none;
+  appearance: none;
   /* z-index: 2; */
   transition: all 0.2s;
 
@@ -18,15 +22,11 @@
   }
 
   &:focus {
-    @apply border border-accent-4 shadow-input;
-
-    &:hover {
-      @apply border-accent-5;
-    }
+    @apply ring-blue-500 border-blue-500;
   }
 
   &::placeholder {
-    @apply text-neutral-5;
+    @apply text-neutral-8;
     text-indent: 0;
     transition: text-indent 0.27s ease;
   }

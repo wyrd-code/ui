@@ -35,3 +35,7 @@ const emit = defineEmits(['update:modelValue'])
 
 const form = useForm(props, emit)
 </script>
+
+<style lang="css">
+@import url('./form.css');
+</style>

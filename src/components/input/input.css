@@ -1,123 +1,12 @@
 .wui-input-wrapper {
-  @apply transition-all duration-200;
-  @apply rounded h-10 w-full relative;
-  @apply flex items-center justify-between;
-  @apply cursor-pointer text-left antialiased;
-  @apply box-border overflow-hidden;
-  @apply border border-neutral-2;
-
-  &:not(:last-child) {
-    @apply rounded-r-none;
-  }
-
-  &:not(:first-child) {
-    @apply rounded-l-none;
-  }
-
-  &:focus-within {
-    @apply border border-accent-4;
-
-    &:hover {
-      @apply border-accent-5;
-    }
-  }
-
-  &:hover {
-    @apply border-neutral-5;
-  }
-
-  &--disabled,
-  &--disabled:hover {
-    @apply opacity-50 cursor-not-allowed;
-
-    .wui-input:disabled {
-      @apply text-neutral-7 cursor-not-allowed;
-      @apply dark:text-neutral-4;
-    }
-
-    .wui-input-icon {
-      @apply cursor-not-allowed;
-    }
-  }
-
-  &--success {
-    @apply bg-success-300;
-    &:hover {
-      @apply !border-success-500;
-    }
-    &:focus-within {
-      @apply shadow-current !border-success-600;
-    }
-    &:disabled {
-      @apply border-neutral-4;
-    }
-  }
-
-  &--warning {
-    @apply bg-warning-300;
-    &:hover {
-      @apply !border-warning-500;
-    }
-    &:focus-within {
-      @apply shadow-current !border-warning-600;
-    }
-    &:disabled {
-      @apply border-neutral-4;
-    }
-  }
-
-  &--danger {
-    @apply bg-danger-300;
-    &:hover {
-      @apply !border-danger-500;
-    }
-    &:focus-within {
-      @apply shadow-current !border-danger-600;
-    }
-    &:disabled {
-      @apply border-neutral-4;
-    }
-  }
-}
-
-.wui-input {
-  @apply h-full w-full py-4 px-3 inline-block;
-  @apply text-base;
-  @apply border border-solid box-border;
-  @apply bg-neutral-1 border-neutral-8 text-neutral-11;
-
-  &:focus:not(:focus-visible) {
-    @apply outline-none;
-  }
-
-  .wui-input-icon-wrapper + & {
-    padding: 4px 0;
-  }
-
-  &::placeholder {
-    @apply text-neutral-9 italic tracking-wide;
-  }
-
-  &-mask {
-    @apply top-0 right-0 bottom-0 left-0 z-40 fixed;
-    background-color: rgba(90, 98, 112, 0.5);
-  }
-}
-
-.wui-input-prefix-wrapper {
-  @apply flex relative;
-
-  &.masked {
-    @apply z-50;
-  }
+  @apply flex items-stretch w-full;
 
   .wui-input-prefix,
   .wui-input-suffix {
-    @apply flex px-4 justify-center items-center;
-    @apply border text-sm;
-    @apply bg-neutral-1 border-neutral-3 text-neutral-6;
-    @apply dark:(bg-neutral-8 border-neutral-7 text-neutral-4);
-    line-height: 1;
+    @apply flex items-center;
+    @apply px-4 text-sm;
+    @apply border border-solid;
+    @apply bg-neutral-6 border-neutral-8 text-neutral-11;
   }
 
   .wui-input-prefix {
@@ -127,11 +16,66 @@
   .wui-input-suffix {
     @apply rounded-tr rounded-br border-l-0;
   }
-}
 
-.wui-input-label {
-  @apply text-left block;
-  @apply text-current mb-2;
+  .wui-input {
+    @apply w-full h-full;
+    @apply relative;
+
+    input {
+      @apply w-full p-2;
+      @apply text-base;
+      @apply border border-solid;
+      @apply bg-neutral-1 border-neutral-8 text-neutral-11;
+      @apply outline-none;
+
+      &:focus {
+        @apply ring-blue-500 border-blue-500;
+      }
+
+      &::placeholder {
+        @apply text-neutral-9 italic tracking-wide;
+      }
+    }
+  }
+
+  &.prefix-icon {
+    .wui-input input {
+      @apply pl-8;
+    }
+  }
+  &.suffix-icon {
+    .wui-input input {
+      @apply pr-8;
+    }
+  }
+  .wui-input-prefix-icon,
+  .wui-input-suffix-icon {
+    @apply absolute top-0 bottom-0;
+    @apply flex items-center justify-center;
+  }
+  .wui-input-suffix-icon {
+    @apply right-0;
+  }
+  .wui-input-icon {
+    @apply text-neutral-11 leading-none;
+    @apply mx-3 cursor-default;
+  }
+
+  &:not(.prefix,.suffix) {
+    .wui-input input {
+      @apply rounded;
+    }
+  }
+  &.prefix:not(.suffix) {
+    .wui-input input {
+      @apply rounded-tr rounded-br;
+    }
+  }
+  &.suffix:not(.prefix) {
+    .wui-input input {
+      @apply rounded-tl rounded-bl;
+    }
+  }
 }
 
 .wui-input-message {
@@ -152,17 +96,4 @@
   &--disabled {
     @apply text-neutral-6;
   }
-}
-
-.wui-input-icon {
-  @apply text-neutral-4;
-  cursor: default;
-  margin: 0 8px;
-  vertical-align: middle;
-}
-
-.wui-input-icon-wrapper {
-  align-items: center;
-  display: flex;
-  justify-content: center;
 }
