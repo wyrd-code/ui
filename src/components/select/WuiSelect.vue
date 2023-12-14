@@ -57,7 +57,7 @@
             :key="optionIndex"
             :ref="(el) => setOptionRef(el as any, optionIndex)"
             class="wui-select-option"
-            :data-selected="indexFocusedOption === optionIndex"
+            :data-selected="focusedOptionIndex === optionIndex"
             :data-disabled="option.disabled"
             @keydown.enter.stop.prevent="selectOption(optionIndex)"
             @click="selectOption(optionIndex)"
@@ -95,7 +95,7 @@ const props = defineProps(WUI_SELECT_PROPS)
 
 const emit = defineEmits(['update:modelValue'])
 
-const indexFocusedOption = ref(-1)
+const focusedOptionIndex = ref(-1)
 const optionsRefs = ref<HTMLElement[]>([])
 const selectListRef = ref<HTMLElement | undefined>(undefined)
 let selectedOptionIndex: number = -1
@@ -168,16 +168,16 @@ const selectOption = (optionIndex: number) => {
 }
 
 const unfocusOption = () => {
-  if (indexFocusedOption.value === -1) return
-  indexFocusedOption.value = -1
+  if (focusedOptionIndex.value === -1) return
+  focusedOptionIndex.value = -1
 }
 
 const handleKey = async (direction: EDirections) => {
   if (!isOpen.value || !props.options.length) return
-  indexFocusedOption.value = getArrayIndexByDirection({
+  focusedOptionIndex.value = getArrayIndexByDirection({
     direction,
     array: props.options as [],
-    curIndex: indexFocusedOption.value,
+    curIndex: focusedOptionIndex.value,
   })
   await nextTick()
   const selectedEl = optionsRefs.value.find((r) => r.dataset.selected)
@@ -185,11 +185,11 @@ const handleKey = async (direction: EDirections) => {
 }
 
 const handleEnterKey = () => {
-  if (!isOpen.value || indexFocusedOption.value === -1) {
+  if (!isOpen.value || focusedOptionIndex.value === -1) {
     toggleDropdown()
     return
   }
-  selectOption(indexFocusedOption.value)
+  selectOption(focusedOptionIndex.value)
 }
 
 const selectedOption = computed<TSelectOption>(() => {

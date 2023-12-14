@@ -26,7 +26,7 @@
   user-select: none;
   padding: 0 8px 0 12px;
   transition: all 0.27s;
-  @apply rounded flex h-10 text-left relative items-center justify-between;
+  @apply rounded flex h-10 text-left items-center justify-between;
   @apply bg-white border border-neutral-7 text-neutral-11;
   @apply cursor-pointer leading-none;
   @apply box-border outline-none;
@@ -113,7 +113,7 @@
 }
 
 .wui-select-option {
-  @apply w-full h-full relative;
+  @apply w-full h-full;
   @apply box-border whitespace-nowrap whitespace-normal;
   @apply text-ellipsis overflow-hidden;
   @apply py-2 px-4;
