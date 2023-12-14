@@ -57,21 +57,22 @@
             :key="optionIndex"
             :ref="(el) => setOptionRef(el as any, optionIndex)"
             class="wui-select-option"
-            :class="
-              indexFocusedOption === optionIndex && CLASS_SELECTED_OPTION
-            "
+            :data-selected="indexFocusedOption === optionIndex"
+            :data-disabled="option.disabled"
             @keydown.enter.stop.prevent="selectOption(optionIndex)"
             @click="selectOption(optionIndex)"
           >
-            <slot name="option" :props="props" :option="option">
-              {{ getOptionLabel(option) }}
-              <transition name="fade-right">
-                <span
-                  v-if="selectedOption['value'] === getOptionValue(option)"
-                  class="wui-select-option-check"
-                />
-              </transition>
-            </slot>
+            <div>
+              <slot name="option" :props="props" :option="option">
+                {{ getOptionLabel(option) }}
+              </slot>
+            </div>
+            <transition name="fade-right">
+              <span
+                v-if="selectedOption['value'] === getOptionValue(option)"
+                class="wui-select-option-check icon-ph-check-bold"
+              />
+            </transition>
           </li>
         </ul>
       </div>
@@ -84,10 +85,9 @@ import { ref, onBeforeUpdate, nextTick, computed } from 'vue'
 
 import { EDirections } from '@/domain'
 import {
-  CLASS_SELECTED_OPTION,
   TOption,
   TSelectOption,
-  getArrayIndexByDuration,
+  getArrayIndexByDirection,
   WUI_SELECT_PROPS
 } from './select'
 
@@ -158,8 +158,11 @@ const toggleDropdown = async () => {
 }
 
 const selectOption = (optionIndex: number) => {
-  setOpen(false)
   const option = optionsSafe.value[optionIndex]
+  if (option.disabled) {
+    return
+  }
+  setOpen(false)
   selectedOptionIndex = optionIndex
   emit('update:modelValue', option.value)
 }
@@ -169,17 +172,15 @@ const unfocusOption = () => {
   indexFocusedOption.value = -1
 }
 
-const handleKey = async (duration: EDirections) => {
+const handleKey = async (direction: EDirections) => {
   if (!isOpen.value || !props.options.length) return
-  indexFocusedOption.value = getArrayIndexByDuration({
-    duration,
+  indexFocusedOption.value = getArrayIndexByDirection({
+    direction,
     array: props.options as [],
     curIndex: indexFocusedOption.value,
   })
   await nextTick()
-  const selectedEl = optionsRefs.value.find((r) =>
-    r.className.includes(CLASS_SELECTED_OPTION)
-  )
+  const selectedEl = optionsRefs.value.find((r) => r.dataset.selected)
   selectedEl?.scrollIntoView({ block: 'nearest', inline: 'start' })
 }
 
@@ -189,7 +190,6 @@ const handleEnterKey = () => {
     return
   }
   selectOption(indexFocusedOption.value)
-  setOpen(false)
 }
 
 const selectedOption = computed<TSelectOption>(() => {

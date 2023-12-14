@@ -22,16 +22,6 @@
   }
 }
 
-.wui-select-option-check {
-  position: absolute;
-  border-radius: 50%;
-  width: 7px;
-  height: 7px;
-  right: 16px;
-  top: 14px;
-  @apply bg-accent-5;
-}
-
 .wui-select-selection {
   user-select: none;
   padding: 0 8px 0 12px;
@@ -113,9 +103,8 @@
   @apply m-0 w-full py-2 overflow-y-auto;
   @apply rounded shadow-xl;
   @apply text-left break-words;
-  @apply bg-white text-neutral-10;
-  max-height: 200px;
-  list-style: none;
+  @apply bg-white text-neutral-11;
+  @apply list-none max-h-128;
   user-select: none;
 
   &::-webkit-scrollbar-track {
@@ -124,11 +113,11 @@
 }
 
 .wui-select-option {
-  @apply w-full h-full relative block;
+  @apply w-full h-full relative;
   @apply box-border whitespace-nowrap whitespace-normal;
   @apply text-ellipsis overflow-hidden;
-  padding: 10px 28px 10px 12px;
-  line-height: 1;
+  @apply py-2 px-4;
+  @apply flex items-center justify-between space-x-4;
 
   &--focused,
   &:hover {
@@ -140,12 +129,17 @@
     @apply bg-accent-4;
   }
 
-  &--disabled {
-    @apply bg-white text-neutral-4;
+  &[data-disabled] {
+    @apply text-neutral-8;
 
     &:hover {
-      @apply bg-white text-neutral-4;
+      @apply text-neutral-8;
       cursor: not-allowed;
     }
   }
+}
+
+.wui-select-option-check {
+  @apply w-4 h-4;
+  @apply text-accent-11;
 }

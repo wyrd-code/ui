@@ -9,6 +9,7 @@ export type TSelectOption = {
   value: string | number
   label: string | number
   icon?: string
+  disabled?: boolean
 }
 
 export type TSelectProps = {
@@ -45,7 +46,7 @@ export const ALLOWED_POSITION = [
   Placement.BottomEnd,
 ]
 
-export const CLASS_SELECTED_OPTION = 'wui-select-option--focused'
+export const CLASS_SELECTED_OPTION = 'selected-option'
 
 export const WUI_SELECT_PROPS = {
   placement: {
@@ -64,13 +65,13 @@ export const WUI_SELECT_PROPS = {
 }
 
 type Props = {
-  duration: EDirections
+  direction: EDirections
   array: []
   curIndex: number
 }
 
-export const getArrayIndexByDuration = ({
-  duration,
+export const getArrayIndexByDirection = ({
+  direction,
   array,
   curIndex,
 }: Props): number => {
@@ -78,5 +79,5 @@ export const getArrayIndexByDuration = ({
     [EDirections.UP]: curIndex <= 0 ? array.length - 1 : curIndex - 1,
     [EDirections.DOWN]: curIndex === array.length - 1 ? 0 : curIndex + 1,
   }
-  return resultMap[duration]
+  return resultMap[direction]
 }
