@@ -80,35 +80,18 @@
 </template>
 
 <script lang="ts" setup>
-import type { PropType } from 'vue'
 import { ref, onBeforeUpdate, nextTick, computed } from 'vue'
 
-import { Placement, EDirections } from '@/domain'
-
+import { EDirections } from '@/domain'
 import {
-  ALLOWED_POSITION,
   CLASS_SELECTED_OPTION,
   TOption,
   TSelectOption,
   getArrayIndexByDuration,
+  WUI_SELECT_PROPS
 } from './select'
 
-const props = defineProps({
-  placement: {
-    type: String,
-    default: Placement.Bottom,
-    validator: (value: Placement) => ALLOWED_POSITION.includes(value),
-  },
-  disabled: { type: Boolean, default: false },
-  divided: { type: Boolean, default: false },
-  label: { type: String, default: null },
-  placeholder: { type: String, default: 'Select option' },
-  options: {
-    type: Array as PropType<TOption[]>,
-    default: () => [],
-  },
-  modelValue: { type: [String, Number, Object], default: null },
-})
+const props = defineProps(WUI_SELECT_PROPS)
 
 const emit = defineEmits(['update:modelValue'])
 

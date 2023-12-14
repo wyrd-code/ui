@@ -41,11 +41,18 @@
     @apply m-0 top-0 right-0 bottom-0 left-0 absolute;
     @apply h-full w-full;
     @apply cursor-pointer opacity-0;
+
+    &:focus {
+      @apply ring-blue-500 border-blue-500;
+    }
   }
 
-  /* .input:focus + .circle-border {
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+  .input:focus + .body > .circle-border {
+    /* box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1); */
+    @apply ring-2 ring-offset-2 ring-blue-500 border-blue-500;
   }
+
+  /*
   .input:checked > .border > .circle {
     @apply opacity-0 scale-1 translate-x-1/2 translate-y-1/2;
   }

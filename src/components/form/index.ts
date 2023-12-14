@@ -8,6 +8,7 @@ export const WuiFormSubmit = defineAsyncComponent(() => import('./WuiFormSubmit.
 export const WuiFormText = defineAsyncComponent(() => import('./WuiFormText.vue'))
 export const WuiFormTextarea = defineAsyncComponent(() => import('./WuiFormTextarea.vue'))
 export const WuiFormPassword = defineAsyncComponent(() => import('./WuiFormPassword.vue'))
+export const WuiFormSelect = defineAsyncComponent(() => import('./WuiFormSelect.vue'))
 export const WuiFormNumber = defineAsyncComponent(() => import('./WuiFormNumber.vue'))
 export const WuiFormFieldWrapper = defineAsyncComponent(() => import('./WuiFormFieldWrapper.vue'))
 

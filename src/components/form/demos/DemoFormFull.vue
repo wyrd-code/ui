@@ -26,11 +26,16 @@
     <WuiFormRadio
       name="radio"
       label="Radio"
-      :items="radioItems"
+      :items="fruits"
     />
     <WuiFormTextarea
       name="textarea"
       label="Textarea"
+    />
+    <WuiFormSelect
+      name="select"
+      label="Select"
+      :options="fruits"
     />
 
     <template #actions>
@@ -53,7 +58,7 @@ const data = ref({
   textarea: '',
 })
 
-const radioItems = [
+const fruits = [
   {
     label: 'Apples',
     value: 'apples',

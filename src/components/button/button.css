@@ -44,7 +44,7 @@
   }
 
   &:focus {
-    @apply outline outline-offset-2 outline-2 outline-accent-8/50;
+    @apply outline-offset-2 outline-2 outline-blue-500/50;
   }
 
   &--shape-round {

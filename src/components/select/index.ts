@@ -1,6 +1,5 @@
 import { defineAsyncComponent } from 'vue'
 
-export const WuiFormSelect = defineAsyncComponent(
-  () => import('./WuiFormSelect.vue')
-)
+export * from './select'
+
 export const WuiSelect = defineAsyncComponent(() => import('./WuiSelect.vue'))

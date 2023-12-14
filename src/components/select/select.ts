@@ -1,4 +1,4 @@
-import type { Ref, ComputedRef } from 'vue'
+import type { PropType, Ref, ComputedRef } from 'vue'
 
 import { EDirections } from '@/domain'
 import { Placement } from '@/domain'
@@ -46,6 +46,22 @@ export const ALLOWED_POSITION = [
 ]
 
 export const CLASS_SELECTED_OPTION = 'wui-select-option--focused'
+
+export const WUI_SELECT_PROPS = {
+  placement: {
+    type: String,
+    default: Placement.Bottom,
+    validator: (value: Placement) => ALLOWED_POSITION.includes(value),
+  },
+  disabled: { type: Boolean, default: false },
+  divided: { type: Boolean, default: false },
+  placeholder: { type: String, default: 'Select option' },
+  options: {
+    type: Array as PropType<TOption[]>,
+    default: () => [],
+  },
+  modelValue: { type: [String, Number, Object], default: null },
+}
 
 type Props = {
   duration: EDirections

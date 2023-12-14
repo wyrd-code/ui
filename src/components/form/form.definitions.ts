@@ -9,6 +9,7 @@ import WuiFormTextarea from '@/components/form/WuiFormTextarea.vue'
 import WuiFormNumber from '@/components/form/WuiFormNumber.vue'
 import WuiFormPassword from '@/components/form/WuiFormPassword.vue'
 import WuiFormSchema from '@/components/form/WuiFormSchema'
+import WuiFormSelect from '@/components/form/WuiFormSelect.vue'
 import WuiFormRadio from '@/components/form/WuiFormRadio.vue'
 import WuiButton from '@/components/button/WuiButton.vue'
 import WuiButtonGroup from '@/components/button-group/WuiButtonGroup.vue'
@@ -45,6 +46,10 @@ export const defaultFormFieldDefinitions: FormDefinitions = [
   {
     name: 'WuiFormRadio',
     component: WuiFormRadio,
+  },
+  {
+    name: 'WuiFormSelect',
+    component: WuiFormSelect,
   },
   {
     name: 'WuiFormSchema',

@@ -22,7 +22,7 @@
   }
 
   &:focus {
-    @apply ring-blue-500 border-blue-500;
+    @apply border-blue-500;
   }
 
   &::placeholder {

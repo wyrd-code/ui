@@ -1,34 +1,34 @@
 <template>
   <WuiFormFieldWrapper
-    class="wui-form-text"
+    class="wui-form-select"
     :label="label"
     :id="id"
     :help="help"
   >
-    <WuiInput
+    <WuiSelect
       :id="id"
-      :type="type"
       :name="name"
       :disabled="disabled"
-      :autocomplete="autocomplete"
+      :divided="divided"
+      :options="options"
+      :placement="placement"
       :placeholder="placeholder"
-      :prefix="prefix"
       v-model="value"
     />
   </WuiFormFieldWrapper>
 </template>
 
 <script lang="ts" setup>
-import { formFieldWrapperProps } from '@/components/form/form.props'
+import { formFieldWrapperProps } from './form.props'
 import { useFormInstance } from '@/components/form/useFormInstance'
 import WuiFormFieldWrapper from '@/components/form/WuiFormFieldWrapper.vue'
-import WuiInput from '@/components/input/WuiInput.vue'
-import { WUI_INPUT_PROPS } from '@/components/input'
+import WuiSelect from '@/components/select/WuiSelect.vue'
+import { WUI_SELECT_PROPS } from '@/components/select/select'
 import { useHtmlId } from '@/composables'
 
 const props = defineProps({
   ...formFieldWrapperProps,
-  ...WUI_INPUT_PROPS,
+  ...WUI_SELECT_PROPS,
 })
 
 const id = useHtmlId()

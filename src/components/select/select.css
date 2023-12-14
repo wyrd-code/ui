@@ -1,6 +1,4 @@
 .wui-select {
-  @apply inline-block min-w-12 rounded-full;
-
   &-input {
     @apply border-none h-full text-base w-auto p-0 inline-block box-border;
     line-height: 1.2;
@@ -39,8 +37,7 @@
   padding: 0 8px 0 12px;
   transition: all 0.27s;
   @apply rounded flex h-10 text-left relative items-center justify-between;
-  @apply border shadow-input;
-  @apply bg-white border-neutral-7 text-neutral-11;
+  @apply bg-white border border-neutral-7 text-neutral-11;
   @apply cursor-pointer leading-none;
   @apply box-border outline-none;
 
@@ -49,7 +46,7 @@
   }
 
   &--active {
-    @apply outline outline-offset-2 outline-1;
+    @apply border-blue-500;
 
     & > .wui-select-arrow {
     }
@@ -77,7 +74,7 @@
   }
 
   &:focus:not(&--disabled) {
-    @apply border-accent-4 shadow-accent-4;
+    @apply border-blue-500;
     /* box-shadow:
       0 2px 4px fade(@color-primary, 40%),
       0 0 0 3px fade(@color-primary, 20%); */
