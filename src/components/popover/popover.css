@@ -1,44 +1,19 @@
-.wui-popover {
-  @apply z-9999;
-}
-
-.wui-popover > .wui-popover-arrow::before {
-  @apply z-999;
-}
-
-.wui-popover-arrow,
-.wui-popover-arrow::before {
-  @apply absolute box-border;
-  @apply w-3 h-3;
-}
 .wui-popover-arrow {
-  @apply invisible;
+  @apply absolute box-border;
+  @apply w-4 h-4 bg-white;
+  @apply rotate-45;
+  @apply border-neutral-7;
 }
-.wui-popover-arrow::before {
-  @apply visible rotate-45 content-[''];
-  @apply border-transparent;
-}
-.wui-popover[data-popper-placement^='top'] > .wui-popover-arrow {
-  @apply -bottom-1.75;
-}
-.wui-popover[data-popper-placement^='top'] > .wui-popover-arrow::before {
+
+.wui-popover[data-placement='top'] > .wui-popover-arrow {
   @apply border-r border-b;
 }
-.wui-popover[data-popper-placement^='bottom'] > .wui-popover-arrow {
-  @apply -top-1.75;
-}
-.wui-popover[data-popper-placement^='bottom'] > .wui-popover-arrow::before {
+.wui-popover[data-placement='bottom'] > .wui-popover-arrow {
   @apply border-l border-t;
 }
-.wui-popover[data-popper-placement^='left'] > .wui-popover-arrow {
-  @apply -right-1.75;
-}
-.wui-popover[data-popper-placement^='left'] > .wui-popover-arrow::before {
+.wui-popover[data-placement='left'] > .wui-popover-arrow {
   @apply border-r border-t;
 }
-.wui-popover[data-popper-placement^='right'] > .wui-popover-arrow {
-  @apply -left-1.75;
-}
-.wui-popover[data-popper-placement^='right'] > .wui-popover-arrow::before {
+.wui-popover[data-placement='right'] > .wui-popover-arrow {
   @apply border-l border-b;
 }

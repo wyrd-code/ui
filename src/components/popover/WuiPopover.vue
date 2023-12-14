@@ -20,13 +20,22 @@
         v-show="shouldShowPopper"
         ref="popperNode"
         class="wui-popover"
+        :data-placement="simplifiedPlacement"
+        :style="floatingStyles"
         @click="!interactive && closePopper()"
         @keyup.esc="!interactive && closePopper()"
       >
-        <slot name="content" :close="close" :is-open="modifiedIsOpen">
-          {{ content }}
-        </slot>
-        <span v-if="arrow" class="wui-popover-arrow" data-popper-arrow></span>
+        <div class="wui-popover-content">
+          <slot name="content" :close="close" :is-open="modifiedIsOpen">
+            {{ content }}
+          </slot>
+        </div>
+        <span
+          v-if="arrow"
+          ref="arrowNode"
+          class="wui-popover-arrow"
+          :style="arrowStyle"
+        ></span>
       </div>
     </Transition>
   </div>
@@ -49,10 +58,9 @@ import { usePopper, useContent, useClickAway } from '@/composables'
 import { Placement } from '@/domain'
 
 const props = defineProps({
-  // Preferred placement (the "auto" placements will choose the side with most space.)
   placement: {
     type: String,
-    default: Placement.Auto,
+    default: Placement.Bottom,
     validator: (value: string) =>
       Object.values(Placement).includes(value as Placement),
   },
@@ -61,15 +69,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  // Offset in pixels along the trigger element
-  offsetSkid: {
-    type: String,
-    default: '0',
-  },
   // Offset in pixels away from the trigger element
   offsetDistance: {
-    type: String,
-    default: '0',
+    type: Number,
+    default: 0,
   },
   // Trigger the popper on hover
   hover: {
@@ -109,8 +112,8 @@ const props = defineProps({
   },
   // Stop arrow from reaching the edge of the popper
   arrowPadding: {
-    type: String,
-    default: '0',
+    type: Number,
+    default: 0,
   },
   // If the Popper should be interactive, it will close when clicked/hovered if false
   interactive: {
@@ -132,6 +135,7 @@ const props = defineProps({
 const popperContainerNode = ref(null)
 const popperNode = ref(null)
 const triggerNode = ref(null)
+const arrowNode = ref<HTMLElement | null>(null)
 const modifiedIsOpen = ref(false)
 
 onMounted(() => {
@@ -144,15 +148,12 @@ onMounted(() => {
 })
 
 const {
-  arrowPadding,
+  offsetDistance,
   closeDelay,
   content,
   disableClickAway,
   disabled,
   interactive,
-  locked,
-  offsetDistance,
-  offsetSkid,
   openDelay,
   placement,
   show,
@@ -164,15 +165,22 @@ const slots = useSlots()
 const emit = defineEmits(['open', 'close', 'mounts'])
 emit('mounts')
 
-const { isOpen, open, close } = usePopper({
-  arrowPadding,
+const {
+  isOpen,
+  open,
+  close,
+  floatingStyles,
+  middlewareData,
+  activePlacement,
+} = usePopper({
   emit,
-  locked,
-  offsetDistance,
-  offsetSkid,
+  offsetDistance: props.offsetDistance,
   placement,
   popperNode,
   triggerNode,
+  arrowPadding: props.arrowPadding,
+  useArrow: props.arrow,
+  arrowNode,
 })
 
 const { hasContent } = useContent(slots, popperNode, content)
@@ -187,6 +195,27 @@ const interactiveStyle = computed<StyleValue | undefined>(() =>
     ? `border: ${offsetDistance.value}px solid transparent; margin: -${offsetDistance.value}px;`
     : undefined
 )
+
+const simplifiedPlacement = computed(() => activePlacement.value.split("-")[0])
+
+const arrowStyle = computed<StyleValue | undefined>(() => {
+  const staticSide = {
+    top: "bottom",
+    right: "left",
+    bottom: "top",
+    left: "right"
+  }[simplifiedPlacement.value];
+
+  if (middlewareData.value.arrow) {
+    const { x, y } = middlewareData.value.arrow;
+    const arrowOffsetWidth = (arrowNode.value?.offsetWidth || 0)
+    return {
+      left: x != null? `${x}px` : '',
+      top: y != null? `${y}px` : '',
+      [staticSide]: `-${arrowOffsetWidth / 2}px`
+    }
+  }
+})
 const openPopperDebounce = debounce(open, openDelay.value)
 const closePopperDebounce = debounce(close, closeDelay.value)
 

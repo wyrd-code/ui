@@ -18,6 +18,7 @@
 <script lang="ts" setup>
 import type { WyrdListItem } from '../list'
 import type { PropType } from 'vue'
+import { Placement } from '@/domain'
 
 defineOptions({
   inheritAttrs: false,
@@ -26,7 +27,9 @@ defineOptions({
 defineProps({
   placement: {
     type: String,
-    default: 'bottom',
+    default: Placement.Bottom,
+    validator: (value: string) =>
+      Object.values(Placement).includes(value as Placement),
   },
   items: {
     type: Array as PropType<WyrdListItem[]>,

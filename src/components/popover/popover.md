@@ -4,11 +4,9 @@ import DemoPopover from '@/components/popover/demos/DemoPopover.vue'
 
 # Popover
 
-`WuiPopover` wraps the [vue-popper](https://github.com/valgeirb/vue3-popper) component, passing down all the attributes/props it receives transparently, and adding popover styles based on theme configuration.
+`WuiPopover` is a utility component for displaying content that becomes visible on click or hover of the trigger element.
 
-The only modified prop is placement which defaults to `auto` instead of `bottom`.
-
-It will emit `open` and `closed` events.
+It will emit `open` and `close` events.
 
 :::demo components/popover/demos/DemoPopover
 <DemoPopover />

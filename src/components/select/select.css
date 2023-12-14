@@ -119,63 +119,10 @@
 }
 
 .wui-select-dropdown {
-  @apply w-max z-50 absolute;
-  min-width: 130px;
+  @apply w-max;
 
   &--divided .wui-select-option:not(:first-child) {
     @apply border-t border-neutral-7;
-  }
-
-  &--bottom-left,
-  &--top-left,
-  &--bottom-right,
-  &--top-right,
-  &--left,
-  &--right {
-    width: auto;
-  }
-
-  &--bottom,
-  &--top {
-    &-left {
-      right: calc(100% + var(--dropdown-offset));
-    }
-
-    &-right {
-      left: calc(100% + var(--dropdown-offset));
-    }
-  }
-
-  &--bottom {
-    top: calc(100% + var(--dropdown-offset));
-
-    &-left,
-    &-right {
-      top: 0;
-    }
-  }
-
-  &--top {
-    bottom: calc(100% + var(--dropdown-offset));
-
-    &-left,
-    &-right {
-      bottom: 0;
-    }
-  }
-
-  &--left,
-  &--right {
-    top: 50%;
-    transform: translate(0, -50%);
-  }
-
-  &--left {
-    right: calc(100% + var(--dropdown-offset));
-  }
-
-  &--right {
-    left: calc(100% + var(--dropdown-offset));
   }
 }
 

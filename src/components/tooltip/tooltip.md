@@ -1,6 +1,5 @@
 <script setup>
 import DemoTooltip from '@/components/tooltip/demos/DemoTooltip.vue'
-import DemoTooltipAutoplacement from '@/components/tooltip/demos/DemoTooltipAutoplacement.vue'
 import DemoTooltipPlacement from '@/components/tooltip/demos/DemoTooltipPlacement.vue'
 import DemoTooltipImage from '@/components/tooltip/demos/DemoTooltipImage.vue'
 </script>
@@ -29,16 +28,6 @@ You can manualy set the `placement` prop `left`, `right`, `top`, `bottom`.
 
 :::demo components/tooltip/demos/DemoTooltipPlacement
 <DemoTooltipPlacement />
-:::
-
-## Autoplacement
-
-Not setting the placement will default to `auto`, automatically detecting the right position of the tooltip based on it's position within the visible screen space.
-
-Observe how the following tooltip changes position as you scroll it's container towards the top/bottom of your screen.
-
-:::demo components/tooltip/demos/DemoTooltipAutoplacement
-<DemoTooltipAutoplacement />
 :::
 
 ## Image

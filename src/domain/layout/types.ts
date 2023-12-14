@@ -1,13 +1,10 @@
 export enum Placement {
-  Auto = 'auto',
   Top = 'top',
   TopStart = 'top-start',
   TopEnd = 'top-end',
   Bottom = 'bottom',
   BottomStart = 'bottom-start',
   BottomEnd = 'bottom-end',
-  AutoStart = 'auto-start',
-  AutoEnd = 'auto-end',
   Right = 'right',
   RightStart = 'right-start',
   RightEnd = 'right-end',

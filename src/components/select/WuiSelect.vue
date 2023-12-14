@@ -244,9 +244,6 @@ const selectionClasses = computed(() => ({
 }))
 
 const dropdownClasses = computed(() => ({
-  [props.placement
-    ? `wui-select-dropdown--${props.placement}`
-    : `wui-select-dropdown--${Placement.Bottom}`]: true,
   'wui-select-dropdown--divided': props.divided,
 }))
 </script>

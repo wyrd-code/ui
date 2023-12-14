@@ -39,10 +39,10 @@
     "@vueuse/core": "^9.13.0"
   },
   "devDependencies": {
+    "@floating-ui/vue": "^1.0.2",
     "@iconify-json/ph": "^1.1.1",
     "@iconify/iconify": "^2.2.1",
     "@microsoft/api-extractor": "^7.24.1",
-    "@popperjs/core": "^2.11.8",
     "@radix-ui/colors": "^3.0.0",
     "@s-libs/micro-dash": "^14.0.0",
     "@tiptap/core": "^2.0.0-beta.176",
@@ -80,7 +80,6 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^9.0.1",
     "eslint-plugin-vuejs-accessibility": "^2.0.0",
-    "floating-vue": "^2.0.0-beta.20",
     "fs-extra": "^10.1.0",
     "gray-matter": "^4.0.3",
     "jsdom": "^20.0.3",
