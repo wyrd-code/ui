@@ -20,7 +20,7 @@
       >
         <span class="icon-ph-copy" title="Copy source to clipboard" />
       </WuiButton>
-
+<!--
       <WuiButton
         class="wui-code-demo-action-grid"
         size="sm"
@@ -42,6 +42,7 @@
           title="Toggle vertical grid"
         />
       </WuiButton>
+-->
 
       <WuiButton size="sm" @click="toggleCode">
         <span class="icon-ph-code" />
@@ -83,10 +84,10 @@ const showCode = ref(false)
 const toggleCode = () => (showCode.value = !showCode.value)
 
 const showVerticalGrid = ref(false)
-const toggleVerticalGrid = () => showVerticalGrid.value = !showVerticalGrid.value
+// const toggleVerticalGrid = () => showVerticalGrid.value = !showVerticalGrid.value
 
 const showHorizontalGrid = ref(false)
-const toggleHorizontalGrid = () => showHorizontalGrid.value = !showHorizontalGrid.value
+// const toggleHorizontalGrid = () => showHorizontalGrid.value = !showHorizontalGrid.value
 
 const decodedSource = computed(() => decodeURIComponent(props.code))
 const decodedRawSource = computed(() => decodeURIComponent(props.rawCode))
