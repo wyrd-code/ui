@@ -42,7 +42,7 @@ export const usePopper = ({
     }
 
     state.isOpen = false
-    emit('close:popper')
+    emit('close')
   }
 
   const open = () => {
@@ -51,7 +51,7 @@ export const usePopper = ({
     }
 
     state.isOpen = true
-    emit('open:popper')
+    emit('open')
   }
 
   // When isOpen or placement change

@@ -81,6 +81,12 @@ const props = defineProps({
     type: Boolean,
     default: null,
   },
+  mode: {
+    type: String,
+    default: 'normal',
+    validator: (value: string) =>
+      ['normal', 'manual'].includes(value),
+  },
   // Disables the Popper. If it was already open, it will be closed.
   disabled: {
     type: Boolean,
@@ -150,11 +156,12 @@ const {
   openDelay,
   placement,
   show,
+  mode,
 } = toRefs(props)
 
 const slots = useSlots()
 
-const emit = defineEmits(['open:popper', 'close:popper', 'mounts'])
+const emit = defineEmits(['open', 'close', 'mounts'])
 emit('mounts')
 
 const { isOpen, open, close } = usePopper({
@@ -169,11 +176,10 @@ const { isOpen, open, close } = usePopper({
 })
 
 const { hasContent } = useContent(slots, popperNode, content)
-const manualMode = computed(() => show.value != null)
 const invalid = computed(() => disabled.value || !hasContent.value)
 const shouldShowPopper = computed(() => isOpen.value && !invalid.value)
 const enableClickAway = computed(
-  () => !disableClickAway.value && !manualMode.value
+  () => !disableClickAway.value && mode.value !== 'manual'
 )
 // Add an invisible border to keep the Popper open when hovering from the trigger into it
 const interactiveStyle = computed<StyleValue | undefined>(() =>
@@ -185,7 +191,7 @@ const openPopperDebounce = debounce(open, openDelay.value)
 const closePopperDebounce = debounce(close, closeDelay.value)
 
 const openPopper = async () => {
-  if (invalid.value || manualMode.value) {
+  if (invalid.value || mode.value === 'manual') {
     return
   }
   closePopperDebounce.clear()
@@ -193,7 +199,7 @@ const openPopper = async () => {
 }
 
 const closePopper = async () => {
-  if (manualMode.value) {
+  if (!isOpen.value || mode.value === 'manual') {
     return
   }
   openPopperDebounce.clear()
@@ -233,7 +239,7 @@ watch(isOpen, (value) => {
  * Watch for manual mode.
  */
 watchEffect(() => {
-  if (manualMode.value) {
+  if (mode.value !== 'manual') {
     show.value ? openPopperDebounce() : closePopperDebounce()
   }
 })

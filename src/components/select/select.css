@@ -49,27 +49,23 @@
 
 .wui-select-selection {
   user-select: none;
-  box-sizing: border-box;
-  line-height: 1;
   padding: 0 8px 0 12px;
-  outline: none;
   transition: all 0.27s;
   @apply rounded flex h-10 text-left relative items-center justify-between;
   @apply border shadow-input;
-  @apply bg-white border-neutral-4 text-neutral-7;
-  @apply cursor-pointer;
-  @apply dark:(bg-neutral-8 border-neutral-7 text-neutral-3);
+  @apply bg-white border-neutral-7 text-neutral-11;
+  @apply cursor-pointer leading-none;
+  @apply box-border outline-none;
 
   &:hover {
     @apply border-neutral-6;
-    @apply dark:border-neutral-4;
   }
 
   &--active {
-    @apply border-accent-3 shadow shadow-accent-3;
+    @apply outline outline-offset-2 outline-1;
 
     & > .wui-select-arrow {
-      @apply text-accent-3;
+      @apply text-accent-11;
     }
 
     &:hover {
@@ -82,11 +78,11 @@
     cursor: not-allowed;
 
     .wui-select-placeholder {
-      @apply text-neutral-4;
+      @apply text-neutral-9;
     }
 
     .wui-select-arrow {
-      @apply text-neutral-4;
+      @apply text-neutral-11;
     }
 
     &:hover {
@@ -111,8 +107,7 @@
 }
 
 .wui-select-placeholder {
-  @apply text-neutral-4;
-  @apply dark:text-neutral-6;
+  @apply text-neutral-9;
 
   & + .wui-icon {
     margin-left: 10px;
@@ -121,18 +116,14 @@
 
 .wui-select-arrow {
   @apply text-lg ml-2 transition-all duration-50;
-  @apply text-black;
-  @apply dark:text-neutral-3;
 }
 
 .wui-select-dropdown {
-  @apply w-full z-50 absolute;
+  @apply w-max z-50 absolute;
   min-width: 130px;
 
   &--divided .wui-select-option:not(:first-child) {
-    @apply border-t;
-    @apply border-neutral-3;
-    @apply dark:border-neutral-7;
+    @apply border-t border-neutral-7;
   }
 
   &--bottom-left,
@@ -192,8 +183,7 @@
   @apply m-0 w-full py-2 relative overflow-y-auto;
   @apply rounded shadow;
   @apply text-left break-words;
-  @apply bg-white text-neutral-6;
-  @apply dark:(bg-neutral-8 text-neutral-3);
+  @apply bg-white text-neutral-10;
   max-height: 200px;
   list-style: none;
   user-select: none;
@@ -214,7 +204,6 @@
   &:hover {
     @apply cursor-pointer;
     @apply bg-neutral-3;
-    @apply dark:bg-neutral-7;
   }
 
   &--focused {
@@ -223,7 +212,6 @@
 
   &--disabled {
     @apply bg-white text-neutral-4;
-    @apply dark:bg-neutral-7;
 
     &:hover {
       @apply bg-white text-neutral-4;

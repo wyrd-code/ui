@@ -30,32 +30,6 @@
     <WuiCodeExample title="Slots">
       <div class="flex items-center justify-center">
         <div class="flex flex-col my-4 px-4 span-12 lg:span-3">
-          <WuiSelect
-            v-model="exampleValue"
-            :options="exampleOptions"
-            placeholder="Please select"
-          >
-            <template #label="{ props }">
-              Label top slot, placement {{ props.placement }}
-            </template>
-            <template #placeholder="{ props }">
-              <div class="items-center" :style="{ display: 'flex' }">
-                <span>(custom) {{ props.placeholder }}</span>
-              </div>
-            </template>
-            <template #selected-option="{ selectedOption }">
-              You selected: {{ selectedOption.label }}
-            </template>
-            <template #option="{ option }">
-              <div class="items-center" :style="{ display: 'flex' }">
-                <span class="h-4 mr-2 icon-ph-github-logo-fill" />
-                {{ option.label }}
-              </div>
-            </template>
-            <template #icon>
-              <span class="h-4 ml-2 text-yellow-400 icon-ph-github-logo-fill" />
-            </template>
-          </WuiSelect>
         </div>
       </div>
     </WuiCodeExample>
@@ -71,8 +45,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 
-import { ALLOWED_POSITION } from './constants'
-import type { TOption } from './types'
+import { ALLOWED_POSITION } from './select'
 
 const selectValue = ref('')
 const selectLabel = ref('Select me')
@@ -84,14 +57,6 @@ const placementOptions = ALLOWED_POSITION
 const firstSelectOptions = [
   { label: 'New York', value: 'newyork' },
   { label: 'Paris', value: 'paris' },
-]
-
-const exampleValue = ref(undefined)
-
-const exampleOptions: TOption[] = [
-  { label: 'New York', value: 'newyork' },
-  { label: 'Paris', value: 'paris' },
-  { label: 'Moscow', value: 'moscow' },
 ]
 
 const DATA_SHEET = [

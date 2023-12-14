@@ -24,7 +24,7 @@ import { defineComponent, PropType } from 'vue'
 
 import { FormFieldSelect } from '@/domain'
 
-import { wuiFormInputPropsBase } from '../form/field.props'
+import { wuiFormformFieldWrapperPropsBase } from '../form/field.props'
 import WuiFormFieldWrapper from '../form/WuiFormFieldWrapper.vue'
 
 export default defineComponent({
@@ -32,7 +32,7 @@ export default defineComponent({
     WuiFormFieldWrapper,
   },
   props: {
-    ...wuiFormInputPropsBase,
+    ...wuiFormformFieldWrapperPropsBase,
     schema: {
       type: Object as PropType<FormFieldSelect>,
       required: true,
