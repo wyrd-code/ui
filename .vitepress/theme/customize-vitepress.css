@@ -98,3 +98,13 @@ baseline grid overlay
     @apply text-danger-1 bg-danger-8 border-danger-9;
   }
 }
+
+/* Fixes headers having z-index stacking context above absolutely positioned items */
+.vp-doc h1:not(:where(.vp-raw *)),
+.vp-doc h2:not(:where(.vp-raw *)),
+.vp-doc h3:not(:where(.vp-raw *)),
+.vp-doc h4:not(:where(.vp-raw *)),
+.vp-doc h5:not(:where(.vp-raw *)),
+.vp-doc h6:not(:where(.vp-raw *)) {
+  position: static;
+}
