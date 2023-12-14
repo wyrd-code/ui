@@ -4,9 +4,6 @@
     :options="options"
     placeholder="Select a country"
   >
-    <template #selected-option="{ selectedOption }">
-      Selected: {{ selectedOption.value }}
-    </template>
   </WuiSelect>
 </template>
 

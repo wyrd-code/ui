@@ -35,7 +35,7 @@
 
         <slot name="icon" :props="props">
           <span
-            class="wui-select-arrow icon-ph-caret-down"
+            class="wui-select-arrow icon-ph-caret-up-down"
             :class="isOpen && 'wui-select-arrow--active'"
           />
         </slot>
@@ -43,39 +43,37 @@
     </template>
 
     <template #content>
-      <div class="wui-select-inner">
-        <div
-          v-if="isOpen"
-          class="wui-select-dropdown"
-          :class="dropdownClasses"
+      <div
+        v-if="isOpen"
+        class="wui-select-dropdown"
+        :class="dropdownClasses"
+      >
+        <ul
+          :ref="(dropdown) => setSelectListRef(dropdown as any)"
+          class="wui-select-list"
         >
-          <ul
-            :ref="(dropdown) => setSelectListRef(dropdown as any)"
-            class="wui-select-list"
+          <li
+            v-for="(option, optionIndex) in optionsSafe"
+            :key="optionIndex"
+            :ref="(el) => setOptionRef(el as any, optionIndex)"
+            class="wui-select-option"
+            :class="
+              indexFocusedOption === optionIndex && CLASS_SELECTED_OPTION
+            "
+            @keydown.enter.stop.prevent="selectOption(optionIndex)"
+            @click="selectOption(optionIndex)"
           >
-            <li
-              v-for="(option, optionIndex) in optionsSafe"
-              :key="optionIndex"
-              :ref="(el) => setOptionRef(el as any, optionIndex)"
-              class="wui-select-option"
-              :class="
-                indexFocusedOption === optionIndex && CLASS_SELECTED_OPTION
-              "
-              @keydown.enter.stop.prevent="selectOption(optionIndex)"
-              @click="selectOption(optionIndex)"
-            >
-              <slot name="option" :props="props" :option="option">
-                {{ getOptionLabel(option) }}
-                <transition name="fade-right">
-                  <span
-                    v-if="selectedOption['value'] === getOptionValue(option)"
-                    class="wui-select-option-check"
-                  />
-                </transition>
-              </slot>
-            </li>
-          </ul>
-        </div>
+            <slot name="option" :props="props" :option="option">
+              {{ getOptionLabel(option) }}
+              <transition name="fade-right">
+                <span
+                  v-if="selectedOption['value'] === getOptionValue(option)"
+                  class="wui-select-option-check"
+                />
+              </transition>
+            </slot>
+          </li>
+        </ul>
       </div>
     </template>
   </WuiPopover>

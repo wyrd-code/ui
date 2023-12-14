@@ -390,17 +390,19 @@
   resolved "https://registry.yarnpkg.com/@hutson/parse-repository-url/-/parse-repository-url-3.0.2.tgz#98c23c950a3d9b6c8f0daed06da6c3af06981340"
   integrity sha512-H9XAx3hc0BQHY6l+IFSWHDySypcXsvsuLhgYLUGywmJ5pswRVQJUHpOsobnLYp2ZUaUlKiKDrgWWhosOwAEM8Q==
 
-"@iconify-json/ph@^1.1.1":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@iconify-json/ph/-/ph-1.1.2.tgz#8827e1ef5ce814941faa992453a955103788cb54"
-  integrity sha512-NuTdtt/UmuxIHS4hfdyv3BP5JiWikNkr81hFHXDScXlH0GUMdRSY/B5T9vDvbXDY/esMLFnIAXoFVDLsGinhpw==
+"@iconify-json/ph@^1.1.9":
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/@iconify-json/ph/-/ph-1.1.9.tgz#1559cb3d81919ae813ff432d4d6a5040f101743b"
+  integrity sha512-LcKe7rSp4zm1Rpafsv03DVdta65ePmPMH7IHLErD8nFLL2jNAtt/8CUAJWbaqYztE3V4wEg21az09Ur6yo9CXw==
   dependencies:
     "@iconify/types" "*"
 
-"@iconify/iconify@^2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@iconify/iconify/-/iconify-2.2.1.tgz#03ad4d8554c6f2d7741d3b9440115efa0c707b37"
-  integrity sha512-WJzw+3iicrF/tbjbxxRinSgy5FHdJoz/egTqwi3xCDkNRJPq482RX1iyaWrjNuY2vMNSPkQMuqHvZDXgA+WnwQ==
+"@iconify/iconify@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@iconify/iconify/-/iconify-3.1.1.tgz#aa0f3807be2eab53e86228f7bb1ad3bd59bcec1a"
+  integrity sha512-1nemfyD/OJzh9ALepH7YfuuP8BdEB24Skhd8DXWh0hzcOxImbb1ZizSZkpCzAwSZSGcJFmscIBaBQu+yLyWaxQ==
+  dependencies:
+    "@iconify/types" "^2.0.0"
 
 "@iconify/types@*", "@iconify/types@^2.0.0":
   version "2.0.0"

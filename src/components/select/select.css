@@ -1,13 +1,5 @@
-:root {
-  --dropdown-offset: 6px;
-}
-
 .wui-select {
   @apply inline-block min-w-12 rounded-full;
-
-  &-inner {
-    position: relative;
-  }
 
   &-input {
     @apply border-none h-full text-base w-auto p-0 inline-block box-border;
@@ -29,11 +21,6 @@
     &:focus:not(:focus-visible) {
       @apply outline-none;
     }
-  }
-
-  .wui-input-label {
-    @apply text-left block;
-    @apply text-current mb-2;
   }
 }
 
@@ -65,7 +52,6 @@
     @apply outline outline-offset-2 outline-1;
 
     & > .wui-select-arrow {
-      @apply text-accent-11;
     }
 
     &:hover {
@@ -127,8 +113,8 @@
 }
 
 .wui-select-list {
-  @apply m-0 w-full py-2 relative overflow-y-auto;
-  @apply rounded shadow;
+  @apply m-0 w-full py-2 overflow-y-auto;
+  @apply rounded shadow-xl;
   @apply text-left break-words;
   @apply bg-white text-neutral-10;
   max-height: 200px;

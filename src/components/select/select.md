@@ -5,6 +5,8 @@ import DemoSelectCountry from '@/components/select/demos/DemoSelectCountry.vue'
 
 # Select
 
+Select allows users to choose one option from a list of values.
+
 ## Basic
 
 :::demo components/select/demos/DemoSelect
