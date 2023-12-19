@@ -3,10 +3,10 @@ import type { PropType, Ref, ComputedRef } from 'vue'
 import { EDirections } from '@/domain'
 import { Placement } from '@/domain'
 
-export type TOption = string | number | TSelectOption
+export type TOption = string | TSelectOption
 
 export type TSelectOption = {
-  value: string | number
+  value: string
   label: string | number
   icon?: string
   disabled?: boolean
@@ -61,7 +61,7 @@ export const WUI_SELECT_PROPS = {
     type: Array as PropType<TOption[]>,
     default: () => [],
   },
-  modelValue: { type: [String, Number, Object], default: null },
+  modelValue: { type: String, default: null },
 }
 
 type Props = {
