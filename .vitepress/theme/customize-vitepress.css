@@ -99,7 +99,9 @@ baseline grid overlay
   }
 }
 
-/* Fixes headers having z-index stacking context above absolutely positioned items */
+/*
+Fixes headers having z-index stacking context above absolutely positioned items
+*/
 .vp-doc h1:not(:where(.vp-raw *)),
 .vp-doc h2:not(:where(.vp-raw *)),
 .vp-doc h3:not(:where(.vp-raw *)),
