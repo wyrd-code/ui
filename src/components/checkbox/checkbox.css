@@ -7,7 +7,7 @@
     }
 
     &-icon {
-      @apply border border-gray-300 rounded-sm bg-white;
+      @apply border border-gray-300 bg-white;
       @apply bg-no-repeat bg-center bg-contain;
       @apply transition duration-200;
       @apply rounded;
@@ -92,7 +92,7 @@
   }
   &--base {
     .wui-checkbox-icon {
-      @apply h-4 w-4;
+      @apply h-4.5 w-4.5;
     }
   }
   &--lg {
