@@ -13,34 +13,6 @@
   --media-query: 'base';
 }
 
-/*
-@media (min-width: 35em) {
-  :root {
-    --offset: 2rem;
-    --gutter: .75rem;
-    --baseline: 1.5rem;
-    --media-query: 'small';
-  }
-}
-
-@media (min-width: 48em) {
-  :root {
-    --offset: 3rem;
-    --columns: 12;
-    --gutter: 1rem;
-    --baseline: 2rem;
-    --media-query: 'medium';
-  }
-}
-
-@media (min-width: 70em) {
-  :root {
-    --offset: 4rem;
-    --baseline: 3rem;
-    --media-query: 'large';
-  }
-} */
-
 /* Helper variables */
 :root {
   --repeating-width: calc(100% / var(--columns));

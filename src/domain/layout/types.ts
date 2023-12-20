@@ -12,8 +12,3 @@ export enum Placement {
   LeftStart = 'left-start',
   LeftEnd = 'left-end',
 }
-
-export enum EDirections {
-  UP = 'up',
-  DOWN = 'down',
-}
