@@ -3,19 +3,25 @@
     class="wui-select"
     :placement="placement"
     :show="isOpen"
-    @close="() => setOpen(false)"
-    @open="() => setOpen(true)"
+    @close="closeDropdown"
+    @open="openDropdown"
   >
     <template #button>
       <div
-        :tabindex="disabled ? -1 : 0"
         class="wui-select-selection"
-        :class="selectionClasses"
-        @keydown.tab="() => setOpen(false)"
-        @keydown.down.stop.prevent="handleKey(EDirections.DOWN)"
-        @keydown.up.stop.prevent="handleKey(EDirections.UP)"
-        @keydown.esc.stop.prevent="() => setOpen(false)"
-        @keydown.enter.stop.prevent="handleEnterKey"
+        role="combobox"
+        :id="id"
+        :tabindex="disabled ? -1 : 0"
+        :data-active="isOpen"
+        :data-disabled="disabled"
+        aria-autocomplete="none"
+        :aria-activedescendant="activeDescendant"
+        :aria-controls="`${id}-listbox`"
+        :aria-labelledby="`${id}-label`"
+        :aria-disabled="disabled"
+        :aria-expanded="isOpen ? 'true' : 'false'"
+        aria-haspopup="listbox"
+        v-on="disabled ? {} : { keydown: handleKeypress }"
       >
         <span v-if="selectedOption.value" class="wui-select-selected">
           <slot
@@ -46,7 +52,7 @@
       <div
         v-if="isOpen"
         class="wui-select-dropdown"
-        :class="dropdownClasses"
+        :data-divided="divided"
       >
         <ul
           :ref="(dropdown) => setSelectListRef(dropdown as any)"
@@ -54,9 +60,10 @@
         >
           <li
             v-for="(option, optionIndex) in optionsSafe"
+            class="wui-select-option"
+            :id="`${id}-item-${optionIndex}`"
             :key="optionIndex"
             :ref="(el) => setOptionRef(el as any, optionIndex)"
-            class="wui-select-option"
             :data-selected="focusedOptionIndex === optionIndex"
             :data-disabled="option.disabled"
             @keydown.enter.stop.prevent="selectOption(optionIndex)"
@@ -83,12 +90,14 @@
 <script lang="ts" setup>
 import { ref, onBeforeUpdate, nextTick, computed } from 'vue'
 
-import { EDirections } from '@/domain'
 import {
   TOption,
   TSelectOption,
   getArrayIndexByDirection,
-  WUI_SELECT_PROPS
+  WUI_SELECT_PROPS,
+  getActionFromKey,
+  MenuActions,
+  getIndexByLetter,
 } from './select'
 
 const props = defineProps(WUI_SELECT_PROPS)
@@ -116,11 +125,17 @@ const optionsSafe = computed<TSelectOption[]>(() =>
 
 onBeforeUpdate(() => (optionsRefs.value = []))
 
-const scrollToSelectedOption = () => {
-  const selectedOption = optionsRefs.value[selectedOptionIndex]
+const scrollToSelectedOption = () => scrollToOptionByIndex(selectedOptionIndex)
 
-  if (selectListRef.value !== undefined)
-    selectListRef.value.scrollTop = selectedOption?.offsetTop
+const scrollToFocusedOption = () => scrollToOptionByIndex(focusedOptionIndex.value)
+
+const scrollToOptionByIndex = (index: number) => {
+  const optionToScrollTo = optionsRefs.value[index]
+  optionToScrollTo?.scrollIntoView({
+    block: 'center',
+    inline: 'start',
+    behavior: 'smooth',
+  })
 }
 
 const getOptionLabel = (option: TOption) =>
@@ -141,19 +156,20 @@ const setSelectListRef = (dropdown: HTMLElement) => {
   }
 }
 
-const setOpen = (state = false) => (isOpen.value = state)
+const closeDropdown = () => {
+  isOpen.value = false
+}
 
-const toggleDropdown = async () => {
+const openDropdown = async () => {
   if (props.disabled) {
-    setOpen(false)
     return
-  } else if (isOpen.value) {
-    setOpen(false)
-  } else {
-    unfocusOption()
-    setOpen(true)
-    await nextTick()
-    if (props.modelValue) scrollToSelectedOption()
+  }
+  unfocusOption()
+  isOpen.value = true
+  await nextTick()
+  if (props.modelValue) {
+    focusedOptionIndex.value = selectedOptionIndex
+    scrollToFocusedOption()
   }
 }
 
@@ -162,34 +178,15 @@ const selectOption = (optionIndex: number) => {
   if (option.disabled) {
     return
   }
-  setOpen(false)
+  closeDropdown()
   selectedOptionIndex = optionIndex
   emit('update:modelValue', option.value)
+  scrollToSelectedOption()
 }
 
 const unfocusOption = () => {
   if (focusedOptionIndex.value === -1) return
   focusedOptionIndex.value = -1
-}
-
-const handleKey = async (direction: EDirections) => {
-  if (!isOpen.value || !props.options.length) return
-  focusedOptionIndex.value = getArrayIndexByDirection({
-    direction,
-    array: props.options as [],
-    curIndex: focusedOptionIndex.value,
-  })
-  await nextTick()
-  const selectedEl = optionsRefs.value.find((r) => r.dataset.selected)
-  selectedEl?.scrollIntoView({ block: 'nearest', inline: 'start' })
-}
-
-const handleEnterKey = () => {
-  if (!isOpen.value || focusedOptionIndex.value === -1) {
-    toggleDropdown()
-    return
-  }
-  selectOption(focusedOptionIndex.value)
 }
 
 const selectedOption = computed<TSelectOption>(() => {
@@ -219,14 +216,90 @@ const selectedOption = computed<TSelectOption>(() => {
   return result
 })
 
-const selectionClasses = computed(() => ({
-  'wui-select-selection--disabled': props.disabled,
-  'wui-select-selection--active': isOpen.value,
-}))
+const onOptionChange = async () => {
+  await nextTick()
+  scrollToSelectedOption()
+}
 
-const dropdownClasses = computed(() => ({
-  'wui-select-dropdown--divided': props.divided,
-}))
+const handleKeypress = async (event: KeyboardEvent) => {
+  const { key } = event
+  const focusedOption = optionsSafe.value[focusedOptionIndex.value]
+  const isFocusedOptionDisabled = focusedOption?.disabled || false
+  const action = getActionFromKey(event, isOpen.value, isFocusedOptionDisabled)
+
+  switch (action) {
+    case MenuActions.Next:
+    case MenuActions.Last:
+    case MenuActions.First:
+    case MenuActions.Previous:
+      event.preventDefault()
+      return handleDirectionKey(action)
+    case MenuActions.CloseSelect:
+    case MenuActions.Space:
+      event.preventDefault()
+      if (!isOpen.value || focusedOptionIndex.value === -1) {
+        openDropdown()
+        return
+      }
+      selectOption(focusedOptionIndex.value)
+      break
+    case MenuActions.Close:
+      closeDropdown()
+      break
+    case MenuActions.Type: {
+      openDropdown()
+
+      const searchString = getSearchString(key)
+      focusedOptionIndex.value = getIndexByLetter(optionsSafe.value, searchString, 'label')
+      scrollToFocusedOption()
+      return onOptionChange()
+    }
+    case MenuActions.Open:
+      event.preventDefault()
+      openDropdown()
+      await nextTick()
+      if (props.modelValue) scrollToSelectedOption()
+      break
+  }
+}
+
+const handleDirectionKey = async (menuAction: MenuActions) => {
+  const max = optionsSafe.value.length - 1
+  if (!isOpen.value || !max) return
+
+  const optionIndexToFocus = getArrayIndexByDirection({
+    menuAction,
+    max,
+    curIndex: focusedOptionIndex.value,
+  })
+  focusedOptionIndex.value = optionIndexToFocus
+  scrollToFocusedOption()
+}
+
+let searchTimeout: ReturnType<typeof setTimeout> | null = null
+let searchString = ''
+
+const getSearchString = (char: string) => {
+  const multimatchTimeout = 500
+
+  // reset typing timeout and start new timeout
+  // this allows us to make multiple-letter matches, like a native select
+  if (typeof searchTimeout === 'number') {
+    clearTimeout(searchTimeout)
+  }
+
+  searchTimeout = setTimeout(() => {
+    searchString = ''
+  }, multimatchTimeout)
+
+  // add most recent letter to saved search string
+  searchString += char
+  return searchString
+}
+
+const activeDescendant = () => {
+  return isOpen && focusedOptionIndex.value !== -1 ? `${props.id}-item-${focusedOptionIndex.value}` : ''
+}
 </script>
 
 <style lang="css">
