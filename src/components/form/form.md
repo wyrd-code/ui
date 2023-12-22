@@ -6,6 +6,8 @@ import DemoFormFull from './demos/DemoFormFull.vue'
 
 # Form
 
+A form allows users to enter information into a page.
+
 The `WuiForm` component is a flexible helper for building, maintaining and validating forms.
 
 There are two ways to implement forms, static and dynamic.

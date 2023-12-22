@@ -12,6 +12,8 @@ import DemoCheckboxMultipleValues from '@/components/checkbox/demos/DemoCheckbox
 
 # Checkbox
 
+Checkboxes allow users to select one or more options from a list.
+
 Use a checkbox if the mental model of the selected values is **include** or **applies** (ie *Subscribe to email updates*) and it is used as part of a form.
 
 If the mental model is **enable** or **turn on** (ie *Airplane mode*) and value change is immediate, use a [switch component](/components/switch/switch.md).

@@ -14,7 +14,7 @@ import DemoButtonVariantSecondary from '@/components/button/demos/DemoButtonVari
 
 # Button
 
-For user triggered actions.
+A button draws attention to important actions with a large selectable surface.
 
 ## Variants
 

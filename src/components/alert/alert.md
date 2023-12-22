@@ -12,7 +12,9 @@ import WuiAlertDemoTransition from '@/components/alert/demos/WuiAlertDemoTransit
 
 # Alert
 
-**An alert displays a short, important message in a way that attracts the user's attention without interrupting the user's flow.**
+An alert keeps users informed of important and sometimes time-sensitive changes.
+
+## Basic
 
 :::demo components/alert/demos/WuiAlertDemo
 <WuiAlertDemo />

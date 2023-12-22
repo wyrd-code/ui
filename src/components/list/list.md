@@ -13,6 +13,8 @@ import DemoListSize from '@/components/list/demos/DemoListSize.vue'
 
 # List
 
+A list organizes information into discrete sequential sections.
+
 Lists are a simple abstraction over html lists, providing some standardized formatting and behavior.
 
 You can render the list child list items manualy, or you can simply pass in an array of string values or `WyrdListItem` typed objects to have it render automatically.

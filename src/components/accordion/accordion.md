@@ -6,7 +6,12 @@ import DemoAccordionSlots from '@/components/accordion/demos/DemoAccordionSlots.
 
 # Accordion
 
+An accordion is a list of headers that hide or reveal additional content when selected.
+
 Use `Accordion` and `AccordionItem` components to easily compose collapsible interfaces.
+
+## Basic
+
 :::demo components/accordion/demos/DemoAccordion
 <DemoAccordion />
 :::

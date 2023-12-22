@@ -8,7 +8,7 @@ import DemoButtonGroupStretch from '@/components/button-group/demos/DemoButtonGr
 
 # Button group
 
-Button group displays multiple related actions stacked or in a horizontal row to help with arrangement and spacing.
+A button group collects similar or related actions.
 
 :::demo components/button-group/demos/DemoButtonGroup
 <DemoButtonGroup />
