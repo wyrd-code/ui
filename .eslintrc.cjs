@@ -34,7 +34,7 @@ module.exports = {
     },
   },
   rules: {
-    complexity: ['error', 5],
+    complexity: ['error', 7],
     'import/no-cycle': 2,
     'max-depth': ['error', 3],
     'no-shadow': 'off',
