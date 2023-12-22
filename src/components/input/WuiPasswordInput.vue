@@ -1,7 +1,7 @@
 <!-- eslint-disable vuejs-accessibility/form-control-has-label -->
 <template>
   <WuiInput
-    type="password"
+    :type="type"
     :id="id"
     :name="name"
     :autocomplete="autocomplete"
