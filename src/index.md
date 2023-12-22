@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /guide/getting-started.html
+      link: /docs/guide/getting-started.html
     - theme: alt
       text: View on GitHub
       link: https://github.com/wyrd-code/ui
