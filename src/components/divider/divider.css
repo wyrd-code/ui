@@ -9,7 +9,7 @@
 
   &--vertical {
     @apply inline-block relative align-middle;
-    @apply w-2px mx-[7-2px] h-[.9em];
+    @apply w-1px -mx-1px h-[.9em];
   }
 
   &-icon {
