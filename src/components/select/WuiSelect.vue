@@ -297,7 +297,7 @@ let searchTimeout: ReturnType<typeof setTimeout> | null = null
 let searchString = ''
 
 const getSearchString = (char: string) => {
-  const multimatchTimeout = 500
+  const multimatchTimeout = 750
 
   // reset typing timeout and start new timeout
   // this allows us to make multiple-letter matches, like a native select
