@@ -1,8 +1,18 @@
 <template>
-  <footer class="w-full mx-auto flex flex-col justify-center text-center space-y-4 py-8">
-    <WuiLink class="mx-auto flex items-center font-bold space-x-2 text-xl" :link="brandLink">
+  <footer
+    class="w-full mx-auto flex flex-col justify-center text-center space-y-4 py-8"
+  >
+    <WuiLink
+      class="mx-auto flex items-center font-bold space-x-2 text-xl"
+      :link="brandLink"
+    >
       <slot name="brandLogo">
-        <img v-if="brandLogo" class="h-8 w-auto" :src="brandLogo" :alt="brandCopy || 'Logo'">
+        <img
+          v-if="brandLogo"
+          class="h-8 w-auto"
+          :src="brandLogo"
+          :alt="brandCopy || 'Logo'"
+        />
       </slot>
       <span class="">{{ brandCopy }}</span>
     </WuiLink>
@@ -17,12 +27,14 @@
       :items="navItems"
     />
 
-    <span class="text-sm">&copy; {{ copyrightDateStart }}-2022 {{ copyrightName }} ™. All Rights Reserved.</span>
+    <span class="text-sm"
+      >&copy; {{ copyrightDateStart }}-2022 {{ copyrightName }} ™. All Rights
+      Reserved.</span
+    >
   </footer>
 </template>
 
 <script lang="ts" setup>
-
 defineProps({
   navItems: {
     type: Array,

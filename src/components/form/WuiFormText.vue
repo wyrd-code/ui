@@ -1,19 +1,19 @@
 <template>
   <WuiFormFieldWrapper
+    :id="id"
     class="wui-form-text"
     :label="label"
-    :id="id"
     :help="help"
   >
     <WuiInput
       :id="id"
+      v-model="value"
       :type="type"
       :name="name"
       :disabled="disabled"
       :autocomplete="autocomplete"
       :placeholder="placeholder"
       :prefix="prefix"
-      v-model="value"
     />
   </WuiFormFieldWrapper>
 </template>
@@ -22,8 +22,8 @@
 import { formFieldWrapperProps } from '@/components/form/form.props'
 import { useFormInstance } from '@/components/form/useFormInstance'
 import WuiFormFieldWrapper from '@/components/form/WuiFormFieldWrapper.vue'
-import WuiInput from '@/components/input/WuiInput.vue'
 import { WUI_INPUT_PROPS } from '@/components/input'
+import WuiInput from '@/components/input/WuiInput.vue'
 import { useHtmlId } from '@/composables'
 
 const props = defineProps({

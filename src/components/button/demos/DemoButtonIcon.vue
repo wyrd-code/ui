@@ -1,11 +1,6 @@
 <template>
   <WuiCodeDemoRow>
-    <WuiButton
-      v-for="size in WUI_BUTTON_SIZES"
-      :key="size"
-      :size="size"
-      icon
-    >
+    <WuiButton v-for="size in WUI_BUTTON_SIZES" :key="size" :size="size" icon>
       <span class="icon-ph-heart" />
     </WuiButton>
   </WuiCodeDemoRow>

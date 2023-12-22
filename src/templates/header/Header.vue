@@ -3,7 +3,12 @@
     <div class="flex">
       <WuiLink class="flex items-center font-bold space-x-2" :link="brandLink">
         <slot name="brandLogo">
-          <img v-if="brandLogo" class="h-8 w-auto" :src="brandLogo" :alt="brandCopy || 'Logo'">
+          <img
+            v-if="brandLogo"
+            class="h-8 w-auto"
+            :src="brandLogo"
+            :alt="brandCopy || 'Logo'"
+          />
         </slot>
         <span class="">{{ brandCopy }}</span>
       </WuiLink>
@@ -18,7 +23,6 @@
 </template>
 
 <script lang="ts" setup>
-
 defineProps({
   navItems: {
     type: Array,

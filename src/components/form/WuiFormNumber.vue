@@ -1,27 +1,28 @@
 <template>
   <WuiFormFieldWrapper
+    :id="id"
     class="wui-form-number"
     :label="label"
-    :id="id"
     :help="help"
   >
     <WuiNumberInput
       :id="id"
+      v-model="value"
       :name="name"
       :disabled="disabled"
       :autocomplete="autocomplete"
       :placeholder="placeholder"
-      v-model="value"
     />
   </WuiFormFieldWrapper>
 </template>
 
 <script lang="ts" setup>
-import { WUI_NUMBER_INPUT_PROPS } from '@/components/input';
+import { WUI_NUMBER_INPUT_PROPS } from '@/components/input'
+import { useHtmlId } from '@/composables'
+
 import { formFieldWrapperProps } from './form.props'
 import { useFormInstance } from './useFormInstance'
 import WuiFormFieldWrapper from './WuiFormFieldWrapper.vue'
-import { useHtmlId } from '@/composables'
 
 const props = defineProps({
   ...formFieldWrapperProps,

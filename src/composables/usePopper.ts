@@ -1,4 +1,3 @@
-import { ref } from 'vue'
 import {
   useFloating,
   offset,
@@ -6,7 +5,8 @@ import {
   shift,
   autoUpdate,
   arrow,
-} from '@floating-ui/vue';
+} from '@floating-ui/vue'
+import { ref } from 'vue'
 
 export const usePopper = ({
   emit,
@@ -38,17 +38,15 @@ export const usePopper = ({
     emit('open')
   }
 
-  const middleware = [
-    offset(offsetDistance),
-    flip(),
-    shift(),
-  ]
+  const middleware = [offset(offsetDistance), flip(), shift()]
 
   if (useArrow) {
-    middleware.push(arrow({
-      element: arrowNode,
-      padding: arrowPadding,
-    }))
+    middleware.push(
+      arrow({
+        element: arrowNode,
+        padding: arrowPadding,
+      })
+    )
   }
 
   const {

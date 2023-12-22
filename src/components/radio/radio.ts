@@ -1,5 +1,6 @@
-import { Colors } from '@/domain'
 import { PropType } from 'vue'
+
+import { Colors } from '@/domain'
 
 export const allowedRadioTypes = [
   Colors.PRIMARY,

@@ -1,10 +1,7 @@
 <!-- eslint-disable vuejs-accessibility/label-has-for -->
 <template>
   <div class="form-field" :class="['error' ? !validation.isValid : '']">
-    <label
-      v-if="label"
-      v-bind="labelAttributes"
-    >
+    <label v-if="label" v-bind="labelAttributes">
       <span class="text">
         {{ label }}
       </span>
@@ -16,7 +13,7 @@
       </span>
     </label>
 
-    <slot :id="id" v-bind="$attrs"  />
+    <slot :id="id" v-bind="$attrs" />
 
     <p v-if="help" class="text-sm">
       {{ help }}
@@ -70,7 +67,7 @@ const props = defineProps({
 const labelAttributes = computed(() => {
   const forAttributeName = props.usesHtmlControl ? 'htmlFor' : 'for'
   return {
-    [forAttributeName]: props.id
+    [forAttributeName]: props.id,
   }
 })
 </script>

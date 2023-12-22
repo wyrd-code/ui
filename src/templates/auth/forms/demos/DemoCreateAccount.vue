@@ -1,7 +1,7 @@
 <template>
   <CreateAccount
-    forgotPasswordUrl="#forgot"
-    signUpUrl="#signup"
+    forgot-password-url="#forgot"
+    sign-up-url="#signup"
     :on-submit="onSubmit"
   />
 </template>

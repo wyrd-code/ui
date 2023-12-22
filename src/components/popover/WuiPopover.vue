@@ -87,8 +87,7 @@ const props = defineProps({
   mode: {
     type: String,
     default: 'normal',
-    validator: (value: string) =>
-      ['normal', 'manual'].includes(value),
+    validator: (value: string) => ['normal', 'manual'].includes(value),
   },
   // Disables the Popper. If it was already open, it will be closed.
   disabled: {
@@ -165,23 +164,17 @@ const slots = useSlots()
 const emit = defineEmits(['open', 'close', 'mounts'])
 emit('mounts')
 
-const {
-  isOpen,
-  open,
-  close,
-  floatingStyles,
-  middlewareData,
-  activePlacement,
-} = usePopper({
-  emit,
-  offsetDistance: props.offsetDistance,
-  placement,
-  popperNode,
-  triggerNode,
-  arrowPadding: props.arrowPadding,
-  useArrow: props.arrow,
-  arrowNode,
-})
+const { isOpen, open, close, floatingStyles, middlewareData, activePlacement } =
+  usePopper({
+    emit,
+    offsetDistance: props.offsetDistance,
+    placement,
+    popperNode,
+    triggerNode,
+    arrowPadding: props.arrowPadding,
+    useArrow: props.arrow,
+    arrowNode,
+  })
 
 const { hasContent } = useContent(slots, popperNode, content)
 const invalid = computed(() => disabled.value || !hasContent.value)
@@ -196,23 +189,23 @@ const interactiveStyle = computed<StyleValue | undefined>(() =>
     : undefined
 )
 
-const simplifiedPlacement = computed(() => activePlacement.value.split("-")[0])
+const simplifiedPlacement = computed(() => activePlacement.value.split('-')[0])
 
 const arrowStyle = computed<StyleValue | undefined>(() => {
   const staticSide = {
-    top: "bottom",
-    right: "left",
-    bottom: "top",
-    left: "right"
-  }[simplifiedPlacement.value];
+    top: 'bottom',
+    right: 'left',
+    bottom: 'top',
+    left: 'right',
+  }[simplifiedPlacement.value]
 
   if (middlewareData.value.arrow) {
-    const { x, y } = middlewareData.value.arrow;
-    const arrowOffsetWidth = (arrowNode.value?.offsetWidth || 0)
+    const { x, y } = middlewareData.value.arrow
+    const arrowOffsetWidth = arrowNode.value?.offsetWidth || 0
     return {
-      left: x != null? `${x}px` : '',
-      top: y != null? `${y}px` : '',
-      [staticSide]: `-${arrowOffsetWidth / 2}px`
+      left: x != null ? `${x}px` : '',
+      top: y != null ? `${y}px` : '',
+      [staticSide]: `-${arrowOffsetWidth / 2}px`,
     }
   }
 })

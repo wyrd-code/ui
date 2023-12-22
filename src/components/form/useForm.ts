@@ -1,21 +1,10 @@
 import { isMatch } from '@s-libs/micro-dash'
 import { set } from '@vueuse/shared'
-import {
-  computed,
-  inject,
-  provide,
-  ref,
-  unref,
-} from 'vue'
+import { computed, inject, provide, ref, unref } from 'vue'
 
-import {
-  removeUndefinedObjectProperties,
-} from '@/utilities'
+import { removeUndefinedObjectProperties } from '@/utilities'
 
-import {
-  WuiFormConfigSymbol,
-  WuiFormInstaceSymbol,
-} from './form.constants'
+import { WuiFormConfigSymbol, WuiFormInstaceSymbol } from './form.constants'
 import type {
   FormOptions,
   FormInstance,
@@ -23,7 +12,10 @@ import type {
   FormData,
 } from './form.types'
 
-export const useForm = (options: FormOptions, emit: (event: any, ...args: any[]) => void): FormInstance => {
+export const useForm = (
+  options: FormOptions,
+  emit: (event: any, ...args: any[]) => void
+): FormInstance => {
   const pluginConfig = inject<FormConfiguration>(WuiFormConfigSymbol)
   const initialData = unref(options.modelValue || {})
   const data = ref<FormData>({ ...initialData })
@@ -38,16 +30,17 @@ export const useForm = (options: FormOptions, emit: (event: any, ...args: any[])
   )
 
   const definitions = [
-    ...pluginConfig?.definitions || [],
-    ...options?.definitions || [],
+    ...(pluginConfig?.definitions || []),
+    ...(options?.definitions || []),
   ]
 
   const getFieldDefinition = (type: string) => definitions[type]
 
-  const getFieldValue = (name: string) => computed({
-    get: () => data.value[name],
-    set: (value) => setFieldValue(name, value)
-  })
+  const getFieldValue = (name: string) =>
+    computed({
+      get: () => data.value[name],
+      set: (value) => setFieldValue(name, value),
+    })
 
   const setFieldValue = (name: string, value: unknown) => {
     set(data.value, name, value)

@@ -1,14 +1,14 @@
 <!-- eslint-disable vuejs-accessibility/form-control-has-label -->
 <template>
   <WuiInput
-    :type="type"
     :id="id"
+    :type="type"
     :name="name"
     :autocomplete="autocomplete"
     :disabled="disabled"
     :value="modelValue"
     :placeholder="placeholder"
-    :modelValue="modelValue"
+    :model-value="modelValue"
     @update:modelValue="input"
   >
     <template #suffix>
@@ -27,7 +27,8 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
+
 import { WUI_PASSWORD_INPUT_PROPS } from './input'
 
 defineProps(WUI_PASSWORD_INPUT_PROPS)
@@ -43,7 +44,7 @@ function input(value) {
 
 function toggleShowPassword() {
   showPassword.value = !showPassword.value
-  type.value = type.value === 'password' ? 'text' : 'password';
+  type.value = type.value === 'password' ? 'text' : 'password'
 }
 </script>
 

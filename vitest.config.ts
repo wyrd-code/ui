@@ -10,8 +10,5 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
   },
-  plugins: [
-    VuePlugin(),
-    ...(config.plugins || []),
-  ],
+  plugins: [VuePlugin(), ...(config.plugins || [])],
 })

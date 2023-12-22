@@ -1,25 +1,22 @@
 <template>
-  <WuiFormFieldWrapper
-    class="wui-form-checkbox"
-    :id="id"
-    :help="help"
-  >
+  <WuiFormFieldWrapper :id="id" class="wui-form-checkbox" :help="help">
     <WuiCheckbox
+      :id="id"
+      v-model="value"
       :name="name"
       :label="label"
-      :id="id"
       :disabled="disabled"
-      v-model="value"
     />
   </WuiFormFieldWrapper>
 </template>
 
 <script lang="ts" setup>
+import { WUI_CHECKBOX_PROPS } from '@/components/checkbox'
+import { useHtmlId } from '@/composables'
+
 import { formFieldWrapperProps } from './form.props'
 import { useFormInstance } from './useFormInstance'
-import { WUI_CHECKBOX_PROPS } from '@/components/checkbox'
 import WuiFormFieldWrapper from './WuiFormFieldWrapper.vue'
-import { useHtmlId } from '@/composables'
 
 const props = defineProps({
   ...formFieldWrapperProps,

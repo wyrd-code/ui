@@ -4,10 +4,7 @@ import type {
   DynamicShortcut,
   StaticShortcut,
 } from '@unocss/core'
-import type {
-  PresetWindOptions,
-  Theme,
-} from '@unocss/preset-wind'
+import type { PresetWindOptions, Theme } from '@unocss/preset-wind'
 import {
   rules as presetWindRules,
   shortcuts as presetWindShortcuts,
@@ -17,11 +14,10 @@ import {
 } from '@unocss/preset-wind'
 // import { isObject, mapEntries } from 'radash'
 
-import type { RadixColors } from "./radix";
-import {
-  // mergeObjects,
-  // kebabCase,
-} from '../../utilities'
+import type { RadixColors } from './radix'
+import // mergeObjects,
+// kebabCase,
+'../../utilities'
 import {
   genCSS,
   generateColors,
@@ -39,55 +35,56 @@ export type ShortcutList = (
 
 export interface PresetWyrdOptions extends PresetWindOptions {
   theme?: Theme
-  palette?: readonly RadixColors[];
+  palette?: readonly RadixColors[]
   /**
    * The prefix of the generated css variables
    * @default --un-preset-radix
    */
-  prefix?: string;
+  prefix?: string
 
   /**
    * Customize the selector used to apply the dark versions of the color palette
    * @default ".dark-theme"
    */
-  darkSelector?: string;
+  darkSelector?: string
 
   /**
    * Customize the selector used to apply the light versions of the color palette
    * @default ":root, .light-theme"
    */
-  lightSelector?: string;
+  lightSelector?: string
 
   /** Add color aliases */
-  aliases?: ColorAliases;
+  aliases?: ColorAliases
 
   /**
    * Extend instead of override the default theme
    * @default false
    */
-  extend?: boolean;
+  extend?: boolean
 }
 
 export const presetWyrd = (options: PresetWyrdOptions = {}): Preset<Theme> => {
   // const unoTheme = buildThemeFromSpec(WUI_THEME_SPEC)
   // theme: mergeObjects<Theme>(themeWind, compiledTheme),
-  const theme = themeWind;
+  const theme = themeWind
   const {
-    prefix = "--un-preset-radix-",
-    darkSelector = ".dark-theme",
-    lightSelector = ":root, .light-theme",
+    prefix = '--un-preset-radix-',
+    darkSelector = '.dark-theme',
+    lightSelector = ':root, .light-theme',
     palette: selectedPallete,
     aliases: selectedAliases = {},
     extend = false,
-  } = options;
+  } = options
   const defaultPallete = []
-  const finalPallete = Array.isArray(selectedPallete) ? selectedPallete : defaultPallete;
-  const palette = newPalette(...finalPallete);
-  const colors = generateColors(palette, prefix);
+  const finalPallete = Array.isArray(selectedPallete)
+    ? selectedPallete
+    : defaultPallete
+  const palette = newPalette(...finalPallete)
+  const colors = generateColors(palette, prefix)
   // const hues = generateHues(prefix);
-  const aliases = generateColorAliases(colors, selectedAliases);
-  const colorRules = [
-  ]
+  const aliases = generateColorAliases(colors, selectedAliases)
+  const colorRules = []
 
   return {
     name: '@wyrdui/preset-wyrd',
@@ -132,8 +129,8 @@ export const presetWyrd = (options: PresetWyrdOptions = {}): Preset<Theme> => {
     shortcuts: [
       ...presetWindShortcuts,
       {
-        'border-base': 'border-gray-200'
-      }
+        'border-base': 'border-gray-200',
+      },
     ],
     safelist: [
       // ...getColorSafelistFromSpec(WUI_THEME_SPEC.color),
@@ -147,14 +144,14 @@ export const presetWyrd = (options: PresetWyrdOptions = {}): Preset<Theme> => {
         ...aliases,
         // ...hues,
 
-        white: "#ffffff",
-        black: "#000000",
-        transparent: "transparent",
-        current: "currentColor",
-        inherit: "inherit",
+        white: '#ffffff',
+        black: '#000000',
+        transparent: 'transparent',
+        current: 'currentColor',
+        inherit: 'inherit',
 
         ...(extend ? theme.colors : []),
-      } as Theme["colors"];
+      } as Theme['colors']
     },
     preflights: [
       ...presetWindPreflights,

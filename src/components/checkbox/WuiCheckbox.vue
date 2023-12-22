@@ -52,7 +52,6 @@ export default defineComponent({
   props: WUI_CHECKBOX_PROPS,
   emits: ['update:modelValue'],
   setup(props, { emit }) {
-
     function toggle() {
       if (props.disabled || props.readonly) {
         return

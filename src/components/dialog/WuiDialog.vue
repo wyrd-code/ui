@@ -27,7 +27,12 @@
           >
             <span class="wui-dialog-close">
               <slot v-if="closable" name="close" :close="close">
-                <WuiButton variant="secondary" shape="round" icon @click="close">
+                <WuiButton
+                  variant="secondary"
+                  shape="round"
+                  icon
+                  @click="close"
+                >
                   <span class="icon-ph-x-bold" />
                 </WuiButton>
               </slot>

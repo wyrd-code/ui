@@ -1,16 +1,14 @@
 import { App } from 'vue'
 
-import {
-  defaultFormFieldDefinitions,
-} from './form.definitions'
 import { WuiFormConfigSymbol } from './form.constants'
+import { defaultFormFieldDefinitions } from './form.definitions'
 import type { FormConfiguration } from './form.types'
 
 export const FormPlugin = {
   install(app: App, options: Partial<FormConfiguration> = {}) {
     const definitions = [
       ...defaultFormFieldDefinitions,
-      ...options.definitions || [],
+      ...(options.definitions || []),
     ]
 
     const opts: FormConfiguration = {

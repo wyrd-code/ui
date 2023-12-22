@@ -21,9 +21,7 @@ import { computed, useSlots } from 'vue'
 
 import { useRouterLink, routerLinkProps } from '@/composables'
 
-import {
-  WUI_BUTTON_PROPS,
-} from './button'
+import { WUI_BUTTON_PROPS } from './button'
 
 const props = defineProps({
   ...routerLinkProps,

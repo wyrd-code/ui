@@ -1,4 +1,4 @@
-import { formFieldWrapperProps } from "@/components/form/form.props"
+import { formFieldWrapperProps } from '@/components/form/form.props'
 
 export const WUI_CHECKBOX_VARIANTS = [
   'accent',

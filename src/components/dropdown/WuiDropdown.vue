@@ -6,19 +6,18 @@
 
     <template #content="{ close }">
       <slot name="content" :close="close">
-        <WuiList
-          v-bind="$attrs"
-          :items="items"
-        />
+        <WuiList v-bind="$attrs" :items="items" />
       </slot>
     </template>
   </WuiPopover>
 </template>
 
 <script lang="ts" setup>
-import type { WyrdListItem } from '../list'
 import type { PropType } from 'vue'
+
 import { Placement } from '@/domain'
+
+import type { WyrdListItem } from '../list'
 
 defineOptions({
   inheritAttrs: false,

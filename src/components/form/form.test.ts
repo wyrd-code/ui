@@ -2,13 +2,14 @@ import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
 import { ref, h } from 'vue'
 
-import WuiFormText from './WuiFormText.vue'
-import WuiFormSubmit from './WuiFormSubmit.vue'
-import WuiFormReset from './WuiFormReset.vue'
-import WuiForm from './WuiForm.vue'
-import { FormPlugin } from './form.plugin'
 import { FormSchema } from '@/components/form/form.types'
 import WuiFormSchema from '@/components/form/WuiFormSchema'
+
+import { FormPlugin } from './form.plugin'
+import WuiForm from './WuiForm.vue'
+import WuiFormReset from './WuiFormReset.vue'
+import WuiFormSubmit from './WuiFormSubmit.vue'
+import WuiFormText from './WuiFormText.vue'
 
 describe.concurrent('Form', () => {
   describe('Minimal', () => {
@@ -44,7 +45,7 @@ describe.concurrent('Form', () => {
     const newEmailValue = 'sarah@newcars.com'
 
     let submittedData = null
-    let data = ref({
+    const data = ref({
       email: oldEmailValue,
     })
 
@@ -53,7 +54,7 @@ describe.concurrent('Form', () => {
         plugins: [FormPlugin],
       },
       props: {
-        onSubmit: (formData: any) => submittedData = formData,
+        onSubmit: (formData: any) => (submittedData = formData),
         onSuccess: () => {},
         onReset: () => {},
         modelValue: data,
@@ -185,8 +186,7 @@ describe.concurrent('Form', () => {
                   variant: 'danger',
                   label: 'Reset',
                 },
-                attributes: {
-                },
+                attributes: {},
               },
             ],
           },
@@ -195,7 +195,7 @@ describe.concurrent('Form', () => {
     ]
 
     let submittedData = null
-    let data = ref({
+    const data = ref({
       email: oldEmailValue,
     })
 
@@ -204,7 +204,7 @@ describe.concurrent('Form', () => {
         plugins: [FormPlugin],
       },
       props: {
-        onSubmit: (formData: any) => submittedData = formData,
+        onSubmit: (formData: any) => (submittedData = formData),
         onSuccess: () => {},
         onReset: () => {},
         modelValue: data,

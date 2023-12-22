@@ -1,28 +1,21 @@
 <template>
-  <WuiForm
-    class="space-y-4 p-8 min-w-md"
-    :on-submit="onSubmit"
-    v-model="data"
->
+  <WuiForm v-model="data" class="space-y-4 p-8 min-w-md" :on-submit="onSubmit">
     <slot name="heading">
       <h2>
-          {{ heading }}
+        {{ heading }}
       </h2>
     </slot>
 
     <WuiFormText
+      v-model="data.email"
       name="email"
       placeholder="name@company.com"
       label="Email"
-      v-model="data.email"
     />
 
-    <WuiFormSubmit
-      stretch="full"
-      variant="primary"
-    >
+    <WuiFormSubmit stretch="full" variant="primary">
       <slot name="submit-label">
-        {{ submitLabel  }}
+        {{ submitLabel }}
       </slot>
     </WuiFormSubmit>
 

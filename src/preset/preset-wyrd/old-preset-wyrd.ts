@@ -34,7 +34,6 @@ import {
 //   themeDefault
 // } from './theme-default'
 
-
 export type ShortcutList = (
   | StaticShortcutMap
   | StaticShortcut

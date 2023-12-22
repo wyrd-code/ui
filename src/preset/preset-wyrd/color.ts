@@ -1,4 +1,5 @@
 import { isObject, mapEntries } from 'radash'
+
 import {
   WuiColorValueType,
   WuiColorValue,
@@ -9,44 +10,42 @@ import {
   WuiThemeOptions,
   WUI_COLOR_SPEC,
 } from '../../domain'
-import {
-  kebabCase,
-} from '../../utilities'
+import { kebabCase } from '../../utilities'
 
-const getSafeListString = (value: string) => `bg-${value} text-${value} border-${value} shadow-${value}`
+const getSafeListString = (value: string) =>
+  `bg-${value} text-${value} border-${value} shadow-${value}`
 
 export const colorValueTypeSafeListMapper = {
   [WuiColorValueType.SCALE_WITH_DARK_VARIANT]: (
     key: string,
     steps: WuiColorStepDefinition[]
   ) => [
-    ...Array.from(steps.keys()).map(
-      (n) => getSafeListString(`${key}-${n}`)
-    ),
+    ...Array.from(steps.keys()).map((n) => getSafeListString(`${key}-${n}`)),
   ],
-  [WuiColorValueType.SCALE]: (
-    key: string,
-    steps: WuiColorStepDefinition[]
-  ) => [
-    ...Array.from(steps.keys()).map(
-      (n) => getSafeListString(`${key}-${n}`)
-    ),
+  [WuiColorValueType.SCALE]: (key: string, steps: WuiColorStepDefinition[]) => [
+    ...Array.from(steps.keys()).map((n) => getSafeListString(`${key}-${n}`)),
   ],
-  [WuiColorValueType.SIMPLE]: (key: string) => getSafeListString(key)
+  [WuiColorValueType.SIMPLE]: (key: string) => getSafeListString(key),
 }
 
 export const getColorCSS = (
   theme: WuiThemeOptions,
   lightSelector: string,
   darkSelector: string,
-  prefix: string,
+  prefix: string
 ) => {
   const vars = mapEntries(theme.colors || {}, (key, value) => {
-    const unoValue = getColorCSSVars(key, value, lightSelector, darkSelector, prefix)
+    const unoValue = getColorCSSVars(
+      key,
+      value,
+      lightSelector,
+      darkSelector,
+      prefix
+    )
     return [key, unoValue]
   })
 
-  return Object.values(vars).join("\n")
+  return Object.values(vars).join('\n')
 }
 
 export const getColorSafelistFromSpec = (colorSpec: WuiColorSpec): string[] => {
@@ -64,7 +63,7 @@ const getColorCSSVars = (
   value: WuiColorValue,
   lightSelector: string,
   darkSelector: string,
-  prefix: string,
+  prefix: string
 ): string => {
   if (isColorValueDualScale(value)) {
     const { light, dark } = value
@@ -116,12 +115,12 @@ const isColorValueScale = (
 const getColorValueScaleString = (
   colorKey: string,
   colorScale: WuiColorValueScale,
-  prefix: string,
+  prefix: string
 ) => {
   const mapped = Object.keys(colorScale).map((step: string) => {
     const value = colorScale[step]
     return `${prefix}-color-${kebabCase(colorKey)}-${step}: ${value};`
   })
 
-  return mapped.join("\n")
+  return mapped.join('\n')
 }

@@ -1,8 +1,5 @@
 <template>
-  <AccordionItem
-    class="wui-accordion-item"
-    :value="title"
-  >
+  <AccordionItem class="wui-accordion-item" :value="title">
     <AccordionHeader class="wui-accordion-item-header">
       <AccordionTrigger class="wui-accordion-item-trigger">
         <span class="wui-accordion-item-title">
@@ -10,9 +7,7 @@
             {{ title }}
           </slot>
         </span>
-        <span
-          class="wui-accordion-item-trigger-icon icon-ph-caret-down"
-        ></span>
+        <span class="wui-accordion-item-trigger-icon icon-ph-caret-down"></span>
       </AccordionTrigger>
     </AccordionHeader>
     <AccordionContent class="wui-accordion-item-content">

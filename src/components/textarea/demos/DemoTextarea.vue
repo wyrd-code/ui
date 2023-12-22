@@ -4,6 +4,6 @@
     placeholder="See me expand as you type"
     :rows="2"
     resizable
-    resizeOnWrite
+    resize-on-write
   />
 </template>

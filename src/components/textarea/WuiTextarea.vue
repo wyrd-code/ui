@@ -16,6 +16,7 @@
 
 <script lang="ts" setup>
 import { onMounted, nextTick, ref, computed } from 'vue'
+
 import { WUI_TEXTAREA_PROPS } from '@/components/textarea/textarea'
 
 const props = defineProps(WUI_TEXTAREA_PROPS)
@@ -24,9 +25,7 @@ const emit = defineEmits(['update:modelValue'])
 const textarea = ref(null)
 const focus = ref(false)
 
-const resize = computed(() =>
-  props.resizable === true ? 'vertical' : 'none'
-)
+const resize = computed(() => (props.resizable === true ? 'vertical' : 'none'))
 
 function onInput(e: InputEvent | any) {
   const target = e.target as HTMLTextAreaElement

@@ -26,8 +26,9 @@
 </template>
 
 <script lang="ts" setup>
-import Header from '../Header.vue'
 import type { WyrdNavItem } from '@/components/nav'
+
+import Header from '../Header.vue'
 
 const navItems = [
   {

@@ -103,13 +103,10 @@ export const tokensForIllustrations = {
       primary: {},
       secondary: {},
     },
-    base: {
-    },
+    base: {},
     shadow: {
-      primary: {
-      },
-      secondary: {
-      },
+      primary: {},
+      secondary: {},
     },
   },
   orange: {

@@ -1,48 +1,43 @@
 <template>
-  <WuiForm
-    class="space-y-4 p-8 min-w-md"
-    v-model="data"
-    :on-submit="onSubmit"
-  >
+  <WuiForm v-model="data" class="space-y-4 p-8 min-w-md" :on-submit="onSubmit">
     <slot name="heading">
       <h2>
-          {{ heading }}
+        {{ heading }}
       </h2>
     </slot>
 
     <WuiFormText
+      v-model="data.email"
       name="email"
       validates="required"
       placeholder="name@company.com"
       label="Email"
-      v-model="data.email"
     />
     <WuiFormPassword
+      v-model="data.password"
       name="password"
       validates="required"
       label="Password"
-      v-model="data.password"
     />
     <p class="flex items-center justify-between">
       <WuiCheckbox
+        v-model="data.remember"
         name="remember"
         label="Remember me"
-        v-model="data.remember"
       />
       <a :href="forgotPasswordUrl">Forgot your password?</a>
     </p>
 
-    <WuiFormSubmit
-      stretch="full"
-      variant="primary"
-    >
+    <WuiFormSubmit stretch="full" variant="primary">
       <slot name="submit-label">
-        {{ submitLabel  }}
+        {{ submitLabel }}
       </slot>
     </WuiFormSubmit>
 
     <slot name="sign-up">
-      <p v-if="signUpUrl">Don't have an account yet? <a :href="signUpUrl">Sign up</a></p>
+      <p v-if="signUpUrl">
+        Don't have an account yet? <a :href="signUpUrl">Sign up</a>
+      </p>
     </slot>
   </WuiForm>
 </template>

@@ -1,26 +1,12 @@
 <template>
-  <WuiCodeDemoRow
-    v-for="variant in WUI_BUTTON_VARIANTS"
-    :key="variant"
-  >
-    <WuiButton
-      :variant="variant"
-      outlined
-    >
+  <WuiCodeDemoRow v-for="variant in WUI_BUTTON_VARIANTS" :key="variant">
+    <WuiButton :variant="variant" outlined>
       {{ variant }}
     </WuiButton>
-    <WuiButton
-      :variant="variant"
-      outlined
-      loading
-    >
+    <WuiButton :variant="variant" outlined loading>
       {{ variant }}
     </WuiButton>
-    <WuiButton
-      :variant="variant"
-      outlined
-      disabled
-    >
+    <WuiButton :variant="variant" outlined disabled>
       {{ variant }}
     </WuiButton>
   </WuiCodeDemoRow>

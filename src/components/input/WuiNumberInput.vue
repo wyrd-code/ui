@@ -1,14 +1,14 @@
 <!-- eslint-disable vuejs-accessibility/form-control-has-label -->
 <template>
   <WuiInput
-    type="number"
     :id="id"
+    type="number"
     :name="name"
     :autocomplete="autocomplete"
     :disabled="disabled"
     :value="modelValue"
     :placeholder="placeholder"
-    :modelValue="modelValue"
+    :model-value="modelValue"
     @update:modelValue="input"
   >
     <template #prefix>

@@ -1,25 +1,22 @@
 <template>
-  <WuiFormFieldWrapper
-    class="wui-form-radio"
-    :id="id"
-    :help="help"
-  >
+  <WuiFormFieldWrapper :id="id" class="wui-form-radio" :help="help">
     <WuiRadio
+      v-model="value"
       :label="label"
       :disabled="disabled"
       :items="items"
       :orientation="orientation"
-      v-model="value"
     />
   </WuiFormFieldWrapper>
 </template>
 
 <script lang="ts" setup>
+import { useHtmlId } from '@/composables'
+
 import { WUI_RADIO_PROPS } from '../radio'
 import { formFieldWrapperProps } from './form.props'
 import { useFormInstance } from './useFormInstance'
 import WuiFormFieldWrapper from './WuiFormFieldWrapper.vue'
-import { useHtmlId } from '@/composables'
 
 const props = defineProps({
   ...formFieldWrapperProps,

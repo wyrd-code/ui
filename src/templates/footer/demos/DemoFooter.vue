@@ -29,8 +29,9 @@
 </template>
 
 <script lang="ts" setup>
-import Footer from '../Footer.vue'
 import type { WyrdNavItem } from '@/components/nav'
+
+import Footer from '../Footer.vue'
 
 const navItems = [
   {

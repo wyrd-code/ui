@@ -1,50 +1,37 @@
 <template>
-  <WuiForm
-    class="space-y-4 p-8 min-w-md"
-    :on-submit="onSubmit"
-    v-model="data"
->
+  <WuiForm v-model="data" class="space-y-4 p-8 min-w-md" :on-submit="onSubmit">
     <slot name="heading">
       <h2>
-          {{ heading }}
+        {{ heading }}
       </h2>
     </slot>
 
     <WuiFormText
+      v-model="data.email"
       name="email"
       placeholder="name@company.com"
       label="Email"
-      v-model="data.email"
     />
+    <WuiFormPassword v-model="data.password" name="password" label="Password" />
     <WuiFormPassword
-      name="password"
-      label="Password"
-      v-model="data.password"
-    />
-    <WuiFormPassword
+      v-model="data.passwordConfirm"
       name="passwordConfirm"
       label="Confirm password"
-      v-model="data.passwordConfirm"
     />
     <p class="flex items-center justify-between">
       <span>
-        <WuiCheckbox
-          name="terms"
-          v-model="data.terms"
-        >
+        <WuiCheckbox v-model="data.terms" name="terms">
           <template #label>
-            I accept the <a :href="termsAndConditionsUrl">Terms and Conditions</a>
+            I accept the
+            <a :href="termsAndConditionsUrl">Terms and Conditions</a>
           </template>
         </WuiCheckbox>
       </span>
     </p>
 
-    <WuiFormSubmit
-      stretch="full"
-      variant="primary"
-    >
+    <WuiFormSubmit stretch="full" variant="primary">
       <slot name="submit-label">
-        {{ submitLabel  }}
+        {{ submitLabel }}
       </slot>
     </WuiFormSubmit>
 

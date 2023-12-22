@@ -1,9 +1,5 @@
 <template>
-  <AccordionRoot
-    class="wui-accordion"
-    type="single"
-    :collapsible="true"
-  >
+  <AccordionRoot class="wui-accordion" type="single" :collapsible="true">
     <slot />
   </AccordionRoot>
 </template>

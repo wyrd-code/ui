@@ -1,8 +1,4 @@
-import type {
-  Component,
-  ComputedRef,
-  WritableComputedRef,
-} from 'vue'
+import type { Component, ComputedRef, WritableComputedRef } from 'vue'
 
 // Definitions
 
@@ -69,7 +65,9 @@ export interface FormFieldSchemaHtmlElement extends FormFieldSchemaBase {
   element: string
 }
 
-export type FormFieldSchema = FormFieldSchemaVueComponent | FormFieldSchemaHtmlElement
+export type FormFieldSchema =
+  | FormFieldSchemaVueComponent
+  | FormFieldSchemaHtmlElement
 
 export type FormSchema = FormFieldSchema[]
 

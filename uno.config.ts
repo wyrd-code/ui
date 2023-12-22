@@ -22,8 +22,7 @@ export function createConfig({ strict = true, dev = true } = {}): any {
           color: 'inherit',
         },
       }),
-      presetWyrd({
-      }),
+      presetWyrd({}),
     ],
     transformers: [
       transformerVariantGroup(),

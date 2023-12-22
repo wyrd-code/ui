@@ -1,5 +1,7 @@
 <template>
-  <section class="relative grid lg:grid-cols-2 max-h-full w-full overflow-hidden">
+  <section
+    class="relative grid lg:grid-cols-2 max-h-full w-full overflow-hidden"
+  >
     <main class="bg-white">
       <div class="max-w-md mx-auto">
         <slot />

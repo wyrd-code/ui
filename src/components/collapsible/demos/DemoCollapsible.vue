@@ -2,9 +2,7 @@
   <WuiCollapsible class="w-128">
     <template #header>Title</template>
     <template #preview>
-      <p>
-        Fusce sem metus, viverra sit amet blandit non, elementum eget leo.
-      </p>
+      <p>Fusce sem metus, viverra sit amet blandit non, elementum eget leo.</p>
     </template>
     <p>
       Curabitur leo dolor, bibendum et lacus id, mattis viverra justo. Curabitur

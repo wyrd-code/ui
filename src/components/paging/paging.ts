@@ -1,4 +1,5 @@
 import { ExtractPropTypes, computed, ref, watch, inject, provide } from 'vue'
+
 import { WUI_BUTTON_PROPS } from '../button/button'
 
 export enum PagingSummaryMode {

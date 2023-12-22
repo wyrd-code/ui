@@ -1,8 +1,5 @@
 <template>
-  <WuiForm
-    v-model="data"
-    :on-submit="onSubmit"
-  >
+  <WuiForm v-model="data" :on-submit="onSubmit">
     <WuiFormSchema :schema="schema" />
   </WuiForm>
 </template>
@@ -33,8 +30,7 @@ const schema: FormSchema = [
       placeholder: 'your@email.address',
       autocomplete: 'email',
     },
-    attributes: {
-    },
+    attributes: {},
   },
   {
     component: 'WuiFormPassword',
@@ -43,8 +39,7 @@ const schema: FormSchema = [
       label: 'Password',
       autocomplete: 'current-password',
     },
-    attributes: {
-    },
+    attributes: {},
   },
   {
     component: 'WuiFormCheckbox',
@@ -69,8 +64,7 @@ const schema: FormSchema = [
           variant: 'danger',
           label: 'Reset',
         },
-        attributes: {
-        },
+        attributes: {},
       },
     ],
   },
