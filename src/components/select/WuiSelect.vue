@@ -99,6 +99,7 @@ import {
   MenuActions,
   getIndexByLetter,
 } from './select'
+import { scrollParentToChild } from '@/utilities'
 
 const props = defineProps(WUI_SELECT_PROPS)
 
@@ -130,12 +131,13 @@ const scrollToSelectedOption = () => scrollToOptionByIndex(selectedOptionIndex)
 const scrollToFocusedOption = () => scrollToOptionByIndex(focusedOptionIndex.value)
 
 const scrollToOptionByIndex = (index: number) => {
+  if (selectListRef.value === undefined) {
+    return
+  }
+
   const optionToScrollTo = optionsRefs.value[index]
-  optionToScrollTo?.scrollIntoView({
-    block: 'center',
-    inline: 'start',
-    behavior: 'smooth',
-  })
+
+  scrollParentToChild(selectListRef.value, optionToScrollTo)
 }
 
 const getOptionLabel = (option: TOption) =>
@@ -216,10 +218,10 @@ const selectedOption = computed<TSelectOption>(() => {
   return result
 })
 
-const onOptionChange = async () => {
-  await nextTick()
-  scrollToSelectedOption()
-}
+// const onOptionChange = async () => {
+//   await nextTick()
+//   scrollToSelectedOption()
+// }
 
 const handleKeypress = async (event: KeyboardEvent) => {
   const { key } = event
@@ -250,9 +252,12 @@ const handleKeypress = async (event: KeyboardEvent) => {
       openDropdown()
 
       const searchString = getSearchString(key)
-      focusedOptionIndex.value = getIndexByLetter(optionsSafe.value, searchString, 'label')
-      scrollToFocusedOption()
-      return onOptionChange()
+      const optionToFocusIndex = getIndexByLetter(optionsSafe.value, searchString, 'label')
+      if (optionToFocusIndex !== -1) {
+        focusedOptionIndex.value = optionToFocusIndex
+        scrollToFocusedOption()
+      }
+      break
     }
     case MenuActions.Open:
       event.preventDefault()
@@ -297,9 +302,10 @@ const getSearchString = (char: string) => {
   return searchString
 }
 
-const activeDescendant = () => {
-  return isOpen && focusedOptionIndex.value !== -1 ? `${props.id}-item-${focusedOptionIndex.value}` : ''
-}
+const activeDescendant = computed(() => isOpen && focusedOptionIndex.value !== -1
+  ? `${props.id}-item-${focusedOptionIndex.value}`
+  : ''
+)
 </script>
 
 <style lang="css">

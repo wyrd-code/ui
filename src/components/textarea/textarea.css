@@ -1,28 +1,14 @@
 .wui-textarea {
-  @apply transition-all duration-200;
-  @apply rounded w-full relative;
+  @apply w-full relative;
+  @apply p-2 rounded;
+  @apply form-control form-control__border form-control__surface form-control__outline;
+  @apply appearance-none;
 
-  @apply p-2;
-  @apply text-base;
-  @apply border border-solid box-border;
-  @apply bg-neutral-1 border-neutral-8 text-neutral-11;
-
-  -webkit-appearance: none;
-  appearance: none;
-  /* z-index: 2; */
-  transition: all 0.2s;
-
-  &:hover {
-    @apply border-neutral-5;
-  }
+  /* -webkit-appearance: none;
+  appearance: none; */
 
   &:disabled {
-    @apply bg-neutral-3 text-neutral-7 !border-neutral-5;
-    cursor: not-allowed;
-  }
-
-  &:focus {
-    @apply border-blue-500;
+    @apply form-control__disabled;
   }
 
   &::placeholder {

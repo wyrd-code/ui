@@ -2,6 +2,12 @@
 <template>
   <WuiInput
     type="number"
+    :id="id"
+    :name="name"
+    :autocomplete="autocomplete"
+    :disabled="disabled"
+    :value="modelValue"
+    :placeholder="placeholder"
     :modelValue="modelValue"
     @update:modelValue="input"
   >
@@ -10,6 +16,7 @@
         class="wui-input-prefix"
         variant="secondary"
         size="sm"
+        shape="square"
         @click="decrease"
       >
         <span class="icon-ph-minus" />
@@ -20,6 +27,7 @@
         class="wui-input-suffix"
         variant="secondary"
         size="sm"
+        shape="square"
         @click="increase"
       >
         <span class="icon-ph-plus" />

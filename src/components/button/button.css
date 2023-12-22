@@ -9,6 +9,7 @@
   @apply inline-flex space-x-2 font-bold tracking-wide;
   @apply items-center align-middle justify-center text-center;
   @apply border border-solid;
+  @apply form-control__outline;
 
   &-text {
     @apply inline-flex;
@@ -41,10 +42,6 @@
   &.wui-btn--ghost:not(:hover) {
     @apply border-transparent;
     @apply bg-transparent;
-  }
-
-  &:focus {
-    @apply outline-offset-2 outline-2 outline-blue-500/50;
   }
 
   &--shape-round {

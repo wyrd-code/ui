@@ -1,4 +1,5 @@
 export * from './object'
+export * from './html'
 export * from './string'
 export * from './time'
 export * from './timeable'

@@ -12,7 +12,7 @@
     <WuiFormPassword
       name="password"
       label="Password"
-      autocomplete="password"
+      autocomplete="current-password"
     />
     <WuiFormCheckbox
       name="remember"

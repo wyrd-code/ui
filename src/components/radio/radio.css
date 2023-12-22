@@ -1,10 +1,9 @@
 .wui-radio {
   @apply m-0 p-0 relative;
   @apply cursor-pointer leading-4 whitespace-nowrap;
-  align-items: normal;
 
   .body {
-    @apply flex items-center;
+    @apply inline-flex items-center;
     @apply space-x-2;
   }
 
@@ -23,11 +22,7 @@
     @apply rounded-full relative;
     @apply flex box-border whitespace-nowrap align-middle justify-center;
     @apply cursor-pointer transition-all;
-    @apply border-1;
-
-    &:focus:not(:focus-visible) {
-      @apply outline-none;
-    }
+    @apply form-control__border;
   }
 
   .circle {
@@ -41,29 +36,14 @@
     @apply m-0 top-0 right-0 bottom-0 left-0 absolute;
     @apply h-full w-full;
     @apply cursor-pointer opacity-0;
-
-    &:focus {
-      @apply ring-blue-500 border-blue-500;
-    }
   }
-
   .input:focus + .body > .circle-border {
-    /* box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1); */
-    @apply ring-2 ring-offset-2 ring-blue-500 border-blue-500;
+    @apply form-control__outline_style;
   }
-
-  /*
-  .input:checked > .border > .circle {
-    @apply opacity-0 scale-1 translate-x-1/2 translate-y-1/2;
-  }
-  &:focus:not(:focus-visible) {
-    @apply outline-none;
-  }
-  */
 
   &.checked {
     .circle-border {
-      @apply bg-neutral-10;
+      @apply bg-neutral-11 border-neutral-11;
       @apply hover:(bg-neutral-10);
     }
     .circle {

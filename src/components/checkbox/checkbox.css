@@ -7,19 +7,16 @@
     }
 
     &-icon {
-      @apply border border-gray-300 bg-white;
+      @apply bg-white;
       @apply bg-no-repeat bg-center bg-contain;
       @apply transition duration-200;
       @apply rounded;
       @apply mr-2;
       @apply flex-inline align-middle items-center;
+      @apply form-control__border form-control__outline;
 
       > span {
         @apply h-full w-full;
-      }
-
-      &:focus {
-        @apply ring-2 ring-offset-2 ring-blue-500 border-blue-500;
       }
     }
 

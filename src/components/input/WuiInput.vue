@@ -3,10 +3,10 @@
   <div
     class="wui-input-wrapper"
     :class="{
-      prefix,
-      suffix,
       status,
       disabled,
+      prefix: prefix || $slots.prefix,
+      suffix: suffix || $slots.suffix,
       'prefix-icon': $slots.prefixIcon,
       'suffix-icon': $slots.suffixIcon,
     }"

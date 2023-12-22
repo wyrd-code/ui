@@ -1,7 +1,10 @@
 <!-- eslint-disable vuejs-accessibility/label-has-for -->
 <template>
   <div class="form-field" :class="['error' ? !validation.isValid : '']">
-    <label v-if="label" :for="id" class="label">
+    <label
+      v-if="label"
+      v-bind="labelAttributes"
+    >
       <span class="text">
         {{ label }}
       </span>
@@ -34,17 +37,21 @@ export default {
 </script>
 
 <script lang="ts" setup>
-import { PropType } from 'vue'
+import { computed, PropType } from 'vue'
 
 import { useHtmlId } from '@/composables'
 
 import type { FormFieldValidation } from './form.types'
 import WuiFormMessage from './WuiFormMessage.vue'
 
-defineProps({
+const props = defineProps({
   label: {
     type: String,
     default: null,
+  },
+  usesHtmlControl: {
+    type: Boolean,
+    default: false,
   },
   id: {
     type: String,
@@ -58,5 +65,12 @@ defineProps({
     type: Object as PropType<FormFieldValidation>,
     default: () => ({}),
   },
+})
+
+const labelAttributes = computed(() => {
+  const forAttributeName = props.usesHtmlControl ? 'htmlFor' : 'for'
+  return {
+    [forAttributeName]: props.id
+  }
 })
 </script>

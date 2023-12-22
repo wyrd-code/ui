@@ -90,6 +90,12 @@ export const presetWyrd = (options: PresetWyrdOptions = {}): Preset<Theme> => {
       {
         // 'island-sm': 'p-4 w-full flex',
         // 'island-border': 'border',
+        'form-control': 'text-base font-sans transition-all duration-200',
+        'form-control__border': 'border border-solid border-neutral-8 hover:(border-blue-7) transition-all duration-200',
+        'form-control__surface': 'bg-neutral-1 text-neutral-11 focus:(bg-white)',
+        'form-control--disabled': 'bg-neutral-3 text-neutral-9 cursor-not-allowed',
+        'form-control__outline': `focus:(form-control__outline_style)`,
+        'form-control__outline_style': `outline outline-2 outline-offset-2 outline-blue-500/50`,
       }
     ],
     safelist: [

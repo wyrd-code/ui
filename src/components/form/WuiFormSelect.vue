@@ -3,6 +3,7 @@
     class="wui-form-select"
     :label="label"
     :id="id"
+    :uses-html-control="true"
     :help="help"
   >
     <WuiSelect

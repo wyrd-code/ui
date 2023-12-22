@@ -41,7 +41,7 @@ const schema: FormSchema = [
     props: {
       name: 'password',
       label: 'Password',
-      autocomplete: 'password',
+      autocomplete: 'current-password',
     },
     attributes: {
     },

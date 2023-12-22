@@ -1,7 +1,13 @@
 <!-- eslint-disable vuejs-accessibility/form-control-has-label -->
 <template>
   <WuiInput
-    :type="type"
+    type="password"
+    :id="id"
+    :name="name"
+    :autocomplete="autocomplete"
+    :disabled="disabled"
+    :value="modelValue"
+    :placeholder="placeholder"
     :modelValue="modelValue"
     @update:modelValue="input"
   >
@@ -9,6 +15,7 @@
       <WuiButton
         variant="secondary"
         size="sm"
+        shape="square"
         class="wui-input-suffix"
         @click="toggleShowPassword"
       >

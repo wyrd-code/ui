@@ -12,12 +12,11 @@
     <WuiFormPassword
       name="password"
       label="Password"
-      autocomplete="password"
+      autocomplete="current-password"
     />
     <WuiFormNumber
       name="number"
       label="Number"
-      autocomplete="number"
     />
     <WuiFormCheckbox
       name="checkbox"
