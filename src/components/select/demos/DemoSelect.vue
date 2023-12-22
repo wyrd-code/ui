@@ -19,7 +19,7 @@
       </div>
     </template>
     <template #icon>
-      <span class="h-4 ml-2 text-yellow-400 icon-ph-github-logo-fill" />
+      <span class="h-4 text-yellow-400 icon-ph-github-logo-fill" />
     </template>
   </WuiSelect>
 

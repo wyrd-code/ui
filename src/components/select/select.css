@@ -1,7 +1,7 @@
 .wui-select-selection {
   @apply form-control form-control__border form-control__surface;
   @apply form-control__outline;
-  @apply h-10 pl-3 pr-4 rounded;
+  @apply h-10 px-2 rounded;
   @apply flex text-left items-center justify-between;
   @apply cursor-pointer leading-none;
   @apply outline-none select-none;
@@ -37,11 +37,22 @@
 
 .wui-select-placeholder,
 .wui-select-selected {
+  @apply flex items-center pr-2;
   @apply text-base overflow-hidden whitespace-nowrap;
-  line-height: 1.2;
-  text-overflow: ellipsis;
-  word-wrap: normal;
+  @apply h-full leading-none text-ellipsis;
 }
+
+  .wui-select-reset {
+    @apply flex items-center h-full pl-2;
+  }
+
+.wui-select-controls {
+  @apply flex items-center pl-2;
+  @apply h-full border-l border-neutral-7;
+}
+
+  .wui-select-arrow {
+  }
 
 .wui-select-placeholder {
   @apply text-neutral-9;
@@ -49,10 +60,6 @@
   & + .wui-icon {
     margin-left: 10px;
   }
-}
-
-.wui-select-arrow {
-  @apply text-lg ml-2 transition-all duration-50;
 }
 
 .wui-select-dropdown {

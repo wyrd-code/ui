@@ -31,6 +31,12 @@
           >
             {{ selectedOption.label }}
           </slot>
+          <span
+            class="wui-select-reset"
+            @click.stop.prevent="clear"
+          >
+            <span class="icon-ph-x" />
+          </span>
         </span>
 
         <span v-else class="wui-select-placeholder">
@@ -39,12 +45,14 @@
           </slot>
         </span>
 
-        <slot name="icon" :props="props">
-          <span
-            class="wui-select-arrow icon-ph-caret-up-down"
-            :class="isOpen && 'wui-select-arrow--active'"
-          />
-        </slot>
+        <span class="wui-select-controls">
+          <slot name="icon" :props="props">
+            <span
+              class="wui-select-arrow icon-ph-caret-up-down"
+              :class="isOpen && 'wui-select-arrow--active'"
+            />
+          </slot>
+        </span>
       </div>
     </template>
 
@@ -175,6 +183,12 @@ const openDropdown = async () => {
   }
 }
 
+const clear = () => {
+  closeDropdown()
+  selectedOptionIndex = -1
+  emit('update:modelValue', null)
+}
+
 const selectOption = (optionIndex: number) => {
   const option = optionsSafe.value[optionIndex]
   if (option.disabled) {
@@ -218,11 +232,6 @@ const selectedOption = computed<TSelectOption>(() => {
   return result
 })
 
-// const onOptionChange = async () => {
-//   await nextTick()
-//   scrollToSelectedOption()
-// }
-
 const handleKeypress = async (event: KeyboardEvent) => {
   const { key } = event
   const focusedOption = optionsSafe.value[focusedOptionIndex.value]
@@ -249,10 +258,13 @@ const handleKeypress = async (event: KeyboardEvent) => {
       closeDropdown()
       break
     case MenuActions.Type: {
-      openDropdown()
+      if (!isOpen.value) {
+        return
+      }
 
       const searchString = getSearchString(key)
       const optionToFocusIndex = getIndexByLetter(optionsSafe.value, searchString, 'label')
+
       if (optionToFocusIndex !== -1) {
         focusedOptionIndex.value = optionToFocusIndex
         scrollToFocusedOption()
