@@ -8,6 +8,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+
 import type { TOption } from '../select'
 
 const exampleValue = ref(undefined)

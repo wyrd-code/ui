@@ -22,11 +22,11 @@
       <span class="h-4 text-yellow-400 icon-ph-github-logo-fill" />
     </template>
   </WuiSelect>
-
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+
 import type { TOption } from '../select'
 
 const exampleValue = ref(undefined)

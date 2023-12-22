@@ -14,10 +14,6 @@ import {
 } from '@unocss/preset-wind'
 // import { isObject, mapEntries } from 'radash'
 
-import type { RadixColors } from './radix'
-import // mergeObjects,
-// kebabCase,
-'../../utilities'
 import {
   genCSS,
   generateColors,
@@ -26,6 +22,10 @@ import {
   ColorAliases,
   generateColorAliases,
 } from './colors'
+import type { RadixColors } from './radix'
+import // mergeObjects,
+// kebabCase,
+'../../utilities'
 
 export type ShortcutList = (
   | StaticShortcutMap

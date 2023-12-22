@@ -29,8 +29,7 @@
 
     <WuiCodeExample title="Slots">
       <div class="flex items-center justify-center">
-        <div class="flex flex-col my-4 px-4 span-12 lg:span-3">
-        </div>
+        <div class="flex flex-col my-4 px-4 span-12 lg:span-3"></div>
       </div>
     </WuiCodeExample>
 
