@@ -108,5 +108,5 @@ Fixes headers having z-index stacking context above absolutely positioned items
 .vp-doc h4:not(:where(.vp-raw *)),
 .vp-doc h5:not(:where(.vp-raw *)),
 .vp-doc h6:not(:where(.vp-raw *)) {
-  position: static;
+  @apply z-1;
 }
