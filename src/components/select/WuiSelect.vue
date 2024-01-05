@@ -69,29 +69,34 @@
           :ref="(dropdown) => setSelectListRef(dropdown as any)"
           class="wui-select-list"
         >
-          <li
+          <template
             v-for="(option, optionIndex) in optionsSafe"
-            :id="`${id}-item-${optionIndex}`"
             :key="optionIndex"
-            :ref="(el) => setOptionRef(el as any, optionIndex)"
-            class="wui-select-option"
-            :data-selected="focusedOptionIndex === optionIndex"
-            :data-disabled="option.disabled"
-            @keydown.enter.stop.prevent="selectOption(optionIndex)"
-            @click="selectOption(optionIndex)"
           >
-            <div>
-              <slot name="option" :props="props" :option="option">
-                {{ getOptionLabel(option) }}
-              </slot>
-            </div>
-            <transition name="fade-right">
-              <span
-                v-if="selectedOption['value'] === getOptionValue(option)"
-                class="wui-select-option-check icon-ph-check-bold"
-              />
-            </transition>
-          </li>
+            <li v-if="isSeparator(option)" class="wui-select-separator" />
+            <li
+              v-else
+              :id="`${id}-item-${optionIndex}`"
+              :ref="(el) => setOptionRef(el as any, optionIndex)"
+              class="wui-select-option"
+              :data-selected="focusedOptionIndex === optionIndex"
+              :data-disabled="option.disabled"
+              @keydown.enter.stop.prevent="selectOption(optionIndex)"
+              @click="selectOption(optionIndex)"
+            >
+              <div>
+                <slot name="option" :props="props" :option="option">
+                  {{ option.label }}
+                </slot>
+              </div>
+              <transition name="fade-right">
+                <span
+                  v-if="selectedOption['value'] === getOptionValue(option)"
+                  class="wui-select-option-check icon-ph-check-bold"
+                />
+              </transition>
+            </li>
+          </template>
         </ul>
       </div>
     </template>
@@ -102,7 +107,6 @@
 import { ref, onBeforeUpdate, nextTick, computed, VNodeRef } from 'vue'
 
 import {
-  getArrayIndexByDirection,
   getActionFromKey,
   MenuActions,
   scrollParentToChild,
@@ -112,8 +116,11 @@ import {
 import {
   TOption,
   TSelectOption,
+  TSelectSeparator,
   WUI_SELECT_PROPS,
   getIndexByLetter,
+  isSeparator,
+  isValuedOption,
 } from './select'
 
 const props = defineProps(WUI_SELECT_PROPS)
@@ -128,7 +135,7 @@ let selectedOptionIndex: number = -1
 const isOpen = ref(false)
 
 // Internally, always use the safe version (where each option is an obj with value and label)
-const optionsSafe = computed<TSelectOption[]>(() =>
+const optionsSafe = computed<(TSelectOption | TSelectSeparator)[]>(() =>
   props.options.map((o) => {
     if (typeof o === 'object') {
       return o
@@ -138,6 +145,10 @@ const optionsSafe = computed<TSelectOption[]>(() =>
       label: o,
     }
   })
+)
+
+const optionsSafeValued = computed<TSelectOption[]>(() =>
+  optionsSafe.value.filter(isValuedOption)
 )
 
 onBeforeUpdate(() => (optionsRefs.value = []))
@@ -157,11 +168,8 @@ const scrollToOptionByIndex = (index: number) => {
   scrollParentToChild(selectListRef.value, optionToScrollTo)
 }
 
-const getOptionLabel = (option: TOption) =>
-  typeof option === 'object' ? option.label : option
-
 const getOptionValue = (option: TOption) =>
-  typeof option === 'object' ? option.value : option
+  (isValuedOption(option) && option.value) || undefined
 
 const setOptionRef = (el: HTMLElement, i: number) => {
   if (el) {
@@ -200,7 +208,7 @@ const clear = () => {
 
 const selectOption = (optionIndex: number) => {
   const option = optionsSafe.value[optionIndex]
-  if (option.disabled) {
+  if (!isValuedOption(option) || option.disabled) {
     return
   }
   closeDropdown()
@@ -221,16 +229,15 @@ const selectedOption = computed<TSelectOption>(() => {
     return result
   }
 
-  const option = optionsSafe.value.find((o) =>
-    typeof o === 'object'
-      ? o.value === props.modelValue
-      : o === props.modelValue
+  const option = optionsSafeValued.value.find(
+    (o) => o.value === props.modelValue
   )
 
   if (option) {
     return option
   }
 
+  // Note: should we be handling this or throwing?
   if (typeof props.modelValue === 'object') {
     return props.modelValue as TSelectOption
   }
@@ -243,6 +250,9 @@ const selectedOption = computed<TSelectOption>(() => {
 
 // eslint-disable-next-line complexity
 const handleResetKeypress = async (event: KeyboardEvent) => {
+  const action = getActionForKeypress(event)
+  if (!action) return
+
   const { key } = event
   if ([Keys.Enter, Keys.Space].includes(key as Keys)) {
     clear()
@@ -281,8 +291,11 @@ const handleOpenViaKey = async (event: KeyboardEvent) => {
   if (props.modelValue) scrollToSelectedOption()
 }
 
+const getFocusedOption = () =>
+  optionsSafe.value[focusedOptionIndex.value] as TSelectOption | undefined
+
 const getActionForKeypress = (event: KeyboardEvent) => {
-  const focusedOption = optionsSafe.value[focusedOptionIndex.value]
+  const focusedOption = getFocusedOption()
   const isFocusedOptionDisabled = focusedOption?.disabled || false
 
   return getActionFromKey(event, isOpen.value, isFocusedOptionDisabled)
@@ -329,9 +342,66 @@ const handleDirectionKey = async (
     max,
     curIndex: focusedOptionIndex.value,
   })
+
   focusedOptionIndex.value = optionIndexToFocus
   scrollToFocusedOption()
 }
+
+type GetArrayIndexByDirectionProps = {
+  menuAction: MenuActions
+  max: number
+  curIndex: number
+}
+
+const getArrayIndexByDirection = ({
+  menuAction,
+  max,
+  curIndex,
+}: GetArrayIndexByDirectionProps): number => {
+  switch (menuAction) {
+    case MenuActions.First:
+      return 0
+    case MenuActions.Last:
+      return max
+    case MenuActions.Previous:
+      return getPreviousFocusableIndex(curIndex, max)
+    case MenuActions.Next:
+      return getNextFocusableIndex(curIndex, max)
+    default:
+      return curIndex
+  }
+}
+
+const getPreviousFocusableIndex = (curIndex: number, max: number) => {
+  const previousIndex = Math.max(0, curIndex - 1)
+
+  if (isFocusableIndex(previousIndex)) {
+    return previousIndex
+  }
+
+  if (previousIndex === 0) {
+    return curIndex
+  }
+
+  return getPreviousFocusableIndex(previousIndex, max)
+}
+
+const getNextFocusableIndex = (curIndex: number, max: number) => {
+  const nextIndex = Math.min(max, curIndex + 1)
+
+  if (isFocusableIndex(nextIndex)) {
+    return nextIndex
+  }
+
+  if (nextIndex === max) {
+    return curIndex
+  }
+
+  return getNextFocusableIndex(nextIndex, max)
+}
+
+const isFocusableIndex = (index: number) =>
+  isValuedOption(optionsSafe.value[index])
 
 let searchTimeout: ReturnType<typeof setTimeout> | null = null
 let searchString = ''

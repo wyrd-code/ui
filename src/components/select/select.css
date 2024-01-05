@@ -85,6 +85,10 @@
   }
 }
 
+.wui-select-separator {
+  @apply border-b border-neutral-5;
+}
+
 .wui-select-option {
   @apply w-full h-full;
   @apply box-border whitespace-nowrap whitespace-normal;

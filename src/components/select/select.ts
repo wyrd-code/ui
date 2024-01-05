@@ -2,7 +2,11 @@ import type { PropType } from 'vue'
 
 import { Placement } from '@/domain'
 
-export type TOption = string | TSelectOption
+export type TOption = string | TSelectSeparator | TSelectOption
+
+export type TSelectSeparator = {
+  role: 'separator'
+}
 
 export type TSelectOption = {
   value: string | number
@@ -46,7 +50,7 @@ export const WUI_SELECT_PROPS = {
 }
 
 export function getIndexByLetter(
-  options: TSelectOption[],
+  options: (TSelectOption | TSelectSeparator)[],
   filter: string,
   labelField: string
   // startIndex = 0
@@ -55,7 +59,7 @@ export function getIndexByLetter(
   //   ...options.slice(startIndex),
   //   ...options.slice(0, startIndex),
   // ]
-  const firstMatch = filterOptions(options, filter, labelField)[0]
+  const firstMatch = searchOptions(options, filter, labelField)[0]
   const allSameLetter = (array: string[]) =>
     array.every((letter) => letter === array[0])
 
@@ -66,7 +70,7 @@ export function getIndexByLetter(
 
   // if the same letter is being repeated, cycle through first-letter matches
   else if (allSameLetter(filter.split(''))) {
-    const matches = filterOptions(options, filter[0], labelField)
+    const matches = searchOptions(options, filter[0], labelField)
     return options.indexOf(matches[0])
   }
 
@@ -78,14 +82,18 @@ export function getIndexByLetter(
 
 // filter an array of options against an input string
 // returns an array of options that begin with the filter string, case-independent
-export function filterOptions(
-  options: TSelectOption[] = [],
+export function searchOptions(
+  options: (TSelectOption | TSelectSeparator)[] = [],
   filter: string,
   labelField: string
   // exclude: TSelectOption[] = [],
   // optionLabelForSearching: null | ((option: TSelectOption) => string) = null
 ): TSelectOption[] {
   return options.filter((option) => {
+    if (!isValuedOption(option)) {
+      return
+    }
+
     // NOTE: Changed from original implementation on sonder-ui:
     // we want to match any instance of the current user string,
     // rather than *only* when the user's string is at the beginning of an option
@@ -96,5 +104,11 @@ export function filterOptions(
     const matches = label?.toLowerCase().includes(filter.toLowerCase())
 
     return matches // && exclude.indexOf(option) < 0
-  })
+  }) as TSelectOption[]
 }
+
+export const isSeparator = (option: TOption): option is TSelectSeparator =>
+  typeof option === 'object' && 'role' in option && option.role === 'separator'
+
+export const isValuedOption = (option: TOption): option is TSelectOption =>
+  typeof option === 'object' && 'value' in option

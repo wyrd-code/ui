@@ -3,7 +3,6 @@
     v-model="exampleValue"
     :options="exampleOptions"
     placeholder="Please select"
-    disabled
   />
 </template>
 
@@ -18,10 +17,12 @@ const exampleOptions: TOption[] = [
   {
     label: 'New York',
     value: 'newyork',
+    disabled: true,
   },
   {
     label: 'Paris',
     value: 'paris',
+    disabled: true,
   },
   {
     label: 'Moscow',

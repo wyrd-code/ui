@@ -30,31 +30,6 @@ export const enum Keys {
   Up = 'ArrowUp',
 }
 
-type GetArrayIndexByDirectionProps = {
-  menuAction: MenuActions
-  max: number
-  curIndex: number
-}
-
-export const getArrayIndexByDirection = ({
-  menuAction,
-  max,
-  curIndex,
-}: GetArrayIndexByDirectionProps): number => {
-  switch (menuAction) {
-    case MenuActions.First:
-      return 0
-    case MenuActions.Last:
-      return max
-    case MenuActions.Previous:
-      return Math.max(0, curIndex - 1)
-    case MenuActions.Next:
-      return Math.min(max, curIndex + 1)
-    default:
-      return curIndex
-  }
-}
-
 // Implementation kindly sourced from
 // https://github.dev/politico/vue-accessible-selects/blob/main/src/SelectSingle.vue
 
