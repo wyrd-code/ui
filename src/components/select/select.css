@@ -43,7 +43,11 @@
 }
 
   .wui-select-reset {
-    @apply flex items-center h-full pl-2;
+    @apply ml-2 -mr-1;
+
+    &:hover {
+      @apply ;
+    }
   }
 
 .wui-select-controls {

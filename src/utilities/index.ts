@@ -1,5 +1,6 @@
 export * from './object'
 export * from './html'
+export * from './keyboard-handling'
 export * from './string'
 export * from './time'
 export * from './timeable'

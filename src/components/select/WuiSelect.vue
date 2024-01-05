@@ -8,9 +8,10 @@
   >
     <template #button>
       <div
+        :id="id"
+        ref="trigger"
         class="wui-select-selection"
         role="combobox"
-        :id="id"
         :tabindex="disabled ? -1 : 0"
         :data-active="isOpen"
         :data-disabled="disabled"
@@ -31,12 +32,18 @@
           >
             {{ selectedOption.label }}
           </slot>
-          <span
+          <WuiButton
+            :tabindex="disabled ? -1 : 0"
+            icon
+            shape="square"
+            size="sm"
+            ghost
             class="wui-select-reset"
+            v-on="disabled ? {} : { keydown: handleResetKeypress }"
             @click.stop.prevent="clear"
           >
             <span class="icon-ph-x" />
-          </span>
+          </WuiButton>
         </span>
 
         <span v-else class="wui-select-placeholder">
@@ -57,21 +64,17 @@
     </template>
 
     <template #content>
-      <div
-        v-if="isOpen"
-        class="wui-select-dropdown"
-        :data-divided="divided"
-      >
+      <div v-if="isOpen" class="wui-select-dropdown" :data-divided="divided">
         <ul
           :ref="(dropdown) => setSelectListRef(dropdown as any)"
           class="wui-select-list"
         >
           <li
             v-for="(option, optionIndex) in optionsSafe"
-            class="wui-select-option"
             :id="`${id}-item-${optionIndex}`"
             :key="optionIndex"
             :ref="(el) => setOptionRef(el as any, optionIndex)"
+            class="wui-select-option"
             :data-selected="focusedOptionIndex === optionIndex"
             :data-disabled="option.disabled"
             @keydown.enter.stop.prevent="selectOption(optionIndex)"
@@ -96,18 +99,22 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onBeforeUpdate, nextTick, computed } from 'vue'
+import { ref, onBeforeUpdate, nextTick, computed, VNodeRef } from 'vue'
+
+import {
+  getArrayIndexByDirection,
+  getActionFromKey,
+  MenuActions,
+  scrollParentToChild,
+  Keys,
+} from '@/utilities'
 
 import {
   TOption,
   TSelectOption,
-  getArrayIndexByDirection,
   WUI_SELECT_PROPS,
-  getActionFromKey,
-  MenuActions,
   getIndexByLetter,
 } from './select'
-import { scrollParentToChild } from '@/utilities'
 
 const props = defineProps(WUI_SELECT_PROPS)
 
@@ -115,6 +122,7 @@ const emit = defineEmits(['update:modelValue'])
 
 const focusedOptionIndex = ref(-1)
 const optionsRefs = ref<HTMLElement[]>([])
+const trigger = ref<VNodeRef | null>(null)
 const selectListRef = ref<HTMLElement | undefined>(undefined)
 let selectedOptionIndex: number = -1
 const isOpen = ref(false)
@@ -136,7 +144,8 @@ onBeforeUpdate(() => (optionsRefs.value = []))
 
 const scrollToSelectedOption = () => scrollToOptionByIndex(selectedOptionIndex)
 
-const scrollToFocusedOption = () => scrollToOptionByIndex(focusedOptionIndex.value)
+const scrollToFocusedOption = () =>
+  scrollToOptionByIndex(focusedOptionIndex.value)
 
 const scrollToOptionByIndex = (index: number) => {
   if (selectListRef.value === undefined) {
@@ -232,55 +241,86 @@ const selectedOption = computed<TSelectOption>(() => {
   return result
 })
 
-const handleKeypress = async (event: KeyboardEvent) => {
+// eslint-disable-next-line complexity
+const handleResetKeypress = async (event: KeyboardEvent) => {
   const { key } = event
-  const focusedOption = optionsSafe.value[focusedOptionIndex.value]
-  const isFocusedOptionDisabled = focusedOption?.disabled || false
-  const action = getActionFromKey(event, isOpen.value, isFocusedOptionDisabled)
+  if ([Keys.Enter, Keys.Space].includes(key as Keys)) {
+    clear()
+  }
+  event.stopPropagation()
+  trigger.value?.focus()
+}
+
+// eslint-disable-next-line complexity
+const handleKeypress = async (event: KeyboardEvent) => {
+  const action = getActionForKeypress(event)
+  if (!action) return
 
   switch (action) {
     case MenuActions.Next:
     case MenuActions.Last:
     case MenuActions.First:
     case MenuActions.Previous:
-      event.preventDefault()
-      return handleDirectionKey(action)
+      return handleDirectionKey(event, action)
     case MenuActions.CloseSelect:
     case MenuActions.Space:
-      event.preventDefault()
-      if (!isOpen.value || focusedOptionIndex.value === -1) {
-        openDropdown()
-        return
-      }
-      selectOption(focusedOptionIndex.value)
-      break
+      return handleCloseWithSelecting()
     case MenuActions.Close:
-      closeDropdown()
-      break
-    case MenuActions.Type: {
-      if (!isOpen.value) {
-        return
-      }
-
-      const searchString = getSearchString(key)
-      const optionToFocusIndex = getIndexByLetter(optionsSafe.value, searchString, 'label')
-
-      if (optionToFocusIndex !== -1) {
-        focusedOptionIndex.value = optionToFocusIndex
-        scrollToFocusedOption()
-      }
-      break
-    }
+      return closeDropdown()
+    case MenuActions.Type:
+      return handleTypingSearch(event)
     case MenuActions.Open:
-      event.preventDefault()
-      openDropdown()
-      await nextTick()
-      if (props.modelValue) scrollToSelectedOption()
-      break
+      return handleOpenViaKey(event)
   }
 }
 
-const handleDirectionKey = async (menuAction: MenuActions) => {
+const handleOpenViaKey = async (event: KeyboardEvent) => {
+  event.preventDefault()
+  openDropdown()
+  await nextTick()
+  if (props.modelValue) scrollToSelectedOption()
+}
+
+const getActionForKeypress = (event: KeyboardEvent) => {
+  const focusedOption = optionsSafe.value[focusedOptionIndex.value]
+  const isFocusedOptionDisabled = focusedOption?.disabled || false
+
+  return getActionFromKey(event, isOpen.value, isFocusedOptionDisabled)
+}
+
+const handleCloseWithSelecting = () => {
+  if (!isOpen.value || focusedOptionIndex.value === -1) {
+    openDropdown()
+    return
+  }
+  selectOption(focusedOptionIndex.value)
+}
+
+const handleTypingSearch = (event: KeyboardEvent) => {
+  if (!isOpen.value) {
+    return
+  }
+
+  const { key } = event
+  const searchString = getSearchString(key)
+  const optionToFocusIndex = getIndexByLetter(
+    optionsSafe.value,
+    searchString,
+    'label'
+  )
+
+  if (optionToFocusIndex !== -1) {
+    focusedOptionIndex.value = optionToFocusIndex
+    scrollToFocusedOption()
+  }
+}
+
+const handleDirectionKey = async (
+  event: KeyboardEvent,
+  menuAction: MenuActions
+) => {
+  event.preventDefault()
+
   const max = optionsSafe.value.length - 1
   if (!isOpen.value || !max) return
 
@@ -314,9 +354,10 @@ const getSearchString = (char: string) => {
   return searchString
 }
 
-const activeDescendant = computed(() => isOpen && focusedOptionIndex.value !== -1
-  ? `${props.id}-item-${focusedOptionIndex.value}`
-  : ''
+const activeDescendant = computed(() =>
+  isOpen.value && focusedOptionIndex.value !== -1
+    ? `${props.id}-item-${focusedOptionIndex.value}`
+    : ''
 )
 </script>
 
