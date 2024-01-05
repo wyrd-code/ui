@@ -21,3 +21,5 @@ lang: en-US
 10. Solid Drawing
 11. Straight ahead action and pose to pose
 12. Appeal
+
+[Creating Usability with Motion: The UX in Motion Manifesto](https://medium.com/ux-in-motion/creating-usability-with-motion-the-ux-in-motion-manifesto-a87a4584ddc)
