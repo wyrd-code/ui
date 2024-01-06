@@ -9,9 +9,9 @@ module.exports = {
     'plugin:node/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-recommended',
+    'plugin:prettier-vue/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
-    'prettier',
     'plugin:vuejs-accessibility/recommended',
   ],
   parser: 'vue-eslint-parser',
@@ -20,7 +20,7 @@ module.exports = {
     sourceType: 'module',
     ecmaVersion: 2020,
   },
-  plugins: ['import', '@typescript-eslint', 'prettier', 'vuejs-accessibility'],
+  plugins: ['import', '@typescript-eslint', 'vuejs-accessibility'],
   settings: {
     'import/resolver': {
       'eslint-import-resolver-custom-alias': {
@@ -32,6 +32,11 @@ module.exports = {
         // packages: ['packages/*'],
       },
     },
+    'prettier-vue': {
+      SFCBlocks: {
+        template: false,
+      },
+    },
   },
   rules: {
     complexity: ['error', 7],
@@ -41,7 +46,7 @@ module.exports = {
     'max-params': ['error', 3],
     'no-nested-ternary': 'error',
     '@typescript-eslint/no-shadow': 'warn',
-    'prettier/prettier': 'error',
+    // 'prettier/prettier': 'error',
     eqeqeq: ['warn', 'always', { null: 'never' }],
     'no-debugger': ['error'],
     'no-empty': ['warn', { allowEmptyCatch: true }],
@@ -97,11 +102,40 @@ module.exports = {
         ],
         'newlines-between': 'always',
         alphabetize: {
-          /* sort in ascending order. Options: ["ignore", "asc", "desc"] */
+          /* sort in ascending order. Options: ['ignore', 'asc', 'desc'] */
           order: 'asc',
           /* ignore case. Options: [true, false] */
           caseInsensitive: true,
         },
+      },
+    ],
+    'vue/max-attributes-per-line': [
+      'error',
+      {
+        singleline: {
+          max: 1,
+        },
+        multiline: {
+          max: 1,
+        },
+      },
+    ],
+    'vue/html-indent': [
+      'error',
+      2,
+      {
+        attribute: 1,
+        baseIndent: 1,
+        closeBracket: 0,
+        alignAttributesVertically: true,
+        ignores: [],
+      },
+    ],
+    'vue/html-closing-bracket-newline': [
+      'error',
+      {
+        singleline: 'never',
+        multiline: 'always',
       },
     ],
   },
@@ -118,5 +152,11 @@ module.exports = {
         '@typescript-eslint/triple-slash-reference': 'off',
       },
     },
+    // {
+    //   files: ['*.vue'],
+    //   rules: {
+    //     'prettier/prettier': 'off',
+    //   },
+    // },
   ],
 }
