@@ -2,14 +2,11 @@
   <WuiDropdown
     :items="languages"
     class="bg-neutral-1 shadow-lg"
-    rounded
-    bordered
   >
     <template #trigger>
       <WuiButton
-        size="sm"
         variant="secondary"
-        ghost
+        shape="round"
       >
         <span>Click me </span>
         <span class="icon-ph-caret-down ml-2 text-lg" />

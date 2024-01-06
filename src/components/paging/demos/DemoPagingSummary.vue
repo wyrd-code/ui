@@ -3,7 +3,6 @@
     v-model="mode"
     condensed
     :options="opts"
-    round
   />
 
   <WuiPaging
@@ -14,7 +13,6 @@
       <WuiPagingSummary :mode="mode" />
       <WuiPagingLinks
         condensed
-        rounded
       />
     </div>
   </WuiPaging>

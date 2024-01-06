@@ -17,7 +17,8 @@
     v-model="radioValue"
     variant="secondary"
     :options="iconOptions"
-    round
+    condensed
+    shape="round"
   />
 </template>
 

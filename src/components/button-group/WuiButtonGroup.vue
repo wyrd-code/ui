@@ -15,7 +15,7 @@
 
     <WuiButton
       v-for="{ value, label, icon, ...attrs } in expandOptions(options)"
-      v-bind="{ variant, size, round, ...attrs }"
+      v-bind="{ variant, size, shape, ...attrs }"
       :key="value"
       :icon="!!icon"
       :active="modelValue === value"
@@ -40,10 +40,12 @@ import {
   WUI_BUTTON_SIZES,
   WUI_BUTTON_SIZE_DEFAULT,
   WUI_BUTTON_VARIANTS,
+  WUI_BUTTON_SHAPE_DEFAULT,
   WUI_BUTTON_VARIANT_DEFAULT,
+  WUI_BUTTON_SHAPES,
 } from '@/components/button/button'
 
-import type { TSelectOption } from '../select/types'
+import type { TSelectOption } from '../select'
 
 defineProps({
   vertical: {
@@ -76,7 +78,11 @@ defineProps({
     default: WUI_BUTTON_SIZE_DEFAULT,
     validator: (value: string) => WUI_BUTTON_SIZES.includes(value),
   },
-  round: { type: Boolean },
+  shape: {
+    type: String,
+    default: WUI_BUTTON_SHAPE_DEFAULT,
+    validator: (value: string) => WUI_BUTTON_SHAPES.includes(value),
+  },
 })
 
 const emit = defineEmits(['update:modelValue'])
