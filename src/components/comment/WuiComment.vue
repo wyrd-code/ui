@@ -9,7 +9,10 @@
       <slot />
       <pre>{{ comment }}</pre>
     </div>
-    <div v-if="$slots.footer" class="wui-comment-footer">
+    <div
+      v-if="$slots.footer"
+      class="wui-comment-footer"
+    >
       <slot name="footer" />
     </div>
   </div>

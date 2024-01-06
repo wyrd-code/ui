@@ -1,5 +1,8 @@
 <template>
-  <WuiDialog :model-value="open" @update:modelValue="() => $emit('close')">
+  <WuiDialog
+    :model-value="open"
+    @update:model-value="() => $emit('close')"
+  >
     <template #header>
       <h1>
         {{ title }}
@@ -14,7 +17,10 @@
         class="text-lg wui-btn"
         :class="`wui-btn-${submitType}`"
       >
-        <WuiSpinner v-if="loading" class="h-6 animate-spin w-6" />
+        <WuiSpinner
+          v-if="loading"
+          class="h-6 animate-spin w-6"
+        />
       </button>
       <button
         v-else
@@ -39,8 +45,8 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 
-import WuiSpinner from '../spinner/WuiSpinner.vue'
 import WuiDialog from './WuiDialog.vue'
+import WuiSpinner from '../spinner/WuiSpinner.vue'
 
 const props = defineProps({
   open: {

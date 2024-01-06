@@ -6,7 +6,11 @@
     bordered
   >
     <template #button>
-      <WuiButton size="sm" variant="secondary" ghost>
+      <WuiButton
+        size="sm"
+        variant="secondary"
+        ghost
+      >
         <span>Click me </span>
         <span class="icon-ph-caret-down ml-2 text-lg" />
       </WuiButton>

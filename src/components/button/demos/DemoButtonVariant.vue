@@ -4,8 +4,7 @@
       v-for="variant in WUI_BUTTON_VARIANTS"
       :key="variant"
       :variant="variant"
-      >{{ variant }}</WuiButton
-    >
+    >{{ variant }}</WuiButton>
   </div>
 </template>
 

@@ -1,6 +1,12 @@
 <template>
-  <div class="wui-checkbox" :class="classNames">
-    <label :for="id" class="wui-checkbox-label">
+  <div
+    class="wui-checkbox"
+    :class="classNames"
+  >
+    <label
+      :for="id"
+      class="wui-checkbox-label"
+    >
       <input
         :id="id"
         type="checkbox"
@@ -21,9 +27,18 @@
         @keydown.space.prevent="toggle"
       >
         <slot name="icon">
-          <span v-if="modelValue === 'mixed'" class="icon-ph-minus-bold" />
-          <span v-else-if="modelValue" class="icon-ph-check-bold" />
-          <span v-else class="" />
+          <span
+            v-if="modelValue === 'mixed'"
+            class="icon-ph-minus-bold"
+          />
+          <span
+            v-else-if="modelValue"
+            class="icon-ph-check-bold"
+          />
+          <span
+            v-else
+            class=""
+          />
         </slot>
       </span>
       <span
@@ -35,7 +50,10 @@
         <slot name="label">{{ label }}</slot>
       </span>
     </label>
-    <div v-if="$slots.help || help" class="wui-checkbox-help">
+    <div
+      v-if="$slots.help || help"
+      class="wui-checkbox-help"
+    >
       <slot name="help">{{ help }}</slot>
     </div>
   </div>

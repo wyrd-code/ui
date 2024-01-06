@@ -5,10 +5,17 @@
       :key="shape"
       class="inline-flex space-x-2 justify-center"
     >
-      <WuiTag variant="primary" :shape="shape">
+      <WuiTag
+        variant="primary"
+        :shape="shape"
+      >
         {{ shape }}
       </WuiTag>
-      <WuiTag variant="primary" filled :shape="shape">
+      <WuiTag
+        variant="primary"
+        filled
+        :shape="shape"
+      >
         {{ shape }}
       </WuiTag>
     </div>

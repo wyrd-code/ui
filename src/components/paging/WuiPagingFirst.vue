@@ -1,5 +1,9 @@
 <template>
-  <WuiPagingLink :label="label" :value="1" :disabled="state.page <= 1">
+  <WuiPagingLink
+    :label="label"
+    :value="1"
+    :disabled="state.page <= 1"
+  >
     <slot />
   </WuiPagingLink>
 </template>

@@ -1,7 +1,10 @@
 <template>
   <header class="w-full flex items-center justify-between">
     <div class="flex">
-      <WuiLink class="flex items-center font-bold space-x-2" :link="brandLink">
+      <WuiLink
+        class="flex items-center font-bold space-x-2"
+        :link="brandLink"
+      >
         <slot name="brandLogo">
           <img
             v-if="brandLogo"
@@ -14,7 +17,10 @@
       </WuiLink>
     </div>
 
-    <WuiNav :items="navItems" horizontal />
+    <WuiNav
+      :items="navItems"
+      horizontal
+    />
 
     <div class="header-actions">
       <slot name="actions" />

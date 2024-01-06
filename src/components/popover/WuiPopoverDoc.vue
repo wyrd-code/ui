@@ -2,9 +2,15 @@
   <div>
     <h1>Popover</h1>
 
-    <WuiCodeExample :code="exampleCode" title="Example"> </WuiCodeExample>
+    <WuiCodeExample
+      :code="exampleCode"
+      title="Example"
+    > </WuiCodeExample>
 
-    <WuiCodeExample :code="placementCode" title="Placement">
+    <WuiCodeExample
+      :code="placementCode"
+      title="Placement"
+    >
       <template #description>
         <p class="px-6">
           Click to see the popover. There are 12 placement available for
@@ -13,7 +19,10 @@
       </template>
 
       <div class="flex items-center justify-center">
-        <WuiButton-group vertical class="w-128">
+        <WuiButton-group
+          vertical
+          class="w-128"
+        >
           <WuiPopover placement="top">
             <WuiButton wide>Top</WuiButton>
 
@@ -38,7 +47,10 @@
       </div>
     </WuiCodeExample>
 
-    <WuiCodeExample :code="imageCode" title="Image">
+    <WuiCodeExample
+      :code="imageCode"
+      title="Image"
+    >
       <template #description>
         <p class="">You can disable paddings inside popover and show image</p>
       </template>

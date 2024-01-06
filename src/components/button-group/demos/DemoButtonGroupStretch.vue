@@ -3,11 +3,17 @@
     <WuiButton>Foo</WuiButton>
     <WuiButton>Bar</WuiButton>
   </WuiButtonGroup>
-  <WuiButtonGroup stretch="wide" condensed>
+  <WuiButtonGroup
+    stretch="wide"
+    condensed
+  >
     <WuiButton>Foo</WuiButton>
     <WuiButton>Bar</WuiButton>
   </WuiButtonGroup>
-  <WuiButtonGroup stretch="full" condensed>
+  <WuiButtonGroup
+    stretch="full"
+    condensed
+  >
     <WuiButton>Foo</WuiButton>
     <WuiButton>Bar</WuiButton>
   </WuiButtonGroup>

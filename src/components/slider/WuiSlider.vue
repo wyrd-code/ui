@@ -13,19 +13,28 @@
       @keyup.enter="onSliderClick"
       @touchend="onSliderClick"
     >
-      <div class="wui-slider-bar" :style="{ width: `${valuePosition}%` }" />
+      <div
+        class="wui-slider-bar"
+        :style="{ width: `${valuePosition}%` }"
+      />
       <div
         class="wui-slider-controller-wrapper"
         :style="{ left: `${valuePosition}%` }"
         @mousedown="onMouseOrTouchDown"
         @touchstart.prevent="onMouseOrTouchDown"
       >
-        <WuiTooltip :content="String(modelValue)" placement="top">
+        <WuiTooltip
+          :content="String(modelValue)"
+          placement="top"
+        >
           <div class="wui-slider-controller" />
         </WuiTooltip>
       </div>
     </div>
-    <div v-if="showSteps && steps.length" class="wui-slider-wrap-points">
+    <div
+      v-if="showSteps && steps.length"
+      class="wui-slider-wrap-points"
+    >
       <div
         v-for="(point, index) in steps"
         :key="point.left"
@@ -34,7 +43,10 @@
         :class="{ 'wui-slider-point--active': point.active }"
       />
     </div>
-    <div v-if="numbers" class="wui-slider-numbers">
+    <div
+      v-if="numbers"
+      class="wui-slider-numbers"
+    >
       <div>{{ min }}</div>
       <div style="left: 100%">
         {{ max }}

@@ -26,9 +26,15 @@
           Add a leaf
         </WuiButton>
 
-        <WuiCheckbox v-model="isHorizontal" label="Horizontal" />
+        <WuiCheckbox
+          v-model="isHorizontal"
+          label="Horizontal"
+        />
 
-        <WuiCheckbox v-model="isCollapsable" label="Allow collapse" />
+        <WuiCheckbox
+          v-model="isCollapsable"
+          label="Allow collapse"
+        />
       </template>
     </WuiDemo>
 
@@ -64,12 +70,14 @@
               style="color: red; cursor: pointer"
               @click="() => deleteNode(data, treeData)"
               @keyup.enter="() => deleteNode(data, treeData)"
-              >x</a
-            >
+            >x</a>
           </span>
           <br />
           <span v-if="data.children && data.children.length">
-            <a href="#" @click="context.toggleExpand">toggle expand</a>
+            <a
+              href="#"
+              @click="context.toggleExpand"
+            >toggle expand</a>
           </span>
         </template>
       </WuiHierarchy>

@@ -1,5 +1,8 @@
 <template>
-  <WuiButton variant="primary" @click="toggleDialog">Sign up</WuiButton>
+  <WuiButton
+    variant="primary"
+    @click="toggleDialog"
+  >Sign up</WuiButton>
 
   <WuiDialog v-model="isDialogVisible">
     <template #header>
@@ -28,10 +31,16 @@
 
       <div class="flex flex-row">
         <div class="flex-1">
-          <WuiInput label-top="First Name" placeholder="John" />
+          <WuiInput
+            label-top="First Name"
+            placeholder="John"
+          />
         </div>
         <div class="flex-1">
-          <WuiInput label-top="Second Name" placeholder="Doe" />
+          <WuiInput
+            label-top="Second Name"
+            placeholder="Doe"
+          />
         </div>
       </div>
 

@@ -1,6 +1,10 @@
 <template>
   <div class="max-w-128">
-    <WuiCard divided horizontal inverse>
+    <WuiCard
+      divided
+      horizontal
+      inverse
+    >
       <template #top>
         <div class="flex space-x-4 items-center justify-between">
           <div class="flex space-x-4 items-center text-sm">
@@ -13,7 +17,10 @@
               </span>
             </div>
           </div>
-          <WuiButton icon shape="round">
+          <WuiButton
+            icon
+            shape="round"
+          >
             <span class="icon-ph-dots-three-vertical" />
           </WuiButton>
         </div>

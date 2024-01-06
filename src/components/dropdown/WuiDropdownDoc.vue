@@ -25,7 +25,10 @@
       </WuiDropdown>
 
       <template #props>
-        <WuiInput v-model="buttonText" label-top="Label" />
+        <WuiInput
+          v-model="buttonText"
+          label-top="Label"
+        />
       </template>
     </WuiDemo>
   </div>

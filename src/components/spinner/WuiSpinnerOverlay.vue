@@ -1,7 +1,14 @@
 <template>
-  <div class="wui-spinner-wrapper" :class="rounding">
+  <div
+    class="wui-spinner-wrapper"
+    :class="rounding"
+  >
     <div class="wui-spinner-overlay" />
-    <WuiSpinner v-bind="$attrs" :icon-class="iconClass" class="wui-spinner" />
+    <WuiSpinner
+      v-bind="$attrs"
+      :icon-class="iconClass"
+      class="wui-spinner"
+    />
   </div>
 </template>
 

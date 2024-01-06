@@ -5,7 +5,11 @@
     This is here just to ensure page is scrollable
   </div>
   <WuiScrollUp class="fixed right-4 bottom-4 z-999">
-    <WuiButton icon size="lg" shape="round">
+    <WuiButton
+      icon
+      size="lg"
+      shape="round"
+    >
       <span class="icon-ph-caret-up" />
     </WuiButton>
   </WuiScrollUp>

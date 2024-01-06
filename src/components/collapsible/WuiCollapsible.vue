@@ -1,12 +1,28 @@
 <template>
-  <CollapsibleRoot v-model:open="open" class="wui-collapsible">
+  <CollapsibleRoot
+    v-model:open="open"
+    class="wui-collapsible"
+  >
     <div class="wui-collapsible-header">
       <slot name="header" />
 
-      <CollapsibleTrigger class="wui-collapsible-trigger" as-child>
-        <WuiButton icon shape="round" size="sm">
-          <span v-if="!open" class="icon-ph-arrows-out-line-vertical"></span>
-          <span v-else class="icon-ph-x"></span>
+      <CollapsibleTrigger
+        class="wui-collapsible-trigger"
+        as-child
+      >
+        <WuiButton
+          icon
+          shape="round"
+          size="sm"
+        >
+          <span
+            v-if="!open"
+            class="icon-ph-arrows-out-line-vertical"
+          ></span>
+          <span
+            v-else
+            class="icon-ph-x"
+          ></span>
         </WuiButton>
       </CollapsibleTrigger>
     </div>

@@ -1,12 +1,24 @@
 <template>
-  <WuiPopover class="wui-dropdown" :placement="placement">
+  <WuiPopover
+    class="wui-dropdown"
+    :placement="placement"
+  >
     <template #button="{ attrs }">
-      <slot name="button" :attrs="attrs" />
+      <slot
+        name="button"
+        :attrs="attrs"
+      />
     </template>
 
     <template #content="{ close }">
-      <slot name="content" :close="close">
-        <WuiList v-bind="$attrs" :items="items" />
+      <slot
+        name="content"
+        :close="close"
+      >
+        <WuiList
+          v-bind="$attrs"
+          :items="items"
+        />
       </slot>
     </template>
   </WuiPopover>

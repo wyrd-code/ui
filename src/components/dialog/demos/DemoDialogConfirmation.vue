@@ -1,5 +1,8 @@
 <template>
-  <WuiButton variant="danger" @click="isDialogVisible = true">
+  <WuiButton
+    variant="danger"
+    @click="isDialogVisible = true"
+  >
     Delete account
   </WuiButton>
 
@@ -12,7 +15,10 @@
   >
     <template #actions>
       <WuiButtonGroup>
-        <WuiButton variant="danger" @click="isDialogVisible = false">
+        <WuiButton
+          variant="danger"
+          @click="isDialogVisible = false"
+        >
           Delete
         </WuiButton>
         <WuiButton @click="isDialogVisible = false">Cancel</WuiButton>

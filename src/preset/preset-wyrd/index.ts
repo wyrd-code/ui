@@ -14,6 +14,7 @@ import {
   theme as themeWind,
 } from '@unocss/preset-wind'
 
+import { getColorSafelistFromSpec, getColorCSS } from './color'
 import {
   buildThemeFromSpec,
   WUI_THEME_SPEC,
@@ -21,7 +22,6 @@ import {
 } from '../../domain'
 import { WUI_THEME_DEFAULT } from '../../themes/default'
 import { mergeObjects } from '../../utilities'
-import { getColorSafelistFromSpec, getColorCSS } from './color'
 
 export type ShortcutList = (
   | StaticShortcutMap

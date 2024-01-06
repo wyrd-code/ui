@@ -1,8 +1,15 @@
 <template>
-  <WuiButton variant="primary" @click="isDialogVisible = true">
+  <WuiButton
+    variant="primary"
+    @click="isDialogVisible = true"
+  >
     View photo
   </WuiButton>
-  <WuiDialog v-model="isDialogVisible" size="auto" closable-mask>
+  <WuiDialog
+    v-model="isDialogVisible"
+    size="auto"
+    closable-mask
+  >
     <template #media>
       <img
         src="https://images.unsplash.com/photo-1556740758-90de374c12ad?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80"

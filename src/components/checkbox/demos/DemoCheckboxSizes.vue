@@ -6,9 +6,7 @@
       v-model="value"
       :size="size"
     >
-      <template #label
-        ><span class="capitalize">{{ size }}</span></template
-      >
+      <template #label><span class="capitalize">{{ size }}</span></template>
     </WuiCheckbox>
   </div>
 </template>

@@ -1,5 +1,8 @@
 <template>
-  <WuiForm v-model="data" :on-submit="onSubmit">
+  <WuiForm
+    v-model="data"
+    :on-submit="onSubmit"
+  >
     <WuiFormText
       name="email"
       placeholder="your@email.address"
@@ -11,12 +14,21 @@
       label="Password"
       autocomplete="current-password"
     />
-    <WuiFormCheckbox name="remember" label="Remember me" />
+    <WuiFormCheckbox
+      name="remember"
+      label="Remember me"
+    />
 
     <template #actions>
       <WuiButtonGroup>
-        <WuiFormSubmit variant="primary" label="Send" />
-        <WuiFormReset variant="danger" label="Reset" />
+        <WuiFormSubmit
+          variant="primary"
+          label="Send"
+        />
+        <WuiFormReset
+          variant="danger"
+          label="Reset"
+        />
       </WuiButtonGroup>
     </template>
   </WuiForm>

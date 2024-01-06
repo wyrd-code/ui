@@ -1,11 +1,18 @@
 <template>
-  <WuiButton variant="primary" @click="showDialog()"
-    >Closable (default)</WuiButton
+  <WuiButton
+    variant="primary"
+    @click="showDialog()"
+  >Closable (default)</WuiButton>
+  <WuiButton
+    variant="primary"
+    @click="showDialog({ closableMask: true })"
   >
-  <WuiButton variant="primary" @click="showDialog({ closableMask: true })">
     Closable mask
   </WuiButton>
-  <WuiButton variant="primary" @click="showDialog({ closable: false })">
+  <WuiButton
+    variant="primary"
+    @click="showDialog({ closable: false })"
+  >
     Not closable
   </WuiButton>
 

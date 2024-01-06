@@ -6,7 +6,10 @@
     :visible="visible"
     @close="visible = false"
   />
-  <WuiButton v-if="!visible" @click="visible = true">Reset</WuiButton>
+  <WuiButton
+    v-if="!visible"
+    @click="visible = true"
+  >Reset</WuiButton>
 </template>
 
 <script lang="ts" setup>

@@ -1,5 +1,8 @@
 <template>
-  <component :is="tag" v-bind="customProps">
+  <component
+    :is="tag"
+    v-bind="customProps"
+  >
     <slot />
   </component>
 </template>

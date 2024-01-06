@@ -1,5 +1,8 @@
 <template>
-  <WuiAccordion class="rounded bg-white" type="multiple">
+  <WuiAccordion
+    class="rounded bg-white"
+    type="multiple"
+  >
     <WuiAccordionItem title="Title 1">
       Fusce sem metus, viverra sit amet blandit non, elementum eget leo.
       Curabitur leo dolor, bibendum et lacus id, mattis viverra justo. Curabitur

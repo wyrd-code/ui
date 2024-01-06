@@ -16,7 +16,10 @@
         <template v-if="!buttonIcon">
           {{ buttonText }}
         </template>
-        <div v-else class="icon-ph-heart wui-btn-icon" />
+        <div
+          v-else
+          class="icon-ph-heart wui-btn-icon"
+        />
       </WuiButton>
 
       <template #props>
@@ -32,23 +35,57 @@
           label-top="Size"
           :options="WUI_BUTTON_SIZES"
         />
-        <WuiInput v-model="buttonText" label-top="Label" />
-        <WuiCheckbox v-model="buttonOutline" label="Outline" />
-        <WuiCheckbox v-model="buttonRound" label="Round" />
-        <WuiCheckbox v-model="buttonWide" label="Wide" />
-        <WuiCheckbox v-model="buttonActive" label="Active" />
-        <WuiCheckbox v-model="buttonBlock" label="Block" />
-        <WuiCheckbox v-model="buttonIcon" label="Icon" />
-        <WuiCheckbox v-model="buttonLoading" label="Loading" />
-        <WuiCheckbox v-model="buttonLoadingTakeover" label="Loading takeover" />
-        <WuiCheckbox v-model="buttonDisabled" label="Disabled" />
+        <WuiInput
+          v-model="buttonText"
+          label-top="Label"
+        />
+        <WuiCheckbox
+          v-model="buttonOutline"
+          label="Outline"
+        />
+        <WuiCheckbox
+          v-model="buttonRound"
+          label="Round"
+        />
+        <WuiCheckbox
+          v-model="buttonWide"
+          label="Wide"
+        />
+        <WuiCheckbox
+          v-model="buttonActive"
+          label="Active"
+        />
+        <WuiCheckbox
+          v-model="buttonBlock"
+          label="Block"
+        />
+        <WuiCheckbox
+          v-model="buttonIcon"
+          label="Icon"
+        />
+        <WuiCheckbox
+          v-model="buttonLoading"
+          label="Loading"
+        />
+        <WuiCheckbox
+          v-model="buttonLoadingTakeover"
+          label="Loading takeover"
+        />
+        <WuiCheckbox
+          v-model="buttonDisabled"
+          label="Disabled"
+        />
       </template>
     </WuiDemo>
 
     <WuiCodeExample title="Type">
       <div class="grid gap-4 grid-cols-6">
         <WuiButton> default </WuiButton>
-        <WuiButton v-for="type in WUI_BUTTON_VARIANTS" :key="type" :type="type">
+        <WuiButton
+          v-for="type in WUI_BUTTON_VARIANTS"
+          :key="type"
+          :type="type"
+        >
           {{ type }}
         </WuiButton>
       </div>
@@ -84,46 +121,94 @@
 
     <WuiCodeExample title="Loading">
       <div class="flex space-x-4 items-center justify-center">
-        <WuiButton type="neutral" loading> loading </WuiButton>
+        <WuiButton
+          type="neutral"
+          loading
+        > loading </WuiButton>
 
-        <WuiButton type="neutral" loading outline> loading </WuiButton>
+        <WuiButton
+          type="neutral"
+          loading
+          outline
+        > loading </WuiButton>
 
-        <WuiButton type="neutral" loading />
+        <WuiButton
+          type="neutral"
+          loading
+        />
 
-        <WuiButton type="neutral" loading round />
+        <WuiButton
+          type="neutral"
+          loading
+          round
+        />
       </div>
     </WuiCodeExample>
 
     <WuiCodeExample title="Round">
       <div class="flex space-x-4 items-center justify-center">
-        <WuiButton type="neutral" round outline size="lg"> Smooth </WuiButton>
-        <WuiButton type="neutral" round outline> Round button </WuiButton>
+        <WuiButton
+          type="neutral"
+          round
+          outline
+          size="lg"
+        > Smooth </WuiButton>
+        <WuiButton
+          type="neutral"
+          round
+          outline
+        > Round button </WuiButton>
       </div>
     </WuiCodeExample>
 
     <WuiCodeExample title="Icon & Round">
       <div class="flex space-x-4 items-center justify-center">
-        <WuiButton type="neutral" round outline size="lg">
+        <WuiButton
+          type="neutral"
+          round
+          outline
+          size="lg"
+        >
           <div class="icon-ph-heart" />
         </WuiButton>
 
-        <WuiButton type="neutral" round outline>
+        <WuiButton
+          type="neutral"
+          round
+          outline
+        >
           <div class="icon-ph-heart" />
         </WuiButton>
 
-        <WuiButton type="neutral" round outline size="sm">
+        <WuiButton
+          type="neutral"
+          round
+          outline
+          size="sm"
+        >
           <div class="icon-ph-heart" />
         </WuiButton>
 
-        <WuiButton type="neutral" round outline size="xs">
+        <WuiButton
+          type="neutral"
+          round
+          outline
+          size="xs"
+        >
           <div class="icon-ph-heart" />
         </WuiButton>
       </div>
     </WuiCodeExample>
 
-    <WuiCodeExample title="Icon with label" vertical>
+    <WuiCodeExample
+      title="Icon with label"
+      vertical
+    >
       <div class="flex space-x-4 items-center justify-center">
-        <WuiButton outline size="lg">
+        <WuiButton
+          outline
+          size="lg"
+        >
           <template #iconPrefix>
             <div class="icon-ph-heart" />
           </template>
@@ -137,14 +222,20 @@
           Some label
         </WuiButton>
 
-        <WuiButton outline size="sm">
+        <WuiButton
+          outline
+          size="sm"
+        >
           <template #iconPrefix>
             <div class="icon-ph-heart" />
           </template>
           Some label
         </WuiButton>
 
-        <WuiButton outline size="xs">
+        <WuiButton
+          outline
+          size="xs"
+        >
           <template #iconPrefix>
             <div class="icon-ph-heart" />
           </template>
@@ -168,13 +259,19 @@
 
     <WuiCodeExample title="Wide">
       <div class="flex space-x-4 items-center justify-center">
-        <WuiButton type="neutral" wide> wide </WuiButton>
+        <WuiButton
+          type="neutral"
+          wide
+        > wide </WuiButton>
       </div>
     </WuiCodeExample>
 
     <WuiCodeExample title="Block">
       <div class="flex space-x-4 items-center justify-center">
-        <WuiButton type="neutral" block> block </WuiButton>
+        <WuiButton
+          type="neutral"
+          block
+        > block </WuiButton>
       </div>
     </WuiCodeExample>
 
@@ -187,22 +284,28 @@
         "
       >
         <div class="flex space-x-4 items-center justify-center">
-          <WuiButton glass size="lg"> Glass button </WuiButton>
+          <WuiButton
+            glass
+            size="lg"
+          > Glass button </WuiButton>
         </div>
       </div>
     </WuiCodeExample>
 
-    <WuiPropsTable tag-name="Button" :data-sheet="dataSheet" />
+    <WuiPropsTable
+      tag-name="Button"
+      :data-sheet="dataSheet"
+    />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
 
+import { WUI_BUTTON_VARIANTS, WUI_BUTTON_SIZES } from './button'
 import WuiCheckbox from '../checkbox/WuiCheckbox.vue'
 import WuiInput from '../input/WuiInput.vue'
 import WuiSelect from '../select/WuiSelect.vue'
-import { WUI_BUTTON_VARIANTS, WUI_BUTTON_SIZES } from './button'
 
 const buttonText = ref('Button')
 const buttonOutline = ref(false)

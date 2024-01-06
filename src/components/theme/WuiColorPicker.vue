@@ -1,14 +1,17 @@
 <template>
   <div class="wui-color-picker">
     <p>{{ value }}</p>
-    <div class="wui-color-picker-preview" :style="{ background: instance }">
+    <div
+      class="wui-color-picker-preview"
+      :style="{ background: instance }"
+    >
       {{ instance }}
     </div>
     <div>
       <WuiInput
         :model-value="value"
         class="text-color-default"
-        @update:modelValue="(value) => $emit('save', value)"
+        @update:model-value="(value) => $emit('save', value)"
       />
 
       <!-- <div

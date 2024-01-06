@@ -1,5 +1,8 @@
 <template>
-  <WuiNav class="wui-tabs" :items="items" />
+  <WuiNav
+    class="wui-tabs"
+    :items="items"
+  />
 </template>
 
 <script lang="ts" setup>

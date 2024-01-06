@@ -2,8 +2,8 @@
   <WuiButton
     v-if="
       isLoading &&
-      ((reverted && pagingMeta.hasPreviousPage) ||
-        (!reverted && pagingMeta.hasNextPage))
+        ((reverted && pagingMeta.hasPreviousPage) ||
+          (!reverted && pagingMeta.hasNextPage))
     "
     block
     class="text-center leading-none"

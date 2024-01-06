@@ -1,7 +1,15 @@
 <template>
-  <WuiList class="wui-nav" role="menu" :class="{ horizontal }">
+  <WuiList
+    class="wui-nav"
+    role="menu"
+    :class="{ horizontal }"
+  >
     <slot v-if="$slots.default" />
-    <WuiNavItem v-for="(item, idx) in items" :key="idx" :item="item" />
+    <WuiNavItem
+      v-for="(item, idx) in items"
+      :key="idx"
+      :item="item"
+    />
   </WuiList>
 </template>
 

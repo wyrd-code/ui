@@ -1,5 +1,9 @@
 <template>
-  <WuiForm v-model="data" class="space-y-4 p-8 min-w-md" :on-submit="onSubmit">
+  <WuiForm
+    v-model="data"
+    class="space-y-4 p-8 min-w-md"
+    :on-submit="onSubmit"
+  >
     <slot name="heading">
       <h2>
         {{ heading }}
@@ -28,7 +32,10 @@
       <a :href="forgotPasswordUrl">Forgot your password?</a>
     </p>
 
-    <WuiFormSubmit stretch="full" variant="primary">
+    <WuiFormSubmit
+      stretch="full"
+      variant="primary"
+    >
       <slot name="submit-label">
         {{ submitLabel }}
       </slot>

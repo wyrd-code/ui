@@ -1,20 +1,38 @@
 <template>
-  <div class="wui-card" :class="classnames">
-    <div v-if="$slots.top" class="wui-card-top">
+  <div
+    class="wui-card"
+    :class="classnames"
+  >
+    <div
+      v-if="$slots.top"
+      class="wui-card-top"
+    >
       <slot name="top" />
     </div>
     <div class="wui-card-wrapper">
-      <div v-if="$slots.preview" class="wui-card-preview">
+      <div
+        v-if="$slots.preview"
+        class="wui-card-preview"
+      >
         <slot name="preview" />
       </div>
       <div class="wui-card-body">
-        <header v-if="$slots.header" class="wui-card-header">
+        <header
+          v-if="$slots.header"
+          class="wui-card-header"
+        >
           <slot name="header" />
         </header>
-        <div v-if="$slots.default" class="wui-card-content">
+        <div
+          v-if="$slots.default"
+          class="wui-card-content"
+        >
           <slot />
         </div>
-        <div v-if="$slots.actions" class="wui-card-actions">
+        <div
+          v-if="$slots.actions"
+          class="wui-card-actions"
+        >
           <slot name="actions" />
         </div>
       </div>

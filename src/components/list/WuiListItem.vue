@@ -1,5 +1,8 @@
 <template>
-  <li :class="classNames" v-bind="wrapperAttributes">
+  <li
+    :class="classNames"
+    v-bind="wrapperAttributes"
+  >
     <component
       :is="tagComputed"
       v-if="isLinkTag"
@@ -7,17 +10,35 @@
       :role="role"
     >
       <WuiListItemContent :data="data">
-        <template v-for="(_, slot) of $slots" #[slot]="scope">
-          <slot :name="slot" v-bind="scope" />
+        <template
+          v-for="(_, slot) of $slots"
+          #[slot]="scope"
+        >
+          <slot
+            :name="slot"
+            v-bind="scope"
+          />
         </template>
       </WuiListItemContent>
     </component>
-    <WuiListItemContent v-else :data="data">
-      <template v-for="(_, slot) of $slots" #[slot]="scope">
-        <slot :name="slot" v-bind="scope" />
+    <WuiListItemContent
+      v-else
+      :data="data"
+    >
+      <template
+        v-for="(_, slot) of $slots"
+        #[slot]="scope"
+      >
+        <slot
+          :name="slot"
+          v-bind="scope"
+        />
       </template>
     </WuiListItemContent>
-    <WuiList v-if="children" v-bind="children" />
+    <WuiList
+      v-if="children"
+      v-bind="children"
+    />
   </li>
 </template>
 

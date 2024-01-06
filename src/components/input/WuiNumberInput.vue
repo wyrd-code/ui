@@ -9,7 +9,7 @@
     :value="modelValue"
     :placeholder="placeholder"
     :model-value="modelValue"
-    @update:modelValue="input"
+    @update:model-value="input"
   >
     <template #prefix>
       <WuiButton

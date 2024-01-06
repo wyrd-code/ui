@@ -11,7 +11,10 @@
       <slot />
     </template>
     <template #content="{ close }">
-      <slot name="content" :close="close" />
+      <slot
+        name="content"
+        :close="close"
+      />
     </template>
   </WuiPopover>
 </template>

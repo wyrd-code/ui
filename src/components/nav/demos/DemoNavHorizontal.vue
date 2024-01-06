@@ -1,5 +1,8 @@
 <template>
-  <WuiNav :items="items" horizontal />
+  <WuiNav
+    :items="items"
+    horizontal
+  />
 </template>
 
 <script lang="ts" setup>

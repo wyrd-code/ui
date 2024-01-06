@@ -6,7 +6,10 @@
     v-html="value"
   />
   <div v-else-if="field.linkTo">
-    <router-link :to="field.linkTo(row)" class="underline">
+    <router-link
+      :to="field.linkTo(row)"
+      class="underline"
+    >
       {{ value }}
     </router-link>
   </div>

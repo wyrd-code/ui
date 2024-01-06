@@ -10,7 +10,10 @@
       </template>
 
       <template #actions>
-        <WuiButtonGroup stretch="full" condensed>
+        <WuiButtonGroup
+          stretch="full"
+          condensed
+        >
           <WuiButton variant="outlined">Follow</WuiButton>
           <WuiButton variant="outlined">Befriend</WuiButton>
         </WuiButtonGroup>

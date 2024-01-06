@@ -1,5 +1,8 @@
 <template>
-  <WuiPopover arrow placement="bottom">
+  <WuiPopover
+    arrow
+    placement="bottom"
+  >
     <template #button>
       <WuiButton>Delete</WuiButton>
     </template>
@@ -17,7 +20,10 @@
           >
             Yes, delete
           </WuiButton>
-          <WuiButton size="sm" @click="close">Cancel</WuiButton>
+          <WuiButton
+            size="sm"
+            @click="close"
+          >Cancel</WuiButton>
         </WuiButtonGroup>
       </div>
     </template>

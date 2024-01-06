@@ -5,10 +5,18 @@
     }"
   >
     <label :for="id">
-      <input :id="id" type="checkbox" :checked="isChecked" @change="toggle" />
+      <input
+        :id="id"
+        type="checkbox"
+        :checked="isChecked"
+        @change="toggle"
+      />
       <span class="toggle-track" />
     </label>
-    <span @click="toggle" @keyup.space="toggle">
+    <span
+      @click="toggle"
+      @keyup.space="toggle"
+    >
       <slot />
     </span>
   </span>

@@ -5,9 +5,15 @@
     <WuiDemo>
       <WuiBreadcrumbs>
         <ul>
-          <li v-for="(item, idx) in demoItems" :key="`demo-crumb-${idx}`">
+          <li
+            v-for="(item, idx) in demoItems"
+            :key="`demo-crumb-${idx}`"
+          >
             <a>
-              <span v-if="buttonIcon" class="mr-2 icon-ph-heart" />
+              <span
+                v-if="buttonIcon"
+                class="mr-2 icon-ph-heart"
+              />
               {{ item }}
             </a>
           </li>
@@ -15,7 +21,10 @@
       </WuiBreadcrumbs>
 
       <template #props>
-        <WuiCheckbox v-model="buttonIcon" label="Icon" />
+        <WuiCheckbox
+          v-model="buttonIcon"
+          label="Icon"
+        />
       </template>
     </WuiDemo>
 

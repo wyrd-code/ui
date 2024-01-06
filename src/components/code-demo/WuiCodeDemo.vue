@@ -12,13 +12,19 @@
       <slot />
     </div>
 
-    <div class="wui-code-demo-actions" :class="{ expanded: showCode }">
+    <div
+      class="wui-code-demo-actions"
+      :class="{ expanded: showCode }"
+    >
       <WuiButton
         class="wui-code-demo-action-copy"
         size="sm"
         @click="handleClickCopy"
       >
-        <span class="icon-ph-copy" title="Copy source to clipboard" />
+        <span
+          class="icon-ph-copy"
+          title="Copy source to clipboard"
+        />
       </WuiButton>
       <!--
       <WuiButton
@@ -44,13 +50,20 @@
       </WuiButton>
 -->
 
-      <WuiButton size="sm" @click="toggleCode">
+      <WuiButton
+        size="sm"
+        @click="toggleCode"
+      >
         <span class="icon-ph-code" />
       </WuiButton>
     </div>
 
     <!-- eslint-disable-next-line vue/no-v-html -->
-    <div v-if="showCode" class="language-vue" v-html="decodedSource"></div>
+    <div
+      v-if="showCode"
+      class="language-vue"
+      v-html="decodedSource"
+    ></div>
   </div>
 </template>
 

@@ -13,14 +13,21 @@
         bordered
       >
         <template #button>
-          <WuiButton size="sm" variant="secondary" ghost>
+          <WuiButton
+            size="sm"
+            variant="secondary"
+            ghost
+          >
             <span>English</span>
             <span class="icon-ph-caret-down ml-2 text-lg" />
           </WuiButton>
         </template>
       </WuiDropdown>
 
-      <WuiNav :items="actionItems" horizontal />
+      <WuiNav
+        :items="actionItems"
+        horizontal
+      />
     </template>
   </Header>
 </template>

@@ -10,7 +10,7 @@
     <WuiFormEditor
       class="wui-input-editor-inner"
       :model-value="modelValue"
-      @update:modelValue="onChange"
+      @update:model-value="onChange"
       @focus="onFocus"
       @blur="onBlur"
     />
@@ -22,9 +22,9 @@ import { defineComponent, PropType } from 'vue'
 
 import { FormFieldText } from '@/domain'
 
+import WuiFormEditor from './WuiFormEditor.vue'
 import { wuiFormInputPropsBase } from '../form/field.props'
 import WuiFormFieldWrapper from '../form/WuiFormFieldWrapper.vue'
-import WuiFormEditor from './WuiFormEditor.vue'
 
 export default defineComponent({
   components: {

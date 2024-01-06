@@ -4,29 +4,44 @@
 
     <WuiDemo>
       <WuiButtonGroup :vertical="!isHorizontal">
-        <WuiButton v-for="(label, idx) in items" :key="`horizontal-${idx}`">
+        <WuiButton
+          v-for="(label, idx) in items"
+          :key="`horizontal-${idx}`"
+        >
           {{ label }}
         </WuiButton>
       </WuiButtonGroup>
 
       <template #props>
-        <WuiCheckbox v-model="isHorizontal" label="Horizontal" />
+        <WuiCheckbox
+          v-model="isHorizontal"
+          label="Horizontal"
+        />
 
-        <WuiInput v-model="newItemLabel" placeholder="New item label" />
+        <WuiInput
+          v-model="newItemLabel"
+          placeholder="New item label"
+        />
         <WuiButton @click="addNewItem"> Add new item </WuiButton>
       </template>
     </WuiDemo>
 
     <WuiCodeExample title="Radio fields">
       <div class="flex justify-center">
-        <WuiButtonGroup v-model="radioValue" :options="radioOptions" />
+        <WuiButtonGroup
+          v-model="radioValue"
+          :options="radioOptions"
+        />
       </div>
     </WuiCodeExample>
 
     <WuiCodeExample title="Horizontal">
       <div class="flex justify-center">
         <WuiButtonGroup>
-          <WuiButton v-for="(label, idx) in items" :key="`horizontal-${idx}`">
+          <WuiButton
+            v-for="(label, idx) in items"
+            :key="`horizontal-${idx}`"
+          >
             {{ label }}
           </WuiButton>
         </WuiButtonGroup>
@@ -47,7 +62,10 @@
       </div>
     </WuiCodeExample>
 
-    <WuiPropsTable tag-name="ButtonGroup" :data-sheet="dataSheetGroup" />
+    <WuiPropsTable
+      tag-name="ButtonGroup"
+      :data-sheet="dataSheetGroup"
+    />
   </div>
 </template>
 

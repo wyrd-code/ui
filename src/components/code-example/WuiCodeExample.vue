@@ -6,14 +6,20 @@
     <strong class="wui-code-example-title">
       {{ title }}
     </strong>
-    <div v-if="$slots.description" class="px-4 pb-4">
+    <div
+      v-if="$slots.description"
+      class="px-4 pb-4"
+    >
       <slot name="description" />
     </div>
     <div class="wui-code-example-scene">
       <slot />
     </div>
 
-    <div v-if="code" class="wui-code-example-code-toggle">
+    <div
+      v-if="code"
+      class="wui-code-example-code-toggle"
+    >
       <WuiButton
         class="!rounded-none"
         type="ghost"
@@ -36,7 +42,10 @@
           class="wui-code-example-code-copy"
           placement="left"
         >
-          <WuiButton type="neutral" @click="clickCopy">
+          <WuiButton
+            type="neutral"
+            @click="clickCopy"
+          >
             <template #iconPrefix>
               <div class="h-full icon-ph-spinner" />
             </template>

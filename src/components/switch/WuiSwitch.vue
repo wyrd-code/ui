@@ -1,6 +1,12 @@
 <template>
-  <div class="wui-switch" :class="classNames">
-    <label :for="id" class="wui-switch-label">
+  <div
+    class="wui-switch"
+    :class="classNames"
+  >
+    <label
+      :for="id"
+      class="wui-switch-label"
+    >
       <span
         tabindex="0"
         class="wui-switch-interface"
@@ -21,11 +27,17 @@
         <span class="wui-switch-circle" />
       </span>
 
-      <span v-show="$slots.label || label" class="wui-switch-label-text">
+      <span
+        v-show="$slots.label || label"
+        class="wui-switch-label-text"
+      >
         <slot name="label">{{ label }}</slot>
       </span>
     </label>
-    <div v-if="$slots.help || help" class="wui-switch-help">
+    <div
+      v-if="$slots.help || help"
+      class="wui-switch-help"
+    >
       <slot name="help">{{ help }}</slot>
     </div>
   </div>

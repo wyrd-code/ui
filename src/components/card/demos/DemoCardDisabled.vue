@@ -1,6 +1,9 @@
 <template>
   <div class="max-w-128">
-    <WuiCard horizontal disabled>
+    <WuiCard
+      horizontal
+      disabled
+    >
       <template #preview>
         <img
           src="/demo-content/tony-lee-8IKf54pc3qk-unsplash.jpg"

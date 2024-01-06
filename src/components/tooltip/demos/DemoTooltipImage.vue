@@ -1,5 +1,10 @@
 <template>
-  <WuiTooltip placement="top" hover unpadded arrow>
+  <WuiTooltip
+    placement="top"
+    hover
+    unpadded
+    arrow
+  >
     <WuiButton>Hover for an image tooltip</WuiButton>
 
     <template #content>

@@ -1,5 +1,8 @@
 <template>
-  <WuiAlert title="Alert with a title" text="Alert with regular text" />
+  <WuiAlert
+    title="Alert with a title"
+    text="Alert with regular text"
+  />
   <WuiAlert>
     <template #title>
       <em>Alert with slot based title</em>

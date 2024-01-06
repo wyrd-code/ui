@@ -1,5 +1,8 @@
 <template>
-  <WuiPaging v-model="value" :count="33">
+  <WuiPaging
+    v-model="value"
+    :count="33"
+  >
     <div class="flex w-full items-center justify-between p-4">
       <WuiPagingSummary :mode="mode" />
       <WuiPagingLinks :show-numbers="false" />

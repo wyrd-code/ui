@@ -1,23 +1,39 @@
 <template>
-  <WuiButton variant="primary" @click="isParentVisible = true"
-    >Show drawer</WuiButton
-  >
+  <WuiButton
+    variant="primary"
+    @click="isParentVisible = true"
+  >Show drawer</WuiButton>
 
-  <WuiDrawer v-model="isParentVisible" class="text-center p-4">
+  <WuiDrawer
+    v-model="isParentVisible"
+    class="text-center p-4"
+  >
     <h3>Drawer 1</h3>
-    <WuiButton type="primary" @click="isChildVisible = true">
+    <WuiButton
+      type="primary"
+      @click="isChildVisible = true"
+    >
       Show a nested drawer
     </WuiButton>
   </WuiDrawer>
 
-  <WuiDrawer v-model="isChildVisible" class="text-center p-4">
+  <WuiDrawer
+    v-model="isChildVisible"
+    class="text-center p-4"
+  >
     <h3>Drawer 2</h3>
-    <WuiButton type="primary" @click="isGrandChildVisible = true">
+    <WuiButton
+      type="primary"
+      @click="isGrandChildVisible = true"
+    >
       Show another
     </WuiButton>
   </WuiDrawer>
 
-  <WuiDrawer v-model="isGrandChildVisible" class="text-center p-4">
+  <WuiDrawer
+    v-model="isGrandChildVisible"
+    class="text-center p-4"
+  >
     <h3>Drawer 3</h3>
   </WuiDrawer>
 </template>

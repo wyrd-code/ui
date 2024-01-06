@@ -13,7 +13,10 @@
       @keyup.esc="closePopper"
     >
       <!-- The default slot to trigger the popper  -->
-      <slot name="button" :attrs="{ 'aria-haspopup': true }" />
+      <slot
+        name="button"
+        :attrs="{ 'aria-haspopup': true }"
+      />
     </div>
     <Transition name="fade">
       <div
@@ -26,7 +29,11 @@
         @keyup.esc="!interactive && closePopper()"
       >
         <div class="wui-popover-content">
-          <slot name="content" :close="close" :is-open="modifiedIsOpen">
+          <slot
+            name="content"
+            :close="close"
+            :is-open="modifiedIsOpen"
+          >
             {{ content }}
           </slot>
         </div>

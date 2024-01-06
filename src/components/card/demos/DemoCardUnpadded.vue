@@ -13,7 +13,10 @@
               </span>
             </div>
           </div>
-          <WuiButton icon shape="round">
+          <WuiButton
+            icon
+            shape="round"
+          >
             <span class="icon-ph-dots-three-vertical" />
           </WuiButton>
         </div>

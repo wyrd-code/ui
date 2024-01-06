@@ -3,7 +3,7 @@
     <WuiCheckbox
       v-model="parent"
       label="All interests"
-      @update:modelValue="onUpdate"
+      @update:model-value="onUpdate"
     />
     <WuiCard condensed>
       <WuiCheckbox
@@ -11,7 +11,7 @@
         :key="key"
         v-model="children[key]"
         :label="key"
-        @update:modelValue="onChildUpdate"
+        @update:model-value="onChildUpdate"
       />
     </WuiCard>
   </div>

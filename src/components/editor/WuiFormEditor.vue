@@ -1,6 +1,9 @@
 <template>
   <div :class="classNames">
-    <div v-if="editor" class="menubar">
+    <div
+      v-if="editor"
+      class="menubar"
+    >
       <span class="menubar_button_group">
         <button
           class="menubar__button"
@@ -74,10 +77,16 @@
       </span>
 
       <span class="menubar_button_group">
-        <button class="menubar__button" @click="imageDialogOpen = true">
+        <button
+          class="menubar__button"
+          @click="imageDialogOpen = true"
+        >
           <span>Image</span>
         </button>
-        <button class="menubar__button" @click="embedDialogOpen = true">
+        <button
+          class="menubar__button"
+          @click="embedDialogOpen = true"
+        >
           <span>Embed</span>
         </button>
       </span>
@@ -101,7 +110,10 @@
             />
           </label>
         </p>
-        <button class="btn btn-primary" @click="embedDialogAdd">
+        <button
+          class="btn btn-primary"
+          @click="embedDialogAdd"
+        >
           Insert video
         </button>
       </WuiDialog>
@@ -182,7 +194,10 @@
         </button>
       </span>
     </div>
-    <EditorContent class="editor__content" :editor="editor" />
+    <EditorContent
+      class="editor__content"
+      :editor="editor"
+    />
   </div>
 </template>
 

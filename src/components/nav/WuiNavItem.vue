@@ -5,9 +5,19 @@
     role="separator"
     tabindex="-1"
   />
-  <li v-else role="presentation" :class="{ group: isGroup(item) }">
-    <WuiLink class="wui-nav-item" v-bind="linkProps">
-      <slot name="icon" :item="item">
+  <li
+    v-else
+    role="presentation"
+    :class="{ group: isGroup(item) }"
+  >
+    <WuiLink
+      class="wui-nav-item"
+      v-bind="linkProps"
+    >
+      <slot
+        name="icon"
+        :item="item"
+      >
         <span
           v-if="item.icon"
           class="wui-nav-item-icon"
@@ -17,13 +27,22 @@
         </span>
       </slot>
       <span class="wui-nav-item-body">
-        <slot name="label" :item="item">
+        <slot
+          name="label"
+          :item="item"
+        >
           <span class="wui-nav-item-label">
             {{ item.label }}
           </span>
         </slot>
-        <slot name="description" :item="item">
-          <div v-if="item.description" class="wui-nav-item-description">
+        <slot
+          name="description"
+          :item="item"
+        >
+          <div
+            v-if="item.description"
+            class="wui-nav-item-description"
+          >
             {{ item.description }}
           </div>
         </slot>

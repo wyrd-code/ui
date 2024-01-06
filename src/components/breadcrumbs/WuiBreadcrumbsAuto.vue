@@ -1,6 +1,10 @@
 <template>
   <WuiBreadcrumbs>
-    <WuiMenu as="ul" item-as="li" :items="items" />
+    <WuiMenu
+      as="ul"
+      item-as="li"
+      :items="items"
+    />
   </WuiBreadcrumbs>
 </template>
 

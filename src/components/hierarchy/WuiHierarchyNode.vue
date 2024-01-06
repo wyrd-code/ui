@@ -11,7 +11,11 @@
         @mouseover="(e) => $emit('node-mouseover', e, data, nodeContext)"
         @focus="(e) => $emit('node-focus', e, data, nodeContext)"
       >
-        <slot name="node" :data="data" :context="nodeContext">
+        <slot
+          name="node"
+          :data="data"
+          :context="nodeContext"
+        >
           <span v-if="!renderContent">{{ nodeLabel(data) }}</span>
           <span v-else>{{ renderContent(data) }}</span>
         </slot>
@@ -59,7 +63,11 @@
           "
         >
           <template #node="{ data: childData, context }">
-            <slot name="node" :data="childData" :context="context" />
+            <slot
+              name="node"
+              :data="childData"
+              :context="context"
+            />
           </template>
         </WuiHierarchyNode>
       </div>

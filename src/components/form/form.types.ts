@@ -74,7 +74,7 @@ export type FormSchema = FormFieldSchema[]
 // Validation
 
 export interface FormMessage<
-  T = 'warning' | 'error' | 'info' | 'success' | undefined
+  T = 'warning' | 'error' | 'info' | 'success' | undefined,
 > {
   type: T
   message: string

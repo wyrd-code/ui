@@ -1,10 +1,21 @@
 <template>
-  <WuiButtonGroup v-model="mode" condensed :options="opts" round />
+  <WuiButtonGroup
+    v-model="mode"
+    condensed
+    :options="opts"
+    round
+  />
 
-  <WuiPaging v-model="value" :count="33">
+  <WuiPaging
+    v-model="value"
+    :count="33"
+  >
     <div class="flex w-full items-center justify-between p-4">
       <WuiPagingSummary :mode="mode" />
-      <WuiPagingLinks condensed rounded />
+      <WuiPagingLinks
+        condensed
+        rounded
+      />
     </div>
   </WuiPaging>
 </template>

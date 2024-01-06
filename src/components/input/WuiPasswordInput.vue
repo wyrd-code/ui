@@ -9,7 +9,7 @@
     :value="modelValue"
     :placeholder="placeholder"
     :model-value="modelValue"
-    @update:modelValue="input"
+    @update:model-value="input"
   >
     <template #suffix>
       <WuiButton
@@ -19,8 +19,14 @@
         class="wui-input-suffix"
         @click="toggleShowPassword"
       >
-        <span v-if="showPassword" class="icon-ph-eye" />
-        <span v-else class="icon-ph-eye-slash" />
+        <span
+          v-if="showPassword"
+          class="icon-ph-eye"
+        />
+        <span
+          v-else
+          class="icon-ph-eye-slash"
+        />
       </WuiButton>
     </template>
   </WuiInput>

@@ -1,5 +1,8 @@
 <template>
-  <WuiButtonGroup class="wui-paging__links" aria-label="Pagination links">
+  <WuiButtonGroup
+    class="wui-paging__links"
+    aria-label="Pagination links"
+  >
     <WuiPagingFirst
       v-if="showFirstLast"
       v-bind="props"
@@ -26,7 +29,11 @@
         v-bind="props"
         @click="() => onPageChange(n)"
       >
-        <slot name="number" :label="n" value="n" />
+        <slot
+          name="number"
+          :label="n"
+          value="n"
+        />
       </WuiPagingLink>
     </template>
 

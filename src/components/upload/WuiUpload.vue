@@ -8,7 +8,10 @@
       <template v-else> Drop files here </template>
     </p>
     <ul class="">
-      <li v-for="file in files" :key="file.id">
+      <li
+        v-for="file in files"
+        :key="file.id"
+      >
         <span>{{ file.name }}</span> - <span>{{ file.size }}</span> -
         <span>{{ file.type }}</span> - <span>{{ file.progress }}</span> -
         <span v-if="file.error">{{ file.error }}</span>
@@ -42,7 +45,10 @@
         class="border rounded-full font-medium bg-blue-400 border-blue-500 shadow-sm text-white text-sm py-2 px-4 inline-flex justify-center hover:bg-blue-500 focus:border-yellow-300"
         @click.prevent="() => setUploadActive(true)"
       >
-        <i class="fa fa-arrow-up" aria-hidden="true" />
+        <i
+          class="fa fa-arrow-up"
+          aria-hidden="true"
+        />
         Start Upload
       </button>
       <button
@@ -51,7 +57,10 @@
         class="border rounded-full font-medium bg-red-400 border-blue-500 shadow-sm text-white text-sm py-2 px-4 inline-flex justify-center hover:bg-blue-500 focus:outline-none focus:border-yellow-300"
         @click.prevent="() => setUploadActive(false)"
       >
-        <i class="fa fa-stop" aria-hidden="true" />
+        <i
+          class="fa fa-stop"
+          aria-hidden="true"
+        />
         Stop Upload
       </button>
     </div>

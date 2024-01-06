@@ -11,7 +11,7 @@ export const WUI_TOAST_PLACEMENTS = [
   'bottom-end',
 ] as const
 
-export type ToastPlacement = typeof WUI_TOAST_PLACEMENTS[number]
+export type ToastPlacement = (typeof WUI_TOAST_PLACEMENTS)[number]
 
 export const WUI_TOAST_PLACEMENT_DEFAULT = 'top'
 
@@ -31,7 +31,7 @@ export const WUI_TOAST_VARIANTS = [
   'danger',
 ] as const
 
-export type ToastVariant = typeof WUI_TOAST_VARIANTS[number]
+export type ToastVariant = (typeof WUI_TOAST_VARIANTS)[number]
 
 export const WUI_TOAST_VARIANT_DEFAULT = 'neutral'
 

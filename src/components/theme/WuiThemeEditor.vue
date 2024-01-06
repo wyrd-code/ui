@@ -6,7 +6,10 @@
     <WuiButton type="primary">Load theme</WuiButton>
     <WuiButton>Save theme</WuiButton>
   </div>
-  <WuiPaletteEditor :theme="theme" @save="save" />
+  <WuiPaletteEditor
+    :theme="theme"
+    @save="save"
+  />
 
   <h3>Current theme data</h3>
   <div class="overflow-y-scroll max-h-128 bg-black p-4">

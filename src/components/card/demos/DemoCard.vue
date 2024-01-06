@@ -13,7 +13,10 @@
               </span>
             </div>
           </div>
-          <WuiButton icon shape="round">
+          <WuiButton
+            icon
+            shape="round"
+          >
             <span class="icon-ph-dots-three-vertical" />
           </WuiButton>
         </div>
@@ -37,7 +40,10 @@
       </template>
 
       <template #actions>
-        <WuiButton variant="primary" stretch="full">Order now!</WuiButton>
+        <WuiButton
+          variant="primary"
+          stretch="full"
+        >Order now!</WuiButton>
       </template>
 
       <p>

@@ -5,10 +5,17 @@
       :key="variant"
       class="inline-flex space-x-2 justify-center"
     >
-      <WuiTag :variant="variant" href="#test1">
+      <WuiTag
+        :variant="variant"
+        href="#test1"
+      >
         {{ variant }}
       </WuiTag>
-      <WuiTag :variant="variant" filled href="#test">
+      <WuiTag
+        :variant="variant"
+        filled
+        href="#test"
+      >
         {{ variant }}
       </WuiTag>
     </div>

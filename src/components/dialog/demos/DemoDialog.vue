@@ -1,7 +1,8 @@
 <template>
-  <WuiButton variant="primary" @click="isDialogVisible = true"
-    >Show dialog</WuiButton
-  >
+  <WuiButton
+    variant="primary"
+    @click="isDialogVisible = true"
+  >Show dialog</WuiButton>
 
   <WuiDialog v-model="isDialogVisible">
     <template #media>
@@ -27,7 +28,10 @@
     <p>Default slot content is placed automatically.</p>
 
     <template #actions="{ close }">
-      <WuiButton variant="primary" @click="close">Close</WuiButton>
+      <WuiButton
+        variant="primary"
+        @click="close"
+      >Close</WuiButton>
     </template>
   </WuiDialog>
 </template>

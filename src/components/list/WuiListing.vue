@@ -2,7 +2,10 @@
   <div v-if="isLoading && !data.length">
     <WuiSpinner />
   </div>
-  <WuiFormError v-else-if="isError" :errors="error" />
+  <WuiFormError
+    v-else-if="isError"
+    :errors="error"
+  />
   <div v-else-if="!data.length">
     <slot name="nocontent">
       <WuiAlert title="No content found" />
@@ -18,7 +21,10 @@
       @load="onParamsChange"
     />
 
-    <slot :data="data" :load="load" />
+    <slot
+      :data="data"
+      :load="load"
+    />
 
     <WuiLoadMore
       v-if="data.length < meta.paging.totalCount"

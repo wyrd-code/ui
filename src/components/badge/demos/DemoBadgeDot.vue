@@ -1,5 +1,8 @@
 <template>
-  <WuiBadge dot variant="success">
+  <WuiBadge
+    dot
+    variant="success"
+  >
     <WuiButton block>Inbox </WuiButton>
   </WuiBadge>
 </template>

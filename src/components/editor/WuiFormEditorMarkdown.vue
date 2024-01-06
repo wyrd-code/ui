@@ -11,7 +11,11 @@
     </label>
 
     <!-- eslint-disable vue/no-v-html -->
-    <div class="prose" :class="classNames" v-html="rendered" />
+    <div
+      class="prose"
+      :class="classNames"
+      v-html="rendered"
+    />
   </div>
 </template>
 

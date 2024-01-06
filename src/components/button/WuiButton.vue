@@ -5,14 +5,28 @@
     :class="classNames"
     v-bind="useAttributes"
   >
-    <slot v-if="$slots.iconPrefix" name="iconPrefix" class="wui-btn-icon" />
+    <slot
+      v-if="$slots.iconPrefix"
+      name="iconPrefix"
+      class="wui-btn-icon"
+    />
 
-    <span v-if="$slots.default || label || loading" class="wui-btn-text">
-      <span v-if="loading" class="animate-spin icon-ph-spinner wui-btn-icon" />
+    <span
+      v-if="$slots.default || label || loading"
+      class="wui-btn-text"
+    >
+      <span
+        v-if="loading"
+        class="animate-spin icon-ph-spinner wui-btn-icon"
+      />
       <slot v-else>{{ label }}</slot>
     </span>
 
-    <slot v-if="$slots.iconSuffix" name="iconSuffix" class="wui-btn-icon" />
+    <slot
+      v-if="$slots.iconSuffix"
+      name="iconSuffix"
+      class="wui-btn-icon"
+    />
   </component>
 </template>
 

@@ -1,6 +1,9 @@
 <template>
   <div class="wui-hierarchy-container">
-    <div class="hierarchy" :class="{ horizontal, collapsable }">
+    <div
+      class="hierarchy"
+      :class="{ horizontal, collapsable }"
+    >
       <WuiHierarchyNode
         :data="data"
         :props="props"
@@ -27,7 +30,10 @@
         "
       >
         <template #node="{ data: childData, context }">
-          <slot :data="childData" :context="context" />
+          <slot
+            :data="childData"
+            :context="context"
+          />
         </template>
       </WuiHierarchyNode>
     </div>

@@ -1,7 +1,10 @@
 <template>
   <WuiMenu :items="items">
     <template #button="{ attrs }">
-      <WuiButton variant="neutral" v-bind="attrs">
+      <WuiButton
+        variant="neutral"
+        v-bind="attrs"
+      >
         <span>Click me </span>
         <span class="icon-ph-caret-down ml-2 text-lg" />
       </WuiButton>

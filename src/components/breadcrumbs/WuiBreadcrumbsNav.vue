@@ -1,5 +1,8 @@
 <template>
-  <WuiMenu class="wui-breadcrumbs" :items="items" />
+  <WuiMenu
+    class="wui-breadcrumbs"
+    :items="items"
+  />
 </template>
 
 <script lang="ts" setup>

@@ -1,5 +1,10 @@
 <template>
-  <WuiList :items="items" rounded divided class="bg-neutral-1 shadow-lg" />
+  <WuiList
+    :items="items"
+    rounded
+    divided
+    class="bg-neutral-1 shadow-lg"
+  />
 </template>
 
 <script lang="ts" setup>

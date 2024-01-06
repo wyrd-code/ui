@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
 
-import WuList from '../list/WuiList.vue'
 import WuiMenu from './WuiMenu.vue'
+import WuList from '../list/WuiList.vue'
 
 describe.concurrent('Menu', () => {
   describe('Simple', () => {

@@ -1,6 +1,9 @@
 <template>
   <teleport to="body">
-    <div ref="focusRef" class="wui-drawer">
+    <div
+      ref="focusRef"
+      class="wui-drawer"
+    >
       <transition name="fade">
         <div
           v-show="modelValue && !hideMask"

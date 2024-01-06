@@ -1,5 +1,8 @@
 <template>
-  <WuiList class="wui-menu" role="menu">
+  <WuiList
+    class="wui-menu"
+    role="menu"
+  >
     <WuiMenuItem
       v-for="(item, idx) in items.map(ensureObjectItem)"
       :key="idx"

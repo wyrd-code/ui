@@ -35,7 +35,10 @@
       </template>
       <template #actions>
         <WuiButton @click="colorModal = false"> Cancel </WuiButton>
-        <WuiButton type="primary" @click="saveColor"> Save </WuiButton>
+        <WuiButton
+          type="primary"
+          @click="saveColor"
+        > Save </WuiButton>
       </template>
     </WuiDialog>
   </div>

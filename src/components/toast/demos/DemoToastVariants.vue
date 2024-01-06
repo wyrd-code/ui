@@ -6,8 +6,7 @@
       class="inline-flex space-x-2 justify-center"
       :variant="variant"
       @click="() => show(variant)"
-      >{{ variant }}</WuiButton
-    >
+    >{{ variant }}</WuiButton>
   </div>
 </template>
 

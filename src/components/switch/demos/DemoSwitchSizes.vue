@@ -1,10 +1,14 @@
 <template>
   <div class="flex flex-col space-y-2">
-    <div v-for="size in WUI_CHECKBOX_SIZES" :key="size">
-      <WuiSwitch v-model="value" :size="size">
-        <template #label
-          ><span class="capitalize">{{ size }}</span></template
-        >
+    <div
+      v-for="size in WUI_CHECKBOX_SIZES"
+      :key="size"
+    >
+      <WuiSwitch
+        v-model="value"
+        :size="size"
+      >
+        <template #label><span class="capitalize">{{ size }}</span></template>
       </WuiSwitch>
     </div>
   </div>

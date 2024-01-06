@@ -1,5 +1,9 @@
 <template>
-  <WuiList bordered divided :items="items" />
+  <WuiList
+    bordered
+    divided
+    :items="items"
+  />
 </template>
 
 <script lang="ts" setup>

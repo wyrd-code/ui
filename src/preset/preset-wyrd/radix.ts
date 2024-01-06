@@ -127,7 +127,7 @@ export const radixScales = [
   'irisDarkA',
 ] as const
 
-export type RadixScales = typeof radixScales[number]
+export type RadixScales = (typeof radixScales)[number]
 
 export const radixColors = [
   'amber',
@@ -163,7 +163,7 @@ export const radixColors = [
   'ruby',
 ] as const
 
-export type RadixColors = typeof radixColors[number]
+export type RadixColors = (typeof radixColors)[number]
 
 export const radixSteps = [
   1,
@@ -192,4 +192,4 @@ export const radixSteps = [
   '12A',
 ] as const
 
-export type RadixSteps = typeof radixSteps[number]
+export type RadixSteps = (typeof radixSteps)[number]

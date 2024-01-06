@@ -14,7 +14,10 @@
       @focus="$emit('focus')"
     >
       <template v-if="icon">
-        <span v-if="icon" :class="icon" />
+        <span
+          v-if="icon"
+          :class="icon"
+        />
         <span>
           <slot />
         </span>

@@ -1,5 +1,10 @@
 <template>
-  <WuiSlider v-model="value" numbers :min="0" :max="42" />
+  <WuiSlider
+    v-model="value"
+    numbers
+    :min="0"
+    :max="42"
+  />
   <p>{{ value }}</p>
 </template>
 

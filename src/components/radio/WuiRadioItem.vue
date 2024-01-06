@@ -19,10 +19,16 @@
       <span class="circle-border">
         <span class="circle" />
       </span>
-      <span v-if="label || $slots.default" class="label">
+      <span
+        v-if="label || $slots.default"
+        class="label"
+      >
         <slot>{{ label }}</slot>
       </span>
-      <span v-if="help || $slots.help" class="help">
+      <span
+        v-if="help || $slots.help"
+        class="help"
+      >
         <slot name="help">{{ help }}</slot>
       </span>
     </span>

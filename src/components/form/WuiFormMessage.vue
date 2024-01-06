@@ -1,5 +1,8 @@
 <template>
-  <WuiAlert class="form-message" :type="alertType">
+  <WuiAlert
+    class="form-message"
+    :type="alertType"
+  >
     <span class="text">
       {{ message.message }}
     </span>

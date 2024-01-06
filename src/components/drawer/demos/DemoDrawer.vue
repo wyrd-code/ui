@@ -1,13 +1,18 @@
 <template>
   <WuiButtonGroup>
-    <WuiButton variant="primary" @click="() => show('left')"
-      >Left drawer</WuiButton
-    >
-    <WuiButton variant="primary" @click="() => show('right')"
-      >Right drawer</WuiButton
-    >
+    <WuiButton
+      variant="primary"
+      @click="() => show('left')"
+    >Left drawer</WuiButton>
+    <WuiButton
+      variant="primary"
+      @click="() => show('right')"
+    >Right drawer</WuiButton>
   </WuiButtonGroup>
-  <WuiDrawer v-model="isDialogVisible" :placement="placement">Drawer</WuiDrawer>
+  <WuiDrawer
+    v-model="isDialogVisible"
+    :placement="placement"
+  >Drawer</WuiDrawer>
 </template>
 
 <script lang="ts" setup>

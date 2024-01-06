@@ -154,11 +154,14 @@ export function generateColorAliases(
   colors: ReturnType<typeof generateColors>,
   aliases: ColorAliases
 ) {
-  return Object.entries(aliases).reduce((o, [alias, target]) => {
-    o[alias] = colors[target]
-    o[`${alias}A`] = colors[`${target}A`]
-    return o
-  }, {} as Record<string, Record<number, string>>)
+  return Object.entries(aliases).reduce(
+    (o, [alias, target]) => {
+      o[alias] = colors[target]
+      o[`${alias}A`] = colors[`${target}A`]
+      return o
+    },
+    {} as Record<string, Record<number, string>>
+  )
 }
 
 export * from './radix'

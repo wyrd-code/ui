@@ -11,7 +11,10 @@
       @mouseleave="toggleTimer(true)"
       @focusout="toggleTimer(true)"
     >
-      <div v-if="computedIcon || $slots.icon" class="wui-toast-icon">
+      <div
+        v-if="computedIcon || $slots.icon"
+        class="wui-toast-icon"
+      >
         <slot name="icon">
           <span :class="computedIcon" />
         </slot>
@@ -27,13 +30,25 @@
             {{ description }}
           </slot>
         </span>
-        <span v-if="$slots.actions" class="wui-toast-actions">
-          <slot name="actions" :close="close" />
+        <span
+          v-if="$slots.actions"
+          class="wui-toast-actions"
+        >
+          <slot
+            name="actions"
+            :close="close"
+          />
         </span>
       </div>
 
-      <div v-if="$slots.aside" class="wui-toast-aside">
-        <slot name="aside" :close="close" />
+      <div
+        v-if="$slots.aside"
+        class="wui-toast-aside"
+      >
+        <slot
+          name="aside"
+          :close="close"
+        />
       </div>
 
       <div

@@ -1,7 +1,13 @@
 <!-- eslint-disable vuejs-accessibility/label-has-for -->
 <template>
-  <div class="form-field" :class="['error' ? !validation.isValid : '']">
-    <label v-if="label" v-bind="labelAttributes">
+  <div
+    class="form-field"
+    :class="['error' ? !validation.isValid : '']"
+  >
+    <label
+      v-if="label"
+      v-bind="labelAttributes"
+    >
       <span class="text">
         {{ label }}
       </span>
@@ -13,9 +19,15 @@
       </span>
     </label>
 
-    <slot :id="id" v-bind="$attrs" />
+    <slot
+      :id="id"
+      v-bind="$attrs"
+    />
 
-    <p v-if="help" class="text-sm">
+    <p
+      v-if="help"
+      class="text-sm"
+    >
       {{ help }}
     </p>
 

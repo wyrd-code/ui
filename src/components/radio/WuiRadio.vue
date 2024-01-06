@@ -1,9 +1,18 @@
 <template>
-  <div class="wui-radio-group" :data-orientation="orientation">
-    <span v-if="label || $slots.help" class="label">
+  <div
+    class="wui-radio-group"
+    :data-orientation="orientation"
+  >
+    <span
+      v-if="label || $slots.help"
+      class="label"
+    >
       <slot name="label">{{ label }}</slot>
     </span>
-    <div v-if="help || $slots.help" class="help">
+    <div
+      v-if="help || $slots.help"
+      class="help"
+    >
       <slot name="help">{{ help }}</slot>
     </div>
     <div class="items">
@@ -12,7 +21,7 @@
         :key="idx"
         v-bind="item"
         :model-value="modelValue"
-        @update:modelValue="(val) => $emit('update:modelValue', val)"
+        @update:model-value="(val) => $emit('update:modelValue', val)"
       />
     </div>
   </div>

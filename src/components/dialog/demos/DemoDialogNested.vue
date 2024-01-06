@@ -1,7 +1,14 @@
 <template>
-  <WuiButton variant="primary" @click="toggleDialog"> Sign up </WuiButton>
+  <WuiButton
+    variant="primary"
+    @click="toggleDialog"
+  > Sign up </WuiButton>
 
-  <WuiDialog v-model="isDialogVisible" title="Sign up" size="sm">
+  <WuiDialog
+    v-model="isDialogVisible"
+    title="Sign up"
+    size="sm"
+  >
     <template #actions>
       <WuiButton
         v-if="!hasAcceptedTerms"
@@ -32,10 +39,16 @@
     />
     <div class="flex flex-row signupmodal-wrap-inputs">
       <div class="flex-1">
-        <WuiInput label-top="First Name" placeholder="John" />
+        <WuiInput
+          label-top="First Name"
+          placeholder="John"
+        />
       </div>
       <div class="flex-1">
-        <WuiInput label-top="Second Name" placeholder="Doe" />
+        <WuiInput
+          label-top="Second Name"
+          placeholder="Doe"
+        />
       </div>
     </div>
     <WuiInput
@@ -88,8 +101,7 @@
           <a
             href="https://www.privacypolicies.com/privacy-policy-generator/"
             target="_blank"
-            >Privacy Policy Generator</a
-          >.
+          >Privacy Policy Generator</a>.
         </p>
         <h1>Interpretation and Definitions</h1>
         <h2>Interpretation</h2>
@@ -162,9 +174,11 @@
           <li>
             <p>
               <strong>Website</strong> refers to ACME CO, accessible from
-              <a href="acme.co" rel="external nofollow noopener" target="_blank"
-                >acme.co</a
-              >
+              <a
+                href="acme.co"
+                rel="external nofollow noopener"
+                target="_blank"
+              >acme.co</a>
             </p>
           </li>
           <li>
@@ -255,8 +269,7 @@
           <a
             href="https://www.privacypolicies.com/blog/privacy-policy-template/#Use_Of_Cookies_Log_Files_And_Tracking"
             target="_blank"
-            >Privacy Policies website</a
-          >
+          >Privacy Policies website</a>
           article.
         </p>
         <p>

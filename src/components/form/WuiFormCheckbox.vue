@@ -1,5 +1,9 @@
 <template>
-  <WuiFormFieldWrapper :id="id" class="wui-form-checkbox" :help="help">
+  <WuiFormFieldWrapper
+    :id="id"
+    class="wui-form-checkbox"
+    :help="help"
+  >
     <WuiCheckbox
       :id="id"
       v-model="value"

@@ -1,6 +1,10 @@
 <template>
   <WuiAvatarGroup>
-    <WuiAvatar v-for="img in avatars" :key="img" :src="img" />
+    <WuiAvatar
+      v-for="img in avatars"
+      :key="img"
+      :src="img"
+    />
   </WuiAvatarGroup>
 </template>
 

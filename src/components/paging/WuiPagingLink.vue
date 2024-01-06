@@ -6,7 +6,10 @@
   >
     <template v-if="icon">
       <span class="sr-only">{{ label }}</span>
-      <span class="wui-paging__icon" :class="icon" />
+      <span
+        class="wui-paging__icon"
+        :class="icon"
+      />
     </template>
     <slot v-else>
       {{ label }}

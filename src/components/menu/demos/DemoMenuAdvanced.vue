@@ -1,7 +1,14 @@
 <template>
-  <WuiMenu :items="items" :trap-focus="true">
+  <WuiMenu
+    :items="items"
+    :trap-focus="true"
+  >
     <template #button="{ attrs }">
-      <WuiButton icon shape="round" v-bind="attrs">
+      <WuiButton
+        icon
+        shape="round"
+        v-bind="attrs"
+      >
         <span class="icon-ph-dots-three-vertical" />
       </WuiButton>
     </template>

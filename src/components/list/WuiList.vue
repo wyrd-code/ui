@@ -6,7 +6,11 @@
     :role="role"
   >
     <slot v-if="$slots.default" />
-    <WuiListItems v-else :items="items" :item-role="itemRole" />
+    <WuiListItems
+      v-else
+      :items="items"
+      :item-role="itemRole"
+    />
   </component>
 </template>
 

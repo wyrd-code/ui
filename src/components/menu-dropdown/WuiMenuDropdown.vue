@@ -1,7 +1,13 @@
 <template>
-  <WuiPopover class="wui-menu" :placement="placement">
+  <WuiPopover
+    class="wui-menu"
+    :placement="placement"
+  >
     <template #button="{ attrs }">
-      <slot name="button" :attrs="attrs" />
+      <slot
+        name="button"
+        :attrs="attrs"
+      />
     </template>
 
     <template #content="{ close, ...slotProps }">

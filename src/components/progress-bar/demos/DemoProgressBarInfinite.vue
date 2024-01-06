@@ -1,3 +1,7 @@
 <template>
-  <WuiProgressBar striped infinite label="Under construction..." />
+  <WuiProgressBar
+    striped
+    infinite
+    label="Under construction..."
+  />
 </template>

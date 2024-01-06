@@ -1,6 +1,9 @@
 <template>
   <div class="max-w-128">
-    <WuiCard horizontal inverse>
+    <WuiCard
+      horizontal
+      inverse
+    >
       <template #preview>
         <img
           src="/demo-content/tony-lee-8IKf54pc3qk-unsplash.jpg"

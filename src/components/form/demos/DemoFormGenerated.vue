@@ -1,5 +1,8 @@
 <template>
-  <WuiForm v-model="data" :on-submit="onSubmit">
+  <WuiForm
+    v-model="data"
+    :on-submit="onSubmit"
+  >
     <WuiFormSchema :schema="schema" />
   </WuiForm>
 </template>

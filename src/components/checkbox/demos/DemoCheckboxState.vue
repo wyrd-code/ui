@@ -1,12 +1,21 @@
 <template>
   <div class="">
-    <WuiCheckbox v-model="state1" readonly>
+    <WuiCheckbox
+      v-model="state1"
+      readonly
+    >
       <template #label>Not selected</template>
     </WuiCheckbox>
-    <WuiCheckbox v-model="state2" readonly>
+    <WuiCheckbox
+      v-model="state2"
+      readonly
+    >
       <template #label>Selected</template>
     </WuiCheckbox>
-    <WuiCheckbox v-model="state3" readonly>
+    <WuiCheckbox
+      v-model="state3"
+      readonly
+    >
       <template #label>Indeterminate (mixed)</template>
     </WuiCheckbox>
   </div>

@@ -12,13 +12,22 @@
     }"
   >
     <slot name="prefix">
-      <div v-if="prefix" class="wui-input-prefix">
+      <div
+        v-if="prefix"
+        class="wui-input-prefix"
+      >
         {{ prefix }}
       </div>
     </slot>
     <div class="wui-input">
-      <span v-if="$slots.prefixIcon" class="wui-input-prefix-icon">
-        <span class="wui-input-icon" :name="prefixIcon">
+      <span
+        v-if="$slots.prefixIcon"
+        class="wui-input-prefix-icon"
+      >
+        <span
+          class="wui-input-icon"
+          :name="prefixIcon"
+        >
           <slot name="prefixIcon" />
         </span>
       </span>
@@ -32,18 +41,30 @@
         :placeholder="placeholder"
         @change="input"
       />
-      <span v-if="$slots.suffixIcon" class="wui-input-suffix-icon">
-        <span class="wui-input-icon" :name="suffixIcon">
+      <span
+        v-if="$slots.suffixIcon"
+        class="wui-input-suffix-icon"
+      >
+        <span
+          class="wui-input-icon"
+          :name="suffixIcon"
+        >
           <slot name="suffixIcon" />
         </span>
       </span>
     </div>
     <slot name="suffix">
-      <div v-if="suffix" class="wui-input-suffix">
+      <div
+        v-if="suffix"
+        class="wui-input-suffix"
+      >
         {{ suffix }}
       </div>
     </slot>
-    <div v-if="message" class="wui-input-message">
+    <div
+      v-if="message"
+      class="wui-input-message"
+    >
       {{ message }}
     </div>
   </div>

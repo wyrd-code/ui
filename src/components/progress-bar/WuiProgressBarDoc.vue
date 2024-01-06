@@ -13,13 +13,19 @@
       </div>
 
       <template #props>
-        <WuiSlider v-model="progressValue" label-top="Progress" />
+        <WuiSlider
+          v-model="progressValue"
+          label-top="Progress"
+        />
         <WuiNumberInput
           v-model="progressHeight"
           :min="1"
           label-top="Progress bar height"
         />
-        <WuiCheckbox v-model="progressShowTooltip" label="Show tooltip" />
+        <WuiCheckbox
+          v-model="progressShowTooltip"
+          label="Show tooltip"
+        />
         <WuiSelect
           v-model="progressTooltip"
           placeholder="Select tooltip"
@@ -30,25 +36,52 @@
       </template>
     </WuiDemo>
 
-    <WuiCodeExample :code="infiniteCode" title="Infinite">
+    <WuiCodeExample
+      :code="infiniteCode"
+      title="Infinite"
+    >
       <div class="heights-progress">
         <WuiProgressBar infinite />
       </div>
     </WuiCodeExample>
 
-    <WuiCodeExample :code="heightCode" title="Height">
+    <WuiCodeExample
+      :code="heightCode"
+      title="Height"
+    >
       <div class="heights-progress">
-        <WuiProgressBar :height="3" :progress="progressValue42" />
-        <WuiProgressBar :height="5" :progress="progressValue42" />
-        <WuiProgressBar :height="7" :progress="progressValue42" />
-        <WuiProgressBar :height="10" :progress="progressValue42" />
-        <WuiProgressBar :height="13" :progress="progressValue42" />
+        <WuiProgressBar
+          :height="3"
+          :progress="progressValue42"
+        />
+        <WuiProgressBar
+          :height="5"
+          :progress="progressValue42"
+        />
+        <WuiProgressBar
+          :height="7"
+          :progress="progressValue42"
+        />
+        <WuiProgressBar
+          :height="10"
+          :progress="progressValue42"
+        />
+        <WuiProgressBar
+          :height="13"
+          :progress="progressValue42"
+        />
       </div>
     </WuiCodeExample>
-    <WuiCodeExample :code="tooltipCode" title="Tooltip position">
+    <WuiCodeExample
+      :code="tooltipCode"
+      title="Tooltip position"
+    >
       <div class="heights-progress">
         <WuiProgressBar :progress="progressValue42" />
-        <WuiProgressBar :progress="progressValue42" tooltip="bottom" />
+        <WuiProgressBar
+          :progress="progressValue42"
+          tooltip="bottom"
+        />
       </div>
     </WuiCodeExample>
     <props-table :data-sheet="dataSheet" />

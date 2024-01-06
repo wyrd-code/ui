@@ -9,7 +9,10 @@
       :theme="theme"
       @save="(...args) => $emit('save', ...args)"
     />
-    <div v-else class="flex flex-col space-y-2">
+    <div
+      v-else
+      class="flex flex-col space-y-2"
+    >
       <WuiPaletteEditorCategoryVariant
         class="wui-palette-editor-category-variant"
         variant="light"

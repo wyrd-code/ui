@@ -1,8 +1,18 @@
 <template>
-  <form class="wui-form" novalidate @submit.prevent>
-    <slot name="header" :form="form" />
+  <form
+    class="wui-form"
+    novalidate
+    @submit.prevent
+  >
+    <slot
+      name="header"
+      :form="form"
+    />
     <slot :form="form" />
-    <slot name="actions" :form="form" />
+    <slot
+      name="actions"
+      :form="form"
+    />
   </form>
 </template>
 

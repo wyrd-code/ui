@@ -5,10 +5,20 @@
     role="separator"
     tabindex="-1"
   />
-  <li v-else-if="isGroup" class="wui-list-group" role="presentation">
-    <WuiMenu :items="data.children" :trap-focus="false" />
+  <li
+    v-else-if="isGroup"
+    class="wui-list-group"
+    role="presentation"
+  >
+    <WuiMenu
+      :items="data.children"
+      :trap-focus="false"
+    />
   </li>
-  <li v-else role="presentation">
+  <li
+    v-else
+    role="presentation"
+  >
     <button
       ref="button"
       class="wui-menu-item"
@@ -18,7 +28,10 @@
       tabindex="0"
       @click="onItemSelected"
     >
-      <slot name="icon" :item="data">
+      <slot
+        name="icon"
+        :item="data"
+      >
         <span
           v-if="data.icon"
           class="wui-menu-item-icon"
@@ -28,13 +41,22 @@
         </span>
       </slot>
       <span class="wui-menu-item-body">
-        <slot name="label" :item="data">
+        <slot
+          name="label"
+          :item="data"
+        >
           <span class="wui-menu-item-label">
             {{ data.label }}
           </span>
         </slot>
-        <slot name="description" :item="data">
-          <div v-if="data.description" class="wui-menu-item-description">
+        <slot
+          name="description"
+          :item="data"
+        >
+          <div
+            v-if="data.description"
+            class="wui-menu-item-description"
+          >
             {{ data.description }}
           </div>
         </slot>

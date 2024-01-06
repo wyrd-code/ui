@@ -1,7 +1,10 @@
 <template>
   <teleport to="body">
     <FocusLoop :is-visible="modelValue">
-      <WuiTransition name="fade" :duration="300">
+      <WuiTransition
+        name="fade"
+        :duration="300"
+      >
         <div
           v-show="modelValue"
           ref="mask"
@@ -26,7 +29,11 @@
             tabindex="-1"
           >
             <span class="wui-dialog-close">
-              <slot v-if="closable" name="close" :close="close">
+              <slot
+                v-if="closable"
+                name="close"
+                :close="close"
+              >
                 <WuiButton
                   variant="secondary"
                   shape="round"
@@ -45,12 +52,24 @@
               :aria-label="title"
               v-bind="$attrs"
             >
-              <div v-if="$slots.media" class="wui-dialog-media">
-                <slot name="media" :close="close" />
+              <div
+                v-if="$slots.media"
+                class="wui-dialog-media"
+              >
+                <slot
+                  name="media"
+                  :close="close"
+                />
               </div>
 
-              <div v-if="$slots.header || title" class="wui-dialog-header">
-                <slot name="header" :close="close">
+              <div
+                v-if="$slots.header || title"
+                class="wui-dialog-header"
+              >
+                <slot
+                  name="header"
+                  :close="close"
+                >
                   <h3 class="text-lg font-bold">{{ title }}</h3>
                 </slot>
               </div>
@@ -64,8 +83,14 @@
                 </slot>
               </div>
 
-              <div v-if="$slots.actions" class="wui-dialog-footer">
-                <slot name="actions" :close="close" />
+              <div
+                v-if="$slots.actions"
+                class="wui-dialog-footer"
+              >
+                <slot
+                  name="actions"
+                  :close="close"
+                />
               </div>
             </div>
           </div>

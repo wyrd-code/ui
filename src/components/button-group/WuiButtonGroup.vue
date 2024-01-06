@@ -8,7 +8,10 @@
     ]"
     role="group"
   >
-    <slot :value="modelValue" @update="onUpdate" />
+    <slot
+      :value="modelValue"
+      @update="onUpdate"
+    />
 
     <WuiButton
       v-for="{ value, label, icon, ...attrs } in expandOptions(options)"
@@ -19,7 +22,10 @@
       @click="() => onUpdate(value)"
       @keyup.enter="() => onUpdate(value)"
     >
-      <span v-if="icon" :class="icon" />
+      <span
+        v-if="icon"
+        :class="icon"
+      />
       <span v-else>
         {{ label }}
       </span>

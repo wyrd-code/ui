@@ -1,5 +1,8 @@
 <template>
-  <ForgotPassword sign-in-url="#signin" :on-submit="onSubmit" />
+  <ForgotPassword
+    sign-in-url="#signin"
+    :on-submit="onSubmit"
+  />
 </template>
 
 <script lang="ts" setup>

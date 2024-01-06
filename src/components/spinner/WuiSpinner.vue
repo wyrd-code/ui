@@ -1,5 +1,8 @@
 <template>
-  <span class="wui-spinner animate-spin animate-loop" :class="iconClass" />
+  <span
+    class="wui-spinner animate-spin animate-loop"
+    :class="iconClass"
+  />
 </template>
 
 <script lang="ts" setup>

@@ -1,6 +1,9 @@
 <template>
   <div :class="[isFocused ? 'border-primary-300' : '', classNames]">
-    <EditorContent class="editor__content" :editor="editor" />
+    <EditorContent
+      class="editor__content"
+      :editor="editor"
+    />
   </div>
 </template>
 

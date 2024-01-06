@@ -2,21 +2,40 @@
   <table class="wui-table">
     <thead>
       <tr>
-        <th v-for="field in fields" :key="field.key">
+        <th
+          v-for="field in fields"
+          :key="field.key"
+        >
           {{ field.label }}
         </th>
         <th v-if="$slots.rowActions">Actions</th>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(row, idx) in data" :key="`row-${idx}`">
-        <td v-for="field in fields" :key="`${field.key}Cell`">
-          <slot :name="`${field.key}Cell`" :field="field" :row="row">
-            <WuiTableCell :field="field" :row="(row as any)" />
+      <tr
+        v-for="(row, idx) in data"
+        :key="`row-${idx}`"
+      >
+        <td
+          v-for="field in fields"
+          :key="`${field.key}Cell`"
+        >
+          <slot
+            :name="`${field.key}Cell`"
+            :field="field"
+            :row="row"
+          >
+            <WuiTableCell
+              :field="field"
+              :row="(row as any)"
+            />
           </slot>
         </td>
         <td v-if="$slots.rowActions">
-          <slot name="rowActions" :row="row" />
+          <slot
+            name="rowActions"
+            :row="row"
+          />
         </td>
       </tr>
     </tbody>

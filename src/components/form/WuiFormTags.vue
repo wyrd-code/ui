@@ -17,7 +17,10 @@
         :key="`tag-${idx}`"
         class="p-2 border border-gray-300 rounded"
       >
-        <button class="inline-block border-0" @click="() => removeTag(tag)">
+        <button
+          class="inline-block border-0"
+          @click="() => removeTag(tag)"
+        >
           x
         </button>
         {{ tag }}

@@ -1,5 +1,8 @@
 <template>
-  <div class="wui-progress-bar" :class="classNames">
+  <div
+    class="wui-progress-bar"
+    :class="classNames"
+  >
     <div
       class="wui-progress-bar__track"
       :class="[infinite && 'wui-progress-bar--infinite']"
@@ -10,7 +13,10 @@
         </span>
       </slot>
 
-      <div class="wui-progress-bar__fill" :style="progressStyle">
+      <div
+        class="wui-progress-bar__fill"
+        :style="progressStyle"
+      >
         <slot name="label">
           <span class="wui-progress-bar__label">
             <slot name="text">{{ text }}</slot>

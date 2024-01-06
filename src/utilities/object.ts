@@ -5,12 +5,15 @@ export const pick = (object: Record<string, any>, keys: string[]): object => {
     throw new Error('INVALID KEYS ARRAY FOR OBJECT PICKING')
   }
 
-  return keys.reduce(function (result, key) {
-    if (object && Object.prototype.hasOwnProperty.call(object, key)) {
-      result[key] = object[key]
-    }
-    return result
-  }, {} as Record<string, any>)
+  return keys.reduce(
+    function (result, key) {
+      if (object && Object.prototype.hasOwnProperty.call(object, key)) {
+        result[key] = object[key]
+      }
+      return result
+    },
+    {} as Record<string, any>
+  )
 }
 
 // Graciously stolen from lodash's stringToPath

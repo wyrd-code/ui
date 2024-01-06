@@ -1,5 +1,9 @@
 <template>
-  <WuiCheckbox v-model="value" pulse label="Look at me" />
+  <WuiCheckbox
+    v-model="value"
+    pulse
+    label="Look at me"
+  />
 </template>
 
 <script lang="ts" setup>

@@ -6,11 +6,19 @@
           class="w-full flex items-center space-x-2 mb-4"
           :to="{ name: 'ui.home' }"
         >
-          <img src="/wyrd.svg" class="w-5 h-5" alt="Wyrd logo" />
+          <img
+            src="/wyrd.svg"
+            class="w-5 h-5"
+            alt="Wyrd logo"
+          />
           <strong>WyrdUI</strong>
         </WuiLink>
 
-        <button class="toggle" title="Toggle dark theme" @click="toggleDark">
+        <button
+          class="toggle"
+          title="Toggle dark theme"
+          @click="toggleDark"
+        >
           <span class="text-xl icon-ph-sun dark:icon-ph-moon" />
         </button>
         <WuiMenu

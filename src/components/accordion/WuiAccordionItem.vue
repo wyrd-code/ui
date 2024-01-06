@@ -1,5 +1,8 @@
 <template>
-  <AccordionItem class="wui-accordion-item" :value="title">
+  <AccordionItem
+    class="wui-accordion-item"
+    :value="title"
+  >
     <AccordionHeader class="wui-accordion-item-header">
       <AccordionTrigger class="wui-accordion-item-trigger">
         <span class="wui-accordion-item-title">

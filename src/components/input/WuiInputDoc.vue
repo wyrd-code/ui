@@ -14,8 +14,14 @@
       />
 
       <template #props>
-        <WuiInput v-model="inputPlaceholder" label-top="Input placeholder" />
-        <WuiInput v-model="inputTopLabel" label-top="Top label" />
+        <WuiInput
+          v-model="inputPlaceholder"
+          label-top="Input placeholder"
+        />
+        <WuiInput
+          v-model="inputTopLabel"
+          label-top="Top label"
+        />
         <WuiInput
           v-model="inputMessageText"
           placeholder="Write something"
@@ -27,16 +33,34 @@
           label-top="Status"
           :options="statuses"
         />
-        <WuiCheckbox v-model="inputMask" label="Mask" />
-        <WuiCheckbox v-model="inputDisabled" label="Disabled" />
+        <WuiCheckbox
+          v-model="inputMask"
+          label="Mask"
+        />
+        <WuiCheckbox
+          v-model="inputDisabled"
+          label="Disabled"
+        />
       </template>
     </WuiDemo>
 
     <WuiCodeExample title="Status">
       <div class="flex flex-col space-y-8">
-        <WuiInput v-model="statusValue" status="success" message="Success" />
-        <WuiInput v-model="statusValue" status="danger" message="Danger" />
-        <WuiInput v-model="statusValue" status="warning" message="Warning" />
+        <WuiInput
+          v-model="statusValue"
+          status="success"
+          message="Success"
+        />
+        <WuiInput
+          v-model="statusValue"
+          status="danger"
+          message="Danger"
+        />
+        <WuiInput
+          v-model="statusValue"
+          status="warning"
+          message="Warning"
+        />
       </div>
     </WuiCodeExample>
 
@@ -65,9 +89,19 @@
 
     <WuiCodeExample title="Prefix / suffix">
       <div class="flex flex-col space-y-8">
-        <WuiInput v-model="inputValue" prefix="https://" />
-        <WuiInput v-model="inputValue" suffix=".com" />
-        <WuiInput v-model="inputValue" prefix="https://" suffix=".com" />
+        <WuiInput
+          v-model="inputValue"
+          prefix="https://"
+        />
+        <WuiInput
+          v-model="inputValue"
+          suffix=".com"
+        />
+        <WuiInput
+          v-model="inputValue"
+          prefix="https://"
+          suffix=".com"
+        />
       </div>
     </WuiCodeExample>
 
@@ -89,7 +123,10 @@
       />
     </WuiCodeExample>
 
-    <WuiPropsTable tag-name="WuiInput" :data-sheet="dataSheet" />
+    <WuiPropsTable
+      tag-name="WuiInput"
+      :data-sheet="dataSheet"
+    />
   </div>
 </template>
 

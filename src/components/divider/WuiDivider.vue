@@ -7,7 +7,10 @@
     }"
     role="separator"
   >
-    <slot v-if="$slots.icon || icon" name="icon">
+    <slot
+      v-if="$slots.icon || icon"
+      name="icon"
+    >
       <span class="wui-divider-icon">
         <span :class="icon" />
       </span>

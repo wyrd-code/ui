@@ -1,5 +1,5 @@
-import WuiButtonGroup from '@/components/button-group/WuiButtonGroup.vue'
 import WuiButton from '@/components/button/WuiButton.vue'
+import WuiButtonGroup from '@/components/button-group/WuiButtonGroup.vue'
 import type { FormDefinitions } from '@/components/form/form.types'
 import WuiFormCheckbox from '@/components/form/WuiFormCheckbox.vue'
 import WuiFormNumber from '@/components/form/WuiFormNumber.vue'

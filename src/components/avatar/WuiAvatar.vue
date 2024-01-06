@@ -1,10 +1,24 @@
 <template>
-  <span class="wui-avatar" :class="classnames">
-    <img v-if="src" class="wui-avatar-img" :src="src" alt="" />
-    <span v-else-if="label || name" class="wui-avatar-label">{{
+  <span
+    class="wui-avatar"
+    :class="classnames"
+  >
+    <img
+      v-if="src"
+      class="wui-avatar-img"
+      :src="src"
+      alt=""
+    />
+    <span
+      v-else-if="label || name"
+      class="wui-avatar-label"
+    >{{
       label || avatarText
     }}</span>
-    <span v-else class="wui-avatar-placeholder-icon icon-ph-user-fill" />
+    <span
+      v-else
+      class="wui-avatar-placeholder-icon icon-ph-user-fill"
+    />
   </span>
 </template>
 

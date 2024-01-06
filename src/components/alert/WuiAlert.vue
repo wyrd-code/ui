@@ -1,17 +1,33 @@
 <template>
   <WuiTransition :name="transition">
-    <div v-show="visible" :class="rootClasses" role="alert">
-      <div v-if="iconClass || !!$slots.icon" class="wui-alert-icon-wrapper">
+    <div
+      v-show="visible"
+      :class="rootClasses"
+      role="alert"
+    >
+      <div
+        v-if="iconClass || !!$slots.icon"
+        class="wui-alert-icon-wrapper"
+      >
         <slot name="icon">
-          <span :class="iconClass" class="wui-alert-icon" />
+          <span
+            :class="iconClass"
+            class="wui-alert-icon"
+          />
         </slot>
       </div>
       <div class="wui-alert-body">
-        <strong v-if="!!title || !!$slots.title" class="wui-alert-title">
+        <strong
+          v-if="!!title || !!$slots.title"
+          class="wui-alert-title"
+        >
           <template v-if="!$slots.title">
             {{ title }}
           </template>
-          <slot v-else name="title" />
+          <slot
+            v-else
+            name="title"
+          />
         </strong>
         <div v-if="$slots.default || text">
           <template v-if="!$slots.default">

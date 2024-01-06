@@ -17,7 +17,10 @@
       <span class="">{{ brandCopy }}</span>
     </WuiLink>
 
-    <div v-if="description" class="">
+    <div
+      v-if="description"
+      class=""
+    >
       {{ description }}
     </div>
 
@@ -27,10 +30,8 @@
       :items="navItems"
     />
 
-    <span class="text-sm"
-      >&copy; {{ copyrightDateStart }}-2022 {{ copyrightName }} ™. All Rights
-      Reserved.</span
-    >
+    <span class="text-sm">&copy; {{ copyrightDateStart }}-2022 {{ copyrightName }} ™. All Rights
+      Reserved.</span>
   </footer>
 </template>
 

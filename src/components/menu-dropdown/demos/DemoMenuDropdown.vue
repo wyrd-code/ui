@@ -1,13 +1,20 @@
 <template>
   <WuiMenuDropdown>
     <template #button="{ attrs }">
-      <WuiButton variant="secondary" v-bind="attrs">
+      <WuiButton
+        variant="secondary"
+        v-bind="attrs"
+      >
         <span>{{ value }}</span>
         <span class="icon-ph-caret-down ml-2 text-lg" />
       </WuiButton>
     </template>
     <template #menu="menuProps">
-      <WuiMenu :items="items" v-bind="menuProps" @selected="onSelected" />
+      <WuiMenu
+        :items="items"
+        v-bind="menuProps"
+        @selected="onSelected"
+      />
     </template>
   </WuiMenuDropdown>
 </template>

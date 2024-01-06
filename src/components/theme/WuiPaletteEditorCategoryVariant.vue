@@ -1,9 +1,15 @@
 <template>
   <div class="wui-palette-editor-category-variant">
-    <h4 v-if="variant" class="wui-palette-editor-category-variant-header">
+    <h4
+      v-if="variant"
+      class="wui-palette-editor-category-variant-header"
+    >
       {{ variant }}
     </h4>
-    <div class="flex space-x-1" :class="variant">
+    <div
+      class="flex space-x-1"
+      :class="variant"
+    >
       <WuiPaletteColor
         v-for="color in colors"
         :key="`color-${color.key}`"

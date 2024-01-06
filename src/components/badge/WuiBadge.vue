@@ -1,7 +1,14 @@
 <template>
-  <component :is="as" class="wui-badge">
+  <component
+    :is="as"
+    class="wui-badge"
+  >
     <slot />
-    <span v-if="isVisible" class="wui-badge-body" :class="bodyClasses">
+    <span
+      v-if="isVisible"
+      class="wui-badge-body"
+      :class="bodyClasses"
+    >
       {{ contentValue }}
     </span>
   </component>

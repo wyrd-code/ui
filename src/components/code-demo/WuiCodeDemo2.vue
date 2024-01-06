@@ -5,7 +5,10 @@
       <slot></slot>
     </div>
 
-    <div v-show="title || description" class="demo-title-desc">
+    <div
+      v-show="title || description"
+      class="demo-title-desc"
+    >
       <span class="demo-title">{{ title }}</span>
       <span class="demo-description">{{ description }}</span>
     </div>

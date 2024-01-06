@@ -13,8 +13,14 @@
     <template #label>John Doe</template>
     <template #description>Sent an invite</template>
     <template #actions="{ close }">
-      <WuiButtonGroup condensed @click.stop="close">
-        <WuiButton label="Accept" variant="primary" />
+      <WuiButtonGroup
+        condensed
+        @click.stop="close"
+      >
+        <WuiButton
+          label="Accept"
+          variant="primary"
+        />
         <WuiButton label="Decline" />
       </WuiButtonGroup>
     </template>
