@@ -62,44 +62,42 @@
   </div>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent } from 'vue'
+<script lang="ts" setup>
+import { computed, defineOptions } from 'vue'
 
 import { WUI_CHECKBOX_PROPS } from './checkbox'
 
-export default defineComponent({
-  name: 'WuiCheckbox',
+defineOptions({
   inheritAttrs: false,
-  props: WUI_CHECKBOX_PROPS,
-  emits: ['update:modelValue'],
-  setup(props, { emit }) {
-    function toggle() {
-      if (props.disabled || props.readonly) {
-        return
-      }
-      const newValue = props.modelValue !== true
-      emit('update:modelValue', newValue)
-    }
-
-    const ariaChecked = computed(() => {
-      // Indeterminate value: 'mixed'
-      return !!props.modelValue
-    })
-
-    const classNames = computed(() => ({
-      'animate-pulse': props.pulse && !props.disabled,
-      'wui-checkbox--strike': props.strike && props.modelValue,
-      'wui-checkbox--checked': props.modelValue,
-      'wui-checkbox--mixed': props.modelValue === 'mixed',
-      'wui-checkbox--disabled': props.disabled,
-      'wui-checkbox--readonly': props.readonly,
-      [`wui-checkbox--${props.size}`]: true,
-      [`wui-checkbox--${props.variant}`]: true,
-    }))
-
-    return { toggle, classNames, ariaChecked }
-  },
 })
+
+const props = defineProps(WUI_CHECKBOX_PROPS)
+
+const emit = defineEmits(['update:modelValue'])
+
+function toggle() {
+  if (props.disabled || props.readonly) {
+    return
+  }
+  const newValue = props.modelValue !== true
+  emit('update:modelValue', newValue)
+}
+
+const ariaChecked = computed(() => {
+  // TODO Indeterminate value: 'mixed'
+  return !!props.modelValue
+})
+
+const classNames = computed(() => ({
+  'animate-pulse': props.pulse && !props.disabled,
+  'wui-checkbox--strike': props.strike && props.modelValue,
+  'wui-checkbox--checked': props.modelValue,
+  'wui-checkbox--mixed': props.modelValue === 'mixed',
+  'wui-checkbox--disabled': props.disabled,
+  'wui-checkbox--readonly': props.readonly,
+  [`wui-checkbox--${props.size}`]: true,
+  [`wui-checkbox--${props.variant}`]: true,
+}))
 </script>
 
 <style lang="css">
