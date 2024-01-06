@@ -1,6 +1,6 @@
 <template>
   <WuiMenuDropdown>
-    <template #button="{ attrs }">
+    <template #trigger="{ attrs }">
       <WuiButton
         variant="secondary"
         v-bind="attrs"

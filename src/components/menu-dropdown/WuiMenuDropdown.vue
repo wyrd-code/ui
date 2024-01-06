@@ -3,9 +3,9 @@
     class="wui-menu"
     :placement="placement"
   >
-    <template #button="{ attrs }">
+    <template #trigger="{ attrs }">
       <slot
-        name="button"
+        name="trigger"
         :attrs="attrs"
       />
     </template>

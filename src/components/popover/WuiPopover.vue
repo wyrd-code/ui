@@ -16,7 +16,7 @@
     >
       <!-- The default slot to trigger the popper  -->
       <slot
-        name="button"
+        name="trigger"
         :attrs="{ 'aria-haspopup': true }"
       />
     </div>

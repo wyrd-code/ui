@@ -14,7 +14,7 @@
       />
     </template>
 
-    <template #button>
+    <template #trigger>
       <div
         :id="id"
         :ref="(el) => setTriggerRef(el as any)"

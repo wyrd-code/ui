@@ -3,7 +3,7 @@
     :items="items"
     :trap-focus="true"
   >
-    <template #button="{ attrs }">
+    <template #trigger="{ attrs }">
       <WuiButton
         icon
         shape="round"

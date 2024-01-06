@@ -1,6 +1,6 @@
 <template>
   <WuiMenu :items="items">
-    <template #button="{ attrs }">
+    <template #trigger="{ attrs }">
       <WuiButton
         variant="neutral"
         v-bind="attrs"

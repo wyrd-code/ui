@@ -3,7 +3,7 @@
     arrow
     placement="bottom"
   >
-    <template #button>
+    <template #trigger>
       <WuiButton>Delete</WuiButton>
     </template>
     <template #content="{ close }">

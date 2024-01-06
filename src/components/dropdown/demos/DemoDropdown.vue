@@ -5,7 +5,7 @@
     rounded
     bordered
   >
-    <template #button>
+    <template #trigger>
       <WuiButton
         size="sm"
         variant="secondary"

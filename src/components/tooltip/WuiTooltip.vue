@@ -7,7 +7,7 @@
     @open="$emit('open')"
     @close="$emit('close')"
   >
-    <template #button>
+    <template #trigger>
       <slot />
     </template>
     <template #content="{ close }">

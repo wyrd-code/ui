@@ -9,7 +9,7 @@ describe.concurrent('Popover', () => {
 
     const wrapper = mount(WuiPopover, {
       slots: {
-        button: `<template #button="{ attrs }"><button v-bind="attrs">Open Sesame!</button></template>`,
+        trigger: `<template #trigger="{ attrs }"><button v-bind="attrs">Open Sesame!</button></template>`,
         content: 'Main Content',
       },
     })
@@ -19,7 +19,7 @@ describe.concurrent('Popover', () => {
       expect(wrapper.emitted('mounts')).toBeTruthy()
     })
 
-    it('renders button', async () => {
+    it('renders button within trigger slot', async () => {
       const button = wrapper.find('button')
       expect(button).toBeTruthy()
       expect(button.html()).toContain('Open Sesame!')
