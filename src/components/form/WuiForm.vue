@@ -29,15 +29,15 @@ const props = defineProps({
   },
   onSubmit: {
     type: Function as PropType<FormSubmitHandler>,
-    required: false,
+    default: () => {},
   },
   onSuccess: {
     type: Function as PropType<FormSubmitHandler>,
-    required: false,
+    default: () => {},
   },
   onReset: {
     type: Function as PropType<FormSubmitHandler>,
-    required: false,
+    default: () => {},
   },
 })
 

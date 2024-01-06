@@ -1,5 +1,5 @@
 <template>
-  <Footer
+  <PageFooter
     :nav-items="navItems"
     brand-copy="WYRD UI"
     brand-link="#"
@@ -32,13 +32,13 @@
         horizontal
       />
     </template>
-  </Footer>
+  </PageFooter>
 </template>
 
 <script lang="ts" setup>
 import type { WyrdNavItem } from '@/components/nav'
 
-import Footer from '../Footer.vue'
+import PageFooter from '../PageFooter.vue'
 
 const navItems = [
   {

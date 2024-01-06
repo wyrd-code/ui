@@ -8,6 +8,7 @@
         <div
           v-show="modelValue"
           ref="mask"
+          role="presentation"
           class="wui-dialog-mask"
           @click.self="maskClick"
           @keyup.esc="maskClick"
@@ -18,6 +19,7 @@
         <div
           v-show="modelValue"
           class="wui-dialog-wrapper"
+          role="presentation"
           :class="{ active: modelValue }"
           @keydown.esc.prevent="onEsc"
           @click.self="maskClick"

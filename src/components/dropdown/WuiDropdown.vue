@@ -25,7 +25,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { PropType } from 'vue'
+import { PropType, defineOptions } from 'vue'
 
 import { Placement } from '@/domain'
 

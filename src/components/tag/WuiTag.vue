@@ -9,6 +9,7 @@
   >
     <span
       class="wui-tag-body"
+      role="presentation"
       @click="$emit('click')"
       @keyup.enter="$emit('click')"
       @focus="$emit('focus')"

@@ -39,6 +39,8 @@
       <div
         v-if="closable"
         name="clear"
+        role="button"
+        tabIndex="0"
         class="wui-alert-close icon-ph-x"
         @click="close"
         @keyup.esc="close"

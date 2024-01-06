@@ -64,13 +64,13 @@
             </label>
             <strong>#{{ data.some_id }}</strong>
             {{ data.label }} &nbsp;
-            <a
+            <WuiButton
               v-if="data.some_id != treeData.some_id"
               title="Delete item"
               style="color: red; cursor: pointer"
               @click="() => deleteNode(data, treeData)"
               @keyup.enter="() => deleteNode(data, treeData)"
-            >x</a>
+            >x</WuiButton>
           </span>
           <br />
           <span v-if="data.children && data.children.length">

@@ -36,12 +36,15 @@ defineProps({
   },
   brandLink: {
     type: [String, Object],
+    default: () => undefined,
   },
   brandCopy: {
     type: String,
+    default: () => undefined,
   },
   brandLogo: {
     type: String,
+    default: () => undefined,
   },
 })
 </script>

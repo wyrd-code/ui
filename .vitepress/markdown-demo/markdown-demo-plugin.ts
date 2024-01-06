@@ -11,7 +11,7 @@ function wrap(code: string, lang: string): string {
     code = escapeHtml(code)
   }
 
-  return code.replace(preRE, '<pre v-pre>')
+  return code?.replace(preRE, '<pre v-pre>')
 }
 
 let shikiHighlighter
@@ -31,7 +31,7 @@ const highlight = (str: string, lang: string) => {
     return wrap(str, 'text')
   }
 
-  const code = shikiHighlighter.codeToHtml(str, { lang })
+  const code = shikiHighlighter?.codeToHtml(str, { lang })
   return wrap(code, lang)
 }
 

@@ -43,21 +43,27 @@ defineProps({
   },
   brandLink: {
     type: [String, Object],
+    default: () => undefined,
   },
   brandCopy: {
     type: String,
+    default: () => undefined,
   },
   brandLogo: {
     type: String,
+    default: () => undefined,
   },
   description: {
     type: String,
+    default: () => undefined,
   },
   copyrightName: {
     type: String,
+    default: () => undefined,
   },
   copyrightDateStart: {
     type: String,
+    default: () => undefined,
   },
 })
 </script>

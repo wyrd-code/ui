@@ -14,6 +14,7 @@
       <span class="toggle-track" />
     </label>
     <span
+      role="presentation"
       @click="toggle"
       @keyup.space="toggle"
     >

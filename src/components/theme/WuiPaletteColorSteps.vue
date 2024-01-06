@@ -7,6 +7,8 @@
     >
       <div
         class="wui-palette-color-steps-surface"
+        role="button"
+        tabindex="0"
         :style="{ background: getColorValueAtStep(definition, step.key) }"
         @click="() => editColor(step.key)"
         @keyup.enter="() => editColor(step.key)"

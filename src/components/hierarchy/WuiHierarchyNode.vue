@@ -4,6 +4,8 @@
       <div
         :class="innerLabelClass"
         :style="{ width: labelWidthString }"
+        role="button"
+        tabindex="0"
         @click="(e) => $emit('node-click', e, data, nodeContext)"
         @keyup.enter="(e) => $emit('node-click', e, data, nodeContext)"
         @mouseout="(e) => $emit('node-mouseout', e, data, nodeContext)"
@@ -22,6 +24,8 @@
         <span
           v-if="collapsable && !isLeaf"
           :class="nodeExpandBtnClass"
+          role="button"
+          tabindex="0"
           @click.stop="onExpandBtnClick"
           @keyup.enter="onExpandBtnClick"
         />

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { resolve } from 'path'
 
 import postcssAtVariables from 'postcss-at-rules-variables'

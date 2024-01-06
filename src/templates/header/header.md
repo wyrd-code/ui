@@ -3,13 +3,13 @@ aside: false
 ---
 
 <script setup>
-import DemoHeader from './demos/DemoHeader.vue'
+import DemoPageHeader from './demos/DemoPageHeader.vue'
 </script>
 
-# Headers
+# PageHeaders
 
 ## Simple
 
-:::demo templates/header/demos/DemoHeader
-<DemoHeader />
+:::demo templates/header/demos/DemoPageHeader
+<DemoPageHeader />
 :::

@@ -1,14 +1,20 @@
 <template>
+  <!-- eslint-disable-next-line vuejs-accessibility/interactive-supports-focus -->
   <div
     class="wui-slider"
     :class="{ 'wui-slider--disabled': disabled }"
     :tabindex="disabled ? -1 : 0"
+    role="slider"
+    :aria-valuenow="modelValue"
+    :aria-valuemin="min"
+    :aria-valuemax="max"
     @keydown.down.left.stop.prevent="keyEvent(Placement.Left)"
     @keydown.up.right.stop.prevent="keyEvent(Placement.Right)"
   >
     <div
       ref="sliderLineRef"
       class="wui-slider-line"
+      role="presentation"
       @click="onSliderClick"
       @keyup.enter="onSliderClick"
       @touchend="onSliderClick"
@@ -20,6 +26,7 @@
       <div
         class="wui-slider-controller-wrapper"
         :style="{ left: `${valuePosition}%` }"
+        role="presentation"
         @mousedown="onMouseOrTouchDown"
         @touchstart.prevent="onMouseOrTouchDown"
       >

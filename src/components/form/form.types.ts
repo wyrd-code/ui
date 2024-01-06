@@ -37,7 +37,7 @@ export interface FormOptions extends FormConfiguration {
 
 export interface FormInstance<T = FormData | ComputedRef<FormData>> {
   data: T
-  getFieldValue: <T>(name: string) => WritableComputedRef<T>
+  getFieldValue: <FT>(name: string) => WritableComputedRef<FT>
   getFieldDefinition: (type: string) => FormFieldDefinition | undefined
   setFieldValue: (name: string, value: unknown) => void
   submit: () => void

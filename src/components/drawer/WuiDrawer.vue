@@ -9,6 +9,7 @@
           v-show="modelValue && !hideMask"
           class="wui-drawer-mask"
           tabindex="0"
+          role="presentation"
           :style="{ cursor: closableMask ? 'pointer' : 'default' }"
           @click.self="maskClick"
           @keyup.esc="maskClick"

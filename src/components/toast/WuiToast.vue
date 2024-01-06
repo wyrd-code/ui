@@ -5,7 +5,8 @@
       ref="Toast"
       class="wui-toast"
       :class="classNames"
-      role="alert"
+      role="presentation"
+      tabindex="0"
       @mouseover="toggleTimer(false)"
       @focusin="toggleTimer(false)"
       @mouseleave="toggleTimer(true)"
@@ -54,6 +55,8 @@
       <div
         v-else-if="closable"
         class="wui-toast-close"
+        tabindex="0"
+        role="button"
         @click="close"
         @keyup.esc="close"
       >

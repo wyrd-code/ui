@@ -1,5 +1,5 @@
 <template>
-  <Header
+  <PageHeader
     :nav-items="navItems"
     brand-copy="WYRD UI"
     brand-link="#"
@@ -29,13 +29,13 @@
         horizontal
       />
     </template>
-  </Header>
+  </PageHeader>
 </template>
 
 <script lang="ts" setup>
 import type { WyrdNavItem } from '@/components/nav'
 
-import Header from '../Header.vue'
+import PageHeader from '../PageHeader.vue'
 
 const navItems = [
   {

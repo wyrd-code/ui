@@ -2,28 +2,21 @@
   <WuiFormFieldWrapper
     v-bind="{
       schema,
-      isValid,
-      messages,
     }"
     class="wui-input-editor"
   >
     <WuiFormEditor
       class="wui-input-editor-inner"
       :model-value="modelValue"
-      @update:model-value="onChange"
-      @focus="onFocus"
-      @blur="onBlur"
     />
   </WuiFormFieldWrapper>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
-
-import { FormFieldText } from '@/domain'
+import { defineComponent } from 'vue'
 
 import WuiFormEditor from './WuiFormEditor.vue'
-import { wuiFormInputPropsBase } from '../form/field.props'
+// import { wuiFormInputPropsBase } from '../form/field.props'
 import WuiFormFieldWrapper from '../form/WuiFormFieldWrapper.vue'
 
 export default defineComponent({
@@ -32,9 +25,9 @@ export default defineComponent({
     WuiFormEditor,
   },
   props: {
-    ...wuiFormInputPropsBase,
+    // ...wuiFormInputPropsBase,
     schema: {
-      type: Object as PropType<FormFieldText>,
+      type: Object,
       required: true,
     },
     modelValue: {

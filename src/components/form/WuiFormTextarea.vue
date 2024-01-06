@@ -17,6 +17,8 @@
 </template>
 
 <script lang="ts" setup>
+import { defineOptions } from 'vue'
+
 import { formFieldWrapperProps } from '@/components/form/form.props'
 import { useFormInstance } from '@/components/form/useFormInstance'
 import WuiFormFieldWrapper from '@/components/form/WuiFormFieldWrapper.vue'

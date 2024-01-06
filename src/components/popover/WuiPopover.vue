@@ -2,11 +2,13 @@
   <div
     ref="popperContainerNode"
     :style="interactiveStyle"
+    role="presentation"
     @mouseleave="hover && closePopper()"
     @blur="hover && closePopper()"
   >
     <div
       ref="triggerNode"
+      role="presentation"
       @mouseover="hover && openPopper()"
       @click="togglePopper"
       @focus="openPopper"
@@ -22,6 +24,7 @@
       <div
         v-show="shouldShowPopper"
         ref="popperNode"
+        role="presentation"
         class="wui-popover"
         :data-placement="simplifiedPlacement"
         :style="floatingStyles"
@@ -215,6 +218,8 @@ const arrowStyle = computed<StyleValue | undefined>(() => {
       [staticSide]: `-${arrowOffsetWidth / 2}px`,
     }
   }
+
+  return {}
 })
 const openPopperDebounce = debounce(open, openDelay.value)
 const closePopperDebounce = debounce(close, closeDelay.value)

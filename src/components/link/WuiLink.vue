@@ -16,6 +16,7 @@ const props = defineProps({
   ...routerLinkProps,
   link: {
     type: [String, Object],
+    default: () => undefined,
   },
 })
 

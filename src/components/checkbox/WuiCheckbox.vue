@@ -1,3 +1,4 @@
+<!-- eslint-disable vuejs-accessibility/label-has-for -->
 <template>
   <div
     class="wui-checkbox"
@@ -44,6 +45,8 @@
       <span
         v-show="$slots.label || label"
         class="wui-checkbox-label-text"
+        role="button"
+        tabIndex="0"
         @click="toggle"
         @keydown.enter.prevent="toggle"
       >
