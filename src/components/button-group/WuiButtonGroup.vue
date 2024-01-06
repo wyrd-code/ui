@@ -8,34 +8,11 @@
     ]"
     role="group"
   >
-    <slot
-      :value="modelValue"
-      @update="onUpdate"
-    />
-
-    <WuiButton
-      v-for="{ value, label, icon, ...attrs } in expandOptions(options)"
-      v-bind="{ variant, size, shape, ...attrs }"
-      :key="value"
-      :icon="!!icon"
-      :active="modelValue === value"
-      @click="() => onUpdate(value)"
-      @keyup.enter="() => onUpdate(value)"
-    >
-      <span
-        v-if="icon"
-        :class="icon"
-      />
-      <span v-else>
-        {{ label }}
-      </span>
-    </WuiButton>
+    <slot />
   </div>
 </template>
 
 <script lang="ts" setup name="WuiButtonGroup">
-import { PropType } from 'vue'
-
 import {
   WUI_BUTTON_SIZES,
   WUI_BUTTON_SIZE_DEFAULT,
@@ -45,22 +22,12 @@ import {
   WUI_BUTTON_SHAPES,
 } from '@/components/button/button'
 
-import type { TSelectOption } from '../select'
-
 defineProps({
   vertical: {
     type: Boolean,
   },
   condensed: {
     type: Boolean,
-  },
-  modelValue: {
-    type: [String, Number],
-    default: null,
-  },
-  options: {
-    type: Array as PropType<TSelectOption[]>,
-    default: () => [],
   },
   stretch: {
     type: String,
@@ -84,17 +51,6 @@ defineProps({
     validator: (value: string) => WUI_BUTTON_SHAPES.includes(value),
   },
 })
-
-const emit = defineEmits(['update:modelValue'])
-
-const expandOptions = (opts) =>
-  opts.map((value) => {
-    return typeof value === 'string' ? { label: value, value } : value
-  })
-
-const onUpdate = (newValue: any) => {
-  emit('update:modelValue', newValue)
-}
 </script>
 
 <style lang="css">

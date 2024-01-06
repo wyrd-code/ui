@@ -2,7 +2,6 @@
 import DemoButtonGroup from '@/components/button-group/demos/DemoButtonGroup.vue'
 import DemoButtonGroupVertical from '@/components/button-group/demos/DemoButtonGroupVertical.vue'
 import DemoButtonGroupCondensed from '@/components/button-group/demos/DemoButtonGroupCondensed.vue'
-import DemoButtonGroupRadio from '@/components/button-group/demos/DemoButtonGroupRadio.vue'
 import DemoButtonGroupStretch from '@/components/button-group/demos/DemoButtonGroupStretch.vue'
 </script>
 
@@ -20,16 +19,6 @@ By default, buttons are separated using standard sizing units. If you wish to co
 
 :::demo components/button-group/demos/DemoButtonGroupCondensed
 <DemoButtonGroupCondensed />
-:::
-
-## Radio buttons
-
-Make sure you always declare initial value for radio buttons as they need to hold value even in an empty form.
-
-You can set individual button prop values by adding them to the radio option.
-
-:::demo components/button-group/demos/DemoButtonGroupRadio
-<DemoButtonGroupRadio />
 :::
 
 ## Stretch
