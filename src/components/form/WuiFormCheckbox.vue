@@ -2,7 +2,7 @@
   <WuiFormFieldWrapper
     :id="id"
     class="wui-form-checkbox"
-    :help="help"
+    :hint="hint"
   >
     <WuiCheckbox
       :id="id"

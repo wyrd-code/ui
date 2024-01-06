@@ -35,7 +35,7 @@ export const WUI_CHECKBOX_PROPS = {
     validator: (value: string) => WUI_CHECKBOX_SIZES.includes(value),
   },
   label: { type: String, default: null },
-  help: { type: String, default: null },
+  hint: { type: String, default: null },
   pulse: { type: Boolean },
   disabled: { type: Boolean },
   readonly: { type: Boolean },

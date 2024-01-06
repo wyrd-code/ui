@@ -3,7 +3,7 @@
     :id="id"
     class="wui-form-password"
     :label="label"
-    :help="help"
+    :hint="hint"
   >
     <WuiPasswordInput
       :id="id"

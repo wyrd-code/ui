@@ -3,7 +3,7 @@
     v-model="value"
     :items="items"
     label="Fruit"
-    help="Please select a fruit"
+    hint="Please select a fruit"
   />
 </template>
 
@@ -16,12 +16,12 @@ const items = [
   {
     value: 'apples',
     label: 'Apples',
-    help: 'red or green',
+    hint: 'red or green',
   },
   {
     value: 'bananas',
     label: 'Bananas',
-    help: 'mostly yellow',
+    hint: 'mostly yellow',
   },
 ]
 </script>

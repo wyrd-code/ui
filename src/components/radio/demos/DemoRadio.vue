@@ -3,7 +3,7 @@
     v-model="value"
     :items="items"
     label="Fruit"
-    help="Please select a fruit"
+    hint="Please select a fruit"
   />
 </template>
 

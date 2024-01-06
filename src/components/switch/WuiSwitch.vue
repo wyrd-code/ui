@@ -35,10 +35,10 @@
       </span>
     </label>
     <div
-      v-if="$slots.help || help"
-      class="wui-switch-help"
+      v-if="$slots.hint || hint"
+      class="wui-switch-hint"
     >
-      <slot name="help">{{ help }}</slot>
+      <slot name="hint">{{ hint }}</slot>
     </div>
   </div>
 </template>
@@ -74,7 +74,7 @@ export default defineComponent({
     readonly: { type: Boolean },
     modelValue: { type: Boolean, default: false },
     label: { type: String, default: null },
-    help: { type: String, default: null },
+    hint: { type: String, default: null },
     id: { type: String, default: useHtmlId },
   },
   emits: ['update:modelValue'],

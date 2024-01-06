@@ -12,7 +12,7 @@ export const formFieldWrapperProps = {
     type: String,
     default: null,
   },
-  help: {
+  hint: {
     type: String,
     default: null,
   },

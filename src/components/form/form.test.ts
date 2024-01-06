@@ -152,7 +152,7 @@ describe.concurrent('Form', () => {
             attributes: {
               label: 'Your email',
               placeholder: 'your@email.address',
-              help: 'A standard email address field',
+              hint: 'A standard email address field',
               prefix: 'test',
             },
           },
@@ -164,7 +164,7 @@ describe.concurrent('Form', () => {
             },
             attributes: {
               label: 'Password',
-              help: 'A typical password field',
+              hint: 'A typical password field',
             },
           },
           {

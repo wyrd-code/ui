@@ -25,10 +25,10 @@
     />
 
     <p
-      v-if="help"
+      v-if="hint"
       class="text-sm"
     >
-      {{ help }}
+      {{ hint }}
     </p>
 
     <WuiFormMessage
@@ -66,7 +66,7 @@ const props = defineProps({
     type: String,
     default: () => useHtmlId(),
   },
-  help: {
+  hint: {
     type: String,
     default: null,
   },

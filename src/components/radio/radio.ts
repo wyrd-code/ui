@@ -35,7 +35,7 @@ export const WUI_RADIO_PROPS = {
     type: String,
     default: null,
   },
-  help: {
+  hint: {
     type: String,
     default: null,
   },

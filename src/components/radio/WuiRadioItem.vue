@@ -26,10 +26,10 @@
         <slot>{{ label }}</slot>
       </span>
       <span
-        v-if="help || $slots.help"
-        class="help"
+        v-if="hint || $slots.hint"
+        class="hint"
       >
-        <slot name="help">{{ help }}</slot>
+        <slot name="hint">{{ hint }}</slot>
       </span>
     </span>
   </label>
@@ -56,7 +56,7 @@ export default defineComponent({
       validator: (value: Colors) => allowedRadioTypes.includes(value),
     },
     label: { type: String, default: null },
-    help: { type: String, default: null },
+    hint: { type: String, default: null },
     lineThrough: { type: Boolean },
     id: { type: String, default: useHtmlId },
   },

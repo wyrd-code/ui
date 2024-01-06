@@ -4,7 +4,7 @@
     :items="items"
     label="Fruit"
     orientation="horizontal"
-    help="Please select a fruit"
+    hint="Please select a fruit"
   />
 </template>
 

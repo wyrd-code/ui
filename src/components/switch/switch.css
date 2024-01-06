@@ -28,7 +28,7 @@
     @apply ml-2;
   }
 
-  &-help {
+  &-hint {
     @apply text-sm;
   }
 

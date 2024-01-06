@@ -4,7 +4,7 @@
     class="wui-form-select"
     :label="label"
     :uses-html-control="true"
-    :help="help"
+    :hint="hint"
   >
     <WuiSelect
       :id="id"

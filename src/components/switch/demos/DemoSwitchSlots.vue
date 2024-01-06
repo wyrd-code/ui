@@ -4,7 +4,7 @@
       <template #label>
         <span>Interested in switching?</span>
       </template>
-      <template #help>
+      <template #hint>
         <span>Switching can be fun and relaxing</span>
       </template>
     </WuiSwitch>

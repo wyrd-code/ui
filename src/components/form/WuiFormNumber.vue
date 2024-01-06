@@ -3,7 +3,7 @@
     :id="id"
     class="wui-form-number"
     :label="label"
-    :help="help"
+    :hint="hint"
   >
     <WuiNumberInput
       :id="id"

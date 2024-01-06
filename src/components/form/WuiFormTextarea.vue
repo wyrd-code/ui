@@ -3,7 +3,7 @@
     :id="id"
     class="wui-form-textarea"
     :label="label"
-    :help="help"
+    :hint="hint"
   >
     <WuiTextarea
       :id="id"

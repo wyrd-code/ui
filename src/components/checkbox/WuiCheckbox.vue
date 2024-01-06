@@ -54,10 +54,10 @@
       </span>
     </label>
     <div
-      v-if="$slots.help || help"
-      class="wui-checkbox-help"
+      v-if="$slots.hint || hint"
+      class="wui-checkbox-hint"
     >
-      <slot name="help">{{ help }}</slot>
+      <slot name="hint">{{ hint }}</slot>
     </div>
   </div>
 </template>

@@ -4,16 +4,16 @@
     :data-orientation="orientation"
   >
     <span
-      v-if="label || $slots.help"
+      v-if="label || $slots.hint"
       class="label"
     >
       <slot name="label">{{ label }}</slot>
     </span>
     <div
-      v-if="help || $slots.help"
-      class="help"
+      v-if="hint || $slots.hint"
+      class="hint"
     >
-      <slot name="help">{{ help }}</slot>
+      <slot name="hint">{{ hint }}</slot>
     </div>
     <div class="items">
       <WuiRadioItem

@@ -24,7 +24,7 @@ The component expects a `v-model` to be used on it, meaning it will accept a `mo
 
 ## Slots
 
-Use the `label` and `help` slots or `label` & `help` props.
+Use the `label` and `hint` slots or `label` & `hint` props.
 
 :::demo components/checkbox/demos/DemoCheckbox
 <DemoCheckbox />

@@ -122,7 +122,7 @@ export interface FormComponentWrapperProps {
   wrapper: {
     validation?: any
     label?: string
-    help?: string
+    hint?: string
     [x: string]: unknown
   }
   inner: {

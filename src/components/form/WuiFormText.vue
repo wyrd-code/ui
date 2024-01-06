@@ -3,7 +3,7 @@
     :id="id"
     class="wui-form-text"
     :label="label"
-    :help="help"
+    :hint="hint"
   >
     <WuiInput
       :id="id"

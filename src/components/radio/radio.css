@@ -13,7 +13,7 @@
     @apply transition-all whitespace-pre-wrap;
   }
 
-  .help {
+  .hint {
     @apply text-sm;
     @apply opacity-75;
   }
@@ -227,6 +227,6 @@
   @apply space-x-2;
 }
 
-.wui-radio-group .help {
+.wui-radio-group .hint {
   @apply text-sm;
 }

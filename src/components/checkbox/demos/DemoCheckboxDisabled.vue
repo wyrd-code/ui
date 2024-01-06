@@ -9,7 +9,7 @@
       v-model="subscribed"
       disabled
       label="Subscribe for updates"
-      help="Get notified when you get updates"
+      hint="Get notified when you get updates"
     />
   </div>
 </template>

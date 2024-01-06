@@ -2,7 +2,7 @@
   <WuiFormFieldWrapper
     :id="id"
     class="wui-form-radio"
-    :help="help"
+    :hint="hint"
   >
     <WuiRadio
       v-model="value"

@@ -4,8 +4,8 @@
       <template #label>
         <span>Are you human? <span class="icon-ph-person" /></span>
       </template>
-      <template #help>
-        <p>Help slot available to provide some more info</p>
+      <template #hint>
+        <p>hint slot available to provide some more info</p>
       </template>
     </WuiCheckbox>
   </div>
