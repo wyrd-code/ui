@@ -8,4 +8,5 @@ Note: The project is Currently in alpha stage!
 - [x] NPM publish
 - [x] Conventional Commits
 - [x] Move to Vitepress
-- [ ] Tests
+- [x] Working tests
+- [ ] Cover all components with tests

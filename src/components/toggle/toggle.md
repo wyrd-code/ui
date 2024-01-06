@@ -1,5 +1,1 @@
 # Toggle
-
-## Roadmap
-
-- [ ] Refactor
