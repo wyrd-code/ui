@@ -1,3 +1,4 @@
+export * from './array'
 export * from './object'
 export * from './html'
 export * from './keyboard-handling'

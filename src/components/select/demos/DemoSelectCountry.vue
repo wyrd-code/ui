@@ -1,10 +1,9 @@
 <template>
   <WuiSelect
-    v-model="exampleValue"
+    v-model="model"
     :options="options"
     placeholder="Select a country"
-  >
-  </WuiSelect>
+  />
 </template>
 
 <script lang="ts" setup>
@@ -12,12 +11,14 @@ import { ref } from 'vue'
 
 import { COUNTRIES } from '@/data'
 
-import type { TOption } from '../select'
+import type { TSelectOption } from '../select'
 
-const exampleValue = ref(undefined)
+const model = ref(undefined)
 
-const options: TOption[] = Object.entries(COUNTRIES).map(([value, label]) => ({
-  value,
-  label,
-}))
+const options: TSelectOption[] = Object.entries(COUNTRIES).map(
+  ([value, label]) => ({
+    value,
+    label,
+  })
+)
 </script>

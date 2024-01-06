@@ -1,11 +1,14 @@
 <template>
   <WuiSelect
-    v-model="exampleValue"
-    :options="exampleOptions"
+    v-model="value"
+    :options="options"
     placeholder="Please select"
   >
     <template #placeholder="{ props }">
-      <div class="items-center" :style="{ display: 'flex' }">
+      <div
+        class="items-center"
+        :style="{ display: 'flex' }"
+      >
         <span>(custom) {{ props.placeholder }}</span>
       </div>
     </template>
@@ -13,7 +16,10 @@
       custom display of {{ selectedOption.label }}
     </template>
     <template #option="{ option }">
-      <div class="items-center" :style="{ display: 'flex' }">
+      <div
+        class="items-center"
+        :style="{ display: 'flex' }"
+      >
         <span class="h-4 mr-2 icon-ph-github-logo" />
         {{ option.label }}
       </div>
@@ -27,11 +33,11 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 
-import type { TOption } from '../select'
+import type { TSelectOption } from '../select'
 
-const exampleValue = ref(undefined)
+const value = ref(undefined)
 
-const exampleOptions: TOption[] = [
+const options: TSelectOption[] = [
   {
     label: 'New York',
     value: 'newyork',

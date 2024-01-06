@@ -5,6 +5,7 @@ import DemoSelectDisabled from '@/components/select/demos/DemoSelectDisabled.vue
 import DemoSelectDisabledOptions from '@/components/select/demos/DemoSelectDisabledOptions.vue'
 import DemoSelectCustom from '@/components/select/demos/DemoSelectCustom.vue'
 import DemoSelectSeparator from '@/components/select/demos/DemoSelectSeparator.vue'
+import DemoSelectMultiple from '@/components/select/demos/DemoSelectMultiple.vue'
 </script>
 
 # Select
@@ -13,8 +14,18 @@ Select allows users to choose one option from a list of values.
 
 ## Basic
 
+A simple single select from multiple options.
+
 :::demo components/select/demos/DemoSelect
 <DemoSelect />
+:::
+
+## Multiple
+
+Select can be used to select multiple options.
+
+:::demo components/select/demos/DemoSelectMultiple
+<DemoSelectMultiple />
 :::
 
 ## Country
@@ -50,6 +61,8 @@ This example demonstrates how you can modify the trigger, clear value and option
 :::
 
 ## Separator
+
+Select supports separators in the options array.
 
 :::demo components/select/demos/DemoSelectSeparator
 <DemoSelectSeparator />

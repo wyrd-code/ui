@@ -1,7 +1,7 @@
 <template>
   <WuiSelect
-    v-model="exampleValue"
-    :options="exampleOptions"
+    v-model="value"
+    :options="options"
     placeholder="Please select"
     disabled
   />
@@ -10,11 +10,11 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 
-import type { TOption } from '../select'
+import type { TSelectOption } from '../select'
 
-const exampleValue = ref(undefined)
+const value = ref(undefined)
 
-const exampleOptions: TOption[] = [
+const options: TSelectOption[] = [
   {
     label: 'New York',
     value: 'newyork',

@@ -3,6 +3,7 @@
     v-model="value"
     :options="options"
     placeholder="Please select"
+    multiple
   />
 </template>
 
@@ -17,12 +18,10 @@ const options: TSelectOption[] = [
   {
     label: 'New York',
     value: 'newyork',
-    disabled: true,
   },
   {
     label: 'Paris',
     value: 'paris',
-    disabled: true,
   },
   {
     label: 'Moscow',
